@@ -1,0 +1,83 @@
+[
+    {
+        "teamA": "Team A",
+        "teamB": "Team B",
+        "venue": "Stadium Name",
+        "competition": "Competition Name",
+        "date": "YYYY-MM-DD",
+        "scoreline": "2-1",
+        "hints": [
+            {
+                "hintType": "scorer",
+                "hint": "Player X scored the first goal."
+            },
+            {
+                "hintType": "manOfTheMatch",
+                "hint": "Player Y was awarded Man of the Match."
+            },
+            {
+                "hintType": "fanFact",
+                "hint": "This match was played in front of a sold-out crowd."
+            }
+        ],
+        "stats": {
+            "possession": "55%",
+            "shots": "10",
+            "corners": "5"
+        }
+    },
+    {
+        "teamA": "Team C",
+        "teamB": "Team D",
+        "venue": "Another Stadium",
+        "competition": "Another Competition",
+        "date": "YYYY-MM-DD",
+        "scoreline": "1-3",
+        "hints": [
+            {
+                "hintType": "scorer",
+                "hint": "Player Z scored the last goal."
+            },
+            {
+                "hintType": "manOfTheMatch",
+                "hint": "Player W was the standout performer."
+            },
+            {
+                "hintType": "fanFact",
+                "hint": "This match was a thrilling encounter with many chances."
+            }
+        ],
+        "stats": {
+            "possession": "45%",
+            "shots": "8",
+            "corners": "3"
+        }
+    },
+    {
+        "teamA": "Team E",
+        "teamB": "Team F",
+        "venue": "Home Ground",
+        "competition": "League Name",
+        "date": "YYYY-MM-DD",
+        "scoreline": "0-0",
+        "hints": [
+            {
+                "hintType": "scorer",
+                "hint": "No goals were scored in this match."
+            },
+            {
+                "hintType": "manOfTheMatch",
+                "hint": "The goalkeeper was crucial in keeping a clean sheet."
+            },
+            {
+                "hintType": "fanFact",
+                "hint": "This match was highly anticipated but ended in a stalemate."
+            }
+        ],
+        "stats": {
+            "possession": "50%",
+            "shots": "5",
+            "corners": "2"
+        }
+    }
+]
