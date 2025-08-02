@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Question from './Question';
 import Scoreboard from './Scoreboard';
 import Hint from './Hint';
-import questionsData from '../data/questions.json';
+import questionsData from '/workspaces/Football-Genius/football-genius/src/data/questions.json';
 
 const Quiz = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

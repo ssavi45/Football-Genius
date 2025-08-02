@@ -1,83 +1,1010 @@
 [
-    {
-        "teamA": "Team A",
-        "teamB": "Team B",
-        "venue": "Stadium Name",
-        "competition": "Competition Name",
-        "date": "YYYY-MM-DD",
-        "scoreline": "2-1",
-        "hints": [
-            {
-                "hintType": "scorer",
-                "hint": "Player X scored the first goal."
-            },
-            {
-                "hintType": "manOfTheMatch",
-                "hint": "Player Y was awarded Man of the Match."
-            },
-            {
-                "hintType": "fanFact",
-                "hint": "This match was played in front of a sold-out crowd."
-            }
-        ],
-        "stats": {
-            "possession": "55%",
-            "shots": "10",
-            "corners": "5"
-        }
-    },
-    {
-        "teamA": "Team C",
-        "teamB": "Team D",
-        "venue": "Another Stadium",
-        "competition": "Another Competition",
-        "date": "YYYY-MM-DD",
-        "scoreline": "1-3",
-        "hints": [
-            {
-                "hintType": "scorer",
-                "hint": "Player Z scored the last goal."
-            },
-            {
-                "hintType": "manOfTheMatch",
-                "hint": "Player W was the standout performer."
-            },
-            {
-                "hintType": "fanFact",
-                "hint": "This match was a thrilling encounter with many chances."
-            }
-        ],
-        "stats": {
-            "possession": "45%",
-            "shots": "8",
-            "corners": "3"
-        }
-    },
-    {
-        "teamA": "Team E",
-        "teamB": "Team F",
-        "venue": "Home Ground",
-        "competition": "League Name",
-        "date": "YYYY-MM-DD",
-        "scoreline": "0-0",
-        "hints": [
-            {
-                "hintType": "scorer",
-                "hint": "No goals were scored in this match."
-            },
-            {
-                "hintType": "manOfTheMatch",
-                "hint": "The goalkeeper was crucial in keeping a clean sheet."
-            },
-            {
-                "hintType": "fanFact",
-                "hint": "This match was highly anticipated but ended in a stalemate."
-            }
-        ],
-        "stats": {
-            "possession": "50%",
-            "shots": "5",
-            "corners": "2"
-        }
-    }
+  {
+    "teams": "Liverpool vs Barcelona",
+    "venue": "Anfield",
+    "competition": "UEFA Champions League",
+    "date": "2019-05-07",
+    "correctScore": "4-0",
+    "hints": [
+      "Divock Origi scored twice.",
+      "Man of the match: Trent Alexander-Arnold.",
+      "Liverpool overturned a 3-0 first-leg deficit."
+    ]
+  },
+  {
+    "teams": "Germany vs Brazil",
+    "venue": "Estádio Mineirão",
+    "competition": "FIFA World Cup",
+    "date": "2014-07-08",
+    "correctScore": "7-1",
+    "hints": [
+      "Toni Kroos scored twice.",
+      "Man of the match: Toni Kroos.",
+      "Brazil suffered their heaviest World Cup defeat."
+    ]
+  },
+  {
+    "teams": "Argentina vs Netherlands",
+    "venue": "Estadio Arena Corinthians",
+    "competition": "FIFA World Cup",
+    "date": "2014-07-09",
+    "correctScore": "0-0",
+    "hints": [
+      "Argentina won 4-2 on penalties.",
+      "Man of the match: Sergio Romero.",
+      "This match went to a penalty shootout after a goalless draw."
+    ]
+  },
+  {
+    "teams": "Spain vs Italy",
+    "venue": "Estadio de la Cartuja",
+    "competition": "UEFA Euro",
+    "date": "2021-07-06",
+    "correctScore": "4-2",
+    "hints": [
+      "Italy won 4-2 on penalties.",
+      "Man of the match: Gianluigi Donnarumma.",
+      "The match ended 1-1 after extra time."
+    ]
+  },
+  {
+    "teams": "Manchester City vs Chelsea",
+    "venue": "Estádio do Dragão",
+    "competition": "UEFA Champions League",
+    "date": "2021-05-29",
+    "correctScore": "1-0",
+    "hints": [
+      "Kai Havertz scored the only goal.",
+      "Man of the match: N'Golo Kanté.",
+      "Manchester City had 61% possession."
+    ]
+  },
+  {
+    "teams": "Real Madrid vs Atlético Madrid",
+    "venue": "Estadio Santiago Bernabéu",
+    "competition": "La Liga",
+    "date": "2021-09-12",
+    "correctScore": "2-1",
+    "hints": [
+      "Karim Benzema scored twice.",
+      "Man of the match: Luka Modrić.",
+      "Atlético Madrid had a late goal disallowed."
+    ]
+  },
+  {
+    "teams": "Barcelona vs Paris Saint-Germain",
+    "venue": "Camp Nou",
+    "competition": "UEFA Champions League",
+    "date": "2017-03-08",
+    "correctScore": "6-1",
+    "hints": [
+      "Barcelona overturned a 4-0 first-leg deficit.",
+      "Man of the match: Neymar.",
+      "This match is considered one of the greatest comebacks in football."
+    ]
+  },
+  {
+    "teams": "Liverpool vs AC Milan",
+    "venue": "Istanbul Atatürk Olympic Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2005-05-25",
+    "correctScore": "3-3",
+    "hints": [
+      "Liverpool won 3-2 on penalties.",
+      "Man of the match: Jerzy Dudek.",
+      "This match is known as the 'Miracle of Istanbul'."
+    ]
+  },
+  {
+    "teams": "Brazil vs Italy",
+    "venue": "Estádio do Maracanã",
+    "competition": "FIFA World Cup",
+    "date": "1994-07-17",
+    "correctScore": "0-0",
+    "hints": [
+      "Brazil won 3-2 on penalties.",
+      "Man of the match: Claudio Taffarel.",
+      "This final is remembered for its lack of goals in regular and extra time."
+    ]
+  },
+  {
+    "teams": "West Germany vs Hungary",
+    "venue": "Estadio Azteca",
+    "competition": "FIFA World Cup",
+    "date": "1986-06-29",
+    "correctScore": "3-2",
+    "hints": [
+      "Andreas Brehme scored the winning penalty.",
+      "Man of the match: Harald Schumacher.",
+      "This match is known for the 'Game of the Century' nickname."
+    ]
+  },
+  {
+    "teams": "Argentina vs England",
+    "venue": "Estadio Azteca",
+    "competition": "FIFA World Cup",
+    "date": "1986-06-22",
+    "correctScore": "2-1",
+    "hints": [
+      "Diego Maradona scored twice, including the 'Hand of God' goal.",
+      "Man of the match: Diego Maradona.",
+      "This match is famous for Maradona's solo goal and controversial handball."
+    ]
+  },
+  {
+    "teams": "Portugal vs Netherlands",
+    "venue": "Estadio do Dragão",
+    "competition": "UEFA Euro",
+    "date": "2004-07-04",
+    "correctScore": "2-0",
+    "hints": [
+      "Cristiano Ronaldo scored the opening goal.",
+      "Man of the match: Ricardo Carvalho.",
+      "Portugal reached their first final in this tournament."
+    ]
+  },
+  {
+    "teams": "Czechoslovakia vs West Germany",
+    "venue": "Stadio Olimpico",
+    "competition": "UEFA Euro",
+    "date": "1976-06-20",
+    "correctScore": "2-2",
+    "hints": [
+      "Czechoslovakia won 5-3 on penalties.",
+      "Man of the match: Václav Mašek.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Brazil vs Sweden",
+    "venue": "Estádio do Maracanã",
+    "competition": "FIFA World Cup",
+    "date": "1958-06-29",
+    "correctScore": "5-2",
+    "hints": [
+      "Pelé scored twice.",
+      "Man of the match: Pelé.",
+      "This was Brazil's first World Cup victory."
+    ]
+  },
+  {
+    "teams": "Brazil vs Italy",
+    "venue": "Estádio do Maracanã",
+    "competition": "FIFA World Cup",
+    "date": "1998-06-30",
+    "correctScore": "0-0",
+    "hints": [
+      "France won 3-0 in the final.",
+      "Man of the match: Zinedine Zidane.",
+      "Brazilian star Ronaldo was controversially subdued."
+    ]
+  },
+  {
+    "teams": "Spain vs Netherlands",
+    "venue": "FNB Stadium",
+    "competition": "FIFA World Cup",
+    "date": "2010-07-11",
+    "correctScore": "1-0",
+    "hints": [
+      "Andrés Iniesta scored the winning goal.",
+      "Man of the match: Iker Casillas.",
+      "This was Spain's first World Cup victory."
+    ]
+  },
+  {
+    "teams": "Germany vs Argentina",
+    "venue": "Estadio do Maracanã",
+    "competition": "FIFA World Cup",
+    "date": "2014-07-13",
+    "correctScore": "1-0",
+    "hints": [
+      "Mario Götze scored the winning goal in extra time.",
+      "Man of the match: Lionel Messi.",
+      "Germany claimed their fourth World Cup title."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Bayern Munich",
+    "venue": "Wembley Stadium",
+    "competition": "UEFA Champions League",
+    "date": "1999-05-26",
+    "correctScore": "2-1",
+    "hints": [
+      "Teddy Sheringham and Ole Gunnar Solskjær scored for United.",
+      "Man of the match: Peter Schmeichel.",
+      "United scored two late goals to win."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Manchester City",
+    "venue": "Estádio do Dragão",
+    "competition": "UEFA Champions League",
+    "date": "2021-05-29",
+    "correctScore": "1-0",
+    "hints": [
+      "Kai Havertz scored the only goal.",
+      "Man of the match: N'Golo Kanté.",
+      "Manchester City had 61% possession."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Barcelona",
+    "venue": "Wembley Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2006-05-17",
+    "correctScore": "2-1",
+    "hints": [
+      "Sol Campbell and Thierry Henry scored for Arsenal.",
+      "Man of the match: Jens Lehmann.",
+      "Arsenal reached their first final in this tournament."
+    ]
+  },
+  {
+    "teams": "Barcelona vs Arsenal",
+    "venue": "Camp Nou",
+    "competition": "UEFA Champions League",
+    "date": "2016-03-16",
+    "correctScore": "3-1",
+    "hints": [
+      "Lionel Messi scored twice.",
+      "Man of the match: Lionel Messi.",
+      "Barcelona overturned a 2-0 first-leg deficit."
+    ]
+  },
+  {
+    "teams": "Real Madrid vs Sevilla",
+    "venue": "Estadio Santiago Bernabéu",
+    "competition": "La Liga",
+    "date": "2021-05-05",
+    "correctScore": "2-2",
+    "hints": [
+      "Karim Benzema and Luka Modrić scored for Madrid.",
+      "Man of the match: Bono.",
+      "Sevilla came from behind to draw."
+    ]
+  },
+  {
+    "teams": "Borussia Dortmund vs Bayern Munich",
+    "venue": "Signal Iduna Park",
+    "competition": "Bundesliga",
+    "date": "2021-04-24",
+    "correctScore": "2-3",
+    "hints": [
+      "Erling Haaland scored for Dortmund.",
+      "Man of the match: Robert Lewandowski.",
+      "Bayern Munich secured the title with this win."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Tottenham Hotspur",
+    "venue": "Wembley Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2019-06-01",
+    "correctScore": "2-0",
+    "hints": [
+      "Mohamed Salah scored the opening goal.",
+      "Man of the match: Virgil van Dijk.",
+      "Liverpool won their sixth European Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Liverpool",
+    "venue": "Wembley Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2008-05-21",
+    "correctScore": "1-1",
+    "hints": [
+      "Chelsea won 4-3 on penalties.",
+      "Man of the match: Petr Čech.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Chelsea",
+    "venue": "Wembley Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2008-05-21",
+    "correctScore": "1-1",
+    "hints": [
+      "Manchester United won 6-5 on penalties.",
+      "Man of the match: Edwin van der Sar.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Barcelona vs Manchester United",
+    "venue": "Stadio Olimpico",
+    "competition": "UEFA Champions League",
+    "date": "2009-05-27",
+    "correctScore": "2-0",
+    "hints": [
+      "Samuel Eto'o and Lionel Messi scored.",
+      "Man of the match: Lionel Messi.",
+      "Barcelona won their fourth Champions League title."
+    ]
+  },
+  {
+    "teams": "Inter Milan vs Bayern Munich",
+    "venue": "Estadio Santiago Bernabéu",
+    "competition": "UEFA Champions League",
+    "date": "2010-05-22",
+    "correctScore": "2-0",
+    "hints": [
+      "Diego Milito scored both goals.",
+      "Man of the match: Diego Milito.",
+      "Inter Milan won their third Champions League title."
+    ]
+  },
+  {
+    "teams": "Barcelona vs Bayer Leverkusen",
+    "venue": "Camp Nou",
+    "competition": "UEFA Champions League",
+    "date": "2012-03-07",
+    "correctScore": "7-1",
+    "hints": [
+      "Lionel Messi scored twice.",
+      "Man of the match: Lionel Messi.",
+      "Barcelona won 7-1 on aggregate."
+    ]
+  },
+  {
+    "teams": "Real Madrid vs Borussia Dortmund",
+    "venue": "Estadio Santiago Bernabéu",
+    "competition": "UEFA Champions League",
+    "date": "2014-04-02",
+    "correctScore": "3-0",
+    "hints": [
+      "Cristiano Ronaldo scored twice.",
+      "Man of the match: Cristiano Ronaldo.",
+      "Real Madrid won 3-0 in the quarter-finals."
+    ]
+  },
+  {
+    "teams": "Atlético Madrid vs Chelsea",
+    "venue": "Estadio da Luz",
+    "competition": "UEFA Champions League",
+    "date": "2014-05-24",
+    "correctScore": "1-1",
+    "hints": [
+      "Atlético Madrid won 4-1 on penalties.",
+      "Man of the match: Thibaut Courtois.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Barcelona vs Manchester City",
+    "venue": "Camp Nou",
+    "competition": "UEFA Champions League",
+    "date": "2015-03-18",
+    "correctScore": "1-0",
+    "hints": [
+      "Luis Suárez scored the only goal.",
+      "Man of the match: Claudio Bravo.",
+      "Barcelona won 3-1 on aggregate."
+    ]
+  },
+  {
+    "teams": "Juventus vs Barcelona",
+    "venue": "Wembley Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2015-06-06",
+    "correctScore": "3-1",
+    "hints": [
+      "Morata, Pogba, and Dybala scored for Juventus.",
+      "Man of the match: Gianluigi Buffon.",
+      "Juventus won their third Champions League title."
+    ]
+  },
+  {
+    "teams": "Real Madrid vs Liverpool",
+    "venue": "NSC Olimpiyskiy Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2018-05-26",
+    "correctScore": "3-1",
+    "hints": [
+      "Gareth Bale scored twice, including a long-range goal.",
+      "Man of the match: Luka Modrić.",
+      "Real Madrid won their 13th Champions League title."
+    ]
+  },
+  {
+    "teams": "Tottenham Hotspur vs Liverpool",
+    "venue": "Wanda Metropolitano",
+    "competition": "UEFA Champions League",
+    "date": "2019-06-01",
+    "correctScore": "0-2",
+    "hints": [
+      "Mohamed Salah scored the opening goal from the penalty spot.",
+      "Divock Origi scored the second goal.",
+      "Liverpool won their sixth European Cup."
+    ]
+  },
+  {
+    "teams": "Manchester City vs Inter Milan",
+    "venue": "Atatürk Olympic Stadium",
+    "competition": "UEFA Champions League",
+    "date": "2023-06-10",
+    "correctScore": "1-0",
+    "hints": [
+      "Rodri scored the only goal of the match.",
+      "Man of the match: Ederson.",
+      "Manchester City won their first Champions League title."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2015-05-30",
+    "correctScore": "3-2",
+    "hints": [
+      "Theo Walcott and Alexis Sánchez scored for Arsenal.",
+      "Man of the match: Aaron Ramsey.",
+      "Arsenal won their 12th FA Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Tottenham Hotspur",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2017-04-22",
+    "correctScore": "4-2",
+    "hints": [
+      "Willian and Eden Hazard scored for Chelsea.",
+      "Man of the match: N'Golo Kanté.",
+      "Chelsea won their eighth FA Cup."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Leeds United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2010-05-22",
+    "correctScore": "3-2",
+    "hints": [
+      "Javier Hernández scored the winning goal.",
+      "Man of the match: Wayne Rooney.",
+      "Manchester United won their 12th FA Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs West Ham United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2006-05-13",
+    "correctScore": "3-3",
+    "hints": [
+      "Liverpool won 3-1 on penalties.",
+      "Man of the match: Pepe Reina.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Hull City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2014-05-17",
+    "correctScore": "3-2",
+    "hints": [
+      "Aaron Ramsey scored the winning goal.",
+      "Man of the match: Steve Harper.",
+      "Arsenal won their 11th FA Cup."
+    ]
+  },
+  {
+    "teams": "Manchester City vs Stoke City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2011-05-14",
+    "correctScore": "1-0",
+    "hints": [
+      "Yaya Touré scored the only goal.",
+      "Man of the match: Joe Hart.",
+      "Manchester City won their fifth FA Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2007-05-19",
+    "correctScore": "1-0",
+    "hints": [
+      "Didier Drogba scored the only goal.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their fourth FA Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Cardiff City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2001-05-12",
+    "correctScore": "2-1",
+    "hints": [
+      "Michael Owen scored twice.",
+      "Man of the match: Michael Owen.",
+      "Liverpool won their 14th FA Cup."
+    ]
+  },
+  {
+    "teams": "West Ham United vs Arsenal",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1980-05-10",
+    "correctScore": "1-0",
+    "hints": [
+      "Trevor Brooking scored the only goal.",
+      "Man of the match: Phil Parkes.",
+      "West Ham won their first FA Cup."
+    ]
+  },
+  {
+    "teams": "Sunderland vs Leeds United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1973-05-05",
+    "correctScore": "1-0",
+    "hints": [
+      "Ian Porterfield scored the only goal.",
+      "Man of the match: Jim Montgomery.",
+      "Sunderland won their first FA Cup."
+    ]
+  },
+  {
+    "teams": "Manchester City vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2011-05-14",
+    "correctScore": "0-1",
+    "hints": [
+      "Yaya Touré scored the only goal.",
+      "Man of the match: Joe Hart.",
+      "Manchester City won their fifth FA Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Liverpool",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2012-05-05",
+    "correctScore": "2-1",
+    "hints": [
+      "Ramires and Didier Drogba scored for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their seventh FA Cup."
+    ]
+  },
+  {
+    "teams": "Everton vs Chelsea",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2009-05-30",
+    "correctScore": "2-1",
+    "hints": [
+      "Jermain Beckford scored the winning goal.",
+      "Man of the match: Tim Howard.",
+      "Everton won their first FA Cup since 1995."
+    ]
+  },
+  {
+    "teams": "Portsmouth vs Cardiff City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2008-05-17",
+    "correctScore": "1-0",
+    "hints": [
+      "Niko Kranjčar scored the only goal.",
+      "Man of the match: David James.",
+      "Portsmouth won their first FA Cup since 1939."
+    ]
+  },
+  {
+    "teams": "Blackburn Rovers vs Sheffield United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2004-05-22",
+    "correctScore": "3-1",
+    "hints": [
+      "Matt Jansen scored for Blackburn.",
+      "Man of the match: Brad Friedel.",
+      "Blackburn won their first FA Cup since 1928."
+    ]
+  },
+  {
+    "teams": "Charlton Athletic vs Sunderland",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1998-05-16",
+    "correctScore": "1-0",
+    "hints": [
+      "Clive Mendonca scored the only goal.",
+      "Man of the match: Sasa Ilic.",
+      "Charlton won their first FA Cup."
+    ]
+  },
+  {
+    "teams": "Southampton vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1976-05-01",
+    "correctScore": "1-0",
+    "hints": [
+      "Bobby Stokes scored the only goal.",
+      "Man of the match: Peter Shilton.",
+      "Southampton won their first FA Cup."
+    ]
+  },
+  {
+    "teams": "West Bromwich Albion vs Birmingham City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1975-05-10",
+    "correctScore": "2-1",
+    "hints": [
+      "John Wile and Bob Latchford scored for West Brom.",
+      "Man of the match: Gary Bailey.",
+      "West Brom won their fifth FA Cup."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Crystal Palace",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2016-05-21",
+    "correctScore": "2-1",
+    "hints": [
+      "Juan Mata and Chris Smalling scored for United.",
+      "Man of the match: Eric Bailly.",
+      "Manchester United won their 12th FA Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Manchester City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2013-05-25",
+    "correctScore": "2-1",
+    "hints": [
+      "Samir Nasri scored for Manchester City.",
+      "Man of the match: Juan Mata.",
+      "Chelsea won their seventh FA Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Chelsea",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2012-05-05",
+    "correctScore": "2-1",
+    "hints": [
+      "Ramires and Didier Drogba scored for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their seventh FA Cup."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2005-05-21",
+    "correctScore": "4-5",
+    "hints": [
+      "Thierry Henry scored twice for Arsenal.",
+      "Man of the match: Edwin van der Sar.",
+      "Manchester United won their 11th FA Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs West Ham United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1980-05-10",
+    "correctScore": "1-0",
+    "hints": [
+      "Alan Kennedy scored the only goal.",
+      "Man of the match: Ray Clemence.",
+      "Liverpool won their 11th FA Cup."
+    ]
+  },
+  {
+    "teams": "Nottingham Forest vs Luton Town",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1988-04-02",
+    "correctScore": "3-1",
+    "hints": [
+      "Brian Clough was the manager of Nottingham Forest.",
+      "Man of the match: Peter Shilton.",
+      "Nottingham Forest won their first League Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Birmingham City",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2001-02-25",
+    "correctScore": "5-4",
+    "hints": [
+      "Liverpool won 5-4 on penalties.",
+      "Man of the match: Jerzy Dudek.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Liverpool",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2003-02-02",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from John O'Shea and Ruud van Nistelrooy secured the win.",
+      "Man of the match: Roy Carroll.",
+      "Manchester United won their third League Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Arsenal",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2007-02-25",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from Didier Drogba and Alex secured the win for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their fourth League Cup."
+    ]
+  },
+  {
+    "teams": "Manchester City vs Liverpool",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2016-02-28",
+    "correctScore": "1-1",
+    "hints": [
+      "Manchester City won 3-1 on penalties.",
+      "Man of the match: Willy Caballero.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Sunderland vs Leeds United",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1973-02-24",
+    "correctScore": "1-0",
+    "hints": [
+      "Goals from Ian Porterfield secured the win for Sunderland.",
+      "Man of the match: Jim Montgomery.",
+      "Sunderland won their first League Cup."
+    ]
+  },
+  {
+    "teams": "West Bromwich Albion vs Birmingham City",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1975-02-22",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from John Wile and Bob Latchford secured the win for West Brom.",
+      "Man of the match: Gary Bailey.",
+      "West Brom won their fifth League Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Nottingham Forest",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1981-02-28",
+    "correctScore": "1-0",
+    "hints": [
+      "Goals from Alan Hansen secured the win for Liverpool.",
+      "Man of the match: Bruce Grobbelaar.",
+      "Liverpool won their third League Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2005-02-27",
+    "correctScore": "3-2",
+    "hints": [
+      "Goals from Eidur Gudjohnsen, Frank Lampard, and Didier Drogba secured the win for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their fourth League Cup."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Sheffield Wednesday",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1993-04-05",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from Ian Wright and David Platt secured the win for Arsenal.",
+      "Man of the match: David Seaman.",
+      "Arsenal won their first League Cup."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Crystal Palace",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2016-05-21",
+    "correctScore": "2-1",
+    "hints": [
+      "Juan Mata and Chris Smalling scored for United.",
+      "Man of the match: Eric Bailly.",
+      "Manchester United won their 12th FA Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Manchester City",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2013-05-25",
+    "correctScore": "2-1",
+    "hints": [
+      "Samir Nasri scored for Manchester City.",
+      "Man of the match: Juan Mata.",
+      "Chelsea won their seventh FA Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Chelsea",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2012-05-05",
+    "correctScore": "2-1",
+    "hints": [
+      "Ramires and Didier Drogba scored for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their seventh FA Cup."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "2005-05-21",
+    "correctScore": "4-5",
+    "hints": [
+      "Thierry Henry scored twice for Arsenal.",
+      "Man of the match: Edwin van der Sar.",
+      "Manchester United won their 11th FA Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs West Ham United",
+    "venue": "Wembley Stadium",
+    "competition": "FA Cup",
+    "date": "1980-05-10",
+    "correctScore": "1-0",
+    "hints": [
+      "Alan Kennedy scored the only goal.",
+      "Man of the match: Ray Clemence.",
+      "Liverpool won their 11th FA Cup."
+    ]
+  },
+  {
+    "teams": "Nottingham Forest vs Luton Town",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1988-04-02",
+    "correctScore": "3-1",
+    "hints": [
+      "Brian Clough was the manager of Nottingham Forest.",
+      "Man of the match: Peter Shilton.",
+      "Nottingham Forest won their first League Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Birmingham City",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2001-02-25",
+    "correctScore": "5-4",
+    "hints": [
+      "Liverpool won 5-4 on penalties.",
+      "Man of the match: Jerzy Dudek.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Manchester United vs Liverpool",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2003-02-02",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from John O'Shea and Ruud van Nistelrooy secured the win.",
+      "Man of the match: Roy Carroll.",
+      "Manchester United won their third League Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Arsenal",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2007-02-25",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from Didier Drogba and Alex secured the win for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their fourth League Cup."
+    ]
+  },
+  {
+    "teams": "Manchester City vs Liverpool",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2016-02-28",
+    "correctScore": "1-1",
+    "hints": [
+      "Manchester City won 3-1 on penalties.",
+      "Man of the match: Willy Caballero.",
+      "This final is remembered for its dramatic penalty shootout."
+    ]
+  },
+  {
+    "teams": "Sunderland vs Leeds United",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1973-02-24",
+    "correctScore": "1-0",
+    "hints": [
+      "Goals from Ian Porterfield secured the win for Sunderland.",
+      "Man of the match: Jim Montgomery.",
+      "Sunderland won their first League Cup."
+    ]
+  },
+  {
+    "teams": "West Bromwich Albion vs Birmingham City",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1975-02-22",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from John Wile and Bob Latchford secured the win for West Brom.",
+      "Man of the match: Gary Bailey.",
+      "West Brom won their fifth League Cup."
+    ]
+  },
+  {
+    "teams": "Liverpool vs Nottingham Forest",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1981-02-28",
+    "correctScore": "1-0",
+    "hints": [
+      "Goals from Alan Hansen secured the win for Liverpool.",
+      "Man of the match: Bruce Grobbelaar.",
+      "Liverpool won their third League Cup."
+    ]
+  },
+  {
+    "teams": "Chelsea vs Manchester United",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "2005-02-27",
+    "correctScore": "3-2",
+    "hints": [
+      "Goals from Eidur Gudjohnsen, Frank Lampard, and Didier Drogba secured the win for Chelsea.",
+      "Man of the match: Petr Čech.",
+      "Chelsea won their fourth League Cup."
+    ]
+  },
+  {
+    "teams": "Arsenal vs Sheffield Wednesday",
+    "venue": "Wembley Stadium",
+    "competition": "League Cup",
+    "date": "1993-04-05",
+    "correctScore": "2-1",
+    "hints": [
+      "Goals from Ian Wright and David Platt secured the win for Arsenal.",
+      "Man of the match: David Seaman.",
+      "Arsenal won their first League Cup."
+    ]
+  }
 ]
