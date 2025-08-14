@@ -208,6 +208,11 @@ button[disabled]{ opacity:.6; cursor: not-allowed; }
   padding: 12px;
   box-shadow: var(--shadow);
   min-height: 96px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;          /* top */
+  justify-items: center;       /* center horizontally */
+  row-gap: 8px;
 }
 .hint-btn{
   width: 100%;
@@ -317,6 +322,66 @@ button[disabled]{ opacity:.6; cursor: not-allowed; }
   cursor: not-allowed;
   box-shadow: none;
 }
+
+/* remove the previous golden-button styles and use this hover-swap hint button */
+/* Hint Unlock button (Uiverse-inspired, scoped) */
+.hint-unlock {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;         /* inline, not full-width */
+  margin: 0 auto;               /* allow centering if parent centers inline elements */
+  border-radius: 28px;
+  background-color: hsl(255deg 50% 40%);
+  border: solid 2px hsl(50deg 100% 50%); /* thinner border */
+  font-family: inherit;
+  padding: 0;                   /* inner blocks hold padding */
+}
+
+.hint-unlock .default-btn,
+.hint-unlock .hover-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;      /* center text+icon inside */
+  gap: 8px;                     /* tighter gap */
+  padding: 10px 14px;           /* smaller padding */
+  min-height: 36px;
+  border-radius: 28px;
+  font-size: 14px;              /* smaller text */
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: transform .3s ease;
+}
+
+.hint-unlock .default-btn {
+  background-color: hsl(255deg 50% 40%);
+  color: #fff;
+}
+
+.hint-unlock .hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(255deg 50% 49%);
+  transform: translateY(100%);
+  color: hsl(50deg 100% 50%);
+}
+
+.hint-unlock .icon {
+  font-size: 16px;              /* slightly smaller icon */
+  line-height: 1;
+}
+
+/* hover/focus swap */
+.hint-unlock:hover .default-btn,
+.hint-unlock:focus-visible .default-btn { transform: translateY(-100%); }
+.hint-unlock:hover .hover-btn,
+.hint-unlock:focus-visible .hover-btn { transform: translateY(0%); }
+
+/* disabled state */
+.hint-unlock[disabled] { opacity: .65; cursor: not-allowed; }
+.hint-unlock[disabled] .default-btn { transform: none !important; }
+.hint-unlock[disabled] .hover-btn { transform: translateY(100%) !important; }
 
 /* Responsive */
 @media (max-width: 900px){
