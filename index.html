@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Football Genius</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="foot_gen.png" alt="Football Genius logo"/>
+      <div class="brand-text">
+        <h1>Football Genius</h1>
+        <small>Scoreline Hero - Guess the score</small>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="hud-item">
+        <div class="label">Question</div>
+        <div class="value"><span id="qIndex">1</span>/10</div>
+      </div>
+      <div class="hud-item">
+        <div class="label">Round Score</div>
+        <div class="value"><span id="score">0</span> pts</div>
+      </div>
+      <div class="hud-item">
+        <div class="label">Potential</div>
+        <div class="value"><span id="potential">10</span> pts</div>
+      </div>
+      <div class="hud-item">
+        <div class="label">Guesses Left</div>
+        <div class="value"><span id="guessesLeft">2</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="arena">
+    <div class="competition" id="competition">UEFA Champions League — Final</div>
+
+    <section class="matchup">
+      <article class="team-card left">
+        <div class="team-bottom">
+          <img class="team-logo" id="homeLogo" alt="Home logo" />
+          <div class="team-info">
+            <div class="team-name" id="homeName">Home</div>
+            <div class="scorebox">
+              <button class="score-btn minus" data-side="home" aria-label="Decrease home score">▾</button>
+              <input id="homeScore" type="number" min="0" max="15" value="0" inputmode="numeric" />
+              <button class="score-btn plus" data-side="home" aria-label="Increase home score">▴</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="vs">
+        <div class="hex">VS</div>
+      </div>
+
+      <article class="team-card right">
+        <div class="team-bottom">
+          <img class="team-logo" id="awayLogo" alt="Away logo" />
+          <div class="team-info">
+            <div class="team-name" id="awayName">Away</div>
+            <div class="scorebox">
+              <button class="score-btn minus" data-side="away" aria-label="Decrease away score">▾</button>
+              <input id="awayScore" type="number" min="0" max="15" value="0" inputmode="numeric" />
+              <button class="score-btn plus" data-side="away" aria-label="Increase away score">▴</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="meta">
+      <div class="date" id="date">8 Nov 2022</div>
+      <div class="venue" id="venue">Stade de France, Saint-Denis</div>
+    </div>
+
+    <section class="actions">
+      <button id="submitGuess" class="primary">Submit Guess</button>
+      <button id="nextQuestion" class="secondary" hidden>Next Question</button>
+    </section>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+
+    <section class="hints">
+      <div class="hint-card">
+        <button class="hint-btn" id="hint1Btn" data-index="0">🎁 Unlock Hint 1</button>
+        <p class="hint-text" id="hint1Text"></p>
+      </div>
+      <div class="hint-card">
+        <button class="hint-btn" id="hint2Btn" data-index="1">🎁 Unlock Hint 2</button>
+        <p class="hint-text" id="hint2Text"></p>
+      </div>
+      <div class="hint-card">
+        <button class="hint-btn" id="hint3Btn" data-index="2">🎁 Unlock Hint 3</button>
+        <p class="hint-text" id="hint3Text"></p>
+      </div>
+    </section>
+
+    <section class="progress">
+      <div class="bar">
+        <div id="progressFill" class="fill" style="width: 0%"></div>
+      </div>
+    </section>
+
+    <details class="howto">
+      <summary>How to play</summary>
+      <ul>
+        - 10 questions per round. Each question is a historical match from 2010 to present, picked in random order.
+        - You have 2 guesses per question.
+        - Correct with no hints: 10 points. With 1 hint: 7 points. With 2 hints: 5 points. With 3 hints: 3 points.
+        - Scoreline is the final score after extra time if played; penalty shoot-outs are not counted.
+      </ul>
+    </details>
+  </main>
+
+  <div id="summaryModal" class="modal" hidden>
+    <div class="modal-card">
+      <h2>Round Complete</h2>
+      <p class="big">You scored <strong id="finalScore">0</strong> points!</p>
+      <div id="roundBreakdown" class="breakdown"></div>
+      <div class="modal-actions">
+        <button id="playAgain" class="primary">Play Another Round</button>
+        <button id="closeModal" class="secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © <span id="year"></span> Football Genius
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
