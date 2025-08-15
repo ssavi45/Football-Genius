@@ -48,7 +48,8 @@ body{
   display: inline-block;
 }
 .brand-text h1{
-  margin:0; font-family: "Bebas Neue", Poppins, sans-serif; letter-spacing: 1px;
+  margin:0; font-family: "Russo One", Poppins, sans-serif; /* changed to a stylish display font */
+  letter-spacing: 1px;
   font-size: 28px; line-height: 1;
 }
 .brand-text small{ color:var(--muted); }
