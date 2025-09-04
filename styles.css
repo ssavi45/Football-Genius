@@ -384,20 +384,224 @@ button[disabled]{ opacity:.6; cursor: not-allowed; }
 .hint-unlock[disabled] .default-btn { transform: none !important; }
 .hint-unlock[disabled] .hover-btn { transform: translateY(100%) !important; }
 
-/* Responsive */
-@media (max-width: 900px){
-  .matchup{ grid-template-columns: 1fr; }
-  .vs{ order: -1; margin: 8px auto; }
-  .team-card{ min-height: 140px; }
-  .hints{ grid-template-columns: 1fr; }
+/* Option pill card */
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 24px;                  /* was 20px */
+  width: clamp(260px, 24vw, 360px);  /* consistent larger width per option */
+  margin: 10px 10px;
+  flex: 0 0 auto;
+  padding: 18px 26px;         /* was 16px 22px */
+  background: #66c2cc;
+  color: #111;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.14);
+  font: 800 22px/1.2 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; /* was 20px */
+  text-align: left;
+  transition: transform .12s ease, background-color .2s ease, box-shadow .2s ease;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow, background-color;
 }
 
-@media (max-width: 600px){
-  .team-bottom{
-    grid-template-columns: var(--logo-size-sm) 1fr;
+/* subtle sheen */
+.option-btn::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 40%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0) 60%);
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+}
+.option-btn:hover::after { transform: translateX(120%); }
+
+/* hover/press color shift */
+.option-btn:hover {
+  background: #7fd7e1;        /* slightly lighter */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+.option-btn:active {
+  background: #6fcbd6;
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+}
+
+/* Bigger round frame */
+.option-avatar {
+  width: 88px;                /* was 72px */
+  height: 88px;               /* was 72px */
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  flex: 0 0 88px;             /* was 72px */
+  background: #e8e8e8;
+  border: 4px solid rgba(255,255,255,0.20); /* slightly thicker ring */
+  transition: transform .18s ease;
+}
+.option-btn:hover .option-avatar { transform: scale(1.06); }
+.option-btn:active .option-avatar { transform: scale(1.0); }
+
+/* Ensure long names center and wrap nicely */
+.option-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .option-btn {
+    width: clamp(240px, 44vw, 320px);
+    gap: 20px;
+    padding: 16px 22px;
+    font-size: 20px;
   }
-  .team-logo{
-    width: var(--logo-size-sm);
-    height: var(--logo-size-sm);
+  .option-avatar { width: 80px; height: 80px; flex-basis: 80px; border-width: 3px; }
+}
+
+@media (max-width: 480px){
+  .option-btn {
+    width: 100%;
+    max-width: 420px;
+    gap: 16px;
+    padding: 14px 18px;
+    font-size: 18px;
   }
+  .option-avatar { width: 68px; height: 68px; flex-basis: 68px; border-width: 3px; }
+}
+
+/* ===== Who Said It: actions row alignment ===== */
+.actions.actions-row{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top: 6px;
+}
+.actions.actions-row .button,
+.actions.actions-row .hint-unlock{
+  width:auto;
+  min-width:140px;
+  white-space:nowrap;
+}
+/* Hide hint paragraph when empty (prevents ghost box) */
+.hint-text:empty{ display:none; }
+.hint-text{ text-align:center; margin:8px 0 0; }
+/* ============================================= */
+
+/* Option pill card */
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 24px;                  /* was 20px */
+  width: clamp(260px, 24vw, 360px);  /* consistent larger width per option */
+  margin: 10px 10px;
+  flex: 0 0 auto;
+  padding: 18px 26px;         /* was 16px 22px */
+  background: #66c2cc;
+  color: #111;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.14);
+  font: 800 22px/1.2 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; /* was 20px */
+  text-align: left;
+  transition: transform .12s ease, background-color .2s ease, box-shadow .2s ease;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow, background-color;
+}
+
+/* subtle sheen */
+.option-btn::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 40%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0) 60%);
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+}
+.option-btn:hover::after { transform: translateX(120%); }
+
+/* hover/press color shift */
+.option-btn:hover {
+  background: #7fd7e1;        /* slightly lighter */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+.option-btn:active {
+  background: #6fcbd6;
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.16);
+}
+
+/* Bigger round frame */
+.option-avatar {
+  width: 88px;                /* was 72px */
+  height: 88px;               /* was 72px */
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  flex: 0 0 88px;             /* was 72px */
+  background: #e8e8e8;
+  border: 4px solid rgba(255,255,255,0.20); /* slightly thicker ring */
+  transition: transform .18s ease;
+}
+.option-btn:hover .option-avatar { transform: scale(1.06); }
+.option-btn:active .option-avatar { transform: scale(1.0); }
+
+/* Ensure long names center and wrap nicely */
+.option-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .option-btn {
+    width: clamp(240px, 44vw, 320px);
+    gap: 20px;
+    padding: 16px 22px;
+    font-size: 20px;
+  }
+  .option-avatar { width: 80px; height: 80px; flex-basis: 80px; border-width: 3px; }
+}
+
+@media (max-width: 480px){
+  .option-btn {
+    width: 100%;
+    max-width: 420px;
+    gap: 16px;
+    padding: 14px 18px;
+    font-size: 18px;
+  }
+  .option-avatar { width: 68px; height: 68px; flex-basis: 68px; border-width: 3px; }
+}
+
+/* reduce motion preferences */
+@media (prefers-reduced-motion: reduce){
+  .option-btn, .option-btn::after, .option-avatar { transition: none !important; }
+  .option-btn:hover, .option-btn:active { transform: none !important; }
 }

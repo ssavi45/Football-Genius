@@ -409,6 +409,53 @@ const MATCHES = [
       "Fun fact: La Décima — Madrid's 10th European Cup.",
     ],
   },
+  // --- Add new matches below ---
+  {
+    id: "wc-2006-final-ita-fra",
+    competition: "FIFA World Cup",
+    stage: "Final",
+    date: "2006-07-09",
+    venue: "Olympiastadion, Berlin",
+    homeTeam: "Italy",
+    awayTeam: "France",
+    score: { home: 1, away: 1 }, // Italy won on pens
+    hints: [
+      "Zidane scored a Panenka penalty.",
+      "Zidane was sent off for headbutting Materazzi.",
+      "Italy won 5–3 on penalties.",
+    ],
+  },
+  {
+    id: "ucl-1999-final-mun-bay",
+    competition: "UEFA Champions League",
+    stage: "Final",
+    date: "1999-05-26",
+    venue: "Camp Nou, Barcelona",
+    homeTeam: "Manchester United",
+    awayTeam: "Bayern Munich",
+    score: { home: 2, away: 1 },
+    hints: [
+      "United scored twice in injury time.",
+      "Solskjær scored the winner.",
+      "United completed the treble.",
+    ],
+  },
+  {
+    id: "epl-2013-crystal-liv",
+    competition: "Premier League",
+    stage: "Matchweek 37",
+    date: "2014-05-05",
+    venue: "Selhurst Park, London",
+    homeTeam: "Crystal Palace",
+    awayTeam: "Liverpool",
+    score: { home: 3, away: 3 },
+    hints: [
+      "Liverpool led 3–0 before Palace's comeback.",
+      "Dwight Gayle scored twice.",
+      "Known as 'Crystanbul'.",
+    ],
+  },
+  // ...add 97 more matches in this format...
 ];
 
 // Local logos (from /img). Update paths if you rename files.
@@ -436,6 +483,30 @@ const TEAM_LOGOS = {
   "Inter": "img/inter.png",
   "Argentina": "img/argentina.png",
   "Saudi Arabia": "img/saudi.png",
+  "Crystal Palace": "img/crystalpalace.png",
+  // Add new teams as needed, e.g.:
+  "AC Milan": "img/acmilan.png",
+  "Ajax": "img/ajax.png",
+  "AS Roma": "img/asroma.png",
+  "Aston Villa": "img/astonvilla.png",
+  "Atalanta": "img/atalanta.png",
+  "Benfica": "img/benfica.png",
+  "Celtic": "img/celtic.png",
+  "Feyenoord": "img/feyenoord.png",
+  "Fiorentina": "img/fiorentina.png",
+  "Galatasaray": "img/galatasaray.png",
+  "Lazio": "img/lazio.png",
+  "Leverkusen": "img/leverkusen.png",
+  "Lille": "img/lille.png",
+  "Monaco": "img/monaco.png",
+  "Napoli": "img/napoli.png",
+  "Nice": "img/nice.png",
+  "Porto": "img/porto.png",
+  "Sevilla": "img/sevilla.png",
+  "Sporting": "img/sporting.png",
+  "Spurs": "img/spurs.png",
+  "West Ham": "img/whu.png",
+  // ...add more as you add matches...
 };
 const DEFAULT_LOGO = "img/ucl.png"; // use any local placeholder you like
 

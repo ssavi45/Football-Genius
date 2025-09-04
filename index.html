@@ -6,7 +6,6 @@
     <title>Football Genius</title>
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Add stylish display font for the H1 -->
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   </head>
 <body>
@@ -139,12 +138,17 @@
     <details class="howto">
       <summary>How to play</summary>
       <ul>
-        - 10 questions per round. Each question is a historical match from 2010 to present, picked in random order.
-        - You have 2 guesses per question.
-        - Correct with no hints: 10 points. With 1 hint: 7 points. With 2 hints: 5 points. With 3 hints: 3 points.
-        - Scoreline is the final score after extra time if played; penalty shoot-outs are not counted.
+        - 10 matches to guess per round. Scoreline is the final score after extra time if played; penalty shoot-outs are not counted. <br>
+        - You have 2 guesses per question. <br>
+        - Correct with no hints: 10 points, with 1 hint: 7 points, with 2 hints: 5 points, with 3 hints: 3 points.
       </ul>
     </details>
+
+    <section class="actions">
+      <a href="unscramble.html" class="button">Unscramble</a>
+      <a href="who.html" class="button">Who said it?</a>
+    </section>
+
   </main>
 
   <div id="summaryModal" class="modal" hidden>
@@ -160,7 +164,7 @@
   </div>
 
   <footer class="footer">
-    © <span id="year"></span> Football Genius (By SSAVI)
+    © <span id="year"></span> Football Genius (SSAVI)
   </footer>
 
   <script src="app.js"></script>
