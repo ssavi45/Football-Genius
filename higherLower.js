@@ -40,33 +40,33 @@
     value: { key: 'marketValue', label: 'Market value', unit: 'USD millions' }
   };
 
-  // Club logos available in your img folder
+  // Club logos available in your img/teams folder
   const TEAM_LOGOS = {
-    'barcelona': 'img/fcb.png',
-    'fc barcelona': 'img/fcb.png',
-    'psg': 'img/psg.png',
-    'real madrid': 'img/rmcf.png',
-    'juventus': 'img/juve.png',
-    'monaco': 'img/monaco.png',
-    'borussia dortmund': 'img/bvb.png',
-    'manchester city': 'img/mancity.png',
-    'bayern munich': 'img/bayern.png',
-    'arsenal': 'img/afc.png',
-    'chelsea': 'img/cfc.png',
-    'inter': 'img/inter.png',
-    'tottenham': 'img/spurs.png',
-    'liverpool': 'img/lfc.png',
-    'manchester united': 'img/manu.png',
-    'everton': 'img/efc.png',
-    'west ham': 'img/whu.png',
-    'bayer leverkusen': 'img/leverkusen.png',
-    'newcastle united': 'img/nufc.png',
-    'napoli': 'img/napoli.png',
-    'porto': 'img/porto.png',
-    'sporting': 'img/sporting.png',
-    'ajax': 'img/ajax.png',
-    'celtic': 'img/celtic.png',
-    'atletico madrid': 'img/atletico.png'
+    'barcelona': 'img/teams/fcb.png',
+    'fc barcelona': 'img/teams/fcb.png',
+    'psg': 'img/teams/psg.png',
+    'real madrid': 'img/teams/rmcf.png',
+    'juventus': 'img/teams/juve.png',
+    'monaco': 'img/teams/monaco.png',
+    'borussia dortmund': 'img/teams/bvb.png',
+    'manchester city': 'img/teams/mancity.png',
+    'bayern munich': 'img/teams/bayern.png',
+    'arsenal': 'img/teams/afc.png',
+    'chelsea': 'img/teams/cfc.png',
+    'inter': 'img/teams/inter.png',
+    'tottenham': 'img/teams/spurs.png',
+    'liverpool': 'img/teams/lfc.png',
+    'manchester united': 'img/teams/manu.png',
+    'everton': 'img/teams/efc.png',
+    'west ham': 'img/teams/whu.png',
+    'bayer leverkusen': 'img/teams/leverkusen.png',
+    'newcastle united': 'img/teams/nufc.png',
+    'napoli': 'img/teams/napoli.png',
+    'porto': 'img/teams/porto.png',
+    'sporting': 'img/teams/sporting.png',
+    'ajax': 'img/teams/ajax.png',
+    'celtic': 'img/teams/celtic.png',
+    'atletico madrid': 'img/teams/atletico.png'
   };
 
   const state = {
