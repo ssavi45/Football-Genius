@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Higher or Lower — Football Genius</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <style>
+    /* Mid interface styling for Higher/Lower */
+    .hl-container { max-width: 1100px; margin: 0 auto; }
+    .stat-picker { display:flex; gap:12px; align-items:center; justify-content:center; margin:18px 0 10px; flex-wrap:wrap; }
+    .stat-picker select { padding:.55rem .8rem; border-radius:10px; border:none; background:#0f1c45; color:#fff; font-weight:600; }
+    .stage { display:flex; align-items:stretch; justify-content:center; gap:36px; margin-top:10px; position:relative; }
+    .hl-card { background:linear-gradient(180deg,#0f1c45,#0b1540); border-radius:18px; padding:18px; width:420px; display:flex; flex-direction:column; align-items:center; box-shadow:0 12px 30px rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.06); cursor:pointer; transition:transform .12s ease; }
+    .hl-card:hover { transform:translateY(-2px); }
+    .hl-card[data-disabled="true"] { pointer-events:none; opacity:.95; }
+    .hl-card .name { font-family:"Bebas Neue", sans-serif; font-size:2rem; letter-spacing:.5px; }
+    .hl-card .face { width:260px; height:260px; border-radius:50%; object-fit:cover; object-position:50% 25%; border:6px solid rgba(255,255,255,.1); background:#091336; }
+    .stat-label { opacity:.8; font-size:.9rem; margin-top:10px; }
+    .stat-value { font-family:"Russo One", sans-serif; font-size:2.2rem; margin-top:6px; }
+
+    .meta-small { text-align:center; margin-top:12px; opacity:.8; }
+    .flash-win { animation: flashwin .6s ease; }
+    .flash-lose { animation: flashlose .6s ease; }
+
+    /* VS center badge (no side lines) */
+    .vs { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; pointer-events:none; }
+    .vs .hex { width:82px; height:82px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#29b6f6,#ff3d71); color:#fff; font-weight:900; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,.35); font-family:"Russo One", sans-serif; }
+
+    /* Transfer line */
+    .transfer-line { display:none; align-items:center; gap:10px; margin-top:10px; }
+    .transfer-line .club-pill { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.06); padding:6px 10px; border-radius:999px; }
+    .transfer-line img.logo { width:28px; height:28px; border-radius:50%; background:#061133; object-fit:contain; padding:4px; }
+    .transfer-line .arrow { font-size:20px; opacity:.85; }
+
+    @keyframes flashwin { from{ box-shadow:0 0 0 rgba(0,255,127,.0);} to{ box-shadow:0 0 35px rgba(0,255,127,.35);} }
+    @keyframes flashlose { from{ box-shadow:0 0 0 rgba(255,61,113,.0);} to{ box-shadow:0 0 35px rgba(255,61,113,.35);} }
+
+    @media (max-width: 980px){
+      .hl-card{ width:100%; }
+      .stage{ flex-direction:column; gap:22px; }
+      .vs { position:static; transform:none; margin:6px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="logo" src="foot_gen.png" alt="Football Genius logo"/>
+      <div class="brand-text">
+        <h1>Football Genius</h1>
+        <small>Higher or Lower</small>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="hud-item">
+        <div class="label">Mode</div>
+        <div class="value"><span id="modeLabel">Career goals</span></div>
+      </div>
+      <div class="hud-item">
+        <div class="label">Score</div>
+        <div class="value"><span id="score">0</span></div>
+      </div>
+      <div class="hud-item">
+        <div class="label">Best</div>
+        <div class="value"><span id="best">0</span></div>
+      </div>
+      <div class="hud-item">
+        <div class="label">Streak</div>
+        <div class="value"><span id="streak">0</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="arena">
+    <div class="competition" id="competition">Tap the player with the higher stat</div>
+
+    <div class="hl-container">
+      <div class="stat-picker">
+        <label for="statSelect">Choose stat:</label>
+        <select id="statSelect" aria-label="Choose stat">
+          <option value="goals">Career goals</option>
+          <option value="trophies">Career trophies</option>
+          <option value="transfer">Transfer fee</option>
+          <option value="value">Market value</option>
+        </select>
+        <button id="newRound" class="button" hidden>New Round</button>
+      </div>
+
+      <section class="stage">
+        <article class="hl-card" id="leftCard" aria-live="polite">
+          <img id="leftImg" class="face" alt="">
+          <div class="name" id="leftName">Player A</div>
+          <div class="stat-label" id="leftLabel">Career goals</div>
+          <div class="stat-value" id="leftValue">?</div>
+          <div class="transfer-line" id="leftXfer"></div>
+        </article>
+
+        <div class="vs"><div class="hex">VS</div></div>
+
+        <article class="hl-card" id="rightCard">
+          <img id="rightImg" class="face" alt="">
+          <div class="name" id="rightName">Player B</div>
+          <div class="stat-label" id="rightLabel">Who has higher?</div>
+          <div class="stat-value" id="rightValue">?</div>
+          <div class="transfer-line" id="rightXfer"></div>
+        </article>
+      </section>
+
+      <p id="feedback" class="feedback meta-small"></p>
+    </div>
+
+    <section class="actions">
+      <a href="index.html" class="button">Back to Matches</a>
+      <a href="unscramble.html" class="button">Unscramble</a>
+      <a href="who.html" class="button">Who said it?</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Football Genius (SSAVI)
+  </footer>
+
+  <script src="higherLower.js"></script>
+</body>
+</html>
