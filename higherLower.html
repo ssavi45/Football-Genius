@@ -35,8 +35,63 @@
     .transfer-line img.logo { width:28px; height:28px; border-radius:50%; background:#061133; object-fit:contain; padding:4px; }
     .transfer-line .arrow { font-size:20px; opacity:.85; }
 
+    /* Round-over blur + overlay */
+    .arena.round-over .stage {
+      filter: blur(6px) saturate(.6);
+      transform: scale(.985);
+      transition: filter .25s ease, transform .25s ease;
+      pointer-events: none;
+    }
+    .round-overlay[hidden] { display: none; }
+    .round-overlay {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      z-index: 50;
+      background: linear-gradient(180deg, rgba(3,9,35,0.0), rgba(3,9,35,0.35));
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      animation: overlayFade .22s ease-out forwards;
+    }
+    .round-overlay .panel {
+      background: linear-gradient(180deg,#0f1c45,#0b1540);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 18px 22px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      transform: translateY(6px) scale(.96);
+      opacity: 0;
+      animation: panelPop .26s .06s cubic-bezier(.2,.8,.2,1) forwards;
+      text-align: center;
+    }
+    .round-overlay .panel .buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .round-overlay .panel .button.primary {
+      background:#0bb3ff;
+      color:#001336;
+      font-weight:800;
+      border:none;
+      padding:.7rem 1.1rem;
+      border-radius:12px;
+      cursor:pointer;
+    }
+    .round-overlay .panel .button.secondary {
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      padding:.6rem .95rem;
+      border-radius:10px;
+      cursor:pointer;
+    }
     @keyframes flashwin { from{ box-shadow:0 0 0 rgba(0,255,127,.0);} to{ box-shadow:0 0 35px rgba(0,255,127,.35);} }
     @keyframes flashlose { from{ box-shadow:0 0 0 rgba(255,61,113,.0);} to{ box-shadow:0 0 35px rgba(255,61,113,.35);} }
+    @keyframes overlayFade { from{opacity:0} to{opacity:1} }
+    @keyframes panelPop { to{opacity:1; transform: translateY(0) scale(1)} }
 
     @media (max-width: 980px){
       .hl-card{ width:100%; }
@@ -87,7 +142,6 @@
           <option value="transfer">Transfer fee</option>
           <option value="value">Market value</option>
         </select>
-        <button id="newRound" class="button" hidden>New Round</button>
       </div>
 
       <section class="stage">
@@ -104,7 +158,7 @@
         <article class="hl-card" id="rightCard">
           <img id="rightImg" class="face" alt="">
           <div class="name" id="rightName">Player B</div>
-          <div class="stat-label" id="rightLabel">Who has higher?</div>
+          <div class="stat-label" id="rightLabel">Career goals</div>
           <div class="stat-value" id="rightValue">?</div>
           <div class="transfer-line" id="rightXfer"></div>
         </article>
@@ -113,8 +167,20 @@
       <p id="feedback" class="feedback meta-small"></p>
     </div>
 
+    <!-- Round over overlay -->
+    <div id="roundOverlay" class="round-overlay" hidden>
+      <div class="panel">
+        <h3>Round over</h3>
+        <p class="meta-small">Score: <strong id="overlayScore">0</strong></p>
+        <div class="buttons">
+          <button id="overlayNewRound" class="button primary">New Round</button>
+          <button id="overlayChangeStat" class="button secondary">Change stat</button>
+        </div>
+      </div>
+    </div>
+
     <section class="actions">
-      <a href="index.html" class="button">Back to Matches</a>
+      <a href="index.html" class="button">Scoreline Hero</a>
       <a href="unscramble.html" class="button">Unscramble</a>
       <a href="who.html" class="button">Who said it?</a>
     </section>

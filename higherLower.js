@@ -7,7 +7,6 @@
     feedback: document.getElementById('feedback'),
     year: document.getElementById('year'),
     statSelect: document.getElementById('statSelect'),
-    newRound: document.getElementById('newRound'),
     left: {
       card: document.getElementById('leftCard'),
       img: document.getElementById('leftImg'),
@@ -23,6 +22,13 @@
       label: document.getElementById('rightLabel'),
       value: document.getElementById('rightValue'),
       xfer: document.getElementById('rightXfer')
+    },
+    arena: document.querySelector('main.arena'),
+    overlay: {
+      el: document.getElementById('roundOverlay'),
+      score: document.getElementById('overlayScore'),
+      newRound: document.getElementById('overlayNewRound'),
+      changeStat: document.getElementById('overlayChangeStat')
     }
   };
   if (els.year) els.year.textContent = new Date().getFullYear();
@@ -151,7 +157,7 @@
 
     els.modeLabel.textContent = meta.label;
 
-    // Ensure consistent face framing for every load
+    // Face framing for all players
     [els.left.img, els.right.img].forEach(img => {
       img.style.objectFit = 'cover';
       img.style.objectPosition = '50% 25%';
@@ -162,7 +168,7 @@
     els.left.img.src = state.left.image;
     els.left.img.alt = state.left.name;
     els.left.name.textContent = state.left.name;
-    els.left.label.textContent = meta.label;
+    els.left.label.textContent = meta.label;  // same label on both
     els.left.value.textContent = state.revealed.has(revealKey(state.left))
       ? formatValue(cat, getStatRaw(state.left))
       : '?';
@@ -171,7 +177,7 @@
     els.right.img.src = state.right.image;
     els.right.img.alt = state.right.name;
     els.right.name.textContent = state.right.name;
-    els.right.label.textContent = 'Who has higher?';
+    els.right.label.textContent = meta.label; // same label on both
     els.right.value.textContent = state.revealed.has(revealKey(state.right))
       ? formatValue(cat, getStatRaw(state.right))
       : '?';
@@ -193,6 +199,18 @@
     els.streak.textContent = state.streak;
     els.best.textContent = getBest();
     els.feedback.textContent = '';
+  }
+
+  function showRoundOver() {
+    els.overlay.score.textContent = state.score;
+    els.overlay.el.hidden = false;
+    els.arena.classList.add('round-over');
+    setPickable(false);
+  }
+
+  function hideRoundOver() {
+    els.overlay.el.hidden = true;
+    els.arena.classList.remove('round-over');
   }
 
   function computeKeepSide(pickedSide) {
@@ -227,25 +245,19 @@
 
     const replaceSide = keepSide === 'left' ? 'right' : 'left';
 
-    // Exclude every player whose stat has been revealed this round,
-    // and also exclude the kept player's id.
+    // Exclude revealed and the kept player's id
     const excluded = revealedIds();
     excluded.add(state[keepSide].id);
 
-    // Build the candidate list strictly from unrevealed players
     const candidates = state.pool.filter(p => !excluded.has(p.id));
 
     if (candidates.length === 0) {
-      // No fresh opponents left — end of round
-      els.feedback.textContent = 'Congratulations! You have completed the game. Start a new round or choose another stat.';
-      els.newRound.hidden = false;
-      setPickable(false);
+      els.feedback.textContent = 'No more new players left in this mode.';
+      showRoundOver();
       return;
     }
 
-    // Pick a new, unrevealed opponent
     state[replaceSide] = candidates[Math.floor(Math.random() * candidates.length)];
-
     renderCards();
     setPickable(true);
   }
@@ -255,7 +267,7 @@
     state.pool = buildPoolForCategory(cat);
     state.revealed = new Set();
     state.keep = { id: null, count: 0 };
-    els.newRound.hidden = true;
+    hideRoundOver();
 
     if (state.pool.length < 2) {
       els.feedback.textContent = 'Not enough data for this stat. Please choose another.';
@@ -284,13 +296,11 @@
     const leftVal = getStatRaw(state.left, cat);
     const rightVal = getStatRaw(state.right, cat);
 
-    // persist reveal
     state.revealed.add(revealKey(state.left));
     state.revealed.add(revealKey(state.right));
     els.left.value.textContent  = formatValue(cat, leftVal);
     els.right.value.textContent = formatValue(cat, rightVal);
 
-    // visual feedback
     const pickedCard = side === 'left' ? els.left.card : els.right.card;
     const otherCard  = side === 'left' ? els.right.card : els.left.card;
 
@@ -316,8 +326,8 @@
       pickedCard.classList.add('flash-lose');
       otherCard.classList.add('flash-win');
       els.feedback.textContent = `Wrong! Your run ended at ${state.score}.`;
-      // stop; allow starting a new round or changing stat
-      els.newRound.hidden = false;
+      // Blur and show overlay button with a slick animation
+      setTimeout(showRoundOver, 250);
     }
 
     els.score.textContent = state.score;
@@ -339,7 +349,11 @@
   function wireEvents() {
     els.left.card.addEventListener('click', () => onPick('left'));
     els.right.card.addEventListener('click', () => onPick('right'));
-    els.newRound.addEventListener('click', () => startRound(state.category));
+    els.overlay.newRound.addEventListener('click', () => startRound(state.category));
+    els.overlay.changeStat.addEventListener('click', () => {
+      hideRoundOver();
+      els.statSelect?.focus();
+    });
     els.statSelect.addEventListener('change', (e) => startRound(e.target.value));
   }
 
