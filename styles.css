@@ -21,10 +21,8 @@ body{
   margin:0;
   font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(1200px 600px at 80% -20%, rgba(70,110,255,0.25), transparent 60%),
-    radial-gradient(900px 500px at 0% 100%, rgba(0,180,255,0.12), transparent 60%),
-    linear-gradient(180deg, var(--bg-2), var(--bg));
+  /* Single shade across the entire page */
+  background: var(--bg);
   min-height:100%;
 }
 
@@ -35,6 +33,8 @@ body{
   padding: 14px 20px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(6px);
+  /* ensure same shade as body */
+  background: var(--bg);
 }
 .topbar { display:flex; align-items:center; gap:16px; }
 .topbar .brand { flex:1 1 0; display:flex; align-items:center; gap:12px; }
@@ -246,7 +246,48 @@ button[disabled]{ opacity:.6; cursor: not-allowed; }
   text-align:center; padding: 22px 12px; color: var(--muted);
   border-top: 1px solid rgba(255,255,255,0.08);
   margin-top: 30px;
+  /* match body to avoid any banding */
+  background: var(--bg);
+  position: relative;
+  isolation: isolate;
 }
+
+/* Socials under footer */
+.footer .copy { margin-bottom: 10px; color: var(--muted); }
+.footer .socials{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+.footer .social-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.footer .social-btn svg{ display:block; }
+.footer .social-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.24);
+}
+
+/* Optional subtle brand hints on hover */
+.footer .social-btn.fb:hover{ box-shadow: 0 0 0 2px rgba(24,119,242,.25) inset; }
+.footer .social-btn.x:hover{ box-shadow: 0 0 0 2px rgba(255,255,255,.2) inset; }
+.footer .social-btn.ig:hover{ box-shadow: 0 0 0 2px rgba(228,64,95,.25) inset; }
+.footer .social-btn.dc:hover{ box-shadow: 0 0 0 2px rgba(88,101,242,.25) inset; }
 
 /* Modal */
 .modal{
