@@ -323,6 +323,9 @@ function endRound(){
   els.roundBreakdown.innerHTML = "";
   els.roundBreakdown.appendChild(frag);
   els.modal.hidden = false;
+
+  // Save score to Supabase
+  if (window.auth?.saveScore) window.auth.saveScore('whosaidit', state.score);
 }
 
 // events

@@ -759,6 +759,9 @@ function endRound() {
   els.roundBreakdown.appendChild(frag);
 
   els.modal.hidden = false;
+
+  // Save score to Supabase
+  if (window.auth?.saveScore) window.auth.saveScore('scoreline', state.score);
 }
 
 function closeModal() {

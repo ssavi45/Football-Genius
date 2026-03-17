@@ -206,6 +206,9 @@
     els.overlay.el.hidden = false;
     els.arena.classList.add('round-over');
     setPickable(false);
+
+    // Save score to Supabase
+    if (window.auth?.saveScore) window.auth.saveScore('higherlower', state.score);
   }
 
   function hideRoundOver() {

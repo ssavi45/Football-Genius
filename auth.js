@@ -372,12 +372,281 @@ async function handleGoogleAuth() {
   }
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   DASHBOARD PANEL
+   ══════════════════════════════════════════════════════════════════ */
+
+function injectDashboard() {
+  if ($('#dashOverlay')) return;
+
+  const html = `
+  <div id="dashOverlay" class="dash-overlay"></div>
+  <aside id="dashPanel" class="dash-panel" role="dialog" aria-label="Dashboard">
+    <div class="dash-header">
+      <h2>My Dashboard</h2>
+      <button class="dash-close" id="dashClose" aria-label="Close">✕</button>
+    </div>
+    <div class="dash-body">
+      <!-- Profile -->
+      <div class="dash-profile" id="dashProfile">
+        <div class="dash-avatar-initials" id="dashAvatar">?</div>
+        <div class="dash-profile-info">
+          <div class="dash-profile-name" id="dashName">—</div>
+          <div class="dash-profile-email" id="dashEmail">—</div>
+          <div class="dash-profile-since" id="dashSince"></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="dash-section">Stats Overview</div>
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <div class="dash-stat-label">Games Played</div>
+          <div class="dash-stat-value accent" id="dashGames">0</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-label">Total Points</div>
+          <div class="dash-stat-value" id="dashPoints">0</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-label">Best Score</div>
+          <div class="dash-stat-value" id="dashBest">0</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-label">Avg Score</div>
+          <div class="dash-stat-value" id="dashAvg">0</div>
+        </div>
+      </div>
+
+      <!-- Score History -->
+      <div class="dash-section">Recent Games</div>
+      <div class="dash-history" id="dashHistory">
+        <div class="dash-loading">Loading…</div>
+      </div>
+
+      <!-- Edit Name -->
+      <div class="dash-section">Display Name</div>
+      <div class="dash-edit-row">
+        <input class="dash-edit-input" id="dashEditName" type="text" placeholder="Your display name" />
+        <button class="dash-edit-save" id="dashEditSave">Save</button>
+      </div>
+      <div class="dash-edit-msg" id="dashEditMsg"></div>
+
+      <!-- Logout -->
+      <button class="dash-logout" id="dashLogout">Sign Out</button>
+    </div>
+  </aside>`;
+
+  document.body.insertAdjacentHTML('beforeend', html);
+  wireDashboard();
+}
+
+function wireDashboard() {
+  $('#dashClose').addEventListener('click', closeDashboard);
+  $('#dashOverlay').addEventListener('click', closeDashboard);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && $('#dashPanel')?.classList.contains('open')) closeDashboard();
+  });
+  $('#dashLogout').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    closeDashboard();
+    updateAuthUI();
+  });
+  $('#dashEditSave').addEventListener('click', handleEditName);
+  $('#dashEditName').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleEditName();
+  });
+}
+
+function resetDashboardDOM() {
+  // Reset avatar container to initial state (fixes reopen bug)
+  const profileEl = $('#dashProfile');
+  if (profileEl) {
+    const existingAvatar = profileEl.querySelector('.dash-avatar, .dash-avatar-initials');
+    if (existingAvatar) existingAvatar.remove();
+    const fresh = document.createElement('div');
+    fresh.className = 'dash-avatar-initials';
+    fresh.id = 'dashAvatar';
+    fresh.textContent = '?';
+    profileEl.prepend(fresh);
+  }
+  // Clear stale messages
+  const editMsg = $('#dashEditMsg');
+  if (editMsg) { editMsg.textContent = ''; editMsg.className = 'dash-edit-msg'; }
+}
+
+function openDashboard() {
+  injectDashboard();
+  resetDashboardDOM();
+  const overlay = $('#dashOverlay');
+  const panel = $('#dashPanel');
+  void panel.offsetWidth;
+  overlay.classList.add('open');
+  panel.classList.add('open');
+  loadDashboardData();
+}
+
+function closeDashboard() {
+  $('#dashOverlay')?.classList.remove('open');
+  $('#dashPanel')?.classList.remove('open');
+}
+
+const MODE_LABELS = {
+  scoreline: 'Scoreline',
+  unscramble: 'Unscramble',
+  whosaidit: 'Who Said It',
+  higherlower: 'Higher/Lower'
+};
+
+function formatRelativeDate(iso) {
+  const d = new Date(iso);
+  const now = new Date();
+  const diff = Math.floor((now - d) / 1000);
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+  if (diff < 604800) return `${Math.floor(diff / 86400)}d ago`;
+  return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
+}
+
+async function loadDashboardData() {
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user) return;
+
+    const user = session.user;
+
+    // Profile
+    const name = user.user_metadata?.full_name || user.user_metadata?.name || user.email;
+    const email = user.email || '';
+    const avatarUrl = user.user_metadata?.avatar_url;
+    const createdAt = user.created_at;
+
+    $('#dashName').textContent = name;
+    $('#dashEmail').textContent = email;
+    $('#dashEditName').value = name;
+
+    if (createdAt) {
+      const d = new Date(createdAt);
+      $('#dashSince').textContent = `Member since ${d.toLocaleDateString(undefined, { month: 'long', year: 'numeric' })}`;
+    }
+
+    // Avatar — use the freshly-reset #dashAvatar element
+    const avatarEl = $('#dashAvatar');
+    if (avatarEl && avatarUrl) {
+      const img = document.createElement('img');
+      img.src = avatarUrl;
+      img.alt = name;
+      img.className = 'dash-avatar';
+      img.id = 'dashAvatar'; // preserve the ID so future resets can find it
+      img.onerror = () => {
+        // On error, swap back to initials
+        const fallback = document.createElement('div');
+        fallback.className = 'dash-avatar-initials';
+        fallback.id = 'dashAvatar';
+        fallback.textContent = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase() || '?';
+        img.replaceWith(fallback);
+      };
+      avatarEl.replaceWith(img);
+    } else if (avatarEl) {
+      const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+      avatarEl.textContent = initials || '?';
+    }
+
+  // Scores
+  const { data: scores, error } = await supabase
+    .from('scores')
+    .select('mode, score, created_at')
+    .eq('user_id', user.id)
+    .order('created_at', { ascending: false })
+    .limit(50);
+
+  const historyEl = $('#dashHistory');
+
+  if (error || !scores) {
+    historyEl.innerHTML = '<div class="dash-history-empty">Could not load scores.</div>';
+    return;
+  }
+
+  // Stats
+  const totalGames = scores.length;
+  const totalPoints = scores.reduce((s, r) => s + r.score, 0);
+  const bestScore = scores.length ? Math.max(...scores.map(r => r.score)) : 0;
+  const avgScore = totalGames ? Math.round(totalPoints / totalGames) : 0;
+
+  $('#dashGames').textContent = totalGames;
+  $('#dashPoints').textContent = totalPoints.toLocaleString();
+  $('#dashBest').textContent = bestScore;
+  $('#dashAvg').textContent = avgScore;
+
+  // History list
+  if (scores.length === 0) {
+    historyEl.innerHTML = '<div class="dash-history-empty">No games played yet. Go play!</div>';
+    return;
+  }
+
+  let html = '<div class="dash-history-list">';
+  scores.forEach(r => {
+    const modeLabel = MODE_LABELS[r.mode] || r.mode;
+    const modeClass = r.mode || 'scoreline';
+    html += `
+      <div class="dash-history-row">
+        <div class="dash-history-mode"><span class="mode-badge ${modeClass}">${modeLabel}</span></div>
+        <div class="dash-history-score">${r.score} pts</div>
+        <div class="dash-history-date">${formatRelativeDate(r.created_at)}</div>
+      </div>`;
+  });
+  html += '</div>';
+  historyEl.innerHTML = html;
+  } catch (err) {
+    console.warn('Dashboard data error:', err);
+  }
+}
+async function handleEditName() {
+  const input = $('#dashEditName');
+  const newName = input.value.trim();
+  const msgEl = $('#dashEditMsg');
+  if (!newName) {
+    msgEl.textContent = 'Name cannot be empty.';
+    msgEl.className = 'dash-edit-msg error';
+    return;
+  }
+
+  const btn = $('#dashEditSave');
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+
+  const { error } = await supabase.auth.updateUser({
+    data: { full_name: newName, name: newName }
+  });
+
+  if (error) {
+    msgEl.textContent = error.message;
+    msgEl.className = 'dash-edit-msg error';
+  } else {
+    // Also update profiles table
+    const session = await getSession();
+    if (session?.user) {
+      await supabase.from('profiles').update({ username: newName }).eq('id', session.user.id);
+    }
+    msgEl.textContent = 'Name updated!';
+    msgEl.className = 'dash-edit-msg success';
+    $('#dashName').textContent = newName;
+    updateAuthUI();
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Save';
+  setTimeout(() => { msgEl.textContent = ''; }, 3000);
+}
+
 /* ── Auth UI Update (header button) ──────────────────────────────── */
 async function updateAuthUI() {
   const btn = $('#btnAuth');
   if (!btn) return;
 
   const { data: { session } } = await supabase.auth.getSession();
+  _cachedSession = session;
   const label = btn.querySelector('.user-profile-inner p') || btn;
 
   if (session?.user) {
@@ -385,7 +654,7 @@ async function updateAuthUI() {
       || session.user.user_metadata?.name
       || session.user.email;
     label.textContent = truncate(name, 22);
-    btn.setAttribute('title', 'Click to sign out');
+    btn.setAttribute('title', 'Open Dashboard');
     await ensureProfile(session.user);
   } else {
     label.textContent = 'Login / Register';
@@ -394,15 +663,26 @@ async function updateAuthUI() {
 }
 
 /* ── Auth Click Handler ──────────────────────────────────────────── */
+// Cache auth state so clicks respond instantly
+let _cachedSession = null;
+
 async function handleAuthClick() {
-  const { data: { session } } = await supabase.auth.getSession();
-  if (session?.user) {
-    // Sign out
-    if (confirm('Sign out of Football Genius?')) {
-      await supabase.auth.signOut();
-      updateAuthUI();
+  try {
+    // Use cached session for instant response, then verify in background
+    if (_cachedSession?.user) {
+      openDashboard();
+    } else {
+      const { data: { session } } = await supabase.auth.getSession();
+      _cachedSession = session;
+      if (session?.user) {
+        openDashboard();
+      } else {
+        openAuth();
+      }
     }
-  } else {
+  } catch (err) {
+    console.warn('Auth click error:', err);
+    // Fallback: open auth modal
     openAuth();
   }
 }
@@ -450,7 +730,7 @@ async function getLeaderboard(mode, limit = 10) {
 }
 
 // Expose to non-module scripts
-window.auth = { supabase, updateAuthUI, saveScore, getLeaderboard, getSession, openAuth };
+window.auth = { supabase, updateAuthUI, saveScore, getLeaderboard, getSession, openAuth, openDashboard };
 
 /* ── Wire Header Buttons ─────────────────────────────────────────── */
 function wireHeaderButtons() {
@@ -468,4 +748,7 @@ wireHeaderButtons();
 updateAuthUI();
 
 // React to auth state changes (e.g. after Google OAuth redirect)
-supabase.auth.onAuthStateChange((_event, _session) => updateAuthUI());
+supabase.auth.onAuthStateChange((_event, session) => {
+  _cachedSession = session;
+  updateAuthUI();
+});
