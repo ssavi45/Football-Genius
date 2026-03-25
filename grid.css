@@ -1,0 +1,681 @@
+/* grid.css -- Daily Grid Challenge */
+
+/* ---- Difficulty Selector Screen ---- */
+.difficulty-screen {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.difficulty-screen h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.difficulty-tabs {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.diff-tab {
+  background: var(--card);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px 24px;
+  width: 220px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text);
+  text-align: center;
+  font-family: inherit;
+}
+
+.diff-tab:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(43, 108, 246, 0.2);
+}
+
+.diff-tab.active {
+  border-color: var(--accent);
+  background: rgba(43, 108, 246, 0.15);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.diff-tab h3 {
+  font-family: "Russo One", sans-serif;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.diff-tab p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Difficulty color accents */
+.diff-tab[data-diff="easy"] h3 {
+  color: var(--good);
+}
+
+.diff-tab[data-diff="medium"] h3 {
+  color: #f0a030;
+}
+
+.diff-tab[data-diff="hard"] h3 {
+  color: var(--bad);
+}
+
+/* ---- API Key Section ---- */
+.api-key-section {
+  max-width: 420px;
+  margin: 0 auto 28px;
+  text-align: left;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.api-key-section label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.api-key-section textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: monospace;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 60px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.api-key-section textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.api-key-section small {
+  color: var(--muted);
+  font-size: 12px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.api-key-section .key-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#keyStatus {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---- Grid Container ---- */
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px;
+}
+
+.immaculate-grid {
+  display: grid;
+  grid-template-columns: 140px repeat(3, 140px);
+  grid-template-rows: 140px repeat(3, 140px);
+  gap: 8px;
+  background: var(--glass);
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 680px) {
+  .immaculate-grid {
+    grid-template-columns: 95px repeat(3, 95px);
+    grid-template-rows: 95px repeat(3, 95px);
+    gap: 5px;
+    padding: 8px;
+  }
+}
+
+/* ---- Grid Headers ---- */
+.grid-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text);
+  font-weight: bold;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.grid-header img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 680px) {
+  .grid-header img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .grid-header span {
+    font-size: 10px;
+  }
+}
+
+.grid-header.empty {
+  background: transparent;
+}
+
+/* Stat criteria — now uses img (same as club/nation) */
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Fallback for missing stat icon images */
+.stat-icon-fallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(43, 108, 246, 0.3), rgba(80, 227, 194, 0.3));
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+/* Consistent header label text for all header types */
+.grid-header span {
+  font-size: 11px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 100px;
+  word-wrap: break-word;
+  text-align: center;
+  display: block;
+}
+
+.stat-label-text {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--muted);
+  max-width: 100px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 560px) {
+  .stat-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .stat-icon-fallback {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    border-width: 1.5px;
+  }
+
+  .stat-label-text {
+    font-size: 8px;
+    max-width: 72px;
+  }
+
+  .grid-header span {
+    font-size: 9px;
+    max-width: 72px;
+  }
+}
+
+/* ---- Grid Cells ---- */
+.grid-cell {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-cell:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.grid-cell:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Ensure disabled cells still show text clearly */
+button.grid-cell:disabled {
+  opacity: 1;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  pointer-events: none;
+}
+
+/* Plus icon for empty cells */
+.cell-plus {
+  font-size: 32px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.25);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.grid-cell:hover:not(:disabled) .cell-plus {
+  color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+/* Filled cell (pre-submit, neutral state) */
+.grid-cell.filled {
+  background: linear-gradient(135deg, rgba(43, 108, 246, 0.15), rgba(80, 227, 194, 0.12));
+  border-color: rgba(43, 108, 246, 0.4);
+  cursor: pointer;
+}
+
+.grid-cell.filled:hover {
+  background: linear-gradient(135deg, rgba(43, 108, 246, 0.25), rgba(80, 227, 194, 0.2));
+  border-color: rgba(43, 108, 246, 0.6);
+}
+
+/* Correct cell */
+.grid-cell.correct {
+  background: linear-gradient(135deg, rgba(24, 201, 110, 0.25), rgba(24, 201, 110, 0.55));
+  border-color: var(--good);
+  cursor: default;
+  animation: glowGreen 0.8s ease;
+  color: #fff;
+}
+
+@keyframes glowGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 201, 110, 0.7);
+    transform: scale(1);
+  }
+
+  40% {
+    box-shadow: 0 0 24px 6px rgba(24, 201, 110, 0.5);
+    transform: scale(1.05);
+  }
+
+  100% {
+    box-shadow: 0 0 8px 2px rgba(24, 201, 110, 0.15);
+    transform: scale(1);
+  }
+}
+
+/* Incorrect cell */
+.grid-cell.incorrect {
+  background: linear-gradient(135deg, rgba(255, 82, 82, 0.25), rgba(255, 82, 82, 0.55));
+  border-color: var(--bad);
+  cursor: default;
+  animation: glowRed 0.8s ease;
+  color: #fff;
+}
+
+@keyframes glowRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+    transform: scale(1);
+  }
+
+  40% {
+    box-shadow: 0 0 24px 6px rgba(255, 82, 82, 0.5);
+    transform: scale(1.05);
+  }
+
+  100% {
+    box-shadow: 0 0 8px 2px rgba(255, 82, 82, 0.15);
+    transform: scale(1);
+  }
+}
+
+/* Loading state */
+.grid-cell.loading {
+  background: rgba(43, 108, 246, 0.12);
+  border-color: var(--accent);
+}
+
+.cell-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--accent-2);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cell-player-name {
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  padding: 6px 5px;
+  word-break: break-word;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 680px) {
+  .cell-player-name {
+    font-size: 10px;
+    padding: 3px 2px;
+    -webkit-line-clamp: 2;
+  }
+
+  .cell-plus {
+    font-size: 24px;
+  }
+}
+
+/* Submit Grid Button */
+.submit-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+
+.play-again-btn {
+  min-width: 160px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #18c96e, #0fa85a);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: submitPulse 2s ease-in-out infinite;
+}
+
+.play-again-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(24, 201, 110, 0.4);
+}
+
+.submit-grid-btn {
+  min-width: 200px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-grid-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+}
+
+.submit-grid-btn.ready {
+  opacity: 1;
+  cursor: pointer;
+  animation: submitPulse 2s ease-in-out infinite;
+}
+
+.submit-grid-btn.ready:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(43, 108, 246, 0.4);
+}
+
+@keyframes submitPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(43, 108, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 16px 4px rgba(43, 108, 246, 0.2);
+  }
+}
+
+/* ---- Search Modal Overlay ---- */
+.search-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 67, 0.88);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 12vh;
+}
+
+.search-container[hidden] {
+  display: none !important;
+}
+
+.search-box {
+  width: 92%;
+  max-width: 420px;
+  background: #0f1b58;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.search-box h3 span {
+  color: var(--accent-2);
+}
+
+#playerSearchInput {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  outline: none;
+  font-family: inherit;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+#playerSearchInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(43, 108, 246, 0.3);
+}
+
+/* Search loading indicator */
+.search-loading {
+  text-align: center;
+  padding: 16px;
+  color: var(--accent-2);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Search results list */
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.search-results li {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.15s;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background: rgba(43, 108, 246, 0.18);
+}
+
+.search-player-icon {
+  font-size: 22px;
+  width: 32px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Scrollbar */
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* ---- Summary Modal: Mini Grid ---- */
+.grid-summary {
+  margin: 16px 0;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 54px);
+  grid-template-rows: repeat(3, 54px);
+  gap: 6px;
+  justify-content: center;
+  margin: 16px auto;
+}
+
+.mini-cell {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.mini-cell.correct {
+  background: rgba(24, 201, 110, 0.35);
+  color: var(--good);
+  border: 1px solid var(--good);
+}
+
+.mini-cell.incorrect {
+  background: rgba(255, 82, 82, 0.35);
+  color: var(--bad);
+  border: 1px solid var(--bad);
+}
+
+.mini-cell.empty {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---- Game / Difficulty screen toggle ---- */
+.game-screen[hidden] {
+  display: none !important;
+}
+
+.difficulty-screen[hidden] {
+  display: none !important;
+}

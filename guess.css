@@ -1,0 +1,389 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Football Genius — Guess Who? (AI Player Recognition)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Image Area ──────────────────────────────────────────────────── */
+.guess-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0 0;
+}
+
+.guess-canvas-wrap {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .4);
+  border: 2px solid rgba(255, 255, 255, .08);
+  box-shadow:
+    0 0 40px rgba(120, 80, 255, .1),
+    0 12px 40px rgba(0, 0, 0, .4);
+}
+
+.guess-canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Glow ring on hover */
+.guess-canvas-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 215, 0, .15), rgba(120, 80, 255, .15)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.guess-canvas-wrap:hover::after {
+  opacity: 1;
+}
+
+/* ── Reveal Level Indicator ─────────────────────────────────────── */
+.guess-levels {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-level-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  border: 1.5px solid rgba(255, 255, 255, .12);
+  transition: all .3s;
+}
+
+.guess-level-dot.active {
+  background: linear-gradient(135deg, #ffd700, #ffaa00);
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, .3);
+}
+
+.guess-level-dot.used {
+  background: rgba(120, 80, 255, .3);
+  border-color: rgba(120, 80, 255, .5);
+}
+
+.guess-level-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: .7rem;
+  color: rgba(255, 255, 255, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+/* ── AI Opponent Bar ─────────────────────────────────────────────── */
+.ai-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .06);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+
+.ai-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.ai-status {
+  flex: 1;
+  min-width: 0;
+}
+
+.ai-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(120, 160, 255, .6);
+  margin-bottom: 2px;
+}
+
+.ai-guess {
+  font-family: 'Poppins', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .7);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ai-guess .confidence {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.ai-thinking {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.ai-thinking .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(120, 160, 255, .5);
+  animation: ai-pulse 1.2s ease-in-out infinite;
+}
+
+.ai-thinking .dot:nth-child(2) { animation-delay: .2s; }
+.ai-thinking .dot:nth-child(3) { animation-delay: .4s; }
+
+@keyframes ai-pulse {
+  0%, 100% { opacity: .3; transform: scale(.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.ai-confidence-bar {
+  width: 60px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .06);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ai-confidence-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #7850ff, #50a0ff);
+  transition: width .6s ease;
+  width: 0%;
+}
+
+/* ── Guess Input ─────────────────────────────────────────────────── */
+.guess-input-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.guess-input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, .04);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: .85rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.guess-input::placeholder {
+  color: rgba(255, 255, 255, .25);
+}
+
+.guess-input:focus {
+  border-color: rgba(120, 80, 255, .5);
+  box-shadow: 0 0 16px rgba(120, 80, 255, .1);
+}
+
+/* ── Autocomplete ────────────────────────────────────────────────── */
+.guess-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 60px;
+  background: #1a1040;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 10px;
+  margin-top: 4px;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+}
+
+.guess-autocomplete.show {
+  display: block;
+}
+
+.guess-autocomplete-item {
+  padding: 8px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: .8rem;
+  color: rgba(255, 255, 255, .75);
+  cursor: pointer;
+  transition: background .15s;
+  border-bottom: 1px solid rgba(255, 255, 255, .03);
+}
+
+.guess-autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.guess-autocomplete-item:hover,
+.guess-autocomplete-item.selected {
+  background: rgba(120, 80, 255, .15);
+  color: #fff;
+}
+
+.guess-autocomplete-item .ac-club {
+  font-size: .65rem;
+  color: rgba(255, 255, 255, .35);
+  margin-left: 6px;
+}
+
+/* ── Action Buttons ──────────────────────────────────────────────── */
+.guess-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reveal-btn {
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 215, 0, .2);
+  background: rgba(255, 215, 0, .06);
+  color: #ffd700;
+  font-family: 'Poppins', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reveal-btn:hover:not(:disabled) {
+  background: rgba(255, 215, 0, .12);
+  border-color: rgba(255, 215, 0, .4);
+  box-shadow: 0 0 16px rgba(255, 215, 0, .1);
+}
+
+.reveal-btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.reveal-cost {
+  font-size: .65rem;
+  opacity: .7;
+}
+
+/* ── Result Reveal ───────────────────────────────────────────────── */
+.guess-result {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.guess-result.show {
+  display: flex;
+}
+
+.guess-result.correct {
+  background: rgba(46, 213, 115, .08);
+  border: 1px solid rgba(46, 213, 115, .2);
+}
+
+.guess-result.wrong {
+  background: rgba(255, 71, 87, .08);
+  border: 1px solid rgba(255, 71, 87, .2);
+}
+
+.guess-result-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.guess-result.correct .guess-result-text { color: #2ed573; }
+.guess-result.wrong .guess-result-text { color: #ff4757; }
+
+.guess-result-detail {
+  font-family: 'Poppins', sans-serif;
+  font-size: .7rem;
+  color: rgba(255, 255, 255, .45);
+  text-align: center;
+}
+
+/* ── AI Model Loading ────────────────────────────────────────────── */
+.ai-loading-banner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  max-width: 400px;
+  border-radius: 10px;
+  background: rgba(120, 80, 255, .08);
+  border: 1px solid rgba(120, 80, 255, .15);
+  font-family: 'Poppins', sans-serif;
+  font-size: .75rem;
+  color: rgba(255, 255, 255, .6);
+}
+
+.ai-loading-banner.show {
+  display: flex;
+}
+
+.ai-loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(120, 80, 255, .2);
+  border-top-color: rgba(120, 80, 255, .7);
+  border-radius: 50%;
+  animation: lb-spin .7s linear infinite;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .guess-canvas-wrap {
+    width: 240px;
+    height: 240px;
+  }
+
+  .guess-input-row,
+  .ai-bar,
+  .guess-result {
+    max-width: 90vw;
+  }
+
+  .guess-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

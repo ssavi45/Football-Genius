@@ -495,7 +495,9 @@ const MODE_LABELS = {
   scoreline: 'Scoreline',
   unscramble: 'Unscramble',
   whosaidit: 'Who Said It',
-  higherlower: 'Higher/Lower'
+  higherlower: 'Higher/Lower',
+  grid: 'Grid Challenge',
+  guess: 'Guess Who?'
 };
 
 function formatRelativeDate(iso) {
@@ -719,18 +721,273 @@ async function saveScore(mode, score) {
   });
 }
 
-async function getLeaderboard(mode, limit = 10) {
-  return await supabase
-    .from('scores')
-    .select('score, created_at, profiles!inner(username, avatar_url)')
-    .eq('mode', mode)
-    .order('score', { ascending: false })
-    .order('created_at', { ascending: true })
-    .limit(limit);
+async function getLeaderboard(mode = null, period = 'all', limit = 50) {
+  try {
+    const { data, error } = await supabase.rpc('get_leaderboard', {
+      p_mode: mode,
+      p_period: period,
+      p_limit: limit
+    });
+    if (error) throw error;
+    return { data, error: null };
+  } catch (err) {
+    console.warn('getLeaderboard RPC error, falling back to client query:', err.message);
+    // Fallback: client-side query if RPC not yet created
+    let query = supabase
+      .from('scores')
+      .select('user_id, score, created_at, mode')
+      .order('score', { ascending: false })
+      .limit(200);
+    if (mode) query = query.eq('mode', mode);
+    if (period === 'daily') {
+      const dayAgo = new Date(Date.now() - 86400000).toISOString();
+      query = query.gte('created_at', dayAgo);
+    } else if (period === 'weekly') {
+      const weekAgo = new Date(Date.now() - 604800000).toISOString();
+      query = query.gte('created_at', weekAgo);
+    }
+    const { data: scores, error: qErr } = await query;
+    if (qErr || !scores) return { data: [], error: qErr };
+
+    // Client-side aggregation: best score per user
+    const byUser = {};
+    scores.forEach(s => {
+      if (!byUser[s.user_id] || s.score > byUser[s.user_id].best_score) {
+        byUser[s.user_id] = { user_id: s.user_id, best_score: s.score, games_played: 0 };
+      }
+      byUser[s.user_id].games_played++;
+    });
+    // Fetch profiles for these users
+    const userIds = Object.keys(byUser);
+    let profiles = {};
+    if (userIds.length) {
+      const { data: pData } = await supabase
+        .from('profiles')
+        .select('id, username, avatar_url')
+        .in('id', userIds);
+      (pData || []).forEach(p => { profiles[p.id] = p; });
+    }
+    const ranked = Object.values(byUser)
+      .sort((a, b) => b.best_score - a.best_score)
+      .slice(0, limit)
+      .map((entry, i) => ({
+        rank: i + 1,
+        user_id: entry.user_id,
+        username: profiles[entry.user_id]?.username || null,
+        avatar_url: profiles[entry.user_id]?.avatar_url || null,
+        best_score: entry.best_score,
+        games_played: entry.games_played
+      }));
+    return { data: ranked, error: null };
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   LEADERBOARD (Stadium Podium)
+   ══════════════════════════════════════════════════════════════════ */
+
+let _lbState = { mode: null, period: 'all' };
+
+function injectLeaderboard() {
+  if ($('#lbOverlay')) return;
+
+  const modes = [
+    { key: null, label: 'All Games' },
+    { key: 'scoreline', label: 'Scoreline' },
+    { key: 'unscramble', label: 'Unscramble' },
+    { key: 'whosaidit', label: 'Who Said It' },
+    { key: 'higherlower', label: 'Higher / Lower' },
+    { key: 'grid', label: 'Grid' },
+    { key: 'guess', label: 'Guess Who?' }
+  ];
+
+  const modeTabs = modes.map(m =>
+    `<button class="lb-mode-tab${m.key === null ? ' active' : ''}" data-mode="${m.key}">${m.label}</button>`
+  ).join('');
+
+  const html = `
+  <div id="lbOverlay" class="lb-overlay" role="dialog" aria-modal="true" aria-label="Leaderboard">
+    <div class="lb-panel">
+      <div class="lb-header">
+        <h2 class="lb-title">🏆 Leaderboard</h2>
+        <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="lb-filters">
+        <div class="lb-mode-tabs" id="lbModeTabs">${modeTabs}</div>
+        <div class="lb-period-pills" id="lbPeriodPills">
+          <button class="lb-period-pill" data-period="daily">Today</button>
+          <button class="lb-period-pill" data-period="weekly">This Week</button>
+          <button class="lb-period-pill active" data-period="all">All Time</button>
+        </div>
+      </div>
+
+      <div id="lbPodium" class="lb-podium"></div>
+
+      <div class="lb-list-wrap">
+        <div id="lbList" class="lb-list"></div>
+      </div>
+
+      <div id="lbYourRank" class="lb-your-rank" hidden>
+        <span class="lb-your-rank-label">Your Rank</span>
+        <span class="lb-your-rank-value" id="lbYourRankVal">#—</span>
+        <span class="lb-your-rank-score" id="lbYourRankScore"></span>
+      </div>
+    </div>
+  </div>`;
+
+  document.body.insertAdjacentHTML('beforeend', html);
+  wireLeaderboard();
+}
+
+function wireLeaderboard() {
+  const overlay = $('#lbOverlay');
+  const panel = overlay.querySelector('.lb-panel');
+
+  // Close
+  $('#lbClose').addEventListener('click', closeLeaderboard);
+  overlay.addEventListener('click', (e) => {
+    if (!panel.contains(e.target)) closeLeaderboard();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeLeaderboard();
+  });
+
+  // Mode tabs
+  $$('#lbModeTabs .lb-mode-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      $$('#lbModeTabs .lb-mode-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      _lbState.mode = tab.dataset.mode === 'null' ? null : tab.dataset.mode;
+      loadLeaderboardData();
+    });
+  });
+
+  // Period pills
+  $$('#lbPeriodPills .lb-period-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      $$('#lbPeriodPills .lb-period-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      _lbState.period = pill.dataset.period;
+      loadLeaderboardData();
+    });
+  });
+}
+
+function openLeaderboard() {
+  injectLeaderboard();
+  const overlay = $('#lbOverlay');
+  void overlay.offsetWidth;
+  overlay.classList.add('open');
+  loadLeaderboardData();
+}
+
+function closeLeaderboard() {
+  const overlay = $('#lbOverlay');
+  if (overlay) overlay.classList.remove('open');
+}
+
+function _getInitials(name) {
+  if (!name) return '?';
+  return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
+function _avatarHTML(url, name, cls = '') {
+  if (url) {
+    return `<img class="${cls}" src="${url}" alt="${name || 'avatar'}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="${cls.replace('avatar', 'avatar-initials')}" style="display:none">${_getInitials(name)}</div>`;
+  }
+  return `<div class="${cls.replace('avatar', 'avatar-initials')}">${_getInitials(name)}</div>`;
+}
+
+async function loadLeaderboardData() {
+  const podiumEl = $('#lbPodium');
+  const listEl = $('#lbList');
+  const yourRankEl = $('#lbYourRank');
+
+  if (!podiumEl || !listEl) return;
+
+  // Show loading
+  podiumEl.innerHTML = '';
+  listEl.innerHTML = '<div class="lb-loading">Loading rankings…</div>';
+  yourRankEl.hidden = true;
+
+  // Fetch data
+  const { data, error } = await getLeaderboard(_lbState.mode, _lbState.period);
+
+  if (error || !data) {
+    listEl.innerHTML = '<div class="lb-empty"><div class="lb-empty-icon">😕</div>Could not load leaderboard.</div>';
+    return;
+  }
+
+  if (data.length === 0) {
+    podiumEl.innerHTML = '';
+    listEl.innerHTML = '<div class="lb-empty"><div class="lb-empty-icon">🏟️</div>No scores yet. Be the first to play!</div>';
+    return;
+  }
+
+  // Current user ID
+  const session = _cachedSession || (await supabase.auth.getSession()).data?.session;
+  const myId = session?.user?.id || null;
+
+  // Render Podium (top 3)
+  const top3 = data.slice(0, 3);
+  const podiumOrder = top3.length >= 3 ? [top3[1], top3[0], top3[2]] : top3;
+  const rankLabels = { 1: '1st', 2: '2nd', 3: '3rd' };
+
+  podiumEl.innerHTML = podiumOrder.map(entry => {
+    const r = Number(entry.rank);
+    const name = entry.username || 'Player';
+    const crown = r === 1 ? '<span class="lb-crown">👑</span>' : '';
+    return `
+      <div class="lb-podium-card" data-rank="${r}">
+        ${crown}
+        <div class="lb-podium-avatar-wrap">
+          ${_avatarHTML(entry.avatar_url, name, 'lb-podium-avatar')}
+          <div class="lb-podium-avatar-ring"></div>
+        </div>
+        <div class="lb-podium-name">${name}</div>
+        <div class="lb-podium-score">${entry.best_score} pts</div>
+        <div class="lb-podium-badge">${rankLabels[r] || '#' + r}</div>
+        <div class="lb-podium-games">${entry.games_played} game${entry.games_played === 1 ? '' : 's'}</div>
+      </div>`;
+  }).join('');
+
+  // Render ranked list (#4 onwards)
+  const rest = data.slice(3);
+  if (rest.length === 0) {
+    listEl.innerHTML = '';
+  } else {
+    listEl.innerHTML = rest.map(entry => {
+      const isMe = entry.user_id === myId;
+      const name = entry.username || 'Player';
+      return `
+        <div class="lb-row${isMe ? ' lb-me' : ''}">
+          <div class="lb-row-rank">#${entry.rank}</div>
+          ${_avatarHTML(entry.avatar_url, name, 'lb-row-avatar')}
+          <div class="lb-row-info">
+            <div class="lb-row-name">${name}${isMe ? ' (You)' : ''}</div>
+            <div class="lb-row-games">${entry.games_played} game${entry.games_played === 1 ? '' : 's'}</div>
+          </div>
+          <div class="lb-row-score">${entry.best_score} pts</div>
+        </div>`;
+    }).join('');
+  }
+
+  // Your rank banner
+  if (myId) {
+    const myEntry = data.find(e => e.user_id === myId);
+    if (myEntry) {
+      yourRankEl.hidden = false;
+      $('#lbYourRankVal').textContent = `#${myEntry.rank}`;
+      $('#lbYourRankScore').textContent = `${myEntry.best_score} pts`;
+    } else {
+      yourRankEl.hidden = true;
+    }
+  }
 }
 
 // Expose to non-module scripts
-window.auth = { supabase, updateAuthUI, saveScore, getLeaderboard, getSession, openAuth, openDashboard };
+window.auth = { supabase, updateAuthUI, saveScore, getLeaderboard, getSession, openAuth, openDashboard, openLeaderboard };
 
 /* ── Wire Header Buttons ─────────────────────────────────────────── */
 function wireHeaderButtons() {
@@ -738,9 +995,7 @@ function wireHeaderButtons() {
   if (authBtn) authBtn.addEventListener('click', handleAuthClick);
 
   const lbBtn = $('#btnLeaderboard');
-  if (lbBtn) lbBtn.addEventListener('click', () => {
-    alert('Leaderboard coming soon. Scores will appear once saved.');
-  });
+  if (lbBtn) lbBtn.addEventListener('click', openLeaderboard);
 }
 
 /* ── Init ─────────────────────────────────────────────────────────── */
