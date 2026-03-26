@@ -7,7 +7,7 @@
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: rgba(6, 10, 30, 0.6);
+  background: rgba(6, 15, 10, 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
@@ -27,7 +27,7 @@
   width: min(420px, 96vw);
   height: 100vh;
   z-index: 91;
-  background: linear-gradient(180deg, #0d1650, #080f3a);
+  background: linear-gradient(180deg, #122a1a, #0d2015);
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: -12px 0 40px rgba(0, 0, 0, 0.45);
   transform: translateX(100%);
@@ -99,7 +99,7 @@
   object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
-  background: #1a2570;
+  background: #0d2818;
 }
 .dash-avatar-initials {
   width: 56px;
@@ -107,7 +107,7 @@
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
-  background: linear-gradient(135deg, #2b6cf6, #0cf);
+  background: linear-gradient(135deg, #2ecc71, #c8a94e);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +178,7 @@
   color: #fff;
 }
 .dash-stat-value.accent {
-  background: linear-gradient(90deg, #2b6cf6, #0cf);
+  background: linear-gradient(90deg, #2ecc71, #c8a94e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -227,8 +227,8 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.mode-badge.scoreline { background: rgba(43, 108, 246, 0.2); color: #5b9bff; }
-.mode-badge.unscramble { background: rgba(0, 204, 255, 0.15); color: #0cf; }
+.mode-badge.scoreline { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.mode-badge.unscramble { background: rgba(200, 169, 78, 0.15); color: #c8a94e; }
 .mode-badge.whosaidit { background: rgba(255, 82, 82, 0.15); color: #ff7b7b; }
 .mode-badge.higherlower { background: rgba(24, 201, 110, 0.15); color: #4de89d; }
 .dash-history-score {
@@ -262,13 +262,13 @@
   transition: border-color 0.2s;
 }
 .dash-edit-input:focus {
-  border-color: #2b6cf6;
+  border-color: #2ecc71;
 }
 .dash-edit-save {
   padding: 10px 16px;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #2b6cf6, #4c9cff);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: #fff;
   font-weight: 700;
   font-size: 13px;
@@ -279,7 +279,7 @@
 }
 .dash-edit-save:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(43, 108, 246, 0.35);
+  box-shadow: 0 4px 14px rgba(46, 204, 113, 0.35);
 }
 .dash-edit-save:disabled {
   opacity: 0.6;

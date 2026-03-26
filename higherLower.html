@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Higher or Lower — Football Genius</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css" />
   <link rel="stylesheet" href="auth-modal.css" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="leaderboard.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <style>
     /* Mid interface styling for Higher/Lower */
@@ -16,11 +17,11 @@
     .stat-picker { display:flex; gap:12px; align-items:center; justify-content:center; margin:18px 0 10px; flex-wrap:wrap; }
     .stat-picker select { padding:.55rem .8rem; border-radius:10px; border:none; background:#0f1c45; color:#fff; font-weight:600; }
     .stage { display:flex; align-items:stretch; justify-content:center; gap:36px; margin-top:10px; position:relative; }
-    .hl-card { background:linear-gradient(180deg,#0f1c45,#0b1540); border-radius:18px; padding:18px; width:420px; display:flex; flex-direction:column; align-items:center; box-shadow:0 12px 30px rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.06); cursor:pointer; transition:transform .12s ease; }
+    .hl-card { background:linear-gradient(180deg,#122a1a,#0d2015); border-radius:18px; padding:18px; width:420px; display:flex; flex-direction:column; align-items:center; box-shadow:0 12px 30px rgba(0,0,0,.35); border:1px solid rgba(46,204,113,.08); cursor:pointer; transition:transform .12s ease; }
     .hl-card:hover { transform:translateY(-2px); }
     .hl-card[data-disabled="true"] { pointer-events:none; opacity:.95; }
     .hl-card .name { font-family:"Bebas Neue", sans-serif; font-size:2rem; letter-spacing:.5px; }
-    .hl-card .face { width:260px; height:260px; border-radius:50%; object-fit:cover; object-position:50% 25%; border:6px solid rgba(255,255,255,.1); background:#091336; }
+    .face { width:260px; height:260px; border-radius:50%; object-fit:cover; object-position:50% 25%; border:6px solid rgba(46,204,113,.1); background:#0b1a0f; }
     .stat-label { opacity:.8; font-size:.9rem; margin-top:10px; }
     .stat-value { font-family:"Russo One", sans-serif; font-size:2.2rem; margin-top:6px; }
 
@@ -30,7 +31,7 @@
 
     /* VS center badge (no side lines) */
     .vs { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; pointer-events:none; }
-    .vs .hex { width:82px; height:82px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#29b6f6,#ff3d71); color:#fff; font-weight:900; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,.35); font-family:"Russo One", sans-serif; }
+    .vs .hex { width:82px; height:82px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#2ecc71,var(--accent-2)); color:#fff; font-weight:900; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,.35); font-family:"Russo One", sans-serif; }
 
     /* Transfer line */
     .transfer-line { display:none; align-items:center; gap:10px; margin-top:10px; }
@@ -58,7 +59,7 @@
       animation: overlayFade .22s ease-out forwards;
     }
     .round-overlay .panel {
-      background: linear-gradient(180deg,#0f1c45,#0b1540);
+      background: linear-gradient(180deg,#122a1a,#0d2015);
       border: 1px solid rgba(255,255,255,.12);
       padding: 18px 22px;
       border-radius: 16px;
@@ -75,7 +76,7 @@
       margin-top: 10px;
     }
     .round-overlay .panel .button.primary {
-      background:#0bb3ff;
+      background:#2ecc71;
       color:#001336;
       font-weight:800;
       border:none;
@@ -103,7 +104,8 @@
     }
   </style>
 </head>
-<body>
+<body class="scoreline-page">
+  <div class="main-wrapper">
   <header class="topbar">
     <div class="brand">
       <img class="logo" src="foot_gen.png" alt="Football Genius logo"/>
@@ -150,7 +152,7 @@
   <main class="arena">
     <div class="competition" id="competition">Select the player with the higher stat</div>
 
-    <div class="hl-container">
+    <div class="hl-container scoreboard-card">
       <div class="stat-picker">
         <label for="statSelect">Choose stat </label>
         <select id="statSelect" aria-label="Choose stat">
@@ -196,12 +198,7 @@
       </div>
     </div>
 
-    <section class="actions">
-      <a href="index.html" class="button">Scoreline Hero</a>
-      <a href="unscramble.html" class="button">Unscramble</a>
-      <a href="who.html" class="button">Who said it?</a>
-      <a href="grid.html" class="button">Grid Challenge</a>
-    </section>
+
   </main>
 
   <footer class="footer">
@@ -239,7 +236,9 @@
       </a>
     </nav>
   </footer>
+  </div><!-- /.main-wrapper -->
 
+  <script src="sidebar.js"></script>
   <script type="module" src="auth.js"></script>
   <script src="higherLower.js"></script>
 </body>

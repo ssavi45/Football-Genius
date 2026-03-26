@@ -25,6 +25,8 @@ const els = {
 
   homeScore: $("#homeScore"),
   awayScore: $("#awayScore"),
+  homeScoreDisplay: $("#homeScoreDisplay"),
+  awayScoreDisplay: $("#awayScoreDisplay"),
   submitGuess: $("#submitGuess"),
   nextQuestion: $("#nextQuestion"),
   feedback: $("#feedback"),
@@ -682,6 +684,12 @@ function onAdjust(side, delta) {
   let val = parseInt(input.value || "0", 10) + delta;
   val = Math.max(0, Math.min(15, val));
   input.value = val;
+  syncScoreDisplay();
+}
+
+function syncScoreDisplay() {
+  if (els.homeScoreDisplay) els.homeScoreDisplay.textContent = els.homeScore.value || '0';
+  if (els.awayScoreDisplay) els.awayScoreDisplay.textContent = els.awayScore.value || '0';
 }
 
 function submitGuess() {
@@ -780,7 +788,7 @@ els.hintBtns.forEach((btn) =>
   })
 );
 
-document.querySelectorAll(".score-btn").forEach((btn) => {
+document.querySelectorAll(".adj-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const side = e.currentTarget.dataset.side;
     const delta = e.currentTarget.classList.contains("plus") ? 1 : -1;
@@ -796,9 +804,11 @@ els.closeModal.addEventListener("click", closeModal);
 // Keyboard support: arrow keys bump focused score field
 [els.homeScore, els.awayScore].forEach((input) => {
   input.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowUp") { e.preventDefault(); input.value = Math.min(15, (+input.value || 0) + 1); }
-    if (e.key === "ArrowDown") { e.preventDefault(); input.value = Math.max(0, (+input.value || 0) - 1); }
+    if (e.key === "ArrowUp") { e.preventDefault(); input.value = Math.min(15, (+input.value || 0) + 1); syncScoreDisplay(); }
+    if (e.key === "ArrowDown") { e.preventDefault(); input.value = Math.max(0, (+input.value || 0) - 1); syncScoreDisplay(); }
   });
+  // Sync display when user types directly
+  input.addEventListener("input", syncScoreDisplay);
 });
 
 // Initialize

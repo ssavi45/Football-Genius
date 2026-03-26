@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(6, 10, 30, 0.82);
+  background: rgba(6, 15, 10, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   opacity: 0;
@@ -25,7 +25,7 @@
 /* Card */
 .auth-card {
   width: min(440px, 94vw);
-  background: linear-gradient(180deg, #0f1b58, #0b1540);
+  background: linear-gradient(180deg, #122a1a, #0d2015);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 28px 30px 24px;
@@ -97,9 +97,9 @@
   letter-spacing: 0.03em;
 }
 .auth-tab.active {
-  background: linear-gradient(135deg, #2b6cf6, #0cf);
+  background: linear-gradient(135deg, #2ecc71, #c8a94e);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(43, 108, 246, 0.35);
+  box-shadow: 0 4px 14px rgba(46, 204, 113, 0.35);
 }
 .auth-tab:not(.active):hover {
   color: rgba(255, 255, 255, 0.85);
@@ -148,8 +148,8 @@
   color: rgba(255, 255, 255, 0.3);
 }
 .auth-field input:focus {
-  border-color: #2b6cf6;
-  box-shadow: 0 0 0 3px rgba(43, 108, 246, 0.2);
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
 }
 
 /* Password wrapper for show/hide toggle */
@@ -182,7 +182,7 @@
   padding: 13px 0;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #2b6cf6, #4c9cff);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: #fff;
   font-size: 15px;
   font-weight: 800;
@@ -194,7 +194,7 @@
 }
 .auth-submit:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(43, 108, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
 }
 .auth-submit:active:not(:disabled) {
   transform: translateY(0);
@@ -286,7 +286,7 @@
   line-height: 1.5;
 }
 .auth-otp-section .auth-otp-info strong {
-  color: #0cf;
+  color: #c8a94e;
 }
 .auth-otp-input {
   width: 200px;
@@ -305,15 +305,15 @@
   margin-bottom: 14px;
 }
 .auth-otp-input:focus {
-  border-color: #2b6cf6;
-  box-shadow: 0 0 0 3px rgba(43, 108, 246, 0.2);
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
 }
 
 /* Resend link */
 .auth-resend {
   background: none;
   border: none;
-  color: #2b6cf6;
+  color: #2ecc71;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -322,7 +322,7 @@
   margin-top: 8px;
 }
 .auth-resend:hover {
-  color: #4c9cff;
+  color: #27ae60;
 }
 .auth-resend:disabled {
   color: rgba(255, 255, 255, 0.3);

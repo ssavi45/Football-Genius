@@ -20,7 +20,7 @@
   background: rgba(0, 0, 0, .4);
   border: 2px solid rgba(255, 255, 255, .08);
   box-shadow:
-    0 0 40px rgba(120, 80, 255, .1),
+    0 0 40px rgba(46, 204, 113, .1),
     0 12px 40px rgba(0, 0, 0, .4);
 }
 
@@ -40,7 +40,7 @@
   inset: -2px;
   border-radius: 22px;
   border: 2px solid transparent;
-  background: linear-gradient(135deg, rgba(255, 215, 0, .15), rgba(120, 80, 255, .15)) border-box;
+  background: linear-gradient(135deg, rgba(46, 204, 113, .15), rgba(200, 169, 78, .15)) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -71,14 +71,14 @@
 }
 
 .guess-level-dot.active {
-  background: linear-gradient(135deg, #ffd700, #ffaa00);
-  border-color: #ffd700;
-  box-shadow: 0 0 10px rgba(255, 215, 0, .3);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  border-color: #2ecc71;
+  box-shadow: 0 0 10px rgba(46, 204, 113, .3);
 }
 
 .guess-level-dot.used {
-  background: rgba(120, 80, 255, .3);
-  border-color: rgba(120, 80, 255, .5);
+  background: rgba(46, 204, 113, .3);
+  border-color: rgba(46, 204, 113, .5);
 }
 
 .guess-level-label {
@@ -120,7 +120,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(120, 160, 255, .6);
+  color: rgba(46, 204, 113, .6);
   margin-bottom: 2px;
 }
 
@@ -149,7 +149,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(120, 160, 255, .5);
+  background: rgba(46, 204, 113, .5);
   animation: ai-pulse 1.2s ease-in-out infinite;
 }
 
@@ -173,7 +173,7 @@
 .ai-confidence-fill {
   height: 100%;
   border-radius: 3px;
-  background: linear-gradient(90deg, #7850ff, #50a0ff);
+  background: linear-gradient(90deg, #2ecc71, #c8a94e);
   transition: width .6s ease;
   width: 0%;
 }
@@ -205,8 +205,8 @@
 }
 
 .guess-input:focus {
-  border-color: rgba(120, 80, 255, .5);
-  box-shadow: 0 0 16px rgba(120, 80, 255, .1);
+  border-color: rgba(46, 204, 113, .5);
+  box-shadow: 0 0 16px rgba(46, 204, 113, .1);
 }
 
 /* ── Autocomplete ────────────────────────────────────────────────── */
@@ -215,7 +215,7 @@
   top: 100%;
   left: 0;
   right: 60px;
-  background: #1a1040;
+  background: #0d2818;
   border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 10px;
   margin-top: 4px;
@@ -246,7 +246,7 @@
 
 .guess-autocomplete-item:hover,
 .guess-autocomplete-item.selected {
-  background: rgba(120, 80, 255, .15);
+  background: rgba(46, 204, 113, .15);
   color: #fff;
 }
 
@@ -267,9 +267,9 @@
 .reveal-btn {
   padding: 10px 24px;
   border-radius: 10px;
-  border: 1.5px solid rgba(255, 215, 0, .2);
-  background: rgba(255, 215, 0, .06);
-  color: #ffd700;
+  border: 1.5px solid rgba(200, 169, 78, .2);
+  background: rgba(200, 169, 78, .06);
+  color: #c8a94e;
   font-family: 'Poppins', sans-serif;
   font-size: .8rem;
   font-weight: 600;
@@ -281,9 +281,9 @@
 }
 
 .reveal-btn:hover:not(:disabled) {
-  background: rgba(255, 215, 0, .12);
-  border-color: rgba(255, 215, 0, .4);
-  box-shadow: 0 0 16px rgba(255, 215, 0, .1);
+  background: rgba(200, 169, 78, .12);
+  border-color: rgba(200, 169, 78, .4);
+  box-shadow: 0 0 16px rgba(200, 169, 78, .1);
 }
 
 .reveal-btn:disabled {
@@ -349,8 +349,8 @@
   margin: 0 auto;
   max-width: 400px;
   border-radius: 10px;
-  background: rgba(120, 80, 255, .08);
-  border: 1px solid rgba(120, 80, 255, .15);
+  background: rgba(46, 204, 113, .08);
+  border: 1px solid rgba(46, 204, 113, .15);
   font-family: 'Poppins', sans-serif;
   font-size: .75rem;
   color: rgba(255, 255, 255, .6);
@@ -363,8 +363,8 @@
 .ai-loading-spinner {
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(120, 80, 255, .2);
-  border-top-color: rgba(120, 80, 255, .7);
+  border: 2px solid rgba(46, 204, 113, .2);
+  border-top-color: rgba(46, 204, 113, .7);
   border-radius: 50%;
   animation: lb-spin .7s linear infinite;
 }

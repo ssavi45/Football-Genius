@@ -6,16 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Football Genius — Guess Who? (AI Challenge)</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css" />
   <link rel="stylesheet" href="auth-modal.css" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="leaderboard.css" />
   <link rel="stylesheet" href="guess.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="scoreline-page">
+  <div class="main-wrapper">
   <header class="topbar">
     <div class="brand">
       <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
@@ -84,7 +86,7 @@
     </div>
 
     <!-- Game Stage -->
-    <section class="guess-stage">
+    <section class="guess-stage scoreboard-card">
       <!-- Pixelated Image -->
       <div class="guess-canvas-wrap">
         <canvas id="guessCanvas" width="280" height="280"></canvas>
@@ -154,13 +156,7 @@
       </ul>
     </details>
 
-    <section class="actions">
-      <a href="index.html" class="button">Scoreline Hero</a>
-      <a href="unscramble.html" class="button">Unscramble</a>
-      <a href="who.html" class="button">Who said it?</a>
-      <a href="higherLower.html" class="button">Higher or Lower</a>
-      <a href="grid.html" class="button">Grid Challenge</a>
-    </section>
+
   </main>
 
   <!-- Summary Modal -->
@@ -216,7 +212,9 @@
       </a>
     </nav>
   </footer>
+  </div><!-- /.main-wrapper -->
 
+  <script src="sidebar.js"></script>
   <script type="module" src="auth.js"></script>
   <script src="guess.js"></script>
 </body>

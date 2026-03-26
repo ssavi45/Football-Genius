@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Football Genius — Unscramble the Player</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css" />
   <link rel="stylesheet" href="auth-modal.css" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="leaderboard.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="scoreline-page">
+  <div class="main-wrapper">
   <header class="topbar">
     <div class="brand">
       <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
@@ -61,21 +63,19 @@
   <main class="arena">
     <div class="competition" id="competition">Can you decipher the legend?</div>
 
-    <section class="matchup" style="grid-template-columns:1fr">
-      <article class="team-card">
-        <div class="team-info" style="align-items:center;text-align:center">
-          <div class="team-name" id="scrambleText" style="font-size:30px;letter-spacing:.15em">NORDACIALSIRNTOON</div>
-          <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
-            <input id="answerInput" type="text" placeholder="Type full name here"
-                   style="width:min(600px,90%);text-align:center;font-size:18px;padding:10px;border-radius:10px;border:0;background:rgba(255,255,255,0.07);color:#fff" />
-          </div>
+    <section class="scoreboard-card">
+      <div class="scoreboard-inner" style="display:flex; flex-direction:column; align-items:center;">
+        <div class="sb-mode-title" id="scrambleText" style="font-size:40px; letter-spacing:8px; margin-bottom:24px;">NORDACIALSIRNTOON</div>
+        <div style="display:flex;gap:10px;justify-content:center;width:100%;">
+          <input id="answerInput" type="text" placeholder="Type full name here"
+                 style="width:min(600px,100%);text-align:center;font-size:24px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.4);color:#fff" />
         </div>
-      </article>
-    </section>
-
-    <section class="actions">
-      <button id="submitGuess" class="button">Submit</button>
-      <button id="nextQuestion" class="button" hidden>Next Player</button>
+        
+        <section class="sb-actions" style="margin-top:28px;">
+          <button id="submitGuess" class="button">Submit</button>
+          <button id="nextQuestion" class="button" hidden>Next Player</button>
+        </section>
+      </div>
     </section>
 
     <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
@@ -117,12 +117,7 @@
       </ul>
     </details>
 
-    <section class="actions">
-      <a href="index.html" class="button">Scoreline Hero</a>
-      <a href="who.html" class="button">Who said it?</a>
-      <a href="higherLower.html" class="button">Higher or Lower?</a>
-      <a href="grid.html" class="button">Grid Challenge</a>
-    </section>
+
   </main>
 
   <div id="summaryModal" class="modal" hidden>
@@ -173,7 +168,9 @@
       </a>
     </nav>
   </footer>
+  </div><!-- /.main-wrapper -->
 
+  <script src="sidebar.js"></script>
   <script type="module" src="auth.js"></script>
   <script src="unscramble.js"></script>
 </body>

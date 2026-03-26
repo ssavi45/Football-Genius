@@ -6,16 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Football Genius - Grid Challenge</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css" />
   <link rel="stylesheet" href="auth-modal.css" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="leaderboard.css" />
   <link rel="stylesheet" href="grid.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="scoreline-page">
+  <div class="main-wrapper">
   <header class="topbar">
     <div class="brand">
       <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
@@ -72,43 +74,50 @@
   <main class="arena">
     <div class="competition" id="competition">The Daily Grid</div>
 
-    <!-- ====== DIFFICULTY SELECTOR (shown first) ====== -->
-    <section id="difficultyScreen" class="difficulty-screen">
-      <h2>Choose Your Difficulty</h2>
+    <!-- ====== MAIN CARD WRAPPER ====== -->
+    <section class="scoreboard-card">
+      <div class="scoreboard-inner" style="display:block;">
+        
+        <!-- ====== DIFFICULTY SELECTOR (shown first) ====== -->
+        <section id="difficultyScreen" class="difficulty-screen">
+          <h2>Choose Your Difficulty</h2>
 
-      <div class="difficulty-tabs">
-        <button class="diff-tab active" data-diff="easy">
-          <h3>Easy</h3>
-          <p>Match a player to a national team &amp; club combination</p>
-        </button>
-        <button class="diff-tab" data-diff="medium">
-          <h3>Medium</h3>
-          <p>Match a player to a club &amp; career stat combination</p>
-        </button>
-        <button class="diff-tab" data-diff="hard">
-          <h3>Hard</h3>
-          <p>Match a player between two career stat criteria</p>
-        </button>
+          <div class="difficulty-tabs">
+            <button class="diff-tab active" data-diff="easy">
+              <h3>Easy</h3>
+              <p>Match a player to a national team &amp; club combination</p>
+            </button>
+            <button class="diff-tab" data-diff="medium">
+              <h3>Medium</h3>
+              <p>Match a player to a club &amp; career stat combination</p>
+            </button>
+            <button class="diff-tab" data-diff="hard">
+              <h3>Hard</h3>
+              <p>Match a player between two career stat criteria</p>
+            </button>
+          </div>
+
+          <button id="startGameBtn" class="button" disabled>Start Grid</button>
+          <p style="color:var(--muted);font-size:13px;margin-top:12px">Loading player database...</p>
+        </section>
+
+        <!-- ====== GAME SCREEN (hidden initially) ====== -->
+        <section id="gameScreen" class="game-screen" hidden>
+          <div class="grid-container">
+            <div id="gridBoard" class="immaculate-grid">
+              <!-- Generated dynamically by grid.js -->
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button id="submitGrid" class="button submit-grid-btn" disabled>Submit Answers</button>
+            <button id="playAgainInline" class="button play-again-btn" style="display:none" onclick="location.reload()">Play Again</button>
+          </div>
+
+          <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        </section>
+
       </div>
-
-      <button id="startGameBtn" class="button" disabled>Start Grid</button>
-      <p style="color:var(--muted);font-size:13px;margin-top:12px">Loading player database...</p>
-    </section>
-
-    <!-- ====== GAME SCREEN (hidden initially) ====== -->
-    <section id="gameScreen" class="game-screen" hidden>
-      <div class="grid-container">
-        <div id="gridBoard" class="immaculate-grid">
-          <!-- Generated dynamically by grid.js -->
-        </div>
-      </div>
-
-      <div class="submit-row">
-        <button id="submitGrid" class="button submit-grid-btn" disabled>Submit Answers</button>
-        <button id="playAgainInline" class="button play-again-btn" style="display:none" onclick="location.reload()">Play Again</button>
-      </div>
-
-      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
     </section>
 
     <!-- ====== SEARCH MODAL ====== -->
@@ -132,12 +141,7 @@
       </ul>
     </details>
 
-    <section class="actions">
-      <a href="index.html" class="button">Scorelines</a>
-      <a href="unscramble.html" class="button">Unscramble</a>
-      <a href="who.html" class="button">Who said it?</a>
-      <a href="higherLower.html" class="button">Higher or Lower</a>
-    </section>
+
   </main>
 
   <!-- ====== SUMMARY MODAL ====== -->
@@ -182,7 +186,9 @@
       </a>
     </nav>
   </footer>
+  </div><!-- /.main-wrapper -->
 
+  <script src="sidebar.js"></script>
   <script type="module" src="auth.js"></script>
   <script src="grid.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

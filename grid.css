@@ -41,12 +41,12 @@
 .diff-tab:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(43, 108, 246, 0.2);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
 }
 
 .diff-tab.active {
   border-color: var(--accent);
-  background: rgba(43, 108, 246, 0.15);
+  background: rgba(46, 204, 113, 0.15);
   box-shadow: 0 0 0 1px var(--accent);
 }
 
@@ -216,7 +216,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(43, 108, 246, 0.3), rgba(80, 227, 194, 0.3));
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.3), rgba(200, 169, 78, 0.3));
   border: 2px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
@@ -326,14 +326,14 @@ button.grid-cell:disabled {
 
 /* Filled cell (pre-submit, neutral state) */
 .grid-cell.filled {
-  background: linear-gradient(135deg, rgba(43, 108, 246, 0.15), rgba(80, 227, 194, 0.12));
-  border-color: rgba(43, 108, 246, 0.4);
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.15), rgba(200, 169, 78, 0.12));
+  border-color: rgba(46, 204, 113, 0.4);
   cursor: pointer;
 }
 
 .grid-cell.filled:hover {
-  background: linear-gradient(135deg, rgba(43, 108, 246, 0.25), rgba(80, 227, 194, 0.2));
-  border-color: rgba(43, 108, 246, 0.6);
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.25), rgba(200, 169, 78, 0.2));
+  border-color: rgba(46, 204, 113, 0.6);
 }
 
 /* Correct cell */
@@ -390,7 +390,7 @@ button.grid-cell:disabled {
 
 /* Loading state */
 .grid-cell.loading {
-  background: rgba(43, 108, 246, 0.12);
+  background: rgba(46, 204, 113, 0.12);
   border-color: var(--accent);
 }
 
@@ -495,18 +495,18 @@ button.grid-cell:disabled {
 
 .submit-grid-btn.ready:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(43, 108, 246, 0.4);
+  box-shadow: 0 8px 24px rgba(46, 204, 113, 0.4);
 }
 
 @keyframes submitPulse {
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(43, 108, 246, 0.3);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.3);
   }
 
   50% {
-    box-shadow: 0 0 16px 4px rgba(43, 108, 246, 0.2);
+    box-shadow: 0 0 16px 4px rgba(46, 204, 113, 0.2);
   }
 }
 
@@ -530,7 +530,7 @@ button.grid-cell:disabled {
 .search-box {
   width: 92%;
   max-width: 420px;
-  background: #0f1b58;
+  background: #0d2818;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 22px;
@@ -566,7 +566,7 @@ button.grid-cell:disabled {
 
 #playerSearchInput:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(43, 108, 246, 0.3);
+  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.3);
 }
 
 /* Search loading indicator */
@@ -606,7 +606,7 @@ button.grid-cell:disabled {
 }
 
 .search-results li:hover {
-  background: rgba(43, 108, 246, 0.18);
+  background: rgba(46, 204, 113, 0.18);
 }
 
 .search-player-icon {
