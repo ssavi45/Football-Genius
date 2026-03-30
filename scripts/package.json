@@ -1,0 +1,15 @@
+{
+  "name": "football-genius-updater",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data migration and automated stat updater for Football Genius",
+  "scripts": {
+    "migrate": "node migrate-to-supabase.js",
+    "update": "node update-stats.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "axios": "^1.7.0",
+    "cheerio": "^1.0.0"
+  }
+}
