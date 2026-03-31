@@ -507,12 +507,10 @@
 
   /* ── Init ─────────────────────────────────────────────────────── */
   async function init() {
-    // Load player data
-    try {
-      const res = await fetch('data/guess-players.json?v=' + Date.now());
-      state.players = await res.json();
-    } catch (e) {
-      console.error('Failed to load player data:', e);
+    // Load player data (Supabase → cache → JSON fallback)
+    state.players = await window.PlayerData.getGuessPlayers();
+    if (!state.players.length) {
+      console.error('No player data available');
       return;
     }
 

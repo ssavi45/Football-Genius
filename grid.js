@@ -1,15 +1,9 @@
 // grid.js -- Daily Grid Challenge (Football Genius)
 // No ES module imports -- uses window.auth exposed by auth.js
 
-// =====================================================================
-//  PLAYER DATABASE (loaded from JSON)
-// =====================================================================
 var playersDb = [];
 var dbLoaded = false;
 
-// =====================================================================
-//  NORMALIZATION (data consistency)
-// =====================================================================
 function normalizeKey(s) {
   return String(s || '')
     .trim()
@@ -92,9 +86,7 @@ function canonicalizePlayerName(name) {
     .replace(/[\u2010-\u2015]/g, '-');
 }
 
-// =====================================================================
-//  CRITERIA POOLS
-// =====================================================================
+
 var NATIONS = [
   { id: 'brazil',      name: 'Brazil',       img: 'img/teams/brazil.png' },
   { id: 'spain',       name: 'Spain',        img: 'img/teams/spain.png' },
@@ -156,9 +148,7 @@ STAT_CRITERIA.forEach(function(s) { STAT_ID_BY_NAME[s.name] = s.id; });
 CLUB_CANON = makeCanonicalMap(CLUBS);
 NATION_CANON = makeCanonicalMap(NATIONS);
 
-// =====================================================================
-//  SEEDED PRNG (mulberry32) -- for daily consistent grids
-// =====================================================================
+
 function mulberry32(seed) {
   return function() {
     seed |= 0; seed = seed + 0x6D2B79F5 | 0;
@@ -190,9 +180,7 @@ function seededShuffle(arr, rng) {
   return a;
 }
 
-// =====================================================================
-//  GRID GENERATION (with solvability check)
-// =====================================================================
+
 function checkGridSolvable(rows, cols) {
   for (var r = 0; r < rows.length; r++) {
     for (var c = 0; c < cols.length; c++) {
@@ -239,9 +227,7 @@ function generateGrid(difficulty) {
   return { rows: rows, cols: cols, difficulty: difficulty };
 }
 
-// =====================================================================
-//  LOCAL PLAYER SEARCH
-// =====================================================================
+
 function searchPlayersLocal(query) {
   var q = query.toLowerCase();
   var results = [];
@@ -253,9 +239,7 @@ function searchPlayersLocal(query) {
   return results;
 }
 
-// =====================================================================
-//  LOCAL ANSWER VALIDATION
-// =====================================================================
+
 function checkCriterion(player, criterionName) {
   // Check if it's a club
   if (CLUB_NAMES[criterionName]) {
@@ -305,9 +289,7 @@ function validateAnswerLocal(playerName, rowCriterionName, colCriterionName) {
   return { valid: false, reason: player.name + " doesn't match " + colCriterionName + '.' };
 }
 
-// =====================================================================
-//  GAME STATE
-// =====================================================================
+
 var state = {
   grid: null,
   score: 0,
@@ -318,9 +300,7 @@ var state = {
   submitted: false
 };
 
-// =====================================================================
-//  DOM REFERENCES
-// =====================================================================
+
 var els = {};
 
 function cacheDom() {
@@ -348,9 +328,7 @@ function cacheDom() {
   };
 }
 
-// =====================================================================
-//  GRID RENDERING
-// =====================================================================
+
 // Helper: build a header cell (works for clubs, nations, AND stats — all now use img)
 function buildHeaderContent(item) {
   var html = '<img src="' + item.img + '" alt="' + item.name + '" ' +
@@ -402,9 +380,7 @@ function renderGrid() {
   });
 }
 
-// =====================================================================
-//  SEARCH MODAL
-// =====================================================================
+
 var searchDebounceTimer = null;
 
 function openSearch(btnEl, row, col) {
@@ -469,9 +445,7 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// =====================================================================
-//  PLAYER SELECTION & VALIDATION
-// =====================================================================
+
 function selectPlayer(playerName) {
   if (!state.activeCell || state.gameOver || state.submitted) return;
 
@@ -510,9 +484,7 @@ function selectPlayer(playerName) {
   updateSubmitButton();
 }
 
-// =====================================================================
-//  HUD & FEEDBACK
-// =====================================================================
+
 function showFeedback(msg, isSuccess) {
   els.feedback.textContent = msg;
   els.feedback.className = 'feedback ' + (isSuccess ? 'win' : 'fail');
@@ -605,15 +577,7 @@ function submitAllAnswers() {
   }
 }
 
-// =====================================================================
-//  GAME OVER & SUMMARY
-// =====================================================================
-// checkGameOver is replaced by submitAllAnswers — no longer auto-triggered
-// showSummary modal removed — results are shown inline on the grid
 
-// =====================================================================
-//  GAME START
-// =====================================================================
 function startGame(difficulty) {
   state.grid = generateGrid(difficulty);
   state.score = 0;
@@ -646,16 +610,11 @@ function startGame(difficulty) {
   updateSubmitButton();
 }
 
-// =====================================================================
-//  INITIALIZATION
-// =====================================================================
 document.addEventListener('DOMContentLoaded', function() {
   cacheDom();
 
-  // Load player database
-  fetch('data/grid-players.json')
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
+  // Load player database (Supabase → cache → JSON fallback)
+  window.PlayerData.getGridPlayers().then(function(data) {
       // Normalize + deduplicate by name (keep the "best" record)
       var seen = {};
       var out = [];

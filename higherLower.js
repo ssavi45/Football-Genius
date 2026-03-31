@@ -339,14 +339,7 @@
   }
 
   async function loadData() {
-    try {
-      const res = await fetch('data/players.json?v=' + Date.now());
-      const json = await res.json();
-      state.players = json;
-    } catch (e) {
-      state.players = [];
-      console.error('Failed to load players.json', e);
-    }
+    state.players = await window.PlayerData.getGlobalPlayers();
   }
 
   function wireEvents() {
