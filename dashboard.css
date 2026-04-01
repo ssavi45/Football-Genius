@@ -231,6 +231,9 @@
 .mode-badge.unscramble { background: rgba(200, 169, 78, 0.15); color: #c8a94e; }
 .mode-badge.whosaidit { background: rgba(255, 82, 82, 0.15); color: #ff7b7b; }
 .mode-badge.higherlower { background: rgba(24, 201, 110, 0.15); color: #4de89d; }
+.mode-badge.transfer { background: rgba(74, 144, 226, 0.18); color: #7dc1ff; }
+.mode-badge.grid { background: rgba(111, 207, 151, 0.16); color: #8af0b2; }
+.mode-badge.guess { background: rgba(186, 104, 200, 0.18); color: #de9cff; }
 .dash-history-score {
   font-family: "Russo One", sans-serif;
   font-size: 16px;

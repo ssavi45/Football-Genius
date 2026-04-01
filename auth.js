@@ -497,6 +497,7 @@ const MODE_LABELS = {
   whosaidit: 'Who Said It',
   higherlower: 'Higher/Lower',
   grid: 'Grid Challenge',
+  transfer: 'Transfer Trail',
   guess: 'Guess Who?'
 };
 
@@ -511,6 +512,70 @@ function formatRelativeDate(iso) {
   return d.toLocaleDateString(undefined, { day: 'numeric', month: 'short' });
 }
 
+function normalizeDisplayName(name, fallback = '') {
+  const normalized = String(name || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 32);
+  return normalized || fallback;
+}
+
+function toSafeImageUrl(url) {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url, window.location.href);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return parsed.href;
+    }
+  } catch (_err) {
+    return null;
+  }
+  return null;
+}
+
+function clearChildren(el) {
+  if (el) el.replaceChildren();
+}
+
+function createInitialsAvatar(name, cls = '') {
+  const initials = _getInitials(name);
+  const avatar = document.createElement('div');
+  avatar.className = cls;
+  avatar.textContent = initials;
+  return avatar;
+}
+
+function createLeaderboardAvatar(name, url, cls = '') {
+  const safeUrl = toSafeImageUrl(url);
+  const initialsClass = cls.replace('avatar', 'avatar-initials');
+  if (!safeUrl) return createInitialsAvatar(name, initialsClass);
+
+  const img = document.createElement('img');
+  img.className = cls;
+  img.src = safeUrl;
+  img.alt = `${name || 'Player'} avatar`;
+  img.onerror = () => {
+    img.replaceWith(createInitialsAvatar(name, initialsClass));
+  };
+  return img;
+}
+
+function setSimpleState(container, className, text, iconText = '') {
+  clearChildren(container);
+  const stateEl = document.createElement('div');
+  stateEl.className = className;
+
+  if (iconText) {
+    const icon = document.createElement('div');
+    icon.className = 'lb-empty-icon';
+    icon.textContent = iconText;
+    stateEl.appendChild(icon);
+  }
+
+  stateEl.appendChild(document.createTextNode(text));
+  container.appendChild(stateEl);
+}
+
 async function loadDashboardData() {
   try {
     const { data: { session } } = await supabase.auth.getSession();
@@ -519,9 +584,12 @@ async function loadDashboardData() {
     const user = session.user;
 
     // Profile
-    const name = user.user_metadata?.full_name || user.user_metadata?.name || user.email;
+    const name = normalizeDisplayName(
+      user.user_metadata?.full_name || user.user_metadata?.name,
+      user.email || 'Player'
+    );
     const email = user.email || '';
-    const avatarUrl = user.user_metadata?.avatar_url;
+    const avatarUrl = toSafeImageUrl(user.user_metadata?.avatar_url);
     const createdAt = user.created_at;
 
     $('#dashName').textContent = name;
@@ -566,7 +634,7 @@ async function loadDashboardData() {
   const historyEl = $('#dashHistory');
 
   if (error || !scores) {
-    historyEl.innerHTML = '<div class="dash-history-empty">Could not load scores.</div>';
+    setSimpleState(historyEl, 'dash-history-empty', 'Could not load scores.');
     return;
   }
 
@@ -583,31 +651,51 @@ async function loadDashboardData() {
 
   // History list
   if (scores.length === 0) {
-    historyEl.innerHTML = '<div class="dash-history-empty">No games played yet. Go play!</div>';
+    setSimpleState(historyEl, 'dash-history-empty', 'No games played yet. Go play!');
     return;
   }
 
-  let html = '<div class="dash-history-list">';
+  const list = document.createElement('div');
+  list.className = 'dash-history-list';
+
   scores.forEach(r => {
     const modeLabel = MODE_LABELS[r.mode] || r.mode;
-    const modeClass = r.mode || 'scoreline';
-    html += `
-      <div class="dash-history-row">
-        <div class="dash-history-mode"><span class="mode-badge ${modeClass}">${modeLabel}</span></div>
-        <div class="dash-history-score">${r.score} pts</div>
-        <div class="dash-history-date">${formatRelativeDate(r.created_at)}</div>
-      </div>`;
+    const modeClass = MODE_LABELS[r.mode] ? r.mode : 'scoreline';
+
+    const row = document.createElement('div');
+    row.className = 'dash-history-row';
+
+    const modeWrap = document.createElement('div');
+    modeWrap.className = 'dash-history-mode';
+
+    const badge = document.createElement('span');
+    badge.className = `mode-badge ${modeClass}`;
+    badge.textContent = modeLabel;
+    modeWrap.appendChild(badge);
+
+    const scoreEl = document.createElement('div');
+    scoreEl.className = 'dash-history-score';
+    scoreEl.textContent = `${r.score} pts`;
+
+    const dateEl = document.createElement('div');
+    dateEl.className = 'dash-history-date';
+    dateEl.textContent = formatRelativeDate(r.created_at);
+
+    row.appendChild(modeWrap);
+    row.appendChild(scoreEl);
+    row.appendChild(dateEl);
+    list.appendChild(row);
   });
-  html += '</div>';
-  historyEl.innerHTML = html;
+  historyEl.replaceChildren(list);
   } catch (err) {
     console.warn('Dashboard data error:', err);
   }
 }
 async function handleEditName() {
   const input = $('#dashEditName');
-  const newName = input.value.trim();
+  const newName = normalizeDisplayName(input.value);
   const msgEl = $('#dashEditMsg');
+  input.value = newName;
   if (!newName) {
     msgEl.textContent = 'Name cannot be empty.';
     msgEl.className = 'dash-edit-msg error';
@@ -692,15 +780,18 @@ async function handleAuthClick() {
 /* ── Profile ─────────────────────────────────────────────────────── */
 async function ensureProfile(user) {
   if (!user) return;
+  const username = normalizeDisplayName(
+    user.user_metadata?.user_name
+      || user.user_metadata?.full_name
+      || user.user_metadata?.name
+  );
+  const avatarUrl = toSafeImageUrl(user.user_metadata?.avatar_url);
   const { error } = await supabase
     .from('profiles')
     .upsert({
       id: user.id,
-      username: user.user_metadata?.user_name
-        || user.user_metadata?.full_name
-        || user.user_metadata?.name
-        || null,
-      avatar_url: user.user_metadata?.avatar_url || null
+      username: username || null,
+      avatar_url: avatarUrl || null
     }, { onConflict: 'id' });
   if (error) console.warn('ensureProfile error:', error.message);
 }
@@ -737,7 +828,7 @@ async function getLeaderboard(mode = null, period = 'all', limit = 50) {
       .from('scores')
       .select('user_id, score, created_at, mode')
       .order('score', { ascending: false })
-      .limit(200);
+      .limit(2000);
     if (mode) query = query.eq('mode', mode);
     if (period === 'daily') {
       const dayAgo = new Date(Date.now() - 86400000).toISOString();
@@ -798,6 +889,7 @@ function injectLeaderboard() {
     { key: 'whosaidit', label: 'Who Said It' },
     { key: 'higherlower', label: 'Higher / Lower' },
     { key: 'grid', label: 'Grid' },
+    { key: 'transfer', label: 'Transfer Trail' },
     { key: 'guess', label: 'Guess Who?' }
   ];
 
@@ -892,13 +984,6 @@ function _getInitials(name) {
   return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
 }
 
-function _avatarHTML(url, name, cls = '') {
-  if (url) {
-    return `<img class="${cls}" src="${url}" alt="${name || 'avatar'}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="${cls.replace('avatar', 'avatar-initials')}" style="display:none">${_getInitials(name)}</div>`;
-  }
-  return `<div class="${cls.replace('avatar', 'avatar-initials')}">${_getInitials(name)}</div>`;
-}
-
 async function loadLeaderboardData() {
   const podiumEl = $('#lbPodium');
   const listEl = $('#lbList');
@@ -907,21 +992,21 @@ async function loadLeaderboardData() {
   if (!podiumEl || !listEl) return;
 
   // Show loading
-  podiumEl.innerHTML = '';
-  listEl.innerHTML = '<div class="lb-loading">Loading rankings…</div>';
+  clearChildren(podiumEl);
+  setSimpleState(listEl, 'lb-loading', 'Loading rankings...');
   yourRankEl.hidden = true;
 
   // Fetch data
   const { data, error } = await getLeaderboard(_lbState.mode, _lbState.period);
 
   if (error || !data) {
-    listEl.innerHTML = '<div class="lb-empty"><div class="lb-empty-icon">😕</div>Could not load leaderboard.</div>';
+    setSimpleState(listEl, 'lb-empty', 'Could not load leaderboard.', '😕');
     return;
   }
 
   if (data.length === 0) {
-    podiumEl.innerHTML = '';
-    listEl.innerHTML = '<div class="lb-empty"><div class="lb-empty-icon">🏟️</div>No scores yet. Be the first to play!</div>';
+    clearChildren(podiumEl);
+    setSimpleState(listEl, 'lb-empty', 'No scores yet. Be the first to play!', '🏟️');
     return;
   }
 
@@ -934,43 +1019,95 @@ async function loadLeaderboardData() {
   const podiumOrder = top3.length >= 3 ? [top3[1], top3[0], top3[2]] : top3;
   const rankLabels = { 1: '1st', 2: '2nd', 3: '3rd' };
 
-  podiumEl.innerHTML = podiumOrder.map(entry => {
+  podiumOrder.forEach(entry => {
     const r = Number(entry.rank);
-    const name = entry.username || 'Player';
-    const crown = r === 1 ? '<span class="lb-crown">👑</span>' : '';
-    return `
-      <div class="lb-podium-card" data-rank="${r}">
-        ${crown}
-        <div class="lb-podium-avatar-wrap">
-          ${_avatarHTML(entry.avatar_url, name, 'lb-podium-avatar')}
-          <div class="lb-podium-avatar-ring"></div>
-        </div>
-        <div class="lb-podium-name">${name}</div>
-        <div class="lb-podium-score">${entry.best_score} pts</div>
-        <div class="lb-podium-badge">${rankLabels[r] || '#' + r}</div>
-        <div class="lb-podium-games">${entry.games_played} game${entry.games_played === 1 ? '' : 's'}</div>
-      </div>`;
-  }).join('');
+    const name = normalizeDisplayName(entry.username, 'Player');
+
+    const card = document.createElement('div');
+    card.className = 'lb-podium-card';
+    card.dataset.rank = String(r);
+
+    if (r === 1) {
+      const crown = document.createElement('span');
+      crown.className = 'lb-crown';
+      crown.textContent = '👑';
+      card.appendChild(crown);
+    }
+
+    const avatarWrap = document.createElement('div');
+    avatarWrap.className = 'lb-podium-avatar-wrap';
+    avatarWrap.appendChild(createLeaderboardAvatar(name, entry.avatar_url, 'lb-podium-avatar'));
+
+    const ring = document.createElement('div');
+    ring.className = 'lb-podium-avatar-ring';
+    avatarWrap.appendChild(ring);
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'lb-podium-name';
+    nameEl.textContent = name;
+
+    const scoreEl = document.createElement('div');
+    scoreEl.className = 'lb-podium-score';
+    scoreEl.textContent = `${entry.best_score} pts`;
+
+    const badgeEl = document.createElement('div');
+    badgeEl.className = 'lb-podium-badge';
+    badgeEl.textContent = rankLabels[r] || `#${r}`;
+
+    const gamesEl = document.createElement('div');
+    gamesEl.className = 'lb-podium-games';
+    gamesEl.textContent = `${entry.games_played} game${entry.games_played === 1 ? '' : 's'}`;
+
+    card.appendChild(avatarWrap);
+    card.appendChild(nameEl);
+    card.appendChild(scoreEl);
+    card.appendChild(badgeEl);
+    card.appendChild(gamesEl);
+    podiumEl.appendChild(card);
+  });
 
   // Render ranked list (#4 onwards)
   const rest = data.slice(3);
   if (rest.length === 0) {
-    listEl.innerHTML = '';
+    clearChildren(listEl);
   } else {
-    listEl.innerHTML = rest.map(entry => {
+    const fragment = document.createDocumentFragment();
+    rest.forEach(entry => {
       const isMe = entry.user_id === myId;
-      const name = entry.username || 'Player';
-      return `
-        <div class="lb-row${isMe ? ' lb-me' : ''}">
-          <div class="lb-row-rank">#${entry.rank}</div>
-          ${_avatarHTML(entry.avatar_url, name, 'lb-row-avatar')}
-          <div class="lb-row-info">
-            <div class="lb-row-name">${name}${isMe ? ' (You)' : ''}</div>
-            <div class="lb-row-games">${entry.games_played} game${entry.games_played === 1 ? '' : 's'}</div>
-          </div>
-          <div class="lb-row-score">${entry.best_score} pts</div>
-        </div>`;
-    }).join('');
+      const name = normalizeDisplayName(entry.username, 'Player');
+
+      const row = document.createElement('div');
+      row.className = `lb-row${isMe ? ' lb-me' : ''}`;
+
+      const rankEl = document.createElement('div');
+      rankEl.className = 'lb-row-rank';
+      rankEl.textContent = `#${entry.rank}`;
+
+      const infoEl = document.createElement('div');
+      infoEl.className = 'lb-row-info';
+
+      const nameEl = document.createElement('div');
+      nameEl.className = 'lb-row-name';
+      nameEl.textContent = isMe ? `${name} (You)` : name;
+
+      const gamesEl = document.createElement('div');
+      gamesEl.className = 'lb-row-games';
+      gamesEl.textContent = `${entry.games_played} game${entry.games_played === 1 ? '' : 's'}`;
+
+      const scoreEl = document.createElement('div');
+      scoreEl.className = 'lb-row-score';
+      scoreEl.textContent = `${entry.best_score} pts`;
+
+      infoEl.appendChild(nameEl);
+      infoEl.appendChild(gamesEl);
+
+      row.appendChild(rankEl);
+      row.appendChild(createLeaderboardAvatar(name, entry.avatar_url, 'lb-row-avatar'));
+      row.appendChild(infoEl);
+      row.appendChild(scoreEl);
+      fragment.appendChild(row);
+    });
+    listEl.replaceChildren(fragment);
   }
 
   // Your rank banner

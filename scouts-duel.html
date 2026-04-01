@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Football Genius — Scout's Duel</title>
+  <meta name="description"
+    content="Head-to-head footballer guessing game. Pick a player, ask yes/no questions, and identify your opponent's pick before they guess yours!" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="auth-modal.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="leaderboard.css" />
+  <link rel="stylesheet" href="scouts-duel.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
+
+<body class="scoreline-page">
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="brand">
+        <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <img class="logo" src="foot_gen.png" alt="Football Genius logo" />
+          <div class="brand-text">
+            <h1>Football Genius</h1>
+            <small>Scout's Duel</small>
+          </div>
+        </a>
+      </div>
+
+      <nav class="top-actions" aria-label="Header actions">
+        <div id="btnAuth" aria-label="User Login/Register" tabindex="0" role="button" class="user-profile"
+          data-action="auth">
+          <div class="user-profile-inner">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g>
+                <path
+                  d="m15.626 11.769a6 6 0 1 0 -7.252 0 9.008 9.008 0 0 0 -5.374 8.231 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 9.008 9.008 0 0 0 -5.374-8.231zm-7.626-4.769a4 4 0 1 1 4 4 4 4 0 0 1 -4-4zm10 14h-12a1 1 0 0 1 -1-1 7 7 0 0 1 14 0 1 1 0 0 1 -1 1z" />
+              </g>
+            </svg>
+            <p>Login / Register</p>
+          </div>
+        </div>
+
+        <button id="btnLeaderboard" type="button" class="btn lb-btn" data-action="leaderboard">
+          <strong>LEADERBOARD</strong>
+          <div class="container-stars"><div class="stars"></div></div>
+          <div class="glow"><div class="circle"></div><div class="circle"></div></div>
+        </button>
+      </nav>
+
+      <!-- HUD — hidden in lobby, shown during game -->
+      <div class="hud" id="gameHud" style="display:none">
+        <div class="hud-item">
+          <div class="label">Turn</div>
+          <div class="value"><span id="turnNumber">1</span></div>
+        </div>
+        <div class="hud-item">
+          <div class="label">Questions</div>
+          <div class="value"><span id="questionsAsked">0</span></div>
+        </div>
+        <div class="hud-item">
+          <div class="label">Remaining</div>
+          <div class="value"><span id="cardsRemaining">24</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="arena">
+
+      <!-- ═══════════════════════════════════════════════
+           SCREEN 1: LOBBY
+           ═══════════════════════════════════════════════ -->
+      <section id="lobbyScreen" class="sd-screen sd-lobby">
+        <div class="sd-lobby-hero">
+          <div class="sd-logo-circle">
+            <svg viewBox="0 0 64 64" class="sd-logo-icon">
+              <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+              <circle cx="32" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 46c0-7.7 6.3-14 14-14s14 6.3 14 14" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="32" cy="24" r="2" fill="currentColor" opacity="0.5"/>
+              <line x1="44" y1="12" x2="50" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="47" y1="6" x2="50" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="50" y1="6" x2="50" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="sd-lobby-title">Scout's Duel</h2>
+          <p class="sd-lobby-subtitle">Pick a footballer. Ask yes/no questions. Outsmart your opponent.</p>
+        </div>
+
+        <div class="sd-mode-cards">
+          <button class="sd-mode-card" id="btnOnlineMatch">
+            <div class="sd-mode-icon">🌐</div>
+            <div class="sd-mode-label">Online Match</div>
+            <div class="sd-mode-desc">Find a random opponent</div>
+          </button>
+          <button class="sd-mode-card" id="btnCustomRoom">
+            <div class="sd-mode-icon">🔗</div>
+            <div class="sd-mode-label">Custom Room</div>
+            <div class="sd-mode-desc">Play with a friend</div>
+          </button>
+          <button class="sd-mode-card sd-mode-ai" id="btnVsAI">
+            <div class="sd-mode-icon">🤖</div>
+            <div class="sd-mode-label">vs AI</div>
+            <div class="sd-mode-desc">Challenge Gemini</div>
+          </button>
+        </div>
+
+        <!-- Custom Room Panel (hidden by default) -->
+        <div class="sd-room-panel" id="roomPanel" hidden>
+          <div class="sd-room-tabs">
+            <button class="sd-room-tab active" id="tabCreateRoom">Create Room</button>
+            <button class="sd-room-tab" id="tabJoinRoom">Join Room</button>
+          </div>
+          <div class="sd-room-body" id="createRoomView">
+            <button class="button" id="btnCreateRoom">Generate Room Code</button>
+            <div class="sd-room-code-display" id="roomCodeDisplay" hidden>
+              <span class="sd-room-code-label">Room Code:</span>
+              <span class="sd-room-code" id="roomCodeValue">------</span>
+              <button class="sd-copy-btn" id="btnCopyCode" title="Copy code">📋</button>
+            </div>
+            <div class="sd-room-status" id="createRoomStatus"></div>
+          </div>
+          <div class="sd-room-body" id="joinRoomView" hidden>
+            <div class="sd-room-input-row">
+              <input type="text" class="sd-room-input" id="joinCodeInput" placeholder="Enter room code" maxlength="6" />
+              <button class="button" id="btnJoinRoom">Join</button>
+            </div>
+            <div class="sd-room-status" id="joinRoomStatus"></div>
+          </div>
+          <button class="sd-back-btn" id="btnBackToLobby">← Back</button>
+        </div>
+
+        <!-- Matchmaking spinner -->
+        <div class="sd-matchmaking" id="matchmakingPanel" hidden>
+          <div class="sd-matchmaking-spinner"></div>
+          <p>Searching for an opponent...</p>
+          <button class="sd-back-btn" id="btnCancelMatch">Cancel</button>
+        </div>
+
+        <!-- How to play -->
+        <details class="howto sd-howto">
+          <summary>How to play Scout's Duel</summary>
+          <ul>
+            <li>Both players secretly pick one footballer from a shared pool of 24 cards.</li>
+            <li>Take turns asking yes/no questions to narrow down the opponent's pick.</li>
+            <li>Click cards to flip & eliminate them after each answer.</li>
+            <li>Press 🎯 <strong>Shoot</strong> to make a direct guess — correct wins, wrong ends your turn.</li>
+            <li>No timer pressure. Take your time and make smarter deductions.</li>
+          </ul>
+        </details>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SCREEN 2: PLAYER SELECTION
+           ═══════════════════════════════════════════════ -->
+      <section id="selectionScreen" class="sd-screen sd-selection-screen" hidden>
+        <div class="sd-selection-header">
+          <h2>Select Your Player</h2>
+          <div class="sd-opponent-status" id="opponentSelectionStatus">
+            <span class="sd-status-dot"></span>
+            Opponent is choosing...
+          </div>
+        </div>
+        <div class="sd-selection-shell">
+          <div class="sd-card-grid sd-selection-grid" id="selectionGrid"></div>
+        </div>
+        <button class="sd-lockin-btn" id="btnLockIn" disabled>
+          🔒 Lock In Selection
+        </button>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           SCREEN 3: GAME ARENA
+           ═══════════════════════════════════════════════ -->
+      <section id="gameScreen" class="sd-screen sd-game-screen" hidden>
+        <!-- Players bar -->
+        <div class="sd-players-bar">
+          <div class="sd-player-info sd-player-you" id="playerYouInfo">
+            <div class="sd-player-avatar">👤</div>
+            <div class="sd-player-name">You</div>
+          </div>
+          <div class="sd-turn-center">
+            <div class="sd-turn-label" id="turnLabel">YOUR TURN</div>
+          </div>
+          <div class="sd-player-info sd-player-opponent" id="playerOpponentInfo">
+            <div class="sd-player-avatar">🤖</div>
+            <div class="sd-player-name">Opponent</div>
+          </div>
+        </div>
+
+        <div class="sd-game-layout">
+          <div class="sd-game-board">
+            <div class="sd-board-header">
+              <div>
+                <div class="sd-board-kicker">Scout Board</div>
+                <h2>Track the full 24-player pool and eliminate with intent.</h2>
+              </div>
+              <div class="sd-board-badge">8 x 3 Grid</div>
+            </div>
+            <div class="sd-card-grid sd-game-grid" id="gameGrid"></div>
+          </div>
+
+          <!-- Question Panel -->
+          <div class="sd-question-panel" id="questionPanel">
+            <div class="sd-panel-head">
+              <div class="sd-panel-kicker">Question Console</div>
+              <h3>Ask sharp yes/no questions and narrow the field.</h3>
+            </div>
+          <!-- Category tabs -->
+          <div class="sd-q-tabs" id="questionTabs">
+            <button class="sd-q-tab active" data-cat="position">Position</button>
+            <button class="sd-q-tab" data-cat="continent">Region</button>
+            <button class="sd-q-tab" data-cat="league">League</button>
+            <button class="sd-q-tab" data-cat="status">Status</button>
+            <button class="sd-q-tab" data-cat="achievements">Awards</button>
+            <button class="sd-q-tab" data-cat="physical">Physical</button>
+            <button class="sd-q-tab" data-cat="freetext">✏️ Custom</button>
+          </div>
+          <!-- Predefined question buttons -->
+          <div class="sd-q-options" id="questionOptions"></div>
+          <!-- Free-text input (shown when Custom tab active) -->
+          <div class="sd-q-freetext" id="freetextPanel" hidden>
+            <input type="text" class="sd-q-freetext-input" id="freetextInput" placeholder="Type a yes/no question..." />
+            <button class="button sd-q-ask-btn" id="btnAskFreetext">Ask</button>
+          </div>
+          <!-- Shoot button -->
+          <button class="sd-shoot-btn" id="btnShoot">
+            <span class="sd-shoot-icon">🎯</span>
+            <span>SHOOT</span>
+          </button>
+        </div>
+
+        </div>
+
+        <!-- Answer overlay (when opponent asks you) -->
+        <div class="sd-answer-overlay" id="answerOverlay" hidden>
+          <div class="sd-answer-card">
+            <div class="sd-answer-label">Opponent asks:</div>
+            <div class="sd-answer-question" id="answerQuestionText"></div>
+            <div class="sd-answer-buttons">
+              <button class="sd-answer-btn sd-yes" id="btnAnswerYes">✓ Yes</button>
+              <button class="sd-answer-btn sd-no" id="btnAnswerNo">✗ No</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question log drawer -->
+        <div class="sd-log-toggle" id="logToggle">
+          <button class="sd-log-btn" id="btnToggleLog">📜 Question Log</button>
+        </div>
+        <div class="sd-question-log" id="questionLog" hidden>
+          <div class="sd-log-header">
+            <h3>Question Log</h3>
+            <button class="sd-log-close" id="btnCloseLog">✕</button>
+          </div>
+          <div class="sd-log-entries" id="logEntries"></div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           GUESS MODAL
+           ═══════════════════════════════════════════════ -->
+      <div class="sd-guess-modal" id="guessModal" hidden>
+        <div class="sd-guess-backdrop"></div>
+        <div class="sd-guess-content">
+          <h2>🎯 Make Your Guess</h2>
+          <p class="sd-guess-subtitle">Select the player you think your opponent chose</p>
+          <div class="sd-guess-grid" id="guessGrid"></div>
+          <div class="sd-guess-actions">
+            <button class="button" id="btnConfirmGuess" disabled>Confirm Guess</button>
+            <button class="sd-back-btn" id="btnCancelGuess">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sd-shoot-result-modal" id="shootResultModal" hidden>
+        <div class="sd-guess-backdrop"></div>
+        <div class="sd-shoot-result-card" id="shootResultCard">
+          <div class="sd-shoot-result-badge" id="shootResultBadge">🎯</div>
+          <div class="sd-shoot-result-kicker" id="shootResultKicker">Shot Result</div>
+          <h2 id="shootResultTitle">Guess submitted</h2>
+          <p class="sd-shoot-result-message" id="shootResultMessage"></p>
+          <button class="button sd-shoot-result-btn" id="btnShootResultPrimary" type="button">Resume</button>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════
+           SCREEN 4: END / RESULT
+           ═══════════════════════════════════════════════ -->
+      <section id="endScreen" class="sd-screen" hidden>
+        <div class="sd-end-card">
+          <div class="sd-end-icon" id="endIcon">🏆</div>
+          <h2 class="sd-end-title" id="endTitle">You Win!</h2>
+          <p class="sd-end-subtitle" id="endSubtitle">You correctly identified your opponent's player!</p>
+          <div class="sd-end-reveal">
+            <div class="sd-end-reveal-item">
+              <div class="sd-end-reveal-label">Your Player</div>
+              <div class="sd-end-reveal-player" id="endYourPlayer"></div>
+            </div>
+            <div class="sd-end-vs">VS</div>
+            <div class="sd-end-reveal-item">
+              <div class="sd-end-reveal-label">Opponent's Player</div>
+              <div class="sd-end-reveal-player" id="endOpponentPlayer"></div>
+            </div>
+          </div>
+          <div class="sd-end-stats">
+            <div class="sd-end-stat">
+              <div class="sd-end-stat-val" id="endTurns">0</div>
+              <div class="sd-end-stat-label">Turns</div>
+            </div>
+            <div class="sd-end-stat">
+              <div class="sd-end-stat-val" id="endQuestions">0</div>
+              <div class="sd-end-stat-label">Questions</div>
+            </div>
+          </div>
+          <div class="sd-end-actions">
+            <button class="button" id="btnPlayAgain">Play Again</button>
+            <a href="scouts-duel.html" class="sd-back-btn">Back to Lobby</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notification toast -->
+      <div class="sd-toast" id="sdToast" hidden>
+        <span id="sdToastText"></span>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="copy">© <span id="year"></span> Football Genius</div>
+      <nav class="socials" aria-label="Contact us">
+        <a class="social-btn fb" href="https://www.facebook.com/ss.avi.0" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5.01 3.66 9.16 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.78 8.44-4.93 8.44-9.94z"/></svg>
+          <span>Facebook</span>
+        </a>
+        <a class="social-btn x" href="https://x.com/ss__avi" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-7.05 8.06L22.5 22h-6.4l-5-6.5L5.2 22H2.1l7.49-8.57L1.9 2h6.5l4.5 5.93L18.9 2zm-2.24 18h2.14L7.43 4H5.2l11.46 16z"/></svg>
+          <span>Twitter</span>
+        </a>
+        <a class="social-btn dc" href="https://www.discord.com/hitman_0045" target="_blank" rel="noopener" aria-label="Discord">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20.3 5.4A16 16 0 0 0 15.9 4l-.3.6a15 15 0 0 1 3 .9c-3-1.7-6.4-1.7-9.3 0a15 15 0 0 1 3-.9L12.9 4A16 16 0 0 0 8.5 5.4C5.7 9.6 5 13.7 5.2 17.8a16.3 16.3 0 0 0 4.9 2l.7-1.6a9.6 9.6 0 0 1-1.5-.7l.4-.3a10.9 10.9 0 0 0 6.6 0l.4.3a9.6 9.6 0 0 1-1.5.7l.7 1.6a16.3 16.3 0 0 0 4.9-2c.2-4.1-.5-8.2-3.2-12.4zM9.8 14.6c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8zm4.4 0c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8z"/></svg>
+          <span>Discord</span>
+        </a>
+      </nav>
+    </footer>
+  </div>
+
+  <script src="sidebar.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script src="player-data.js"></script>
+  <script src="scouts-duel-ai.js"></script>
+  <script src="scouts-duel-online.js"></script>
+  <script src="scouts-duel.js"></script>
+</body>
+
+</html>

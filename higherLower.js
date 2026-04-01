@@ -33,6 +33,36 @@
   };
   if (els.year) els.year.textContent = new Date().getFullYear();
 
+  const HEADSHOT_OUTPUT_SIZE = 360;
+  const headshotCache = new Map();
+  const HEADSHOT_FRAMES = {
+    default: { zoom: 0.64, x: 0.5, y: 0.28 },
+    messi: { zoom: 0.62, x: 0.5, y: 0.24 },
+    ronaldo: { zoom: 0.62, x: 0.5, y: 0.22 },
+    mbappe: { zoom: 0.62, x: 0.5, y: 0.22 },
+    haaland: { zoom: 0.6, x: 0.5, y: 0.2 },
+    bellingham: { zoom: 0.63, x: 0.5, y: 0.2 },
+    neymar: { zoom: 0.62, x: 0.5, y: 0.22 },
+    lewandowski: { zoom: 0.62, x: 0.5, y: 0.22 },
+    benzema: { zoom: 0.62, x: 0.5, y: 0.23 },
+    modric: { zoom: 0.58, x: 0.5, y: 0.21 },
+    bruyne: { zoom: 0.6, x: 0.5, y: 0.2 },
+    zlatan: { zoom: 0.6, x: 0.5, y: 0.18 },
+    rooney: { zoom: 0.62, x: 0.5, y: 0.2 },
+    henry: { zoom: 0.6, x: 0.5, y: 0.2 },
+    drogba: { zoom: 0.61, x: 0.5, y: 0.21 },
+    lampard: { zoom: 0.56, x: 0.5, y: 0.16 },
+    salah: { zoom: 0.62, x: 0.5, y: 0.22 },
+    kane: { zoom: 0.6, x: 0.5, y: 0.21 },
+    vinicius: { zoom: 0.62, x: 0.5, y: 0.22 },
+    valverde: { zoom: 0.6, x: 0.5, y: 0.22 },
+    rodri: { zoom: 0.6, x: 0.5, y: 0.2 },
+    bernardo: { zoom: 0.54, x: 0.5, y: 0.17 },
+    foden: { zoom: 0.6, x: 0.5, y: 0.18 },
+    palmer: { zoom: 0.6, x: 0.5, y: 0.18 },
+    saka: { zoom: 0.62, x: 0.5, y: 0.22 }
+  };
+
   const CATEGORIES = {
     goals: { key: 'careerGoals', label: 'Career goals', unit: 'goals' },
     trophies: { key: 'careerTrophies', label: 'Career trophies', unit: 'trophies' },
@@ -79,9 +109,102 @@
     category: 'goals',
     canPick: false,
     revealed: new Set(),
+    statSwitchEnabled: false,
     // keep-limit logic: track last kept player and how many consecutive times they were kept
     keep: { id: null, count: 0 } // count is number of consecutive "keeps" (max 1)
   };
+
+  function syncStatPicker(value) {
+    if (els.statSelect) els.statSelect.value = value;
+    document.querySelectorAll('.stat-chip').forEach((button) => {
+      const isActive = button.dataset.stat === value;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  function setStatSwitchEnabled(enabled) {
+    state.statSwitchEnabled = enabled;
+    document.querySelectorAll('.stat-chip').forEach((button) => {
+      button.disabled = !enabled;
+    });
+  }
+
+  function cropHeadshot(src, playerId) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        const width = img.naturalWidth || img.width;
+        const height = img.naturalHeight || img.height;
+        if (!width || !height) {
+          reject(new Error('Invalid image dimensions'));
+          return;
+        }
+
+        const frame = HEADSHOT_FRAMES[playerId] || HEADSHOT_FRAMES.default;
+        const shorterSide = Math.min(width, height);
+        const cropSize = Math.round(shorterSide * frame.zoom);
+        const focusX = width * frame.x;
+        const focusY = height * frame.y;
+        const maxX = Math.max(0, width - cropSize);
+        const maxY = Math.max(0, height - cropSize);
+        const sourceX = Math.max(0, Math.min(maxX, Math.round(focusX - cropSize / 2)));
+        const sourceY = Math.max(0, Math.min(maxY, Math.round(focusY - cropSize / 2)));
+
+        const canvas = document.createElement('canvas');
+        canvas.width = HEADSHOT_OUTPUT_SIZE;
+        canvas.height = HEADSHOT_OUTPUT_SIZE;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          reject(new Error('Canvas unavailable'));
+          return;
+        }
+
+        ctx.drawImage(
+          img,
+          sourceX,
+          sourceY,
+          cropSize,
+          cropSize,
+          0,
+          0,
+          HEADSHOT_OUTPUT_SIZE,
+          HEADSHOT_OUTPUT_SIZE
+        );
+
+        resolve(canvas.toDataURL('image/jpeg', 0.9));
+      };
+      img.onerror = reject;
+      img.src = src;
+    });
+  }
+
+  async function applyHeadshot(imgEl, player) {
+    const src = player?.image;
+    const name = player?.name || 'Player';
+    imgEl.alt = name;
+
+    if (!src) {
+      imgEl.src = '';
+      return;
+    }
+
+    imgEl.dataset.playerId = player.id;
+
+    const cacheKey = `${player.id}:${src}`;
+    let cacheEntry = headshotCache.get(cacheKey);
+    if (!cacheEntry) {
+      cacheEntry = cropHeadshot(src, player.id).catch(() => src);
+      headshotCache.set(cacheKey, cacheEntry);
+    }
+
+    const finalSrc = await cacheEntry;
+    if (imgEl.dataset.playerId === player.id) {
+      imgEl.src = finalSrc;
+    }
+  }
 
   const revealKey = (p, cat = state.category) => `${cat}:${p.id}`;
 
@@ -157,16 +280,8 @@
 
     els.modeLabel.textContent = meta.label;
 
-    // Face framing for all players
-    [els.left.img, els.right.img].forEach(img => {
-      img.style.objectFit = 'cover';
-      img.style.objectPosition = '50% 25%';
-      img.width = 260; img.height = 260;
-    });
-
     // Left
-    els.left.img.src = state.left.image;
-    els.left.img.alt = state.left.name;
+    void applyHeadshot(els.left.img, state.left);
     els.left.name.textContent = state.left.name;
     els.left.label.textContent = meta.label;  // same label on both
     els.left.value.textContent = state.revealed.has(revealKey(state.left))
@@ -174,8 +289,7 @@
       : '?';
 
     // Right
-    els.right.img.src = state.right.image;
-    els.right.img.alt = state.right.name;
+    void applyHeadshot(els.right.img, state.right);
     els.right.name.textContent = state.right.name;
     els.right.label.textContent = meta.label; // same label on both
     els.right.value.textContent = state.revealed.has(revealKey(state.right))
@@ -206,6 +320,7 @@
     els.overlay.el.hidden = false;
     els.arena.classList.add('round-over');
     setPickable(false);
+    setStatSwitchEnabled(true);
 
     // Save score to Supabase
     if (window.auth?.saveScore) window.auth.saveScore('higherlower', state.score);
@@ -267,6 +382,8 @@
 
   function startRound(cat = state.category) {
     state.category = cat;
+    syncStatPicker(cat);
+    setStatSwitchEnabled(true);
     state.pool = buildPoolForCategory(cat);
     state.revealed = new Set();
     state.keep = { id: null, count: 0 };
@@ -275,6 +392,7 @@
     if (state.pool.length < 2) {
       els.feedback.textContent = 'Not enough data for this stat. Please choose another.';
       setPickable(false);
+      setStatSwitchEnabled(true);
       return;
     }
     state.score = 0;
@@ -294,6 +412,7 @@
   function onPick(side) {
     if (!state.canPick) return;
     setPickable(false);
+    setStatSwitchEnabled(false);
 
     const cat = state.category;
     const leftVal = getStatRaw(state.left, cat);
@@ -348,9 +467,22 @@
     els.overlay.newRound.addEventListener('click', () => startRound(state.category));
     els.overlay.changeStat.addEventListener('click', () => {
       hideRoundOver();
-      els.statSelect?.focus();
+      setStatSwitchEnabled(true);
+      document.querySelector('.stat-chip.active')?.focus();
     });
-    els.statSelect.addEventListener('change', (e) => startRound(e.target.value));
+    els.statSelect.addEventListener('change', (e) => {
+      if (!state.statSwitchEnabled && e.target.value !== state.category) {
+        e.target.value = state.category;
+        return;
+      }
+      startRound(e.target.value);
+    });
+    document.querySelectorAll('.stat-chip').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!state.statSwitchEnabled && button.dataset.stat !== state.category) return;
+        startRound(button.dataset.stat);
+      });
+    });
   }
 
   (async function init() {

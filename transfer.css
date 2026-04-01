@@ -1,0 +1,591 @@
+/* Football Genius - Transfer Trail
+   ================================
+   Timeline-specific styling for club-path gameplay.
+*/
+
+body.transfer-page::before {
+  background:
+    linear-gradient(180deg, rgba(4, 8, 4, 0.58) 0%, rgba(4, 8, 4, 0.4) 36%, rgba(4, 8, 4, 0.62) 100%),
+    radial-gradient(circle at 20% 10%, rgba(71, 160, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 80% 12%, rgba(46, 204, 113, 0.1), transparent 30%),
+    url('stadium_bg.jpg') center center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+body.transfer-page .arena {
+  max-width: 1520px;
+}
+
+body.transfer-page .arena > * {
+  max-width: 1520px;
+}
+
+body.transfer-page .scoreboard-card.transfer-stage {
+  max-width: 1480px;
+}
+
+.transfer-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+}
+
+.transfer-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.transfer-eyebrow {
+  margin: 0 0 6px;
+  color: rgba(125, 193, 255, 0.78);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.transfer-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.15;
+  color: #f4f8ff;
+}
+
+.transfer-pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+
+.trail-pill strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.trail-shell {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 24px;
+  padding: 20px 18px 14px;
+  background:
+    linear-gradient(135deg, rgba(9, 24, 16, 0.9), rgba(7, 16, 11, 0.96)),
+    radial-gradient(circle at top, rgba(125, 193, 255, 0.08), transparent 38%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+.trail-shell::-webkit-scrollbar {
+  height: 8px;
+}
+
+.trail-shell::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.trail-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0, rgba(71, 160, 255, 0.06) 14%, transparent 28%),
+    linear-gradient(90deg, transparent 58%, rgba(46, 204, 113, 0.06) 74%, transparent 88%);
+  pointer-events: none;
+}
+
+.trail-grid {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-width: 100%;
+  margin-inline: auto;
+  padding-bottom: 4px;
+}
+
+.trail-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 104px;
+  min-width: 104px;
+  padding: 14px 10px 12px;
+  min-height: 166px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.trail-step.is-visible {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+.trail-step.is-hidden {
+  background: rgba(255, 255, 255, 0.02);
+  border-style: dashed;
+}
+
+.trail-step.is-endpoint {
+  border-color: rgba(46, 204, 113, 0.25);
+  box-shadow: 0 0 22px rgba(46, 204, 113, 0.08);
+}
+
+.trail-step.revealed-now {
+  animation: trail-pop 0.45s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  border-color: rgba(125, 193, 255, 0.4);
+  box-shadow: 0 0 30px rgba(125, 193, 255, 0.15);
+}
+
+@keyframes trail-pop {
+  0% {
+    transform: scale(0.85) rotate(-4deg);
+    opacity: 0.2;
+  }
+  60% {
+    transform: scale(1.05) rotate(1deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.trail-order {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  min-width: 22px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.62rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.trail-badge {
+  width: 62px;
+  height: 62px;
+  padding: 8px;
+  border-radius: 16px;
+  overflow: visible;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.trail-badge img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  object-fit: contain;
+  object-position: center;
+  flex: 0 0 auto;
+}
+
+.trail-badge.is-hidden {
+  background:
+    radial-gradient(circle at top, rgba(125, 193, 255, 0.15), transparent 60%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  color: #d9ebff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.trail-badge.is-hidden::after {
+  content: '?';
+}
+
+.trail-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.24;
+  color: rgba(255, 255, 255, 0.82);
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trail-step.is-hidden .trail-name {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.trail-tag {
+  margin-top: auto;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.58rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.trail-link {
+  position: relative;
+  width: 22px;
+  height: 14px;
+  flex: 0 0 22px;
+}
+
+.trail-link::before,
+.trail-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.trail-link::before {
+  left: 0;
+  right: 8px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(46, 204, 113, 0.26), rgba(125, 193, 255, 0.4));
+}
+
+.trail-link::after {
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid rgba(125, 193, 255, 0.58);
+  border-right: 2px solid rgba(125, 193, 255, 0.58);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.trail-link.is-hidden::before {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+}
+
+.trail-link.is-hidden::after {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.transfer-search-wrap {
+  width: min(100%, 620px);
+  align-self: center;
+}
+
+.transfer-search-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.transfer-search-row {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.transfer-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.transfer-input:focus {
+  border-color: rgba(125, 193, 255, 0.46);
+  box-shadow: 0 0 0 4px rgba(125, 193, 255, 0.08);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.transfer-input::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.transfer-submit {
+  min-width: 150px;
+}
+
+.transfer-autocomplete {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 160px;
+  z-index: 12;
+  display: none;
+  max-height: 240px;
+  overflow-y: auto;
+  background: rgba(8, 18, 13, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.36);
+}
+
+.transfer-autocomplete.show {
+  display: block;
+}
+
+.transfer-autocomplete-item {
+  display: block;
+  padding: 11px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.transfer-autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.transfer-autocomplete-item:hover,
+.transfer-autocomplete-item.selected {
+  background: rgba(125, 193, 255, 0.12);
+}
+
+.transfer-autocomplete-name {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.transfer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.transfer-reveal {
+  min-width: 220px;
+  justify-content: center;
+}
+
+.transfer-result {
+  display: none;
+  width: min(100%, 700px);
+  margin: 0 auto;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.transfer-result.show {
+  display: block;
+}
+
+.transfer-result.correct {
+  border-color: rgba(46, 204, 113, 0.26);
+  background: rgba(46, 204, 113, 0.08);
+}
+
+.transfer-result.wrong {
+  border-color: rgba(255, 107, 107, 0.24);
+  background: rgba(255, 107, 107, 0.08);
+}
+
+.transfer-result.info {
+  border-color: rgba(125, 193, 255, 0.2);
+  background: rgba(125, 193, 255, 0.08);
+}
+
+.transfer-result-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.transfer-result-detail {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+}
+
+.transfer-summary-note,
+.transfer-summary-save {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.92rem;
+}
+
+.transfer-summary-save {
+  font-size: 0.82rem;
+}
+
+.transfer-summary-save.error {
+  color: #ffb4b4;
+}
+
+.transfer-summary-save.success {
+  color: #aef2c5;
+}
+
+.transfer-breakdown-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.transfer-breakdown-copy {
+  min-width: 0;
+}
+
+.transfer-breakdown-name {
+  color: #fff;
+  font-weight: 700;
+}
+
+.transfer-breakdown-meta {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+}
+
+.transfer-breakdown-score {
+  font-family: 'Russo One', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+@media (max-width: 1180px) {
+  body.transfer-page .arena {
+    max-width: 1180px;
+  }
+
+  body.transfer-page .arena > * {
+    max-width: 1180px;
+  }
+
+  body.transfer-page .scoreboard-card.transfer-stage {
+    max-width: 1120px;
+  }
+
+  .trail-shell {
+    overflow: hidden;
+    display: block;
+  }
+
+  .trail-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .trail-step {
+    width: calc(20% - 10px);
+    min-width: 112px;
+  }
+}
+
+@media (max-width: 840px) {
+  .transfer-stage {
+    padding: 16px;
+  }
+
+  .trail-step {
+    width: calc(33.333% - 10px);
+  }
+
+  .transfer-autocomplete {
+    right: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .transfer-search-row {
+    flex-direction: column;
+  }
+
+  .transfer-submit {
+    width: 100%;
+  }
+
+  .transfer-autocomplete {
+    right: 0;
+  }
+
+  .trail-grid {
+    gap: 10px;
+  }
+
+  .trail-step {
+    width: calc(50% - 10px);
+    min-width: 0;
+    min-height: 160px;
+  }
+
+  .trail-link {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .trail-step {
+    width: 100%;
+  }
+
+  .transfer-title {
+    font-size: 1.08rem;
+  }
+
+  .trail-badge {
+    width: 64px;
+    height: 64px;
+    padding: 9px;
+  }
+}

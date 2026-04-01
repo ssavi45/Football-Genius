@@ -69,6 +69,8 @@
   const ai = {
     ready: false,
     loading: false,
+    available: false,
+    errorMessage: 'AI unavailable for this round.',
     descriptors: [],   // { name, descriptor }
     faceapi: null,     // face-api.js reference
   };
@@ -118,6 +120,7 @@
     if (ai.ready || ai.loading) return;
     ai.loading = true;
     els.aiLoadingBanner.classList.add('show');
+    ai.errorMessage = 'AI model loading...';
 
     try {
       // Load face-api.js from CDN
@@ -135,12 +138,21 @@
 
       // Pre-compute face descriptors for all players
       await buildFaceDescriptors();
+      if (!ai.descriptors.length) {
+        throw new Error('No recognizable player faces were loaded.');
+      }
 
       ai.ready = true;
-      console.log(`AI ready — ${ai.descriptors.length} faces registered.`);
+      ai.available = true;
+      ai.errorMessage = '';
+      console.log(`AI ready - ${ai.descriptors.length} faces registered.`);
+      setTimeout(() => aiAnalyze(), 0);
     } catch (err) {
       console.warn('face-api.js load failed:', err);
-      // AI will gracefully degrade — show "AI unavailable"
+      ai.ready = false;
+      ai.available = false;
+      ai.errorMessage = 'AI unavailable right now.';
+      setAIStatus(ai.errorMessage, 0);
     }
 
     ai.loading = false;
@@ -182,8 +194,13 @@
   }
 
   async function aiAnalyze() {
-    if (!ai.ready) {
-      setAIStatus('AI model loading…', 0);
+    if (ai.loading) {
+      setAIStatus('AI model loading...', 0);
+      return;
+    }
+
+    if (!ai.ready || !ai.available) {
+      setAIStatus(ai.errorMessage || 'AI unavailable right now.', 0);
       return;
     }
 
@@ -197,7 +214,7 @@
         .withFaceDescriptor();
 
       if (!detection || ai.descriptors.length === 0) {
-        setAIStatus('Can\'t detect a face yet…', 0);
+        setAIStatus('Cannot detect a face yet.', 0);
         return;
       }
 
@@ -210,10 +227,10 @@
 
       if (match.label === 'unknown') {
         const conf = Math.max(0, Math.round((1 - match.distance) * 100));
-        setAIStatus(`Not sure yet… (${conf}%)`, conf);
+        setAIStatus(`Not sure yet... (${conf}%)`, conf);
       } else {
         const conf = Math.max(0, Math.round((1 - match.distance) * 100));
-        setAIStatus(`${match.label} <span class="confidence">(${conf}%)</span>`, conf);
+        setAIStatus(`${match.label} (${conf}%)`, conf);
 
         // Check if AI is correct
         const correctName = currentPlayer().name;
@@ -222,16 +239,16 @@
         }
       }
     } catch (err) {
-      setAIStatus('Analysis error', 0);
+      setAIStatus('AI analysis failed.', 0);
     }
   }
 
   function setAIStatus(text, confPercent) {
     if (text === null) {
       // Thinking animation
-      els.aiGuess.innerHTML = '<span class="ai-thinking"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span> Analyzing…';
+      els.aiGuess.innerHTML = '<span class="ai-thinking"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span> Analyzing...';
     } else {
-      els.aiGuess.innerHTML = text;
+      els.aiGuess.textContent = text;
     }
     els.aiConfFill.style.width = `${confPercent || 0}%`;
   }
@@ -355,7 +372,7 @@
 
     // Did user beat the AI?
     let beatAI = false;
-    if (correct && (state.aiIdentifiedAt < 0 || state.level < state.aiIdentifiedAt)) {
+    if (correct && ai.available && (state.aiIdentifiedAt < 0 || state.level < state.aiIdentifiedAt)) {
       beatAI = true;
       state.aiBeatTotal++;
     }
@@ -418,9 +435,11 @@
   function endRound() {
     els.progressFill.style.width = '100%';
     els.finalScore.textContent = state.score;
-    els.aiBeatSummary.textContent = state.aiBeatTotal > 0
-      ? `You beat the AI ${state.aiBeatTotal} time${state.aiBeatTotal === 1 ? '' : 's'}! 🤖🏆`
-      : 'The AI was too fast this round. Try again!';
+    els.aiBeatSummary.textContent = !ai.available
+      ? 'AI was unavailable this round.'
+      : state.aiBeatTotal > 0
+        ? `You beat the AI ${state.aiBeatTotal} time${state.aiBeatTotal === 1 ? '' : 's'}!`
+        : 'The AI was too fast this round. Try again!';
 
     // Breakdown
     const frag = document.createDocumentFragment();

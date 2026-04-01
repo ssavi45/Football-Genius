@@ -9,102 +9,11 @@
   <link rel="stylesheet" href="auth-modal.css" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="leaderboard.css" />
+  <link rel="stylesheet" href="higherLower.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-  <style>
-    /* Mid interface styling for Higher/Lower */
-    .hl-container { max-width: 1100px; margin: 0 auto; }
-    .stat-picker { display:flex; gap:12px; align-items:center; justify-content:center; margin:18px 0 10px; flex-wrap:wrap; }
-    .stat-picker select { padding:.55rem .8rem; border-radius:10px; border:none; background:#0f1c45; color:#fff; font-weight:600; }
-    .stage { display:flex; align-items:stretch; justify-content:center; gap:36px; margin-top:10px; position:relative; }
-    .hl-card { background:linear-gradient(180deg,#122a1a,#0d2015); border-radius:18px; padding:18px; width:420px; display:flex; flex-direction:column; align-items:center; box-shadow:0 12px 30px rgba(0,0,0,.35); border:1px solid rgba(46,204,113,.08); cursor:pointer; transition:transform .12s ease; }
-    .hl-card:hover { transform:translateY(-2px); }
-    .hl-card[data-disabled="true"] { pointer-events:none; opacity:.95; }
-    .hl-card .name { font-family:"Bebas Neue", sans-serif; font-size:2rem; letter-spacing:.5px; }
-    .face { width:260px; height:260px; border-radius:50%; object-fit:cover; object-position:50% 25%; border:6px solid rgba(46,204,113,.1); background:#0b1a0f; }
-    .stat-label { opacity:.8; font-size:.9rem; margin-top:10px; }
-    .stat-value { font-family:"Russo One", sans-serif; font-size:2.2rem; margin-top:6px; }
-
-    .meta-small { text-align:center; margin-top:12px; opacity:.8; }
-    .flash-win { animation: flashwin .6s ease; }
-    .flash-lose { animation: flashlose .6s ease; }
-
-    /* VS center badge (no side lines) */
-    .vs { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; pointer-events:none; }
-    .vs .hex { width:82px; height:82px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#2ecc71,var(--accent-2)); color:#fff; font-weight:900; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,.35); font-family:"Russo One", sans-serif; }
-
-    /* Transfer line */
-    .transfer-line { display:none; align-items:center; gap:10px; margin-top:10px; }
-    .transfer-line .club-pill { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.06); padding:6px 10px; border-radius:999px; }
-    .transfer-line img.logo { width:28px; height:28px; border-radius:50%; background:#061133; object-fit:contain; padding:4px; }
-    .transfer-line .arrow { font-size:20px; opacity:.85; }
-
-    /* Round-over blur + overlay */
-    .arena.round-over .stage {
-      filter: blur(6px) saturate(.6);
-      transform: scale(.985);
-      transition: filter .25s ease, transform .25s ease;
-      pointer-events: none;
-    }
-    .round-overlay[hidden] { display: none; }
-    .round-overlay {
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      z-index: 50;
-      background: linear-gradient(180deg, rgba(3,9,35,0.0), rgba(3,9,35,0.35));
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-      animation: overlayFade .22s ease-out forwards;
-    }
-    .round-overlay .panel {
-      background: linear-gradient(180deg,#122a1a,#0d2015);
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 18px 22px;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.45);
-      transform: translateY(6px) scale(.96);
-      opacity: 0;
-      animation: panelPop .26s .06s cubic-bezier(.2,.8,.2,1) forwards;
-      text-align: center;
-    }
-    .round-overlay .panel .buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    .round-overlay .panel .button.primary {
-      background:#2ecc71;
-      color:#001336;
-      font-weight:800;
-      border:none;
-      padding:.7rem 1.1rem;
-      border-radius:12px;
-      cursor:pointer;
-    }
-    .round-overlay .panel .button.secondary {
-      background:transparent;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.25);
-      padding:.6rem .95rem;
-      border-radius:10px;
-      cursor:pointer;
-    }
-    @keyframes flashwin { from{ box-shadow:0 0 0 rgba(0,255,127,.0);} to{ box-shadow:0 0 35px rgba(0,255,127,.35);} }
-    @keyframes flashlose { from{ box-shadow:0 0 0 rgba(255,61,113,.0);} to{ box-shadow:0 0 35px rgba(255,61,113,.35);} }
-    @keyframes overlayFade { from{opacity:0} to{opacity:1} }
-    @keyframes panelPop { to{opacity:1; transform: translateY(0) scale(1)} }
-
-    @media (max-width: 980px){
-      .hl-card{ width:100%; }
-      .stage{ flex-direction:column; gap:22px; }
-      .vs { position:static; transform:none; margin:6px 0; }
-    }
-  </style>
 </head>
-<body class="scoreline-page">
+<body class="scoreline-page higherlower-page">
   <div class="main-wrapper">
   <header class="topbar">
     <div class="brand">
@@ -153,9 +62,17 @@
     <div class="competition" id="competition">Select the player with the higher stat</div>
 
     <div class="hl-container scoreboard-card">
-      <div class="stat-picker">
-        <label for="statSelect">Choose stat </label>
-        <select id="statSelect" aria-label="Choose stat">
+      <div class="hl-toolbar">
+        <div class="hl-toolbar-copy">
+          <div class="hl-toolbar-title">Pick the category before the duel starts</div>
+        </div>
+        <div class="stat-picker" id="statPicker" role="tablist" aria-label="Choose stat">
+          <button class="stat-chip active" type="button" data-stat="goals" aria-pressed="true">Career goals</button>
+          <button class="stat-chip" type="button" data-stat="trophies" aria-pressed="false">Career trophies</button>
+          <button class="stat-chip" type="button" data-stat="transfer" aria-pressed="false">Transfer fee</button>
+          <button class="stat-chip" type="button" data-stat="value" aria-pressed="false">Market value</button>
+        </div>
+        <select id="statSelect" class="hl-native-select" aria-label="Choose stat">
           <option value="goals">Career goals</option>
           <option value="trophies">Career trophies</option>
           <option value="transfer">Transfer fee</option>
@@ -172,7 +89,7 @@
           <div class="transfer-line" id="leftXfer"></div>
         </article>
 
-        <div class="vs"><div class="hex">VS</div></div>
+        <div class="vs"><div class="hex"><span class="vs-text">VS</span></div></div>
 
         <article class="hl-card" id="rightCard">
           <img id="rightImg" class="face" alt="">

@@ -175,7 +175,7 @@ function parseCareerGoals($) {
         const num = parseInt(text, 10);
         if (!isNaN(num) && num > 0 && i >= 3 && i <= 6) {
           if (totalGoals === null || num > totalGoals) {
-            // Take the first reasonable number as goals
+            totalGoals = num;
           }
         }
       });

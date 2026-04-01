@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="auth-modal.css" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="leaderboard.css" />
+  <link rel="stylesheet" href="who.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
-<body class="scoreline-page">
+<body class="scoreline-page who-page">
   <div class="main-wrapper">
   <header class="topbar">
     <div class="brand">
@@ -59,20 +60,20 @@
   <main class="arena">
     <div class="competition">Guess the voice behind the words</div>
 
-    <section class="scoreboard-card">
-      <div class="scoreboard-inner" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-        <blockquote id="quoteText" style="font-family:'Outfit',sans-serif;font-style:italic;font-size:32px;font-weight:700;line-height:1.4;margin:16px 0 32px;color:var(--accent-2);">"Your love makes me strong, your hate makes me unstoppable."</blockquote>
-        <div id="options" style="display:flex;flex-direction:row;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:24px;"></div>
+    <section class="scoreboard-card who-card">
+      <div class="scoreboard-inner who-layout">
+        <blockquote id="quoteText" class="who-quote">"Your love makes me strong, your hate makes me unstoppable."</blockquote>
+        <div id="options" class="who-options"></div>
         
-        <div style="display:flex;gap:8px;justify-content:center;flex-direction:column;align-items:center;">
-          <button class="hint-unlock" id="hintBtn" aria-label="Unlock Hint" style="margin:0;">
+        <div class="who-hint-wrap">
+          <button class="hint-unlock who-hint-btn" id="hintBtn" aria-label="Unlock Hint">
             <div class="default-btn"><span class="icon">💡</span><span>Context Hint</span></div>
             <div class="hover-btn"><span class="icon">🔓</span><span>Unlock</span></div>
           </button>
           <p class="hint-text" id="hintText"></p>
         </div>
 
-        <section class="sb-actions" style="margin-top:20px;">
+        <section class="sb-actions who-actions">
           <button id="nextQuestion" class="button" hidden>Next Quote</button>
         </section>
       </div>

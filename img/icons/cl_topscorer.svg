@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="24" fill="#1f1d5c"/>
+  <path d="M64 24l11 22 24 3-17 17 4 24-22-11-22 11 4-24-17-17 24-3z" fill="#facc15"/>
+  <text x="64" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">TOP 15</text>
+</svg>

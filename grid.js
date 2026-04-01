@@ -124,16 +124,16 @@ var CLUBS = [
 ];
 
 var STAT_CRITERIA = [
-  { id: 'goals400',        name: 'Scored 400+ career goals',         img: 'img/icons/goals400.png' },
-  { id: 'cl3',             name: 'Won 3+ Champions League titles',   img: 'img/icons/cl3.png' },
-  { id: 'worldcup',        name: 'Won the World Cup',                img: 'img/icons/worldcup.png' },
+  { id: 'goals400',        name: 'Scored 400+ career goals',         img: 'img/icons/goals400.svg' },
+  { id: 'cl3',             name: 'Won 3+ Champions League titles',   img: 'img/icons/cl3.svg' },
+  { id: 'worldcup',        name: 'Won the World Cup',                img: 'img/icons/worldcup.svg' },
   { id: 'ballondor',       name: "Won the Ballon d'Or",              img: 'img/icons/ballondor.png' },
-  { id: 'goals50season',   name: 'Scored 50+ goals in a season',     img: 'img/icons/goals50season.png' },
-  { id: 'cl_topscorer',    name: 'UCL all-time top 15 scorer',       img: 'img/icons/cl_topscorer.png' },
-  { id: 'captained',       name: 'Captained their national team',    img: 'img/icons/captained.png' },
-  { id: 'league_titles5',  name: 'Won 5+ league titles',             img: 'img/icons/league_titles5.png' },
-  { id: 'played_3clubs',   name: 'Played for 3+ top-5 league clubs', img: 'img/icons/played_3clubs.png' },
-  { id: 'assists200',      name: 'Provided 200+ career assists',     img: 'img/icons/assists200.png' }
+  { id: 'goals50season',   name: 'Scored 50+ goals in a season',     img: 'img/icons/goals50season.svg' },
+  { id: 'cl_topscorer',    name: 'UCL all-time top 15 scorer',       img: 'img/icons/cl_topscorer.svg' },
+  { id: 'captained',       name: 'Captained their national team',    img: 'img/icons/captained.svg' },
+  { id: 'league_titles5',  name: 'Won 5+ league titles',             img: 'img/icons/league_titles5.svg' },
+  { id: 'played_3clubs',   name: 'Played for 3+ top-5 league clubs', img: 'img/icons/played_3clubs.svg' },
+  { id: 'assists200',      name: 'Provided 200+ career assists',     img: 'img/icons/assists200.svg' }
 ];
 
 // Build lookup maps for fast criterion resolution

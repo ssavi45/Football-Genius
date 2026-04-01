@@ -73,7 +73,16 @@ const IMAGE_MAP = {
   "diego-simeone": "simeone.jpg"
 };
 
-const PLACEHOLDER_IMG = "img/players/_placeholder.jpg";
+const PLACEHOLDER_IMG =
+  "data:image/svg+xml;charset=UTF-8," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+      <rect width="320" height="320" fill="#122a1a"/>
+      <circle cx="160" cy="118" r="58" fill="#1d4d2f"/>
+      <path d="M76 276c14-54 55-82 84-82s70 28 84 82" fill="#1d4d2f"/>
+      <text x="160" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" fill="#d9f6e5">?</text>
+    </svg>`
+  );
 
 function getImagePath(name, explicit){
   if (explicit) return "img/" + explicit;
@@ -238,7 +247,7 @@ function loadQuestion(){
     img.alt = opt;
     img.onerror = () => {
       // fall back to a placeholder, keep the round frame visible
-      if (img.src.endsWith("_placeholder.jpg")) return;
+      if (img.src === PLACEHOLDER_IMG) return;
       img.src = PLACEHOLDER_IMG;
     };
 
@@ -287,7 +296,7 @@ function showReveal(name, imagePath){
   els.revealImg.alt = name;
   els.revealImg.style.display = "block";
   els.revealImg.onerror = () => {
-    if (els.revealImg.src.endsWith("_placeholder.jpg")) return;
+    if (els.revealImg.src === PLACEHOLDER_IMG) return;
     els.revealImg.src = PLACEHOLDER_IMG;
   };
 }

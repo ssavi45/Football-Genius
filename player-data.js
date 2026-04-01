@@ -8,6 +8,7 @@
  *   const players = await window.PlayerData.getGlobalPlayers();
  *   const guessPlayers = await window.PlayerData.getGuessPlayers();
  *   const gridPlayers = await window.PlayerData.getGridPlayers();
+ *   const transferPlayers = await window.PlayerData.getTransferPlayers();
  */
 
 (function () {
@@ -31,6 +32,7 @@
     global: 'fg_global_players',
     guess: 'fg_guess_players',
     grid: 'fg_grid_players',
+    transfer: 'fg_transfer_players',
   };
 
   // ─── Cache Helpers ──────────────────────────────────────────────
@@ -126,6 +128,32 @@
         stats: r.stats || [],
       };
     });
+  }
+
+  function normalizeTransferPlayers(rows) {
+    return (rows || [])
+      .filter(function (player) {
+        return player && player.name && Array.isArray(player.clubs) && player.clubs.length >= 2;
+      })
+      .map(function (player) {
+        return {
+          name: player.name,
+          aliases: Array.isArray(player.aliases) ? player.aliases : [],
+          clubs: player.clubs
+            .filter(function (club) {
+              return club && club.label;
+            })
+            .map(function (club) {
+              return {
+                label: club.label,
+                logo: club.logo || null,
+              };
+            }),
+        };
+      })
+      .filter(function (player) {
+        return player.clubs.length >= 2;
+      });
   }
 
   // ─── Public API ─────────────────────────────────────────────────
@@ -227,6 +255,29 @@
   }
 
   /**
+   * Get transfer players (Transfer Trail game).
+   * Returns data in the same shape as data/transfer-players.json
+   */
+  async function getTransferPlayers() {
+    var cached = getCached(CACHE_KEYS.transfer);
+    if (cached) {
+      console.log('[PlayerData] transfer_players loaded from cache');
+      return cached;
+    }
+
+    try {
+      var jsonData = await fetchJSON('data/transfer-players.json');
+      var data = normalizeTransferPlayers(jsonData);
+      setCache(CACHE_KEYS.transfer, data);
+      console.log('[PlayerData] transfer_players loaded from JSON');
+      return data;
+    } catch (e) {
+      console.error('[PlayerData] All sources failed for transfer_players:', e.message);
+      return [];
+    }
+  }
+
+  /**
    * Force-clear all cached player data (e.g., for debugging).
    */
   function clearCache() {
@@ -241,6 +292,7 @@
     getGlobalPlayers: getGlobalPlayers,
     getGuessPlayers: getGuessPlayers,
     getGridPlayers: getGridPlayers,
+    getTransferPlayers: getTransferPlayers,
     clearCache: clearCache,
   };
 })();

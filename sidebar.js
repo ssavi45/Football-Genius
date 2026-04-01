@@ -7,6 +7,12 @@
   // Game modes configuration
   const GAME_MODES = [
     {
+      id: 'scoutsduel',
+      label: "Scout's Duel",
+      href: 'scouts-duel.html',
+      icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="9" r="1.5" fill="currentColor" opacity="0.5"/><line x1="18" y1="3" x2="21" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="21" y1="3" x2="18" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`
+    },
+    {
       id: 'scoreline',
       label: 'Scoreline Hero',
       href: 'index.html',
@@ -35,6 +41,12 @@
       label: 'Grid Challenge',
       href: 'grid.html',
       icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.5" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="17.5" cy="17.5" r="1.5" fill="currentColor" opacity="0.5"/></svg>`
+    },
+    {
+      id: 'transfer',
+      label: 'Transfer Trail',
+      href: 'transfer.html',
+      icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 17c3.2 0 3.8-10 8-10 2.2 0 2.8 3 5 3 1.3 0 2.1-.8 3-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="4" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="7" r="2" fill="currentColor" opacity="0.55"/><circle cx="17" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M19.5 6.5l1.8 1.8-1.8 1.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
     },
     {
       id: 'guess',

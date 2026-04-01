@@ -1,0 +1,430 @@
+/* Football Genius - Higher or Lower
+   =================================
+   Dedicated presentation for stat-duel mode.
+*/
+
+body.higherlower-page .arena {
+  max-width: 1480px;
+}
+
+body.higherlower-page .arena > * {
+  max-width: 1480px;
+}
+
+body.higherlower-page .hl-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 30px 26px;
+}
+
+body.higherlower-page .hl-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 2px 0 18px;
+}
+
+body.higherlower-page .hl-toolbar-copy {
+  text-align: center;
+}
+
+body.higherlower-page .hl-toolbar-title {
+  color: #f3f6ed;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+body.higherlower-page .stat-picker {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body.higherlower-page .stat-chip {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+  color: rgba(255, 255, 255, 0.78);
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+}
+
+body.higherlower-page .stat-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(46, 204, 113, 0.25);
+  color: #fff;
+}
+
+body.higherlower-page .stat-chip.active {
+  background:
+    linear-gradient(135deg, rgba(46, 204, 113, 0.26), rgba(212, 175, 55, 0.18));
+  border-color: rgba(46, 204, 113, 0.42);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(46, 204, 113, 0.12);
+}
+
+body.higherlower-page .stat-chip:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+body.higherlower-page .hl-native-select {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+body.higherlower-page .stage {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 42px;
+  margin-top: 12px;
+  position: relative;
+}
+
+body.higherlower-page .hl-card {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(15, 52, 28, 0.96), rgba(10, 33, 18, 0.98));
+  border-radius: 28px;
+  padding: 24px 24px 22px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 18px 40px rgba(0, 0, 0, 0.32);
+  border: 1px solid rgba(46, 204, 113, 0.08);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+body.higherlower-page .hl-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(46, 204, 113, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 46px rgba(0, 0, 0, 0.36);
+}
+
+body.higherlower-page .hl-card[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+body.higherlower-page .hl-card .name {
+  margin-top: 18px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.1rem, 2.4vw, 2.8rem);
+  letter-spacing: 0.7px;
+  line-height: 1;
+}
+
+body.higherlower-page .face {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border: 7px solid rgba(46, 204, 113, 0.1);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 55%),
+    #0b1a0f;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body.higherlower-page .stat-label {
+  opacity: 0.82;
+  font-size: 0.98rem;
+  margin-top: 12px;
+}
+
+body.higherlower-page .stat-value {
+  font-family: 'Russo One', sans-serif;
+  font-size: 2.35rem;
+  margin-top: 8px;
+}
+
+body.higherlower-page .meta-small {
+  text-align: center;
+  margin-top: 14px;
+  opacity: 0.84;
+}
+
+body.higherlower-page .flash-win {
+  animation: hl-flashwin 0.6s ease;
+}
+
+body.higherlower-page .flash-lose {
+  animation: hl-flashlose 0.6s ease;
+}
+
+body.higherlower-page .vs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 124px;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+body.higherlower-page .vs::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.26), rgba(46, 204, 113, 0));
+  filter: blur(10px);
+  opacity: 0.85;
+  animation: hl-vsHalo 2.4s ease-in-out infinite;
+}
+
+body.higherlower-page .vs .hex {
+  position: relative;
+  width: 98px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(18, 46, 28, 0.98), rgba(9, 20, 13, 0.98));
+  color: #fff;
+  font-weight: 900;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 20px 42px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -16px 26px rgba(0, 0, 0, 0.18);
+  font-family: 'Russo One', sans-serif;
+  letter-spacing: 0.06em;
+  overflow: visible;
+}
+
+body.higherlower-page .vs .hex::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 32px;
+  border: 2px solid rgba(212, 175, 55, 0.48);
+  opacity: 0.75;
+  box-shadow:
+    0 0 22px rgba(212, 175, 55, 0.18),
+    inset 0 0 12px rgba(212, 175, 55, 0.1);
+}
+
+body.higherlower-page .vs .hex > * {
+  position: relative;
+  z-index: 2;
+}
+
+body.higherlower-page .vs .hex {
+  animation: hl-vsPulse 2.6s ease-in-out infinite;
+}
+
+body.higherlower-page .vs .hex {
+  text-shadow: 0 0 16px rgba(212, 175, 55, 0.22);
+}
+
+body.higherlower-page .vs-text {
+  font-size: 1.15rem;
+}
+
+body.higherlower-page .transfer-line {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+body.higherlower-page .transfer-line .club-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+body.higherlower-page .transfer-line img.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #061133;
+  object-fit: contain;
+  padding: 4px;
+}
+
+body.higherlower-page .transfer-line .arrow {
+  font-size: 20px;
+  opacity: 0.85;
+}
+
+body.higherlower-page .arena.round-over .stage {
+  filter: blur(6px) saturate(0.6);
+  transform: scale(0.985);
+  transition: filter 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+body.higherlower-page .round-overlay[hidden] {
+  display: none;
+}
+
+body.higherlower-page .round-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  background: linear-gradient(180deg, rgba(3, 9, 35, 0), rgba(3, 9, 35, 0.35));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: hl-overlayFade 0.22s ease-out forwards;
+}
+
+body.higherlower-page .round-overlay .panel {
+  background: linear-gradient(180deg, #122a1a, #0d2015);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px 22px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  transform: translateY(6px) scale(0.96);
+  opacity: 0;
+  animation: hl-panelPop 0.26s 0.06s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  text-align: center;
+}
+
+body.higherlower-page .round-overlay .panel .buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+body.higherlower-page .round-overlay .panel .button.primary {
+  background: #2ecc71;
+  color: #001336;
+  font-weight: 800;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+body.higherlower-page .round-overlay .panel .button.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.6rem 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes hl-flashwin {
+  from { box-shadow: 0 0 0 rgba(0, 255, 127, 0); }
+  to { box-shadow: 0 0 35px rgba(0, 255, 127, 0.35); }
+}
+
+@keyframes hl-flashlose {
+  from { box-shadow: 0 0 0 rgba(255, 61, 113, 0); }
+  to { box-shadow: 0 0 35px rgba(255, 61, 113, 0.35); }
+}
+
+@keyframes hl-overlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hl-panelPop {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hl-vsPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 20px 42px rgba(0, 0, 0, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      inset 0 -16px 26px rgba(0, 0, 0, 0.18);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow:
+      0 24px 48px rgba(0, 0, 0, 0.38),
+      0 0 28px rgba(46, 204, 113, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -16px 26px rgba(0, 0, 0, 0.18);
+  }
+}
+
+@keyframes hl-vsHalo {
+  0%, 100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 1100px) {
+  body.higherlower-page .hl-card {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  body.higherlower-page .stage {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  body.higherlower-page .vs {
+    position: static;
+    transform: none;
+    margin: 6px 0;
+  }
+}
+
+@media (max-width: 680px) {
+  body.higherlower-page .hl-container {
+    padding: 22px 16px 18px;
+  }
+
+  body.higherlower-page .face {
+    width: 232px;
+    height: 232px;
+  }
+
+  body.higherlower-page .hl-card .name {
+    font-size: 2rem;
+  }
+}
