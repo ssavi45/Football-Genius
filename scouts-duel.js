@@ -98,6 +98,9 @@
     dom.freetextInput = $('#freetextInput');
     dom.answerOverlay = $('#answerOverlay');
     dom.answerQuestionText = $('#answerQuestionText');
+    dom.answerPlayerCard = $('#answerPlayerCard');
+    dom.answerPlayerImage = $('#answerPlayerImage');
+    dom.answerPlayerName = $('#answerPlayerName');
     dom.guessModal = $('#guessModal');
     dom.btnConfirmGuess = $('#btnConfirmGuess');
     dom.shootResultModal = $('#shootResultModal');
@@ -107,6 +110,7 @@
     dom.shootResultTitle = $('#shootResultTitle');
     dom.shootResultMessage = $('#shootResultMessage');
     dom.btnShootResultPrimary = $('#btnShootResultPrimary');
+    dom.btnShootResultSecondary = $('#btnShootResultSecondary');
     dom.questionLog = $('#questionLog');
     dom.logEntries = $('#logEntries');
     dom.turnLabel = $('#turnLabel');
@@ -146,6 +150,17 @@
     return shuffle(state.allPlayers).slice(0, CARD_COUNT);
   }
 
+  function renderLockedPlayerSummary() {
+    if (!state.myPlayer) return;
+
+    dom.playerYou.innerHTML = `
+      <div class="sd-player-avatar">
+        <img src="${state.myPlayer.image}" alt="${state.myPlayer.name}" onerror="this.style.display='none'" />
+      </div>
+      <div class="sd-player-name">${state.myPlayer.name}</div>
+    `;
+  }
+
   /* ── Screen Management ─────────────────────────────────────────── */
   function showScreen(name) {
     state.phase = name;
@@ -167,7 +182,7 @@
 
     let clubHtml = '';
     if (player.isRetired) {
-      clubHtml = `<span class="sd-card-retired-icon" title="Retired">🥾</span>`;
+      clubHtml = `<img class="sd-card-badge" src="img/icons/retired.png" alt="Retired" title="Retired" />`;
     } else if (player.clubBadge) {
       clubHtml = `<img class="sd-card-badge" src="${player.clubBadge}" alt="${player.club}" />`;
     }
@@ -221,13 +236,18 @@
   }
 
   function showRoomPanel() {
+    resetRoomPanelState();
     dom.roomPanel.hidden = false;
     dom.matchmakingPanel.hidden = true;
   }
   function hidePanels() {
     dom.roomPanel.hidden = true;
     dom.matchmakingPanel.hidden = true;
-    if (window.ScoutsDuelOnline) window.ScoutsDuelOnline.leaveMatchmaking();
+    resetRoomPanelState();
+    if (window.ScoutsDuelOnline) {
+      window.ScoutsDuelOnline.leaveMatchmaking();
+      window.ScoutsDuelOnline.leaveRoom?.();
+    }
   }
   function switchRoomTab(tab) {
     $('#tabCreateRoom').classList.toggle('active', tab === 'create');
@@ -236,20 +256,52 @@
     $('#joinRoomView').hidden = (tab !== 'join');
   }
 
-  function createRoom() {
+  function resetRoomPanelState() {
+    $('#roomCodeDisplay').hidden = true;
+    $('#roomCodeValue').textContent = '------';
+    $('#joinCodeInput').value = '';
+    $('#createRoomStatus').textContent = '';
+    $('#createRoomStatus').className = 'sd-room-status';
+    $('#joinRoomStatus').textContent = '';
+    $('#joinRoomStatus').className = 'sd-room-status';
+    $('#btnCreateRoom').disabled = false;
+    $('#btnJoinRoom').disabled = false;
+    $('#joinCodeInput').disabled = false;
+    $('#tabCreateRoom').disabled = false;
+    $('#tabJoinRoom').disabled = false;
+    switchRoomTab('create');
+  }
+
+  function setRoomWaitingState(mode) {
+    const isCreate = mode === 'create';
+    $('#tabCreateRoom').disabled = true;
+    $('#tabJoinRoom').disabled = true;
+    $('#btnCreateRoom').disabled = isCreate;
+    $('#btnJoinRoom').disabled = !isCreate;
+    $('#joinCodeInput').disabled = !isCreate;
+    switchRoomTab(isCreate ? 'create' : 'join');
+  }
+
+  async function createRoom() {
     if (window.ScoutsDuelOnline) {
       const pool = buildCardPool();
       state.cardPool = pool;
-      window.ScoutsDuelOnline.createRoom(pool);
+      const created = await window.ScoutsDuelOnline.createRoom(pool);
+      if (created) {
+        setRoomWaitingState('create');
+      }
     } else {
       showToast('Online play requires login.', 'error');
     }
   }
-  function joinRoom() {
+  async function joinRoom() {
     const code = $('#joinCodeInput').value.trim().toUpperCase();
     if (code.length < 4) { showToast('Enter a valid room code.', 'error'); return; }
     if (window.ScoutsDuelOnline) {
-      window.ScoutsDuelOnline.joinRoom(code);
+      const joined = await window.ScoutsDuelOnline.joinRoom(code);
+      if (joined) {
+        setRoomWaitingState('join');
+      }
     }
   }
   function copyRoomCode() {
@@ -349,9 +401,11 @@
     showScreen('game');
     renderGrid(dom.gameGrid, state.cardPool, onGameCardClick);
 
-    // Mark my player
-    const myCard = dom.gameGrid.querySelector(`[data-id="${state.myPlayer.id}"]`);
-    if (myCard) myCard.classList.add('my-pick');
+    // Update opponent avatar based on mode
+    const avatarEl = dom.playerOpponent.querySelector('.sd-player-avatar');
+    if (avatarEl) avatarEl.textContent = state.mode === 'ai' ? '🤖' : '👤';
+
+    renderLockedPlayerSummary();
 
     setupQuestionPanel();
     updateHud();
@@ -370,8 +424,6 @@
   }
 
   function onGameCardClick(cardEl, playerId) {
-    // Only allow elimination of non-own players during game phase
-    if (playerId === state.myPlayer.id) return;
     if (cardEl.classList.contains('eliminated')) {
       // Un-eliminate (toggle)
       cardEl.classList.remove('eliminated');
@@ -453,6 +505,7 @@
       const ans = answerPredefined(question, state.opponentPlayer);
       receiveAnswer(question.text, ans, 'predefined');
     } else {
+      state._pendingOnlineQuestion = question.text;
       // Send to online opponent
       if (window.ScoutsDuelOnline) {
         window.ScoutsDuelOnline.sendQuestion(question.text, question);
@@ -481,6 +534,7 @@
         receiveAnswer(text, Math.random() > 0.5 ? 'Yes' : 'No', 'freetext');
       }
     } else {
+      state._pendingOnlineQuestion = text;
       if (window.ScoutsDuelOnline) {
         window.ScoutsDuelOnline.sendQuestion(text, null);
       }
@@ -495,16 +549,30 @@
     addLogEntry(entry);
     showToast(`Answer: ${answer}`, answer === 'Yes' ? '' : 'error');
     updateHud();
+    state._pendingOnlineQuestion = null;
 
     // Continue — player eliminates cards manually, then ends turn
     dom.questionPanel.classList.remove('disabled');
     setTimeout(() => endTurn(), 1500);
   }
 
+  window._sdReceiveOnlineAnswer = function(answer) {
+    const questionText = state._pendingOnlineQuestion || 'Your question';
+    receiveAnswer(questionText, answer, 'online');
+  };
+
   /* ── Receiving Questions (from opponent / AI) ──────────────────── */
   // Called when opponent asks me a question
   window._sdReceiveQuestion = function(questionText, questionData) {
     dom.answerQuestionText.textContent = questionText;
+    if (state.myPlayer) {
+      dom.answerPlayerCard.hidden = false;
+      dom.answerPlayerImage.src = state.myPlayer.image;
+      dom.answerPlayerImage.alt = state.myPlayer.name;
+      dom.answerPlayerName.textContent = state.myPlayer.name;
+    } else {
+      dom.answerPlayerCard.hidden = true;
+    }
     dom.answerOverlay.hidden = false;
     state._pendingQuestion = { text: questionText, data: questionData };
   };
@@ -537,17 +605,29 @@
     // If 2 or fewer candidates, AI guesses
     if (remainingForAI.length <= 2) {
       const guess = remainingForAI[Math.floor(Math.random() * remainingForAI.length)];
-      showToast(`🤖 AI guesses: ${guess.name}!`);
-
-      setTimeout(() => {
-        if (guess.id === state.myPlayer.id) {
-          // AI wins
-          endGame(false);
-        } else {
-          showToast('🤖 Wrong guess! Your turn.');
-          endTurn();
-        }
-      }, 1500);
+      
+      if (guess.id === state.myPlayer.id) {
+        // AI wins
+        openShootResult({
+          type: 'error',
+          badge: '🤖',
+          kicker: 'AI Shot',
+          title: 'AI guessed correctly!',
+          message: `The AI correctly guessed that your player is ${guess.name}.`,
+          buttonText: 'See Results',
+          onConfirm: () => endGame(false),
+        });
+      } else {
+        openShootResult({
+          type: 'info',
+          badge: '🤖',
+          kicker: 'AI Shot',
+          title: 'AI guessed wrong!',
+          message: `The AI incorrectly guessed that your player is ${guess.name}. It's your turn.`,
+          buttonText: 'Resume',
+          onConfirm: () => endTurn(),
+        });
+      }
       return;
     }
 
@@ -612,9 +692,7 @@
      ═══════════════════════════════════════════════════════════════ */
   function openGuessModal() {
     if (!state.isMyTurn) return;
-    const remaining = state.cardPool.filter(p =>
-      !state.myEliminated.has(p.id) && p.id !== state.myPlayer.id
-    );
+    const remaining = state.cardPool.filter(p => !state.myEliminated.has(p.id));
     renderGrid(dom.guessGrid, remaining, onGuessCardClick);
     state.selectedForGuess = null;
     dom.btnConfirmGuess.disabled = true;
@@ -642,15 +720,27 @@
       message = '',
       buttonText = 'Continue',
       onConfirm = null,
+      secondaryText = null,
+      onSecondary = null,
     } = config || {};
 
     state.pendingShootAction = typeof onConfirm === 'function' ? onConfirm : null;
+    state.pendingShootSecondaryAction = typeof onSecondary === 'function' ? onSecondary : null;
+
     dom.shootResultCard.className = `sd-shoot-result-card ${type}`;
     dom.shootResultBadge.textContent = badge;
     dom.shootResultKicker.textContent = kicker;
     dom.shootResultTitle.textContent = title;
     dom.shootResultMessage.textContent = message;
     dom.btnShootResultPrimary.textContent = buttonText;
+    
+    if (secondaryText) {
+      dom.btnShootResultSecondary.textContent = secondaryText;
+      dom.btnShootResultSecondary.hidden = false;
+    } else {
+      dom.btnShootResultSecondary.hidden = true;
+    }
+    
     dom.shootResultModal.hidden = false;
   }
 
@@ -662,15 +752,25 @@
     if (action) action();
   }
 
+  function resolveShootResultSecondary() {
+    const action = state.pendingShootSecondaryAction;
+    state.pendingShootSecondaryAction = null;
+    dom.shootResultModal.hidden = true;
+
+    if (action) action();
+  }
+
   function confirmGuess() {
     if (!state.selectedForGuess) return;
+    
+    const guessId = state.selectedForGuess;
     closeGuessModal();
 
-    const guessedPlayer = state.cardPool.find(p => p.id === state.selectedForGuess);
-    const isCorrect = state.selectedForGuess === state.opponentPlayer.id;
+    const guessedPlayer = state.cardPool.find(p => p.id === guessId);
+    const isCorrect = guessId === state.opponentPlayer.id;
 
     if (state.mode !== 'ai' && window.ScoutsDuelOnline) {
-      window.ScoutsDuelOnline.sendGuess(state.selectedForGuess);
+      window.ScoutsDuelOnline.sendGuess(guessId);
     }
 
     if (isCorrect) {
@@ -702,11 +802,25 @@
     const isCorrect = playerId === state.myPlayer.id;
 
     if (isCorrect) {
-      showToast(`Opponent correctly guessed ${guessedPlayer.name}!`);
-      endGame(false);
+      openShootResult({
+        type: 'error',
+        badge: '🎯',
+        kicker: 'Opponent Shot',
+        title: 'Opponent guessed correctly!',
+        message: `Your opponent correctly guessed that your player is ${guessedPlayer.name}.`,
+        buttonText: 'See Results',
+        onConfirm: () => endGame(false),
+      });
     } else {
-      showToast(`Opponent guessed ${guessedPlayer.name} — Wrong!`);
-      setTimeout(() => endTurn(), 1500);
+      openShootResult({
+        type: 'info',
+        badge: '🎯',
+        kicker: 'Opponent Shot',
+        title: 'Opponent guessed wrong!',
+        message: `Your opponent incorrectly guessed that your player is ${guessedPlayer.name}. It's your turn.`,
+        buttonText: 'Resume',
+        onConfirm: () => endTurn(),
+      });
     }
   };
 
@@ -747,8 +861,62 @@
     }
 
     // Play again
-    $('#btnPlayAgain').onclick = () => startGame(state.mode);
+    const btnPlayAgain = $('#btnPlayAgain');
+    btnPlayAgain.textContent = 'Play Again';
+    btnPlayAgain.disabled = false;
+    btnPlayAgain.onclick = requestPlayAgain;
   }
+
+  let pendingNewCardPool = null;
+
+  function requestPlayAgain() {
+    if (state.mode === 'online' && window.ScoutsDuelOnline) {
+      const btnPlayAgain = $('#btnPlayAgain');
+      btnPlayAgain.textContent = 'Waiting for Opponent...';
+      btnPlayAgain.disabled = true;
+      const newPool = buildCardPool();
+      pendingNewCardPool = newPool;
+      window.ScoutsDuelOnline.sendPlayAgain(newPool);
+    } else {
+      startGame(state.mode);
+    }
+  }
+
+  window._sdOpponentWantsToPlayAgain = function(newPool) {
+    if (state.phase !== 'end') return;
+    openShootResult({
+      type: 'info',
+      badge: '🔄',
+      kicker: 'Rematch',
+      title: 'Opponent wants to play again',
+      message: 'Your opponent wants to play another round. Do you accept?',
+      buttonText: 'Play Again',
+      onConfirm: () => {
+        if (window.ScoutsDuelOnline) window.ScoutsDuelOnline.sendPlayAgainAccept();
+        startGame('online', newPool);
+      },
+      secondaryText: 'Exit to Lobby',
+      onSecondary: () => {
+        if (window.ScoutsDuelOnline) window.ScoutsDuelOnline.sendExit();
+        hidePanels();
+      }
+    });
+  };
+
+  window._sdOpponentAcceptedPlayAgain = function() {
+    if (pendingNewCardPool) {
+      startGame('online', pendingNewCardPool);
+      pendingNewCardPool = null;
+      if (dom.shootResultModal) dom.shootResultModal.hidden = true;
+    }
+  };
+
+  window._sdOpponentExited = function() {
+    if (state.phase === 'end') {
+      showToast('Opponent left the room.');
+      hidePanels();
+    }
+  };
 
   function renderEndPlayer(container, player) {
     if (!player) { container.innerHTML = '<div class="name">Unknown</div>'; return; }
@@ -777,6 +945,7 @@
     setupLobby();
     dom.btnLockIn.addEventListener('click', lockInSelection);
     dom.btnShootResultPrimary.addEventListener('click', resolveShootResult);
+    if (dom.btnShootResultSecondary) dom.btnShootResultSecondary.addEventListener('click', resolveShootResultSecondary);
     showScreen('lobby');
 
     console.log(`[ScoutsDuel] Ready — ${state.allPlayers.length} players loaded.`);

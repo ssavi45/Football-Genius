@@ -200,7 +200,6 @@
                 <div class="sd-board-kicker">Scout Board</div>
                 <h2>Track the full 24-player pool and eliminate with intent.</h2>
               </div>
-              <div class="sd-board-badge">8 x 3 Grid</div>
             </div>
             <div class="sd-card-grid sd-game-grid" id="gameGrid"></div>
           </div>
@@ -242,6 +241,13 @@
           <div class="sd-answer-card">
             <div class="sd-answer-label">Opponent asks:</div>
             <div class="sd-answer-question" id="answerQuestionText"></div>
+            <div class="sd-answer-player" id="answerPlayerCard" hidden>
+              <div class="sd-answer-player-label">Your Locked Player</div>
+              <div class="sd-answer-player-body">
+                <img id="answerPlayerImage" alt="Your locked player" />
+                <div class="sd-answer-player-name" id="answerPlayerName"></div>
+              </div>
+            </div>
             <div class="sd-answer-buttons">
               <button class="sd-answer-btn sd-yes" id="btnAnswerYes">✓ Yes</button>
               <button class="sd-answer-btn sd-no" id="btnAnswerNo">✗ No</button>
@@ -285,7 +291,10 @@
           <div class="sd-shoot-result-kicker" id="shootResultKicker">Shot Result</div>
           <h2 id="shootResultTitle">Guess submitted</h2>
           <p class="sd-shoot-result-message" id="shootResultMessage"></p>
-          <button class="button sd-shoot-result-btn" id="btnShootResultPrimary" type="button">Resume</button>
+          <div class="sd-shoot-result-actions" style="display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center;">
+            <button class="button sd-shoot-result-btn" id="btnShootResultPrimary" type="button">Resume</button>
+            <button class="button sd-shoot-result-btn" id="btnShootResultSecondary" type="button" style="background: var(--surface-light); color: var(--text-base);" hidden>Exit</button>
+          </div>
         </div>
       </div>
 
@@ -318,9 +327,9 @@
               <div class="sd-end-stat-label">Questions</div>
             </div>
           </div>
-          <div class="sd-end-actions">
+          <div class="sd-end-actions" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 2.5rem;">
             <button class="button" id="btnPlayAgain">Play Again</button>
-            <a href="scouts-duel.html" class="sd-back-btn">Back to Lobby</a>
+            <a href="scouts-duel.html" class="button" style="background: var(--surface-light); color: var(--text-base); border-color: rgba(255,255,255,0.1); box-shadow: none;">Back to Lobby</a>
           </div>
         </div>
       </section>

@@ -52,10 +52,10 @@
   /* ── Create Room ───────────────────────────────────────────────── */
   async function createRoom(cardPool) {
     const sb = getSupabase();
-    if (!sb) { setStatus('createRoomStatus', 'Please log in first.', 'error'); return; }
+    if (!sb) { setStatus('createRoomStatus', 'Please log in first.', 'error'); return false; }
     if (!Array.isArray(cardPool) || !cardPool.length) {
       setStatus('createRoomStatus', 'Could not prepare the shared player pool. Reload and try again.', 'error');
-      return;
+      return false;
     }
 
     await getUserId();
@@ -66,24 +66,26 @@
     // Show the code
     document.getElementById('roomCodeDisplay').hidden = false;
     document.getElementById('roomCodeValue').textContent = roomCode;
-    setStatus('createRoomStatus', 'Waiting for opponent to join...', '');
+    setStatus('createRoomStatus', 'Waiting for your friend to join with this code...', 'waiting');
 
     // Subscribe to channel
     joinChannel(roomCode, cardPool);
+    return true;
   }
 
   /* ── Join Room ─────────────────────────────────────────────────── */
   async function joinRoom(code) {
     const sb = getSupabase();
-    if (!sb) { setStatus('joinRoomStatus', 'Please log in first.', 'error'); return; }
+    if (!sb) { setStatus('joinRoomStatus', 'Please log in first.', 'error'); return false; }
 
     await getUserId();
     roomCode = code.toUpperCase();
     isHost = false;
     resetReadyState();
 
-    setStatus('joinRoomStatus', 'Connecting...', '');
+    setStatus('joinRoomStatus', 'Joining room and waiting for the host...', 'waiting');
     joinChannel(roomCode, null);
+    return true;
   }
 
   /* ── Join Channel ──────────────────────────────────────────────── */
@@ -92,9 +94,7 @@
     if (channel) { sb.removeChannel(channel); channel = null; }
     resetReadyState();
 
-    channel = sb.channel('scouts-duel:' + code, {
-      config: { broadcast: { self: false } }
-    });
+    channel = sb.channel('scouts_duel_' + code);
 
     channel
       .on('broadcast', { event: 'join' }, ({ payload }) => onPlayerJoined(payload, cardPool))
@@ -103,7 +103,17 @@
       .on('broadcast', { event: 'question' }, ({ payload }) => onQuestion(payload))
       .on('broadcast', { event: 'answer' }, ({ payload }) => onAnswer(payload))
       .on('broadcast', { event: 'guess' }, ({ payload }) => onGuess(payload))
-      .subscribe(async (status) => {
+      .on('broadcast', { event: 'play_again' }, ({ payload }) => {
+        if (window._sdOpponentWantsToPlayAgain) window._sdOpponentWantsToPlayAgain(payload.cardPool);
+      })
+      .on('broadcast', { event: 'play_again_accept' }, () => {
+        if (window._sdOpponentAcceptedPlayAgain) window._sdOpponentAcceptedPlayAgain();
+      })
+      .on('broadcast', { event: 'exit' }, () => {
+        if (window._sdOpponentExited) window._sdOpponentExited();
+      })
+      .subscribe(async (status, err) => {
+        console.log('[Scouts Duel] Channel Status:', status, err || '');
         if (status === 'SUBSCRIBED') {
           // Announce ourselves
           channel.send({
@@ -112,11 +122,17 @@
             payload: { userId: myUserId, isHost }
           });
         } else if (status === 'CHANNEL_ERROR') {
-          setStatus(isHost ? 'createRoomStatus' : 'joinRoomStatus', 'Could not connect to the room. Please try again.', 'error');
+          setStatus(isHost ? 'createRoomStatus' : 'joinRoomStatus', 'Could not connect. Ensure Realtime is enabled in Supabase.', 'error');
         } else if (status === 'TIMED_OUT') {
-          setStatus(isHost ? 'createRoomStatus' : 'joinRoomStatus', 'Room connection timed out. Please try again.', 'error');
+          // Channel didn't subscribe in time. Try once or twice to reconnect.
+          setStatus(isHost ? 'createRoomStatus' : 'joinRoomStatus', 'Connecting...', 'waiting');
+          setTimeout(() => {
+            if (roomCode) joinChannel(roomCode, cardPool);
+          }, 3000);
         } else if (status === 'CLOSED') {
-          setStatus(isHost ? 'createRoomStatus' : 'joinRoomStatus', 'Room connection closed.', 'error');
+          if (!roomCode) {
+            setStatus(isHost ? 'createRoomStatus' : 'joinRoomStatus', 'Room connection closed.', 'error');
+          }
         }
       });
   }
@@ -213,15 +229,8 @@
   }
 
   function onAnswer(payload) {
-    // The asking player receives the answer
-    const q = window.ScoutsDuel?.state?._pendingOnlineQuestion || '';
-    if (window.ScoutsDuel) {
-      // Simulate receiving the answer through the main module
-      const questionText = q;
-      const entry = { from: 'you', question: questionText, answer: payload.answer, type: 'online' };
-      window.ScoutsDuel.state.questionLog.push(entry);
-      window.ScoutsDuel.state.questionsAsked++;
-      window.ScoutsDuel.showToast(`Answer: ${payload.answer}`, payload.answer === 'Yes' ? '' : 'error');
+    if (window._sdReceiveOnlineAnswer) {
+      window._sdReceiveOnlineAnswer(payload.answer);
     }
   }
 
@@ -242,6 +251,37 @@
     }
   }
 
+  /* ── Play Again / Exit ─────────────────────────────────────────── */
+  function sendPlayAgain(cardPool) {
+    if (channel) {
+      channel.send({
+        type: 'broadcast',
+        event: 'play_again',
+        payload: { cardPool }
+      });
+    }
+  }
+
+  function sendPlayAgainAccept() {
+    if (channel) {
+      channel.send({
+        type: 'broadcast',
+        event: 'play_again_accept',
+        payload: {}
+      });
+    }
+  }
+
+  function sendExit() {
+    if (channel) {
+      channel.send({
+        type: 'broadcast',
+        event: 'exit',
+        payload: {}
+      });
+    }
+  }
+
   /* ── Matchmaking ───────────────────────────────────────────────── */
   let matchChannel = null;
 
@@ -250,7 +290,7 @@
     if (!sb) return;
     await getUserId();
 
-    matchChannel = sb.channel('scouts-duel:matchmaking', {
+    matchChannel = sb.channel('scouts_duel_matchmaking', {
       config: { presence: { key: myUserId } }
     });
 
@@ -304,6 +344,17 @@
     }
   }
 
+  function leaveRoom() {
+    const sb = getSupabase();
+    resetReadyState();
+    roomCode = null;
+    isHost = false;
+    if (channel && sb) {
+      sb.removeChannel(channel);
+      channel = null;
+    }
+  }
+
   /* ── Cleanup ───────────────────────────────────────────────────── */
   window.addEventListener('beforeunload', () => {
     const sb = getSupabase();
@@ -314,6 +365,7 @@
   // Expose
   window.ScoutsDuelOnline = {
     createRoom, joinRoom, lockIn, sendQuestion, sendAnswer,
-    sendGuess, findMatch, leaveMatchmaking
+    sendGuess, findMatch, leaveMatchmaking, leaveRoom,
+    sendPlayAgain, sendPlayAgainAccept, sendExit
   };
 })();

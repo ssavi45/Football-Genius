@@ -86,6 +86,12 @@
   border: 1px solid rgba(255,255,255,0.06);
   animation: fadeSlideUp 0.3s ease-out;
 }
+.sd-room-panel[hidden],
+.sd-matchmaking[hidden],
+.sd-room-body[hidden],
+.sd-room-code-display[hidden] {
+  display: none !important;
+}
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -100,6 +106,10 @@
 .sd-room-tab.active {
   background: rgba(46,204,113,0.1); border-color: rgba(46,204,113,0.2);
   color: var(--accent);
+}
+.sd-room-tab:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 .sd-room-body { min-height: 100px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .sd-room-code-display {
@@ -130,6 +140,7 @@
 .sd-room-status { color: var(--muted); font-size: 13px; min-height: 20px; text-align: center; }
 .sd-room-status.error { color: var(--bad); }
 .sd-room-status.success { color: var(--good); }
+.sd-room-status.waiting { color: var(--accent-2); }
 .sd-back-btn {
   background: none; border: none; color: var(--muted); font-family: inherit;
   font-size: 13px; cursor: pointer; padding: 8px 16px;
@@ -161,7 +172,7 @@
 .sd-card-grid {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 10px;
+  gap: 16px;
   width: 100%;
   perspective: 1200px;
 }
@@ -232,27 +243,29 @@
 /* Card info bar */
 .sd-card-info {
   width: 100%; padding: 6px 3px 0;
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
 }
 .sd-card-name {
   font-family: 'Outfit', sans-serif; font-weight: 700;
-  font-size: 11px; color: #fff; text-align: center;
+  font-size: 13px; color: #fff; text-align: center;
   line-height: 1.2; max-width: 100%;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .sd-card-meta {
-  display: flex; align-items: center; gap: 4px; flex-wrap: nowrap;
+  display: flex; align-items: center; gap: 6px; flex-wrap: nowrap;
+  height: 22px;
 }
 .sd-card-flag {
-  width: 16px; height: 11px; object-fit: contain; border-radius: 1px;
+  width: 20px; height: 16px; object-fit: contain; border-radius: 1px;
   flex-shrink: 0;
 }
 .sd-card-badge {
-  width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;
+  width: 18px; height: 18px; object-fit: contain; flex-shrink: 0;
 }
 .sd-card-pos {
-  font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 800;
-  padding: 2px 6px; border-radius: 5px;
+  font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 800;
+  height: 18px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 6px; border-radius: 4px;
   text-transform: uppercase; letter-spacing: 0.5px;
   flex-shrink: 0;
 }
@@ -262,9 +275,9 @@
 .sd-card-pos.fw { background: rgba(244,67,54,0.15); color: #ef5350; }
 
 .sd-card-retired-icon {
-  width: 14px; height: 14px; display: inline-flex;
+  width: 18px; height: 18px; display: inline-flex;
   align-items: center; justify-content: center;
-  font-size: 11px; flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 /* Card Back (eliminated) */
@@ -305,7 +318,7 @@
   gap: 8px;
 }
 .sd-selection-grid .sd-card {
-  aspect-ratio: 0.9;
+  aspect-ratio: 0.85;
 }
 .sd-selection-grid .sd-card-front {
   padding: 6px 5px 8px;
@@ -313,20 +326,7 @@
 .sd-selection-grid .sd-card-info {
   padding-top: 4px;
 }
-.sd-selection-grid .sd-card-name {
-  font-size: 10px;
-}
-.sd-selection-grid .sd-card-pos {
-  font-size: 9px;
-}
-.sd-selection-grid .sd-card-flag {
-  width: 14px;
-  height: 10px;
-}
-.sd-selection-grid .sd-card-badge {
-  width: 14px;
-  height: 14px;
-}
+/* Inherit the bumped up sizes from standard .sd-card-name, .sd-card-flag, .sd-card-badge */
 .sd-selection-header h2 {
   font-family: 'Russo One', sans-serif; font-size: 22px;
   background: linear-gradient(135deg, #fff, var(--accent-2));
@@ -405,6 +405,14 @@
   box-shadow: 0 0 16px rgba(46,204,113,0.08);
 }
 .sd-player-avatar { font-size: 24px; line-height: 1; }
+.sd-player-avatar img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255,255,255,0.08);
+}
 .sd-player-name {
   font-family: 'Outfit', sans-serif; font-weight: 600;
   font-size: 14px; color: rgba(255,255,255,0.8);
@@ -479,6 +487,16 @@
 }
 .sd-game-grid .sd-card {
   aspect-ratio: 0.92;
+}
+.sd-card.my-pick.eliminated .sd-card-back {
+  border-color: rgba(46,204,113,0.2);
+  background: linear-gradient(135deg, rgba(9,22,14,0.96), rgba(5,14,8,0.95));
+}
+.sd-card.my-pick.eliminated .sd-card-back::after {
+  content: 'LOCKED';
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: rgba(46,204,113,0.55);
 }
 
 /* ─── Question Panel ─────────────────────────────────────────────── */
@@ -594,6 +612,42 @@
 .sd-answer-question {
   font-family: 'Poppins', sans-serif; font-size: 18px;
   font-weight: 600; color: #fff; margin-bottom: 24px; line-height: 1.4;
+}
+.sd-answer-player {
+  margin: 0 auto 20px;
+  width: min(240px, 100%);
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(46,204,113,0.16);
+}
+.sd-answer-player[hidden] { display: none; }
+.sd-answer-player-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.sd-answer-player-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.sd-answer-player-body img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(46,204,113,0.18);
+}
+.sd-answer-player-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
 }
 .sd-answer-buttons { display: flex; gap: 16px; justify-content: center; }
 .sd-answer-btn {

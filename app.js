@@ -485,6 +485,7 @@ const TEAM_LOGOS = {
   "Inter": "img/teams/inter.png",
   "Argentina": "img/teams/argentina.png",
   "Saudi Arabia": "img/teams/saudi.png",
+  "Crystal Palace": "img/teams/palace.jpg",
   // Add new teams as needed, e.g.:
   "AC Milan": "img/teams/acmilan.png",
   "Ajax": "img/teams/ajax.png",
