@@ -167,6 +167,38 @@
   box-shadow: 0 0 16px rgba(46,204,113,0.1);
 }
 
+/* Image icons (game mode logos) */
+.sidebar-link.has-img-icon .sidebar-icon {
+  background: transparent;
+  border-color: transparent;
+  overflow: hidden;
+}
+.sidebar-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
+}
+.sidebar-link:hover .sidebar-icon-img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(46,204,113,0.2));
+}
+.sidebar-link.active .sidebar-icon-img {
+  filter: drop-shadow(0 0 10px rgba(46,204,113,0.25)) drop-shadow(0 0 20px rgba(212,175,55,0.1));
+}
+.sidebar-link.has-img-icon:hover .sidebar-icon {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.sidebar-link.has-img-icon.active .sidebar-icon {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
 /* SVG icons */
 .sidebar-icon svg {
   width: 20px;

@@ -10,13 +10,13 @@
       id: 'scoutsduel',
       label: "Scout's Duel",
       href: 'scouts-duel.html',
-      icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="9" r="1.5" fill="currentColor" opacity="0.5"/><line x1="18" y1="3" x2="21" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="21" y1="3" x2="18" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`
+      iconImg: 'img/icons/scouts_duel.png'
     },
     {
       id: 'scoreline',
       label: 'Scoreline Hero',
       href: 'index.html',
-      icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2 L14.5 7.5 L12 9 L9.5 7.5Z" fill="currentColor" opacity="0.8"/><path d="M22 12 L16.5 14.5 L15 12 L16.5 9.5Z" fill="currentColor" opacity="0.8"/><path d="M12 22 L9.5 16.5 L12 15 L14.5 16.5Z" fill="currentColor" opacity="0.8"/><path d="M2 12 L7.5 9.5 L9 12 L7.5 14.5Z" fill="currentColor" opacity="0.8"/><path d="M19 4.5 L16 8 L14.5 7.5L14.5 5.5Z" fill="currentColor" opacity="0.6"/><path d="M5 4.5 L9.5 5.5 L9.5 7.5 L8 8Z" fill="currentColor" opacity="0.6"/></svg>`
+      iconImg: 'img/icons/scoreline_hero.png'
     },
     {
       id: 'unscramble',
@@ -70,12 +70,15 @@
     const nav = GAME_MODES.map(mode => {
       const isActive = currentPage === mode.href || 
                        (currentPage === '' && mode.href === 'index.html');
+      const iconHTML = mode.iconImg
+        ? `<img src="${mode.iconImg}" alt="${mode.label}" class="sidebar-icon-img" />`
+        : mode.icon;
       return `
         <a href="${mode.href}" 
-           class="sidebar-link${isActive ? ' active' : ''}" 
+           class="sidebar-link${isActive ? ' active' : ''}${mode.iconImg ? ' has-img-icon' : ''}" 
            data-tooltip="${mode.label}"
            data-game="${mode.id}">
-          <span class="sidebar-icon">${mode.icon}</span>
+          <span class="sidebar-icon">${iconHTML}</span>
           <span class="sidebar-label">${mode.label}</span>
         </a>`;
     }).join('');
