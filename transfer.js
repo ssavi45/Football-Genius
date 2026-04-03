@@ -605,7 +605,7 @@
         return;
       }
 
-      els.saveStatus.textContent = 'Score saved to Transfer Trail.';
+      els.saveStatus.textContent = 'Score saved to JourneyMan.';
       els.saveStatus.classList.add('success');
     } catch (_err) {
       els.saveStatus.textContent = 'Could not save score right now.';
@@ -643,7 +643,7 @@
 
       loadQuestion();
     } catch (err) {
-      els.competition.textContent = 'Transfer Trail could not load.';
+      els.competition.textContent = 'JourneyMan could not load.';
       els.trail.replaceChildren();
       setResult('wrong', 'Unable to start the game.', err.message || 'Please refresh and try again.');
       els.input.disabled = true;

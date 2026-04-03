@@ -492,13 +492,13 @@ function closeDashboard() {
 }
 
 const MODE_LABELS = {
-  scoreline: 'Scoreline',
-  unscramble: 'Unscramble',
-  whosaidit: 'Who Said It',
+  scoreline: 'Scoreline Hero',
+  unscramble: 'Bootroom Scramble',
+  whosaidit: 'Tunnel Talk',
   higherlower: 'Higher/Lower',
-  grid: 'Grid Challenge',
-  transfer: 'Transfer Trail',
-  guess: 'Guess Who?',
+  grid: 'Football Matrix',
+  transfer: 'JourneyMan',
+  guess: 'Pixel Pitch',
   scoutsduel: "Scout's Duel"
 };
 
@@ -885,13 +885,13 @@ function injectLeaderboard() {
 
   const modes = [
     { key: null, label: 'All Games' },
-    { key: 'scoreline', label: 'Scoreline' },
-    { key: 'unscramble', label: 'Unscramble' },
-    { key: 'whosaidit', label: 'Who Said It' },
+    { key: 'scoreline', label: 'Scoreline Hero' },
+    { key: 'unscramble', label: 'Bootroom Scramble' },
+    { key: 'whosaidit', label: 'Tunnel Talk' },
     { key: 'higherlower', label: 'Higher / Lower' },
-    { key: 'grid', label: 'Grid' },
-    { key: 'transfer', label: 'Transfer Trail' },
-    { key: 'guess', label: 'Guess Who?' },
+    { key: 'grid', label: 'Football Matrix' },
+    { key: 'transfer', label: 'JourneyMan' },
+    { key: 'guess', label: 'Pixel Pitch' },
     { key: 'scoutsduel', label: "Scout's Duel" }
   ];
 

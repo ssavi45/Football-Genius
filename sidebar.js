@@ -20,13 +20,13 @@
     },
     {
       id: 'unscramble',
-      label: 'Unscramble',
+      label: 'Bootroom Scramble',
       href: 'unscramble.html',
       icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="6" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="15" y="12" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="3" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="15" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="5" y="11" font-size="5" fill="currentColor" font-weight="bold" text-anchor="middle">A</text><text x="12" y="7.5" font-size="5" fill="currentColor" font-weight="bold" text-anchor="middle">B</text><text x="18" y="17" font-size="5" fill="currentColor" font-weight="bold" text-anchor="middle">C</text><text x="12" y="20" font-size="5" fill="currentColor" font-weight="bold" text-anchor="middle">?</text></svg>`
     },
     {
       id: 'who',
-      label: 'Who Said It?',
+      label: 'Tunnel Talk',
       href: 'who.html',
       icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7l-4 4V6a2 2 0 0 1 1-1.73z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><text x="12" y="14" font-size="10" fill="currentColor" font-weight="bold" text-anchor="middle">❝</text></svg>`
     },
@@ -38,19 +38,19 @@
     },
     {
       id: 'grid',
-      label: 'Grid Challenge',
+      label: 'Football Matrix',
       href: 'grid.html',
       icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6.5" cy="6.5" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="17.5" cy="17.5" r="1.5" fill="currentColor" opacity="0.5"/></svg>`
     },
     {
       id: 'transfer',
-      label: 'Transfer Trail',
+      label: 'JourneyMan',
       href: 'transfer.html',
       icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 17c3.2 0 3.8-10 8-10 2.2 0 2.8 3 5 3 1.3 0 2.1-.8 3-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="4" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="7" r="2" fill="currentColor" opacity="0.55"/><circle cx="17" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M19.5 6.5l1.8 1.8-1.8 1.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
     },
     {
       id: 'guess',
-      label: 'Guess Who?',
+      label: 'Pixel Pitch',
       href: 'guess.html',
       icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><text x="12" y="11" font-size="6" fill="currentColor" font-weight="bold" text-anchor="middle">?</text></svg>`
     }
