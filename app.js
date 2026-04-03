@@ -619,6 +619,7 @@ function loadQuestion() {
   // UI defaults
   els.homeScore.value = 0;
   els.awayScore.value = 0;
+  syncScoreDisplay();
   els.submitGuess.disabled = false;
   els.nextQuestion.hidden = true;
 

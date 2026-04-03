@@ -18,6 +18,9 @@
       token = session?.access_token || '';
     } catch (_) { /* continue without token */ }
 
+    // Require authentication — don't call proxy without a valid token
+    if (!token) throw new Error('Not authenticated — Gemini requires sign-in');
+
     const res = await fetch(EDGE_FN_URL, {
       method: 'POST',
       headers: {

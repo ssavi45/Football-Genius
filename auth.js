@@ -498,7 +498,8 @@ const MODE_LABELS = {
   higherlower: 'Higher/Lower',
   grid: 'Grid Challenge',
   transfer: 'Transfer Trail',
-  guess: 'Guess Who?'
+  guess: 'Guess Who?',
+  scoutsduel: "Scout's Duel"
 };
 
 function formatRelativeDate(iso) {
@@ -828,7 +829,7 @@ async function getLeaderboard(mode = null, period = 'all', limit = 50) {
       .from('scores')
       .select('user_id, score, created_at, mode')
       .order('score', { ascending: false })
-      .limit(2000);
+      .limit(10000);
     if (mode) query = query.eq('mode', mode);
     if (period === 'daily') {
       const dayAgo = new Date(Date.now() - 86400000).toISOString();
@@ -890,7 +891,8 @@ function injectLeaderboard() {
     { key: 'higherlower', label: 'Higher / Lower' },
     { key: 'grid', label: 'Grid' },
     { key: 'transfer', label: 'Transfer Trail' },
-    { key: 'guess', label: 'Guess Who?' }
+    { key: 'guess', label: 'Guess Who?' },
+    { key: 'scoutsduel', label: "Scout's Duel" }
   ];
 
   const modeTabs = modes.map(m =>
@@ -1129,7 +1131,16 @@ window.auth = { supabase, updateAuthUI, saveScore, getLeaderboard, getSession, o
 /* ── Wire Header Buttons ─────────────────────────────────────────── */
 function wireHeaderButtons() {
   const authBtn = $('#btnAuth');
-  if (authBtn) authBtn.addEventListener('click', handleAuthClick);
+  if (authBtn) {
+    authBtn.addEventListener('click', handleAuthClick);
+    // Keyboard accessibility: Enter/Space should trigger the auth button
+    authBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleAuthClick();
+      }
+    });
+  }
 
   const lbBtn = $('#btnLeaderboard');
   if (lbBtn) lbBtn.addEventListener('click', openLeaderboard);
