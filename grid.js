@@ -124,16 +124,16 @@ var CLUBS = [
 ];
 
 var STAT_CRITERIA = [
-  { id: 'goals400',        name: 'Scored 400+ career goals',         img: 'img/icons/goals400.svg' },
-  { id: 'cl3',             name: 'Won 3+ Champions League titles',   img: 'img/icons/cl3.svg' },
-  { id: 'worldcup',        name: 'Won the World Cup',                img: 'img/icons/worldcup.svg' },
-  { id: 'ballondor',       name: "Won the Ballon d'Or",              img: 'img/icons/ballondor.png' },
-  { id: 'goals50season',   name: 'Scored 50+ goals in a season',     img: 'img/icons/goals50season.svg' },
-  { id: 'cl_topscorer',    name: 'UCL all-time top 15 scorer',       img: 'img/icons/cl_topscorer.svg' },
-  { id: 'captained',       name: 'Captained their national team',    img: 'img/icons/captained.svg' },
-  { id: 'league_titles5',  name: 'Won 5+ league titles',             img: 'img/icons/league_titles5.svg' },
-  { id: 'played_3clubs',   name: 'Played for 3+ top-5 league clubs', img: 'img/icons/played_3clubs.svg' },
-  { id: 'assists200',      name: 'Provided 200+ career assists',     img: 'img/icons/assists200.svg' }
+  { id: 'goals400',        name: 'Scored 400+ career goals',         img: 'img/icons/over_400_career_goals.png' },
+  { id: 'cl3',             name: 'Won 3+ Champions League titles',   img: 'img/icons/won_over_3_ucl.png' },
+  { id: 'worldcup',        name: 'Won the World Cup',                img: 'img/icons/world_cup_winner.png' },
+  { id: 'ballondor',       name: "Won the Ballon d'Or",              img: 'img/icons/balon_dor_winner.png' },
+  { id: 'goals50season',   name: 'Scored 50+ goals in a season',     img: 'img/icons/over_50_goals_season.png' },
+  { id: 'cl_topscorer',    name: 'UCL all-time top 15 scorer',       img: 'img/icons/top_15_scorer_ucl.png' },
+  { id: 'captained',       name: 'Captained their national team',    img: 'img/icons/captained_teams.png' },
+  { id: 'league_titles5',  name: 'Won 5+ league titles',             img: 'img/icons/won_over_5_league_titles.png' },
+  { id: 'played_3clubs',   name: 'Played for 3+ top-5 league clubs', img: 'img/icons/played_3_plus_clubs.png' },
+  { id: 'assists200',      name: 'Provided 200+ career assists',     img: 'img/icons/provide_over_200_assists.png' }
 ];
 
 // Build lookup maps for fast criterion resolution
@@ -331,9 +331,14 @@ function cacheDom() {
 
 // Helper: build a header cell (works for clubs, nations, AND stats — all now use img)
 function buildHeaderContent(item) {
-  var html = '<img src="' + item.img + '" alt="' + item.name + '" ' +
+  var isStat = !!STAT_ID_BY_NAME[item.name];
+  var imgClass = isStat ? 'grid-header-icon grid-header-icon-stat' : 'grid-header-icon';
+  var visualClass = isStat ? 'grid-header-visual grid-header-visual-stat' : 'grid-header-visual';
+  var html = '<div class="' + visualClass + '">' +
+    '<img class="' + imgClass + '" src="' + item.img + '" alt="' + item.name + '" ' +
     'onerror="this.onerror=null;this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" />' +
     '<div class="stat-icon-fallback" style="display:none">' + item.name.charAt(0).toUpperCase() + '</div>' +
+    '</div>' +
     '<span>' + item.name + '</span>';
   return html;
 }
