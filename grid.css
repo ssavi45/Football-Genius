@@ -519,8 +519,8 @@ button.grid-cell:disabled {
   z-index: 50;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 12vh;
+  align-items: center;
+  padding: 24px;
 }
 
 .search-container[hidden] {

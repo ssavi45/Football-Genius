@@ -63,6 +63,7 @@ const IMAGE_MAP = {
   "kylian-mbappe": "mbappe.jpg",
   "thierry-henry": "henry.jpg",
   "kobe-bryant": "kobe.jpg",
+  "gareth-bale": "bale.jpg",
   "luka-modric": "modric.jpg",
   "erling-haaland": "haaland.jpg",
   "jude-bellingham": "bellingham.jpg",

@@ -74,6 +74,43 @@
     return await res.json();
   }
 
+  function slugifyName(name) {
+    return String(name || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
+
+  const PLAYER_IMAGE_MAP = {
+    'cristiano-ronaldo': 'img/players/ronaldo.jpg',
+    'lionel-messi': 'img/players/messi.jpg',
+    'neymar-jr': 'img/players/neymar.jpg',
+    'kevin-de-bruyne': 'img/players/bruyne.jpg',
+    'gareth-bale': 'img/players/bale.jpg'
+  };
+
+  function normalizePlayerImagePath(name, image) {
+    var src = String(image || '').trim();
+    var key = slugifyName(name);
+    var canonical = PLAYER_IMAGE_MAP[key];
+    if (/^https?:\/\//i.test(src) || src.indexOf('data:') === 0) return src;
+    if (canonical) return canonical;
+    if (src.indexOf('/img/') === 0) return src.slice(1);
+    if (src.indexOf('img/') === 0) return src;
+    if (src) return 'img/players/' + src.replace(/^\/+/, '').replace(/^players\//, '');
+    return 'img/players/' + key + '.jpg';
+  }
+
+  function normalizePlayerArrayImages(rows) {
+    return (rows || []).map(function (player) {
+      return Object.assign({}, player, {
+        image: normalizePlayerImagePath(player.name, player.image)
+      });
+    });
+  }
+
   // ─── JSON Fallback Fetch ────────────────────────────────────────
   async function fetchJSON(path) {
     const res = await fetch(path + '?v=' + Date.now());
@@ -88,7 +125,7 @@
       var obj = {
         id: r.id,
         name: r.name,
-        image: r.image,
+        image: normalizePlayerImagePath(r.name, r.image),
         stats: {
           careerGoals: r.career_goals,
           careerTrophies: r.career_trophies,
@@ -111,7 +148,7 @@
     return rows.map(function (r) {
       return {
         name: r.name,
-        image: r.image,
+        image: normalizePlayerImagePath(r.name, r.image),
         club: r.club,
         nation: r.nation,
       };
@@ -167,7 +204,7 @@
     var cached = getCached(CACHE_KEYS.global);
     if (cached) {
       console.log('[PlayerData] global_players loaded from cache');
-      return cached;
+      return normalizePlayerArrayImages(cached);
     }
 
     // 2. Try Supabase
@@ -183,7 +220,7 @@
 
     // 3. Fallback to JSON
     try {
-      var jsonData = await fetchJSON('data/players.json');
+      var jsonData = normalizePlayerArrayImages(await fetchJSON('data/players.json'));
       console.log('[PlayerData] global_players loaded from JSON fallback');
       return jsonData;
     } catch (e2) {
@@ -200,7 +237,7 @@
     var cached = getCached(CACHE_KEYS.guess);
     if (cached) {
       console.log('[PlayerData] guess_players loaded from cache');
-      return cached;
+      return normalizePlayerArrayImages(cached);
     }
 
     try {
@@ -214,7 +251,7 @@
     }
 
     try {
-      var jsonData = await fetchJSON('data/guess-players.json');
+      var jsonData = normalizePlayerArrayImages(await fetchJSON('data/guess-players.json'));
       console.log('[PlayerData] guess_players loaded from JSON fallback');
       return jsonData;
     } catch (e2) {

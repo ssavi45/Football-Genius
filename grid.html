@@ -120,17 +120,6 @@
       </div>
     </section>
 
-    <!-- ====== SEARCH MODAL ====== -->
-    <div id="searchContainer" class="search-container" hidden>
-      <div class="search-box">
-        <h3>Select Player for <span id="targetCriteria">...</span></h3>
-        <input type="text" id="playerSearchInput" placeholder="Type a player name..." autocomplete="off" />
-        <div id="searchLoading" class="search-loading" hidden>Searching...</div>
-        <ul id="searchResults" class="search-results"></ul>
-        <button id="closeSearch" class="secondary" style="margin-top: 12px; width: 100%;">Cancel</button>
-      </div>
-    </div>
-
     <details class="howto">
       <summary>How to play</summary>
       <ul>
@@ -143,6 +132,17 @@
 
 
   </main>
+
+  <!-- ====== SEARCH MODAL ====== -->
+  <div id="searchContainer" class="search-container" hidden>
+    <div class="search-box">
+      <h3>Select Player for <span id="targetCriteria">...</span></h3>
+      <input type="text" id="playerSearchInput" placeholder="Type a player name..." autocomplete="off" />
+      <div id="searchLoading" class="search-loading" hidden>Searching...</div>
+      <ul id="searchResults" class="search-results"></ul>
+      <button id="closeSearch" class="secondary" style="margin-top: 12px; width: 100%;">Cancel</button>
+    </div>
+  </div>
 
   <!-- ====== SUMMARY MODAL ====== -->
   <div id="summaryModal" class="modal" hidden>

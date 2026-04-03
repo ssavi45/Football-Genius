@@ -45,6 +45,13 @@ const els = {
   year: $("#year"),
 };
 
+const scoreboardCenter = document.querySelector(".sb-center");
+if (els.competition && scoreboardCenter) {
+  els.competition.classList.remove("competition");
+  els.competition.classList.add("sb-match-title");
+  scoreboardCenter.prepend(els.competition);
+}
+
 // Format helpers
 const formatDate = (iso) => {
   const d = new Date(iso);
@@ -630,7 +637,7 @@ function loadQuestion() {
   els.hintTexts.forEach((p) => (p.textContent = ""));
 
   // Fill view
-  const label = m.stage ? `${m.competition} — ${m.stage}` : m.competition;
+  const label = m.stage ? `${m.competition} - ${m.stage}` : m.competition;
   els.competition.textContent = label;
   els.homeName.textContent = m.homeTeam;
   els.awayName.textContent = m.awayTeam;

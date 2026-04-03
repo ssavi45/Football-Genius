@@ -262,6 +262,38 @@ body.has-sidebar.sidebar-expanded .main-wrapper {
   color: transparent;
   animation: shimmerText 4s ease-in-out infinite;
 }
+.scoreline-hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 6px auto 14px;
+  text-align: center;
+}
+.scoreline-hero-title {
+  font-family: 'Russo One', 'Outfit', sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+.scoreline-hero-tagline {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 1.8px;
+}
+.arena > #competition {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.sb-center > #competition {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+}
 @keyframes shimmerText {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -347,7 +379,7 @@ body.has-sidebar.sidebar-expanded .main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .sb-mode-title {
   font-family: 'Russo One', 'Outfit', sans-serif;
@@ -355,6 +387,18 @@ body.has-sidebar.sidebar-expanded .main-wrapper {
   font-weight: 900;
   color: #fff;
   letter-spacing: 0.04em;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.sb-match-title {
+  font-family: 'Russo One', 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.03em;
+  text-align: center;
+  line-height: 1.1;
+  margin-top: -8px;
+  margin-bottom: 4px;
   text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
@@ -1081,7 +1125,9 @@ button[disabled] { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
   .scoreboard-inner { grid-template-columns: 1fr 1.2fr 1fr; gap: 8px; }
   .sb-badge { width: 72px; height: 72px; }
   .sb-team-name { font-size: 11px; max-width: 90px; }
-  .sb-mode-title { font-size: 16px; }
+  .scoreline-hero-tagline { font-size: 14px; letter-spacing: 1.2px; }
+  .sb-mode-title,
+  .sb-match-title { font-size: 13px; }
   .sb-score-num { font-size: 22px; }
   .sb-score-display { padding: 6px 14px; gap: 10px; }
   .adj-input { width: 48px; font-size: 22px; }

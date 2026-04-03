@@ -491,16 +491,68 @@ function closeDashboard() {
   $('#dashPanel')?.classList.remove('open');
 }
 
-const MODE_LABELS = {
-  scoreline: 'Scoreline Hero',
-  unscramble: 'Bootroom Scramble',
-  whosaidit: 'Tunnel Talk',
-  higherlower: 'Higher/Lower',
-  grid: 'Football Matrix',
-  transfer: 'JourneyMan',
-  guess: 'Pixel Pitch',
-  scoutsduel: "Scout's Duel"
+const MODE_META = {
+  scoreline: {
+    key: 'scoreline',
+    label: 'Scoreline Hero',
+    shortLabel: 'Scoreline',
+    href: 'index.html',
+    iconImg: 'img/icons/scoreline_hero.png'
+  },
+  unscramble: {
+    key: 'unscramble',
+    label: 'Bootroom Scramble',
+    shortLabel: 'Scramble',
+    href: 'unscramble.html',
+    iconImg: 'img/icons/unscramble.png'
+  },
+  whosaidit: {
+    key: 'whosaidit',
+    label: 'Tunnel Talk',
+    shortLabel: 'Quotes',
+    href: 'who.html',
+    iconImg: 'img/icons/tunnel_talk.png'
+  },
+  higherlower: {
+    key: 'higherlower',
+    label: 'Higher / Lower',
+    shortLabel: 'Higher/Lower',
+    href: 'higherLower.html',
+    iconImg: 'img/icons/higher_lower.png'
+  },
+  grid: {
+    key: 'grid',
+    label: 'Football Matrix',
+    shortLabel: 'Matrix',
+    href: 'grid.html',
+    iconImg: 'img/icons/football_matrix.png'
+  },
+  transfer: {
+    key: 'transfer',
+    label: 'JourneyMan',
+    shortLabel: 'JourneyMan',
+    href: 'transfer.html',
+    iconImg: 'img/icons/journeyman.png'
+  },
+  guess: {
+    key: 'guess',
+    label: 'Pixel Pitch',
+    shortLabel: 'Pixel Pitch',
+    href: 'guess.html',
+    iconImg: 'img/icons/pixel_pitch.png'
+  },
+  scoutsduel: {
+    key: 'scoutsduel',
+    label: "Scout's Duel",
+    shortLabel: 'Scout Duel',
+    href: 'scouts-duel.html',
+    iconImg: 'img/icons/scouts_duel.png'
+  }
 };
+
+const MODE_LABELS = Object.fromEntries(
+  Object.values(MODE_META).map(mode => [mode.key, mode.label])
+);
 
 function formatRelativeDate(iso) {
   const d = new Date(iso);
@@ -878,26 +930,101 @@ async function getLeaderboard(mode = null, period = 'all', limit = 50) {
    LEADERBOARD (Stadium Podium)
    ══════════════════════════════════════════════════════════════════ */
 
-let _lbState = { mode: null, period: 'all' };
+let _lbState = { mode: null, period: 'weekly', updatedAt: null };
 
-function injectLeaderboard() {
+const LEADERBOARD_MODES = [
+  ...Object.values(MODE_META),
+  {
+    key: null,
+    label: 'Overall',
+    shortLabel: 'Overall',
+    icon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20h10"/><path d="M9 18v-3"/><path d="M15 18v-3"/><path d="M7 4h10v2a5 5 0 0 1-5 5 5 5 0 0 1-5-5Z"/><path d="M7 5H4a2 2 0 0 0 2 3h1"/><path d="M17 5h3a2 2 0 0 1-2 3h-1"/></svg>`
+  }
+];
+
+function getCurrentLeaderboardMode() {
+  const file = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const pageMode = {
+    '': 'scoreline',
+    'index.html': 'scoreline',
+    'unscramble.html': 'unscramble',
+    'who.html': 'whosaidit',
+    'higherlower.html': 'higherlower',
+    'grid.html': 'grid',
+    'transfer.html': 'transfer',
+    'guess.html': 'guess',
+    'scouts-duel.html': 'scoutsduel'
+  };
+  return pageMode[file] || 'scoreline';
+}
+
+function getLeaderboardModeMeta(mode) {
+  if (mode === null) return LEADERBOARD_MODES[LEADERBOARD_MODES.length - 1];
+  return MODE_META[mode] || MODE_META.scoreline;
+}
+
+function getLeaderboardModeValue(value) {
+  return value === '__overall' ? null : value;
+}
+
+function getLeaderboardPeriodLabel(period) {
+  const labels = {
+    daily: 'Today',
+    weekly: 'This Week',
+    all: 'All-Time'
+  };
+  return labels[period] || 'All-Time';
+}
+
+function getLeaderboardContextLabel(mode, period) {
+  return `${getLeaderboardModeMeta(mode).label} | ${getLeaderboardPeriodLabel(period)} | Best Score`;
+}
+
+function formatLeaderboardScore(value) {
+  return `${Number(value || 0).toLocaleString()} pts`;
+}
+
+function formatGameCount(value) {
+  const games = Number(value || 0);
+  return `${games.toLocaleString()} game${games === 1 ? '' : 's'}`;
+}
+
+function formatLeaderboardUpdated(iso) {
+  if (!iso) return 'Waiting for the first score';
+  return `Updated ${formatRelativeDate(iso)}`;
+}
+
+function formatRecentForm(scores = []) {
+  if (!scores.length) return 'No recent form yet';
+  return scores.slice(0, 3).map(score => Number(score || 0)).join(' • ');
+}
+
+function getLeaderboardPeriodCutoff(period) {
+  const now = Date.now();
+  if (period === 'daily') return new Date(now - 86400000).toISOString();
+  if (period === 'weekly') return new Date(now - 604800000).toISOString();
+  return null;
+}
+
+function buildModeTabMarkup(mode, isActive) {
+  const iconMarkup = mode.iconImg
+    ? `<img src="${mode.iconImg}" alt="" class="lb-mode-icon-img" />`
+    : `<span class="lb-mode-icon-svg">${mode.icon || ''}</span>`;
+  return `
+    <button class="lb-mode-tab${isActive ? ' active' : ''}" data-mode="${mode.key === null ? '__overall' : mode.key}">
+      <span class="lb-mode-icon">${iconMarkup}</span>
+      <span class="lb-mode-label">${mode.shortLabel || mode.label}</span>
+    </button>
+  `;
+}
+
+function legacyInjectLeaderboard() {
   if ($('#lbOverlay')) return;
 
-  const modes = [
-    { key: null, label: 'All Games' },
-    { key: 'scoreline', label: 'Scoreline Hero' },
-    { key: 'unscramble', label: 'Bootroom Scramble' },
-    { key: 'whosaidit', label: 'Tunnel Talk' },
-    { key: 'higherlower', label: 'Higher / Lower' },
-    { key: 'grid', label: 'Football Matrix' },
-    { key: 'transfer', label: 'JourneyMan' },
-    { key: 'guess', label: 'Pixel Pitch' },
-    { key: 'scoutsduel', label: "Scout's Duel" }
-  ];
-
-  const modeTabs = modes.map(m =>
-    `<button class="lb-mode-tab${m.key === null ? ' active' : ''}" data-mode="${m.key}">${m.label}</button>`
-  ).join('');
+  const currentMode = _lbState.mode ?? getCurrentLeaderboardMode();
+  const modeTabs = LEADERBOARD_MODES
+    .map(mode => buildModeTabMarkup(mode, mode.key === currentMode))
+    .join('');
 
   const html = `
   <div id="lbOverlay" class="lb-overlay" role="dialog" aria-modal="true" aria-label="Leaderboard">
@@ -931,20 +1058,20 @@ function injectLeaderboard() {
   </div>`;
 
   document.body.insertAdjacentHTML('beforeend', html);
-  wireLeaderboard();
+  legacyWireLeaderboard();
 }
 
-function wireLeaderboard() {
+function legacyWireLeaderboard() {
   const overlay = $('#lbOverlay');
   const panel = overlay.querySelector('.lb-panel');
 
   // Close
-  $('#lbClose').addEventListener('click', closeLeaderboard);
+  $('#lbClose').addEventListener('click', legacyCloseLeaderboard);
   overlay.addEventListener('click', (e) => {
-    if (!panel.contains(e.target)) closeLeaderboard();
+    if (!panel.contains(e.target)) legacyCloseLeaderboard();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('open')) closeLeaderboard();
+    if (e.key === 'Escape' && overlay.classList.contains('open')) legacyCloseLeaderboard();
   });
 
   // Mode tabs
@@ -953,7 +1080,7 @@ function wireLeaderboard() {
       $$('#lbModeTabs .lb-mode-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       _lbState.mode = tab.dataset.mode === 'null' ? null : tab.dataset.mode;
-      loadLeaderboardData();
+      legacyLoadLeaderboardData();
     });
   });
 
@@ -963,20 +1090,20 @@ function wireLeaderboard() {
       $$('#lbPeriodPills .lb-period-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
       _lbState.period = pill.dataset.period;
-      loadLeaderboardData();
+      legacyLoadLeaderboardData();
     });
   });
 }
 
-function openLeaderboard() {
-  injectLeaderboard();
+function legacyOpenLeaderboard() {
+  legacyInjectLeaderboard();
   const overlay = $('#lbOverlay');
   void overlay.offsetWidth;
   overlay.classList.add('open');
-  loadLeaderboardData();
+  legacyLoadLeaderboardData();
 }
 
-function closeLeaderboard() {
+function legacyCloseLeaderboard() {
   const overlay = $('#lbOverlay');
   if (overlay) overlay.classList.remove('open');
 }
@@ -986,7 +1113,7 @@ function _getInitials(name) {
   return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
 }
 
-async function loadLeaderboardData() {
+async function legacyLoadLeaderboardData() {
   const podiumEl = $('#lbPodium');
   const listEl = $('#lbList');
   const yourRankEl = $('#lbYourRank');
@@ -1125,6 +1252,587 @@ async function loadLeaderboardData() {
   }
 }
 
+function syncLeaderboardControls() {
+  const contextEl = $('#lbContextLine');
+  if (contextEl) contextEl.textContent = getLeaderboardContextLabel(_lbState.mode, _lbState.period);
+
+  $$('#lbModeTabs .lb-mode-tab').forEach(tab => {
+    const mode = getLeaderboardModeValue(tab.dataset.mode);
+    tab.classList.toggle('active', mode === _lbState.mode);
+  });
+
+  $$('#lbPeriodPills .lb-period-pill').forEach(pill => {
+    pill.classList.toggle('active', pill.dataset.period === _lbState.period);
+  });
+}
+
+function injectLeaderboard() {
+  if ($('#lbOverlay')) return;
+
+  const currentMode = _lbState.mode ?? getCurrentLeaderboardMode();
+  const modeTabs = LEADERBOARD_MODES
+    .map(mode => buildModeTabMarkup(mode, mode.key === currentMode))
+    .join('');
+
+  const html = `
+  <div id="lbOverlay" class="lb-overlay" role="dialog" aria-modal="true" aria-label="Leaderboard">
+    <section class="lb-screen">
+      <header class="lb-header">
+        <div class="lb-header-main">
+          <button class="lb-close" id="lbClose" aria-label="Close leaderboard">
+            <span aria-hidden="true">&larr;</span>
+          </button>
+          <div>
+            <p class="lb-eyebrow">Competition Table</p>
+            <h2 class="lb-title">Leaderboard</h2>
+            <p class="lb-subtitle">See who is dominating each mode.</p>
+          </div>
+        </div>
+        <div class="lb-context-line" id="lbContextLine">${getLeaderboardContextLabel(currentMode, _lbState.period)}</div>
+      </header>
+
+      <div class="lb-controls">
+        <div class="lb-mode-tabs" id="lbModeTabs">${modeTabs}</div>
+        <div class="lb-period-pills" id="lbPeriodPills" aria-label="Timeframe">
+          <button class="lb-period-pill${_lbState.period === 'daily' ? ' active' : ''}" data-period="daily">Today</button>
+          <button class="lb-period-pill${_lbState.period === 'weekly' ? ' active' : ''}" data-period="weekly">This Week</button>
+          <button class="lb-period-pill${_lbState.period === 'all' ? ' active' : ''}" data-period="all">All-Time</button>
+        </div>
+      </div>
+
+      <div class="lb-content">
+        <section class="lb-summary" id="lbSummary"></section>
+
+        <section class="lb-section">
+          <div class="lb-section-head">
+            <div>
+              <p class="lb-section-kicker">Your Standing</p>
+              <h3>Chase the next spot</h3>
+            </div>
+          </div>
+          <div id="lbYourStanding" class="lb-standing-card"></div>
+        </section>
+
+        <section class="lb-section">
+          <div class="lb-section-head">
+            <div>
+              <p class="lb-section-kicker">Table Leaders</p>
+              <h3>Top three in this pool</h3>
+            </div>
+          </div>
+          <div id="lbPodium" class="lb-podium"></div>
+        </section>
+
+        <section class="lb-section">
+          <div class="lb-section-head lb-table-head">
+            <div>
+              <p class="lb-section-kicker">Full Table</p>
+              <h3>Official standings</h3>
+            </div>
+            <span class="lb-table-metric">Best single-round score</span>
+          </div>
+          <div class="lb-table-shell">
+            <div class="lb-table-columns" aria-hidden="true">
+              <span>Rank</span>
+              <span>Player</span>
+              <span>Best</span>
+              <span>Played</span>
+              <span>Updated</span>
+            </div>
+            <div id="lbList" class="lb-list"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>`;
+
+  document.body.insertAdjacentHTML('beforeend', html);
+  wireLeaderboard();
+}
+
+function wireLeaderboard() {
+  $('#lbClose')?.addEventListener('click', closeLeaderboard);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && $('#lbOverlay')?.classList.contains('open')) closeLeaderboard();
+  });
+
+  $$('#lbModeTabs .lb-mode-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      _lbState.mode = getLeaderboardModeValue(tab.dataset.mode);
+      syncLeaderboardControls();
+      loadLeaderboardData();
+    });
+  });
+
+  $$('#lbPeriodPills .lb-period-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      _lbState.period = pill.dataset.period;
+      syncLeaderboardControls();
+      loadLeaderboardData();
+    });
+  });
+}
+
+function openLeaderboard() {
+  _lbState.mode = getCurrentLeaderboardMode();
+  _lbState.period = 'weekly';
+  injectLeaderboard();
+  syncLeaderboardControls();
+
+  const overlay = $('#lbOverlay');
+  if (!overlay) return;
+  void overlay.offsetWidth;
+  overlay.classList.add('open');
+  document.body.classList.add('lb-open');
+  loadLeaderboardData();
+}
+
+function closeLeaderboard() {
+  $('#lbOverlay')?.classList.remove('open');
+  document.body.classList.remove('lb-open');
+}
+
+async function getLeaderboardSnapshot(mode = null, period = 'weekly') {
+  const session = _cachedSession || (await supabase.auth.getSession()).data?.session;
+  const myId = session?.user?.id || null;
+
+  let query = supabase
+    .from('scores')
+    .select('user_id, score, created_at, mode')
+    .order('created_at', { ascending: false })
+    .limit(10000);
+
+  if (mode) query = query.eq('mode', mode);
+  const cutoff = getLeaderboardPeriodCutoff(period);
+  if (cutoff) query = query.gte('created_at', cutoff);
+
+  const { data: scores, error } = await query;
+  if (error) return { data: null, error };
+
+  const rows = Array.isArray(scores) ? scores : [];
+  const byUser = new Map();
+
+  rows.forEach(row => {
+    if (!byUser.has(row.user_id)) {
+      byUser.set(row.user_id, {
+        user_id: row.user_id,
+        best_score: Number(row.score || 0),
+        games_played: 0,
+        last_played: row.created_at,
+        recent_scores: []
+      });
+    }
+
+    const current = byUser.get(row.user_id);
+    current.games_played += 1;
+    current.best_score = Math.max(current.best_score, Number(row.score || 0));
+    if (!current.last_played || new Date(row.created_at) > new Date(current.last_played)) {
+      current.last_played = row.created_at;
+    }
+    if (current.recent_scores.length < 3) current.recent_scores.push(Number(row.score || 0));
+  });
+
+  const userIds = [...byUser.keys()];
+  const profiles = {};
+
+  if (userIds.length) {
+    const { data: profileRows, error: profileError } = await supabase
+      .from('profiles')
+      .select('id, username, avatar_url')
+      .in('id', userIds);
+
+    if (profileError) return { data: null, error: profileError };
+    (profileRows || []).forEach(profile => {
+      profiles[profile.id] = profile;
+    });
+  }
+
+  const ranked = [...byUser.values()]
+    .map(entry => ({
+      ...entry,
+      username: profiles[entry.user_id]?.username || null,
+      avatar_url: profiles[entry.user_id]?.avatar_url || null
+    }))
+    .sort((a, b) => (
+      b.best_score - a.best_score
+      || b.games_played - a.games_played
+      || new Date(b.last_played || 0) - new Date(a.last_played || 0)
+      || String(a.user_id).localeCompare(String(b.user_id))
+    ))
+    .map((entry, index) => ({ ...entry, rank: index + 1 }));
+
+  const myEntry = myId ? ranked.find(entry => entry.user_id === myId) || null : null;
+  const nextTarget = myEntry && myEntry.rank > 1 ? ranked[myEntry.rank - 2] : null;
+
+  return {
+    data: {
+      mode,
+      period,
+      myId,
+      rows: ranked,
+      top3: ranked.slice(0, 3),
+      totalPlayers: ranked.length,
+      updatedAt: rows[0]?.created_at || null,
+      myEntry,
+      nextTarget,
+      comparisonNote: mode === null
+        ? 'Mixed-mode scores are shown together here until an overall rating system is added.'
+        : 'Best score means the highest single round posted in this mode and timeframe.'
+    },
+    error: null
+  };
+}
+
+function renderLeaderboardLoading() {
+  const summaryEl = $('#lbSummary');
+  const standingEl = $('#lbYourStanding');
+  const podiumEl = $('#lbPodium');
+  const listEl = $('#lbList');
+
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <div class="lb-summary-bar lb-skeleton-grid">
+        <div class="lb-skeleton lb-skeleton-pill"></div>
+        <div class="lb-skeleton lb-skeleton-pill"></div>
+        <div class="lb-skeleton lb-skeleton-pill"></div>
+        <div class="lb-skeleton lb-skeleton-pill"></div>
+        <div class="lb-skeleton lb-skeleton-pill"></div>
+        <div class="lb-skeleton lb-skeleton-pill"></div>
+      </div>
+    `;
+  }
+
+  if (standingEl) {
+    standingEl.innerHTML = `
+      <div class="lb-standing-layout">
+        <div>
+          <div class="lb-skeleton lb-skeleton-line"></div>
+          <div class="lb-skeleton lb-skeleton-line short"></div>
+        </div>
+        <div class="lb-skeleton-grid">
+          <div class="lb-skeleton lb-skeleton-block"></div>
+          <div class="lb-skeleton lb-skeleton-block"></div>
+          <div class="lb-skeleton lb-skeleton-block"></div>
+          <div class="lb-skeleton lb-skeleton-block"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (podiumEl) {
+    podiumEl.innerHTML = [1, 2, 3].map(rank => `
+      <article class="lb-podium-card skeleton" data-rank="${rank}">
+        <div class="lb-skeleton lb-skeleton-avatar"></div>
+        <div class="lb-skeleton lb-skeleton-line"></div>
+        <div class="lb-skeleton lb-skeleton-line short"></div>
+      </article>
+    `).join('');
+  }
+
+  if (listEl) {
+    listEl.innerHTML = Array.from({ length: 6 }, () => `
+      <div class="lb-row skeleton">
+        <div class="lb-skeleton lb-skeleton-line short"></div>
+        <div class="lb-skeleton lb-skeleton-line"></div>
+        <div class="lb-skeleton lb-skeleton-line short"></div>
+        <div class="lb-skeleton lb-skeleton-line short"></div>
+        <div class="lb-skeleton lb-skeleton-line short"></div>
+      </div>
+    `).join('');
+  }
+}
+
+function renderLeaderboardSummary(snapshot) {
+  const summaryEl = $('#lbSummary');
+  if (!summaryEl) return;
+
+  const myEntry = snapshot.myEntry;
+  const modeMeta = getLeaderboardModeMeta(snapshot.mode);
+
+  summaryEl.innerHTML = `
+    <div class="lb-summary-top">
+      <div>
+        <p class="lb-summary-kicker">Current Pool</p>
+        <h3>${getLeaderboardContextLabel(snapshot.mode, snapshot.period)}</h3>
+      </div>
+      <p class="lb-summary-note">${snapshot.comparisonNote}</p>
+    </div>
+    <div class="lb-summary-bar">
+      <div class="lb-summary-stat">
+        <span class="lb-summary-label">Mode</span>
+        <strong>${modeMeta.label}</strong>
+      </div>
+      <div class="lb-summary-stat">
+        <span class="lb-summary-label">Timeframe</span>
+        <strong>${getLeaderboardPeriodLabel(snapshot.period)}</strong>
+      </div>
+      <div class="lb-summary-stat">
+        <span class="lb-summary-label">Players</span>
+        <strong>${Number(snapshot.totalPlayers || 0).toLocaleString()}</strong>
+      </div>
+      <div class="lb-summary-stat">
+        <span class="lb-summary-label">Your Rank</span>
+        <strong>${myEntry ? `#${myEntry.rank}` : 'Unranked'}</strong>
+      </div>
+      <div class="lb-summary-stat">
+        <span class="lb-summary-label">Your Best</span>
+        <strong>${myEntry ? formatLeaderboardScore(myEntry.best_score) : '—'}</strong>
+      </div>
+      <div class="lb-summary-stat">
+        <span class="lb-summary-label">Last Updated</span>
+        <strong>${formatLeaderboardUpdated(snapshot.updatedAt)}</strong>
+      </div>
+    </div>
+  `;
+}
+
+function renderLeaderboardStanding(snapshot) {
+  const standingEl = $('#lbYourStanding');
+  if (!standingEl) return;
+
+  if (!snapshot.myId) {
+    standingEl.innerHTML = `
+      <div class="lb-standing-layout">
+        <div>
+          <p class="lb-standing-rank">Sign in to track your rank</p>
+          <h4 class="lb-standing-title">Your place in the table will stay pinned here.</h4>
+          <p class="lb-standing-gap">Save scores to see your best result, games played, and the gap to the next player.</p>
+        </div>
+        <button class="lb-standing-cta" id="lbStandingAuth">Sign In</button>
+      </div>
+    `;
+    $('#lbStandingAuth')?.addEventListener('click', openAuth);
+    return;
+  }
+
+  if (!snapshot.myEntry) {
+    standingEl.innerHTML = `
+      <div class="lb-standing-layout">
+        <div>
+          <p class="lb-standing-rank">Unranked in this pool</p>
+          <h4 class="lb-standing-title">No score posted for ${getLeaderboardPeriodLabel(snapshot.period).toLowerCase()} yet.</h4>
+          <p class="lb-standing-gap">Play this mode and post a result to join the table.</p>
+        </div>
+        <div class="lb-standing-grid">
+          <div class="lb-standing-stat"><span>Rank</span><strong>—</strong></div>
+          <div class="lb-standing-stat"><span>Best</span><strong>—</strong></div>
+          <div class="lb-standing-stat"><span>Games</span><strong>0</strong></div>
+          <div class="lb-standing-stat"><span>Recent form</span><strong>—</strong></div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const myEntry = snapshot.myEntry;
+  const nextTarget = snapshot.nextTarget;
+  const gap = nextTarget ? Math.max(0, Number(nextTarget.best_score || 0) - Number(myEntry.best_score || 0)) : 0;
+  const gapText = !nextTarget
+    ? 'You are top of this pool.'
+    : gap > 0
+      ? `You are ${gap} pts behind #${nextTarget.rank}.`
+      : `You are level on points with #${nextTarget.rank}; games played is deciding the rank.`;
+
+  standingEl.innerHTML = `
+    <div class="lb-standing-layout">
+      <div>
+        <p class="lb-standing-rank">Rank #${myEntry.rank}</p>
+        <h4 class="lb-standing-title">${formatLeaderboardScore(myEntry.best_score)} best score</h4>
+        <p class="lb-standing-gap">${gapText}</p>
+      </div>
+      <div class="lb-standing-grid">
+        <div class="lb-standing-stat"><span>Best score</span><strong>${formatLeaderboardScore(myEntry.best_score)}</strong></div>
+        <div class="lb-standing-stat"><span>Games played</span><strong>${Number(myEntry.games_played || 0).toLocaleString()}</strong></div>
+        <div class="lb-standing-stat"><span>Recent form</span><strong>${formatRecentForm(myEntry.recent_scores)}</strong></div>
+        <div class="lb-standing-stat"><span>Last score</span><strong>${formatRelativeDate(myEntry.last_played)}</strong></div>
+      </div>
+    </div>
+  `;
+}
+
+function renderLeaderboardPodium(snapshot) {
+  const podiumEl = $('#lbPodium');
+  if (!podiumEl) return;
+
+  if (!snapshot.top3.length) {
+    podiumEl.removeAttribute('data-count');
+    podiumEl.innerHTML = `
+      <div class="lb-empty">
+        <div class="lb-empty-icon">TABLE EMPTY</div>
+        No one has posted a score ${getLeaderboardPeriodLabel(snapshot.period).toLowerCase()} yet.
+      </div>
+    `;
+    return;
+  }
+
+  const order = snapshot.top3.length >= 3
+    ? [snapshot.top3[1], snapshot.top3[0], snapshot.top3[2]]
+    : snapshot.top3;
+  podiumEl.dataset.count = String(order.length);
+
+  const fragment = document.createDocumentFragment();
+  order.forEach(entry => {
+    const name = normalizeDisplayName(entry.username, 'Player');
+    const card = document.createElement('article');
+    card.className = `lb-podium-card${entry.user_id === snapshot.myId ? ' lb-me' : ''}`;
+    card.dataset.rank = String(entry.rank);
+
+    const badge = document.createElement('div');
+    badge.className = 'lb-podium-badge';
+    badge.textContent = entry.rank === 1 ? '1st' : `#${entry.rank}`;
+
+    const avatarWrap = document.createElement('div');
+    avatarWrap.className = 'lb-podium-avatar-wrap';
+    avatarWrap.appendChild(createLeaderboardAvatar(name, entry.avatar_url, 'lb-podium-avatar'));
+
+    const meta = document.createElement('div');
+    meta.className = 'lb-podium-meta';
+
+    const title = document.createElement('div');
+    title.className = 'lb-podium-name';
+    title.textContent = entry.user_id === snapshot.myId ? `${name} (You)` : name;
+
+    const score = document.createElement('div');
+    score.className = 'lb-podium-score';
+    score.textContent = formatLeaderboardScore(entry.best_score);
+
+    const detail = document.createElement('div');
+    detail.className = 'lb-podium-detail';
+    detail.textContent = `${formatGameCount(entry.games_played)} • ${formatRelativeDate(entry.last_played)}`;
+
+    meta.appendChild(title);
+    meta.appendChild(score);
+    meta.appendChild(detail);
+
+    card.appendChild(badge);
+    card.appendChild(avatarWrap);
+    card.appendChild(meta);
+    fragment.appendChild(card);
+  });
+
+  podiumEl.replaceChildren(fragment);
+}
+
+function renderLeaderboardRows(snapshot) {
+  const listEl = $('#lbList');
+  if (!listEl) return;
+
+  if (!snapshot.rows.length) {
+    listEl.innerHTML = `
+      <div class="lb-empty">
+        <div class="lb-empty-icon">NO TABLE YET</div>
+        No one has posted a score ${getLeaderboardPeriodLabel(snapshot.period).toLowerCase()} yet.
+      </div>
+    `;
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  snapshot.rows.forEach(entry => {
+    const isMe = entry.user_id === snapshot.myId;
+    const name = normalizeDisplayName(entry.username, 'Player');
+
+    const row = document.createElement('div');
+    row.className = `lb-row${isMe ? ' lb-me' : ''}`;
+
+    const rank = document.createElement('div');
+    rank.className = 'lb-row-rank';
+    rank.textContent = `#${entry.rank}`;
+
+    const player = document.createElement('div');
+    player.className = 'lb-row-player';
+    player.appendChild(createLeaderboardAvatar(name, entry.avatar_url, 'lb-row-avatar'));
+
+    const info = document.createElement('div');
+    info.className = 'lb-row-info';
+
+    const infoName = document.createElement('div');
+    infoName.className = 'lb-row-name';
+    infoName.textContent = isMe ? `${name} (You)` : name;
+
+    const infoMeta = document.createElement('div');
+    infoMeta.className = 'lb-row-meta';
+    infoMeta.textContent = formatRecentForm(entry.recent_scores);
+
+    info.appendChild(infoName);
+    info.appendChild(infoMeta);
+    player.appendChild(info);
+
+    const best = document.createElement('div');
+    best.className = 'lb-row-score';
+    best.dataset.label = 'Best';
+    best.textContent = formatLeaderboardScore(entry.best_score);
+
+    const played = document.createElement('div');
+    played.className = 'lb-row-played';
+    played.dataset.label = 'Played';
+    played.textContent = Number(entry.games_played || 0).toLocaleString();
+
+    const updated = document.createElement('div');
+    updated.className = 'lb-row-updated';
+    updated.dataset.label = 'Updated';
+    updated.textContent = formatRelativeDate(entry.last_played);
+
+    row.appendChild(rank);
+    row.appendChild(player);
+    row.appendChild(best);
+    row.appendChild(played);
+    row.appendChild(updated);
+    fragment.appendChild(row);
+  });
+
+  listEl.replaceChildren(fragment);
+}
+
+async function loadLeaderboardData() {
+  renderLeaderboardLoading();
+
+  const { data: snapshot, error } = await getLeaderboardSnapshot(_lbState.mode, _lbState.period);
+
+  if (error || !snapshot) {
+    const summaryEl = $('#lbSummary');
+    const standingEl = $('#lbYourStanding');
+    const podiumEl = $('#lbPodium');
+    const listEl = $('#lbList');
+
+    if (summaryEl) {
+      summaryEl.innerHTML = `
+        <div class="lb-summary-top">
+          <div>
+            <p class="lb-summary-kicker">Current Pool</p>
+            <h3>${getLeaderboardContextLabel(_lbState.mode, _lbState.period)}</h3>
+          </div>
+          <p class="lb-summary-note">We could not load the latest standings right now.</p>
+        </div>
+      `;
+    }
+    if (standingEl) {
+      standingEl.innerHTML = `
+        <div class="lb-empty">
+          <div class="lb-empty-icon">OFFLINE</div>
+          Try refreshing the leaderboard in a moment.
+        </div>
+      `;
+    }
+    if (podiumEl) clearChildren(podiumEl);
+    if (listEl) {
+      listEl.innerHTML = `
+        <div class="lb-empty">
+          <div class="lb-empty-icon">ERROR</div>
+          Could not load leaderboard data.
+        </div>
+      `;
+    }
+    return;
+  }
+
+  _lbState.updatedAt = snapshot.updatedAt;
+  renderLeaderboardSummary(snapshot);
+  renderLeaderboardStanding(snapshot);
+  renderLeaderboardPodium(snapshot);
+  renderLeaderboardRows(snapshot);
+}
+
 // Expose to non-module scripts
 window.auth = { supabase, updateAuthUI, saveScore, getLeaderboard, getSession, openAuth, openDashboard, openLeaderboard };
 
@@ -1155,3 +1863,5 @@ supabase.auth.onAuthStateChange((_event, session) => {
   _cachedSession = session;
   updateAuthUI();
 });
+
+

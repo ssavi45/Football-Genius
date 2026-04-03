@@ -18,6 +18,330 @@
   transition: opacity .35s ease;
 }
 
+/* Final competition table overrides */
+body.lb-open { overflow: hidden; }
+
+.lb-overlay {
+  align-items: stretch;
+  justify-content: stretch;
+  background:
+    radial-gradient(circle at top, rgba(58, 126, 74, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(4, 9, 12, 0.78), rgba(1, 4, 7, 0.92));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.lb-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(180deg, rgba(11, 18, 23, 0.98), rgba(6, 12, 17, 0.98)),
+    radial-gradient(circle at top, rgba(81, 148, 95, 0.1), transparent 38%);
+  color: #f6f7f3;
+  position: relative;
+}
+
+.lb-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 120px),
+    linear-gradient(180deg, rgba(255,255,255,0.012) 0, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 96px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.lb-header,
+.lb-controls,
+.lb-content { position: relative; z-index: 1; }
+
+.lb-header {
+  padding: 26px 28px 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.lb-header-main { display: flex; align-items: flex-start; gap: 16px; }
+
+.lb-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.82);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-eyebrow,
+.lb-section-kicker,
+.lb-summary-kicker {
+  margin: 0 0 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(198, 209, 190, 0.56);
+}
+
+.lb-title {
+  margin: 0;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: 3rem;
+  letter-spacing: .06em;
+  color: #f9fbf7;
+  text-transform: uppercase;
+  -webkit-text-fill-color: initial;
+  background: none;
+}
+
+.lb-subtitle {
+  margin: 6px 0 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: .98rem;
+  color: rgba(228, 234, 226, 0.72);
+}
+
+.lb-context-line {
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-family: 'Poppins', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #f3f6ef;
+  white-space: nowrap;
+}
+
+.lb-controls {
+  padding: 14px 28px 18px;
+  display: grid;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(7, 14, 18, 0.94), rgba(7, 14, 18, 0.84));
+}
+
+.lb-mode-tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; }
+
+.lb-mode-tab {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.035);
+  color: rgba(231, 236, 228, 0.78);
+}
+
+.lb-mode-tab.active {
+  background: linear-gradient(135deg, rgba(119, 181, 103, 0.18), rgba(27, 55, 35, 0.75));
+  border-color: rgba(164, 210, 128, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.lb-mode-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-mode-icon-img,
+.lb-mode-icon-svg svg { width: 18px; height: 18px; }
+
+.lb-mode-icon-svg svg * {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lb-mode-icon-svg svg text { stroke: none; fill: currentColor; }
+
+.lb-mode-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lb-period-pills { display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+
+.lb-period-pill {
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: rgba(231, 236, 228, 0.66);
+  font-family: 'Poppins', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.lb-period-pill.active {
+  background: rgba(218, 188, 94, 0.12);
+  border-color: rgba(226, 198, 95, 0.4);
+  color: #f5df90;
+}
+
+.lb-content { flex: 1; overflow-y: auto; padding: 22px 28px 34px; display: grid; gap: 18px; }
+
+.lb-section,
+.lb-summary {
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02)), rgba(7, 14, 18, 0.92);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.lb-summary,
+.lb-section { padding: 20px 22px; }
+
+.lb-summary-bar { margin-top: 18px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.lb-summary-top,
+.lb-section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.lb-summary-top h3,
+.lb-section-head h3 { margin: 0; font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.7rem; letter-spacing: .05em; text-transform: uppercase; }
+.lb-summary-note,
+.lb-table-metric { margin: 0; max-width: 430px; font-family: 'Poppins', sans-serif; font-size: .82rem; line-height: 1.5; color: rgba(224, 232, 220, 0.66); }
+.lb-summary-stat,
+.lb-standing-stat { border-radius: 16px; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
+.lb-summary-label,
+.lb-standing-stat span { display: block; margin-bottom: 8px; font-family: 'Poppins', sans-serif; font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: rgba(198, 209, 190, 0.52); }
+.lb-summary-stat strong,
+.lb-standing-stat strong { display: block; font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.55rem; letter-spacing: .04em; color: #fff; }
+
+.lb-standing-card { margin-top: 16px; border-radius: 18px; background: radial-gradient(circle at right top, rgba(161, 204, 104, 0.15), transparent 32%), rgba(10, 18, 23, 0.95); border: 1px solid rgba(169, 204, 127, 0.14); padding: 20px; }
+.lb-standing-layout { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.lb-standing-rank { margin: 0 0 8px; font-family: 'Poppins', sans-serif; font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; color: #a8d07b; }
+.lb-standing-title { margin: 0; font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 2rem; letter-spacing: .04em; }
+.lb-standing-gap { margin: 10px 0 0; font-family: 'Poppins', sans-serif; font-size: .9rem; color: rgba(229, 235, 225, 0.72); }
+.lb-standing-grid { display: grid; grid-template-columns: repeat(2, minmax(150px, 1fr)); gap: 12px; }
+.lb-standing-cta { padding: 12px 18px; border-radius: 14px; border: 1px solid rgba(164, 210, 128, 0.35); background: linear-gradient(135deg, rgba(112, 176, 94, 0.92), rgba(58, 118, 60, 0.92)); color: #f7fff2; font-family: 'Poppins', sans-serif; font-weight: 700; }
+
+.lb-podium { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; min-height: auto; padding: 0; }
+.lb-podium-card { min-width: 0; display: flex; align-items: center; gap: 14px; padding: 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.035); width: auto; }
+.lb-podium-card[data-rank="1"] { background: linear-gradient(180deg, rgba(221, 191, 98, 0.17), rgba(60, 50, 19, 0.82)); border-color: rgba(226, 196, 102, 0.38); margin: 0; }
+.lb-podium-card[data-rank="2"] { background: linear-gradient(180deg, rgba(188, 192, 198, 0.14), rgba(39, 44, 53, 0.84)); }
+.lb-podium-card[data-rank="3"] { background: linear-gradient(180deg, rgba(190, 132, 82, 0.15), rgba(48, 31, 24, 0.84)); }
+.lb-podium-card.lb-me { box-shadow: inset 0 0 0 1px rgba(164, 210, 128, 0.35); }
+.lb-podium-avatar,
+.lb-podium-avatar-initials { width: 58px; height: 58px; border-radius: 18px; }
+.lb-podium-meta,
+.lb-row-info { min-width: 0; }
+.lb-podium-name,
+.lb-row-name { font-family: 'Poppins', sans-serif; font-weight: 700; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-podium-score,
+.lb-row-score { font-family: 'Bebas Neue', 'Oswald', sans-serif; letter-spacing: .05em; }
+.lb-podium-score { font-size: 1.45rem; color: inherit; }
+.lb-podium-detail,
+.lb-row-meta,
+.lb-row-updated,
+.lb-row-played { font-family: 'Poppins', sans-serif; font-size: .8rem; color: rgba(223, 230, 220, 0.68); }
+.lb-podium-badge { align-self: flex-start; padding: 5px 9px; border-radius: 999px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.12); font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 700; }
+.lb-podium-avatar,
+.lb-row-avatar { object-fit: cover; background: rgba(255,255,255,0.08); }
+.lb-podium-avatar-initials,
+.lb-row-avatar-initials { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #385265, #24323d); color: #fff; font-family: 'Poppins', sans-serif; font-weight: 700; }
+
+.lb-table-shell { margin-top: 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.07); overflow: hidden; }
+.lb-table-columns,
+.lb-row { display: grid; grid-template-columns: 90px minmax(220px, 1.8fr) minmax(110px, .9fr) minmax(90px, .75fr) minmax(100px, .85fr); align-items: center; gap: 14px; }
+.lb-table-columns { padding: 14px 18px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.07); font-family: 'Poppins', sans-serif; font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(201, 211, 194, 0.56); }
+.lb-list { display: flex; flex-direction: column; gap: 0; }
+.lb-row { padding: 16px 18px; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.lb-row:last-child { border-bottom: 0; }
+.lb-row.lb-me { background: linear-gradient(90deg, rgba(116, 179, 98, 0.16), rgba(255,255,255,0.03)); }
+.lb-row-rank { font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.35rem; letter-spacing: .05em; color: rgba(246, 249, 244, 0.86); text-align: left; }
+.lb-row-player { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.lb-row-avatar,
+.lb-row-avatar-initials { width: 40px; height: 40px; border-radius: 14px; flex: 0 0 auto; }
+.lb-row-score { font-size: 1.35rem; color: #f4f8ef; white-space: nowrap; }
+
+.lb-empty { padding: 26px 18px; text-align: center; font-family: 'Poppins', sans-serif; font-size: .94rem; color: rgba(229, 235, 225, 0.72); }
+.lb-empty-icon { margin-bottom: 10px; font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.45rem; letter-spacing: .12em; color: rgba(237, 209, 113, 0.74); }
+.lb-skeleton-grid { display: grid; gap: 12px; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.lb-skeleton { border-radius: 12px; background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.11), rgba(255,255,255,0.05)); background-size: 200% 100%; animation: lb-skeleton 1.25s ease-in-out infinite; }
+.lb-skeleton-pill { height: 72px; }
+.lb-skeleton-block { min-height: 70px; }
+.lb-skeleton-line { height: 14px; }
+.lb-skeleton-line.short { width: 60%; }
+.lb-skeleton-avatar { width: 58px; height: 58px; border-radius: 18px; }
+
+@media (max-width: 1024px) {
+  .lb-summary-bar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lb-standing-layout { flex-direction: column; align-items: stretch; }
+  .lb-podium { grid-template-columns: 1fr; }
+  .lb-table-columns,
+  .lb-row { grid-template-columns: 76px minmax(0, 1.6fr) minmax(100px, .9fr) 76px 90px; }
+}
+
+@media (max-width: 720px) {
+  .lb-header,
+  .lb-controls,
+  .lb-content { padding-left: 16px; padding-right: 16px; }
+  .lb-header { flex-direction: column; align-items: stretch; }
+  .lb-title { font-size: 2.4rem; }
+  .lb-context-line { white-space: normal; }
+  .lb-summary-bar,
+  .lb-skeleton-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lb-standing-grid { grid-template-columns: 1fr 1fr; }
+  .lb-podium { display: flex; overflow-x: auto; scroll-snap-type: x proximity; }
+  .lb-podium-card { min-width: 82vw; scroll-snap-align: start; }
+  .lb-table-columns { display: none; }
+  .lb-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-areas:
+      "rank player"
+      "best played"
+      "best updated";
+    gap: 10px 12px;
+  }
+  .lb-row-rank { grid-area: rank; }
+  .lb-row-player { grid-area: player; }
+  .lb-row-score { grid-area: best; }
+  .lb-row-played { grid-area: played; }
+  .lb-row-updated { grid-area: updated; }
+  .lb-row-score::before,
+  .lb-row-played::before,
+  .lb-row-updated::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: .64rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(198, 209, 190, 0.52);
+  }
+}
+
+@media (max-width: 540px) {
+  .lb-content { padding-bottom: 22px; }
+  .lb-summary,
+  .lb-section,
+  .lb-standing-card { padding: 16px; }
+  .lb-standing-grid { grid-template-columns: 1fr; }
+  .lb-podium-card { min-width: 88vw; }
+  .lb-row-rank,
+  .lb-row-score { font-size: 1.15rem; }
+}
+
 .lb-overlay.open {
   opacity: 1;
   pointer-events: auto;
@@ -630,4 +954,137 @@
   .lb-title {
     font-size: 1.4rem;
   }
+}
+
+/* Competition table tail overrides */
+.lb-header {
+  padding: 26px 28px 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.lb-title {
+  margin: 0;
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-size: 3rem;
+  letter-spacing: .06em;
+  color: #f9fbf7;
+  text-transform: uppercase;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.lb-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.82);
+}
+
+.lb-mode-tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; }
+.lb-mode-tab { padding: 10px 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.035); color: rgba(231, 236, 228, 0.78); }
+.lb-mode-tab.active { background: linear-gradient(135deg, rgba(119, 181, 103, 0.18), rgba(27, 55, 35, 0.75)); border-color: rgba(164, 210, 128, 0.45); box-shadow: inset 0 1px 0 rgba(255,255,255,0.06); }
+.lb-period-pills { display: inline-flex; flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+.lb-period-pill { padding: 9px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); color: rgba(231, 236, 228, 0.66); }
+.lb-period-pill.active { background: rgba(218, 188, 94, 0.12); border-color: rgba(226, 198, 95, 0.4); color: #f5df90; }
+
+.lb-podium {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 14px;
+  min-height: auto;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.lb-podium-card {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.035);
+  width: auto;
+}
+
+.lb-podium[data-count="1"] {
+  grid-template-columns: minmax(260px, 360px);
+}
+
+.lb-podium[data-count="2"] {
+  grid-template-columns: repeat(2, minmax(260px, 360px));
+}
+
+.lb-podium-card[data-rank="1"] { background: linear-gradient(180deg, rgba(221, 191, 98, 0.17), rgba(60, 50, 19, 0.82)); border-color: rgba(226, 196, 102, 0.38); margin: 0; width: auto; }
+.lb-podium-card[data-rank="2"] { background: linear-gradient(180deg, rgba(188, 192, 198, 0.14), rgba(39, 44, 53, 0.84)); }
+.lb-podium-card[data-rank="3"] { background: linear-gradient(180deg, rgba(190, 132, 82, 0.15), rgba(48, 31, 24, 0.84)); }
+.lb-podium-avatar,
+.lb-podium-avatar-initials { width: 58px; height: 58px; border-radius: 18px; }
+.lb-podium-score { font-size: 1.45rem; }
+.lb-podium-name,
+.lb-row-name { font-family: 'Poppins', sans-serif; font-weight: 700; color: #fff; }
+.lb-podium-name { font-size: .95rem; }
+.lb-row-name { font-size: .92rem; }
+.lb-podium-detail,
+.lb-row-meta,
+.lb-row-updated,
+.lb-row-played { font-family: 'Poppins', sans-serif; font-size: .8rem; color: rgba(223, 230, 220, 0.68); }
+
+.lb-list { display: flex; flex-direction: column; gap: 0; }
+.lb-row {
+  display: grid;
+  grid-template-columns: 90px minmax(220px, 1.8fr) minmax(110px, .9fr) minmax(90px, .75fr) minmax(100px, .85fr);
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.lb-row.lb-me { background: linear-gradient(90deg, rgba(116, 179, 98, 0.16), rgba(255,255,255,0.03)); }
+.lb-row-rank { font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.35rem; letter-spacing: .05em; color: rgba(246, 249, 244, 0.86); text-align: left; }
+.lb-row-avatar,
+.lb-row-avatar-initials { width: 40px; height: 40px; border-radius: 14px; }
+.lb-row-score { font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.35rem; letter-spacing: .05em; color: #f4f8ef; white-space: nowrap; }
+.lb-empty { padding: 26px 18px; text-align: center; font-family: 'Poppins', sans-serif; font-size: .94rem; color: rgba(229, 235, 225, 0.72); }
+.lb-empty-icon { margin-bottom: 10px; font-family: 'Bebas Neue', 'Oswald', sans-serif; font-size: 1.45rem; letter-spacing: .12em; color: rgba(237, 209, 113, 0.74); }
+
+@media (max-width: 1024px) {
+  .lb-row { grid-template-columns: 76px minmax(0, 1.6fr) minmax(100px, .9fr) 76px 90px; }
+}
+
+@media (max-width: 720px) {
+  .lb-header { padding-left: 16px; padding-right: 16px; flex-direction: column; align-items: stretch; }
+  .lb-title { font-size: 2.4rem; }
+  .lb-podium { display: flex; overflow-x: auto; scroll-snap-type: x proximity; }
+  .lb-podium-card { min-width: 82vw; scroll-snap-align: start; }
+  .lb-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-areas:
+      "rank player"
+      "best played"
+      "best updated";
+    gap: 10px 12px;
+  }
+  .lb-row-rank { grid-area: rank; }
+  .lb-row-player { grid-area: player; }
+  .lb-row-score { grid-area: best; }
+  .lb-row-played { grid-area: played; }
+  .lb-row-updated { grid-area: updated; }
+}
+
+@media (max-width: 540px) {
+  .lb-title { font-size: 2rem; }
+  .lb-podium-card { min-width: 88vw; }
+  .lb-row-rank,
+  .lb-row-score { font-size: 1.15rem; }
 }

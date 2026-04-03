@@ -81,7 +81,7 @@
       </div>
 
       <section class="stage">
-        <article class="hl-card" id="leftCard" aria-live="polite">
+        <article class="hl-card side-left" id="leftCard" aria-live="polite">
           <img id="leftImg" class="face" alt="">
           <div class="name" id="leftName">Player A</div>
           <div class="stat-label" id="leftLabel">Career goals</div>
@@ -91,7 +91,7 @@
 
         <div class="vs"><div class="hex"><span class="vs-text">VS</span></div></div>
 
-        <article class="hl-card" id="rightCard">
+        <article class="hl-card side-right" id="rightCard">
           <img id="rightImg" class="face" alt="">
           <div class="name" id="rightName">Player B</div>
           <div class="stat-label" id="rightLabel">Career goals</div>
@@ -102,19 +102,6 @@
 
       <p id="feedback" class="feedback meta-small"></p>
     </div>
-
-    <!-- Round over overlay -->
-    <div id="roundOverlay" class="round-overlay" hidden>
-      <div class="panel">
-        <h3>Round over</h3>
-        <p class="meta-small">Score: <strong id="overlayScore">0</strong></p>
-        <div class="buttons">
-          <button id="overlayNewRound" class="button primary">New Round</button>
-          <button id="overlayChangeStat" class="button secondary">Change stat</button>
-        </div>
-      </div>
-    </div>
-
 
   </main>
 
@@ -154,6 +141,18 @@
     </nav>
   </footer>
   </div><!-- /.main-wrapper -->
+
+  <!-- Round over overlay -->
+  <div id="roundOverlay" class="round-overlay" hidden>
+    <div class="panel">
+      <h3>Round over</h3>
+      <p class="meta-small">Score: <strong id="overlayScore">0</strong></p>
+      <div class="buttons">
+        <button id="overlayNewRound" class="button primary">New Round</button>
+        <button id="overlayChangeStat" class="button secondary">Change stat</button>
+      </div>
+    </div>
+  </div>
 
   <script src="sidebar.js"></script>
   <script type="module" src="auth.js"></script>

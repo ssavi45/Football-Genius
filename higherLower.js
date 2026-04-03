@@ -35,6 +35,12 @@
 
   const HEADSHOT_OUTPUT_SIZE = 360;
   const headshotCache = new Map();
+  const HEADSHOT_ZOOM_MIN = 0.64;
+  const HEADSHOT_ZOOM_MAX = 0.72;
+  const HEADSHOT_ZOOM_ADJUST = 0.02;
+  const HEADSHOT_VERTICAL_SHIFT = 0.04;
+  const HEADSHOT_MIN_Y = 0.24;
+  const HEADSHOT_MAX_Y = 0.32;
   const HEADSHOT_FRAMES = {
     default: { zoom: 0.64, x: 0.5, y: 0.28 },
     messi: { zoom: 0.62, x: 0.5, y: 0.24 },
@@ -43,7 +49,7 @@
     haaland: { zoom: 0.6, x: 0.5, y: 0.2 },
     bellingham: { zoom: 0.63, x: 0.5, y: 0.2 },
     neymar: { zoom: 0.62, x: 0.5, y: 0.22 },
-    lewandowski: { zoom: 0.62, x: 0.5, y: 0.22 },
+    lewandowski: { zoom: 0.7, x: 0.5, y: 0.3 },
     benzema: { zoom: 0.62, x: 0.5, y: 0.23 },
     modric: { zoom: 0.58, x: 0.5, y: 0.21 },
     bruyne: { zoom: 0.6, x: 0.5, y: 0.2 },
@@ -60,8 +66,17 @@
     bernardo: { zoom: 0.54, x: 0.5, y: 0.17 },
     foden: { zoom: 0.6, x: 0.5, y: 0.18 },
     palmer: { zoom: 0.6, x: 0.5, y: 0.18 },
-    saka: { zoom: 0.62, x: 0.5, y: 0.22 }
+    saka: { zoom: 0.66, x: 0.5, y: 0.25 }
   };
+
+  function getHeadshotFrame(playerId) {
+    const baseFrame = HEADSHOT_FRAMES[playerId] || HEADSHOT_FRAMES.default;
+    return {
+      x: baseFrame.x,
+      zoom: Math.max(HEADSHOT_ZOOM_MIN, Math.min(HEADSHOT_ZOOM_MAX, baseFrame.zoom + HEADSHOT_ZOOM_ADJUST)),
+      y: Math.max(HEADSHOT_MIN_Y, Math.min(HEADSHOT_MAX_Y, baseFrame.y + HEADSHOT_VERTICAL_SHIFT))
+    };
+  }
 
   const CATEGORIES = {
     goals: { key: 'careerGoals', label: 'Career goals', unit: 'goals' },
@@ -142,7 +157,7 @@
           return;
         }
 
-        const frame = HEADSHOT_FRAMES[playerId] || HEADSHOT_FRAMES.default;
+        const frame = getHeadshotFrame(playerId);
         const shorterSide = Math.min(width, height);
         const cropSize = Math.round(shorterSide * frame.zoom);
         const focusX = width * frame.x;
@@ -161,6 +176,9 @@
           reject(new Error('Canvas unavailable'));
           return;
         }
+
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
 
         ctx.drawImage(
           img,
