@@ -78,7 +78,7 @@
 
       <section class="scoreboard-card transfer-stage">
         <div class="transfer-card-head">
-          <div>
+          <div class="transfer-head-copy">
             <p class="transfer-eyebrow">Career Timeline</p>
             <h2 class="transfer-title">First and last clubs are visible. The rest is up to you.</h2>
           </div>
@@ -92,25 +92,28 @@
           <div class="trail-grid" id="clubTrail" aria-live="polite"></div>
         </div>
 
-        <div class="transfer-search-wrap">
-          <label class="transfer-search-label" for="guessInput">Player Search</label>
-          <div class="transfer-search-row">
-            <input class="transfer-input" id="guessInput" type="text" placeholder="Type a footballer's name..." autocomplete="off" />
-            <button id="submitGuess" class="button transfer-submit">Submit Guess</button>
+        <div class="transfer-control-deck">
+          <div class="transfer-search-wrap">
+            <label class="transfer-search-label" for="guessInput">Player Search</label>
+            <div class="transfer-search-row">
+              <input class="transfer-input" id="guessInput" type="text" placeholder="Type a footballer's name..." autocomplete="off" />
+              <button id="submitGuess" type="button" class="button transfer-submit">Submit Guess</button>
+            </div>
             <div class="transfer-autocomplete" id="guessAutocomplete"></div>
           </div>
-        </div>
 
-        <div class="transfer-actions">
-          <button class="reveal-btn transfer-reveal" id="revealBtn">
-            Reveal Next Club <span class="reveal-cost" id="revealCost">(-2 pts)</span>
-          </button>
-          <button id="nextQuestion" class="button" hidden>Next Player</button>
-        </div>
+          <div class="transfer-actions">
+            <button class="button transfer-reveal" id="revealBtn" type="button">
+              <span class="transfer-action-label">Reveal Next Club</span>
+              <span class="reveal-cost" id="revealCost">(-2 pts)</span>
+            </button>
+            <button id="nextQuestion" type="button" class="button transfer-next" hidden>Next Player</button>
+          </div>
 
-        <div class="transfer-result" id="guessResult">
-          <div class="transfer-result-text" id="guessResultText"></div>
-          <div class="transfer-result-detail" id="guessResultDetail"></div>
+          <div class="transfer-result" id="guessResult">
+            <div class="transfer-result-text" id="guessResultText"></div>
+            <div class="transfer-result-detail" id="guessResultDetail"></div>
+          </div>
         </div>
       </section>
 

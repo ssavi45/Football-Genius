@@ -25,10 +25,25 @@ body.transfer-page .scoreboard-card.transfer-stage {
 }
 
 .transfer-stage {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 18px;
+  gap: 24px;
+  padding: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(125, 193, 255, 0.08), transparent 26%),
+    radial-gradient(circle at top right, rgba(46, 204, 113, 0.08), transparent 24%);
+}
+
+.transfer-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%),
+    linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.06), transparent);
+  pointer-events: none;
 }
 
 .transfer-card-head {
@@ -37,6 +52,10 @@ body.transfer-page .scoreboard-card.transfer-stage {
   gap: 16px;
   align-items: flex-start;
   flex-wrap: wrap;
+}
+
+.transfer-head-copy {
+  max-width: 760px;
 }
 
 .transfer-eyebrow {
@@ -51,29 +70,41 @@ body.transfer-page .scoreboard-card.transfer-stage {
 
 .transfer-title {
   margin: 0;
-  font-size: clamp(1.2rem, 2vw, 1.7rem);
-  line-height: 1.15;
+  font-size: clamp(1.45rem, 2.25vw, 2rem);
+  line-height: 1.08;
   color: #f4f8ff;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.transfer-subtitle {
+  margin: 12px 0 0;
+  max-width: 58ch;
+  color: rgba(234, 240, 234, 0.68);
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .transfer-pills {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .trail-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 9px 12px;
+  padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.78rem;
   font-family: 'Poppins', sans-serif;
   white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .trail-pill strong {
@@ -85,17 +116,18 @@ body.transfer-page .scoreboard-card.transfer-stage {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
-  display: flex;
-  justify-content: center;
-  border-radius: 24px;
-  padding: 20px 18px 14px;
+  border-radius: 30px;
+  padding: 24px 26px 18px;
   background:
-    linear-gradient(135deg, rgba(9, 24, 16, 0.9), rgba(7, 16, 11, 0.96)),
+    linear-gradient(140deg, rgba(7, 18, 12, 0.92), rgba(6, 14, 9, 0.98)),
     radial-gradient(circle at top, rgba(125, 193, 255, 0.08), transparent 38%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(122, 155, 111, 0.16);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 20px 50px rgba(0, 0, 0, 0.28);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+    0 24px 60px rgba(0, 0, 0, 0.28);
+  scrollbar-gutter: stable both-edges;
+  scroll-padding-inline: 28px;
 }
 
 .trail-shell::-webkit-scrollbar {
@@ -121,13 +153,20 @@ body.transfer-page .scoreboard-card.transfer-stage {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 14px;
   align-items: center;
   justify-content: center;
   width: max-content;
   min-width: 100%;
   margin-inline: auto;
-  padding-bottom: 4px;
+  padding: 2px 8px 6px;
+}
+
+.trail-shell.is-scrollable .trail-grid {
+  justify-content: flex-start;
+  min-width: max-content;
+  margin-inline: 0;
+  padding-inline: 2px 10px;
 }
 
 .trail-step {
@@ -136,30 +175,61 @@ body.transfer-page .scoreboard-card.transfer-stage {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px;
-  width: 104px;
-  min-width: 104px;
-  padding: 14px 10px 12px;
-  min-height: 166px;
-  border-radius: 20px;
+  gap: 10px;
+  width: 118px;
+  min-width: 118px;
+  padding: 16px 12px 14px;
+  min-height: 178px;
+  border-radius: 24px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+  border: 1px solid rgba(255, 255, 255, 0.075);
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  backdrop-filter: blur(12px);
+  scroll-snap-align: start;
 }
 
 .trail-step.is-visible {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
 }
 
 .trail-step.is-hidden {
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.018));
   border-style: dashed;
 }
 
 .trail-step.is-endpoint {
-  border-color: rgba(46, 204, 113, 0.25);
-  box-shadow: 0 0 22px rgba(46, 204, 113, 0.08);
+  border-color: rgba(46, 204, 113, 0.28);
+  box-shadow: 0 0 24px rgba(46, 204, 113, 0.08);
+}
+
+.trail-step.is-first {
+  background: linear-gradient(180deg, rgba(61, 180, 116, 0.16), rgba(255, 255, 255, 0.025));
+  border-color: rgba(61, 180, 116, 0.34);
+  box-shadow: 0 16px 30px rgba(18, 66, 46, 0.18);
+}
+
+.trail-step.is-revealed {
+  background: linear-gradient(180deg, rgba(98, 168, 255, 0.16), rgba(255, 255, 255, 0.028));
+  border-color: rgba(98, 168, 255, 0.3);
+  box-shadow: 0 16px 30px rgba(18, 42, 74, 0.16);
+}
+
+.trail-step.is-locked {
+  background: linear-gradient(180deg, rgba(112, 128, 144, 0.1), rgba(255, 255, 255, 0.018));
+  border-color: rgba(147, 161, 176, 0.14);
+}
+
+.trail-step.is-last {
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.16), rgba(255, 255, 255, 0.028));
+  border-color: rgba(212, 175, 55, 0.34);
+  box-shadow: 0 16px 32px rgba(82, 61, 12, 0.18);
+}
+
+.trail-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(125, 193, 255, 0.2);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
 }
 
 .trail-step.revealed-now {
@@ -184,31 +254,31 @@ body.transfer-page .scoreboard-card.transfer-stage {
 
 .trail-order {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  min-width: 22px;
-  padding: 2px 5px;
+  top: 10px;
+  left: 10px;
+  min-width: 24px;
+  padding: 3px 6px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.62);
   font-size: 0.62rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
 
 .trail-badge {
-  width: 62px;
-  height: 62px;
-  padding: 8px;
-  border-radius: 16px;
+  width: 68px;
+  height: 68px;
+  padding: 9px;
+  border-radius: 20px;
   overflow: visible;
   display: grid;
   place-items: center;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.13);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 10px 24px rgba(0, 0, 0, 0.24);
+    0 12px 26px rgba(0, 0, 0, 0.26);
 }
 
 .trail-badge img {
@@ -237,10 +307,10 @@ body.transfer-page .scoreboard-card.transfer-stage {
 
 .trail-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
-  line-height: 1.24;
-  color: rgba(255, 255, 255, 0.82);
-  min-height: 38px;
+  font-size: 0.82rem;
+  line-height: 1.28;
+  color: rgba(255, 255, 255, 0.86);
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,10 +322,10 @@ body.transfer-page .scoreboard-card.transfer-stage {
 
 .trail-tag {
   margin-top: auto;
-  padding: 5px 8px;
+  padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.58rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -263,11 +333,39 @@ body.transfer-page .scoreboard-card.transfer-stage {
   text-transform: uppercase;
 }
 
+.trail-tag.is-first {
+  background: rgba(61, 180, 116, 0.18);
+  color: rgba(222, 255, 234, 0.92);
+  border: 1px solid rgba(61, 180, 116, 0.22);
+}
+
+.trail-tag.is-revealed {
+  background: rgba(98, 168, 255, 0.18);
+  color: rgba(226, 240, 255, 0.94);
+  border: 1px solid rgba(98, 168, 255, 0.22);
+}
+
+.trail-tag.is-locked {
+  background: rgba(124, 136, 150, 0.16);
+  color: rgba(226, 231, 236, 0.84);
+  border: 1px solid rgba(147, 161, 176, 0.14);
+}
+
+.trail-tag.is-last {
+  background: rgba(212, 175, 55, 0.18);
+  color: rgba(255, 244, 207, 0.94);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
 .trail-link {
   position: relative;
   width: 22px;
   height: 14px;
   flex: 0 0 22px;
+}
+
+.trail-shell.is-scrollable {
+  scroll-snap-type: x proximity;
 }
 
 .trail-link::before,
@@ -303,8 +401,25 @@ body.transfer-page .scoreboard-card.transfer-stage {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
+.transfer-control-deck {
+  width: min(100%, 860px);
+  align-self: center;
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(16, 30, 22, 0.88), rgba(10, 20, 14, 0.94)),
+    radial-gradient(circle at top, rgba(125, 193, 255, 0.08), transparent 55%);
+  border: 1px solid rgba(125, 193, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 24px 50px rgba(0, 0, 0, 0.22);
+}
+
 .transfer-search-wrap {
-  width: min(100%, 620px);
+  position: relative;
+  width: 100%;
   align-self: center;
 }
 
@@ -322,27 +437,31 @@ body.transfer-page .scoreboard-card.transfer-stage {
 .transfer-search-row {
   position: relative;
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  align-items: stretch;
 }
 
 .transfer-input {
   flex: 1;
   min-width: 0;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
+  min-height: 56px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .transfer-input:focus {
-  border-color: rgba(125, 193, 255, 0.46);
-  box-shadow: 0 0 0 4px rgba(125, 193, 255, 0.08);
-  background: rgba(255, 255, 255, 0.055);
+  border-color: rgba(125, 193, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(125, 193, 255, 0.08), 0 12px 28px rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .transfer-input::placeholder {
@@ -350,31 +469,62 @@ body.transfer-page .scoreboard-card.transfer-stage {
 }
 
 .transfer-submit {
-  min-width: 150px;
+  min-width: 170px;
 }
 
 .transfer-autocomplete {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   left: 0;
-  right: 160px;
+  right: 182px;
   z-index: 12;
   display: none;
   max-height: 240px;
   overflow-y: auto;
-  background: rgba(8, 18, 13, 0.98);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.36);
+  background: linear-gradient(180deg, rgba(8, 18, 13, 0.985), rgba(6, 14, 10, 0.99));
+  border: 1px solid rgba(125, 193, 255, 0.14);
+  border-radius: 18px;
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 193, 255, 0.55) rgba(255, 255, 255, 0.06);
 }
 
 .transfer-autocomplete.show {
   display: block;
 }
 
+.transfer-autocomplete.command-mode {
+  position: static;
+  margin-top: 14px;
+  right: auto;
+  max-height: min(60vh, 520px);
+  border-radius: 22px;
+  border-color: rgba(125, 193, 255, 0.18);
+  box-shadow:
+    0 26px 44px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.transfer-autocomplete::-webkit-scrollbar {
+  width: 10px;
+}
+
+.transfer-autocomplete::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+}
+
+.transfer-autocomplete::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(125, 193, 255, 0.62), rgba(46, 204, 113, 0.5));
+  border-radius: 999px;
+  border: 2px solid rgba(8, 18, 13, 0.9);
+}
+
 .transfer-autocomplete-item {
   display: block;
-  padding: 11px 14px;
+  padding: 13px 16px;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   transition: background 0.18s ease, color 0.18s ease;
@@ -386,37 +536,91 @@ body.transfer-page .scoreboard-card.transfer-stage {
 
 .transfer-autocomplete-item:hover,
 .transfer-autocomplete-item.selected {
-  background: rgba(125, 193, 255, 0.12);
+  background: linear-gradient(90deg, rgba(125, 193, 255, 0.14), rgba(46, 204, 113, 0.08));
 }
 
 .transfer-autocomplete-name {
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
 .transfer-actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
+.transfer-submit,
 .transfer-reveal {
   min-width: 220px;
+}
+
+.transfer-submit,
+.transfer-reveal,
+.transfer-next {
+  min-height: 56px;
+  padding-inline: 24px;
   justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.transfer-submit {
+  color: #f3fff7;
+  border-color: rgba(46, 204, 113, 0.28);
+  background: rgba(46, 204, 113, 0.08);
+}
+
+.transfer-submit::before {
+  background: linear-gradient(135deg, #26d07c, #d4af37);
+}
+
+.transfer-reveal {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #e8f7ff;
+  border-color: rgba(125, 193, 255, 0.26);
+  background: rgba(125, 193, 255, 0.08);
+}
+
+.transfer-reveal::before {
+  background: linear-gradient(135deg, #7dc1ff, #2ecc71);
+}
+
+.transfer-next {
+  min-width: 180px;
+}
+
+.transfer-next::before {
+  background: linear-gradient(135deg, #d4af37, #f3dd76);
+}
+
+.transfer-action-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal-cost {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
 }
 
 .transfer-result {
   display: none;
-  width: min(100%, 700px);
+  width: 100%;
   margin: 0 auto;
-  padding: 14px 16px;
-  border-radius: 16px;
+  padding: 18px 20px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.045);
   text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .transfer-result.show {
@@ -425,21 +629,21 @@ body.transfer-page .scoreboard-card.transfer-stage {
 
 .transfer-result.correct {
   border-color: rgba(46, 204, 113, 0.26);
-  background: rgba(46, 204, 113, 0.08);
+  background: linear-gradient(180deg, rgba(46, 204, 113, 0.12), rgba(46, 204, 113, 0.06));
 }
 
 .transfer-result.wrong {
   border-color: rgba(255, 107, 107, 0.24);
-  background: rgba(255, 107, 107, 0.08);
+  background: linear-gradient(180deg, rgba(255, 107, 107, 0.12), rgba(255, 107, 107, 0.06));
 }
 
 .transfer-result.info {
   border-color: rgba(125, 193, 255, 0.2);
-  background: rgba(125, 193, 255, 0.08);
+  background: linear-gradient(180deg, rgba(125, 193, 255, 0.12), rgba(125, 193, 255, 0.06));
 }
 
 .transfer-result-text {
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 700;
   color: #fff;
 }
@@ -527,14 +731,19 @@ body.transfer-page .scoreboard-card.transfer-stage {
   }
 
   .trail-step {
-    width: calc(20% - 10px);
+    width: calc(20% - 12px);
     min-width: 112px;
   }
 }
 
 @media (max-width: 840px) {
   .transfer-stage {
-    padding: 16px;
+    padding: 20px;
+  }
+
+  .transfer-control-deck {
+    width: 100%;
+    padding: 18px;
   }
 
   .trail-step {
@@ -547,16 +756,40 @@ body.transfer-page .scoreboard-card.transfer-stage {
 }
 
 @media (max-width: 620px) {
+  .transfer-stage {
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .transfer-card-head {
+    gap: 14px;
+  }
+
+  .transfer-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .transfer-control-deck {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
   .transfer-search-row {
     flex-direction: column;
   }
 
-  .transfer-submit {
+  .transfer-submit,
+  .transfer-reveal,
+  .transfer-next {
     width: 100%;
   }
 
   .transfer-autocomplete {
     right: 0;
+  }
+
+  .transfer-autocomplete.command-mode {
+    max-height: min(52vh, 420px);
   }
 
   .trail-grid {
@@ -587,5 +820,10 @@ body.transfer-page .scoreboard-card.transfer-stage {
     width: 64px;
     height: 64px;
     padding: 9px;
+  }
+
+  .trail-pill {
+    width: 100%;
+    justify-content: center;
   }
 }

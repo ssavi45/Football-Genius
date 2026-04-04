@@ -8,14 +8,14 @@
       { "label": "Real Madrid", "logo": "img/teams/rmcf.png" },
       { "label": "Juventus", "logo": "img/teams/juve.png" },
       { "label": "Manchester United", "logo": "img/teams/manu.png" },
-      { "label": "Al Nassr", "logo": "img/teams/saudi.png" }
+      { "label": "Al Nassr", "logo": "img/teams/al_nassr.png" }
     ]
   },
   {
     "name": "Zlatan Ibrahimovic",
     "aliases": ["Ibrahimovic", "Zlatan"],
     "clubs": [
-      { "label": "Malmo FF" },
+      { "label": "Malmo FF", "logo": "img/teams/malmo_ff.png" },
       { "label": "Ajax", "logo": "img/teams/ajax.png" },
       { "label": "Juventus", "logo": "img/teams/juve.png" },
       { "label": "Inter Milan", "logo": "img/teams/inter.png" },
@@ -23,7 +23,7 @@
       { "label": "AC Milan", "logo": "img/teams/acmilan.png" },
       { "label": "Paris Saint-Germain", "logo": "img/teams/psg.png" },
       { "label": "Manchester United", "logo": "img/teams/manu.png" },
-      { "label": "LA Galaxy" },
+      { "label": "LA Galaxy", "logo": "img/teams/la_galaxy.png" },
       { "label": "AC Milan", "logo": "img/teams/acmilan.png" }
     ]
   },
@@ -31,7 +31,7 @@
     "name": "Angel Di Maria",
     "aliases": ["Di Maria", "Angel"],
     "clubs": [
-      { "label": "Rosario Central" },
+      { "label": "Rosario Central", "logo": "img/teams/rosario_central.png" },
       { "label": "Benfica", "logo": "img/teams/benfica.png" },
       { "label": "Real Madrid", "logo": "img/teams/rmcf.png" },
       { "label": "Manchester United", "logo": "img/teams/manu.png" },
@@ -60,7 +60,7 @@
       { "label": "Chelsea", "logo": "img/teams/cfc.png" },
       { "label": "AC Milan", "logo": "img/teams/acmilan.png" },
       { "label": "Atletico Madrid", "logo": "img/teams/atletico.png" },
-      { "label": "Sagan Tosu" }
+      { "label": "Sagan Tosu", "logo": "img/teams/sagan_tosu.png" }
     ]
   },
   {
@@ -82,8 +82,8 @@
     "name": "Robert Lewandowski",
     "aliases": ["Lewandowski", "Lewa"],
     "clubs": [
-      { "label": "Znicz Pruszkow" },
-      { "label": "Lech Poznan" },
+      { "label": "Znicz Pruszkow", "logo": "img/teams/znicz_pruszkow.png" },
+      { "label": "Lech Poznan", "logo": "img/teams/lech_poznań.png" },
       { "label": "Borussia Dortmund", "logo": "img/teams/bvb.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" },
       { "label": "Barcelona", "logo": "img/teams/fcb.png" }
@@ -93,7 +93,7 @@
     "name": "Toni Kroos",
     "aliases": ["Kroos"],
     "clubs": [
-      { "label": "Hansa Rostock" },
+      { "label": "Hansa Rostock", "logo": "img/teams/hansa_rostock.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" },
       { "label": "Bayer Leverkusen", "logo": "img/teams/leverkusen.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" },
@@ -116,7 +116,7 @@
     "name": "Antoine Griezmann",
     "aliases": ["Griezmann", "Grizou"],
     "clubs": [
-      { "label": "Real Sociedad" },
+      { "label": "Real Sociedad", "logo": "img/teams/real_sociedad.png" },
       { "label": "Atletico Madrid", "logo": "img/teams/atletico.png" },
       { "label": "Barcelona", "logo": "img/teams/fcb.png" },
       { "label": "Atletico Madrid", "logo": "img/teams/atletico.png" }
@@ -140,7 +140,7 @@
       { "label": "Borussia Dortmund", "logo": "img/teams/bvb.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" },
       { "label": "Borussia Dortmund", "logo": "img/teams/bvb.png" },
-      { "label": "PSV Eindhoven" },
+      { "label": "PSV Eindhoven", "logo": "img/teams/psv_eindhoven.png" },
       { "label": "Eintracht Frankfurt", "logo": "img/teams/frankfruit.png" }
     ]
   },
@@ -148,8 +148,8 @@
     "name": "Arjen Robben",
     "aliases": ["Robben"],
     "clubs": [
-      { "label": "Groningen" },
-      { "label": "PSV Eindhoven" },
+      { "label": "Groningen", "logo": "img/teams/groningen.png" },
+      { "label": "PSV Eindhoven", "logo": "img/teams/psv_eindhoven.png" },
       { "label": "Chelsea", "logo": "img/teams/cfc.png" },
       { "label": "Real Madrid", "logo": "img/teams/rmcf.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" }
@@ -168,7 +168,7 @@
     "name": "Jadon Sancho",
     "aliases": ["Sancho"],
     "clubs": [
-      { "label": "Watford" },
+      { "label": "Watford", "logo": "img/teams/watford.png" },
       { "label": "Manchester City", "logo": "img/teams/mancity.png" },
       { "label": "Borussia Dortmund", "logo": "img/teams/bvb.png" },
       { "label": "Manchester United", "logo": "img/teams/manu.png" },
@@ -180,18 +180,18 @@
     "name": "Neymar",
     "aliases": ["Neymar Jr", "Ney"],
     "clubs": [
-      { "label": "Santos" },
+      { "label": "Santos", "logo": "img/teams/santos.png" },
       { "label": "Barcelona", "logo": "img/teams/fcb.png" },
       { "label": "Paris Saint-Germain", "logo": "img/teams/psg.png" },
-      { "label": "Al Hilal", "logo": "img/teams/saudi.png" }
+      { "label": "Al Hilal", "logo": "img/teams/al_hilal.png" }
     ]
   },
   {
     "name": "David Alaba",
     "aliases": ["Alaba"],
     "clubs": [
-      { "label": "Austria Vienna" },
-      { "label": "Hoffenheim" },
+      { "label": "Austria Vienna", "logo": "img/teams/austria_vienna.png" },
+      { "label": "Hoffenheim", "logo": "img/teams/hoffenheim.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" },
       { "label": "Real Madrid", "logo": "img/teams/rmcf.png" }
     ]
@@ -200,8 +200,8 @@
     "name": "Xabi Alonso",
     "aliases": ["Xabi"],
     "clubs": [
-      { "label": "Real Sociedad" },
-      { "label": "Eibar" },
+      { "label": "Real Sociedad", "logo": "img/teams/real_sociedad.png" },
+      { "label": "Eibar", "logo": "img/teams/eibar.png" },
       { "label": "Liverpool", "logo": "img/teams/lfc.png" },
       { "label": "Real Madrid", "logo": "img/teams/rmcf.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" }
@@ -213,7 +213,7 @@
     "clubs": [
       { "label": "Manchester United", "logo": "img/teams/manu.png" },
       { "label": "Real Madrid", "logo": "img/teams/rmcf.png" },
-      { "label": "LA Galaxy" },
+      { "label": "LA Galaxy", "logo": "img/teams/la_galaxy.png" },
       { "label": "AC Milan", "logo": "img/teams/acmilan.png" },
       { "label": "Paris Saint-Germain", "logo": "img/teams/psg.png" }
     ]
@@ -226,7 +226,7 @@
       { "label": "Juventus", "logo": "img/teams/juve.png" },
       { "label": "Arsenal", "logo": "img/teams/afc.png" },
       { "label": "Barcelona", "logo": "img/teams/fcb.png" },
-      { "label": "New York Red Bulls" }
+      { "label": "New York Red Bulls", "logo": "img/teams/new_york_red_bulls.png" }
     ]
   }
 ]

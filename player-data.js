@@ -28,11 +28,13 @@
 
   // ─── Cache Settings ─────────────────────────────────────────────
   const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
+  const CACHE_VERSION = 'v5';
   const CACHE_KEYS = {
-    global: 'fg_global_players',
-    guess: 'fg_guess_players',
-    grid: 'fg_grid_players',
-    transfer: 'fg_transfer_players',
+    global: 'fg_global_players_' + CACHE_VERSION,
+    guess: 'fg_guess_players_' + CACHE_VERSION,
+    grid: 'fg_grid_players_' + CACHE_VERSION,
+    transfer: 'fg_transfer_players_' + CACHE_VERSION,
+    search: 'fg_player_search_' + CACHE_VERSION,
   };
 
   // ─── Cache Helpers ──────────────────────────────────────────────
@@ -193,6 +195,47 @@
       });
   }
 
+  function normalizePlayerSearchRows(rows) {
+    return (rows || [])
+      .filter(function (row) {
+        return row && row.name;
+      })
+      .map(function (row) {
+        return {
+          name: String(row.name).trim(),
+          aliases: Array.isArray(row.aliases)
+            ? row.aliases.filter(Boolean).map(function (alias) { return String(alias).trim(); })
+            : [],
+        };
+      })
+      .filter(function (row) {
+        return row.name;
+      });
+  }
+
+  function mergeSearchEntries(map, rows) {
+    normalizePlayerSearchRows(rows).forEach(function (row) {
+      var key = slugifyName(row.name);
+      if (!key) return;
+
+      if (!map.has(key)) {
+        map.set(key, {
+          name: row.name,
+          aliases: [],
+        });
+      }
+
+      var entry = map.get(key);
+      var aliasSet = new Set(entry.aliases);
+      row.aliases.forEach(function (alias) {
+        if (alias && alias !== entry.name) aliasSet.add(alias);
+      });
+      entry.aliases = Array.from(aliasSet).sort(function (a, b) {
+        return a.localeCompare(b, undefined, { sensitivity: 'base' });
+      });
+    });
+  }
+
   // ─── Public API ─────────────────────────────────────────────────
 
   /**
@@ -207,7 +250,17 @@
       return normalizePlayerArrayImages(cached);
     }
 
-    // 2. Try Supabase
+    // 2. Prefer local JSON for curated Higher/Lower stats
+    try {
+      var jsonData = normalizePlayerArrayImages(await fetchJSON('data/players.json'));
+      setCache(CACHE_KEYS.global, jsonData);
+      console.log('[PlayerData] global_players loaded from JSON');
+      return jsonData;
+    } catch (e) {
+      console.warn('[PlayerData] JSON failed for global_players, falling back to Supabase:', e.message);
+    }
+
+    // 3. Fall back to Supabase
     try {
       var rows = await supabaseSelect('global_players');
       var data = transformGlobalPlayers(rows);
@@ -215,16 +268,7 @@
       console.log('[PlayerData] global_players fetched from Supabase (' + data.length + ' rows)');
       return data;
     } catch (e) {
-      console.warn('[PlayerData] Supabase failed for global_players, falling back to JSON:', e.message);
-    }
-
-    // 3. Fallback to JSON
-    try {
-      var jsonData = normalizePlayerArrayImages(await fetchJSON('data/players.json'));
-      console.log('[PlayerData] global_players loaded from JSON fallback');
-      return jsonData;
-    } catch (e2) {
-      console.error('[PlayerData] All sources failed for global_players:', e2.message);
+      console.error('[PlayerData] All sources failed for global_players:', e.message);
       return [];
     }
   }
@@ -315,6 +359,58 @@
   }
 
   /**
+   * Get the broad player search index used for typeahead.
+   * Built from all local game datasets so search is wider than a single mode.
+   */
+  async function getPlayerSearchIndex() {
+    var cached = getCached(CACHE_KEYS.search);
+    if (cached) {
+      console.log('[PlayerData] player_search loaded from cache');
+      return cached;
+    }
+
+    try {
+      var results = await Promise.allSettled([
+        fetchJSON('data/players.json'),
+        fetchJSON('data/guess-players.json'),
+        fetchJSON('data/grid-players.json'),
+        fetchJSON('data/scouts-duel-players.json'),
+        fetchJSON('data/transfer-players.json'),
+      ]);
+
+      var searchMap = new Map();
+
+      results.forEach(function (result, index) {
+        if (result.status !== 'fulfilled' || !Array.isArray(result.value)) return;
+        var rows = result.value;
+
+        if (index === 4) {
+          mergeSearchEntries(searchMap, rows);
+          return;
+        }
+
+        mergeSearchEntries(searchMap, rows.map(function (row) {
+          return {
+            name: row.name,
+            aliases: [],
+          };
+        }));
+      });
+
+      var data = Array.from(searchMap.values()).sort(function (a, b) {
+        return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+      });
+
+      setCache(CACHE_KEYS.search, data);
+      console.log('[PlayerData] player_search built from local datasets (' + data.length + ' rows)');
+      return data;
+    } catch (e) {
+      console.error('[PlayerData] Could not build player_search:', e.message);
+      return [];
+    }
+  }
+
+  /**
    * Force-clear all cached player data (e.g., for debugging).
    */
   function clearCache() {
@@ -330,6 +426,7 @@
     getGuessPlayers: getGuessPlayers,
     getGridPlayers: getGridPlayers,
     getTransferPlayers: getTransferPlayers,
+    getPlayerSearchIndex: getPlayerSearchIndex,
     clearCache: clearCache,
   };
 })();

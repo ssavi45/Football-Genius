@@ -22,6 +22,7 @@
     guessesLeft: $('#guessesLeft'),
     clubCount: $('#clubCount'),
     revealedCount: $('#revealedCount'),
+    trailShell: document.querySelector('.trail-shell'),
     trail: $('#clubTrail'),
     input: $('#guessInput'),
     submit: $('#submitGuess'),
@@ -43,6 +44,7 @@
 
   const state = {
     pool: [],
+    searchPool: [],
     questions: [],
     index: 0,
     score: 0,
@@ -78,6 +80,50 @@
       .replace(/[^a-z0-9\s]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
+  }
+
+  function parseSearchQuery(rawQuery = '') {
+    const raw = String(rawQuery || '');
+    const trimmed = raw.trim();
+    const lower = trimmed.toLowerCase();
+
+    if (lower === '/players') {
+      return {
+        mode: 'players',
+        term: '',
+      };
+    }
+
+    if (lower.startsWith('/players ')) {
+      return {
+        mode: 'players',
+        term: canonicalize(trimmed.slice(8)),
+      };
+    }
+
+    return {
+      mode: 'default',
+      term: canonicalize(raw),
+    };
+  }
+
+  function prepareSearchEntry(player) {
+    const aliases = Array.isArray(player.aliases) ? player.aliases.filter(Boolean) : [];
+    const canonicalName = canonicalize(player.name);
+    const canonicalAliases = aliases.map((alias) => canonicalize(alias)).filter(Boolean);
+    const tokens = new Set(canonicalName.split(' ').filter(Boolean));
+
+    canonicalAliases.forEach((alias) => {
+      alias.split(' ').filter(Boolean).forEach((token) => tokens.add(token));
+    });
+
+    return {
+      name: player.name,
+      aliases,
+      canonicalName,
+      canonicalAliases,
+      canonicalTokens: Array.from(tokens),
+    };
   }
 
   function getCurrentQuestion() {
@@ -226,6 +272,7 @@
     state.suggestions = [];
     state.selectedSuggestionIndex = -1;
     els.autocomplete.classList.remove('show');
+    els.autocomplete.classList.remove('command-mode');
     els.autocomplete.replaceChildren();
   }
 
@@ -233,6 +280,12 @@
     els.result.className = `transfer-result show ${type}`;
     els.resultText.textContent = title;
     els.resultDetail.textContent = detail;
+  }
+
+  function clearResult() {
+    els.result.className = 'transfer-result';
+    els.resultText.textContent = '';
+    els.resultDetail.textContent = '';
   }
 
   function updateHud() {
@@ -295,8 +348,19 @@
   }
 
   function createTrailStep(club, index, isVisible, isEndpoint, isNewReveal) {
+    const isFirst = index === 0;
+    const isLast = index === getCurrentQuestion().clubs.length - 1;
+    const stateClass = isFirst
+      ? ' is-first'
+      : isLast
+        ? ' is-last'
+        : isVisible
+          ? ' is-revealed'
+          : ' is-locked';
+
     const step = document.createElement('div');
-    step.className = `trail-step ${isVisible ? 'is-visible' : 'is-hidden'}${isEndpoint ? ' is-endpoint' : ''}${isNewReveal ? ' revealed-now' : ''}`;
+    step.className = `trail-step ${isVisible ? 'is-visible' : 'is-hidden'}${isEndpoint ? ' is-endpoint' : ''}${isNewReveal ? ' revealed-now' : ''}${stateClass}`;
+    step.dataset.index = String(index);
 
     const order = document.createElement('div');
     order.className = 'trail-order';
@@ -327,14 +391,18 @@
 
     const tag = document.createElement('div');
     tag.className = 'trail-tag';
-    if (index === 0) {
+    if (isFirst) {
       tag.textContent = 'First Club';
-    } else if (index === getCurrentQuestion().clubs.length - 1) {
+      tag.classList.add('is-first');
+    } else if (isLast) {
       tag.textContent = 'Current / Last';
+      tag.classList.add('is-last');
     } else if (isVisible) {
       tag.textContent = 'Revealed';
+      tag.classList.add('is-revealed');
     } else {
       tag.textContent = 'Locked';
+      tag.classList.add('is-locked');
     }
 
     step.appendChild(badge);
@@ -342,6 +410,32 @@
     step.appendChild(tag);
 
     return step;
+  }
+
+  function syncTrailLayout(options = {}) {
+    const { reset = false, focusIndex = null } = options;
+    if (!els.trailShell || !els.trail) return;
+
+    window.requestAnimationFrame(() => {
+      const overflow = els.trail.scrollWidth > els.trailShell.clientWidth - 8;
+      els.trailShell.classList.toggle('is-scrollable', overflow);
+      els.trail.classList.toggle('is-scrollable', overflow);
+
+      if (reset) {
+        els.trailShell.scrollLeft = 0;
+      }
+
+      if (!overflow || focusIndex === null || focusIndex === undefined) return;
+
+      const step = els.trail.querySelector(`.trail-step[data-index="${focusIndex}"]`);
+      if (step) {
+        step.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center',
+        });
+      }
+    });
   }
 
   function renderTrail() {
@@ -364,27 +458,48 @@
         els.trail.appendChild(link);
       }
     });
+
+    syncTrailLayout({
+      reset: state.lastRevealedIndex === null,
+      focusIndex: state.lastRevealedIndex,
+    });
   }
 
   function getSuggestions(query) {
-    const normalizedQuery = canonicalize(query);
-    if (!normalizedQuery) return [];
+    const parsedQuery = parseSearchQuery(query);
+    const normalizedQuery = parsedQuery.term;
 
-    return state.pool
+    if (parsedQuery.mode !== 'players' && !normalizedQuery) return [];
+
+    const matches = state.searchPool
       .filter((player) => {
-        const haystacks = [player.name, ...(player.aliases || [])].map((value) => canonicalize(value));
-        return haystacks.some((value) => value.includes(normalizedQuery));
+        if (parsedQuery.mode === 'players' && !normalizedQuery) return true;
+        if (player.canonicalName.startsWith(normalizedQuery)) return true;
+        if (player.canonicalAliases.some((alias) => alias.startsWith(normalizedQuery))) return true;
+        return player.canonicalTokens.some((token) => token.startsWith(normalizedQuery));
       })
-      .slice(0, 6);
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }))
+;
+
+    if (parsedQuery.mode === 'players') {
+      return matches;
+    }
+
+    return matches.slice(0, 8);
   }
 
   function renderAutocomplete() {
     els.autocomplete.replaceChildren();
 
+    const parsedQuery = parseSearchQuery(els.input.value);
+
     if (!state.suggestions.length || state.answered) {
       els.autocomplete.classList.remove('show');
+      els.autocomplete.classList.remove('command-mode');
       return;
     }
+
+    els.autocomplete.classList.toggle('command-mode', parsedQuery.mode === 'players');
 
     state.suggestions.forEach((player, index) => {
       const item = document.createElement('div');
@@ -441,13 +556,13 @@
       setResult(
         'correct',
         `${question.name} for ${earned} points.`,
-        `Trail revealed after ${state.revealsUsed} reveal${state.revealsUsed === 1 ? '' : 's'}: ${getTrailSummary(question)}`
+        `Solved after ${state.revealsUsed} reveal${state.revealsUsed === 1 ? '' : 's'}.`
       );
     } else {
       setResult(
         'wrong',
         `Out of guesses. It was ${question.name}.`,
-        getTrailSummary(question)
+        'The full trail is visible above.'
       );
     }
 
@@ -480,6 +595,11 @@
     const value = els.input.value.trim();
     if (!value) {
       setResult('info', 'Type a player name first.', 'Use the autocomplete if you want a quick exact match.');
+      return;
+    }
+
+    if (parseSearchQuery(value).mode === 'players') {
+      setResult('info', 'Browse mode is open.', 'Pick a player from the list, or remove `/players` to make a direct guess.');
       return;
     }
 
@@ -543,7 +663,7 @@
     updateRevealButton();
     updateCompetitionCopy();
     renderTrail();
-    setResult('info', 'The trail is ready.', 'First and current or last clubs are showing. Take your shot or reveal the next stop.');
+    clearResult();
   }
 
   function nextQuestion() {
@@ -638,7 +758,13 @@
         throw new Error('Not enough transfer trails to start a round.');
       }
 
+      const searchPlayers = typeof window.PlayerData.getPlayerSearchIndex === 'function'
+        ? await window.PlayerData.getPlayerSearchIndex()
+        : [];
+
       state.pool = players;
+      state.searchPool = (Array.isArray(searchPlayers) && searchPlayers.length ? searchPlayers : players)
+        .map((player) => prepareSearchEntry(player));
       state.questions = shuffle(players).slice(0, ROUND_SIZE);
 
       loadQuestion();
@@ -702,6 +828,10 @@
         submitGuess();
       }
     }
+  });
+
+  window.addEventListener('resize', () => {
+    syncTrailLayout();
   });
 
   init();
