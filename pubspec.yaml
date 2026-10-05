@@ -63,13 +63,15 @@ flutter:
   uses-material-design: true
 
   assets:
-    - img/
-    - img/cards/
-    - img/country/
-    - img/icons/
-    - img/players/
-    - img/teams/
-    - img/tournaments/
+    - assets/images/branding/
+    - assets/images/backgrounds/
+    - assets/images/cards/
+    - assets/images/players/
+    - assets/images/clubs/
+    - assets/images/countries/
+    - assets/images/tournaments/
+    - assets/icons/
+    - assets/animations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/asset_paths.dart';
-import 'widgets/featured_challenge_card.dart';
-import 'widgets/home_bottom_nav_bar.dart';
-import 'widgets/home_stats_ribbon.dart';
-import 'widgets/home_top_bar.dart';
-import 'widgets/quick_play_section.dart';
-import 'widgets/scouts_duel_banner.dart';
+import '../widgets/featured_challenge_card.dart';
+import '../widgets/home_bottom_nav_bar.dart';
+import '../widgets/home_stats_ribbon.dart';
+import '../widgets/home_top_bar.dart';
+import '../widgets/quick_play_section.dart';
+import '../widgets/scouts_duel_banner.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

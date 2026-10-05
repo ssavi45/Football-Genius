@@ -11,6 +11,7 @@ class AppColors {
   static const Color darkPill = Color(0xFF0A150E);
   static const Color surface = Color(0x0DFFFFFF); // ~5% white
   static const Color surfaceGlass = Color(0x14FFFFFF); // ~8% white
+  static const Color surfaceSubtle = Color(0x1AFFFFFF); // ~10% white
 
   // Accents
   static const Color neonGreen = Color(0xFF2EFD72);

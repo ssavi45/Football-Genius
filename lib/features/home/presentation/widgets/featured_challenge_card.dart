@@ -244,7 +244,7 @@ class _MiniGrid3x3 extends StatelessWidget {
             children: [
               _buildCell(
                 child: Image.asset(
-                  'img/teams/rmcf.png',
+                  AssetPaths.clubRealMadrid,
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) =>
                       const Icon(Icons.shield, size: 16, color: Colors.white70),
@@ -254,7 +254,7 @@ class _MiniGrid3x3 extends StatelessWidget {
               _buildCell(
                 child: ClipOval(
                   child: Image.asset(
-                    'img/country/france.png',
+                    AssetPaths.countryFrance,
                     fit: BoxFit.cover,
                     width: 20,
                     height: 20,
@@ -280,7 +280,7 @@ class _MiniGrid3x3 extends StatelessWidget {
               _buildCell(
                 child: ClipOval(
                   child: Image.asset(
-                    'img/country/brazil.png',
+                    AssetPaths.countryBrazil,
                     fit: BoxFit.cover,
                     width: 20,
                     height: 20,
@@ -292,7 +292,7 @@ class _MiniGrid3x3 extends StatelessWidget {
               _buildSilhouetteCell(),
               _buildCell(
                 child: Image.asset(
-                  'img/tournaments/epl.png',
+                  AssetPaths.tournamentEpl,
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) =>
                       const Icon(Icons.emoji_events, size: 16, color: Colors.white70),
