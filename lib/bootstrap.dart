@@ -17,3 +17,4 @@ Future<void> bootstrap() async {
     debugPrint('Supabase initialization warning: $e');
   }
 }
+

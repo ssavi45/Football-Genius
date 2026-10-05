@@ -17,3 +17,4 @@ class AppRoutes {
   static const String quotes = '/games/quotes';
   static const String journeyman = '/games/journeyman';
 }
+

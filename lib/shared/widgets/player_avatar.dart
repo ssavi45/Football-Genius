@@ -59,3 +59,4 @@ class PlayerAvatar extends StatelessWidget {
     );
   }
 }
+

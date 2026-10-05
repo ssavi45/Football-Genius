@@ -18,3 +18,4 @@ void main() {
     expect(find.text('Continue'), findsOneWidget);
   });
 }
+

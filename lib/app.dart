@@ -28,3 +28,4 @@ class FootballGeniusApp extends StatelessWidget {
     );
   }
 }
+

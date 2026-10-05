@@ -22,3 +22,4 @@ class GameMetadata {
     this.averageDurationMinutes = 3,
   });
 }
+
