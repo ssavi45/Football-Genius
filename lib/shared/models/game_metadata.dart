@@ -7,6 +7,9 @@ class GameMetadata {
   final String cardArtPath;
   final String iconPath;
   final String routePath;
+  final String badge;
+  final String difficulty;
+  final String category;
   final bool hasDailyChallenge;
   final int averageDurationMinutes;
 
@@ -18,6 +21,9 @@ class GameMetadata {
     required this.cardArtPath,
     required this.iconPath,
     required this.routePath,
+    this.badge = 'CLASSIC',
+    this.difficulty = 'Medium',
+    this.category = 'All Modes',
     this.hasDailyChallenge = false,
     this.averageDurationMinutes = 3,
   });

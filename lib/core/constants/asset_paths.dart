@@ -21,6 +21,10 @@ class AssetPaths {
   static const String cardHigherLower = 'assets/images/cards/higher_lower_art.png';
   static const String cardScoutsDuel = 'assets/images/cards/scouts_duel_art.png';
   static const String cardMatrixStadium = 'assets/images/cards/matrix_stadium_bg.png';
+  static const String cardScorelineHero = 'assets/images/cards/scoreline_hero_art.png';
+  static const String cardTunnelTalk = 'assets/images/cards/tunnel_talk_art.png';
+  static const String cardJourneyman = 'assets/images/cards/journeyman_art.png';
+  static const String cardFootballMatrix = 'assets/images/cards/football_matrix_art.png';
 
   // Achievement / Metric Icons
   static const String iconBallonDor = 'assets/icons/balon_dor_winner.png';

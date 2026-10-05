@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/asset_paths.dart';
+import '../../../../core/router/app_routes.dart';
 import '../widgets/featured_challenge_card.dart';
 import '../widgets/home_bottom_nav_bar.dart';
 import '../widgets/home_stats_ribbon.dart';
@@ -96,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Quick Play Horizontal Section (Higher or Lower | Pixel Pitch | Bootroom Scramble)
                 SliverToBoxAdapter(
                   child: QuickPlaySection(
-                    onSeeAll: () => _showSnack('Opening all game modes...'),
+                    onSeeAll: () => context.push(AppRoutes.games),
                     onSelectMode: (mode) => _showSnack('Selected mode: $mode'),
                   ),
                 ),
@@ -120,10 +122,17 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: HomeBottomNavBar(
         selectedIndex: _navIndex,
         onItemSelected: (index) {
+          if (index == _navIndex) return;
           setState(() => _navIndex = index);
-          if (index == 1) _showSnack('Games screen');
-          if (index == 2) _showSnack('Leaderboards & Ranks screen');
-          if (index == 3) _showSnack('User Profile screen');
+          if (index == 1) {
+            context.push(AppRoutes.games).then((_) {
+              if (mounted) setState(() => _navIndex = 0);
+            });
+          } else if (index == 2) {
+            _showSnack('Leaderboards & Ranks screen');
+          } else if (index == 3) {
+            _showSnack('User Profile screen');
+          }
         },
       ),
     );

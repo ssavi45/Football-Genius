@@ -17,5 +17,28 @@ void main() {
     expect(find.text('Quick Play'), findsOneWidget);
     expect(find.text('Continue'), findsOneWidget);
   });
+
+  testWidgets('Navigating to Games screen shows game modes',
+      (WidgetTester tester) async {
+    AppRouter.initialize(routes: FootballGeniusApp.appRoutes);
+
+    await tester.pumpWidget(
+      const ProviderScope(
+        child: FootballGeniusApp(),
+      ),
+    );
+
+    // Tap 'See all' on the Home Screen
+    final seeAllFinder = find.text('See all');
+    expect(seeAllFinder, findsOneWidget);
+    await tester.tap(seeAllFinder);
+    await tester.pumpAndSettle();
+
+    // Verify Games Screen header and top cards
+    expect(find.text('Game Modes'), findsOneWidget);
+    expect(find.text('FOOTYGEN ARENA'), findsOneWidget);
+    expect(find.text('Football Matrix'), findsOneWidget);
+    expect(find.text("Scout's Duel"), findsOneWidget);
+  });
 }
 

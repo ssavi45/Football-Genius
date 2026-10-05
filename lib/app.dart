@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'core/router/app_router.dart';
 import 'core/router/app_routes.dart';
 import 'core/theme/app_theme.dart';
+import 'features/games/common/presentation/screens/games_screen.dart';
 import 'features/home/presentation/screens/home_screen.dart';
 
 /// Root application widget configuring MaterialApp with theme and GoRouter.
@@ -15,6 +16,11 @@ class FootballGeniusApp extends StatelessWidget {
       path: AppRoutes.home,
       name: 'home',
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.games,
+      name: 'games',
+      builder: (context, state) => const GamesScreen(),
     ),
   ];
 
