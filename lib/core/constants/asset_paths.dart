@@ -33,3 +33,4 @@ class AssetPaths {
   static const String playersDir = 'img/players/';
   static const String tournamentsDir = 'img/tournaments/';
 }
+
