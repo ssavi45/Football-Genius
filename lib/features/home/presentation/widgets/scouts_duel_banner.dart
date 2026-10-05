@@ -15,7 +15,7 @@ class ScoutsDuelBanner extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
       child: Container(
-        height: 120,
+        height: 126,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
@@ -34,24 +34,25 @@ class ScoutsDuelBanner extends StatelessWidget {
           borderRadius: BorderRadius.circular(19),
           child: Stack(
             children: [
-              // Dark stadium backdrop
+              // High-res Scout's Duel background artwork
               Positioned.fill(
                 child: Image.asset(
-                  AssetPaths.stadiumBg,
+                  AssetPaths.cardScoutsDuel,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) =>
                       const SizedBox.shrink(),
                 ),
               ),
-              // Dark golden gradient overlay
+
+              // Gradient fade from dark left (for text readability) to transparent right
               Positioned.fill(
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        AppColors.pitchBlack.withAlpha(245),
-                        AppColors.pitchCard.withAlpha(230),
-                        AppColors.trophyGold.withAlpha(35),
+                        AppColors.pitchBlack.withAlpha(240),
+                        AppColors.pitchBlack.withAlpha(170),
+                        AppColors.pitchBlack.withAlpha(40),
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -65,28 +66,35 @@ class ScoutsDuelBanner extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
                 child: Row(
                   children: [
-                    // Left: Crossed Golden Swords Icon
+                    // Left: Crossed Swords Icon with golden halo
                     Container(
-                      width: 44,
-                      height: 44,
+                      width: 48,
+                      height: 48,
                       decoration: BoxDecoration(
-                        color: AppColors.trophyGold.withAlpha(25),
+                        color: AppColors.pitchBlack.withAlpha(180),
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: AppColors.trophyGold.withAlpha(90),
+                          color: AppColors.trophyGold.withAlpha(120),
+                          width: 1.2,
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.trophyGold.withAlpha(30),
+                            blurRadius: 10,
+                          ),
+                        ],
                       ),
                       child: const Center(
                         child: Icon(
                           Icons.military_tech_rounded,
                           color: AppColors.trophyGold,
-                          size: 26,
+                          size: 28,
                         ),
                       ),
                     ),
                     const SizedBox(width: 14),
 
-                    // Middle Column: Title, Subtitle, Play Button
+                    // Middle Column: Title, Subtitle, Play Now Button
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +103,7 @@ class ScoutsDuelBanner extends StatelessWidget {
                           RichText(
                             text: const TextSpan(
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: -0.3,
                               ),
@@ -115,7 +123,8 @@ class ScoutsDuelBanner extends StatelessWidget {
                           const Text(
                             'Play AI or a friend',
                             style: TextStyle(
-                              fontSize: 11.5,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
                             ),
                           ),
@@ -125,15 +134,15 @@ class ScoutsDuelBanner extends StatelessWidget {
                             onTap: onPlayNow,
                             child: Container(
                               padding: const EdgeInsets.symmetric(
-                                horizontal: 14,
+                                horizontal: 16,
                                 vertical: 6,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.pitchBlack,
+                                color: AppColors.pitchBlack.withAlpha(220),
                                 borderRadius: BorderRadius.circular(16),
                                 border: Border.all(
-                                  color: AppColors.trophyGold.withAlpha(160),
-                                  width: 1,
+                                  color: AppColors.trophyGold.withAlpha(180),
+                                  width: 1.2,
                                 ),
                               ),
                               child: Row(
@@ -142,12 +151,12 @@ class ScoutsDuelBanner extends StatelessWidget {
                                   Text(
                                     'Play Now',
                                     style: TextStyle(
-                                      fontSize: 11.5,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w800,
                                       color: AppColors.textPrimary,
                                     ),
                                   ),
-                                  SizedBox(width: 4),
+                                  SizedBox(width: 5),
                                   Icon(
                                     Icons.arrow_forward_ios_rounded,
                                     size: 10,
@@ -159,35 +168,6 @@ class ScoutsDuelBanner extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
-
-                    // Right: Scout silhouette illustration with crown
-                    Stack(
-                      alignment: Alignment.topRight,
-                      clipBehavior: Clip.none,
-                      children: [
-                        // Crown
-                        const Positioned(
-                          top: -6,
-                          right: 14,
-                          child: Icon(
-                            Icons.workspace_premium_rounded,
-                            size: 18,
-                            color: AppColors.trophyGold,
-                          ),
-                        ),
-                        // Manager Silhouette
-                        Container(
-                          width: 68,
-                          height: 78,
-                          margin: const EdgeInsets.only(top: 8),
-                          child: const Icon(
-                            Icons.person,
-                            size: 64,
-                            color: Color(0xFF1B3524),
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),

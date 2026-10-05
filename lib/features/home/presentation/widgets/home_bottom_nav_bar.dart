@@ -15,40 +15,57 @@ class HomeBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.pitchBlack.withAlpha(240),
+        color: AppColors.pitchBlack.withAlpha(245),
         border: const Border(
           top: BorderSide(color: AppColors.borderSubtle, width: 1),
         ),
       ),
       child: SafeArea(
         top: false,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 8, bottom: 6),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(
-                index: 0,
-                icon: Icons.home_rounded,
-                label: 'Home',
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8, bottom: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _buildNavItem(
+                    index: 0,
+                    icon: Icons.home_rounded,
+                    label: 'Home',
+                  ),
+                  _buildNavItem(
+                    index: 1,
+                    icon: Icons.sports_esports_outlined,
+                    label: 'Games',
+                  ),
+                  _buildNavItem(
+                    index: 2,
+                    icon: Icons.emoji_events_outlined,
+                    label: 'Rank',
+                  ),
+                  _buildNavItem(
+                    index: 3,
+                    icon: Icons.person_outline_rounded,
+                    label: 'Profile',
+                  ),
+                ],
               ),
-              _buildNavItem(
-                index: 1,
-                icon: Icons.sports_esports_outlined,
-                label: 'Games',
+            ),
+            // iOS Indicator bar
+            Center(
+              child: Container(
+                width: 134,
+                height: 4.5,
+                margin: const EdgeInsets.only(bottom: 6),
+                decoration: BoxDecoration(
+                  color: Colors.white.withAlpha(60),
+                  borderRadius: BorderRadius.circular(3),
+                ),
               ),
-              _buildNavItem(
-                index: 2,
-                icon: Icons.emoji_events_outlined,
-                label: 'Rank',
-              ),
-              _buildNavItem(
-                index: 3,
-                icon: Icons.person_outline_rounded,
-                label: 'Profile',
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

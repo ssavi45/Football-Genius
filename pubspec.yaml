@@ -64,6 +64,7 @@ flutter:
 
   assets:
     - img/
+    - img/cards/
     - img/country/
     - img/icons/
     - img/players/

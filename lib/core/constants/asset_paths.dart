@@ -15,6 +15,13 @@ class AssetPaths {
   static const String iconJourneyman = 'img/icons/journeyman.png';
   static const String iconPixelPitch = 'img/icons/pixel_pitch.png';
 
+  // Card Artworks
+  static const String cardPixelPitch = 'img/cards/pixel_pitch_art.png';
+  static const String cardBootroomScramble = 'img/cards/bootroom_scramble_art.png';
+  static const String cardHigherLower = 'img/cards/higher_lower_art.png';
+  static const String cardScoutsDuel = 'img/cards/scouts_duel_art.png';
+  static const String cardMatrixStadium = 'img/cards/matrix_stadium_bg.png';
+
   // Achievement / Metric Icons
   static const String iconBallonDor = 'img/icons/balon_dor_winner.png';
   static const String iconWorldCup = 'img/icons/world_cup_winner.png';

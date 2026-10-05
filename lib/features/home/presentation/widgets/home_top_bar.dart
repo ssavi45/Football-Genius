@@ -11,19 +11,25 @@ class HomeTopBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: Row(
         children: [
-          // Soccer ball icon
-          Container(
-            width: 32,
-            height: 32,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: const Center(
-              child: Icon(
-                Icons.sports_soccer,
-                size: 28,
-                color: Colors.black,
+          // Official FootyGen Logo
+          Image.asset(
+            AssetPaths.logo,
+            width: 34,
+            height: 34,
+            fit: BoxFit.contain,
+            errorBuilder: (context, error, stackTrace) => Container(
+              width: 34,
+              height: 34,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.sports_soccer,
+                  size: 28,
+                  color: Colors.black,
+                ),
               ),
             ),
           ),

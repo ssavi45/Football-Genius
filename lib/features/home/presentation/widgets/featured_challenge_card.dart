@@ -36,7 +36,7 @@ class FeaturedChallengeCard extends StatelessWidget {
               // Pitch atmosphere background
               Positioned.fill(
                 child: Image.asset(
-                  AssetPaths.stadiumBg,
+                  AssetPaths.cardMatrixStadium,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) =>
                       const SizedBox.shrink(),
@@ -48,8 +48,9 @@ class FeaturedChallengeCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        AppColors.pitchDark.withAlpha(245),
-                        AppColors.pitchCard.withAlpha(235),
+                        AppColors.pitchBlack.withAlpha(225),
+                        AppColors.pitchDark.withAlpha(140),
+                        AppColors.pitchBlack.withAlpha(195),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,

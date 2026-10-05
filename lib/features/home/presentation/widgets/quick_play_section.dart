@@ -65,11 +65,12 @@ class QuickPlaySection extends StatelessWidget {
           ),
         ),
 
-        // 3 Cards Horizontal Scroll / Row
+        // 3 Cards Horizontal Scroll
         SizedBox(
-          height: 172,
+          height: 184,
           child: ListView(
             scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.symmetric(horizontal: 20),
             children: [
               // Card 1: Higher or Lower
@@ -92,7 +93,7 @@ class QuickPlaySection extends StatelessWidget {
 
               // Card 3: Bootroom Scramble
               _buildCard(
-                title: 'Bootroom Scramble',
+                title: 'Bootroom\nScramble',
                 subtitle: 'Unscramble & win',
                 onTap: () => onSelectMode?.call('unscramble'),
                 visual: _buildBootroomScrambleVisual(),
@@ -111,27 +112,27 @@ class QuickPlaySection extends StatelessWidget {
     required VoidCallback onTap,
   }) {
     return Container(
-      width: 130,
+      width: 136,
       decoration: BoxDecoration(
         color: AppColors.pitchCard,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: AppColors.borderSubtle),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(20),
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.fromLTRB(12, 12, 12, 14),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Top Visual Area
+                // Visual Area
                 Expanded(
                   child: Center(child: visual),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6),
                 // Title
                 Text(
                   title,
@@ -141,7 +142,7 @@ class QuickPlaySection extends StatelessWidget {
                     color: AppColors.textPrimary,
                     height: 1.15,
                   ),
-                  maxLines: 1,
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 2),
@@ -164,71 +165,37 @@ class QuickPlaySection extends StatelessWidget {
     );
   }
 
-  // Visual for Higher or Lower: Green Up Arrow + Ball + Red Down Arrow
+  // Visual for Higher or Lower
   Widget _buildHigherLowerVisual() {
-    return Container(
-      height: 70,
-      alignment: Alignment.center,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Green Up Arrow
-          ShaderMask(
-            shaderCallback: (bounds) => const LinearGradient(
-              colors: [Color(0xFF2EFD72), Color(0xFF1ABC54)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ).createShader(bounds),
-            child: const Icon(
-              Icons.arrow_upward_rounded,
-              color: Colors.white,
-              size: 32,
-            ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.asset(
+        AssetPaths.cardHigherLower,
+        height: 82,
+        fit: BoxFit.contain,
+        errorBuilder: (context, error, stackTrace) => Container(
+          height: 70,
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(Icons.arrow_upward_rounded, color: AppColors.neonGreen, size: 28),
+              Icon(Icons.sports_soccer, color: Colors.white, size: 28),
+              Icon(Icons.arrow_downward_rounded, color: AppColors.errorRed, size: 28),
+            ],
           ),
-          // Soccer Ball
-          Container(
-            width: 32,
-            height: 32,
-            margin: const EdgeInsets.symmetric(horizontal: 2),
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: const Center(
-              child: Icon(
-                Icons.sports_soccer,
-                size: 30,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          // Red Down Arrow
-          ShaderMask(
-            shaderCallback: (bounds) => const LinearGradient(
-              colors: [Color(0xFFFF4D4D), Color(0xFFD63031)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ).createShader(bounds),
-            child: const Icon(
-              Icons.arrow_downward_rounded,
-              color: Colors.white,
-              size: 32,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 
-  // Visual for Pixel Pitch: Pixelated #10 Jersey back
+  // Visual for Pixel Pitch
   Widget _buildPixelPitchVisual() {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(12),
       child: Image.asset(
-        AssetPaths.iconPixelPitch,
-        width: 72,
-        height: 72,
+        AssetPaths.cardPixelPitch,
+        height: 82,
         fit: BoxFit.contain,
         errorBuilder: (context, error, stackTrace) => Container(
           width: 60,
@@ -240,14 +207,13 @@ class QuickPlaySection extends StatelessWidget {
     );
   }
 
-  // Visual for Bootroom Scramble: Golden boot & tactics
+  // Visual for Bootroom Scramble
   Widget _buildBootroomScrambleVisual() {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(12),
       child: Image.asset(
-        AssetPaths.iconUnscramble,
-        width: 72,
-        height: 72,
+        AssetPaths.cardBootroomScramble,
+        height: 82,
         fit: BoxFit.contain,
         errorBuilder: (context, error, stackTrace) => Container(
           width: 60,
