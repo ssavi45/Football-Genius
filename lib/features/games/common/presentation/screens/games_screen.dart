@@ -8,6 +8,7 @@ import 'package:football_genius/shared/widgets/fg_bottom_nav_bar.dart';
 import '../controllers/games_controller.dart';
 import '../widgets/game_mode_card.dart';
 import '../widgets/game_mode_filter_chips.dart';
+import '../widgets/game_mode_grid_card.dart';
 
 class GamesScreen extends ConsumerStatefulWidget {
   const GamesScreen({super.key});
@@ -32,6 +33,7 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
   @override
   Widget build(BuildContext context) {
     final games = ref.watch(filteredGamesProvider);
+    final layout = ref.watch(gamesViewLayoutProvider);
 
     return Scaffold(
       backgroundColor: AppColors.pitchBlack,
@@ -40,7 +42,7 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
           // Background stadium ambient atmosphere
           Positioned.fill(
             child: Opacity(
-              opacity: 0.10,
+              opacity: 0.08,
               child: Image.asset(
                 AssetPaths.stadiumBg,
                 fit: BoxFit.cover,
@@ -75,7 +77,7 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
                 // Top Header Bar
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 12, 20, 16),
+                    padding: const EdgeInsets.fromLTRB(20, 12, 20, 14),
                     child: Row(
                       children: [
                         // Back Button
@@ -130,13 +132,88 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
                             ],
                           ),
                         ),
-                        // FootyGen Brand Logo
-                        Image.asset(
-                          AssetPaths.logo,
-                          height: 34,
-                          fit: BoxFit.contain,
-                          errorBuilder: (context, error, stackTrace) =>
-                              const SizedBox.shrink(),
+
+                        // Segmented Layout Switcher [ ⊞ Grid | ☰ List ]
+                        Container(
+                          padding: const EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF0C1910),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: AppColors.borderSubtle,
+                              width: 1,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Grid View Option
+                              GestureDetector(
+                                onTap: () {
+                                  ref
+                                      .read(gamesViewLayoutProvider.notifier)
+                                      .setLayout(GamesViewLayout.grid);
+                                },
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 150),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 9, vertical: 5),
+                                  decoration: BoxDecoration(
+                                    color: layout == GamesViewLayout.grid
+                                        ? AppColors.neonGreen.withAlpha(35)
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(9),
+                                    border: layout == GamesViewLayout.grid
+                                        ? Border.all(
+                                            color: AppColors.neonGreen,
+                                            width: 1.2,
+                                          )
+                                        : null,
+                                  ),
+                                  child: Icon(
+                                    Icons.grid_view_rounded,
+                                    size: 16,
+                                    color: layout == GamesViewLayout.grid
+                                        ? AppColors.neonGreen
+                                        : AppColors.textSecondary,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 2),
+                              // List View Option
+                              GestureDetector(
+                                onTap: () {
+                                  ref
+                                      .read(gamesViewLayoutProvider.notifier)
+                                      .setLayout(GamesViewLayout.list);
+                                },
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 150),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 9, vertical: 5),
+                                  decoration: BoxDecoration(
+                                    color: layout == GamesViewLayout.list
+                                        ? AppColors.neonGreen.withAlpha(35)
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(9),
+                                    border: layout == GamesViewLayout.list
+                                        ? Border.all(
+                                            color: AppColors.neonGreen,
+                                            width: 1.2,
+                                          )
+                                        : null,
+                                  ),
+                                  child: Icon(
+                                    Icons.view_agenda_rounded,
+                                    size: 16,
+                                    color: layout == GamesViewLayout.list
+                                        ? AppColors.neonGreen
+                                        : AppColors.textSecondary,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -151,27 +228,67 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
                   ),
                 ),
 
-                // Game Modes List
-                SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) {
-                        final game = games[index];
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 16),
-                          child: GameModeCard(
+                // Game Modes Content (List View vs 2x4 Grid View)
+                if (layout == GamesViewLayout.list)
+                  SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    sliver: SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          final game = games[index];
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 16),
+                            child: GameModeCard(
+                              game: game,
+                              onPlay: () {
+                                ref
+                                    .read(lastPlayedGameIdProvider.notifier)
+                                    .setLastPlayed(game.id);
+                                if (game.routePath == AppRoutes.scoreline) {
+                                  context.push(game.routePath);
+                                } else {
+                                  _showSnack('Launching ${game.title}...');
+                                }
+                              },
+                            ),
+                          );
+                        },
+                        childCount: games.length,
+                      ),
+                    ),
+                  )
+                else
+                  SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    sliver: SliverGrid(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 14,
+                        childAspectRatio: 0.80,
+                      ),
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          final game = games[index];
+                          return GameModeGridCard(
                             game: game,
                             onPlay: () {
-                              _showSnack('Launching ${game.title}...');
+                              ref
+                                  .read(lastPlayedGameIdProvider.notifier)
+                                  .setLastPlayed(game.id);
+                              if (game.routePath == AppRoutes.scoreline) {
+                                context.push(game.routePath);
+                              } else {
+                                _showSnack('Launching ${game.title}...');
+                              }
                             },
-                          ),
-                        );
-                      },
-                      childCount: games.length,
+                          );
+                        },
+                        childCount: games.length,
+                      ),
                     ),
                   ),
-                ),
 
                 // Bottom padding for navigation bar
                 const SliverToBoxAdapter(

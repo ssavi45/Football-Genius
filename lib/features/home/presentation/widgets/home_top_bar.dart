@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/asset_paths.dart';
 
@@ -36,13 +37,13 @@ class HomeTopBar extends StatelessWidget {
           const SizedBox(width: 10),
           // FootyGen Brand text
           RichText(
-            text: const TextSpan(
-              style: TextStyle(
+            text: TextSpan(
+              style: GoogleFonts.outfit(
                 fontSize: 24,
                 fontWeight: FontWeight.w900,
                 letterSpacing: -0.5,
               ),
-              children: [
+              children: const [
                 TextSpan(
                   text: 'Footy',
                   style: TextStyle(color: AppColors.textPrimary),

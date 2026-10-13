@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:football_genius/core/constants/asset_paths.dart';
 import 'package:football_genius/core/router/app_routes.dart';
 import 'package:football_genius/shared/models/game_metadata.dart';
@@ -122,6 +123,61 @@ final allGamesProvider = Provider<List<GameMetadata>>((ref) {
   ];
 });
 
+/// Tracks the ID of the game mode the user was last playing, persisted locally.
+class LastPlayedGameNotifier extends Notifier<String> {
+  static const String _prefsKey = 'last_played_game_id';
+
+  @override
+  String build() {
+    _loadSavedGameId();
+    return 'scoreline';
+  }
+
+  Future<void> _loadSavedGameId() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final saved = prefs.getString(_prefsKey);
+      if (saved != null && saved.isNotEmpty && saved != state) {
+        state = saved;
+      }
+    } catch (_) {
+      // Ignore storage errors in test environments without initialized plugin
+    }
+  }
+
+  Future<void> setLastPlayed(String gameId) async {
+    final normalized = gameId == 'unscramble' ? 'scramble' : gameId;
+    if (state != normalized) {
+      state = normalized;
+    }
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_prefsKey, normalized);
+    } catch (_) {
+      // Ignore storage errors in test environments
+    }
+  }
+}
+
+/// Provider for the ID of the last played game mode.
+final lastPlayedGameIdProvider =
+    NotifierProvider<LastPlayedGameNotifier, String>(
+  LastPlayedGameNotifier.new,
+);
+
+/// Provider resolving the full [GameMetadata] for the user's last played game mode.
+final lastPlayedGameProvider = Provider<GameMetadata>((ref) {
+  final allGames = ref.watch(allGamesProvider);
+  final lastId = ref.watch(lastPlayedGameIdProvider);
+  return allGames.firstWhere(
+    (game) => game.id == lastId,
+    orElse: () => allGames.firstWhere(
+      (game) => game.id == 'scoreline',
+      orElse: () => allGames.first,
+    ),
+  );
+});
+
 /// Category filter state notifier.
 class GameCategoryNotifier extends Notifier<String> {
   @override
@@ -146,4 +202,32 @@ final filteredGamesProvider = Provider<List<GameMetadata>>((ref) {
   }
   return allGames.where((game) => game.category == category).toList();
 });
+
+/// Layout modes for the Games screen (List vs 2-column Grid).
+enum GamesViewLayout {
+  list,
+  grid,
+}
+
+/// Layout mode state notifier.
+class GamesViewLayoutNotifier extends Notifier<GamesViewLayout> {
+  @override
+  GamesViewLayout build() => GamesViewLayout.list;
+
+  void setLayout(GamesViewLayout layout) {
+    state = layout;
+  }
+
+  void toggle() {
+    state = state == GamesViewLayout.list
+        ? GamesViewLayout.grid
+        : GamesViewLayout.list;
+  }
+}
+
+/// Provider for current layout mode.
+final gamesViewLayoutProvider =
+    NotifierProvider<GamesViewLayoutNotifier, GamesViewLayout>(
+  GamesViewLayoutNotifier.new,
+);
 

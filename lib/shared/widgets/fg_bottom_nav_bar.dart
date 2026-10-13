@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../core/constants/app_colors.dart';
 
 /// Application-wide bottom navigation bar for FootyGen.
@@ -94,7 +95,7 @@ class FGBottomNavBar extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             label,
-            style: TextStyle(
+            style: GoogleFonts.outfit(
               fontSize: 11,
               fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
               color: color,

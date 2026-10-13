@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/asset_paths.dart';
 
@@ -13,7 +14,7 @@ class ScoutsDuelBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       child: Container(
         height: 126,
         decoration: BoxDecoration(
@@ -101,13 +102,13 @@ class ScoutsDuelBanner extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           RichText(
-                            text: const TextSpan(
-                              style: TextStyle(
+                            text: TextSpan(
+                              style: GoogleFonts.outfit(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: -0.3,
                               ),
-                              children: [
+                              children: const [
                                 TextSpan(
                                   text: "Scout's ",
                                   style: TextStyle(color: AppColors.textPrimary),
@@ -120,9 +121,9 @@ class ScoutsDuelBanner extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 2),
-                          const Text(
+                          Text(
                             'Play AI or a friend',
-                            style: TextStyle(
+                            style: GoogleFonts.outfit(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
@@ -147,17 +148,17 @@ class ScoutsDuelBanner extends StatelessWidget {
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
-                                children: const [
+                                children: [
                                   Text(
                                     'Play Now',
-                                    style: TextStyle(
+                                    style: GoogleFonts.outfit(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w800,
                                       color: AppColors.textPrimary,
                                     ),
                                   ),
-                                  SizedBox(width: 5),
-                                  Icon(
+                                  const SizedBox(width: 5),
+                                  const Icon(
                                     Icons.arrow_forward_ios_rounded,
                                     size: 10,
                                     color: AppColors.trophyGold,

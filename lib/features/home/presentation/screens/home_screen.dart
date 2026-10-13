@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/router/app_routes.dart';
+import '../../../games/common/presentation/controllers/games_controller.dart';
 import '../widgets/featured_challenge_card.dart';
 import '../widgets/home_bottom_nav_bar.dart';
 import '../widgets/home_stats_ribbon.dart';
@@ -10,14 +12,14 @@ import '../widgets/home_top_bar.dart';
 import '../widgets/quick_play_section.dart';
 import '../widgets/scouts_duel_banner.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _navIndex = 0;
 
   void _showSnack(String message) {
@@ -32,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final lastPlayedGame = ref.watch(lastPlayedGameProvider);
+
     return Scaffold(
       backgroundColor: AppColors.pitchBlack,
       body: Stack(
@@ -84,10 +88,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: SizedBox(height: 6),
                 ),
 
-                // Featured Card (Today's Challenge: Football Matrix with 3x3 Preview)
+                // Last Played Card (resumes the game mode the user was last playing)
                 SliverToBoxAdapter(
                   child: FeaturedChallengeCard(
-                    onContinue: () => _showSnack('Launching Football Matrix Daily Challenge...'),
+                    onContinue: () {
+                      if (lastPlayedGame.routePath == AppRoutes.scoreline) {
+                        context.push(AppRoutes.scoreline);
+                      } else {
+                        _showSnack('Resuming ${lastPlayedGame.title}...');
+                      }
+                    },
                   ),
                 ),
 
@@ -99,14 +109,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 SliverToBoxAdapter(
                   child: QuickPlaySection(
                     onSeeAll: () => context.push(AppRoutes.games),
-                    onSelectMode: (mode) => _showSnack('Selected mode: $mode'),
+                    onSelectMode: (mode) {
+                      ref
+                          .read(lastPlayedGameIdProvider.notifier)
+                          .setLastPlayed(mode);
+                      _showSnack('Selected mode: $mode');
+                    },
                   ),
                 ),
 
                 // Scout's Duel Wide Banner Card
                 SliverToBoxAdapter(
                   child: ScoutsDuelBanner(
-                    onPlayNow: () => _showSnack("Launching Scout's Duel..."),
+                    onPlayNow: () {
+                      ref
+                          .read(lastPlayedGameIdProvider.notifier)
+                          .setLastPlayed('scouts_duel');
+                      _showSnack("Launching Scout's Duel...");
+                    },
                   ),
                 ),
 

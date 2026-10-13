@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class HomeStatsRibbon extends StatelessWidget {
@@ -31,10 +32,10 @@ class HomeStatsRibbon extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       Text(
                         '7 Day',
-                        style: TextStyle(
+                        style: GoogleFonts.outfit(
                           fontSize: 13,
                           fontWeight: FontWeight.w800,
                           color: AppColors.textPrimary,
@@ -43,7 +44,7 @@ class HomeStatsRibbon extends StatelessWidget {
                       ),
                       Text(
                         'Streak',
-                        style: TextStyle(
+                        style: GoogleFonts.outfit(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textSecondary,
@@ -70,13 +71,13 @@ class HomeStatsRibbon extends StatelessWidget {
                   CustomPaint(
                     size: const Size(26, 26),
                     painter: _HexagonBadgePainter(),
-                    child: const SizedBox(
+                    child: SizedBox(
                       width: 26,
                       height: 26,
                       child: Center(
                         child: Text(
                           '12',
-                          style: TextStyle(
+                          style: GoogleFonts.outfit(
                             fontSize: 10,
                             fontWeight: FontWeight.w900,
                             color: AppColors.textPrimary,
@@ -92,9 +93,9 @@ class HomeStatsRibbon extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RichText(
-                          text: const TextSpan(
-                            style: TextStyle(fontSize: 13, height: 1.1),
-                            children: [
+                          text: TextSpan(
+                            style: GoogleFonts.outfit(fontSize: 13, height: 1.1),
+                            children: const [
                               TextSpan(
                                 text: 'Level ',
                                 style: TextStyle(
@@ -174,9 +175,9 @@ class HomeStatsRibbon extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       RichText(
-                        text: const TextSpan(
-                          style: TextStyle(fontSize: 13, height: 1.1),
-                          children: [
+                        text: TextSpan(
+                          style: GoogleFonts.outfit(fontSize: 13, height: 1.1),
+                          children: const [
                             TextSpan(
                               text: '1,240 ',
                               style: TextStyle(
@@ -195,9 +196,9 @@ class HomeStatsRibbon extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Text(
+                      Text(
                         'to Level 13',
-                        style: TextStyle(
+                        style: GoogleFonts.outfit(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textSecondary,

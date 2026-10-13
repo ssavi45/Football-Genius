@@ -4,6 +4,8 @@ class AssetPaths {
   // Branding & Backgrounds
   static const String logo = 'assets/images/branding/foot_gen.png';
   static const String stadiumBg = 'assets/images/backgrounds/stadium_bg.jpg';
+  static const String uclCampNouBanner = 'assets/images/backgrounds/ucl_camp_nou_banner.jpg';
+  static const String matchStadiumBanner = 'assets/images/backgrounds/match_stadium_banner.jpg';
 
   // Game Mode Icons
   static const String iconScorelineHero = 'assets/icons/scoreline_hero.png';
@@ -26,6 +28,10 @@ class AssetPaths {
   static const String cardJourneyman = 'assets/images/cards/journeyman_art.png';
   static const String cardFootballMatrix = 'assets/images/cards/football_matrix_art.png';
 
+  // Feature Illustrations
+  static const String matchDramaMoment = 'assets/images/illustrations/match_drama_moment.png';
+  static const String goldenTriviaTrophy = 'assets/images/illustrations/golden_trivia_trophy.png';
+
   // Achievement / Metric Icons
   static const String iconBallonDor = 'assets/icons/balon_dor_winner.png';
   static const String iconWorldCup = 'assets/icons/world_cup_winner.png';
@@ -46,6 +52,7 @@ class AssetPaths {
   static const String countryFrance = 'assets/images/countries/france.png';
   static const String countryBrazil = 'assets/images/countries/brazil.png';
   static const String tournamentEpl = 'assets/images/tournaments/epl.png';
+  static const String defaultTournament = 'assets/images/tournaments/default_tournament.png';
 
   // Subdirectories
   static const String countriesDir = 'assets/images/countries/';
