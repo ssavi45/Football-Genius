@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GAME_MODES } from '@/lib/constants/game-modes';
+import { sound } from '@/lib/utils/sound';
 import {
   Home,
   Trophy,
@@ -62,7 +63,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={onClose}
+                  onMouseEnter={() => sound.playHover()}
+                  onClick={() => {
+                    sound.playClick();
+                    onClose();
+                  }}
                   className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
                     isActive
                       ? 'bg-neon-green/15 text-neon-green border border-neon-green/30 shadow-neon'
@@ -92,7 +97,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <Link
                   key={mode.id}
                   href={mode.route}
-                  onClick={onClose}
+                  onMouseEnter={() => sound.playHover()}
+                  onClick={() => {
+                    sound.playClick();
+                    onClose();
+                  }}
                   className={`group flex items-center justify-between px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                     isActive
                       ? 'bg-white/10 text-white border border-white/20'

@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAuth } from '@/context/auth-context';
-import { Flame, Zap, Volume2, VolumeX, Menu, X, LogIn, User } from 'lucide-react';
+import { sound } from '@/lib/utils/sound';
+import { Flame, Zap, Volume2, VolumeX, Menu, X, LogIn, User, Circle } from 'lucide-react';
 
 interface TopBarProps {
   onToggleMobileMenu?: () => void;
@@ -54,18 +55,24 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
         <nav className="hidden md:flex items-center gap-1.5 bg-pitch-card/60 p-1 rounded-full border border-white/5">
           <Link
             href="/"
+            onMouseEnter={() => sound.playHover()}
+            onClick={() => sound.playClick()}
             className="px-4 py-1.5 rounded-full text-xs font-bold text-white bg-white/10 hover:bg-white/15 transition shadow-sm"
           >
             Arena
           </Link>
           <Link
             href="/leaderboard"
+            onMouseEnter={() => sound.playHover()}
+            onClick={() => sound.playClick()}
             className="px-4 py-1.5 rounded-full text-xs font-bold text-text-secondary hover:text-white hover:bg-white/5 transition"
           >
             Leaderboard
           </Link>
           <Link
             href="/games/scoreline"
+            onMouseEnter={() => sound.playHover()}
+            onClick={() => sound.playClick()}
             className="px-4 py-1.5 rounded-full text-xs font-bold text-neon-green hover:bg-neon-green/10 transition flex items-center gap-1"
           >
             <span className="relative flex h-2 w-2">
