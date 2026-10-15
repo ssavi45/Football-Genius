@@ -3,22 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { GAME_MODES } from '@/lib/constants/game-modes';
 import { sound } from '@/lib/utils/sound';
 import {
-  Home,
+  Gamepad2,
   Trophy,
-  User,
-  Sparkles,
-  Grid3X3,
-  Swords,
-  PlaneTakeoff,
-  TrendingUp,
-  MessageSquareQuote,
-  Shuffle,
-  Eye,
-  ChevronRight,
-  ShieldAlert,
+  BarChart2,
+  Users2,
+  ShieldCheck,
+  Settings,
+  X,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -26,131 +19,66 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-// Icon mapper for dynamic game mode icon rendering
-const ICON_MAP: Record<string, React.ElementType> = {
-  Sparkles,
-  Grid3X3,
-  Swords,
-  PlaneTakeoff,
-  TrendingUp,
-  MessageSquareQuote,
-  Shuffle,
-  Eye,
-};
-
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
 
-  const mainLinks = [
-    { label: 'Arena Home', href: '/', icon: Home },
-    { label: 'Leaderboard', href: '/leaderboard', icon: Trophy },
-    { label: 'My Career & Stats', href: '/profile', icon: User },
+  const navItems = [
+    { label: 'Play Game', href: '/', icon: Gamepad2, activePattern: pathname === '/' || pathname.startsWith('/games') },
+    { label: 'Leaderboard', href: '/leaderboard', icon: Trophy, activePattern: pathname === '/leaderboard' },
+    { label: 'My Stats', href: '/profile', icon: BarChart2, activePattern: pathname === '/profile' },
+    { label: 'Challenges', href: '/games/scouts-duel', icon: Users2, activePattern: pathname === '/games/scouts-duel' },
+    { label: 'Achievements', href: '/profile#badges', icon: ShieldCheck, activePattern: false },
+    { label: 'Settings', href: '/profile#settings', icon: Settings, activePattern: false },
   ];
 
   const content = (
-    <div className="h-full flex flex-col justify-between p-4 overflow-y-auto scrollbar-thin">
-      <div>
-        {/* Main Nav */}
-        <div className="mb-6">
-          <p className="px-3 text-[10px] font-black uppercase tracking-widest text-text-muted mb-2 font-outfit">
-            Menu
-          </p>
-          <div className="space-y-1">
-            {mainLinks.map(link => {
-              const Icon = link.icon;
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onMouseEnter={() => sound.playHover()}
-                  onClick={() => {
-                    sound.playClick();
-                    onClose();
-                  }}
-                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                    isActive
-                      ? 'bg-neon-green/15 text-neon-green border border-neon-green/30 shadow-neon'
-                      : 'text-text-secondary hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  <Icon className={`h-4 w-4 ${isActive ? 'text-neon-green' : 'text-text-muted'}`} />
-                  <span>{link.label}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+    <div className="h-full flex flex-col justify-between p-4">
+      {/* Nav Items */}
+      <div className="space-y-2">
+        {navItems.map(item => {
+          const Icon = item.icon;
+          const isActive = item.activePattern;
 
-        {/* Game Modes */}
-        <div>
-          <div className="flex items-center justify-between px-3 mb-2">
-            <p className="text-[10px] font-black uppercase tracking-widest text-text-muted font-outfit">
-              Game Modes ({GAME_MODES.length})
-            </p>
-          </div>
-          <div className="space-y-1">
-            {GAME_MODES.map(mode => {
-              const Icon = ICON_MAP[mode.iconName] || Sparkles;
-              const isActive = pathname === mode.route;
-              return (
-                <Link
-                  key={mode.id}
-                  href={mode.route}
-                  onMouseEnter={() => sound.playHover()}
-                  onClick={() => {
-                    sound.playClick();
-                    onClose();
-                  }}
-                  className={`group flex items-center justify-between px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
-                    isActive
-                      ? 'bg-white/10 text-white border border-white/20'
-                      : 'text-text-secondary hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <div
-                      className="p-1.5 rounded-lg transition-transform group-hover:scale-110"
-                      style={{
-                        backgroundColor: `${mode.accentColor}15`,
-                        color: mode.accentColor,
-                      }}
-                    >
-                      <Icon className="h-3.5 w-3.5" />
-                    </div>
-                    <span className="truncate">{mode.title}</span>
-                  </div>
-
-                  <span
-                    className={`text-[9px] px-1.5 py-0.5 rounded font-black tracking-wide ${
-                      mode.badge === 'DAILY'
-                        ? 'bg-neon-green/15 text-neon-green'
-                        : mode.badge === 'PVP'
-                        ? 'bg-rose-500/15 text-rose-400'
-                        : mode.badge === 'HOT'
-                        ? 'bg-amber-500/15 text-amber-400'
-                        : 'bg-white/10 text-text-muted'
-                    }`}
-                  >
-                    {mode.badge}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+          return (
+            <Link
+              key={item.label}
+              href={item.href}
+              onMouseEnter={() => sound.playHover()}
+              onClick={() => {
+                sound.playClick();
+                onClose();
+              }}
+              className={`flex items-center gap-3.5 px-4 py-3 rounded-2xl text-xs font-extrabold transition-all duration-200 ${
+                isActive
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 scale-[1.02]'
+                  : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50/70'
+              }`}
+            >
+              <Icon className={`h-4 w-4 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-blue-600'}`} />
+              <span className="tracking-tight">{item.label}</span>
+            </Link>
+          );
+        })}
       </div>
 
-      {/* Footer Pill */}
-      <div className="pt-4 border-t border-white/10 mt-6">
-        <div className="rounded-xl bg-pitch-card p-3 border border-white/5">
-          <div className="flex items-center gap-2 text-neon-green text-xs font-bold mb-1">
-            <ShieldAlert className="h-3.5 w-3.5" />
-            <span>Fair Play Verified</span>
-          </div>
-          <p className="text-[11px] text-text-muted leading-tight">
-            Daily reset at 00:00 UTC. Guaranteed no duplicates.
+      {/* Bottom Quote & Watermark (Matching Mockup) */}
+      <div className="relative pt-6 border-t border-blue-50/80 mt-6 select-none overflow-hidden">
+        {/* Subtle Watermark Starball Graphic */}
+        <div className="absolute -bottom-6 -left-6 opacity-[0.06] text-blue-900 pointer-events-none">
+          <svg className="w-36 h-36" viewBox="0 0 100 100" fill="currentColor">
+            <polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 space-y-2">
+          <p className="text-sm font-semibold font-outfit text-blue-900/60 italic leading-snug">
+            Great<br />
+            football<br />
+            minds<br />
+            predict<br />
+            the future.
           </p>
+          <div className="w-8 h-1 rounded-full bg-blue-600" />
         </div>
       </div>
     </div>
@@ -158,19 +86,29 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Desktop Sticky Sidebar */}
-      <aside className="hidden lg:block w-64 shrink-0 border-r border-white/10 bg-pitch-dark/60 backdrop-blur-md sticky top-16 h-[calc(100vh-4rem)]">
-        {content}
+      {/* Desktop Floating Sidebar Card */}
+      <aside className="hidden lg:block w-56 shrink-0 py-6 pl-4 sm:pl-6">
+        <div className="card-white rounded-3xl p-2 sticky top-24 h-[calc(100vh-8rem)] flex flex-col justify-between shadow-sm border border-blue-100/80">
+          {content}
+        </div>
       </aside>
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
             onClick={onClose}
           />
-          <div className="relative w-72 max-w-[80vw] h-full bg-pitch-dark border-r border-white/10 shadow-2xl z-10 animate-slideRight">
+          <div className="relative w-64 max-w-[80vw] h-full bg-white shadow-2xl z-10 p-2 animate-slideRight">
+            <div className="flex justify-end p-2">
+              <button
+                onClick={onClose}
+                className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
             {content}
           </div>
         </div>
@@ -178,4 +116,3 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     </>
   );
 }
-

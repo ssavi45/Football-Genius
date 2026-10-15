@@ -55,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${orbitron.variable} ${bebas.variable}`}>
-      <body className="bg-pitch-black text-white antialiased selection:bg-neon-green selection:text-pitch-black min-h-screen">
+      <body className="bg-[#F1F6FD] text-slate-900 antialiased selection:bg-blue-600 selection:text-white min-h-screen">
         <AuthProvider>
           <AppShell>{children}</AppShell>
         </AuthProvider>

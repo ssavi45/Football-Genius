@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #050B07;
-  --foreground: #FFFFFF;
+  --background: #F1F6FD;
+  --foreground: #0F172A;
 }
 
 body {
   color: var(--foreground);
   background-color: var(--background);
-  background-image: radial-gradient(circle at 50% 0%, rgba(46, 253, 114, 0.05) 0%, transparent 45%),
-                    radial-gradient(circle at 100% 100%, rgba(255, 199, 44, 0.03) 0%, transparent 40%);
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(0, 102, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(0, 212, 255, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(0, 102, 255, 0.04) 0%, transparent 50%);
   min-height: 100vh;
   font-family: var(--font-outfit), system-ui, sans-serif;
   overflow-x: hidden;
@@ -24,62 +26,89 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050B07;
+  background: #F1F6FD;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #193822;
+  background: #CBD5E1;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2EFD72;
+  background: #0066FF;
 }
 
-/* Glassmorphism */
-.glass-panel {
-  background: rgba(13, 30, 19, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Crisp White Card & Glassmorphic Utilities */
+.card-white {
+  background: #FFFFFF;
+  border: 1px solid rgba(219, 234, 254, 0.8);
+  box-shadow: 0 10px 30px -5px rgba(0, 82, 204, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
 }
 
-.glass-card {
-  background: linear-gradient(135deg, rgba(13, 30, 19, 0.8) 0%, rgba(8, 20, 12, 0.9) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.card-white-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-white-hover:hover {
+  border-color: rgba(0, 102, 255, 0.3);
+  box-shadow: 0 16px 36px -6px rgba(0, 102, 255, 0.12), 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
 }
 
-/* Text Gradients */
-.text-gradient-neon {
-  background: linear-gradient(135deg, #2EFD72 0%, #00FF87 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Metallic Scoreboard Bevel & Texture */
+.scoreboard-chassis {
+  background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 25%, #CBD5E1 50%, #94A3B8 100%);
+  box-shadow: 
+    0 12px 30px rgba(15, 23, 42, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9),
+    inset 0 -3px 6px rgba(15, 23, 42, 0.3);
+  border: 2px solid #E2E8F0;
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #FFC72C 0%, #F59E0B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.scoreboard-display-bezel {
+  background: linear-gradient(180deg, #090E17 0%, #111827 100%);
+  box-shadow: 
+    inset 0 3px 8px rgba(0, 0, 0, 0.9),
+    0 1px 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid #1E293B;
+}
+
+/* Digital Dot-Matrix / LED Digit Glows */
+.digit-red-glow {
+  color: #FF2A4B;
+  text-shadow: 
+    0 0 12px rgba(255, 42, 75, 0.9),
+    0 0 24px rgba(255, 42, 75, 0.6),
+    0 0 36px rgba(255, 42, 75, 0.3);
+}
+
+.digit-blue-glow {
+  color: #38BDF8;
+  text-shadow: 
+    0 0 12px rgba(56, 189, 248, 0.9),
+    0 0 24px rgba(0, 102, 255, 0.7),
+    0 0 36px rgba(0, 102, 255, 0.4);
+}
+
+.led-green-glow {
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981, 0 0 14px rgba(16, 185, 129, 0.8);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.97); }
+  from { opacity: 0; transform: scale(0.98); }
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes slideRight {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-slideRight {
-  animation: slideRight 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-pulseGlow {
+  animation: pulseGlow 2s ease-in-out infinite;
 }
-

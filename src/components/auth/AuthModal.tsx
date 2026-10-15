@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useAuth } from '@/context/auth-context';
+import { sound } from '@/lib/utils/sound';
 import { X, Trophy, Flame, Zap, Shield, Check } from 'lucide-react';
 
 export default function AuthModal() {
@@ -19,11 +20,13 @@ export default function AuthModal() {
     await updateUsername(nickname);
     setIsSubmitting(false);
     setIsSaved(true);
+    sound.playSuccess();
     setTimeout(() => setIsSaved(false), 2000);
   };
 
   const handleGoogleSignIn = async () => {
     try {
+      sound.playClick();
       await signInWithGoogle();
     } catch (e) {
       console.error(e);
@@ -31,19 +34,18 @@ export default function AuthModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md animate-fadeIn">
       <div
-        className="relative w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-pitch-dark/95 p-6 shadow-2xl shadow-neon-green/10"
+        className="relative w-full max-w-md overflow-hidden rounded-3xl border border-blue-100 bg-white p-7 shadow-2xl shadow-blue-950/15"
         onClick={e => e.stopPropagation()}
       >
-        {/* Glow ambient background */}
-        <div className="absolute -top-24 -left-24 h-48 w-48 rounded-full bg-neon-green/15 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-trophy-gold/15 blur-3xl pointer-events-none" />
+        {/* Ambient Top Glow */}
+        <div className="absolute -top-24 -left-24 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
 
-        {/* Close button */}
+        {/* Close Button */}
         <button
           onClick={closeAuthModal}
-          className="absolute top-4 right-4 rounded-full p-2 text-text-secondary hover:bg-white/10 hover:text-white transition"
+          className="absolute top-5 right-5 rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition"
           aria-label="Close modal"
         >
           <X className="h-5 w-5" />
@@ -51,22 +53,22 @@ export default function AuthModal() {
 
         {/* Header */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-neon-green/10 border border-neon-green/30 text-neon-green mb-3">
+          <div className="inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-blue-50 border border-blue-200 text-blue-600 mb-3">
             <Trophy className="h-6 w-6" />
           </div>
-          <h2 className="text-2xl font-extrabold text-white font-outfit tracking-tight">
-            Join FootyGen Arena
+          <h2 className="text-2xl font-black text-slate-900 font-outfit tracking-tight">
+            Football Genius Profile
           </h2>
-          <p className="text-sm text-text-secondary mt-1">
-            Compete on the global leaderboard & save your stats
+          <p className="text-xs text-slate-500 mt-1">
+            Save your match streaks & compete on the global leaderboard
           </p>
         </div>
 
         {/* Guest Nickname Quick Edit */}
         {profile.is_guest && (
-          <div className="mb-6 p-4 rounded-xl bg-pitch-card border border-white/10">
-            <label className="block text-xs font-semibold text-text-secondary uppercase tracking-wider mb-2">
-              Playing as Guest Nickname
+          <div className="mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
+              Playing as Scout Handle
             </label>
             <form onSubmit={handleUpdateNickname} className="flex gap-2">
               <input
@@ -74,15 +76,15 @@ export default function AuthModal() {
                 value={nickname}
                 onChange={e => setNickname(e.target.value)}
                 maxLength={20}
-                className="flex-1 px-3 py-2 rounded-lg bg-pitch-black border border-white/15 text-white text-sm focus:outline-none focus:border-neon-green transition"
-                placeholder="Enter scout handle"
+                className="flex-1 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-900 text-sm font-semibold focus:outline-none focus:border-blue-600 transition"
+                placeholder="Enter handle"
               />
               <button
                 type="submit"
                 disabled={isSubmitting || nickname === profile.username}
-                className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-semibold disabled:opacity-40 transition flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold disabled:opacity-40 transition flex items-center gap-1 shadow-sm"
               >
-                {isSaved ? <Check className="h-4 w-4 text-neon-green" /> : 'Save'}
+                {isSaved ? <Check className="h-4 w-4 text-white" /> : 'Save'}
               </button>
             </form>
           </div>
@@ -92,9 +94,9 @@ export default function AuthModal() {
         <div className="space-y-3 mb-6">
           <button
             onClick={handleGoogleSignIn}
-            className="w-full flex items-center justify-center gap-3 py-3.5 px-4 rounded-xl bg-white hover:bg-neutral-100 text-neutral-900 font-bold font-outfit text-sm transition shadow-lg shadow-white/5 active:scale-[0.98]"
+            className="w-full flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold font-outfit text-sm transition shadow-lg shadow-slate-900/10 active:scale-[0.98]"
           >
-            <svg className="h-5 w-5" viewBox="0 0 24 24">
+            <svg className="h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="#4285F4"
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -112,30 +114,29 @@ export default function AuthModal() {
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
               />
             </svg>
-            Continue with Google
+            Sign in with Google
           </button>
         </div>
 
         {/* Feature Highlights */}
-        <div className="grid grid-cols-3 gap-2 pt-4 border-t border-white/10 text-center">
-          <div className="p-2 rounded-lg bg-white/[0.03]">
-            <Flame className="h-4 w-4 text-orange-400 mx-auto mb-1" />
-            <div className="text-[11px] font-bold text-white">Daily Streaks</div>
-            <div className="text-[10px] text-text-muted">Keep progress</div>
+        <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center">
+          <div className="p-2 rounded-xl bg-slate-50">
+            <Flame className="h-4 w-4 text-orange-500 mx-auto mb-1" />
+            <div className="text-[11px] font-bold text-slate-800">Streaks</div>
+            <div className="text-[10px] text-slate-400">Save progress</div>
           </div>
-          <div className="p-2 rounded-lg bg-white/[0.03]">
-            <Zap className="h-4 w-4 text-neon-green mx-auto mb-1" />
-            <div className="text-[11px] font-bold text-white">Live Duels</div>
-            <div className="text-[10px] text-text-muted">1v1 Real-time</div>
+          <div className="p-2 rounded-xl bg-slate-50">
+            <Zap className="h-4 w-4 text-blue-600 mx-auto mb-1" />
+            <div className="text-[11px] font-bold text-slate-800">Live Duels</div>
+            <div className="text-[10px] text-slate-400">1v1 Lobbies</div>
           </div>
-          <div className="p-2 rounded-lg bg-white/[0.03]">
-            <Shield className="h-4 w-4 text-trophy-gold mx-auto mb-1" />
-            <div className="text-[11px] font-bold text-white">Verified Rank</div>
-            <div className="text-[10px] text-text-muted">Hall of Fame</div>
+          <div className="p-2 rounded-xl bg-slate-50">
+            <Shield className="h-4 w-4 text-amber-500 mx-auto mb-1" />
+            <div className="text-[11px] font-bold text-slate-800">Ranks</div>
+            <div className="text-[10px] text-slate-400">Hall of Fame</div>
           </div>
         </div>
       </div>
     </div>
   );
 }
-

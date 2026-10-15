@@ -9,7 +9,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-pitch-black">
+    <div className="min-h-screen flex flex-col bg-[#F1F6FD] text-slate-900">
       {/* Top Bar is fixed at the top */}
       <TopBar
         isMobileMenuOpen={mobileMenuOpen}
