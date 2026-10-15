@@ -1,0 +1,446 @@
+[
+  {
+    "id": "messi",
+    "name": "Lionel Messi",
+    "image": "img/players/messi.jpg",
+    "stats": {
+      "careerGoals": 879,
+      "careerTrophies": 44,
+      "marketValue": 30,
+      "transfer": { "from": "Barcelona", "to": "PSG", "fee": 0 }
+    }
+  },
+  {
+    "id": "ronaldo",
+    "name": "Cristiano Ronaldo",
+    "image": "img/players/ronaldo.jpg",
+    "stats": {
+      "careerGoals": 942,
+      "careerTrophies": 35,
+      "marketValue": 20,
+      "transfer": { "from": "Real Madrid", "to": "Juventus", "fee": 100 }
+    }
+  },
+  {
+    "id": "mbappe",
+    "name": "Kylian Mbappé",
+    "image": "img/players/mbappe.jpg",
+    "stats": {
+      "careerGoals": 300,
+      "careerTrophies": 19,
+      "marketValue": 200,
+      "transfer": { "from": "Monaco", "to": "PSG", "fee": 180 }
+    }
+  },
+  {
+    "id": "haaland",
+    "name": "Erling Haaland",
+    "image": "img/players/haaland.jpg",
+    "stats": {
+      "careerGoals": 230,
+      "careerTrophies": 12,
+      "marketValue": 180,
+      "transfer": { "from": "Borussia Dortmund", "to": "Manchester City", "fee": 63 }
+    }
+  },
+  {
+    "id": "bellingham",
+    "name": "Jude Bellingham",
+    "image": "img/players/bellingham.jpg",
+    "stats": {
+      "careerGoals": 80,
+      "careerTrophies": 5,
+      "marketValue": 165,
+      "transfer": { "from": "Borussia Dortmund", "to": "Real Madrid", "fee": 103 }
+    }
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "image": "img/players/neymar.jpg",
+    "stats": {
+      "careerGoals": 450,
+      "careerTrophies": 32,
+      "marketValue": 70,
+      "transfer": { "from": "Barcelona", "to": "PSG", "fee": 222 }
+    }
+  },
+  {
+    "id": "lewandowski",
+    "name": "Robert Lewandowski",
+    "image": "img/players/lewandowski.jpg",
+    "stats": {
+      "careerGoals": 640,
+      "careerTrophies": 29,
+      "marketValue": 30,
+      "transfer": { "from": "Bayern Munich", "to": "Barcelona", "fee": 45 }
+    }
+  },
+  {
+    "id": "benzema",
+    "name": "Karim Benzema",
+    "image": "img/players/benzema.jpg",
+    "stats": {
+      "careerGoals": 450,
+      "careerTrophies": 33,
+      "marketValue": 15,
+      "transfer": { "from": "Lyon", "to": "Real Madrid", "fee": 35 }
+    }
+  },
+  {
+    "id": "modric",
+    "name": "Luka Modrić",
+    "image": "img/players/modric.jpg",
+    "stats": {
+      "careerGoals": 40,
+      "careerTrophies": 27,
+      "marketValue": 8,
+      "transfer": { "from": "Tottenham", "to": "Real Madrid", "fee": 30 }
+    }
+  },
+  {
+    "id": "bruyne",
+    "name": "Kevin De Bruyne",
+    "image": "img/players/bruyne.jpg",
+    "stats": {
+      "careerGoals": 170,
+      "careerTrophies": 22,
+      "marketValue": 60,
+      "transfer": { "from": "Wolfsburg", "to": "Manchester City", "fee": 75 }
+    }
+  },
+  {
+    "id": "zlatan",
+    "name": "Zlatan Ibrahimović",
+    "image": "img/players/zlatan.jpg",
+    "stats": {
+      "careerGoals": 570,
+      "careerTrophies": 34,
+      "marketValue": 5,
+      "transfer": { "from": "Inter", "to": "Barcelona", "fee": 69 }
+    }
+  },
+  {
+    "id": "rooney",
+    "name": "Wayne Rooney",
+    "image": "img/players/rooney.jpg",
+    "stats": {
+      "careerGoals": 400,
+      "careerTrophies": 21,
+      "marketValue": 2,
+      "transfer": { "from": "Everton", "to": "Manchester United", "fee": 27 }
+    }
+  },
+  {
+    "id": "henry",
+    "name": "Thierry Henry",
+    "image": "img/players/henry.jpg",
+    "stats": {
+      "careerGoals": 411,
+      "careerTrophies": 25,
+      "marketValue": 1,
+      "transfer": { "from": "Arsenal", "to": "Barcelona", "fee": 24 }
+    }
+  },
+  {
+    "id": "drogba",
+    "name": "Didier Drogba",
+    "image": "img/players/drogba.jpg",
+    "stats": {
+      "careerGoals": 300,
+      "careerTrophies": 19,
+      "marketValue": 1,
+      "transfer": { "from": "Marseille", "to": "Chelsea", "fee": 24 }
+    }
+  },
+  {
+    "id": "lampard",
+    "name": "Frank Lampard",
+    "image": "img/players/lampard.jpg",
+    "stats": {
+      "careerGoals": 303,
+      "careerTrophies": 13,
+      "marketValue": 1,
+      "transfer": { "from": "West Ham", "to": "Chelsea", "fee": 11 }
+    }
+  },
+  {
+    "id": "salah",
+    "name": "Mohamed Salah",
+    "image": "img/players/salah.jpg",
+    "stats": {
+      "careerGoals": 330,
+      "careerTrophies": 10,
+      "marketValue": 70,
+      "transfer": { "from": "Roma", "to": "Liverpool", "fee": 42 }
+    }
+  },
+  {
+    "id": "kane",
+    "name": "Harry Kane",
+    "image": "img/players/kane.jpg",
+    "stats": {
+      "careerGoals": 400,
+      "careerTrophies": 10,
+      "marketValue": 110,
+      "transfer": { "from": "Tottenham", "to": "Bayern Munich", "fee": 100 }
+    }
+  },
+  {
+    "id": "vinicius",
+    "name": "Vinícius Júnior",
+    "image": "img/players/vinicius.jpg",
+    "stats": {
+      "careerGoals": 150,
+      "careerTrophies": 13,
+      "marketValue": 180,
+      "transfer": { "from": "Flamengo", "to": "Real Madrid", "fee": 45 }
+    }
+  },
+  {
+    "id": "valverde",
+    "name": "Fede Valverde",
+    "image": "img/players/valverde.jpg",
+    "stats": {
+      "careerGoals": 60,
+      "careerTrophies": 12,
+      "marketValue": 120,
+      "transfer": { "from": "Peñarol", "to": "Real Madrid", "fee": 5 }
+    }
+  },
+  {
+    "id": "rodri",
+    "name": "Rodri",
+    "image": "img/players/rodri.jpg",
+    "stats": {
+      "careerGoals": 45,
+      "careerTrophies": 13,
+      "marketValue": 110,
+      "transfer": { "from": "Atletico Madrid", "to": "Manchester City", "fee": 62 }
+    }
+  },
+  {
+    "id": "bernardo",
+    "name": "Bernardo Silva",
+    "image": "img/players/silva.jpg",
+    "stats": {
+      "careerGoals": 120,
+      "careerTrophies": 20,
+      "marketValue": 70,
+      "transfer": { "from": "Monaco", "to": "Manchester City", "fee": 50 }
+    }
+  },
+  {
+    "id": "foden",
+    "name": "Phil Foden",
+    "image": "img/players/foden.jpg",
+    "stats": {
+      "careerGoals": 110,
+      "careerTrophies": 17,
+      "marketValue": 150
+    }
+  },
+  {
+    "id": "palmer",
+    "name": "Cole Palmer",
+    "image": "img/players/palmer.jpg",
+    "stats": {
+      "careerGoals": 50,
+      "careerTrophies": 2,
+      "marketValue": 95,
+      "transfer": { "from": "Manchester City", "to": "Chelsea", "fee": 45 }
+    }
+  },
+  {
+    "id": "saka",
+    "name": "Bukayo Saka",
+    "image": "img/players/saka.jpg",
+    "stats": {
+      "careerGoals": 90,
+      "careerTrophies": 2,
+      "marketValue": 140
+    }
+  },
+  {
+    "id": "saliba",
+    "name": "William Saliba",
+    "image": "img/players/saliba.jpg",
+    "stats": {
+      "careerGoals": 12,
+      "careerTrophies": 2,
+      "marketValue": 85,
+      "transfer": { "from": "Saint-Étienne", "to": "Arsenal", "fee": 30 }
+    }
+  },
+  {
+    "id": "musiala",
+    "name": "Jamal Musiala",
+    "image": "img/players/musiala.jpg",
+    "stats": {
+      "careerGoals": 65,
+      "careerTrophies": 12,
+      "marketValue": 130
+    }
+  },
+  {
+    "id": "wirtz",
+    "name": "Florian Wirtz",
+    "image": "img/players/wirtz.jpg",
+    "stats": {
+      "careerGoals": 60,
+      "careerTrophies": 4,
+      "marketValue": 150
+    }
+  },
+  {
+    "id": "yamal",
+    "name": "Lamine Yamal",
+    "image": "img/players/yamal.jpg",
+    "stats": {
+      "careerGoals": 20,
+      "careerTrophies": 4,
+      "marketValue": 120
+    }
+  },
+  {
+    "id": "valverde2",
+    "name": "Federico Valverde",
+    "image": "img/players/valverde.jpg",
+    "stats": {
+      "careerGoals": 60,
+      "careerTrophies": 12,
+      "marketValue": 120,
+      "transfer": { "from": "Peñarol", "to": "Real Madrid", "fee": 5 }
+    }
+  },
+  {
+    "id": "kimmich",
+    "name": "Joshua Kimmich",
+    "image": "img/players/kimmich.jpg",
+    "stats": {
+      "careerGoals": 70,
+      "careerTrophies": 20,
+      "marketValue": 55,
+      "transfer": { "from": "Stuttgart", "to": "Bayern Munich", "fee": 7 }
+    }
+  },
+  {
+    "id": "kroos",
+    "name": "Toni Kroos",
+    "image": "img/players/kroos.jpg",
+    "stats": {
+      "careerGoals": 80,
+      "careerTrophies": 32,
+      "marketValue": 6,
+      "transfer": { "from": "Bayern Munich", "to": "Real Madrid", "fee": 25 }
+    }
+  },
+  {
+    "id": "rudiger",
+    "name": "Antonio Rüdiger",
+    "image": "img/players/rudiger.jpg",
+    "stats": {
+      "careerGoals": 30,
+      "careerTrophies": 9,
+      "marketValue": 45,
+      "transfer": { "from": "Chelsea", "to": "Real Madrid", "fee": 0 }
+    }
+  },
+  {
+    "id": "vandijk",
+    "name": "Virgil van Dijk",
+    "image": "img/players/van_dijk.jpg",
+    "stats": {
+      "careerGoals": 60,
+      "careerTrophies": 10,
+      "marketValue": 50,
+      "transfer": { "from": "Southampton", "to": "Liverpool", "fee": 75 }
+    }
+  },
+  {
+    "id": "isak",
+    "name": "Alexander Isak",
+    "image": "img/players/isak.jpg",
+    "stats": {
+      "careerGoals": 120,
+      "careerTrophies": 2,
+      "marketValue": 90,
+      "transfer": { "from": "Real Sociedad", "to": "Newcastle United", "fee": 63 }
+    }
+  },
+  {
+    "id": "raphinha",
+    "name": "Raphinha",
+    "image": "img/players/raphinha.jpg",
+    "stats": {
+      "careerGoals": 90,
+      "careerTrophies": 4,
+      "marketValue": 60,
+      "transfer": { "from": "Leeds United", "to": "Barcelona", "fee": 58 }
+    }
+  },
+  {
+    "id": "dembele",
+    "name": "Ousmane Dembélé",
+    "image": "img/players/dembele.jpg",
+    "stats": {
+      "careerGoals": 90,
+      "careerTrophies": 14,
+      "marketValue": 60,
+      "transfer": { "from": "Borussia Dortmund", "to": "Barcelona", "fee": 105 }
+    }
+  },
+  {
+    "id": "joaoneves",
+    "name": "João Neves",
+    "image": "img/players/joao_neves.jpg",
+    "stats": {
+      "careerGoals": 12,
+      "careerTrophies": 3,
+      "marketValue": 90
+    }
+  },
+  {
+    "id": "vitinha",
+    "name": "Vitinha",
+    "image": "img/players/vitinha.jpg",
+    "stats": {
+      "careerGoals": 25,
+      "careerTrophies": 8,
+      "marketValue": 65,
+      "transfer": { "from": "Porto", "to": "PSG", "fee": 41 }
+    }
+  },
+  {
+    "id": "alisson",
+    "name": "Alisson Becker",
+    "image": "img/players/alisson.jpg",
+    "stats": {
+      "careerGoals": 1,
+      "careerTrophies": 11,
+      "marketValue": 35,
+      "transfer": { "from": "Roma", "to": "Liverpool", "fee": 62 }
+    }
+  },
+  {
+    "id": "rodrygo",
+    "name": "Rodrygo",
+    "image": "img/players/rodrigo.jpg",
+    "stats": {
+      "careerGoals": 100,
+      "careerTrophies": 12,
+      "marketValue": 120,
+      "transfer": { "from": "Santos", "to": "Real Madrid", "fee": 45 }
+    }
+  },
+  {
+    "id": "valverde3",
+    "name": "Federico Valverde",
+    "image": "img/players/valverde.jpg",
+    "stats": {
+      "careerGoals": 60,
+      "careerTrophies": 12,
+      "marketValue": 120
+    }
+  }
+]

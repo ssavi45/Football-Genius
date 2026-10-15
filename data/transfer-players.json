@@ -83,7 +83,7 @@
     "aliases": ["Lewandowski", "Lewa"],
     "clubs": [
       { "label": "Znicz Pruszkow", "logo": "img/teams/znicz_pruszkow.png" },
-      { "label": "Lech Poznan", "logo": "img/teams/lech_poznań.png" },
+      { "label": "Lech Poznan", "logo": "img/teams/lech_poznan.png" },
       { "label": "Borussia Dortmund", "logo": "img/teams/bvb.png" },
       { "label": "Bayern Munich", "logo": "img/teams/bayern.png" },
       { "label": "Barcelona", "logo": "img/teams/fcb.png" }

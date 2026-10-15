@@ -1,2 +1,23 @@
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Flutter / Old builds
+build/
+
+# Vercel & Environment
 .vercel
 .env*.local
+.env
+
+# Misc
+.DS_Store
+*.log
+
+# Misc
+.DS_Store
+*.log
+
