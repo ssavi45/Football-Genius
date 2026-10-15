@@ -12,47 +12,18 @@ class HomeTopBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: Row(
         children: [
-          // Official FootyGen Logo
+          // FootyGen Brand 3D Typography Logo
           Image.asset(
-            AssetPaths.logo,
-            width: 34,
-            height: 34,
+            AssetPaths.footygenLogoText,
+            height: 32,
             fit: BoxFit.contain,
-            errorBuilder: (context, error, stackTrace) => Container(
-              width: 34,
-              height: 34,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.sports_soccer,
-                  size: 28,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 10),
-          // FootyGen Brand text
-          RichText(
-            text: TextSpan(
+            errorBuilder: (context, error, stackTrace) => Text(
+              'FootyGen',
               style: GoogleFonts.outfit(
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: FontWeight.w900,
-                letterSpacing: -0.5,
+                color: AppColors.textPrimary,
               ),
-              children: const [
-                TextSpan(
-                  text: 'Footy',
-                  style: TextStyle(color: AppColors.textPrimary),
-                ),
-                TextSpan(
-                  text: 'Gen',
-                  style: TextStyle(color: AppColors.neonGreen),
-                ),
-              ],
             ),
           ),
           const Spacer(),

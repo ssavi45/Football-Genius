@@ -9,6 +9,7 @@ import 'package:football_genius/features/games/scoreline/presentation/widgets/sc
 import 'package:football_genius/features/games/scoreline/presentation/widgets/scoreline_hint_drawer.dart';
 import 'package:football_genius/features/games/scoreline/presentation/widgets/scoreline_hud.dart';
 import 'package:football_genius/features/games/scoreline/presentation/widgets/scoreline_match_banner.dart';
+import 'package:football_genius/features/games/scoreline/presentation/widgets/scoreline_timeline_reveal.dart';
 
 void main() {
   group('Scoreline Hero Domain & Data Tests', () {
@@ -360,6 +361,67 @@ void main() {
       expect(find.text('SEMI-FINAL'), findsOneWidget);
       // Ensure "SEMI-" is not separated or attached to tournament title
       expect(find.text('UEFA CHAMPIONS LEAGUE SEMI-'), findsNothing);
+    });
+
+    testWidgets('ScorelineTimelineReveal places NEXT ROUND above timeline and toggles breakdown on click',
+        (tester) async {
+      const datasource = ScorelineLocalDatasource();
+      final matches = await datasource.getMatches();
+      final match = matches.first.toEntity();
+
+      final result = ScorelineRoundResult.evaluate(
+        match: match,
+        guessedHome: 0,
+        guessedAway: 0,
+        hintsUsedCount: 0,
+      );
+
+      bool nextClicked = false;
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: ScorelineTimelineReveal(
+                result: result,
+                isLastRound: false,
+                onNext: () => nextClicked = true,
+              ),
+            ),
+          ),
+        ),
+      );
+
+      // 1. Verify top card and breakdown button
+      expect(find.text('WRONG GUESS • 0 PTS'), findsOneWidget);
+      expect(find.byIcon(Icons.receipt_long_rounded), findsOneWidget);
+      expect(find.text('NEXT ROUND'), findsOneWidget);
+      expect(find.text('OFFICIAL GOAL TIMELINE'), findsOneWidget);
+
+      // Points breakdown is hidden initially
+      expect(find.text('POINT BREAKDOWN'), findsNothing);
+
+      // Verify NEXT ROUND button is rendered above OFFICIAL GOAL TIMELINE
+      final nextRoundTop = tester.getTopLeft(find.text('NEXT ROUND')).dy;
+      final timelineTop = tester.getTopLeft(find.text('OFFICIAL GOAL TIMELINE')).dy;
+      expect(nextRoundTop < timelineTop, isTrue);
+
+      // 2. Click icon-only BREAKDOWN button
+      await tester.tap(find.byIcon(Icons.receipt_long_rounded));
+      await tester.pumpAndSettle();
+
+      // Now POINT BREAKDOWN panel is revealed
+      expect(find.text('POINT BREAKDOWN'), findsOneWidget);
+      expect(find.text('0 PTS TOTAL'), findsOneWidget);
+
+      // 3. Click BREAKDOWN button again to collapse
+      await tester.tap(find.byIcon(Icons.receipt_long_rounded));
+      await tester.pumpAndSettle();
+      expect(find.text('POINT BREAKDOWN'), findsNothing);
+
+      // 4. Click NEXT ROUND
+      await tester.tap(find.text('NEXT ROUND'));
+      expect(nextClicked, isTrue);
     });
   });
 }

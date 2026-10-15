@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:football_genius/core/constants/app_colors.dart';
-import 'package:football_genius/core/constants/asset_paths.dart';
+import 'package:football_genius/shared/widgets/dynamic_stadium_background.dart';
 import '../controllers/scoreline_controller.dart';
 import '../controllers/scoreline_state.dart';
 import '../widgets/scoreline_board.dart';
@@ -27,32 +27,9 @@ class ScorelineScreen extends ConsumerWidget {
       backgroundColor: AppColors.pitchBlack,
       body: Stack(
         children: [
-          // Background stadium ambient atmosphere
-          Positioned.fill(
-            child: Opacity(
-              opacity: 0.15,
-              child: Image.asset(
-                AssetPaths.cardScorelineHero,
-                fit: BoxFit.cover,
-                errorBuilder: (_, _, _) => const SizedBox.shrink(),
-              ),
-            ),
-          ),
-
-          // Deep radial pitch gradient
-          Positioned.fill(
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: RadialGradient(
-                  center: Alignment(0, -0.3),
-                  radius: 1.2,
-                  colors: [
-                    Color(0xFF0A2213),
-                    AppColors.pitchBlack,
-                  ],
-                ),
-              ),
-            ),
+          // Dynamic stadium floodlight & emerald gradient background
+          const Positioned.fill(
+            child: DynamicStadiumBackground(),
           ),
 
           // Content body

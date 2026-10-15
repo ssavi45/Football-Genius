@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,29 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _navIndex = 0;
+  late final ScrollController _scrollController;
+  bool _isScrolled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    final scrolled = _scrollController.hasClients && _scrollController.offset > 8;
+    if (scrolled != _isScrolled) {
+      setState(() => _isScrolled = scrolled);
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   void _showSnack(String message) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -40,43 +64,46 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       backgroundColor: AppColors.pitchBlack,
       body: Stack(
         children: [
-          // Background stadium ambient atmosphere
+          // Cinematic stadium wallpaper background
           Positioned.fill(
-            child: Opacity(
-              opacity: 0.12,
-              child: Image.asset(
-                AssetPaths.stadiumBg,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) =>
-                    const SizedBox.shrink(),
-              ),
+            child: Image.asset(
+              AssetPaths.homeStadiumBg,
+              fit: BoxFit.cover,
+              alignment: Alignment.topCenter,
+              errorBuilder: (context, error, stackTrace) =>
+                  const SizedBox.shrink(),
             ),
           ),
-          // Deep pitch gradient overlay
+          // Deep atmospheric gradient overlay for high UI legibility
           Positioned.fill(
             child: Container(
-              decoration: const BoxDecoration(
-                gradient: RadialGradient(
-                  center: Alignment(0, -0.2),
-                  radius: 1.1,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                   colors: [
-                    Color(0xFF0D2514),
-                    AppColors.pitchBlack,
+                    Colors.black.withAlpha(130),
+                    Colors.black.withAlpha(55),
+                    Colors.black.withAlpha(85),
+                    Colors.black.withAlpha(195),
                   ],
+                  stops: const [0.0, 0.22, 0.65, 1.0],
                 ),
               ),
             ),
           ),
 
           // Scrollable Home View
-          SafeArea(
-            bottom: false,
+          Positioned.fill(
             child: CustomScrollView(
+              controller: _scrollController,
               physics: const BouncingScrollPhysics(),
               slivers: [
-                // Top Bar (Brand + Notifications + Avatar)
-                const SliverToBoxAdapter(
-                  child: HomeTopBar(),
+                // Top spacing matching Safe Area top + HomeTopBar height (58)
+                SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: MediaQuery.paddingOf(context).top + 58,
+                  ),
                 ),
 
                 // Gamification Stats Ribbon (7 Day Streak | Level 12 | 1,240 XP)
@@ -108,7 +135,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 // Quick Play Horizontal Section (Higher or Lower | Pixel Pitch | Bootroom Scramble)
                 SliverToBoxAdapter(
                   child: QuickPlaySection(
-                    onSeeAll: () => context.push(AppRoutes.games),
+                    onSeeAll: () {
+                      ref
+                          .read(gamesViewLayoutProvider.notifier)
+                          .setLayout(GamesViewLayout.grid);
+                      context.push(AppRoutes.games);
+                    },
                     onSelectMode: (mode) {
                       ref
                           .read(lastPlayedGameIdProvider.notifier)
@@ -135,6 +167,42 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   child: SizedBox(height: 80),
                 ),
               ],
+            ),
+          ),
+
+          // Fixed Top Section (Brand + Notifications + Avatar)
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: ClipRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: _isScrolled ? 16 : 0,
+                  sigmaY: _isScrolled ? 16 : 0,
+                ),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInOut,
+                  decoration: BoxDecoration(
+                    color: _isScrolled
+                        ? AppColors.pitchBlack.withAlpha(210)
+                        : Colors.transparent,
+                    border: Border(
+                      bottom: BorderSide(
+                        color: _isScrolled
+                            ? Colors.white.withAlpha(18)
+                            : Colors.transparent,
+                        width: 0.8,
+                      ),
+                    ),
+                  ),
+                  child: const SafeArea(
+                    bottom: false,
+                    child: HomeTopBar(),
+                  ),
+                ),
+              ),
             ),
           ),
         ],

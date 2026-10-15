@@ -140,16 +140,27 @@ class FeaturedChallengeCard extends ConsumerWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                _formatTitleTwoLines(game.title),
-                                style: GoogleFonts.outfit(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w900,
-                                  color: AppColors.textPrimary,
-                                  height: 1.05,
-                                  letterSpacing: -0.5,
+                              if (isScoreline)
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 2),
+                                  child: Image.asset(
+                                    AssetPaths.scorelineHeroLogo,
+                                    height: 56,
+                                    fit: BoxFit.contain,
+                                    alignment: Alignment.centerLeft,
+                                  ),
+                                )
+                              else
+                                Text(
+                                  _formatTitleTwoLines(game.title),
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w900,
+                                    color: AppColors.textPrimary,
+                                    height: 1.05,
+                                    letterSpacing: -0.5,
+                                  ),
                                 ),
-                              ),
                               const SizedBox(height: 4),
                               // Subtitle
                               Row(
@@ -174,19 +185,7 @@ class FeaturedChallengeCard extends ConsumerWidget {
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 6),
-                              Text(
-                                game.description,
-                                style: GoogleFonts.outfit(
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.textSecondary,
-                                  height: 1.25,
-                                ),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: 8),
+                              const SizedBox(height: 10),
                               // Live session progress + Progress bar
                               RichText(
                                 text: TextSpan(
@@ -244,46 +243,91 @@ class FeaturedChallengeCard extends ConsumerWidget {
 
                     const SizedBox(height: 12),
 
-                    // Bottom CTA Button: Continue
-                    SizedBox(
+                    // Modern Football-Themed CTA Button: Continue
+                    Container(
                       width: double.infinity,
-                      height: 40,
-                      child: ElevatedButton(
-                        onPressed: onContinue,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.neonGreen,
-                          foregroundColor: Colors.black,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.play_arrow_rounded,
-                              size: 18,
-                              color: Colors.black,
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              'Continue',
-                              style: GoogleFonts.outfit(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.black,
-                                letterSpacing: 0.2,
-                              ),
-                            ),
-                            const Spacer(),
-                            const Icon(
-                              Icons.arrow_forward_ios_rounded,
-                              size: 12,
-                              color: Colors.black,
-                            ),
+                      height: 42,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color(0xFF2EFD72),
+                            Color(0xFF00E676),
+                            Color(0xFF00C853),
                           ],
+                        ),
+                        border: Border.all(
+                          color: const Color(0xFF80FFA5),
+                          width: 1.2,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF2EFD72).withAlpha(95),
+                            blurRadius: 14,
+                            offset: const Offset(0, 3),
+                          ),
+                          BoxShadow(
+                            color: Colors.black.withAlpha(120),
+                            blurRadius: 6,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: onContinue,
+                          borderRadius: BorderRadius.circular(13),
+                          splashColor: Colors.white.withAlpha(60),
+                          highlightColor: Colors.white.withAlpha(30),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 14),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withAlpha(35),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(
+                                    Icons.sports_soccer_rounded,
+                                    size: 15,
+                                    color: Color(0xFF051B0D),
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'CONTINUE',
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 13.5,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 1.1,
+                                    color: const Color(0xFF051B0D),
+                                  ),
+                                ),
+                                const Spacer(),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 6,
+                                    vertical: 2,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withAlpha(25),
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  child: const Icon(
+                                    Icons.keyboard_double_arrow_right_rounded,
+                                    size: 16,
+                                    color: Color(0xFF051B0D),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),

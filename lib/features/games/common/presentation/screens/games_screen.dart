@@ -106,30 +106,15 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
                         ),
                         const SizedBox(width: 14),
                         // Title Column
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                'FOOTYGEN ARENA',
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 1.4,
-                                  color: AppColors.neonGreen,
-                                ),
-                              ),
-                              SizedBox(height: 2),
-                              Text(
-                                'Game Modes',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w900,
-                                  color: AppColors.textPrimary,
-                                  letterSpacing: -0.5,
-                                ),
-                              ),
-                            ],
+                        const Expanded(
+                          child: Text(
+                            'Game Modes',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w900,
+                              color: AppColors.textPrimary,
+                              letterSpacing: -0.5,
+                            ),
                           ),
                         ),
 

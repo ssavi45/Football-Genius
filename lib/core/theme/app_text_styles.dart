@@ -34,11 +34,12 @@ class AppTextStyles {
     letterSpacing: -0.3,
   );
 
-  /// Brand name style
-  static TextStyle get brandName => GoogleFonts.outfit(
-    fontSize: 24,
+  /// Brand name style (Athletic sports styling with dynamic italic stance)
+  static TextStyle get brandName => GoogleFonts.kanit(
+    fontSize: 25,
     fontWeight: FontWeight.w900,
-    letterSpacing: -0.5,
+    fontStyle: FontStyle.italic,
+    letterSpacing: -0.3,
     color: AppColors.textPrimary,
   );
 

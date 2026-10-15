@@ -212,7 +212,7 @@ enum GamesViewLayout {
 /// Layout mode state notifier.
 class GamesViewLayoutNotifier extends Notifier<GamesViewLayout> {
   @override
-  GamesViewLayout build() => GamesViewLayout.list;
+  GamesViewLayout build() => GamesViewLayout.grid;
 
   void setLayout(GamesViewLayout layout) {
     state = layout;

@@ -33,15 +33,6 @@ class QuickPlaySection extends StatelessWidget {
                   letterSpacing: -0.3,
                 ),
               ),
-              const SizedBox(width: 8),
-              Text(
-                'Play a game, anytime',
-                style: GoogleFonts.outfit(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.textSecondary,
-                ),
-              ),
               const Spacer(),
               GestureDetector(
                 onTap: onSeeAll,

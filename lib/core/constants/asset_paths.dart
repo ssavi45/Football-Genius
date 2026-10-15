@@ -3,7 +3,10 @@ class AssetPaths {
 
   // Branding & Backgrounds
   static const String logo = 'assets/images/branding/foot_gen.png';
+  static const String scorelineHeroLogo = 'assets/images/branding/scoreline_hero_logo.png';
+  static const String footygenLogoText = 'assets/images/branding/footygen_logo_text.png';
   static const String stadiumBg = 'assets/images/backgrounds/stadium_bg.jpg';
+  static const String homeStadiumBg = 'assets/images/backgrounds/home_stadium_bg.png';
   static const String uclCampNouBanner = 'assets/images/backgrounds/ucl_camp_nou_banner.jpg';
   static const String matchStadiumBanner = 'assets/images/backgrounds/match_stadium_banner.jpg';
 

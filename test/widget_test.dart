@@ -16,7 +16,7 @@ void main() {
 
     expect(find.text('LAST PLAYED'), findsOneWidget);
     expect(find.text('Quick Play'), findsOneWidget);
-    expect(find.text('Continue'), findsOneWidget);
+    expect(find.text('CONTINUE'), findsOneWidget);
   });
 
   testWidgets('Navigating to Games screen shows game modes and toggles grid/list',
@@ -35,9 +35,8 @@ void main() {
     await tester.tap(seeAllFinder);
     await tester.pumpAndSettle();
 
-    // Verify Games Screen header and top cards in default List view
+    // Verify Games Screen header and top cards in default Grid view
     expect(find.text('Game Modes'), findsOneWidget);
-    expect(find.text('FOOTYGEN ARENA'), findsOneWidget);
     expect(find.text('Football Matrix'), findsOneWidget);
     expect(find.text("Scout's Duel"), findsOneWidget);
 
@@ -47,15 +46,15 @@ void main() {
     expect(gridIconFinder, findsOneWidget);
     expect(listIconFinder, findsOneWidget);
 
-    // Switch to Grid view
-    await tester.tap(gridIconFinder);
+    // Switch to List view
+    await tester.tap(listIconFinder);
     await tester.pumpAndSettle();
 
-    // Verify grid cards render cleanly without overflow
+    // Verify list cards render cleanly without overflow
     expect(find.text('Football Matrix'), findsOneWidget);
 
-    // Switch back to List view
-    await tester.tap(listIconFinder);
+    // Switch back to Grid view
+    await tester.tap(gridIconFinder);
     await tester.pumpAndSettle();
     expect(find.text('Football Matrix'), findsOneWidget);
   });
