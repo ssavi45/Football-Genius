@@ -1,11 +1,11 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { ArrowRight, RotateCcw, Trophy } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import HeroMatchCard from '@/components/dashboard/HeroMatchCard';
 import RightPanelWidgets from '@/components/dashboard/RightPanelWidgets';
+import ScorelineRoundSummary from '@/components/dashboard/ScorelineRoundSummary';
 import { useAuth } from '@/context/auth-context';
 import { sound } from '@/lib/utils/sound';
 import type { Action, RoundView } from '@/lib/scoreline/types';
@@ -67,7 +67,7 @@ export default function ScorelineHeroPage() {
   return <div className="scoreline-dashboard">
     <div className="scoreline-main">
       {error && <div className="scoreline-error" role="alert">{error}<button onClick={() => void request('resume')} disabled={busy}>Retry</button><button onClick={freshRound} disabled={busy}>New Round</button></div>}
-      {round.complete ? <section className="scoreline-summary" aria-labelledby="round-complete-title"><div className="round-summary-hero"><span><Trophy size={38} /></span><p>FULL TIME · ROUND COMPLETE</p><h1 id="round-complete-title">{round.score===100?'A perfect ten.':'That’s the final whistle.'}</h1><strong>{round.score}<small> / 100 points</small></strong><p>{round.review.filter(a=>a.points>0).length} exact predictions · {round.review.filter(a=>a.skipped).length} skips used · {round.score} XP earned</p><button className="prediction-submit" onClick={freshRound} disabled={busy}><RotateCcw size={19} />Play a New Round</button><Link href="/game-modes">Explore Game Modes<ArrowRight size={16} /></Link></div><h2>Your match review</h2><div className="round-review-list">{round.review.map((answer,index)=><article key={answer.matchId}><span className={`review-result ${answer.skipped?'skipped':answer.points>0?'correct':'incorrect'}`}>{index+1}</span><div><h3>{answer.homeTeam.name} <strong>{answer.score.home} – {answer.score.away}</strong> {answer.awayTeam.name}</h3><p>{answer.competition} · {answer.date.slice(0,4)} · {answer.skipped?'Skipped':`Your prediction: ${answer.home} – ${answer.away}`} · {answer.hints.length} hints</p></div><strong>{answer.points} pts</strong><a href={answer.sources[0]} target="_blank" rel="noreferrer" aria-label={`Match record for ${answer.homeTeam.name} versus ${answer.awayTeam.name}`}>↗</a></article>)}</div></section> : round.match && <HeroMatchCard key={`${round.id}:${round.match.id}`} match={round.match} feedback={round.feedback} potential={round.potential} skipsLeft={round.skipsLeft} question={round.currentQuestion} busy={busy} onAction={onAction} />}
+      {round.complete ? <ScorelineRoundSummary round={round} busy={busy} onRestart={freshRound} /> : round.match && <HeroMatchCard key={`${round.id}:${round.match.id}`} match={round.match} feedback={round.feedback} potential={round.potential} skipsLeft={round.skipsLeft} question={round.currentQuestion} busy={busy} onAction={onAction} />}
     </div>
     <RightPanelWidgets currentQuestion={round.currentQuestion} totalQuestions={round.totalQuestions} roundScore={round.score} potentialPoints={round.potential} skipsLeft={round.skipsLeft} progress={round.progress} complete={round.complete} />
   </div>;

@@ -19,11 +19,10 @@ export default function HeroMatchCard({ match, feedback, potential, skipsLeft, q
   const locked = busy || resolved;
   const submit = () => { sound.playClick(); onAction({type:'submit',home:homeScore,away:awayScore}); };
   return <section className="scoreline-stage" aria-labelledby="scoreline-title">
-    <div className="scoreline-banner" aria-hidden="true"><Image key={match.competition.id} src={match.competition.banner} alt="" fill priority sizes="(max-width: 1000px) 100vw, 65vw" /></div>
     <header className="match-intro">
+      <div className="scoreline-banner" aria-hidden="true"><Image key={match.competition.id} src={match.competition.banner} alt="" width={1400} height={933} priority sizes="(max-width: 700px) 100vw, 480px" /></div>
+      <h1 id="scoreline-title" className="scoreline-logo-heading"><Image src="/img/scoreline/scoreline-hero-logo.png" alt="Scoreline Hero" width={1672} height={310} priority sizes="(max-width: 700px) 100vw, 560px" /></h1>
       <div className="match-breadcrumb"><Volleyball size={25} /><span>{match.competitionLabel}</span><ChevronRight size={18} /><span>{match.stage}</span></div>
-      <h1 id="scoreline-title">Scoreline <span>Hero</span></h1>
-      <p>Predict the final score. How well do you remember this match?</p>
       <div className="match-meta"><span><Calendar />{new Date(match.date+'T12:00:00Z').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</span><i /><span><MapPin />{match.venue}</span></div>
     </header>
     <div className="prediction-panel">
