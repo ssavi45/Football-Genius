@@ -1,0 +1,73 @@
+import clubBadges from '../../../public/img/higher-lower/club-badges.json';
+import type { Criterion } from './types';
+
+const badges = clubBadges as Record<string, string>;
+const club = (value: string, label: string): Criterion => ({ id: `club-${value}`, type: 'club', value, label, badgeUrl: badges[value] });
+const nation = (value: string, label: string, flag: string): Criterion => ({ id: `nation-${value}`, type: 'nation', value, label, badgeUrl: `/img/country/${flag}.png` });
+
+/** Senior appearances, rather than citizenship or transfer registrations, qualify. */
+export const clubCriteria: Criterion[] = [
+  club('418', 'Real Madrid'), club('131', 'Barcelona'), club('27', 'Bayern Munich'),
+  club('31', 'Liverpool'), club('11', 'Arsenal'), club('631', 'Chelsea'),
+  club('506', 'Juventus'), club('281', 'Manchester City'), club('16', 'Dortmund'),
+  club('46', 'Inter Milan'), club('583', 'PSG'), club('5', 'AC Milan'),
+  club('13', 'Atlético Madrid'), club('148', 'Tottenham'), club('610', 'Ajax'),
+];
+export const nationCriteria: Criterion[] = [
+  nation('3439', 'Brazil', 'brazil'), nation('3437', 'Argentina', 'argentina'),
+  nation('3377', 'France', 'france'), nation('3262', 'Germany', 'germany'),
+  nation('3375', 'Spain', 'spain'), nation('3376', 'Italy', 'italy'),
+  nation('3299', 'England', 'england'), nation('3300', 'Portugal', 'portugal'),
+  nation('3379', 'Netherlands', 'netherlands'), nation('3449', 'Uruguay', 'uruguay'),
+  nation('3382', 'Belgium', 'belgium'), nation('3556', 'Croatia', 'croatia'),
+  nation('3575', 'Morocco', 'morocco'), nation('3499', 'Senegal', 'senegal'),
+  nation('3444', 'Nigeria', 'nigeria'),
+];
+
+/** Missing statistical evidence remains unknown, never an inferred achievement.
+ * New numeric fields below can be supplied by the next verified database revision.
+ * uclAllTimeRank must be an externally verified global rank, not a rank of this roster.
+ */
+export const milestoneCriteria: Criterion[] = [
+  { id: 'career-goals-400', type: 'stat', value: 'goals', minimum: 400, label: 'Scored 400+ career goals', icon: 'boot' },
+  { id: 'ucl-titles-3', type: 'stat', value: 'uclTitles', minimum: 3, label: 'Won 3+ Champions League titles', icon: 'ucl' },
+  { id: 'world_cup', type: 'trophy', value: 'world_cup', label: 'Won the World Cup', icon: 'world_cup' },
+  { id: 'ballon_dor', type: 'trophy', value: 'ballon_dor', label: 'Won the Ballon d’Or', icon: 'ballon_dor' },
+  { id: 'season-goals-50', type: 'stat', value: 'maxSeasonGoals', minimum: 50, label: 'Scored 50+ goals in a season', icon: 'boot' },
+  { id: 'ucl-top-15', type: 'stat', value: 'uclAllTimeRank', minimum: 1, maximum: 15, label: 'UCL all-time top 15 scorer', icon: 'ucl' },
+  { id: 'national-captain', type: 'stat', value: 'seniorCaptainAppearances', minimum: 1, label: 'Captained their national team', icon: 'caps' },
+  { id: 'league-titles-5', type: 'stat', value: 'leagueTitles', minimum: 5, label: 'Won 5+ league titles', icon: 'ballon_dor' },
+  { id: 'top-five-clubs-3', type: 'stat', value: 'topFiveLeagueClubs', minimum: 3, label: 'Played for 3+ top-five-league clubs', icon: 'caps' },
+  { id: 'career-assists-200', type: 'stat', value: 'assists', minimum: 200, label: 'Provided 200+ career assists', icon: 'boot' },
+  // Retain existing evidence-backed conditions to support varied, solvable boards.
+  { id: 'ucl', type: 'trophy', value: 'ucl', label: 'Won the Champions League', icon: 'ucl' },
+  { id: 'copa-america', type: 'trophy', value: 'copa_america', label: 'Won the Copa América' },
+  { id: 'career-goals-100', type: 'stat', value: 'goals', minimum: 100, label: 'Scored 100+ career goals', icon: 'boot' },
+  { id: 'senior-caps-100', type: 'stat', value: 'caps', minimum: 100, label: '100+ senior international caps', icon: 'caps' },
+  { id: 'pl-goals-100', type: 'stat', value: 'plGoals', minimum: 100, label: '100+ Premier League goals', icon: 'boot' },
+  { id: 'ucl-goals-50', type: 'stat', value: 'uclGoals', minimum: 50, label: '50+ Champions League goals', icon: 'ucl' },
+];
+// Every milestone has its own generated transparent artwork. Keep club crests
+// and national flags as their official, existing identity assets.
+const milestoneArt: Record<string, string> = {
+  'career-goals-400': 'career-goals-400',
+  'ucl-titles-3': 'ucl-titles-3',
+  world_cup: 'world-cup',
+  ballon_dor: 'ballon-dor',
+  'season-goals-50': 'season-goals-50',
+  'ucl-top-15': 'ucl-top-15',
+  'national-captain': 'national-captain',
+  'league-titles-5': 'league-titles-5',
+  'top-five-clubs-3': 'top-five-clubs-3',
+  'career-assists-200': 'career-assists-200',
+  ucl: 'ucl-winner',
+  'copa-america': 'copa-america',
+  'career-goals-100': 'career-goals-100',
+  'senior-caps-100': 'senior-caps-100',
+  'pl-goals-100': 'pl-goals-100',
+  'ucl-goals-50': 'ucl-goals-50',
+};
+for (const criterion of milestoneCriteria) {
+  criterion.artUrl = `/img/matrix/criteria/${milestoneArt[criterion.id]}.webp`;
+}
+export const criteriaCatalog: Criterion[] = [...clubCriteria, ...nationCriteria, ...milestoneCriteria];

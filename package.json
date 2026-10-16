@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test:scoreline": "node scripts/scoreline/scoreline.test.cjs",
-    "test:higher-lower": "node scripts/higher-lower/higher-lower.test.cjs"
+    "test:higher-lower": "node scripts/higher-lower/higher-lower.test.cjs",
+    "test:matrix": "node scripts/matrix/matrix.test.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
