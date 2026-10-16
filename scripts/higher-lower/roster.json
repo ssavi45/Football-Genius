@@ -1,0 +1,932 @@
+[
+  {
+    "id": "alisson",
+    "name": "Alisson Becker",
+    "transfermarktId": "105470",
+    "aliases": [
+      "Alisson"
+    ],
+    "nationality": "Brazil",
+    "image": "img/players/alisson.jpg",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1992-10-02"
+  },
+  {
+    "id": "courtois",
+    "name": "Thibaut Courtois",
+    "transfermarktId": "108390",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/players/courtois.jpg",
+    "nationalityFlag": "img/country/belgium.png"
+  },
+  {
+    "id": "neuer",
+    "name": "Manuel Neuer",
+    "transfermarktId": "17259",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/players/neuer.jpg",
+    "nationalityFlag": "img/country/germany.png"
+  },
+  {
+    "id": "van_dijk",
+    "name": "Virgil van Dijk",
+    "transfermarktId": "139208",
+    "aliases": [
+      "Virgil van Dijk"
+    ],
+    "nationality": "Netherlands",
+    "image": "img/players/van_dijk.jpg",
+    "nationalityFlag": "img/country/netherlands.png"
+  },
+  {
+    "id": "saliba",
+    "name": "William Saliba",
+    "transfermarktId": "495666",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/saliba.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "rudiger",
+    "name": "Antonio Rüdiger",
+    "transfermarktId": "86202",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/players/rudiger.jpg",
+    "nationalityFlag": "img/country/germany.png"
+  },
+  {
+    "id": "kimmich",
+    "name": "Joshua Kimmich",
+    "transfermarktId": "161056",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/players/kimmich.jpg",
+    "nationalityFlag": "img/country/germany.png"
+  },
+  {
+    "id": "nuno_mendes",
+    "name": "Nuno Mendes",
+    "transfermarktId": "616341",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/nuno_mendes.jpg",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "2002-06-19"
+  },
+  {
+    "id": "bellingham",
+    "name": "Jude Bellingham",
+    "transfermarktId": "581678",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/bellingham.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "bruyne",
+    "name": "Kevin De Bruyne",
+    "transfermarktId": "88755",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/players/bruyne.jpg",
+    "nationalityFlag": "img/country/belgium.png"
+  },
+  {
+    "id": "modric",
+    "name": "Luka Modrić",
+    "transfermarktId": "27992",
+    "aliases": [],
+    "nationality": "Croatia",
+    "image": "img/players/modric.jpg",
+    "nationalityFlag": "img/country/croatia.png"
+  },
+  {
+    "id": "foden",
+    "name": "Phil Foden",
+    "transfermarktId": "406635",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/foden.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "pedri",
+    "name": "Pedri",
+    "transfermarktId": "683840",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/pedri.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "gavi",
+    "name": "Gavi",
+    "transfermarktId": "646740",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/gavi.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "wirtz",
+    "name": "Florian Wirtz",
+    "transfermarktId": "598577",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/players/wirtz.jpg",
+    "nationalityFlag": "img/country/germany.png"
+  },
+  {
+    "id": "musiala",
+    "name": "Jamal Musiala",
+    "transfermarktId": "580195",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/players/musiala.jpg",
+    "nationalityFlag": "img/country/germany.png"
+  },
+  {
+    "id": "rodri",
+    "name": "Rodri",
+    "transfermarktId": "357565",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/rodri.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "rice",
+    "name": "Declan Rice",
+    "transfermarktId": "357662",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/rice.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "silva",
+    "name": "Bernardo Silva",
+    "transfermarktId": "241641",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/silva.jpg",
+    "nationalityFlag": "img/country/portugal.png"
+  },
+  {
+    "id": "valverde",
+    "name": "Federico Valverde",
+    "transfermarktId": "369081",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/players/valverde.jpg",
+    "nationalityFlag": "img/country/uruguay.png"
+  },
+  {
+    "id": "palmer",
+    "name": "Cole Palmer",
+    "transfermarktId": "568177",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/palmer.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "messi",
+    "name": "Lionel Messi",
+    "transfermarktId": "28003",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/players/messi.jpg",
+    "nationalityFlag": "img/country/argentina.png"
+  },
+  {
+    "id": "ronaldo",
+    "name": "Cristiano Ronaldo",
+    "transfermarktId": "8198",
+    "aliases": [
+      "Cristiano Ronaldo"
+    ],
+    "nationality": "Portugal",
+    "image": "img/players/ronaldo.jpg",
+    "nationalityFlag": "img/country/portugal.png"
+  },
+  {
+    "id": "mbappe",
+    "name": "Kylian Mbappé",
+    "transfermarktId": "342229",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/mbappe.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "haaland",
+    "name": "Erling Haaland",
+    "transfermarktId": "418560",
+    "aliases": [],
+    "nationality": "Norway",
+    "image": "img/players/haaland.jpg",
+    "nationalityFlag": "img/country/norway.png"
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar Jr",
+    "transfermarktId": "68290",
+    "aliases": [
+      "Neymar"
+    ],
+    "nationality": "Brazil",
+    "image": "img/players/neymar.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "vinicius",
+    "name": "Vinícius Júnior",
+    "transfermarktId": "371998",
+    "aliases": [
+      "Vinicius Junior",
+      "Vini Jr."
+    ],
+    "nationality": "Brazil",
+    "image": "img/players/vinicius.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "salah",
+    "name": "Mohamed Salah",
+    "transfermarktId": "148455",
+    "aliases": [],
+    "nationality": "Egypt",
+    "image": "img/players/salah.jpg",
+    "nationalityFlag": "img/country/egypt.png"
+  },
+  {
+    "id": "lewandowski",
+    "name": "Robert Lewandowski",
+    "transfermarktId": "38253",
+    "aliases": [],
+    "nationality": "Poland",
+    "image": "img/players/lewandowski.jpg",
+    "nationalityFlag": "img/country/poland.png"
+  },
+  {
+    "id": "kane",
+    "name": "Harry Kane",
+    "transfermarktId": "132098",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/kane.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "yamal",
+    "name": "Lamine Yamal",
+    "transfermarktId": "937958",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/yamal.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "saka",
+    "name": "Bukayo Saka",
+    "transfermarktId": "433177",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/saka.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "benzema",
+    "name": "Karim Benzema",
+    "transfermarktId": "18922",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/benzema.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "isak",
+    "name": "Alexander Isak",
+    "transfermarktId": "349066",
+    "aliases": [],
+    "nationality": "Sweden",
+    "image": "img/players/isak.jpg",
+    "nationalityFlag": "img/country/sweden.png"
+  },
+  {
+    "id": "gyokeres",
+    "name": "Viktor Gyökeres",
+    "transfermarktId": "325443",
+    "aliases": [],
+    "nationality": "Sweden",
+    "image": "img/players/gyokeres.jpg",
+    "nationalityFlag": "img/country/sweden.png"
+  },
+  {
+    "id": "leao",
+    "name": "Rafael Leão",
+    "transfermarktId": "357164",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/leao.jpg",
+    "nationalityFlag": "img/country/portugal.png"
+  },
+  {
+    "id": "raphinha",
+    "name": "Raphinha",
+    "transfermarktId": "411295",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/raphinha.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "griezmann",
+    "name": "Antoine Griezmann",
+    "transfermarktId": "125781",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/griezman.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "alvarez",
+    "name": "Julián Álvarez",
+    "transfermarktId": "576024",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/players/alvarez.jpg",
+    "nationalityFlag": "img/country/argentina.png"
+  },
+  {
+    "id": "dembele",
+    "name": "Ousmane Dembélé",
+    "transfermarktId": "288230",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/dembele.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "joao_neves",
+    "name": "João Neves",
+    "transfermarktId": "670681",
+    "aliases": [
+      "Joao Neves"
+    ],
+    "nationality": "Portugal",
+    "image": "img/players/joao_neves.jpg",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "2004-09-27"
+  },
+  {
+    "id": "vitinha",
+    "name": "Vitinha",
+    "transfermarktId": "487469",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/vitinha.jpg",
+    "nationalityFlag": "img/country/portugal.png"
+  },
+  {
+    "id": "ruben_dias",
+    "name": "Ruben Dias",
+    "transfermarktId": "258004",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/ruben_dias.jpg",
+    "nationalityFlag": "img/country/portugal.png"
+  },
+  {
+    "id": "araujo",
+    "name": "Ronald Araujo",
+    "transfermarktId": "480267",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/players/araujo.jpg",
+    "nationalityFlag": "img/country/uruguay.png"
+  },
+  {
+    "id": "rodrygo",
+    "name": "Rodrygo",
+    "transfermarktId": "412363",
+    "aliases": [],
+    "birthDate": "2001-01-09",
+    "nationality": "Brazil",
+    "image": "img/players/rodrygo.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "gvardiol",
+    "name": "Josko Gvardiol",
+    "transfermarktId": "475959",
+    "aliases": [],
+    "nationality": "Croatia",
+    "image": "img/players/gvardiol.jpg",
+    "nationalityFlag": "img/country/croatia.png"
+  },
+  {
+    "id": "davies",
+    "name": "Alphonso Davies",
+    "transfermarktId": "424204",
+    "aliases": [],
+    "nationality": "Canada",
+    "image": "img/players/davies.jpg",
+    "nationalityFlag": "img/country/canada.png"
+  },
+  {
+    "id": "hakimi",
+    "name": "Achraf Hakimi",
+    "transfermarktId": "398073",
+    "aliases": [],
+    "nationality": "Morocco",
+    "image": "img/players/hakimi.jpg",
+    "nationalityFlag": "img/country/morocco.png"
+  },
+  {
+    "id": "trent",
+    "name": "Trent Alexander-Arnold",
+    "transfermarktId": "314353",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/trent.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "cancelo",
+    "name": "Joao Cancelo",
+    "transfermarktId": "182712",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/cancelo.jpg",
+    "nationalityFlag": "img/country/portugal.png"
+  },
+  {
+    "id": "casemiro",
+    "name": "Casemiro",
+    "transfermarktId": "16306",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/casemiro.jpg",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1992-02-23"
+  },
+  {
+    "id": "kante",
+    "name": "N'Golo Kante",
+    "transfermarktId": "225083",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/kante.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "enzo",
+    "name": "Enzo Fernandez",
+    "transfermarktId": "648195",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/players/enzo.jpg",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "2001-01-17"
+  },
+  {
+    "id": "mac_allister",
+    "name": "Alexis Mac Allister",
+    "transfermarktId": "534033",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/players/mac_allister.jpg",
+    "nationalityFlag": "img/country/argentina.png"
+  },
+  {
+    "id": "szoboszlai",
+    "name": "Dominik Szoboszlai",
+    "transfermarktId": "451276",
+    "aliases": [],
+    "nationality": "Hungary",
+    "image": "img/players/szoboszlai.jpg",
+    "nationalityFlag": "img/country/hungary.png"
+  },
+  {
+    "id": "odegaard",
+    "name": "Martin Odegaard",
+    "transfermarktId": "316264",
+    "aliases": [],
+    "nationality": "Norway",
+    "image": "img/players/odegaard.jpg",
+    "nationalityFlag": "img/country/norway.png",
+    "birthDate": "1998-12-17"
+  },
+  {
+    "id": "barella",
+    "name": "Nicolo Barella",
+    "transfermarktId": "255942",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/players/barella.jpg",
+    "nationalityFlag": "img/country/italy.png"
+  },
+  {
+    "id": "tchouameni",
+    "name": "Aurelien Tchouameni",
+    "transfermarktId": "413112",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/tchouameni.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "camavinga",
+    "name": "Eduardo Camavinga",
+    "transfermarktId": "640428",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/camavinga.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "dejong",
+    "name": "Frenkie de Jong",
+    "transfermarktId": "326330",
+    "aliases": [],
+    "nationality": "Netherlands",
+    "image": "img/players/dejong.jpg",
+    "nationalityFlag": "img/country/netherlands.png"
+  },
+  {
+    "id": "bruno",
+    "name": "Bruno Fernandes",
+    "transfermarktId": "240306",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/players/bruno.jpg",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1994-09-08"
+  },
+  {
+    "id": "son",
+    "name": "Heung-min Son",
+    "transfermarktId": "91845",
+    "aliases": [
+      "Son Heung-min",
+      "Heung-min Son"
+    ],
+    "nationality": "South Korea",
+    "image": "img/players/son.jpg",
+    "nationalityFlag": "img/country/south_korea.png"
+  },
+  {
+    "id": "rashford",
+    "name": "Marcus Rashford",
+    "transfermarktId": "258923",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/rashford.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "martinelli",
+    "name": "Gabriel Martinelli",
+    "transfermarktId": "655488",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/martinelli.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "grealish",
+    "name": "Jack Grealish",
+    "transfermarktId": "203460",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/grealish.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "mane",
+    "name": "Sadio Mane",
+    "transfermarktId": "200512",
+    "aliases": [],
+    "nationality": "Senegal",
+    "image": "img/players/mane.jpg",
+    "nationalityFlag": "img/country/senegal.png"
+  },
+  {
+    "id": "kvaratskhelia",
+    "name": "Khvicha Kvaratskhelia",
+    "transfermarktId": "502670",
+    "aliases": [],
+    "nationality": "Georgia",
+    "image": "img/players/kvaratskhelia.jpg",
+    "nationalityFlag": "img/country/georgia.png"
+  },
+  {
+    "id": "osimhen",
+    "name": "Victor Osimhen",
+    "transfermarktId": "401923",
+    "aliases": [],
+    "nationality": "Nigeria",
+    "image": "img/players/osimhen.jpg",
+    "nationalityFlag": "img/country/nigeria.png"
+  },
+  {
+    "id": "lautaro",
+    "name": "Lautaro Martinez",
+    "transfermarktId": "406625",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/players/lautaro.jpg",
+    "nationalityFlag": "img/country/argentina.png"
+  },
+  {
+    "id": "suarez",
+    "name": "Luis Suarez",
+    "transfermarktId": "44352",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/players/suarez.jpg",
+    "nationalityFlag": "img/country/uruguay.png"
+  },
+  {
+    "id": "kroos",
+    "name": "Toni Kroos",
+    "transfermarktId": "31909",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/players/kroos.jpg",
+    "nationalityFlag": "img/country/germany.png"
+  },
+  {
+    "id": "lampard",
+    "name": "Frank Lampard",
+    "transfermarktId": "3163",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/lampard.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "henry",
+    "name": "Thierry Henry",
+    "transfermarktId": "3207",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/henry.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "drogba",
+    "name": "Didier Drogba",
+    "transfermarktId": "3924",
+    "aliases": [],
+    "nationality": "Ivory Coast",
+    "image": "img/players/drogba.jpg",
+    "nationalityFlag": "img/country/ivory_coast.png"
+  },
+  {
+    "id": "zlatan",
+    "name": "Zlatan Ibrahimović",
+    "transfermarktId": "3455",
+    "aliases": [],
+    "nationality": "Sweden",
+    "image": "img/players/zlatan.jpg",
+    "nationalityFlag": "img/country/sweden.png"
+  },
+  {
+    "id": "rooney",
+    "name": "Wayne Rooney",
+    "transfermarktId": "3332",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/rooney.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "buffon",
+    "name": "Gianluigi Buffon",
+    "transfermarktId": "5023",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/players/buffon.jpg",
+    "nationalityFlag": "img/country/italy.png"
+  },
+  {
+    "id": "bale",
+    "name": "Gareth Bale",
+    "transfermarktId": "39381",
+    "aliases": [],
+    "nationality": "Wales",
+    "image": "img/players/bale.jpg",
+    "nationalityFlag": "img/country/wales.png"
+  },
+  {
+    "id": "casillas",
+    "name": "Iker Casillas",
+    "transfermarktId": "3979",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/casillas.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "cech",
+    "name": "Petr Cech",
+    "transfermarktId": "5658",
+    "aliases": [],
+    "nationality": "Czech Republic",
+    "image": "img/players/cech.jpg",
+    "nationalityFlag": "img/country/czech_republic.png"
+  },
+  {
+    "id": "maldini",
+    "name": "Paolo Maldini",
+    "transfermarktId": "5803",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/players/maldini.jpg",
+    "nationalityFlag": "img/country/italy.png"
+  },
+  {
+    "id": "roberto_carlos",
+    "name": "Roberto Carlos",
+    "transfermarktId": "7518",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/roberto_carlos.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "cafu",
+    "name": "Cafu",
+    "transfermarktId": "5937",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/cafu.jpg",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1970-06-07"
+  },
+  {
+    "id": "puyol",
+    "name": "Carles Puyol",
+    "transfermarktId": "7594",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/puyol.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "pique",
+    "name": "Gerard Pique",
+    "transfermarktId": "18944",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/pique.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "terry",
+    "name": "John Terry",
+    "transfermarktId": "3160",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/terry.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "ferdinand",
+    "name": "Rio Ferdinand",
+    "transfermarktId": "3235",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/ferdinand.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "vidic",
+    "name": "Nemanja Vidic",
+    "transfermarktId": "19726",
+    "aliases": [],
+    "nationality": "Serbia",
+    "image": "img/players/vidic.jpg",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "1981-10-21"
+  },
+  {
+    "id": "chiellini",
+    "name": "Giorgio Chiellini",
+    "transfermarktId": "29260",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/players/chiellini.jpg",
+    "nationalityFlag": "img/country/italy.png"
+  },
+  {
+    "id": "zidane",
+    "name": "Zinedine Zidane",
+    "transfermarktId": "3111",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/players/zidane.jpg",
+    "nationalityFlag": "img/country/france.png"
+  },
+  {
+    "id": "ronaldinho",
+    "name": "Ronaldinho",
+    "transfermarktId": "3373",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/ronaldinho.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "iniesta",
+    "name": "Andres Iniesta",
+    "transfermarktId": "7600",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/players/iniesta.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "xavi",
+    "name": "Xavi Hernandez",
+    "transfermarktId": "7607",
+    "aliases": [
+      "Xavi"
+    ],
+    "nationality": "Spain",
+    "image": "img/players/xavi.jpg",
+    "nationalityFlag": "img/country/spain.png"
+  },
+  {
+    "id": "pirlo",
+    "name": "Andrea Pirlo",
+    "transfermarktId": "5817",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/players/pirlo.jpg",
+    "nationalityFlag": "img/country/italy.png"
+  },
+  {
+    "id": "scholes",
+    "name": "Paul Scholes",
+    "transfermarktId": "3397",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/scholes.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "gerrard",
+    "name": "Steven Gerrard",
+    "transfermarktId": "3109",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/players/gerrard.jpg",
+    "nationalityFlag": "img/country/england.png"
+  },
+  {
+    "id": "kaka",
+    "name": "Kaka",
+    "transfermarktId": "3366",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/players/kaka.jpg",
+    "nationalityFlag": "img/country/brazil.png"
+  },
+  {
+    "id": "etoo",
+    "name": "Samuel Eto'o",
+    "transfermarktId": "4257",
+    "aliases": [
+      "Samuel Eto'o"
+    ],
+    "nationality": "Cameroon",
+    "image": "img/players/etoo.jpg",
+    "nationalityFlag": "img/country/cameroon.png"
+  },
+  {
+    "id": "aguero",
+    "name": "Sergio Aguero",
+    "transfermarktId": "26399",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/players/aguero.jpg",
+    "nationalityFlag": "img/country/argentina.png"
+  },
+  {
+    "id": "hazard",
+    "name": "Eden Hazard",
+    "transfermarktId": "50202",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/players/hazard.jpg",
+    "nationalityFlag": "img/country/belgium.png"
+  }
+]

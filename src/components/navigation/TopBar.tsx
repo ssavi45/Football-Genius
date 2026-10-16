@@ -33,7 +33,8 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
   const { profile, openAuthModal, soundEnabled, toggleSound, signOut } = useAuth();
   const [profileDropdown, setProfileDropdown] = useState(false);
   const pathname = usePathname();
-  const useSharedNav = pathname === '/' || pathname === '/game-modes' || pathname === '/games/scoreline';
+  const useSharedNav = pathname === '/' || pathname === '/game-modes' || pathname === '/games/scoreline' || pathname === '/games/higher-lower';
+  const isGameModesActive = pathname === '/game-modes' || pathname === '/games/higher-lower';
 
   return (
     <header
@@ -140,11 +141,11 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
             {/* Game Modes */}
             <Link
               href="/game-modes"
-              aria-current={pathname === "/game-modes" ? "page" : undefined}
+              aria-current={isGameModesActive ? "page" : undefined}
               onMouseEnter={() => sound.playHover()}
               onClick={() => sound.playClick()}
               className={`transition pb-1 ${
-                pathname === '/game-modes'
+                isGameModesActive
                   ? 'font-bold text-slate-900 border-b-2 border-[#1D68FE]'
                   : 'text-slate-600 hover:text-slate-900'
               }`}

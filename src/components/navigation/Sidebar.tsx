@@ -29,7 +29,7 @@ export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapsed 
   const pathname = usePathname();
 
   const navItems = [
-    { label: 'Play Game', href: '/games/scoreline', icon: Gamepad2, activePattern: pathname === '/games/scoreline' },
+    { label: 'Play Game', href: pathname === '/games/higher-lower' ? pathname : '/games/scoreline', icon: Gamepad2, activePattern: pathname === '/games/scoreline' || pathname === '/games/higher-lower' },
     { label: 'Game Modes', href: '/game-modes', icon: Grid2X2, activePattern: pathname === '/game-modes' },
     { label: 'Leaderboard', href: '/leaderboard', icon: Trophy, activePattern: pathname === '/leaderboard' },
     { label: 'My Stats', href: '/profile', icon: BarChart2, activePattern: pathname === '/profile' },

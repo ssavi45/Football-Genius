@@ -19,6 +19,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   };
   const pathname = usePathname();
   const isScorelinePage = pathname === '/games/scoreline';
+  const isHigherLowerPage = pathname === '/games/higher-lower';
   const isLandingPage = pathname === '/' || pathname === '/game-modes';
 
   return (
@@ -29,7 +30,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         onToggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)}
       />
 
-      <div className={`flex-1 flex w-full mx-auto ${isScorelinePage ? "scoreline-shell" : isLandingPage ? "" : "max-w-[1440px]"}`}>
+      <div className={`flex-1 flex w-full mx-auto ${isScorelinePage ? "scoreline-shell" : isHigherLowerPage ? "higher-lower-shell" : isLandingPage ? "" : "max-w-[1440px]"}`}>
         {/* On non-landing pages or on mobile menu, show Sidebar */}
         {!isLandingPage && (
           <Sidebar

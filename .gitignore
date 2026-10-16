@@ -24,3 +24,6 @@ build/
 
 # Raw source downloads and asset preparation cache
 /tmp/scoreline/
+/tmp/higher-lower/
+/scripts/higher-lower/.venv/
+__pycache__/

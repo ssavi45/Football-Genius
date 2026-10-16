@@ -1,0 +1,3 @@
+# Python 3.12 or 3.13. Pin the adapter: its upstream API is undocumented.
+transfermarkt-api==5.0.0
+httpx==0.28.1
