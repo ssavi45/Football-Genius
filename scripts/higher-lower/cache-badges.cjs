@@ -29,6 +29,6 @@ async function main() {
     await new Promise(resolve => setTimeout(resolve, 150));
   }
   await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
-  console.log(`Cached ${clubs.size} source crests for the 100-player seed snapshot.`);
+  console.log(`Cached ${clubs.size} source crests for the 500-player seed snapshot.`);
 }
 main().catch(error => { console.error(error.message); process.exitCode = 1; });

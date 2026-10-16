@@ -928,5 +928,4248 @@
     "nationality": "Belgium",
     "image": "img/players/hazard.jpg",
     "nationalityFlag": "img/country/belgium.png"
+  },
+  {
+    "id": "david_beckham",
+    "name": "David Beckham",
+    "transfermarktId": "3139",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/david_beckham.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1975-05-02"
+  },
+  {
+    "id": "ruud_gullit",
+    "name": "Ruud Gullit",
+    "transfermarktId": "101045",
+    "aliases": [],
+    "nationality": "Netherlands",
+    "image": "img/higher-lower/players/ruud_gullit.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1962-09-01"
+  },
+  {
+    "id": "marco_van_basten",
+    "name": "Marco van Basten",
+    "transfermarktId": "74471",
+    "aliases": [],
+    "nationality": "Netherlands",
+    "image": "img/higher-lower/players/marco_van_basten.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1964-10-31"
+  },
+  {
+    "id": "javier_zanetti",
+    "name": "Javier Zanetti",
+    "transfermarktId": "1161",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/javier_zanetti.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1973-08-10"
+  },
+  {
+    "id": "franck_ribery",
+    "name": "Franck Ribéry",
+    "transfermarktId": "22068",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/franck_ribery.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1983-04-07"
+  },
+  {
+    "id": "bastian_schweinsteiger",
+    "name": "Bastian Schweinsteiger",
+    "transfermarktId": "2514",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/bastian_schweinsteiger.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1984-08-01"
+  },
+  {
+    "id": "philipp_lahm",
+    "name": "Philipp Lahm",
+    "transfermarktId": "2219",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/philipp_lahm.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1983-11-11"
+  },
+  {
+    "id": "mesut_ozil",
+    "name": "Mesut Özil",
+    "transfermarktId": "35664",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/mesut_ozil.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1988-10-15"
+  },
+  {
+    "id": "david_silva",
+    "name": "David Silva",
+    "transfermarktId": "35518",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/david_silva.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1986-01-08"
+  },
+  {
+    "id": "marcelo",
+    "name": "Marcelo",
+    "transfermarktId": "44501",
+    "aliases": [],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/marcelo.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1988-05-12"
+  },
+  {
+    "id": "pepe",
+    "name": "Pepe",
+    "transfermarktId": "14132",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/pepe.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1983-02-26"
+  },
+  {
+    "id": "leonardo_bonucci",
+    "name": "Leonardo Bonucci",
+    "transfermarktId": "39983",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/leonardo_bonucci.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1987-05-01"
+  },
+  {
+    "id": "diego_godin",
+    "name": "Diego Godín",
+    "transfermarktId": "54928",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/higher-lower/players/diego_godin.png",
+    "nationalityFlag": "img/country/uruguay.png",
+    "birthDate": "1986-02-16"
+  },
+  {
+    "id": "wesley_sneijder",
+    "name": "Wesley Sneijder",
+    "transfermarktId": "4673",
+    "aliases": [],
+    "nationality": "Netherlands",
+    "image": "img/higher-lower/players/wesley_sneijder.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1984-06-09"
+  },
+  {
+    "id": "gonzalo_higuain",
+    "name": "Gonzalo Higuaín",
+    "transfermarktId": "39153",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/gonzalo_higuain.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1987-12-10"
+  },
+  {
+    "id": "diego_forlan",
+    "name": "Diego Forlán",
+    "transfermarktId": "3408",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/higher-lower/players/diego_forlan.png",
+    "nationalityFlag": "img/country/uruguay.png",
+    "birthDate": "1979-05-19"
+  },
+  {
+    "id": "dimitar_berbatov",
+    "name": "Dimitar Berbatov",
+    "transfermarktId": "65",
+    "aliases": [],
+    "nationality": "Bulgaria",
+    "image": "img/higher-lower/players/dimitar_berbatov.png",
+    "nationalityFlag": "img/country/bulgaria.png",
+    "birthDate": "1981-01-30"
+  },
+  {
+    "id": "donnarumma",
+    "name": "Gianluigi Donnarumma",
+    "transfermarktId": "315858",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/donnarumma.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1999-02-25"
+  },
+  {
+    "id": "gabriel",
+    "name": "Gabriel",
+    "transfermarktId": "435338",
+    "aliases": [
+      "Gabriel dos S. Magalhães"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/gabriel.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-12-19"
+  },
+  {
+    "id": "oblak",
+    "name": "Jan Oblak",
+    "transfermarktId": "121483",
+    "aliases": [],
+    "nationality": "Slovenia",
+    "image": "img/higher-lower/players/oblak.png",
+    "nationalityFlag": "img/country/slovenia.png",
+    "birthDate": "1993-01-07"
+  },
+  {
+    "id": "bastoni",
+    "name": "Alessandro Bastoni",
+    "transfermarktId": "315853",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/bastoni.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1999-04-13"
+  },
+  {
+    "id": "guirassy",
+    "name": "Serhou Guirassy",
+    "transfermarktId": "270541",
+    "aliases": [],
+    "nationality": "Guinea",
+    "image": "img/higher-lower/players/guirassy.png",
+    "nationalityFlag": "img/country/guinea.png",
+    "birthDate": "1996-03-12"
+  },
+  {
+    "id": "caicedo",
+    "name": "Moisés Caicedo",
+    "transfermarktId": "687626",
+    "aliases": [],
+    "nationality": "Ecuador",
+    "image": "img/higher-lower/players/caicedo.png",
+    "nationalityFlag": "img/country/ecuador.png",
+    "birthDate": "2001-11-02"
+  },
+  {
+    "id": "marquinhos",
+    "name": "Marquinhos",
+    "transfermarktId": "181767",
+    "aliases": [
+      "Marcos Aoás Corrêa"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/marquinhos.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1994-05-14"
+  },
+  {
+    "id": "sommer",
+    "name": "Yann Sommer",
+    "transfermarktId": "42205",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/sommer.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1988-12-17"
+  },
+  {
+    "id": "kounde",
+    "name": "Jules Koundé",
+    "transfermarktId": "411975",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/kounde.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1998-11-12"
+  },
+  {
+    "id": "tah",
+    "name": "Jonathan Tah",
+    "transfermarktId": "196357",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/tah.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-02-11"
+  },
+  {
+    "id": "maignan",
+    "name": "Mike Maignan",
+    "transfermarktId": "182906",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/maignan.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1995-07-03"
+  },
+  {
+    "id": "david_raya",
+    "name": "David Raya",
+    "transfermarktId": "262749",
+    "aliases": [
+      "David Raya Martin"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/david_raya.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-09-15"
+  },
+  {
+    "id": "olise",
+    "name": "Michael Olise",
+    "transfermarktId": "566723",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/olise.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2001-12-12"
+  },
+  {
+    "id": "dybala",
+    "name": "Paulo Dybala",
+    "transfermarktId": "206050",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/dybala.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1993-11-15"
+  },
+  {
+    "id": "bruno_guimaraes",
+    "name": "Bruno Guimarães",
+    "transfermarktId": "520624",
+    "aliases": [
+      "Bruno Guimarães Moura"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/bruno_guimaraes.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-11-16"
+  },
+  {
+    "id": "pacho",
+    "name": "Willian Pacho",
+    "transfermarktId": "661171",
+    "aliases": [],
+    "nationality": "Ecuador",
+    "image": "img/higher-lower/players/pacho.png",
+    "nationalityFlag": "img/country/ecuador.png",
+    "birthDate": "2001-10-16"
+  },
+  {
+    "id": "konate",
+    "name": "Ibrahima Konaté",
+    "transfermarktId": "357119",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/konate.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1999-05-25"
+  },
+  {
+    "id": "calhanoglu",
+    "name": "Hakan Çalhanoğlu",
+    "transfermarktId": "126414",
+    "aliases": [],
+    "nationality": "Turkey",
+    "image": "img/higher-lower/players/calhanoglu.png",
+    "nationalityFlag": "img/country/turkey.png",
+    "birthDate": "1994-02-08"
+  },
+  {
+    "id": "tonali",
+    "name": "Sandro Tonali",
+    "transfermarktId": "397033",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/tonali.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "2000-05-08"
+  },
+  {
+    "id": "nico_williams",
+    "name": "Nico Williams",
+    "transfermarktId": "709187",
+    "aliases": [
+      "Nicholas Williams Arthuer"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/nico_williams.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2002-07-12"
+  },
+  {
+    "id": "reijnders",
+    "name": "Tijjani Reijnders",
+    "transfermarktId": "460939",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/reijnders.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1998-07-29"
+  },
+  {
+    "id": "ter_stegen",
+    "name": "Marc-André ter Stegen",
+    "transfermarktId": "74857",
+    "aliases": [
+      "Marc ter Stegen"
+    ],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/ter_stegen.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1992-04-30"
+  },
+  {
+    "id": "kobel",
+    "name": "Gregor Kobel",
+    "transfermarktId": "257814",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/kobel.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1997-12-06"
+  },
+  {
+    "id": "ederson",
+    "name": "Ederson",
+    "transfermarktId": "238223",
+    "aliases": [
+      "Ederson Santana de Moraes"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/ederson.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1993-08-17"
+  },
+  {
+    "id": "dimarco",
+    "name": "Federico Dimarco",
+    "transfermarktId": "198116",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/dimarco.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1997-11-10"
+  },
+  {
+    "id": "mctominay",
+    "name": "Scott McTominay",
+    "transfermarktId": "315969",
+    "aliases": [],
+    "nationality": "Scotland",
+    "image": "img/higher-lower/players/mctominay.png",
+    "nationalityFlag": "img/country/scotland.png",
+    "birthDate": "1996-12-08"
+  },
+  {
+    "id": "gravenberch",
+    "name": "Ryan Gravenberch",
+    "transfermarktId": "478573",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/gravenberch.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2002-05-16"
+  },
+  {
+    "id": "martinez",
+    "name": "Emiliano Martínez",
+    "transfermarktId": "111873",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/martinez.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1992-09-02"
+  },
+  {
+    "id": "mbeumo",
+    "name": "Bryan Mbeumo",
+    "transfermarktId": "413039",
+    "aliases": [],
+    "nationality": "Cameroon",
+    "image": "img/higher-lower/players/mbeumo.png",
+    "nationalityFlag": "img/country/cameroon.png",
+    "birthDate": "1999-08-07"
+  },
+  {
+    "id": "doue",
+    "name": "Désiré Doué",
+    "transfermarktId": "914562",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/doue.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2005-06-03"
+  },
+  {
+    "id": "carvajal",
+    "name": "Carvajal",
+    "transfermarktId": "138927",
+    "aliases": [
+      "Daniel Carvajal",
+      "Daniel Carvajal Ramos"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/carvajal.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1992-01-11"
+  },
+  {
+    "id": "unai_simon",
+    "name": "Unai Simón",
+    "transfermarktId": "262396",
+    "aliases": [
+      "Unai Simón Mendibil"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/unai_simon.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1997-06-11"
+  },
+  {
+    "id": "thuram",
+    "name": "Marcus Thuram",
+    "transfermarktId": "318528",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/thuram.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1997-08-06"
+  },
+  {
+    "id": "gulacsi",
+    "name": "Péter Gulácsi",
+    "transfermarktId": "57071",
+    "aliases": [],
+    "nationality": "Hungary",
+    "image": "img/higher-lower/players/gulacsi.png",
+    "nationalityFlag": "img/country/hungary.png",
+    "birthDate": "1990-05-06"
+  },
+  {
+    "id": "diaz",
+    "name": "Luis Díaz",
+    "transfermarktId": "480692",
+    "aliases": [],
+    "nationality": "Colombia",
+    "image": "img/higher-lower/players/diaz.png",
+    "nationalityFlag": "img/country/colombia.png",
+    "birthDate": "1997-01-13"
+  },
+  {
+    "id": "de_gea",
+    "name": "De Gea",
+    "transfermarktId": "59377",
+    "aliases": [
+      "David de Gea",
+      "David De Gea Quintana"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/de_gea.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1990-11-07"
+  },
+  {
+    "id": "schlotterbeck",
+    "name": "Nico Schlotterbeck",
+    "transfermarktId": "388198",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/schlotterbeck.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1999-12-01"
+  },
+  {
+    "id": "fabian_ruiz",
+    "name": "Fabián Ruiz",
+    "transfermarktId": "350219",
+    "aliases": [
+      "Fabián Ruiz Peña"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/fabian_ruiz.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1996-04-03"
+  },
+  {
+    "id": "tielemans",
+    "name": "Youri Tielemans",
+    "transfermarktId": "249565",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/tielemans.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1997-05-07"
+  },
+  {
+    "id": "xhaka",
+    "name": "Granit Xhaka",
+    "transfermarktId": "111455",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/xhaka.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1992-09-27"
+  },
+  {
+    "id": "inigo_martinez",
+    "name": "Iñigo Martínez",
+    "transfermarktId": "158863",
+    "aliases": [
+      "Iñigo Martínez Berridi"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/inigo_martinez.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1991-05-17"
+  },
+  {
+    "id": "dani_olmo",
+    "name": "Dani Olmo",
+    "transfermarktId": "293385",
+    "aliases": [
+      "Daniel Olmo Carvajal"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/dani_olmo.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1998-05-07"
+  },
+  {
+    "id": "upamecano",
+    "name": "Dayot Upamecano",
+    "transfermarktId": "344695",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/upamecano.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1998-10-27"
+  },
+  {
+    "id": "schick",
+    "name": "Patrik Schick",
+    "transfermarktId": "242086",
+    "aliases": [],
+    "nationality": "Czech Republic",
+    "image": "img/higher-lower/players/schick.png",
+    "nationalityFlag": "img/country/czech_republic.png",
+    "birthDate": "1996-01-24"
+  },
+  {
+    "id": "bremer",
+    "name": "Bremer",
+    "transfermarktId": "516716",
+    "aliases": [
+      "Gleison Bremer Silva Nascimento"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/bremer.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-03-18"
+  },
+  {
+    "id": "hernandez",
+    "name": "Theo Hernández",
+    "transfermarktId": "339808",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/hernandez.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1997-10-06"
+  },
+  {
+    "id": "marcos_llorente",
+    "name": "Marcos Llorente",
+    "transfermarktId": "282411",
+    "aliases": [
+      "Marcos Llorente Moreno"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/marcos_llorente.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-01-30"
+  },
+  {
+    "id": "de_paul",
+    "name": "Rodrigo De Paul",
+    "transfermarktId": "255901",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/de_paul.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1994-05-24"
+  },
+  {
+    "id": "sancet",
+    "name": "Sancet",
+    "transfermarktId": "571020",
+    "aliases": [
+      "Oihan Sancet",
+      "Oihan Sancet Tirapu"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/sancet.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2000-04-25"
+  },
+  {
+    "id": "pickford",
+    "name": "Jordan Pickford",
+    "transfermarktId": "130164",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/pickford.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1994-03-07"
+  },
+  {
+    "id": "dumfries",
+    "name": "Denzel Dumfries",
+    "transfermarktId": "321528",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/dumfries.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1996-04-18"
+  },
+  {
+    "id": "milinkovic_savic",
+    "name": "Sergej Milinković-Savić",
+    "transfermarktId": "266302",
+    "aliases": [],
+    "nationality": "Serbia",
+    "image": "img/higher-lower/players/milinkovic_savic.png",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "1995-02-27"
+  },
+  {
+    "id": "marc_cucurella",
+    "name": "Marc Cucurella",
+    "transfermarktId": "284857",
+    "aliases": [
+      "Marc Cucurella Saseta"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/marc_cucurella.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1998-07-22"
+  },
+  {
+    "id": "grimaldo",
+    "name": "Grimaldo",
+    "transfermarktId": "193082",
+    "aliases": [
+      "Alejandro Grimaldo",
+      "Alejandro Grimaldo García"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/grimaldo.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-09-20"
+  },
+  {
+    "id": "pavard",
+    "name": "Benjamin Pavard",
+    "transfermarktId": "353366",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/pavard.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1996-03-28"
+  },
+  {
+    "id": "szczesny",
+    "name": "Wojciech Szczęsny",
+    "transfermarktId": "44058",
+    "aliases": [
+      "Wojciech Szczesny"
+    ],
+    "nationality": "Poland",
+    "image": "img/higher-lower/players/szczesny.png",
+    "nationalityFlag": "img/country/poland.png",
+    "birthDate": "1990-04-18"
+  },
+  {
+    "id": "alex_baena",
+    "name": "Álex Baena",
+    "transfermarktId": "548111",
+    "aliases": [
+      "Alejandro Baena Rodríguez"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/alex_baena.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2001-07-20"
+  },
+  {
+    "id": "zaccagni",
+    "name": "Mattia Zaccagni",
+    "transfermarktId": "283735",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/zaccagni.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1995-06-16"
+  },
+  {
+    "id": "mamardashvili",
+    "name": "Giorgi Mamardashvili",
+    "transfermarktId": "502676",
+    "aliases": [],
+    "nationality": "Georgia",
+    "image": "img/higher-lower/players/mamardashvili.png",
+    "nationalityFlag": "img/country/georgia.png",
+    "birthDate": "2000-09-29"
+  },
+  {
+    "id": "palacios",
+    "name": "Exequiel Palacios",
+    "transfermarktId": "401578",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/palacios.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1998-10-05"
+  },
+  {
+    "id": "simons",
+    "name": "Xavi Simons",
+    "transfermarktId": "566931",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/simons.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2003-04-21"
+  },
+  {
+    "id": "ruben_neves",
+    "name": "Rúben Neves",
+    "transfermarktId": "225161",
+    "aliases": [
+      "Rúben Diogo da Silva Neves"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/ruben_neves.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1997-03-13"
+  },
+  {
+    "id": "gakpo",
+    "name": "Cody Gakpo",
+    "transfermarktId": "434675",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/gakpo.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1999-05-07"
+  },
+  {
+    "id": "locatelli",
+    "name": "Manuel Locatelli",
+    "transfermarktId": "265088",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/locatelli.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1998-01-08"
+  },
+  {
+    "id": "pulisic",
+    "name": "Christian Pulisic",
+    "transfermarktId": "315779",
+    "aliases": [],
+    "nationality": "United States",
+    "image": "img/higher-lower/players/pulisic.png",
+    "nationalityFlag": "img/country/united_states.png",
+    "birthDate": "1998-09-18"
+  },
+  {
+    "id": "diogo_costa",
+    "name": "Diogo Costa",
+    "transfermarktId": "357153",
+    "aliases": [
+      "Diogo Meireles Costa"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/diogo_costa.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1999-09-19"
+  },
+  {
+    "id": "watkins",
+    "name": "Ollie Watkins",
+    "transfermarktId": "324358",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/watkins.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1995-12-30"
+  },
+  {
+    "id": "maddison",
+    "name": "James Maddison",
+    "transfermarktId": "294057",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/maddison.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1996-11-23"
+  },
+  {
+    "id": "carnesecchi",
+    "name": "Marco Carnesecchi",
+    "transfermarktId": "459763",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/carnesecchi.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "2000-07-01"
+  },
+  {
+    "id": "marmoush",
+    "name": "Omar Marmoush",
+    "transfermarktId": "445939",
+    "aliases": [],
+    "nationality": "Egypt",
+    "image": "img/higher-lower/players/marmoush.png",
+    "nationalityFlag": "img/country/egypt.png",
+    "birthDate": "1999-02-07"
+  },
+  {
+    "id": "eder_militao",
+    "name": "Éder Militão",
+    "transfermarktId": "401530",
+    "aliases": [
+      "Éder Gabriel Militão"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/eder_militao.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1998-01-18"
+  },
+  {
+    "id": "lukaku",
+    "name": "Romelu Lukaku",
+    "transfermarktId": "96341",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/lukaku.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1993-05-13"
+  },
+  {
+    "id": "isco",
+    "name": "Isco",
+    "transfermarktId": "85288",
+    "aliases": [
+      "Francisco Román Alarcón Suárez"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/isco.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1992-04-21"
+  },
+  {
+    "id": "barcola",
+    "name": "Bradley Barcola",
+    "transfermarktId": "708265",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/barcola.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2002-09-02"
+  },
+  {
+    "id": "diaby",
+    "name": "Moussa Diaby",
+    "transfermarktId": "395516",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/diaby.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1999-07-07"
+  },
+  {
+    "id": "vivian",
+    "name": "Vivian",
+    "transfermarktId": "524000",
+    "aliases": [
+      "Dani Vivian",
+      "Daniel Vivian Moreno"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/vivian.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1999-07-05"
+  },
+  {
+    "id": "lookman",
+    "name": "Ademola Lookman",
+    "transfermarktId": "406040",
+    "aliases": [],
+    "nationality": "Nigeria",
+    "image": "img/higher-lower/players/lookman.png",
+    "nationalityFlag": "img/country/nigeria.png",
+    "birthDate": "1997-10-20"
+  },
+  {
+    "id": "mahrez",
+    "name": "Riyad Mahrez",
+    "transfermarktId": "171424",
+    "aliases": [],
+    "nationality": "Algeria",
+    "image": "img/higher-lower/players/mahrez.png",
+    "nationalityFlag": "img/country/algeria.png",
+    "birthDate": "1991-02-21"
+  },
+  {
+    "id": "sorloth",
+    "name": "Alexander Sørloth",
+    "transfermarktId": "238407",
+    "aliases": [],
+    "nationality": "Norway",
+    "image": "img/higher-lower/players/sorloth.png",
+    "nationalityFlag": "img/country/norway.png",
+    "birthDate": "1995-12-05"
+  },
+  {
+    "id": "acerbi",
+    "name": "Francesco Acerbi",
+    "transfermarktId": "131075",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/acerbi.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1988-02-10"
+  },
+  {
+    "id": "de_vrij",
+    "name": "Stefan de Vrij",
+    "transfermarktId": "111196",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/de_vrij.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1992-02-05"
+  },
+  {
+    "id": "orban",
+    "name": "Willi Orban",
+    "transfermarktId": "93740",
+    "aliases": [
+      "Willi Orbán"
+    ],
+    "nationality": "Hungary",
+    "image": "img/higher-lower/players/orban.png",
+    "nationalityFlag": "img/country/hungary.png",
+    "birthDate": "1992-11-03"
+  },
+  {
+    "id": "rabiot",
+    "name": "Adrien Rabiot",
+    "transfermarktId": "182913",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/rabiot.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1995-04-03"
+  },
+  {
+    "id": "mkhitaryan",
+    "name": "Henrikh Mkhitaryan",
+    "transfermarktId": "55735",
+    "aliases": [],
+    "nationality": "Armenia",
+    "image": "img/higher-lower/players/mkhitaryan.png",
+    "nationalityFlag": "img/country/armenia.png",
+    "birthDate": "1989-01-21"
+  },
+  {
+    "id": "torreira",
+    "name": "Lucas Torreira",
+    "transfermarktId": "318077",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/higher-lower/players/torreira.png",
+    "nationalityFlag": "img/country/uruguay.png",
+    "birthDate": "1996-02-11"
+  },
+  {
+    "id": "di_lorenzo",
+    "name": "Giovanni Di Lorenzo",
+    "transfermarktId": "169880",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/di_lorenzo.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1993-08-04"
+  },
+  {
+    "id": "hjulmand",
+    "name": "Morten Hjulmand",
+    "transfermarktId": "461496",
+    "aliases": [],
+    "nationality": "Denmark",
+    "image": "img/higher-lower/players/hjulmand.png",
+    "nationalityFlag": "img/country/denmark.png",
+    "birthDate": "1999-06-25"
+  },
+  {
+    "id": "kulusevski",
+    "name": "Dejan Kulusevski",
+    "transfermarktId": "431755",
+    "aliases": [],
+    "nationality": "Sweden",
+    "image": "img/higher-lower/players/kulusevski.png",
+    "nationalityFlag": "img/country/sweden.png",
+    "birthDate": "2000-04-25"
+  },
+  {
+    "id": "mikel_merino",
+    "name": "Mikel Merino",
+    "transfermarktId": "338424",
+    "aliases": [
+      "Mikel Merino Zazón"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/mikel_merino.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1996-06-22"
+  },
+  {
+    "id": "ayoze",
+    "name": "Ayoze",
+    "transfermarktId": "246968",
+    "aliases": [
+      "Ayoze Pérez",
+      "Ayoze Pérez Gutiérrez"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/ayoze.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1993-07-29"
+  },
+  {
+    "id": "inaki_williams",
+    "name": "Iñaki Williams",
+    "transfermarktId": "255508",
+    "aliases": [
+      "Iñaki Williams Arthuer"
+    ],
+    "nationality": "Ghana",
+    "image": "img/higher-lower/players/inaki_williams.png",
+    "nationalityFlag": "img/country/ghana.png",
+    "birthDate": "1994-06-15"
+  },
+  {
+    "id": "pedro_goncalves",
+    "name": "Pedro Gonçalves",
+    "transfermarktId": "426620",
+    "aliases": [
+      "Pedro António Pereira Gonçalves"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/pedro_goncalves.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1998-06-28"
+  },
+  {
+    "id": "joan_garcia",
+    "name": "Joan García",
+    "transfermarktId": "561613",
+    "aliases": [
+      "Joan García Pons"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/joan_garcia.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2001-05-04"
+  },
+  {
+    "id": "alex_remiro",
+    "name": "Álex Remiro",
+    "transfermarktId": "212862",
+    "aliases": [
+      "Alejandro Remiro Gargallo"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/alex_remiro.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-03-24"
+  },
+  {
+    "id": "hancko",
+    "name": "Dávid Hancko",
+    "transfermarktId": "404418",
+    "aliases": [],
+    "nationality": "Slovakia",
+    "image": "img/higher-lower/players/hancko.png",
+    "nationalityFlag": "img/country/slovakia.png",
+    "birthDate": "1997-12-13"
+  },
+  {
+    "id": "gordon",
+    "name": "Anthony Gordon",
+    "transfermarktId": "503733",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/gordon.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2001-02-24"
+  },
+  {
+    "id": "chevalier",
+    "name": "Lucas Chevalier",
+    "transfermarktId": "463600",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/chevalier.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2001-11-06"
+  },
+  {
+    "id": "kovacic",
+    "name": "Mateo Kovačić",
+    "transfermarktId": "51471",
+    "aliases": [
+      "Mateo Kovacic"
+    ],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/kovacic.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1994-05-06"
+  },
+  {
+    "id": "aleix_garcia",
+    "name": "Aleix García",
+    "transfermarktId": "261504",
+    "aliases": [
+      "Aleix García Serrano"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/aleix_garcia.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1997-06-28"
+  },
+  {
+    "id": "partey",
+    "name": "Thomas Partey",
+    "transfermarktId": "230784",
+    "aliases": [],
+    "nationality": "Ghana",
+    "image": "img/higher-lower/players/partey.png",
+    "nationalityFlag": "img/country/ghana.png",
+    "birthDate": "1993-06-13"
+  },
+  {
+    "id": "lobotka",
+    "name": "Stanislav Lobotka",
+    "transfermarktId": "192735",
+    "aliases": [],
+    "nationality": "Slovakia",
+    "image": "img/higher-lower/players/lobotka.png",
+    "nationalityFlag": "img/country/slovakia.png",
+    "birthDate": "1994-11-25"
+  },
+  {
+    "id": "frimpong",
+    "name": "Jeremie Frimpong",
+    "transfermarktId": "484547",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/frimpong.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2000-12-10"
+  },
+  {
+    "id": "baumann",
+    "name": "Oliver Baumann",
+    "transfermarktId": "55089",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/baumann.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1990-06-02"
+  },
+  {
+    "id": "matheus_cunha",
+    "name": "Matheus Cunha",
+    "transfermarktId": "517894",
+    "aliases": [
+      "Matheus Santos Carneiro da Cunha"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/matheus_cunha.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1999-05-27"
+  },
+  {
+    "id": "zubimendi",
+    "name": "Zubimendi",
+    "transfermarktId": "423440",
+    "aliases": [
+      "Martín Zubimendi",
+      "Martín Zubimendi Ibáñez"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/zubimendi.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1999-02-02"
+  },
+  {
+    "id": "sels",
+    "name": "Matz Sels",
+    "transfermarktId": "127202",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/sels.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1992-02-26"
+  },
+  {
+    "id": "eze",
+    "name": "Eberechi Eze",
+    "transfermarktId": "479999",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/eze.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1998-06-29"
+  },
+  {
+    "id": "balde",
+    "name": "Balde",
+    "transfermarktId": "636688",
+    "aliases": [
+      "Alejandro Balde",
+      "Alejandro Balde Martínez"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/balde.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2003-10-18"
+  },
+  {
+    "id": "guendogan",
+    "name": "İlkay Gündoğan",
+    "transfermarktId": "53622",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/guendogan.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1990-10-24"
+  },
+  {
+    "id": "openda",
+    "name": "Loïs Openda",
+    "transfermarktId": "368887",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/openda.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "2000-02-16"
+  },
+  {
+    "id": "palhinha",
+    "name": "Palhinha",
+    "transfermarktId": "257455",
+    "aliases": [
+      "João Palhinha",
+      "João Maria Palhinha Gonçalves"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/palhinha.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1995-07-09"
+  },
+  {
+    "id": "brandt",
+    "name": "Julian Brandt",
+    "transfermarktId": "187492",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/brandt.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-05-02"
+  },
+  {
+    "id": "bowen",
+    "name": "Jarrod Bowen",
+    "transfermarktId": "314875",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/bowen.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1996-12-20"
+  },
+  {
+    "id": "murillo",
+    "name": "Murillo",
+    "transfermarktId": "1005649",
+    "aliases": [
+      "Murillo Costa dos Santos"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/murillo.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "2002-07-04"
+  },
+  {
+    "id": "kamara",
+    "name": "Boubacar Kamara",
+    "transfermarktId": "394327",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/kamara.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1999-11-23"
+  },
+  {
+    "id": "ake",
+    "name": "Nathan Aké",
+    "transfermarktId": "177476",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/ake.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1995-02-18"
+  },
+  {
+    "id": "ferran_torres",
+    "name": "Ferran Torres",
+    "transfermarktId": "398184",
+    "aliases": [
+      "Ferran Torres García"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/ferran_torres.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2000-02-29"
+  },
+  {
+    "id": "stiller",
+    "name": "Angelo Stiller",
+    "transfermarktId": "443710",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/stiller.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "2001-04-04"
+  },
+  {
+    "id": "hincapie",
+    "name": "Piero Hincapié",
+    "transfermarktId": "659813",
+    "aliases": [],
+    "nationality": "Ecuador",
+    "image": "img/higher-lower/players/hincapie.png",
+    "nationalityFlag": "img/country/ecuador.png",
+    "birthDate": "2002-01-09"
+  },
+  {
+    "id": "dovbyk",
+    "name": "Artem Dovbyk",
+    "transfermarktId": "343537",
+    "aliases": [],
+    "nationality": "Ukraine",
+    "image": "img/higher-lower/players/dovbyk.png",
+    "nationalityFlag": "img/country/ukraine.png",
+    "birthDate": "1997-06-21"
+  },
+  {
+    "id": "ekitike",
+    "name": "Hugo Ekitiké",
+    "transfermarktId": "709726",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/ekitike.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2002-06-20"
+  },
+  {
+    "id": "iago_aspas",
+    "name": "Iago Aspas",
+    "transfermarktId": "72047",
+    "aliases": [
+      "Iago Aspas Juncal"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/iago_aspas.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1987-08-01"
+  },
+  {
+    "id": "kean",
+    "name": "Moise Kean",
+    "transfermarktId": "364135",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/kean.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "2000-02-28"
+  },
+  {
+    "id": "coman",
+    "name": "Kingsley Coman",
+    "transfermarktId": "243714",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/coman.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1996-06-13"
+  },
+  {
+    "id": "trossard",
+    "name": "Leandro Trossard",
+    "transfermarktId": "144028",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/trossard.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1994-12-04"
+  },
+  {
+    "id": "white",
+    "name": "Benjamin White",
+    "transfermarktId": "335721",
+    "aliases": [
+      "Ben White"
+    ],
+    "nationality": "England",
+    "image": "img/higher-lower/players/white.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1997-10-08"
+  },
+  {
+    "id": "retegui",
+    "name": "Mateo Retegui",
+    "transfermarktId": "554903",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/retegui.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1999-04-29"
+  },
+  {
+    "id": "gimenez",
+    "name": "José María Giménez",
+    "transfermarktId": "250845",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/higher-lower/players/gimenez.png",
+    "nationalityFlag": "img/country/uruguay.png",
+    "birthDate": "1995-01-20"
+  },
+  {
+    "id": "mancini",
+    "name": "Gianluca Mancini",
+    "transfermarktId": "256448",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/mancini.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1996-04-17"
+  },
+  {
+    "id": "rrahmani",
+    "name": "Amir Rrahmani",
+    "transfermarktId": "257732",
+    "aliases": [],
+    "nationality": "Kosovo",
+    "image": "img/higher-lower/players/rrahmani.png",
+    "nationalityFlag": "img/country/kosovo.png",
+    "birthDate": "1994-02-24"
+  },
+  {
+    "id": "milenkovic",
+    "name": "Nikola Milenković",
+    "transfermarktId": "413507",
+    "aliases": [],
+    "nationality": "Serbia",
+    "image": "img/higher-lower/players/milenkovic.png",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "1997-10-12"
+  },
+  {
+    "id": "le_normand",
+    "name": "Robin Le Normand",
+    "transfermarktId": "351809",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/le_normand.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1996-11-11"
+  },
+  {
+    "id": "goretzka",
+    "name": "Leon Goretzka",
+    "transfermarktId": "153084",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/goretzka.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1995-02-06"
+  },
+  {
+    "id": "joelinton",
+    "name": "Joelinton",
+    "transfermarktId": "333241",
+    "aliases": [
+      "Joelinton Apolinário de Lira"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/joelinton.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1996-08-14"
+  },
+  {
+    "id": "nmecha",
+    "name": "Felix Nmecha",
+    "transfermarktId": "406640",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/nmecha.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "2000-10-10"
+  },
+  {
+    "id": "ederson_jose_dos_santos",
+    "name": "Éderson",
+    "transfermarktId": "607854",
+    "aliases": [
+      "Éderson José dos Santos"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/ederson_jose_dos_santos.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1999-07-07"
+  },
+  {
+    "id": "can",
+    "name": "Emre Can",
+    "transfermarktId": "119296",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/can.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1994-01-12"
+  },
+  {
+    "id": "koekcue",
+    "name": "Orkun Kökçü",
+    "transfermarktId": "454567",
+    "aliases": [],
+    "nationality": "Turkey",
+    "image": "img/higher-lower/players/koekcue.png",
+    "nationalityFlag": "img/country/turkey.png",
+    "birthDate": "2000-12-29"
+  },
+  {
+    "id": "pedro_porro",
+    "name": "Pedro Porro",
+    "transfermarktId": "553875",
+    "aliases": [
+      "Pedro Antonio Porro Sauceda"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/pedro_porro.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1999-09-13"
+  },
+  {
+    "id": "zakaria",
+    "name": "Denis Zakaria",
+    "transfermarktId": "334526",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/zakaria.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1996-11-20"
+  },
+  {
+    "id": "rogers",
+    "name": "Morgan Rogers",
+    "transfermarktId": "503743",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/rogers.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2002-07-26"
+  },
+  {
+    "id": "svilar",
+    "name": "Mile Svilar",
+    "transfermarktId": "338670",
+    "aliases": [],
+    "nationality": "Serbia",
+    "image": "img/higher-lower/players/svilar.png",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "1999-08-27"
+  },
+  {
+    "id": "tillman",
+    "name": "Malik Tillman",
+    "transfermarktId": "467437",
+    "aliases": [],
+    "nationality": "United States",
+    "image": "img/higher-lower/players/tillman.png",
+    "nationalityFlag": "img/country/united_states.png",
+    "birthDate": "2002-05-28"
+  },
+  {
+    "id": "otavio",
+    "name": "Otávio",
+    "transfermarktId": "231289",
+    "aliases": [
+      "Otávio Edmilson da Silva Monteiro"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/otavio.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1995-02-09"
+  },
+  {
+    "id": "laimer",
+    "name": "Konrad Laimer",
+    "transfermarktId": "223967",
+    "aliases": [],
+    "nationality": "Austria",
+    "image": "img/higher-lower/players/laimer.png",
+    "nationalityFlag": "img/country/austria.png",
+    "birthDate": "1997-05-27"
+  },
+  {
+    "id": "guendouzi",
+    "name": "Mattéo Guendouzi",
+    "transfermarktId": "465830",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/guendouzi.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1999-04-14"
+  },
+  {
+    "id": "alex_berenguer",
+    "name": "Álex Berenguer",
+    "transfermarktId": "338425",
+    "aliases": [
+      "Alejandro Berenguer Remiro"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/alex_berenguer.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-07-04"
+  },
+  {
+    "id": "raum",
+    "name": "David Raum",
+    "transfermarktId": "318204",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/raum.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1998-04-22"
+  },
+  {
+    "id": "alaba",
+    "name": "David Alaba",
+    "transfermarktId": "59016",
+    "aliases": [],
+    "nationality": "Austria",
+    "image": "img/higher-lower/players/alaba.png",
+    "nationalityFlag": "img/country/austria.png",
+    "birthDate": "1992-06-24"
+  },
+  {
+    "id": "rulli",
+    "name": "Gerónimo Rulli",
+    "transfermarktId": "229604",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/rulli.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1992-05-20"
+  },
+  {
+    "id": "kerkez",
+    "name": "Milos Kerkez",
+    "transfermarktId": "730861",
+    "aliases": [],
+    "nationality": "Hungary",
+    "image": "img/higher-lower/players/kerkez.png",
+    "nationalityFlag": "img/country/hungary.png",
+    "birthDate": "2003-11-07"
+  },
+  {
+    "id": "vicario",
+    "name": "Guglielmo Vicario",
+    "transfermarktId": "286047",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/vicario.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1996-10-07"
+  },
+  {
+    "id": "lo_celso",
+    "name": "Giovani Lo Celso",
+    "transfermarktId": "348795",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/lo_celso.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1996-04-09"
+  },
+  {
+    "id": "provedel",
+    "name": "Ivan Provedel",
+    "transfermarktId": "197929",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/provedel.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1994-03-17"
+  },
+  {
+    "id": "gibbs_white",
+    "name": "Morgan Gibbs-White",
+    "transfermarktId": "429014",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/gibbs_white.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2000-01-27"
+  },
+  {
+    "id": "mittelstaedt",
+    "name": "Maximilian Mittelstädt",
+    "transfermarktId": "282660",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/mittelstaedt.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1997-03-18"
+  },
+  {
+    "id": "pablo_barrios",
+    "name": "Pablo Barrios",
+    "transfermarktId": "775605",
+    "aliases": [
+      "Pablo Barrios Rivas"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/pablo_barrios.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2003-06-15"
+  },
+  {
+    "id": "casteels",
+    "name": "Koen Casteels",
+    "transfermarktId": "108880",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/casteels.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1992-06-25"
+  },
+  {
+    "id": "meret",
+    "name": "Alex Meret",
+    "transfermarktId": "240414",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/meret.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1997-03-22"
+  },
+  {
+    "id": "robertson",
+    "name": "Andrew Robertson",
+    "transfermarktId": "234803",
+    "aliases": [],
+    "nationality": "Scotland",
+    "image": "img/higher-lower/players/robertson.png",
+    "nationalityFlag": "img/country/scotland.png",
+    "birthDate": "1994-03-11"
+  },
+  {
+    "id": "sanchez",
+    "name": "Davinson Sánchez",
+    "transfermarktId": "341429",
+    "aliases": [],
+    "nationality": "Colombia",
+    "image": "img/higher-lower/players/sanchez.png",
+    "nationalityFlag": "img/country/colombia.png",
+    "birthDate": "1996-06-12"
+  },
+  {
+    "id": "malcom",
+    "name": "Malcom",
+    "transfermarktId": "323704",
+    "aliases": [
+      "Malcom Filipe Silva de Oliveira"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/malcom.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-02-26"
+  },
+  {
+    "id": "bounou",
+    "name": "Yassine Bounou",
+    "transfermarktId": "207834",
+    "aliases": [],
+    "nationality": "Morocco",
+    "image": "img/higher-lower/players/bounou.png",
+    "nationalityFlag": "img/country/morocco.png",
+    "birthDate": "1991-04-05"
+  },
+  {
+    "id": "robinson",
+    "name": "Antonee Robinson",
+    "transfermarktId": "349701",
+    "aliases": [],
+    "nationality": "United States",
+    "image": "img/higher-lower/players/robinson.png",
+    "nationalityFlag": "img/country/united_states.png",
+    "birthDate": "1997-08-08"
+  },
+  {
+    "id": "mitoma",
+    "name": "Kaoru Mitoma",
+    "transfermarktId": "504849",
+    "aliases": [],
+    "nationality": "Japan",
+    "image": "img/higher-lower/players/mitoma.png",
+    "nationalityFlag": "img/country/japan.png",
+    "birthDate": "1997-05-20"
+  },
+  {
+    "id": "pavlidis",
+    "name": "Vangelis Pavlidis",
+    "transfermarktId": "324503",
+    "aliases": [],
+    "nationality": "Greece",
+    "image": "img/higher-lower/players/pavlidis.png",
+    "nationalityFlag": "img/country/greece.png",
+    "birthDate": "1998-11-21"
+  },
+  {
+    "id": "fabinho",
+    "name": "Fabinho",
+    "transfermarktId": "225693",
+    "aliases": [
+      "Fábio Henrique Tavares"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/fabinho.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1993-10-23"
+  },
+  {
+    "id": "orsolini",
+    "name": "Riccardo Orsolini",
+    "transfermarktId": "368482",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/orsolini.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1997-01-24"
+  },
+  {
+    "id": "van_de_ven",
+    "name": "Micky van de Ven",
+    "transfermarktId": "557459",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/van_de_ven.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2001-04-19"
+  },
+  {
+    "id": "sane",
+    "name": "Leroy Sané",
+    "transfermarktId": "192565",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/sane.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-01-11"
+  },
+  {
+    "id": "konsa",
+    "name": "Ezri Konsa",
+    "transfermarktId": "413403",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/konsa.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1997-10-23"
+  },
+  {
+    "id": "de_ketelaere",
+    "name": "Charles De Ketelaere",
+    "transfermarktId": "435772",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/de_ketelaere.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "2001-03-10"
+  },
+  {
+    "id": "timber",
+    "name": "Jurriën Timber",
+    "transfermarktId": "420243",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/timber.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2001-06-17"
+  },
+  {
+    "id": "trincao",
+    "name": "Trincão",
+    "transfermarktId": "412669",
+    "aliases": [
+      "Francisco Trincão"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/trincao.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1999-12-29"
+  },
+  {
+    "id": "gnabry",
+    "name": "Serge Gnabry",
+    "transfermarktId": "159471",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/gnabry.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1995-07-14"
+  },
+  {
+    "id": "burkardt",
+    "name": "Jonathan Burkardt",
+    "transfermarktId": "333647",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/burkardt.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "2000-07-11"
+  },
+  {
+    "id": "schaer",
+    "name": "Fabian Schär",
+    "transfermarktId": "135343",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/schaer.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1991-12-20"
+  },
+  {
+    "id": "hojbjerg",
+    "name": "Pierre-Emile Højbjerg",
+    "transfermarktId": "167799",
+    "aliases": [],
+    "nationality": "Denmark",
+    "image": "img/higher-lower/players/hojbjerg.png",
+    "nationalityFlag": "img/country/denmark.png",
+    "birthDate": "1995-08-05"
+  },
+  {
+    "id": "havertz",
+    "name": "Kai Havertz",
+    "transfermarktId": "309400",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/havertz.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1999-06-11"
+  },
+  {
+    "id": "huijsen",
+    "name": "Dean Huijsen",
+    "transfermarktId": "890290",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/huijsen.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2005-04-14"
+  },
+  {
+    "id": "rafa",
+    "name": "Rafa",
+    "transfermarktId": "238055",
+    "aliases": [
+      "Rafa Silva",
+      "Rafael A. Ferreira Silva"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/rafa.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1993-05-17"
+  },
+  {
+    "id": "oyarzabal",
+    "name": "Oyarzabal",
+    "transfermarktId": "351478",
+    "aliases": [
+      "Mikel Oyarzabal",
+      "Mikel Oyarzabal Ugarte"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/oyarzabal.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1997-04-21"
+  },
+  {
+    "id": "kubo",
+    "name": "Takefusa Kubo",
+    "transfermarktId": "405398",
+    "aliases": [],
+    "nationality": "Japan",
+    "image": "img/higher-lower/players/kubo.png",
+    "nationalityFlag": "img/country/japan.png",
+    "birthDate": "2001-06-04"
+  },
+  {
+    "id": "di_maria",
+    "name": "Ángel Di María",
+    "transfermarktId": "45320",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/di_maria.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1988-02-14"
+  },
+  {
+    "id": "goetze",
+    "name": "Mario Götze",
+    "transfermarktId": "74842",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/goetze.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1992-06-03"
+  },
+  {
+    "id": "berardi",
+    "name": "Domenico Berardi",
+    "transfermarktId": "177843",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/berardi.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1994-08-01"
+  },
+  {
+    "id": "mateta",
+    "name": "Jean-Philippe Mateta",
+    "transfermarktId": "420002",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/mateta.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1997-06-28"
+  },
+  {
+    "id": "stones",
+    "name": "John Stones",
+    "transfermarktId": "186590",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/stones.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1994-05-28"
+  },
+  {
+    "id": "akanji",
+    "name": "Manuel Akanji",
+    "transfermarktId": "284730",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/akanji.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1995-07-19"
+  },
+  {
+    "id": "david",
+    "name": "Jonathan David",
+    "transfermarktId": "533738",
+    "aliases": [],
+    "nationality": "Canada",
+    "image": "img/higher-lower/players/david.png",
+    "nationalityFlag": "img/country/canada.png",
+    "birthDate": "2000-01-14"
+  },
+  {
+    "id": "greenwood",
+    "name": "Mason Greenwood",
+    "transfermarktId": "532826",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/greenwood.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2001-10-01"
+  },
+  {
+    "id": "parejo",
+    "name": "Parejo",
+    "transfermarktId": "59561",
+    "aliases": [
+      "Dani Parejo",
+      "Daniel Parejo Muñoz"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/parejo.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1989-04-16"
+  },
+  {
+    "id": "lukebakio",
+    "name": "Dodi Lukébakio",
+    "transfermarktId": "303259",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/lukebakio.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1997-09-24"
+  },
+  {
+    "id": "doan",
+    "name": "Ritsu Doan",
+    "transfermarktId": "358504",
+    "aliases": [],
+    "nationality": "Japan",
+    "image": "img/higher-lower/players/doan.png",
+    "nationalityFlag": "img/country/japan.png",
+    "birthDate": "1998-06-16"
+  },
+  {
+    "id": "wissa",
+    "name": "Yoane Wissa",
+    "transfermarktId": "388165",
+    "aliases": [],
+    "nationality": "Congo DR",
+    "image": "img/higher-lower/players/wissa.png",
+    "nationalityFlag": "img/country/congo_dr.png",
+    "birthDate": "1996-09-03"
+  },
+  {
+    "id": "vlahovic",
+    "name": "Dušan Vlahović",
+    "transfermarktId": "357498",
+    "aliases": [],
+    "nationality": "Serbia",
+    "image": "img/higher-lower/players/vlahovic.png",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "2000-01-28"
+  },
+  {
+    "id": "anton",
+    "name": "Waldemar Anton",
+    "transfermarktId": "193004",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/anton.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-07-20"
+  },
+  {
+    "id": "de_ligt",
+    "name": "Matthijs de Ligt",
+    "transfermarktId": "326031",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/de_ligt.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1999-08-12"
+  },
+  {
+    "id": "koulibaly",
+    "name": "Kalidou Koulibaly",
+    "transfermarktId": "93128",
+    "aliases": [],
+    "nationality": "Senegal",
+    "image": "img/higher-lower/players/koulibaly.png",
+    "nationalityFlag": "img/country/senegal.png",
+    "birthDate": "1991-06-20"
+  },
+  {
+    "id": "en_nesyri",
+    "name": "Youssef En-Nesyri",
+    "transfermarktId": "433049",
+    "aliases": [],
+    "nationality": "Morocco",
+    "image": "img/higher-lower/players/en_nesyri.png",
+    "nationalityFlag": "img/country/morocco.png",
+    "birthDate": "1997-06-01"
+  },
+  {
+    "id": "pau_cubarsi",
+    "name": "Pau Cubarsí",
+    "transfermarktId": "962110",
+    "aliases": [
+      "Pau Cubarsí Paredes"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/pau_cubarsi.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2007-01-22"
+  },
+  {
+    "id": "zapata",
+    "name": "Duván Zapata",
+    "transfermarktId": "73794",
+    "aliases": [],
+    "nationality": "Colombia",
+    "image": "img/higher-lower/players/zapata.png",
+    "nationalityFlag": "img/country/colombia.png",
+    "birthDate": "1991-04-01"
+  },
+  {
+    "id": "otamendi",
+    "name": "Nicolás Otamendi",
+    "transfermarktId": "54781",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/otamendi.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1988-02-12"
+  },
+  {
+    "id": "guehi",
+    "name": "Marc Guéhi",
+    "transfermarktId": "392757",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/guehi.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2000-07-13"
+  },
+  {
+    "id": "nacho_fernandez",
+    "name": "Nacho Fernández",
+    "transfermarktId": "58884",
+    "aliases": [
+      "José Ignacio Fernández Iglesias"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/nacho_fernandez.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1990-01-18"
+  },
+  {
+    "id": "ginter",
+    "name": "Matthias Ginter",
+    "transfermarktId": "124502",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/ginter.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1994-01-19"
+  },
+  {
+    "id": "brahim",
+    "name": "Brahim",
+    "transfermarktId": "314678",
+    "aliases": [
+      "Brahim Díaz"
+    ],
+    "nationality": "Morocco",
+    "image": "img/higher-lower/players/brahim.png",
+    "nationalityFlag": "img/country/morocco.png",
+    "birthDate": "1999-08-03"
+  },
+  {
+    "id": "buongiorno",
+    "name": "Alessandro Buongiorno",
+    "transfermarktId": "386446",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/buongiorno.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1999-06-06"
+  },
+  {
+    "id": "laporte",
+    "name": "Aymeric Laporte",
+    "transfermarktId": "176553",
+    "aliases": [],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/laporte.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1994-05-27"
+  },
+  {
+    "id": "romero",
+    "name": "Cristian Romero",
+    "transfermarktId": "355915",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/romero.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1998-04-27"
+  },
+  {
+    "id": "savinho",
+    "name": "Savinho",
+    "transfermarktId": "743591",
+    "aliases": [
+      "Sávio",
+      "Sávio Moreira de Oliveira"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/savinho.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "2004-04-10"
+  },
+  {
+    "id": "koch",
+    "name": "Robin Koch",
+    "transfermarktId": "328784",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/koch.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-07-17"
+  },
+  {
+    "id": "budimir",
+    "name": "Ante Budimir",
+    "transfermarktId": "46413",
+    "aliases": [],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/budimir.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1991-07-22"
+  },
+  {
+    "id": "wood",
+    "name": "Chris Wood",
+    "transfermarktId": "108725",
+    "aliases": [],
+    "nationality": "New Zealand",
+    "image": "img/higher-lower/players/wood.png",
+    "nationalityFlag": "img/country/new_zealand.png",
+    "birthDate": "1991-12-07"
+  },
+  {
+    "id": "ibanez",
+    "name": "Ibañez",
+    "transfermarktId": "524481",
+    "aliases": [
+      "Roger Ibañez",
+      "Roger Ibañez da Silva"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/ibanez.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1998-11-23"
+  },
+  {
+    "id": "kim_min_jae",
+    "name": "Kim Min Jae",
+    "transfermarktId": "503482",
+    "aliases": [
+      "Min-jae Kim",
+      "Min Jae Kim"
+    ],
+    "nationality": "Korea Republic",
+    "image": "img/higher-lower/players/kim_min_jae.png",
+    "nationalityFlag": "img/country/korea_republic.png",
+    "birthDate": "1996-11-15"
+  },
+  {
+    "id": "romagnoli",
+    "name": "Alessio Romagnoli",
+    "transfermarktId": "197747",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/romagnoli.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1995-01-12"
+  },
+  {
+    "id": "botman",
+    "name": "Sven Botman",
+    "transfermarktId": "361093",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/botman.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2000-01-12"
+  },
+  {
+    "id": "khephren_thuram",
+    "name": "Khéphren Thuram",
+    "transfermarktId": "463618",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/khephren_thuram.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2001-03-26"
+  },
+  {
+    "id": "gallagher",
+    "name": "Conor Gallagher",
+    "transfermarktId": "488362",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/gallagher.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2000-02-06"
+  },
+  {
+    "id": "james",
+    "name": "Reece James",
+    "transfermarktId": "472423",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/james.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1999-12-08"
+  },
+  {
+    "id": "kostic",
+    "name": "Filip Kostić",
+    "transfermarktId": "161011",
+    "aliases": [
+      "Filip Kostic"
+    ],
+    "nationality": "Serbia",
+    "image": "img/higher-lower/players/kostic.png",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "1992-11-01"
+  },
+  {
+    "id": "sergi_darder",
+    "name": "Sergi Darder",
+    "transfermarktId": "142021",
+    "aliases": [
+      "Sergi Darder Moll"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/sergi_darder.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1993-12-22"
+  },
+  {
+    "id": "mcginn",
+    "name": "John McGinn",
+    "transfermarktId": "193116",
+    "aliases": [],
+    "nationality": "Scotland",
+    "image": "img/higher-lower/players/mcginn.png",
+    "nationalityFlag": "img/country/scotland.png",
+    "birthDate": "1994-10-18"
+  },
+  {
+    "id": "frattesi",
+    "name": "Davide Frattesi",
+    "transfermarktId": "394300",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/frattesi.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1999-09-22"
+  },
+  {
+    "id": "di_gregorio",
+    "name": "Michele Di Gregorio",
+    "transfermarktId": "301238",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/di_gregorio.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1997-07-27"
+  },
+  {
+    "id": "carlos_augusto",
+    "name": "Carlos Augusto",
+    "transfermarktId": "585982",
+    "aliases": [
+      "Carlos Augusto Zopolato Neves"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/carlos_augusto.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1999-01-07"
+  },
+  {
+    "id": "miguel_gutierrez",
+    "name": "Miguel Gutiérrez",
+    "transfermarktId": "525299",
+    "aliases": [
+      "Miguel Gutiérrez Ortega"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/miguel_gutierrez.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2001-07-27"
+  },
+  {
+    "id": "mendy",
+    "name": "Ferland Mendy",
+    "transfermarktId": "291417",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/mendy.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1995-06-08"
+  },
+  {
+    "id": "koopmeiners",
+    "name": "Teun Koopmeiners",
+    "transfermarktId": "360518",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/koopmeiners.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1998-02-28"
+  },
+  {
+    "id": "perisic",
+    "name": "Ivan Perišić",
+    "transfermarktId": "42460",
+    "aliases": [
+      "Ivan Perisic"
+    ],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/perisic.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1989-02-02"
+  },
+  {
+    "id": "herrera",
+    "name": "Yangel Herrera",
+    "transfermarktId": "378293",
+    "aliases": [],
+    "nationality": "Venezuela",
+    "image": "img/higher-lower/players/herrera.png",
+    "nationalityFlag": "img/country/venezuela.png",
+    "birthDate": "1998-01-07"
+  },
+  {
+    "id": "baleba",
+    "name": "Carlos Baleba",
+    "transfermarktId": "973085",
+    "aliases": [],
+    "nationality": "Cameroon",
+    "image": "img/higher-lower/players/baleba.png",
+    "nationalityFlag": "img/country/cameroon.png",
+    "birthDate": "2004-01-03"
+  },
+  {
+    "id": "tolisso",
+    "name": "Corentin Tolisso",
+    "transfermarktId": "190393",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/tolisso.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1994-08-03"
+  },
+  {
+    "id": "carrasco",
+    "name": "Yannick Carrasco",
+    "transfermarktId": "140776",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/carrasco.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1993-09-04"
+  },
+  {
+    "id": "henderson",
+    "name": "Dean Henderson",
+    "transfermarktId": "258919",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/henderson.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1997-03-12"
+  },
+  {
+    "id": "munoz",
+    "name": "Daniel Muñoz",
+    "transfermarktId": "493003",
+    "aliases": [],
+    "nationality": "Colombia",
+    "image": "img/higher-lower/players/munoz.png",
+    "nationalityFlag": "img/country/colombia.png",
+    "birthDate": "1996-05-26"
+  },
+  {
+    "id": "de_roon",
+    "name": "Marten de Roon",
+    "transfermarktId": "133179",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/de_roon.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1991-03-29"
+  },
+  {
+    "id": "brozovic",
+    "name": "Marcelo Brozović",
+    "transfermarktId": "156617",
+    "aliases": [
+      "Marcelo Brozovic"
+    ],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/brozovic.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1992-11-16"
+  },
+  {
+    "id": "brais_mendez",
+    "name": "Brais Méndez",
+    "transfermarktId": "309110",
+    "aliases": [
+      "Brais Méndez Portela"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/brais_mendez.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1997-01-07"
+  },
+  {
+    "id": "johnny_cardoso",
+    "name": "Johnny Cardoso",
+    "transfermarktId": "689505",
+    "aliases": [
+      "João Lucas de Souza Cardoso"
+    ],
+    "nationality": "United States",
+    "image": "img/higher-lower/players/johnny_cardoso.png",
+    "nationalityFlag": "img/country/united_states.png",
+    "birthDate": "2001-09-20"
+  },
+  {
+    "id": "nuebel",
+    "name": "Alexander Nübel",
+    "transfermarktId": "195778",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/nuebel.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-09-30"
+  },
+  {
+    "id": "murphy",
+    "name": "Jacob Murphy",
+    "transfermarktId": "199527",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/murphy.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1995-02-24"
+  },
+  {
+    "id": "koke",
+    "name": "Koke",
+    "transfermarktId": "74229",
+    "aliases": [
+      "Jorge Resurrección"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/koke.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1992-01-08"
+  },
+  {
+    "id": "andrich",
+    "name": "Robert Andrich",
+    "transfermarktId": "159088",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/andrich.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1994-09-22"
+  },
+  {
+    "id": "fofana",
+    "name": "Youssouf Fofana",
+    "transfermarktId": "569598",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/fofana.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1999-01-10"
+  },
+  {
+    "id": "ait_nouri",
+    "name": "Rayan Aït-Nouri",
+    "transfermarktId": "578391",
+    "aliases": [],
+    "nationality": "Algeria",
+    "image": "img/higher-lower/players/ait_nouri.png",
+    "nationalityFlag": "img/country/algeria.png",
+    "birthDate": "2001-06-06"
+  },
+  {
+    "id": "gaya",
+    "name": "Gayà",
+    "transfermarktId": "221322",
+    "aliases": [
+      "José Gayà",
+      "José Luís Gayà Peña"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/gaya.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-05-25"
+  },
+  {
+    "id": "simeone",
+    "name": "Giuliano Simeone",
+    "transfermarktId": "742201",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/simeone.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "2002-12-18"
+  },
+  {
+    "id": "trapp",
+    "name": "Kevin Trapp",
+    "transfermarktId": "45672",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/trapp.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1990-07-08"
+  },
+  {
+    "id": "anderson_talisca",
+    "name": "Anderson Talisca",
+    "transfermarktId": "258626",
+    "aliases": [
+      "Talisca",
+      "Anderson Souza Conceição"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/anderson_talisca.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1994-02-01"
+  },
+  {
+    "id": "amiri",
+    "name": "Nadiem Amiri",
+    "transfermarktId": "232454",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/amiri.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1996-10-27"
+  },
+  {
+    "id": "pope",
+    "name": "Nick Pope",
+    "transfermarktId": "192080",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/pope.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1992-04-19"
+  },
+  {
+    "id": "toney",
+    "name": "Ivan Toney",
+    "transfermarktId": "251664",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/toney.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1996-03-16"
+  },
+  {
+    "id": "david_soria",
+    "name": "David Soria",
+    "transfermarktId": "226012",
+    "aliases": [
+      "David Soria Solís"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/david_soria.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1993-04-04"
+  },
+  {
+    "id": "chiesa",
+    "name": "Federico Chiesa",
+    "transfermarktId": "341092",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/chiesa.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1997-10-25"
+  },
+  {
+    "id": "lisandro_martinez",
+    "name": "Lisandro Martínez",
+    "transfermarktId": "480762",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/lisandro_martinez.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1998-01-18"
+  },
+  {
+    "id": "galeno",
+    "name": "Galeno",
+    "transfermarktId": "454121",
+    "aliases": [
+      "Wenderson Nascimento Galeno"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/galeno.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-10-22"
+  },
+  {
+    "id": "lunin",
+    "name": "Andriy Lunin",
+    "transfermarktId": "404839",
+    "aliases": [],
+    "nationality": "Ukraine",
+    "image": "img/higher-lower/players/lunin.png",
+    "nationalityFlag": "img/country/ukraine.png",
+    "birthDate": "1999-02-11"
+  },
+  {
+    "id": "antony",
+    "name": "Antony",
+    "transfermarktId": "602105",
+    "aliases": [
+      "Antony Matheus dos Santos"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/antony.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "2000-02-24"
+  },
+  {
+    "id": "darmian",
+    "name": "Matteo Darmian",
+    "transfermarktId": "54906",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/darmian.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1989-12-02"
+  },
+  {
+    "id": "politano",
+    "name": "Matteo Politano",
+    "transfermarktId": "165895",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/politano.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1993-08-03"
+  },
+  {
+    "id": "lucas_perri",
+    "name": "Lucas Perri",
+    "transfermarktId": "352041",
+    "aliases": [
+      "Lucas Estella Perri"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/lucas_perri.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-12-10"
+  },
+  {
+    "id": "freuler",
+    "name": "Remo Freuler",
+    "transfermarktId": "148252",
+    "aliases": [],
+    "nationality": "Switzerland",
+    "image": "img/higher-lower/players/freuler.png",
+    "nationalityFlag": "img/country/switzerland.png",
+    "birthDate": "1992-04-15"
+  },
+  {
+    "id": "ricardo_horta",
+    "name": "Ricardo Horta",
+    "transfermarktId": "261927",
+    "aliases": [
+      "Ricardo Jorge da Luz Horta"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/ricardo_horta.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1994-09-15"
+  },
+  {
+    "id": "gerard_moreno",
+    "name": "Gerard Moreno",
+    "transfermarktId": "177467",
+    "aliases": [
+      "Gerard Moreno Balagueró"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/gerard_moreno.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1992-04-07"
+  },
+  {
+    "id": "rui_silva",
+    "name": "Rui Silva",
+    "transfermarktId": "234811",
+    "aliases": [
+      "Rui Tiago Dantas da Silva"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/rui_silva.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1994-02-07"
+  },
+  {
+    "id": "dani_ceballos",
+    "name": "Dani Ceballos",
+    "transfermarktId": "319745",
+    "aliases": [
+      "Daniel Ceballos Fernández"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/dani_ceballos.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1996-08-07"
+  },
+  {
+    "id": "tapsoba",
+    "name": "Edmond Tapsoba",
+    "transfermarktId": "564545",
+    "aliases": [],
+    "nationality": "Burkina Faso",
+    "image": "img/higher-lower/players/tapsoba.png",
+    "nationalityFlag": "img/country/burkina_faso.png",
+    "birthDate": "1999-02-02"
+  },
+  {
+    "id": "adeyemi",
+    "name": "Karim Adeyemi",
+    "transfermarktId": "496094",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/adeyemi.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "2002-01-18"
+  },
+  {
+    "id": "elanga",
+    "name": "Anthony Elanga",
+    "transfermarktId": "583189",
+    "aliases": [],
+    "nationality": "Sweden",
+    "image": "img/higher-lower/players/elanga.png",
+    "nationalityFlag": "img/country/sweden.png",
+    "birthDate": "2002-04-27"
+  },
+  {
+    "id": "hradecky",
+    "name": "Lukáš Hrádecký",
+    "transfermarktId": "48015",
+    "aliases": [
+      "Lukas Hradecky"
+    ],
+    "nationality": "Finland",
+    "image": "img/higher-lower/players/hradecky.png",
+    "nationalityFlag": "img/country/finland.png",
+    "birthDate": "1989-11-24"
+  },
+  {
+    "id": "david_neres",
+    "name": "David Neres",
+    "transfermarktId": "469822",
+    "aliases": [
+      "David Neres Campos"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/david_neres.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-03-03"
+  },
+  {
+    "id": "ndicka",
+    "name": "Evan Ndicka",
+    "transfermarktId": "371149",
+    "aliases": [],
+    "nationality": "Côte d'Ivoire",
+    "image": "img/higher-lower/players/ndicka.png",
+    "nationalityFlag": "img/country/cote_d_ivoire.png",
+    "birthDate": "1999-08-20"
+  },
+  {
+    "id": "falcone",
+    "name": "Wladimiro Falcone",
+    "transfermarktId": "238537",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/falcone.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1995-04-12"
+  },
+  {
+    "id": "lucas_hernandez",
+    "name": "Lucas Hernández",
+    "transfermarktId": "281963",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/lucas_hernandez.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1996-02-14"
+  },
+  {
+    "id": "kolo_muani",
+    "name": "Randal Kolo Muani",
+    "transfermarktId": "487969",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/kolo_muani.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1998-12-05"
+  },
+  {
+    "id": "morata",
+    "name": "Morata",
+    "transfermarktId": "128223",
+    "aliases": [
+      "Álvaro Morata",
+      "Álvaro Borja Morata Martín"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/morata.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1992-10-23"
+  },
+  {
+    "id": "goncalo_inacio",
+    "name": "Gonçalo Inácio",
+    "transfermarktId": "549006",
+    "aliases": [
+      "Gonçalo Bernardo Inácio"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/goncalo_inacio.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "2001-08-25"
+  },
+  {
+    "id": "balerdi",
+    "name": "Leonardo Balerdi",
+    "transfermarktId": "575998",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/balerdi.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1999-01-26"
+  },
+  {
+    "id": "kramaric",
+    "name": "Andrej Kramarić",
+    "transfermarktId": "46580",
+    "aliases": [
+      "Andrej Kramaric"
+    ],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/kramaric.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1991-06-19"
+  },
+  {
+    "id": "nkunku",
+    "name": "Christopher Nkunku",
+    "transfermarktId": "344381",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/nkunku.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1997-11-14"
+  },
+  {
+    "id": "simakan",
+    "name": "Mohamed Simakan",
+    "transfermarktId": "666234",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/simakan.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2000-05-03"
+  },
+  {
+    "id": "danilo_pereira",
+    "name": "Danilo Pereira",
+    "transfermarktId": "141050",
+    "aliases": [
+      "Danilo Luís Hélio Pereira"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/danilo_pereira.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1991-09-09"
+  },
+  {
+    "id": "gueler",
+    "name": "Arda Güler",
+    "transfermarktId": "861410",
+    "aliases": [],
+    "nationality": "Turkey",
+    "image": "img/higher-lower/players/gueler.png",
+    "nationalityFlag": "img/country/turkey.png",
+    "birthDate": "2005-02-25"
+  },
+  {
+    "id": "aubameyang",
+    "name": "Pierre-Emerick Aubameyang",
+    "transfermarktId": "58864",
+    "aliases": [],
+    "nationality": "Gabon",
+    "image": "img/higher-lower/players/aubameyang.png",
+    "nationalityFlag": "img/country/gabon.png",
+    "birthDate": "1989-06-18"
+  },
+  {
+    "id": "kleindienst",
+    "name": "Tim Kleindienst",
+    "transfermarktId": "193033",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/kleindienst.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1995-08-31"
+  },
+  {
+    "id": "banza",
+    "name": "Simon Banza",
+    "transfermarktId": "344869",
+    "aliases": [],
+    "nationality": "Congo DR",
+    "image": "img/higher-lower/players/banza.png",
+    "nationalityFlag": "img/country/congo_dr.png",
+    "birthDate": "1996-08-13"
+  },
+  {
+    "id": "aguerd",
+    "name": "Nayef Aguerd",
+    "transfermarktId": "361914",
+    "aliases": [],
+    "nationality": "Morocco",
+    "image": "img/higher-lower/players/aguerd.png",
+    "nationalityFlag": "img/country/morocco.png",
+    "birthDate": "1996-03-30"
+  },
+  {
+    "id": "boniface",
+    "name": "Victor Boniface",
+    "transfermarktId": "656681",
+    "aliases": [],
+    "nationality": "Nigeria",
+    "image": "img/higher-lower/players/boniface.png",
+    "nationalityFlag": "img/country/nigeria.png",
+    "birthDate": "2000-12-23"
+  },
+  {
+    "id": "icardi",
+    "name": "Mauro Icardi",
+    "transfermarktId": "68863",
+    "aliases": [],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/icardi.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1993-02-19"
+  },
+  {
+    "id": "tomori",
+    "name": "Fikayo Tomori",
+    "transfermarktId": "303254",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/tomori.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1997-12-19"
+  },
+  {
+    "id": "suele",
+    "name": "Niklas Süle",
+    "transfermarktId": "166601",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/suele.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1995-09-03"
+  },
+  {
+    "id": "cherki",
+    "name": "Rayan Cherki",
+    "transfermarktId": "607223",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/cherki.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2003-08-17"
+  },
+  {
+    "id": "dzeko",
+    "name": "Edin Džeko",
+    "transfermarktId": "28396",
+    "aliases": [
+      "Edin Dzeko"
+    ],
+    "nationality": "Bosnia and Herzegovina",
+    "image": "img/higher-lower/players/dzeko.png",
+    "nationalityFlag": "img/country/bosnia_and_herzegovina.png",
+    "birthDate": "1986-03-17"
+  },
+  {
+    "id": "skriniar",
+    "name": "Milan Škriniar",
+    "transfermarktId": "204069",
+    "aliases": [],
+    "nationality": "Slovakia",
+    "image": "img/higher-lower/players/skriniar.png",
+    "nationalityFlag": "img/country/slovakia.png",
+    "birthDate": "1995-02-11"
+  },
+  {
+    "id": "raillo",
+    "name": "Raíllo",
+    "transfermarktId": "278296",
+    "aliases": [
+      "Antonio Raíllo",
+      "Antonio José Raíllo Arenas"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/raillo.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1991-10-08"
+  },
+  {
+    "id": "ylmaz",
+    "name": "Barış Alper Yılmaz",
+    "transfermarktId": "541537",
+    "aliases": [],
+    "nationality": "Turkey",
+    "image": "img/higher-lower/players/ylmaz.png",
+    "nationalityFlag": "img/country/turkey.png",
+    "birthDate": "2000-05-23"
+  },
+  {
+    "id": "loftus_cheek",
+    "name": "Ruben Loftus-Cheek",
+    "transfermarktId": "202886",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/loftus_cheek.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1996-01-23"
+  },
+  {
+    "id": "kessie",
+    "name": "Franck Yannick Kessié",
+    "transfermarktId": "294808",
+    "aliases": [
+      "Franck Kessié"
+    ],
+    "nationality": "Côte d'Ivoire",
+    "image": "img/higher-lower/players/kessie.png",
+    "nationalityFlag": "img/country/cote_d_ivoire.png",
+    "birthDate": "1996-12-19"
+  },
+  {
+    "id": "quinten_timber",
+    "name": "Quinten Timber",
+    "transfermarktId": "420213",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/quinten_timber.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "2001-06-17"
+  },
+  {
+    "id": "sabitzer",
+    "name": "Marcel Sabitzer",
+    "transfermarktId": "106987",
+    "aliases": [],
+    "nationality": "Austria",
+    "image": "img/higher-lower/players/sabitzer.png",
+    "nationalityFlag": "img/country/austria.png",
+    "birthDate": "1994-03-17"
+  },
+  {
+    "id": "onana",
+    "name": "André Onana",
+    "transfermarktId": "234509",
+    "aliases": [],
+    "nationality": "Cameroon",
+    "image": "img/higher-lower/players/onana.png",
+    "nationalityFlag": "img/country/cameroon.png",
+    "birthDate": "1996-04-02"
+  },
+  {
+    "id": "aursnes",
+    "name": "Fredrik Aursnes",
+    "transfermarktId": "223367",
+    "aliases": [],
+    "nationality": "Norway",
+    "image": "img/higher-lower/players/aursnes.png",
+    "nationalityFlag": "img/country/norway.png",
+    "birthDate": "1995-12-10"
+  },
+  {
+    "id": "bennacer",
+    "name": "Ismaël Bennacer",
+    "transfermarktId": "351816",
+    "aliases": [],
+    "nationality": "Algeria",
+    "image": "img/higher-lower/players/bennacer.png",
+    "nationalityFlag": "img/country/algeria.png",
+    "birthDate": "1997-12-01"
+  },
+  {
+    "id": "fred",
+    "name": "Fred",
+    "transfermarktId": "191614",
+    "aliases": [
+      "Frederico de Paula Santos"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/fred.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1993-03-05"
+  },
+  {
+    "id": "pellegrini",
+    "name": "Lorenzo Pellegrini",
+    "transfermarktId": "286297",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/pellegrini.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1996-06-19"
+  },
+  {
+    "id": "de_cuyper",
+    "name": "Maxim De Cuyper",
+    "transfermarktId": "429915",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/de_cuyper.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "2000-12-22"
+  },
+  {
+    "id": "udogie",
+    "name": "Destiny Udogie",
+    "transfermarktId": "556385",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/udogie.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "2002-11-28"
+  },
+  {
+    "id": "kudus",
+    "name": "Mohammed Kudus",
+    "transfermarktId": "543499",
+    "aliases": [],
+    "nationality": "Ghana",
+    "image": "img/higher-lower/players/kudus.png",
+    "nationalityFlag": "img/country/ghana.png",
+    "birthDate": "2000-08-02"
+  },
+  {
+    "id": "alvaro_carreras",
+    "name": "Álvaro Carreras",
+    "transfermarktId": "811778",
+    "aliases": [
+      "Álvaro Fernández Carreras"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/alvaro_carreras.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2003-03-23"
+  },
+  {
+    "id": "gabriel_sara",
+    "name": "Gabriel Sara",
+    "transfermarktId": "553469",
+    "aliases": [
+      "Gabriel Davi Gomes Sara"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/gabriel_sara.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1999-06-26"
+  },
+  {
+    "id": "zaire_emery",
+    "name": "Warren Zaïre-Emery",
+    "transfermarktId": "810092",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/zaire_emery.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2006-03-08"
+  },
+  {
+    "id": "arambarri",
+    "name": "Mauro Arambarri",
+    "transfermarktId": "290249",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/higher-lower/players/arambarri.png",
+    "nationalityFlag": "img/country/uruguay.png",
+    "birthDate": "1995-09-30"
+  },
+  {
+    "id": "jones",
+    "name": "Curtis Jones",
+    "transfermarktId": "433188",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/jones.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2001-01-30"
+  },
+  {
+    "id": "anderson",
+    "name": "Elliot Anderson",
+    "transfermarktId": "567576",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/anderson.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2002-11-06"
+  },
+  {
+    "id": "lucas_paqueta",
+    "name": "Lucas Paquetá",
+    "transfermarktId": "444523",
+    "aliases": [
+      "Lucas Tolentino Coelho de Lima"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/lucas_paqueta.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-08-27"
+  },
+  {
+    "id": "mingueza",
+    "name": "Mingueza",
+    "transfermarktId": "331505",
+    "aliases": [
+      "Óscar Mingueza",
+      "Óscar Mingueza García"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/mingueza.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1999-05-13"
+  },
+  {
+    "id": "andrey_santos",
+    "name": "Andrey Santos",
+    "transfermarktId": "743600",
+    "aliases": [
+      "Andrey N. dos Santos"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/andrey_santos.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "2004-05-03"
+  },
+  {
+    "id": "samba",
+    "name": "Brice Samba",
+    "transfermarktId": "191056",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/samba.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1994-04-25"
+  },
+  {
+    "id": "aina",
+    "name": "Ola Aina",
+    "transfermarktId": "236490",
+    "aliases": [],
+    "nationality": "Nigeria",
+    "image": "img/higher-lower/players/aina.png",
+    "nationalityFlag": "img/country/nigeria.png",
+    "birthDate": "1996-10-08"
+  },
+  {
+    "id": "clauss",
+    "name": "Jonathan Clauss",
+    "transfermarktId": "175639",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/clauss.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1992-09-25"
+  },
+  {
+    "id": "leno",
+    "name": "Bernd Leno",
+    "transfermarktId": "72476",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/leno.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1992-03-04"
+  },
+  {
+    "id": "gosens",
+    "name": "Robin Gosens",
+    "transfermarktId": "273132",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/gosens.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1994-07-05"
+  },
+  {
+    "id": "douglas_luiz",
+    "name": "Douglas Luiz",
+    "transfermarktId": "447661",
+    "aliases": [
+      "Douglas Luiz Soares de Paulo"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/douglas_luiz.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1998-05-09"
+  },
+  {
+    "id": "sudakov",
+    "name": "Georgiy Sudakov",
+    "transfermarktId": "623325",
+    "aliases": [],
+    "nationality": "Ukraine",
+    "image": "img/higher-lower/players/sudakov.png",
+    "nationalityFlag": "img/country/ukraine.png",
+    "birthDate": "2002-09-01"
+  },
+  {
+    "id": "guerreiro",
+    "name": "Raphaël Guerreiro",
+    "transfermarktId": "170986",
+    "aliases": [],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/guerreiro.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "1993-12-22"
+  },
+  {
+    "id": "pasalic",
+    "name": "Mario Pašalić",
+    "transfermarktId": "205938",
+    "aliases": [],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/pasalic.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1995-02-09"
+  },
+  {
+    "id": "mazraoui",
+    "name": "Noussair Mazraoui",
+    "transfermarktId": "340456",
+    "aliases": [],
+    "nationality": "Morocco",
+    "image": "img/higher-lower/players/mazraoui.png",
+    "nationalityFlag": "img/country/morocco.png",
+    "birthDate": "1997-11-14"
+  },
+  {
+    "id": "livakovic",
+    "name": "Dominik Livaković",
+    "transfermarktId": "205927",
+    "aliases": [
+      "Dominik Livakovic"
+    ],
+    "nationality": "Croatia",
+    "image": "img/higher-lower/players/livakovic.png",
+    "nationalityFlag": "img/country/croatia.png",
+    "birthDate": "1995-01-09"
+  },
+  {
+    "id": "singo",
+    "name": "Wilfried Singo",
+    "transfermarktId": "648779",
+    "aliases": [],
+    "nationality": "Côte d'Ivoire",
+    "image": "img/higher-lower/players/singo.png",
+    "nationalityFlag": "img/country/cote_d_ivoire.png",
+    "birthDate": "2000-12-25"
+  },
+  {
+    "id": "cakr",
+    "name": "Uğurcan Çakır",
+    "transfermarktId": "292199",
+    "aliases": [],
+    "nationality": "Turkey",
+    "image": "img/higher-lower/players/cakr.png",
+    "nationalityFlag": "img/country/turkey.png",
+    "birthDate": "1996-04-05"
+  },
+  {
+    "id": "schlager",
+    "name": "Xaver Schlager",
+    "transfermarktId": "223979",
+    "aliases": [],
+    "nationality": "Austria",
+    "image": "img/higher-lower/players/schlager.png",
+    "nationalityFlag": "img/country/austria.png",
+    "birthDate": "1997-09-28"
+  },
+  {
+    "id": "digne",
+    "name": "Lucas Digne",
+    "transfermarktId": "126664",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/digne.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1993-07-20"
+  },
+  {
+    "id": "zielinski",
+    "name": "Piotr Zieliński",
+    "transfermarktId": "181136",
+    "aliases": [
+      "Piotr Zielinski"
+    ],
+    "nationality": "Poland",
+    "image": "img/higher-lower/players/zielinski.png",
+    "nationalityFlag": "img/country/poland.png",
+    "birthDate": "1994-05-20"
+  },
+  {
+    "id": "trippier",
+    "name": "Kieran Trippier",
+    "transfermarktId": "95810",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/trippier.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1990-09-19"
+  },
+  {
+    "id": "ruiz_de_galarreta",
+    "name": "Ruiz de Galarreta",
+    "transfermarktId": "126751",
+    "aliases": [
+      "Iñigo Ruiz de Galarreta"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/ruiz_de_galarreta.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1993-08-06"
+  },
+  {
+    "id": "trubin",
+    "name": "Anatoliy Trubin",
+    "transfermarktId": "537844",
+    "aliases": [],
+    "nationality": "Ukraine",
+    "image": "img/higher-lower/players/trubin.png",
+    "nationalityFlag": "img/country/ukraine.png",
+    "birthDate": "2001-08-01"
+  },
+  {
+    "id": "skhiri",
+    "name": "Ellyes Skhiri",
+    "transfermarktId": "290587",
+    "aliases": [],
+    "nationality": "Tunisia",
+    "image": "img/higher-lower/players/skhiri.png",
+    "nationalityFlag": "img/country/tunisia.png",
+    "birthDate": "1995-05-10"
+  },
+  {
+    "id": "bentancur",
+    "name": "Rodrigo Bentancur",
+    "transfermarktId": "354362",
+    "aliases": [],
+    "nationality": "Uruguay",
+    "image": "img/higher-lower/players/bentancur.png",
+    "nationalityFlag": "img/country/uruguay.png",
+    "birthDate": "1997-06-25"
+  },
+  {
+    "id": "cristante",
+    "name": "Bryan Cristante",
+    "transfermarktId": "199248",
+    "aliases": [],
+    "nationality": "Italy",
+    "image": "img/higher-lower/players/cristante.png",
+    "nationalityFlag": "img/country/italy.png",
+    "birthDate": "1995-03-03"
+  },
+  {
+    "id": "javi_galan",
+    "name": "Javi Galán",
+    "transfermarktId": "448628",
+    "aliases": [
+      "Javier Galán Gil"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/javi_galan.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1994-11-19"
+  },
+  {
+    "id": "iwobi",
+    "name": "Alex Iwobi",
+    "transfermarktId": "242631",
+    "aliases": [],
+    "nationality": "Nigeria",
+    "image": "img/higher-lower/players/iwobi.png",
+    "nationalityFlag": "img/country/nigeria.png",
+    "birthDate": "1996-05-03"
+  },
+  {
+    "id": "damsgaard",
+    "name": "Mikkel Damsgaard",
+    "transfermarktId": "540941",
+    "aliases": [],
+    "nationality": "Denmark",
+    "image": "img/higher-lower/players/damsgaard.png",
+    "nationalityFlag": "img/country/denmark.png",
+    "birthDate": "2000-07-03"
+  },
+  {
+    "id": "hall",
+    "name": "Lewis Hall",
+    "transfermarktId": "670858",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/hall.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2004-09-08"
+  },
+  {
+    "id": "ronnow",
+    "name": "Frederik Rønnow",
+    "transfermarktId": "107775",
+    "aliases": [
+      "Frederik Rönnow"
+    ],
+    "nationality": "Denmark",
+    "image": "img/higher-lower/players/ronnow.png",
+    "nationalityFlag": "img/country/denmark.png",
+    "birthDate": "1992-08-04"
+  },
+  {
+    "id": "amoura",
+    "name": "Mohamed Amoura",
+    "transfermarktId": "746910",
+    "aliases": [],
+    "nationality": "Algeria",
+    "image": "img/higher-lower/players/amoura.png",
+    "nationalityFlag": "img/country/algeria.png",
+    "birthDate": "2000-05-09"
+  },
+  {
+    "id": "bento",
+    "name": "Bento",
+    "transfermarktId": "691906",
+    "aliases": [
+      "Bento Matheus Krepski"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/bento.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1999-06-10"
+  },
+  {
+    "id": "honorat",
+    "name": "Franck Honorat",
+    "transfermarktId": "229006",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/honorat.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1996-08-11"
+  },
+  {
+    "id": "quinones",
+    "name": "Julian Quiñones",
+    "transfermarktId": "416090",
+    "aliases": [
+      "Julián Quiñones"
+    ],
+    "nationality": "Mexico",
+    "image": "img/higher-lower/players/quinones.png",
+    "nationalityFlag": "img/country/mexico.png",
+    "birthDate": "1997-03-24"
+  },
+  {
+    "id": "gross",
+    "name": "Pascal Groß",
+    "transfermarktId": "82873",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/gross.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1991-06-15"
+  },
+  {
+    "id": "madueke",
+    "name": "Noni Madueke",
+    "transfermarktId": "503987",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/madueke.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2002-03-10"
+  },
+  {
+    "id": "henrichs",
+    "name": "Benjamin Henrichs",
+    "transfermarktId": "202591",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/henrichs.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "1997-02-23"
+  },
+  {
+    "id": "livramento",
+    "name": "Tino Livramento",
+    "transfermarktId": "503981",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/livramento.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "2002-11-12"
+  },
+  {
+    "id": "lang",
+    "name": "Noa Lang",
+    "transfermarktId": "339332",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/lang.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1999-06-17"
+  },
+  {
+    "id": "sesko",
+    "name": "Benjamin Šeško",
+    "transfermarktId": "627442",
+    "aliases": [],
+    "nationality": "Slovenia",
+    "image": "img/higher-lower/players/sesko.png",
+    "nationalityFlag": "img/country/slovenia.png",
+    "birthDate": "2003-05-31"
+  },
+  {
+    "id": "pedro_neto",
+    "name": "Pedro Neto",
+    "transfermarktId": "487465",
+    "aliases": [
+      "Pedro Lomba Neto"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/pedro_neto.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "2000-03-09"
+  },
+  {
+    "id": "semenyo",
+    "name": "Antoine Semenyo",
+    "transfermarktId": "583255",
+    "aliases": [],
+    "nationality": "Ghana",
+    "image": "img/higher-lower/players/semenyo.png",
+    "nationalityFlag": "img/country/ghana.png",
+    "birthDate": "2000-01-07"
+  },
+  {
+    "id": "andre",
+    "name": "Benjamin André",
+    "transfermarktId": "84301",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/andre.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "1990-08-03"
+  },
+  {
+    "id": "bergwijn",
+    "name": "Steven Bergwijn",
+    "transfermarktId": "284165",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/bergwijn.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1997-10-08"
+  },
+  {
+    "id": "gabriel_jesus",
+    "name": "Gabriel Jesus",
+    "transfermarktId": "363205",
+    "aliases": [
+      "Gabriel Fernando de Jesus"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/gabriel_jesus.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "1997-04-03"
+  },
+  {
+    "id": "barnes",
+    "name": "Harvey Barnes",
+    "transfermarktId": "398065",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/barnes.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1997-12-09"
+  },
+  {
+    "id": "wan_bissaka",
+    "name": "Aaron Wan-Bissaka",
+    "transfermarktId": "477758",
+    "aliases": [],
+    "nationality": "Congo DR",
+    "image": "img/higher-lower/players/wan_bissaka.png",
+    "nationalityFlag": "img/country/congo_dr.png",
+    "birthDate": "1997-11-26"
+  },
+  {
+    "id": "kalulu",
+    "name": "Pierre Kalulu",
+    "transfermarktId": "585949",
+    "aliases": [],
+    "nationality": "France",
+    "image": "img/higher-lower/players/kalulu.png",
+    "nationalityFlag": "img/country/france.png",
+    "birthDate": "2000-06-05"
+  },
+  {
+    "id": "castellanos",
+    "name": "Valentin Castellanos",
+    "transfermarktId": "522784",
+    "aliases": [
+      "Taty Castellanos"
+    ],
+    "nationality": "Argentina",
+    "image": "img/higher-lower/players/castellanos.png",
+    "nationalityFlag": "img/country/argentina.png",
+    "birthDate": "1998-10-03"
+  },
+  {
+    "id": "nicolas_pepe",
+    "name": "Nicolas Pépé",
+    "transfermarktId": "343052",
+    "aliases": [],
+    "nationality": "Côte d'Ivoire",
+    "image": "img/higher-lower/players/nicolas_pepe.png",
+    "nationalityFlag": "img/country/cote_d_ivoire.png",
+    "birthDate": "1995-05-29"
+  },
+  {
+    "id": "dia",
+    "name": "Boulaye Dia",
+    "transfermarktId": "626913",
+    "aliases": [],
+    "nationality": "Senegal",
+    "image": "img/higher-lower/players/dia.png",
+    "nationalityFlag": "img/country/senegal.png",
+    "birthDate": "1996-11-16"
+  },
+  {
+    "id": "mario_hermoso",
+    "name": "Mario Hermoso",
+    "transfermarktId": "281769",
+    "aliases": [
+      "Mario Hermoso Canseco"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/mario_hermoso.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "1995-06-18"
+  },
+  {
+    "id": "edouard_mendy",
+    "name": "Édouard Mendy",
+    "transfermarktId": "442531",
+    "aliases": [
+      "Edouard Mendy"
+    ],
+    "nationality": "Senegal",
+    "image": "img/higher-lower/players/edouard_mendy.png",
+    "nationalityFlag": "img/country/senegal.png",
+    "birthDate": "1992-03-01"
+  },
+  {
+    "id": "demirovic",
+    "name": "Ermedin Demirović",
+    "transfermarktId": "335457",
+    "aliases": [
+      "Ermedin Demirovic"
+    ],
+    "nationality": "Bosnia and Herzegovina",
+    "image": "img/higher-lower/players/demirovic.png",
+    "nationalityFlag": "img/country/bosnia_and_herzegovina.png",
+    "birthDate": "1998-03-25"
+  },
+  {
+    "id": "rajkovic",
+    "name": "Predrag Rajković",
+    "transfermarktId": "190263",
+    "aliases": [],
+    "nationality": "Serbia",
+    "image": "img/higher-lower/players/rajkovic.png",
+    "nationalityFlag": "img/country/serbia.png",
+    "birthDate": "1995-10-31"
+  },
+  {
+    "id": "el_kaabi",
+    "name": "Ayoub El Kaabi",
+    "transfermarktId": "521127",
+    "aliases": [],
+    "nationality": "Morocco",
+    "image": "img/higher-lower/players/el_kaabi.png",
+    "nationalityFlag": "img/country/morocco.png",
+    "birthDate": "1993-06-25"
+  },
+  {
+    "id": "jackson",
+    "name": "Nicolas Jackson",
+    "transfermarktId": "776890",
+    "aliases": [],
+    "nationality": "Senegal",
+    "image": "img/higher-lower/players/jackson.png",
+    "nationalityFlag": "img/country/senegal.png",
+    "birthDate": "2001-06-20"
+  },
+  {
+    "id": "vanaken",
+    "name": "Hans Vanaken",
+    "transfermarktId": "137576",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/vanaken.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "1992-08-24"
+  },
+  {
+    "id": "fermin",
+    "name": "Fermín",
+    "transfermarktId": "636703",
+    "aliases": [
+      "Fermín López",
+      "Fermín López Marín"
+    ],
+    "nationality": "Spain",
+    "image": "img/higher-lower/players/fermin.png",
+    "nationalityFlag": "img/country/spain.png",
+    "birthDate": "2003-05-11"
+  },
+  {
+    "id": "tzolis",
+    "name": "Christos Tzolis",
+    "transfermarktId": "451677",
+    "aliases": [],
+    "nationality": "Greece",
+    "image": "img/higher-lower/players/tzolis.png",
+    "nationalityFlag": "img/country/greece.png",
+    "birthDate": "2002-01-30"
+  },
+  {
+    "id": "doku",
+    "name": "Jérémy Doku",
+    "transfermarktId": "486049",
+    "aliases": [],
+    "nationality": "Belgium",
+    "image": "img/higher-lower/players/doku.png",
+    "nationalityFlag": "img/country/belgium.png",
+    "birthDate": "2002-05-27"
+  },
+  {
+    "id": "igor_paixao",
+    "name": "Igor Paixão",
+    "transfermarktId": "653610",
+    "aliases": [
+      "Igor Guilherme Barbosa da Paixão"
+    ],
+    "nationality": "Brazil",
+    "image": "img/higher-lower/players/igor_paixao.png",
+    "nationalityFlag": "img/country/brazil.png",
+    "birthDate": "2000-06-28"
+  },
+  {
+    "id": "schouten",
+    "name": "Jerdy Schouten",
+    "transfermarktId": "347900",
+    "aliases": [],
+    "nationality": "Holland",
+    "image": "img/higher-lower/players/schouten.png",
+    "nationalityFlag": "img/country/netherlands.png",
+    "birthDate": "1997-01-12"
+  },
+  {
+    "id": "goncalo_ramos",
+    "name": "Gonçalo Ramos",
+    "transfermarktId": "550550",
+    "aliases": [
+      "Gonçalo Matias Ramos"
+    ],
+    "nationality": "Portugal",
+    "image": "img/higher-lower/players/goncalo_ramos.png",
+    "nationalityFlag": "img/country/portugal.png",
+    "birthDate": "2001-06-20"
+  },
+  {
+    "id": "solanke",
+    "name": "Dominic Solanke",
+    "transfermarktId": "258889",
+    "aliases": [],
+    "nationality": "England",
+    "image": "img/higher-lower/players/solanke.png",
+    "nationalityFlag": "img/country/england.png",
+    "birthDate": "1997-09-14"
+  },
+  {
+    "id": "posch",
+    "name": "Stefan Posch",
+    "transfermarktId": "223974",
+    "aliases": [],
+    "nationality": "Austria",
+    "image": "img/higher-lower/players/posch.png",
+    "nationalityFlag": "img/country/austria.png",
+    "birthDate": "1997-05-14"
+  },
+  {
+    "id": "beier",
+    "name": "Maximilian Beier",
+    "transfermarktId": "578392",
+    "aliases": [],
+    "nationality": "Germany",
+    "image": "img/higher-lower/players/beier.png",
+    "nationalityFlag": "img/country/germany.png",
+    "birthDate": "2002-10-17"
   }
 ]

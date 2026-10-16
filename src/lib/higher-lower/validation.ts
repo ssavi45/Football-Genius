@@ -4,9 +4,9 @@ import type { HigherLowerSnapshot } from './types';
 export function isHigherLowerSnapshot(value: unknown): value is HigherLowerSnapshot {
   if (!value || typeof value !== 'object') return false;
   const data = value as HigherLowerSnapshot;
-  if (data.schemaVersion !== 3 || data.playerCount !== 100 || typeof data.version !== 'string'
+  if (data.schemaVersion !== 3 || data.playerCount !== 500 || typeof data.version !== 'string'
     || !Number.isFinite(Date.parse(data.createdAt)) || !Array.isArray(data.players)
-    || data.players.length !== 100 || !data.source?.name || !data.scope) return false;
+    || data.players.length !== 500 || !data.source?.name || !data.scope) return false;
   const categories = ['goals', 'assists', 'marketValue'] as const;
   const ids = new Set<string>();
   const providerIds = new Set<string>();

@@ -154,7 +154,7 @@ def normalize_player(seed, data):
     }
 
 
-def validate_players(players, expected_count=100):
+def validate_players(players, expected_count=500):
     if len(players) != expected_count:
         raise ValueError(f"Expected {expected_count} players; received {len(players)}. Last good snapshot retained.")
     for key in ["id", "transfermarktId"]:

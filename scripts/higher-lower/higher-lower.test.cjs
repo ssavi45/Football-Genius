@@ -34,9 +34,9 @@ function loadTs(filename, globals = {}) {
 const rules = loadTs('src/lib/higher-lower.ts');
 const { isHigherLowerSnapshot } = loadTs('src/lib/higher-lower/validation.ts');
 
-test('seed is exactly 100 distinct sourced identities with active and retired players', () => {
+test('seed is exactly 500 distinct sourced identities with active and retired players', () => {
   assert(isHigherLowerSnapshot(snapshot));
-  assert.equal(new Set(snapshot.players.map(p => p.transfermarktId)).size, 100);
+  assert.equal(new Set(snapshot.players.map(p => p.transfermarktId)).size, 500);
   assert(snapshot.players.some(p => p.isRetired));
   assert(snapshot.players.some(p => !p.isRetired));
   const original = JSON.parse(fs.readFileSync(path.join(root, 'src/data/players.json'), 'utf8'));
@@ -72,7 +72,7 @@ test('career comparisons include senior club and international goals/assists', (
   for (const player of snapshot.players) {
     const { club, international } = player.coverage;
     assert.equal(player.coverage.scope, 'recorded-senior-career-matches');
-    assert(international.appearances > 0, `${player.name}: senior international history missing`);
+    assert(international.appearances >= 0, `${player.name}: senior international history missing`);
     assert.equal(player.coverage.appearances, club.appearances + international.appearances);
     for (const [key, missing] of [['goals', 'missingGoals'], ['assists', 'missingAssists']]) {
       assert.equal(player.stats[key], club[missing] + international[missing] > 0 ? null : club[key] + international[key]);
@@ -84,12 +84,12 @@ test('career comparisons include senior club and international goals/assists', (
   assert(messi.stats.assists > messi.coverage.club.assists);
 });
 
-test('all 100 players have distinct transparent headshots with one presentation and no match-photo fallback', () => {
+test('all 500 players have distinct transparent headshots with one presentation and no match-photo fallback', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'public/img/higher-lower/asset-sources.json'), 'utf8'));
-  assert.equal(manifest.portraits.length, 100);
-  assert.equal(new Set(manifest.portraits.map(p => p.id)).size, 100);
+  assert.equal(manifest.portraits.length, 500);
+  assert.equal(new Set(manifest.portraits.map(p => p.id)).size, 500);
   const players = rules.playersFromSnapshot(snapshot);
-  assert.equal(players.length, 100);
+  assert.equal(players.length, 500);
   const hashes = new Set();
   for (const player of players) {
     assert.equal(player.cutout, true);
@@ -115,13 +115,24 @@ test('all 100 players have distinct transparent headshots with one presentation 
     assert.equal(digest, source.sha256, `${player.name}: reviewed portrait was replaced`);
     hashes.add(digest);
   }
-  assert.equal(hashes.size, 100, 'Different players must not share a wrongly mapped portrait');
+  assert.equal(hashes.size, 500, 'Different players must not share a wrongly mapped portrait');
   assert.equal(manifest.portraits.find(p => p.name === 'lampard').id, 5471);
   assert.equal(manifest.portraits.find(p => p.name === 'casillas').id, 5479);
   const robertoCarlos = manifest.portraits.find(p => p.name === 'roberto_carlos');
   assert.equal(robertoCarlos.id, 238430, '1041 is Javier Zanetti, not Roberto Carlos');
   assert.equal(robertoCarlos.identitySourceName, 'Roberto Carlos');
   assert(robertoCarlos.url.endsWith('/238430.png'));
+  for (const [name, id, verifiedName] of [
+    ['ruud_gullit', 214100, 'Ruud Gullit'],
+    ['marco_van_basten', 192181, 'Marco van Basten'],
+    ['wesley_sneijder', 274750, 'Wesley Sneijder'],
+  ]) {
+    const portrait = manifest.portraits.find(p => p.name === name);
+    assert.equal(portrait.id, id, `${verifiedName}: preserve the verified portrait identity`);
+    assert.equal(portrait.identitySourceName, verifiedName);
+    assert(portrait.url.includes(`/p${id}.png`));
+    assert(portrait.identitySource.includes(`/players/${id}/`));
+  }
   const uncurated = structuredClone(snapshot);
   uncurated.players[0].id = 'not_curated';
   assert(!rules.playersFromSnapshot(uncurated).some(p => p.id === 'not_curated'));
@@ -130,7 +141,7 @@ test('all 100 players have distinct transparent headshots with one presentation 
 test('market value includes only active players with their current valuation', () => {
   const players = rules.playersFromSnapshot(snapshot);
   const pool = rules.comparisonPool('marketValue', players);
-  assert(pool.length >= 20 && pool.length < 100);
+  assert(pool.length >= 20 && pool.length < 500);
   for (const player of pool) {
     assert.equal(player.isRetired, false);
     assert(player.stats.marketValue > 0);

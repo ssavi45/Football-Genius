@@ -13,6 +13,12 @@ from pathlib import Path
 import time
 import traceback
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 import httpx
 from transfermarkt_api import Transfermarkt
 from transfermarkt_api.exceptions import NotFound, UpstreamBlocked, UpstreamError, UpstreamTimeout
@@ -153,8 +159,8 @@ async def run(args):
     previous = await previous_publication() if args.publish else (
         json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else None)
     roster = json.loads(ROSTER.read_text(encoding="utf-8"))
-    if len(roster) != 100 or len({p["id"] for p in roster}) != 100:
-        raise ValueError("Curate exactly 100 unique players")
+    if len(roster) != 500 or len({p["id"] for p in roster}) != 500:
+        raise ValueError("Curate exactly 500 unique players")
     players, failed = [], []
     transport = PoliteTransport(args.interval)
     async with Transfermarkt(max_concurrency=1, transport=transport, timeout=30) as tm:
@@ -182,14 +188,14 @@ async def run(args):
     dump_atomic(ROOT / "tmp/higher-lower/import-report.json", {"loaded": len(players), "failed": failed})
     if failed:
         raise ValueError(f"{len(failed)} players failed validation; last good snapshot retained")
-    if args.limit != 100:
+    if args.limit != 500:
         print("Sample validated. A partial sample is never published.")
         return
     snapshot = make_snapshot(players)
     validate_continuity(snapshot, previous)
     dump_atomic(OUTPUT, snapshot)
     dump_atomic(ROOT / "tmp/higher-lower/validated-snapshot.json", snapshot)
-    print(f"Saved {snapshot['version']}: 100 validated players; "
+    print(f"Saved {snapshot['version']}: {len(players)} validated players; "
           f"{sum(p['isRetired'] for p in players)} retired.")
     if args.publish:
         await publish(snapshot)
@@ -201,7 +207,7 @@ if __name__ == "__main__":
     parser.add_argument("--resume", action="store_true", help="Reuse successful source captures from the past 12 hours")
     parser.add_argument("--publish", action="store_true", help="Atomically publish to Supabase after validation")
     parser.add_argument("--quiet", action="store_true", help="Print only errors and the final summary")
-    parser.add_argument("--limit", type=int, default=100, choices=range(1, 101), metavar="1..100")
+    parser.add_argument("--limit", type=int, default=500, choices=range(1, 501), metavar="1..500")
     parser.add_argument("--interval", type=float, default=0.5, help="Minimum seconds between upstream requests")
     options = parser.parse_args()
     if options.interval < 0.25:
