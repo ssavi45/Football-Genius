@@ -457,3 +457,8 @@
   .review-copy { gap: 4px; }
   .review-copy h3 { gap: 2px; }
 }
+
+/* The wider center column must still leave room for hints on shorter windows. */
+@media (min-width: 1200px) and (min-height: 761px) and (max-height: 900px) {
+  .scoreline-shell:has(.sidebar-desktop.is-collapsed) .pixel-scoreboard { max-width: clamp(300px,calc(145dvh - 730px),640px); }
+}

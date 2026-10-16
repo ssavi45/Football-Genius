@@ -1,0 +1,18 @@
+.sidebar-desktop { position: relative; z-index: 20; transition: width .2s ease; }
+.sidebar-toolbar { display: flex; justify-content: flex-end; align-items: center; flex-shrink: 0; min-height: 38px; padding: 8px 10px 0; }
+.sidebar-desktop .sidebar-content { flex: 1; height: auto; min-height: 0; }
+.sidebar-desktop .sidebar-links { flex-shrink: 0; }
+.sidebar-collapse-toggle { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #d4e4fb; border-radius: 50%; background: #fff; color: #607ba9; box-shadow: 0 2px 6px #264b8514; transition: color .15s,background .15s; }
+.sidebar-collapse-toggle:hover { color: #075bff; background: #eff6ff; }
+.sidebar-collapse-toggle:focus-visible,.sidebar-desktop .sidebar-links a:focus-visible { outline: 3px solid #075bff; outline-offset: 3px; }
+.sidebar-desktop.is-collapsed,.scoreline-shell .sidebar-desktop.is-collapsed { width: 72px; padding-inline: 0; }
+.sidebar-desktop.is-collapsed .sidebar-card { padding: 0; border-radius: 20px; }
+.sidebar-desktop.is-collapsed .sidebar-toolbar { justify-content: center; }
+.sidebar-desktop.is-collapsed .sidebar-content { padding: 14px 8px 20px; }
+.sidebar-desktop.is-collapsed .sidebar-label,.sidebar-desktop.is-collapsed .sidebar-quote { display: none; }
+.sidebar-desktop.is-collapsed .sidebar-links a { position: relative; display: flex; justify-content: center; align-items: center; gap: 0; height: 50px; padding: 0; border-radius: 13px; transform: none; }
+.sidebar-desktop.is-collapsed .sidebar-links a svg { width: 22px; height: 22px; flex-shrink: 0; }
+.sidebar-desktop.is-collapsed .sidebar-links a::after { content: attr(data-tooltip); position: absolute; z-index: 60; top: 50%; left: calc(100% + 14px); padding: 8px 12px; border: 1px solid #d4e4fb; border-radius: 10px; background: #fff; color: #17366d; box-shadow: 0 5px 18px #173d701a; font-size: 13px; font-weight: 500; line-height: 1.4; white-space: nowrap; pointer-events: none; opacity: 0; visibility: hidden; transform: translate(-4px,-50%); transition: opacity .15s,transform .15s,visibility .15s; }
+.sidebar-desktop.is-collapsed .sidebar-links a:hover::after,.sidebar-desktop.is-collapsed .sidebar-links a:focus-visible::after { opacity: 1; visibility: visible; transform: translate(0,-50%); }
+@media (max-height: 760px) { .sidebar-desktop .sidebar-quote { display: none; } }
+@media (prefers-reduced-motion: reduce) { .sidebar-desktop,.sidebar-collapse-toggle,.sidebar-desktop.is-collapsed .sidebar-links a::after { transition: none; } }

@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { sound } from '@/lib/utils/sound';
+import './Sidebar.css';
 import {
   Gamepad2,
   Grid2X2,
@@ -12,15 +13,19 @@ import {
   Users2,
   ShieldCheck,
   Settings,
+  ChevronLeft,
+  ChevronRight,
   X,
 } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  collapsed: boolean;
+  onToggleCollapsed: () => void;
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapsed }: SidebarProps) {
   const pathname = usePathname();
 
   const navItems = [
@@ -33,10 +38,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     { label: 'Settings', href: '/profile#settings', icon: Settings, activePattern: false },
   ];
 
-  const content = (
+  const content = (compact: boolean, navigationId: string) => (
     <div className="sidebar-content h-full flex flex-col justify-between p-4">
       {/* Nav Items */}
-      <div className="sidebar-links space-y-2">
+      <nav id={navigationId} aria-label="Main navigation" className="sidebar-links space-y-2">
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = item.activePattern;
@@ -45,6 +50,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             <Link
               key={item.label}
               href={item.href}
+              aria-label={item.label}
+              aria-current={isActive ? 'page' : undefined}
+              data-tooltip={compact ? item.label : undefined}
               onMouseEnter={() => sound.playHover()}
               onClick={() => {
                 sound.playClick();
@@ -57,11 +65,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               }`}
             >
               <Icon className={`h-4 w-4 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-blue-600'}`} />
-              <span className="tracking-tight">{item.label}</span>
+              <span className="sidebar-label tracking-tight">{item.label}</span>
             </Link>
           );
         })}
-      </div>
+      </nav>
 
       {/* Bottom Quote & Watermark (Matching Mockup) */}
       <div className="sidebar-quote relative pt-6 border-t border-blue-50/80 mt-6 select-none overflow-hidden">
@@ -89,9 +97,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Floating Sidebar Card */}
-      <aside className="sidebar-desktop hidden lg:block w-56 shrink-0 py-6 pl-4 sm:pl-6">
+      <aside className={`sidebar-desktop hidden lg:block w-56 shrink-0 py-6 pl-4 sm:pl-6 ${collapsed ? 'is-collapsed' : ''}`}>
         <div className="sidebar-card card-white rounded-3xl p-2 sticky top-24 h-[calc(100vh-8rem)] flex flex-col justify-between shadow-sm border border-blue-100/80">
-          {content}
+          <div className="sidebar-toolbar">
+            <button type="button" className="sidebar-collapse-toggle" onClick={() => { sound.playClick(); onToggleCollapsed(); }} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!collapsed} aria-controls="desktop-sidebar-navigation">
+              {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+            </button>
+          </div>
+          {content(collapsed, 'desktop-sidebar-navigation')}
         </div>
       </aside>
 
@@ -112,7 +125,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <X className="h-5 w-5" />
               </button>
             </div>
-            {content}
+            {content(false, 'mobile-sidebar-navigation')}
           </div>
         </div>
       )}

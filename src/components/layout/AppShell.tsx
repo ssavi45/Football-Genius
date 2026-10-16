@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import TopBar from '@/components/navigation/TopBar';
 import Sidebar from '@/components/navigation/Sidebar';
@@ -8,6 +8,15 @@ import AuthModal from '@/components/auth/AuthModal';
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  useEffect(() => {
+    try { setSidebarCollapsed(localStorage.getItem('footygen_sidebar_collapsed') === 'true'); } catch { /* Keep navigation usable without browser storage. */ }
+  }, []);
+  const toggleSidebar = () => {
+    const next = !sidebarCollapsed;
+    setSidebarCollapsed(next);
+    try { localStorage.setItem('footygen_sidebar_collapsed', String(next)); } catch { /* The toggle still works for this visit. */ }
+  };
   const pathname = usePathname();
   const isScorelinePage = pathname === '/games/scoreline';
   const isLandingPage = pathname === '/' || pathname === '/game-modes';
@@ -26,6 +35,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           <Sidebar
             isOpen={mobileMenuOpen}
             onClose={() => setMobileMenuOpen(false)}
+            collapsed={sidebarCollapsed}
+            onToggleCollapsed={toggleSidebar}
           />
         )}
 
@@ -34,6 +45,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           <Sidebar
             isOpen={mobileMenuOpen}
             onClose={() => setMobileMenuOpen(false)}
+            collapsed={sidebarCollapsed}
+            onToggleCollapsed={toggleSidebar}
           />
         )}
 
