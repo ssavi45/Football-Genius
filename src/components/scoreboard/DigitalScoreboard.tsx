@@ -1,175 +1,77 @@
 'use client';
 
-import React from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { sound } from '@/lib/utils/sound';
-import { Minus, Plus } from 'lucide-react';
+import PixelScoreboardArtwork, { CONTROLS, type ScoreControl } from './PixelScoreboardArtwork';
+import './DigitalScoreboard.css';
 
 interface DigitalScoreboardProps {
+  disabled?: boolean;
   homeScore: number;
   awayScore: number;
   onHomeChange: (newScore: number) => void;
   onAwayChange: (newScore: number) => void;
 }
 
-export default function DigitalScoreboard({
-  homeScore,
-  awayScore,
-  onHomeChange,
-  onAwayChange,
-}: DigitalScoreboardProps) {
-  const handleDecHome = () => {
-    sound.playClick();
-    onHomeChange(Math.max(0, homeScore - 1));
+const MIN_SCORE = 0;
+// The supplied artwork supports two-digit scores.
+const MAX_SCORE = 99;
+const HOLD_DELAY = 450;
+const HOLD_RATE = 85;
+
+export default function DigitalScoreboard({ disabled = false, homeScore, awayScore, onHomeChange, onAwayChange }: DigitalScoreboardProps) {
+  const prefix = useId().replace(/:/g, '');
+  const [pressed, setPressed] = useState<string | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const live = useRef({ disabled, homeScore, awayScore, onHomeChange, onAwayChange });
+  live.current = { disabled, homeScore, awayScore, onHomeChange, onAwayChange };
+
+  const clearTimer = () => {
+    if (timer.current !== null) clearTimeout(timer.current);
+    timer.current = null;
+  };
+  const release = () => { clearTimer(); setPressed(null); };
+
+  useEffect(() => {
+    if (disabled) { clearTimer(); setPressed(null); }
+    return clearTimer;
+  }, [disabled]);
+
+  const step = (control: ScoreControl) => {
+    const current = live.current;
+    if (current.disabled) return false;
+    const value = control.side === 'L' ? current.homeScore : current.awayScore;
+    const next = Math.min(MAX_SCORE, Math.max(MIN_SCORE, value + control.step));
+    if (value === next) return false;
+    if (control.side === 'L') { current.homeScore = next; current.onHomeChange(next); }
+    else { current.awayScore = next; current.onAwayChange(next); }
+    return true;
   };
 
-  const handleIncHome = () => {
-    sound.playClick();
-    onHomeChange(Math.min(9, homeScore + 1));
+  const repeat = (control: ScoreControl) => {
+    if (step(control)) timer.current = setTimeout(() => repeat(control), HOLD_RATE);
+    else release();
   };
 
-  const handleDecAway = () => {
-    sound.playClick();
-    onAwayChange(Math.max(0, awayScore - 1));
-  };
-
-  const handleIncAway = () => {
-    sound.playClick();
-    onAwayChange(Math.min(9, awayScore + 1));
-  };
-
-  return (
-    <div className="relative inline-flex items-center p-3 sm:p-4 rounded-3xl scoreboard-chassis border-4 border-slate-200/90 shadow-2xl select-none">
-      {/* Corner Mounting Rivets / Screws */}
-      <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-slate-400 border border-slate-500 shadow-inner" />
-      <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-slate-400 border border-slate-500 shadow-inner" />
-      <div className="absolute bottom-2 left-2 w-2 h-2 rounded-full bg-slate-400 border border-slate-500 shadow-inner" />
-      <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-slate-400 border border-slate-500 shadow-inner" />
-
-      {/* Side Ventilation Slots */}
-      <div className="absolute left-1.5 top-1/2 -translate-y-1/2 flex flex-col gap-1">
-        <div className="w-1 h-3 rounded-full bg-slate-400 shadow-inner" />
-        <div className="w-1 h-3 rounded-full bg-slate-400 shadow-inner" />
-        <div className="w-1 h-3 rounded-full bg-slate-400 shadow-inner" />
-      </div>
-      <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex flex-col gap-1">
-        <div className="w-1 h-3 rounded-full bg-slate-400 shadow-inner" />
-        <div className="w-1 h-3 rounded-full bg-slate-400 shadow-inner" />
-        <div className="w-1 h-3 rounded-full bg-slate-400 shadow-inner" />
-      </div>
-
-      <div className="flex items-center gap-3 sm:gap-4 px-2">
-        {/* Left: Home Team Digital Display (RED LED) */}
-        <div className="flex flex-col items-center gap-2.5">
-          {/* Recessed Screen */}
-          <div className="w-24 sm:w-28 h-20 sm:h-24 rounded-2xl scoreboard-display-bezel flex items-center justify-center p-2 relative overflow-hidden border border-slate-800">
-            {/* LED Matrix Grid Background Pattern */}
-            <div
-              className="absolute inset-0 opacity-20 pointer-events-none"
-              style={{
-                backgroundImage: 'radial-gradient(#FF2A4B 1.5px, transparent 1.5px)',
-                backgroundSize: '6px 6px',
-              }}
-            />
-            {/* Glowing Digit */}
-            <span className="text-4xl sm:text-5xl font-black font-orbitron digit-red-glow relative z-10 transition-transform active:scale-110">
-              {homeScore}
-            </span>
-          </div>
-
-          {/* Home Buttons: Minus and Plus with Red Accent */}
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={handleDecHome}
-              onMouseEnter={() => sound.playHover()}
-              className="h-8 w-8 rounded-full bg-white hover:bg-red-50 border-2 border-red-300 text-red-600 flex items-center justify-center shadow-sm active:scale-90 transition-transform font-bold"
-              aria-label="Decrease home score"
-            >
-              <Minus className="h-3.5 w-3.5" />
-            </button>
-            <button
-              type="button"
-              onClick={handleIncHome}
-              onMouseEnter={() => sound.playHover()}
-              className="h-8 w-8 rounded-full bg-white hover:bg-red-50 border-2 border-red-300 text-red-600 flex items-center justify-center shadow-sm active:scale-90 transition-transform font-bold"
-              aria-label="Increase home score"
-            >
-              <Plus className="h-3.5 w-3.5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Center Console: Status LEDs & Speaker Grilles */}
-        <div className="flex flex-col items-center justify-center gap-2 px-1">
-          {/* Top Grille */}
-          <div className="grid grid-cols-3 gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-          </div>
-
-          {/* Two Green Status LEDs */}
-          <div className="flex flex-col gap-2 my-1">
-            <div className="w-2.5 h-2.5 rounded-full led-green-glow" />
-            <div className="w-2.5 h-2.5 rounded-full led-green-glow" />
-          </div>
-
-          {/* Bottom Grille */}
-          <div className="grid grid-cols-3 gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-          </div>
-        </div>
-
-        {/* Right: Away Team Digital Display (BLUE LED) */}
-        <div className="flex flex-col items-center gap-2.5">
-          {/* Recessed Screen */}
-          <div className="w-24 sm:w-28 h-20 sm:h-24 rounded-2xl scoreboard-display-bezel flex items-center justify-center p-2 relative overflow-hidden border border-slate-800">
-            {/* LED Matrix Grid Background Pattern */}
-            <div
-              className="absolute inset-0 opacity-20 pointer-events-none"
-              style={{
-                backgroundImage: 'radial-gradient(#38BDF8 1.5px, transparent 1.5px)',
-                backgroundSize: '6px 6px',
-              }}
-            />
-            {/* Glowing Digit */}
-            <span className="text-4xl sm:text-5xl font-black font-orbitron digit-blue-glow relative z-10 transition-transform active:scale-110">
-              {awayScore}
-            </span>
-          </div>
-
-          {/* Away Buttons: Minus and Plus with Blue Accent */}
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={handleDecAway}
-              onMouseEnter={() => sound.playHover()}
-              className="h-8 w-8 rounded-full bg-white hover:bg-blue-50 border-2 border-blue-300 text-blue-600 flex items-center justify-center shadow-sm active:scale-90 transition-transform font-bold"
-              aria-label="Decrease away score"
-            >
-              <Minus className="h-3.5 w-3.5" />
-            </button>
-            <button
-              type="button"
-              onClick={handleIncAway}
-              onMouseEnter={() => sound.playHover()}
-              className="h-8 w-8 rounded-full bg-white hover:bg-blue-50 border-2 border-blue-300 text-blue-600 flex items-center justify-center shadow-sm active:scale-90 transition-transform font-bold"
-              aria-label="Increase away score"
-            >
-              <Plus className="h-3.5 w-3.5" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="digital-scoreboard pixel-scoreboard" role="group" aria-label="Match score prediction">
+    <PixelScoreboardArtwork homeScore={homeScore} awayScore={awayScore} prefix={prefix} pressed={pressed} />
+    {CONTROLS.map(control => {
+      const value = control.side === 'L' ? homeScore : awayScore;
+      const isDisabled = disabled || (control.step === 1 ? value >= MAX_SCORE : value <= MIN_SCORE);
+      return <button key={control.id} type="button" className="pixel-scoreboard-control" aria-label={control.label} disabled={isDisabled}
+        style={{ left: `${(control.cx - 38) / 887 * 100}%`, top: `${285 / 443 * 100}%`, width: `${76 / 887 * 100}%`, height: `${76 / 443 * 100}%` }}
+        onPointerDown={event => {
+          if (event.pointerType === 'mouse' && event.button !== 0) return;
+          clearTimer();
+          event.currentTarget.setPointerCapture(event.pointerId);
+          setPressed(control.id);
+          if (step(control)) { sound.playClick(); timer.current = setTimeout(() => repeat(control), HOLD_DELAY); }
+        }}
+        onPointerUp={release} onPointerCancel={release} onLostPointerCapture={release} onBlur={release}
+        onClick={event => { if (event.detail === 0 && step(control)) sound.playClick(); }}
+        onContextMenu={event => event.preventDefault()}
+      />;
+    })}
+    <span className="sr-only" role="status" aria-live="polite">Home {homeScore}, Away {awayScore}</span>
+  </div>;
 }
-

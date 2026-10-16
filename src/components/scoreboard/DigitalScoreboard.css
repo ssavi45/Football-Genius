@@ -1,0 +1,34 @@
+﻿.pixel-scoreboard {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 0;
+  margin: -8px auto 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.pixel-scoreboard-artwork { display: block; width: 100%; height: auto; overflow: visible; }
+.pixel-scoreboard-button { transition: transform .08s; }
+.pixel-scoreboard-button.is-pressed { transform: scale(.94); }
+.pixel-scoreboard-control {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.pixel-scoreboard-control:disabled { cursor: default; }
+.pixel-scoreboard-control:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -1px;
+  box-shadow: 0 0 0 2px #17253d;
+}
+@media (max-width: 700px) {
+  .pixel-scoreboard { grid-column: 1 / -1; grid-row: 2; max-width: 340px; margin: 6px auto 0; }
+}
+@media (prefers-reduced-motion: reduce) { .pixel-scoreboard-button { transition: none; } }

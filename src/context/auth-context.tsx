@@ -31,7 +31,7 @@ const DEFAULT_GUEST_PROFILE: UserProfile = {
   is_guest: true,
   games_played: 12,
   games_won: 8,
-  created_at: new Date().toISOString(),
+  created_at: '2026-01-01T00:00:00.000Z',
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);

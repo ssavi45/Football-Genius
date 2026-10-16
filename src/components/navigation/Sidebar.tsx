@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { sound } from '@/lib/utils/sound';
 import {
   Gamepad2,
+  Grid2X2,
   Trophy,
   BarChart2,
   Users2,
@@ -23,7 +24,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
 
   const navItems = [
-    { label: 'Play Game', href: '/', icon: Gamepad2, activePattern: pathname === '/' || pathname.startsWith('/games') },
+    { label: 'Play Game', href: '/games/scoreline', icon: Gamepad2, activePattern: pathname === '/games/scoreline' },
+    { label: 'Game Modes', href: '/game-modes', icon: Grid2X2, activePattern: pathname === '/game-modes' },
     { label: 'Leaderboard', href: '/leaderboard', icon: Trophy, activePattern: pathname === '/leaderboard' },
     { label: 'My Stats', href: '/profile', icon: BarChart2, activePattern: pathname === '/profile' },
     { label: 'Challenges', href: '/games/scouts-duel', icon: Users2, activePattern: pathname === '/games/scouts-duel' },
@@ -32,9 +34,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   ];
 
   const content = (
-    <div className="h-full flex flex-col justify-between p-4">
+    <div className="sidebar-content h-full flex flex-col justify-between p-4">
       {/* Nav Items */}
-      <div className="space-y-2">
+      <div className="sidebar-links space-y-2">
         {navItems.map(item => {
           const Icon = item.icon;
           const isActive = item.activePattern;
@@ -62,7 +64,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       </div>
 
       {/* Bottom Quote & Watermark (Matching Mockup) */}
-      <div className="relative pt-6 border-t border-blue-50/80 mt-6 select-none overflow-hidden">
+      <div className="sidebar-quote relative pt-6 border-t border-blue-50/80 mt-6 select-none overflow-hidden">
         {/* Subtle Watermark Starball Graphic */}
         <div className="absolute -bottom-6 -left-6 opacity-[0.06] text-blue-900 pointer-events-none">
           <svg className="w-36 h-36" viewBox="0 0 100 100" fill="currentColor">
@@ -87,8 +89,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Floating Sidebar Card */}
-      <aside className="hidden lg:block w-56 shrink-0 py-6 pl-4 sm:pl-6">
-        <div className="card-white rounded-3xl p-2 sticky top-24 h-[calc(100vh-8rem)] flex flex-col justify-between shadow-sm border border-blue-100/80">
+      <aside className="sidebar-desktop hidden lg:block w-56 shrink-0 py-6 pl-4 sm:pl-6">
+        <div className="sidebar-card card-white rounded-3xl p-2 sticky top-24 h-[calc(100vh-8rem)] flex flex-col justify-between shadow-sm border border-blue-100/80">
           {content}
         </div>
       </aside>
@@ -104,6 +106,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             <div className="flex justify-end p-2">
               <button
                 onClick={onClose}
+                aria-label="Close navigation menu"
                 className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100"
               >
                 <X className="h-5 w-5" />

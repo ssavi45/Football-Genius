@@ -1,0 +1,20 @@
+﻿1956-06-13|Real Madrid|Reims|4|3|Alfredo Di Stefano|1|Parc des Princes, Paris|The inaugural European Cup final was played in the French capital.
+1960-05-18|Real Madrid|Eintracht Frankfurt|7|3|Ferenc Puskas|4|Hampden Park, Glasgow|More than a hundred thousand spectators filled Hampden Park.
+1961-05-31|Benfica|Barcelona|3|2|Jose Aguas|1|Wankdorf Stadium, Bern|The Wankdorf Stadium was hosting a final between two Iberian clubs.
+1962-05-02|Benfica|Real Madrid|5|3|Eusebio|2|Olympic Stadium, Amsterdam|A young Eusebio shared the pitch with Ferenc Puskas and Alfredo Di Stefano.
+1963-05-22|AC Milan|Benfica|2|1|Jose Altafini|2|Wembley Stadium, London|Wembley hosted the European Cup final for the first time.
+1967-05-25|Celtic|Internazionale|2|1|Tommy Gemmell|1|Estadio Nacional, Lisbon|The Scottish squad became known to football history as the Lisbon Lions.
+1968-05-29|Manchester United|Benfica|4|1|Bobby Charlton|2|Wembley Stadium, London|The match came a decade after the Munich air disaster.
+1969-05-28|AC Milan|Ajax|4|1|Pierino Prati|3|Santiago Bernabeu, Madrid|A young Johan Cruyff appeared in his first European Cup final.
+1974-05-17|Bayern Munich|Atletico Madrid|4|0|Gerd Muller|2|Heysel Stadium, Brussels|This was a replay, played two days after the original final.
+1977-05-25|Liverpool|Borussia Monchengladbach|3|1|Terry McDermott|1|Stadio Olimpico, Rome|Kevin Keegan was playing his final competitive match for Liverpool.
+1981-05-27|Liverpool|Real Madrid|1|0|Alan Kennedy|1|Parc des Princes, Paris|Bob Paisley and Vujadin Boskov were the opposing managers in Paris.
+1982-05-26|Aston Villa|Bayern Munich|1|0|Peter Withe|1|De Kuip, Rotterdam|Nigel Spink was called on from the bench very early in the match.
+1987-05-27|FC Porto|Bayern Munich|2|1|Rabah Madjer|1|Praterstadion, Vienna|An improvised backheel became the lasting image of the evening.
+1989-05-24|AC Milan|Steaua Bucharest|4|0|Ruud Gullit|2|Camp Nou, Barcelona|Arrigo Sacchi's side featured the Dutch trio of Gullit, Van Basten and Rijkaard.
+1992-05-20|Barcelona|Sampdoria|1|0|Ronald Koeman|1|Wembley Stadium, London|Johan Cruyff was managing a team often described as his Dream Team.
+1993-05-26|Marseille|AC Milan|1|0|Basile Boli|1|Olympiastadion, Munich|The first final under Champions League branding was held in Munich.
+1994-05-18|AC Milan|Barcelona|4|0|Daniele Massaro|2|Olympic Stadium, Athens|Fabio Capello's side were without both Franco Baresi and Alessandro Costacurta.
+1995-05-24|Ajax|AC Milan|1|0|Patrick Kluivert|1|Ernst-Happel-Stadion, Vienna|Louis van Gaal's team included several graduates of the Ajax academy.
+1997-05-28|Borussia Dortmund|Juventus|3|1|Karl-Heinz Riedle|2|Olympiastadion, Munich|Lars Ricken began the match among Dortmund's substitutes.
+1999-05-26|Manchester United|Bayern Munich|2|1|Teddy Sheringham|1|Camp Nou, Barcelona|Manchester United's starting midfield was reshaped by two suspensions.

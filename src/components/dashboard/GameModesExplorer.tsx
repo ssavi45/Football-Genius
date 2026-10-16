@@ -40,7 +40,7 @@ export default function GameModesExplorer() {
   });
 
   return (
-    <section id="game-modes" className="space-y-4 pt-4">
+    <section id="game-modes-explorer" className="space-y-4 pt-4">
       {/* Header and Filter Pills */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

@@ -112,3 +112,8 @@ body {
 .animate-pulseGlow {
   animation: pulseGlow 2s ease-in-out infinite;
 }
+
+/* Keep page alignment steady when navigation changes the need for a scrollbar. */
+html {
+  scrollbar-gutter: stable;
+}

@@ -1,0 +1,322 @@
+{
+  "ar.png": {
+    "x": 0,
+    "y": 7,
+    "width": 320,
+    "height": 200,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "be.png": {
+    "x": 36,
+    "y": 0,
+    "width": 247,
+    "height": 214,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "br.png": {
+    "x": 7,
+    "y": 0,
+    "width": 306,
+    "height": 214,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "ch.png": {
+    "x": 53,
+    "y": 0,
+    "width": 214,
+    "height": 214,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "cl.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "co.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "cz.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "de.png": {
+    "x": 0,
+    "y": 11,
+    "width": 320,
+    "height": 192,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "dk.png": {
+    "x": 18,
+    "y": 0,
+    "width": 283,
+    "height": 214,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "dz.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "es.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "fr.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "gb-eng.png": {
+    "x": 0,
+    "y": 11,
+    "width": 320,
+    "height": 192,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "gb-wls.png": {
+    "x": 0,
+    "y": 11,
+    "width": 320,
+    "height": 192,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "gh.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "gr.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "hn.png": {
+    "x": 0,
+    "y": 27,
+    "width": 320,
+    "height": 160,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "hr.png": {
+    "x": 0,
+    "y": 27,
+    "width": 320,
+    "height": 160,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "hu.png": {
+    "x": 0,
+    "y": 27,
+    "width": 320,
+    "height": 160,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "is.png": {
+    "x": 11,
+    "y": 0,
+    "width": 298,
+    "height": 214,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "it.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "jp.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "kr.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "ma.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "mx.png": {
+    "x": 0,
+    "y": 15,
+    "width": 320,
+    "height": 183,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "ng.png": {
+    "x": 0,
+    "y": 27,
+    "width": 320,
+    "height": 160,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "nl.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "pe.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "pt.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "py.png": {
+    "x": 0,
+    "y": 19,
+    "width": 320,
+    "height": 176,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "ro.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "rs.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "ru.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "sa.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "se.png": {
+    "x": 0,
+    "y": 7,
+    "width": 320,
+    "height": 200,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "sk.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "sn.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "tr.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "uy.png": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 213,
+    "canvasWidth": 320,
+    "canvasHeight": 214
+  },
+  "yugoslavia.svg": {
+    "x": 0,
+    "y": 0,
+    "width": 150,
+    "height": 100,
+    "canvasWidth": 150,
+    "canvasHeight": 100
+  }
+}

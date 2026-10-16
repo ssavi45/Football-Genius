@@ -21,3 +21,6 @@ build/
 .DS_Store
 *.log
 
+
+# Raw source downloads and asset preparation cache
+/tmp/scoreline/

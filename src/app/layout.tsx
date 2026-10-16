@@ -54,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${orbitron.variable} ${bebas.variable}`}>
-      <body className="bg-[#F1F6FD] text-slate-900 antialiased selection:bg-blue-600 selection:text-white min-h-screen">
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${orbitron.variable} ${bebas.variable}`}>
+      <body suppressHydrationWarning className="bg-[#F1F6FD] text-slate-900 antialiased selection:bg-blue-600 selection:text-white min-h-screen">
         <AuthProvider>
           <AppShell>{children}</AppShell>
         </AuthProvider>

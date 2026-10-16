@@ -1,0 +1,80 @@
+2000-05-24|ucl|Real Madrid|Valencia|Final|The final brought together two clubs from Spain for the first time.
+2001-05-23|ucl|Bayern Munich|Valencia|Final|Oliver Kahn and Santiago Cañizares were the opposing goalkeepers at San Siro.
+2002-05-15|ucl|Real Madrid|Bayer Leverkusen|Final|Hampden Park staged the final during Real Madrid's centenary year.
+2004-05-26|ucl|AS Monaco|FC Porto|Final|Two relatively young managers led the finalists in Gelsenkirchen.
+2005-05-25|ucl|AC Milan|Liverpool|Final|Jerzy Dudek's movements on his goal line became a memorable part of the evening.
+2006-05-17|ucl|Barcelona|Arsenal|Final|Heavy rain accompanied a final involving Thierry Henry and Ronaldinho.
+2007-05-23|ucl|AC Milan|Liverpool|Final|These clubs met in the final again just two years after their Istanbul encounter.
+2008-05-21|ucl|Manchester United|Chelsea|Final|Rain fell heavily on the Luzhniki Stadium's temporary grass pitch.
+2009-05-27|ucl|Barcelona|Manchester United|Final|Pep Guardiola was in his first season as a senior first-team manager.
+2010-05-22|ucl|Bayern Munich|Internazionale|Final|Both managers had previously worked with Barcelona in different capacities.
+2011-05-28|ucl|Barcelona|Manchester United|Final|Both clubs had previously lifted the European Cup at Wembley.
+2012-05-19|ucl|Bayern Munich|Chelsea|Final|One finalist was playing at its own regular home stadium.
+2013-05-25|ucl|Borussia Dortmund|Bayern Munich|Final|Wembley hosted the first final between two German clubs.
+2014-05-24|ucl|Real Madrid|Atletico Madrid|Final|This was the first European Cup final between clubs from the same city.
+2015-06-06|ucl|Juventus|Barcelona|Final|Both finalists arrived in Berlin with a domestic double already secured.
+2016-05-28|ucl|Real Madrid|Atletico Madrid|Final|The Milan final repeated the pairing seen in Lisbon two years earlier.
+2017-06-03|ucl|Juventus|Real Madrid|Final|Cardiff's roof was closed for this final at the Principality Stadium.
+2018-05-26|ucl|Real Madrid|Liverpool|Final|An early injury changed Liverpool's attacking options in Kyiv.
+2019-06-01|ucl|Tottenham Hotspur|Liverpool|Final|Both finalists had produced extraordinary second-leg semi-final performances.
+2020-08-23|ucl|Paris Saint-Germain|Bayern Munich|Final|The match was played without spectators during the Lisbon mini-tournament.
+2021-05-29|ucl|Manchester City|Chelsea|Final|The venue was switched to Porto shortly before the final.
+2022-05-28|ucl|Liverpool|Real Madrid|Final|Kick-off was delayed at the Stade de France.
+2023-06-10|ucl|Manchester City|Internazionale|Final|Istanbul's Atatürk Olympic Stadium hosted its first final since 2005.
+2024-06-01|ucl|Borussia Dortmund|Real Madrid|Final|Toni Kroos was making his final club appearance before retirement.
+2004-04-07|ucl|Deportivo La Coruna|AC Milan|Quarter-final second leg|The Riazor crowd became famous for the atmosphere it created that evening.
+2005-03-08|ucl|Chelsea|Barcelona|Round of 16 second leg|Ronaldinho's unusual toe-poked finish became a widely replayed moment.
+2007-04-10|ucl|Manchester United|AS Roma|Quarter-final second leg|Alan Smith started in attack at Old Trafford.
+2009-05-06|ucl|Chelsea|Barcelona|Semi-final second leg|Andrés Iniesta and Michael Essien both struck from outside the penalty area.
+2010-04-20|ucl|Internazionale|Barcelona|Semi-final first leg|Volcanic ash disruption forced Barcelona to travel to Milan by coach.
+2013-04-23|ucl|Bayern Munich|Barcelona|Semi-final first leg|Jupp Heynckes and Tito Vilanova were the opposing managers.
+2013-04-24|ucl|Borussia Dortmund|Real Madrid|Semi-final first leg|Robert Lewandowski was leading the line for Jürgen Klopp's side.
+2014-04-29|ucl|Bayern Munich|Real Madrid|Semi-final second leg|Pep Guardiola and Carlo Ancelotti met in the technical areas in Munich.
+2017-03-08|ucl|Barcelona|Paris Saint-Germain|Round of 16 second leg|The dramatic closing stages entered football vocabulary as La Remontada.
+2017-04-18|ucl|Real Madrid|Bayern Munich|Quarter-final second leg|The match extended into extra time at the Bernabéu.
+2018-04-10|ucl|AS Roma|Barcelona|Quarter-final second leg|Kostas Manolas's celebration became a defining image of Roma's European campaign.
+2019-05-07|ucl|Liverpool|Barcelona|Semi-final second leg|A quickly taken corner became one of Anfield's most replayed moments.
+2019-05-08|ucl|Ajax|Tottenham Hotspur|Semi-final second leg|Tottenham were playing without the injured Harry Kane.
+2020-08-14|ucl|Barcelona|Bayern Munich|Quarter-final|The pandemic format made this a single-leg tie on neutral ground.
+2022-04-12|ucl|Real Madrid|Chelsea|Quarter-final second leg|Luka Modrić's outside-of-the-boot pass became a major talking point.
+2022-05-04|ucl|Real Madrid|Manchester City|Semi-final second leg|Carlo Ancelotti and Pep Guardiola brought contrasting European histories to the tie.
+2001-02-25|epl|Manchester United|Arsenal|League fixture|Dwight Yorke and Thierry Henry were among the attacking players at Old Trafford.
+2001-09-29|epl|Tottenham Hotspur|Manchester United|League fixture|White Hart Lane hosted a remarkable change of momentum after the interval.
+2002-10-19|epl|Everton|Arsenal|League fixture|Wayne Rooney was just sixteen when he made his mark on this fixture.
+2004-05-15|epl|Arsenal|Leicester City|League fixture|This was the final afternoon of Arsenal's Invincibles league campaign.
+2004-10-24|epl|Manchester United|Arsenal|League fixture|The off-field aftermath led to the unusual nickname Pizzagate.
+2005-04-30|epl|Bolton Wanderers|Chelsea|League fixture|José Mourinho was completing his first English league season.
+2009-03-14|epl|Manchester United|Liverpool|League fixture|Fernando Torres and Nemanja Vidić were central figures in this Old Trafford meeting.
+2011-10-23|epl|Manchester United|Manchester City|League fixture|Mario Balotelli revealed a message beneath his shirt during the derby.
+2011-10-29|epl|Chelsea|Arsenal|League fixture|Robin van Persie captained Arsenal at Stamford Bridge.
+2012-05-13|epl|Manchester City|Queens Park Rangers|League fixture|Two decisive title-race fixtures were taking place simultaneously in Manchester and Sunderland.
+2014-03-22|epl|Chelsea|Arsenal|League fixture|Arsène Wenger was taking charge of Arsenal for the thousandth time.
+2014-04-27|epl|Liverpool|Chelsea|League fixture|José Mourinho selected a reshuffled side between European semi-final fixtures.
+2014-05-05|epl|Crystal Palace|Liverpool|League fixture|The Monday-night trip to Selhurst Park became known as Crystanbul.
+2016-05-02|epl|Chelsea|Tottenham Hotspur|League fixture|The disciplinary intensity inspired the nickname Battle of the Bridge.
+2016-08-14|epl|Arsenal|Liverpool|League fixture|Sadio Mané was making his competitive Liverpool debut.
+2019-11-10|epl|Liverpool|Manchester City|League fixture|Jürgen Klopp and Pep Guardiola renewed their title rivalry at Anfield.
+2020-10-04|epl|Aston Villa|Liverpool|League fixture|The match was played behind closed doors at Villa Park.
+2021-10-24|epl|Manchester United|Liverpool|League fixture|Old Trafford hosted another meeting between these longstanding north-west rivals.
+2023-03-05|epl|Liverpool|Manchester United|League fixture|Erik ten Hag had recently lifted his first trophy as Manchester United manager.
+2022-10-02|epl|Manchester City|Manchester United|League fixture|Erling Haaland was playing in his first Manchester derby.
+2005-11-19|laliga|Real Madrid|Barcelona|League fixture|Some home supporters applauded Ronaldinho at the Bernabéu.
+2007-03-10|laliga|Barcelona|Real Madrid|League fixture|Lionel Messi was still a teenager when he took part in this Clásico.
+2009-05-02|laliga|Real Madrid|Barcelona|League fixture|Pep Guardiola used Lionel Messi in a role that drew him away from the touchline.
+2010-11-29|laliga|Barcelona|Real Madrid|League fixture|The match was unusually played on a Monday evening.
+2012-10-07|laliga|Barcelona|Real Madrid|League fixture|Cristiano Ronaldo and Lionel Messi were the focal points at Camp Nou.
+2014-03-23|laliga|Real Madrid|Barcelona|League fixture|Gerardo Martino and Carlo Ancelotti were the opposing managers.
+2017-04-23|laliga|Real Madrid|Barcelona|League fixture|An iconic shirt-holding celebration followed a dramatic closing sequence.
+2022-03-20|laliga|Real Madrid|Barcelona|League fixture|The hosts wore an unusual all-black anniversary kit.
+2009-05-23|bundesliga|VfL Wolfsburg|Werder Bremen|League fixture|Felix Magath's side entered the final day with the title within reach.
+2015-09-22|bundesliga|Bayern Munich|VfL Wolfsburg|League fixture|Robert Lewandowski began the match on the substitutes' bench.
+2019-11-02|bundesliga|Eintracht Frankfurt|Bayern Munich|League fixture|Niko Kovač returned to face the club he had previously coached.
+2023-05-27|bundesliga|Borussia Dortmund|Mainz|League fixture|The Bundesliga title would be decided across simultaneous final-day fixtures.
+2001-05-12|fa-cup|Arsenal|Liverpool|Final|This was the first FA Cup final staged outside England.
+2006-05-13|fa-cup|Liverpool|West Ham United|Final|Cardiff hosted the last final before the competition returned to the rebuilt Wembley.
+2013-05-11|fa-cup|Manchester City|Wigan Athletic|Final|Wigan were making their first appearance in the FA Cup final.
+2014-05-17|fa-cup|Arsenal|Hull City|Final|Aaron Ramsey and Santi Cazorla were part of Arsenal's midfield at Wembley.
+2001-05-16|europa|Liverpool|Alaves|Final|The golden-goal rule was still in use for European finals.
+2010-05-12|europa|Atletico Madrid|Fulham|Final|Fulham were appearing in their first major European final.
+2019-05-29|europa|Chelsea|Arsenal|Final|The London clubs travelled to Baku to contest this final.
+2024-05-22|europa|Atalanta|Bayer Leverkusen|Final|Gian Piero Gasperini and Xabi Alonso were the opposing managers in Dublin.

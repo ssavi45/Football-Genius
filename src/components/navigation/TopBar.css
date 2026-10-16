@@ -1,0 +1,57 @@
+﻿/* Shared public-page navigation: home and game modes use the same styles. */
+.landing-header {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: #fbfdfff2 !important;
+}
+.landing-header > div {
+  max-width: 1760px !important;
+  width: calc(100% - 160px);
+  height: 66px;
+  padding: 0 !important;
+}
+.landing-header nav { gap: 43px; font-size: 14px; font-weight: 400; margin-left: -180px; }
+.landing-header nav a { position: relative; padding: 0; border: 0; color: #52617e; font-weight: 400; }
+.landing-header nav a[aria-current=page] { color: #075bff; font-weight: 500; }
+.landing-header nav a[aria-current=page]::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -12px;
+  height: 2px;
+  background: #075bff;
+}
+.landing-header .brand-name { font-size: 27px; letter-spacing: -.8px; }
+.landing-header .brand-ball { background: transparent; color: #071020; box-shadow: none; transform: rotate(-24deg); }
+.landing-header .brand-ball span { font-size: 31px; filter: grayscale(1) contrast(2); }
+.landing-header .header-actions { gap: 15px; }
+.landing-header .sign-in { height: 46px; padding: 0 23px; font-size: 14px; }
+.landing-header .play-now { height: 46px; padding: 0 25px; gap: 15px; background: #215fff; box-shadow: none; font-size: 14px; }
+.landing-header .sound-toggle { position: absolute; right: 18px; opacity: 0; }
+.landing-header .sound-toggle:focus-visible, .landing-header:hover .sound-toggle { opacity: 1; }
+@media (max-width: 1450px) and (min-width: 1101px) {
+  .landing-header > div { width: calc(100% - 96px); }
+  .landing-header nav { margin-left: -60px; gap: 27px; }
+}
+@media (max-width: 1100px) {
+  .landing-header > div { width: calc(100% - 64px); }
+  .landing-header nav { margin-left: 0; gap: 20px; font-size: 12px; }
+  .landing-header .brand-name { font-size: 22px; }
+}
+@media (max-width: 1023px) {
+  .landing-header .header-actions { gap: 10px; }
+  .landing-header .sound-toggle { display: none; }
+}
+@media (max-width: 600px) {
+  .landing-header > div { width: calc(100% - 36px); gap: 6px; }
+  .landing-header .brand-name { font-size: 18px; letter-spacing: -.6px; }
+  .landing-header .brand-ball { width: 24px; height: 28px; }
+  .landing-header .brand-ball span { font-size: 25px; }
+  .landing-header .brand-link { gap: 5px; }
+  .landing-header .brand-group { gap: 3px; }
+  .landing-header .menu-toggle { padding: 3px; }
+  .landing-header .menu-toggle svg { width: 21px; }
+  .landing-header .search-button, .landing-header .play-now { display: none; }
+  .landing-header .sign-in { font-size: 12px; padding: 0 13px; height: 36px; }
+}
