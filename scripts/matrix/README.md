@@ -16,7 +16,7 @@ Select players for up to nine squares. Each identity may occupy only one square.
 
 The catalog has 15 clubs, 15 senior nations, all ten requested milestones and the existing evidence-backed milestones. Generation uses only criteria with eligible players. It targets at least 10 candidates per Easy cell, 3-8 for Medium, and 1-3 for Hard. These are soft overlap targets while the database awaits expansion. At least one valid candidate per cell and a full matching of nine different player identities are mandatory. Empty or unsolvable boards are never published.
 
-A round excludes up to 200 recent criterion combinations, comparing sets rather than just header order; swapping Hard's axes also counts as the same combination. If the finite catalog is exhausted, an older combination may return, but the immediately preceding combination remains excluded. A new random seed and round ID are generated for every round. The dataset is unchanged by this gameplay update.
+A round excludes up to 200 recent criterion combinations, comparing sets rather than just header order; swapping Hard's axes also counts as the same combination. If the finite catalog is exhausted, an older combination may return, but the immediately preceding combination remains excluded. A new random seed and round ID are generated for every round. The enriched dataset version is included in every puzzle signature.
 
 ## Saved sessions
 
@@ -38,47 +38,42 @@ Player portraits resolve through the existing reviewed 500-player manifest, pres
 
 The old `grid-players.json` is no longer consumed by Matrix. This avoids its incorrect World Cup claim for Dani Carvajal and its confusion between Luis Suárez and the historical Inter namesake. Both corrections are covered by the Matrix tests.
 
-## Next database iteration: milestone fields
+## Enriched milestone fields
 
-No player data was changed for the difficulty-selector/catalog update. The first ten definitions in `src/lib/matrix/criteria.ts` are the requested conditions. Existing career goals, career assists and World Cup/Ballon d'Or honours are usable now. Six definitions await additional verified numeric fields in each player's `stats`:
+All 16 canonical stat/trophy criteria now have eligible players in the connected 500-player snapshot. Numeric evidence includes `uclTitles`, `maxSeasonGoals`, `uclAllTimeRank`, `seniorCaptainAppearances`, `leagueTitles` and `topFiveLeagueClubs`, alongside career goals, assists, caps and competition goals.
 
-| Field | Meaning | Qualifying value |
-| --- | --- | --- |
-| `uclTitles` | Number of Champions League winner titles | at least 3 |
-| `maxSeasonGoals` | Highest verified senior goal total in one season, using one documented scope across players | at least 50 |
-| `uclAllTimeRank` | Verified rank in the global all-time Champions League scoring table, using consistent tie rules and snapshot date | 1 through 15 inclusive |
-| `seniorCaptainAppearances` | Full-A senior national-team matches captained | at least 1 |
-| `leagueTitles` | Verified senior top-flight league winner titles | at least 5 |
-| `topFiveLeagueClubs` | Distinct clubs with official senior appearances while competing in England, Spain, Germany, Italy or France's top flight | at least 3 |
+- Career goals/assists cover recorded senior competitive club and full-A international appearances.
+- Single-season goals use one club-season across senior competitive competitions, excluding international goals. If any included club goal row is unknown, the maximum stays null rather than turning missing goals into zeros.
+- UCL goals/ranks cover the post-1992 main competition, excluding qualifiers. The top-15 registry includes all global boundary players, including identities absent from the app roster; tied totals use competition ranking. Unlisted players have null ranks and do not qualify.
+- National captaincy uses explicit captain flags in recorded full-A matches. Missing flags remain unknown.
+- Top-five club counts require recorded completed senior appearances in a club-season with verified top-flight league evidence. Future fixtures and unplayed registrations cannot establish eligibility.
+- League titles use distinct competition/club/season awards. UCL and World Cup editions match a reviewed winner registry; calendar awards use the award year, not the season start. Winner registries and primary-source links are in `verified-records.json`.
 
-Use `null` or omit a field when evidence is unavailable. Never substitute 0 for unknown, rank the 500-player roster as if it were the global UCL table, derive captaincy from senior caps, or infer title counts from a winner slug. Title counts must avoid double-counting the same season; league titles exclude cups, super cups and lower divisions. Top-five club counts must use the league/season of the actual appearance, exclude youth/B teams, and count loans only when official senior appearances occurred. Store source provenance, scope and timestamps in the next data revision before enabling these fields. The existing engine supports inclusive lower and upper bounds and automatically admits newly supported catalog criteria when verified fields are populated. A fresh dataset version changes the puzzle signature so stale boards cannot be replayed against different facts.
+The source history is not an independent certification of every player's complete career. Unknowns stay null. Overlap targets remain preferences: in particular, the roster does not support 10 candidates in every Easy cell. Every generated board still requires nine distinct valid answers. Team metadata may retain source crest URLs; all assets actually used by the criteria catalog and player search are checked locally. No external image request is needed for gameplay.
 
 ## Rebuild
 
-Use the existing pinned Python environment and Higher or Lower source importer. `tmp/higher-lower/source/{id}.json` must contain the original appearance captures for the bundled roster. Matrix does not change the Higher or Lower dataset.
+The offline builder requires `tmp/higher-lower/source/{id}.json` and `tmp/matrix/honours/{id}.json` captures for each bundled identity. Missing/mismatched captures fail the build. Refresh source captures through the existing importer before rebuilding; the Matrix builder performs no network scraping and does not update Higher or Lower.
 
 ```powershell
-# Obtain missing honour captures, then build the complete Matrix dataset.
-scripts/higher-lower/.venv/Scripts/python.exe scripts/matrix/build-dataset.py --fetch-honours
-
-# Rebuild offline from the existing source and honour captures.
 scripts/higher-lower/.venv/Scripts/python.exe scripts/matrix/build-dataset.py
-
-# Explicitly refresh all honour evidence from the source.
-scripts/higher-lower/.venv/Scripts/python.exe scripts/matrix/build-dataset.py --refresh-honours
+scripts/higher-lower/.venv/Scripts/python.exe scripts/matrix/validate-dataset.py
 ```
 
-Honour captures are stored in ignored `tmp/matrix/honours/{id}.json` with the provider player ID, source profile URL, timestamp, and raw response. The builder uses the pinned adapter's `player_achievements` records, exact winner labels, and the established throttled transport. A missing/mismatched capture fails the build before replacing the dataset. The final file is written atomically, with a deterministic content version and the actual latest source-capture timestamp. This build is separate from the hosted Higher or Lower refresh workflow; no new remote database migration is required.
+Eligibility is generated from `src/lib/matrix/criteria.ts` through `export-catalog.cjs`; there is no separate Python criterion catalog. The validator uses the actual TypeScript predicates, generator and nine-player solver, checks content versions and evidence reconciliation, decodes portrait transparency, and verifies local gameplay assets. Default simulation: 1,000 real runtime rounds per difficulty, including the 200-combination history window. Pools/intersections are cached per dataset so catalog expansion does not require full enumeration on every round request.
+
+Generated audit artifacts live in ignored `tmp/matrix/`: `matrix-evidence.json`, `matrix-eligibility.json`, and `matrix-validation-report.json`. The report distinguishes whole-board overlap targets from per-cell targets and does not claim an exhaustive count of solvable boards. The previous Gemini report is superseded by this validator. A concise checked-in result is `dataset-validation-summary.json`.
+
+The runtime imports `src/data/matrix-players.json` directly through `src/lib/matrix/data.ts`. No server database, migration, API key, or background fetch is required. Content-versioned signatures invalidate saved boards whose facts have changed. Existing portrait aliases and hash-based cache keys remain intact.
 
 ## Verification
 
 ```powershell
 npm run test:matrix
+scripts/higher-lower/.venv/Scripts/python.exe scripts/matrix/test_enrichment.py
 npm run test:higher-lower
 npm run test:scoreline
 npx tsc --noEmit --incremental false
 ```
 
-Matrix tests cover all 500 local portraits, senior-team evidence, 36 successive rounds across three levels with no repeated combinations, catalog completeness, missing-evidence exclusion, bounded ranks, unique-answer matching, draft privacy, edits/removal/reuse, full/partial/blank submission, scoring and locks, individual criterion reviews, session restoration and answer-free sharing.
-
-Browser checks cover desktop/mobile layouts, editable selections, hidden draft results, whole-grid submission, row/column/both mismatch review, blanks, saved progress, new rounds, difficulty isolation, keyboard controls and reward idempotency on reload. Generated artwork prompts and sources are recorded in `public/img/matrix/ASSETS.md`.
+Tests cover source edition parsing, recent winner credits, title deduplication, invalid/future appearances, all 500 portraits, all 16 milestone criteria, unique-answer matching, draft privacy, editing/reuse, full/partial/blank submission, scoring, per-criterion reviews, session restoration and sharing. Browser checks cover desktop/mobile text-only criterion headers, unclipped progress cards, hidden draft results, whole-grid submission, result reviews and new rounds.

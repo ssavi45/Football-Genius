@@ -3,6 +3,7 @@ import { Outfit, Orbitron, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/context/auth-context';
 import AppShell from '@/components/layout/AppShell';
+import faviconAssets from '../../public/branding/favicon-assets.json';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -28,7 +29,8 @@ export const metadata: Metadata = {
   title: 'FootyGen Arena — The Ultimate Football IQ Arena',
   description: 'Test your football encyclopedic knowledge across 8 gamified modes: Scoreline Hero, Scout\'s Duel, Football Matrix, The Journeyman, and more.',
   icons: {
-    icon: '/branding/footygen_logo.png',
+    icon: faviconAssets.icon.map(({ url, type, sizes }) => ({ url: `${url}?v=${faviconAssets.version}`, type, sizes })),
+    apple: { url: `${faviconAssets.apple.url}?v=${faviconAssets.version}`, type: faviconAssets.apple.type, sizes: faviconAssets.apple.sizes },
   },
   openGraph: {
     title: 'FootyGen Arena — The Ultimate Football IQ Arena',

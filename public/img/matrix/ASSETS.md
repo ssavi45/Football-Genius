@@ -7,21 +7,12 @@ Project assets:
 - `football-matrix-logo.webp`: original transparent blue/gold wordmark, served losslessly. Native selectable screen-reader text remains in the page heading.
 - `puzzle-hero.webp`: original floating puzzle tiles in a bright blue stadium.
 - `stadium-board.webp`: original light stadium, crystalline blue perimeter and translucent football, with a readable open centre.
-- `world-cup.png`: independently sourced trophy image from the Transfermarkt achievement record: https://img.a.transfermarkt.technology/erfolge/medium/101.png .
 
-Existing verified player portraits, club crests and national flags are reused from the application's asset collection. The tactical corner is an independently authored SVG; other interface controls use Lucide. The artwork does not supply interactive tiles, text labels, hit targets or player answers: those are actual React components.
+Verified player portraits are reused from the application's asset collection. Club and nation criteria retain their official crests/flags. Statistical and trophy criteria use text-only labels. The tactical corner is an independently authored SVG; other interface controls use Lucide. The artwork does not supply interactive tiles, text labels, hit targets or player answers: those are actual React components.
 
-## Criterion icon collection
+## Criterion labels
 
-`criteria/` contains 16 original transparent milestone and trophy icons generated independently with the **built-in image_gen tool**, one generation per icon. Their shared style is glossy cobalt enamel, silver and gold metal, restrained cyan highlights and clear dimensional football symbols. Every stat/trophy criterion in `src/lib/matrix/criteria.ts` has its own `artUrl`, used in both the grid headers and the player-search criterion chips. Club crests and national flags retain their existing assets.
-
-The new icons cover 400+ career goals, 3+ UCL titles, World Cup winner, Ballon d'Or winner, 50+ goals in a season, UCL top 15, national captain, 5+ league titles, 3+ top-five-league clubs, 200+ career assists, UCL winner, Copa America winner, 100+ career goals, 100+ senior caps, 100+ Premier League goals and 50+ UCL goals. Icons for criteria awaiting verified data are ready without enabling those criteria prematurely.
-
-Each delivery file is a **256 x 256 lossless WebP with real alpha**, normalized to consistent transparent padding and object fit. Only the generated image's transparent margins and delivery dimensions were normalized. No screenshot assets were extracted, and no existing files under `public/img/icons/` were replaced. Full-resolution generated masters remain in the generated-images directory.
-
-- Exact per-icon prompts: [`criteria/prompts.json`](criteria/prompts.json).
-- File inventory, alpha/dimension metadata, byte sizes and SHA-256 hashes: [`criteria/generated-assets.json`](criteria/generated-assets.json).
-- Collection preview: [`criteria/preview.webp`](criteria/preview.webp).
+Club and national-team criteria show their crests/flags beside their labels in grid headers and player-search chips. Only statistical and trophy criteria use text-only labels. The criterion icon collection, preview, prompts, manifest and optimizer have been removed. The original user uploads remain in the local ignored archive at `tmp/matrix/criteria-originals/`; no criterion artwork is served or requested by the page. Club crests and national flags shared with other game modes are preserved.
 
 ## Built-in imagegen prompts
 

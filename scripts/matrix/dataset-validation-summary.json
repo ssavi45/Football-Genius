@@ -1,0 +1,388 @@
+{
+  "status": "RUNTIME_VALIDATED_WITH_SOURCE_LIMITATIONS",
+  "datasetVersion": "matrix-1555fb79d3ae",
+  "generatedAt": "2026-10-17T03:16:27.624Z",
+  "snapshotCutoff": "2026-10-16T15:26:04.386489Z",
+  "totalPlayers": 500,
+  "totalTeams": 572,
+  "verifiedDecodedTransparentPortraits": 500,
+  "criteriaCoverage": [
+    {
+      "id": "club-418",
+      "type": "club",
+      "eligiblePlayers": 54,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-131",
+      "type": "club",
+      "eligiblePlayers": 46,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-27",
+      "type": "club",
+      "eligiblePlayers": 42,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-31",
+      "type": "club",
+      "eligiblePlayers": 28,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-11",
+      "type": "club",
+      "eligiblePlayers": 38,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-631",
+      "type": "club",
+      "eligiblePlayers": 42,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-506",
+      "type": "club",
+      "eligiblePlayers": 37,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-281",
+      "type": "club",
+      "eligiblePlayers": 42,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-16",
+      "type": "club",
+      "eligiblePlayers": 29,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-46",
+      "type": "club",
+      "eligiblePlayers": 41,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-583",
+      "type": "club",
+      "eligiblePlayers": 39,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-5",
+      "type": "club",
+      "eligiblePlayers": 39,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-13",
+      "type": "club",
+      "eligiblePlayers": 36,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-148",
+      "type": "club",
+      "eligiblePlayers": 29,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "club-610",
+      "type": "club",
+      "eligiblePlayers": 20,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3439",
+      "type": "nation",
+      "eligiblePlayers": 37,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3437",
+      "type": "nation",
+      "eligiblePlayers": 22,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3377",
+      "type": "nation",
+      "eligiblePlayers": 42,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3262",
+      "type": "nation",
+      "eligiblePlayers": 41,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3375",
+      "type": "nation",
+      "eligiblePlayers": 54,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3376",
+      "type": "nation",
+      "eligiblePlayers": 30,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3299",
+      "type": "nation",
+      "eligiblePlayers": 44,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3300",
+      "type": "nation",
+      "eligiblePlayers": 24,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3379",
+      "type": "nation",
+      "eligiblePlayers": 22,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3449",
+      "type": "nation",
+      "eligiblePlayers": 9,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3382",
+      "type": "nation",
+      "eligiblePlayers": 15,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3556",
+      "type": "nation",
+      "eligiblePlayers": 9,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3575",
+      "type": "nation",
+      "eligiblePlayers": 7,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3499",
+      "type": "nation",
+      "eligiblePlayers": 5,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "nation-3444",
+      "type": "nation",
+      "eligiblePlayers": 5,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "career-goals-400",
+      "type": "stat",
+      "eligiblePlayers": 16,
+      "unknownNumericValues": 5,
+      "ineligibleKnownNumericValues": 479
+    },
+    {
+      "id": "ucl-titles-3",
+      "type": "stat",
+      "eligiblePlayers": 25,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 475
+    },
+    {
+      "id": "world_cup",
+      "type": "trophy",
+      "eligiblePlayers": 63,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "ballon_dor",
+      "type": "trophy",
+      "eligiblePlayers": 11,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "season-goals-50",
+      "type": "stat",
+      "eligiblePlayers": 8,
+      "unknownNumericValues": 5,
+      "ineligibleKnownNumericValues": 487
+    },
+    {
+      "id": "ucl-top-15",
+      "type": "stat",
+      "eligiblePlayers": 10,
+      "unknownNumericValues": 490,
+      "ineligibleKnownNumericValues": 0
+    },
+    {
+      "id": "national-captain",
+      "type": "stat",
+      "eligiblePlayers": 177,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 323
+    },
+    {
+      "id": "league-titles-5",
+      "type": "stat",
+      "eligiblePlayers": 109,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 391
+    },
+    {
+      "id": "top-five-clubs-3",
+      "type": "stat",
+      "eligiblePlayers": 245,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 255
+    },
+    {
+      "id": "career-assists-200",
+      "type": "stat",
+      "eligiblePlayers": 18,
+      "unknownNumericValues": 5,
+      "ineligibleKnownNumericValues": 477
+    },
+    {
+      "id": "ucl",
+      "type": "trophy",
+      "eligiblePlayers": 128,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "copa-america",
+      "type": "trophy",
+      "eligiblePlayers": 29,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": null
+    },
+    {
+      "id": "career-goals-100",
+      "type": "stat",
+      "eligiblePlayers": 127,
+      "unknownNumericValues": 5,
+      "ineligibleKnownNumericValues": 368
+    },
+    {
+      "id": "senior-caps-100",
+      "type": "stat",
+      "eligiblePlayers": 73,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 427
+    },
+    {
+      "id": "pl-goals-100",
+      "type": "stat",
+      "eligiblePlayers": 14,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 486
+    },
+    {
+      "id": "ucl-goals-50",
+      "type": "stat",
+      "eligiblePlayers": 9,
+      "unknownNumericValues": 0,
+      "ineligibleKnownNumericValues": 491
+    }
+  ],
+  "simulations": {
+    "easy": {
+      "testedRounds": 1000,
+      "solvedRounds": 1000,
+      "solverFailures": 0,
+      "uniqueSampledCombinations": 227,
+      "rotationResets": 0,
+      "perCellTargetHitPercent": 17.88,
+      "wholeBoardTargetHitPercent": 0,
+      "candidates": {
+        "min": 1,
+        "median": 5,
+        "max": 17
+      },
+      "elapsedMs": 9270
+    },
+    "medium": {
+      "testedRounds": 1000,
+      "solvedRounds": 1000,
+      "solverFailures": 0,
+      "uniqueSampledCombinations": 917,
+      "rotationResets": 0,
+      "perCellTargetHitPercent": 50.52,
+      "wholeBoardTargetHitPercent": 5,
+      "candidates": {
+        "min": 1,
+        "median": 3,
+        "max": 11
+      },
+      "elapsedMs": 9702
+    },
+    "hard": {
+      "testedRounds": 1000,
+      "solvedRounds": 1000,
+      "solverFailures": 0,
+      "uniqueSampledCombinations": 231,
+      "rotationResets": 0,
+      "perCellTargetHitPercent": 62.44,
+      "wholeBoardTargetHitPercent": 0,
+      "candidates": {
+        "min": 1,
+        "median": 3,
+        "max": 9
+      },
+      "elapsedMs": 8500
+    }
+  },
+  "exhaustiveValidCombinationCount": null,
+  "limitations": [
+    "Recorded source histories are not an independent certification of complete historical career records.",
+    "Nulls remain unknown; a null UCL rank may indicate an individual outside the verified global top-15 table.",
+    "Global ranking verified against the dated UEFA table; future changes require refreshing the records.",
+    "Do not reuse the superseded Gemini validation counts or its different criterion catalog."
+  ],
+  "elapsedMs": 47985
+}

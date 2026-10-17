@@ -1,0 +1,35 @@
+{
+  "version": "4cf5efbc241e",
+  "source": "User-supplied Football Brain Lightbulb Logo.png",
+  "cornerRadius": "22%",
+  "icon": [
+    {
+      "url": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16 32x32 48x48",
+      "bytes": 10218,
+      "sha256": "715862cc8f24a28a24df6a529afeff76c78334488d79615561177a6934d8e3ba"
+    },
+    {
+      "url": "/branding/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16",
+      "bytes": 948,
+      "sha256": "5c47910e0712bd3ab129340dcbfd0981ca36c7f0456a6090ddd81067fef5cd4e"
+    },
+    {
+      "url": "/branding/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32",
+      "bytes": 3044,
+      "sha256": "d1b1e45735f5495181cfed1a29d357100b622aab2a0dec2517df49dc03249162"
+    }
+  ],
+  "apple": {
+    "url": "/branding/apple-touch-icon.png",
+    "type": "image/png",
+    "sizes": "180x180",
+    "bytes": 58092,
+    "sha256": "e1532dc2f3f55cacd211b910bd0819cbd721f3ce24738bef21fd2a34adaff108"
+  }
+}

@@ -25,49 +25,27 @@ export const nationCriteria: Criterion[] = [
 ];
 
 /** Missing statistical evidence remains unknown, never an inferred achievement.
- * New numeric fields below can be supplied by the next verified database revision.
+ * Numeric fields come from the versioned Matrix snapshot and its evidence index.
  * uclAllTimeRank must be an externally verified global rank, not a rank of this roster.
  */
 export const milestoneCriteria: Criterion[] = [
-  { id: 'career-goals-400', type: 'stat', value: 'goals', minimum: 400, label: 'Scored 400+ career goals', icon: 'boot' },
-  { id: 'ucl-titles-3', type: 'stat', value: 'uclTitles', minimum: 3, label: 'Won 3+ Champions League titles', icon: 'ucl' },
-  { id: 'world_cup', type: 'trophy', value: 'world_cup', label: 'Won the World Cup', icon: 'world_cup' },
-  { id: 'ballon_dor', type: 'trophy', value: 'ballon_dor', label: 'Won the Ballon d’Or', icon: 'ballon_dor' },
-  { id: 'season-goals-50', type: 'stat', value: 'maxSeasonGoals', minimum: 50, label: 'Scored 50+ goals in a season', icon: 'boot' },
-  { id: 'ucl-top-15', type: 'stat', value: 'uclAllTimeRank', minimum: 1, maximum: 15, label: 'UCL all-time top 15 scorer', icon: 'ucl' },
-  { id: 'national-captain', type: 'stat', value: 'seniorCaptainAppearances', minimum: 1, label: 'Captained their national team', icon: 'caps' },
-  { id: 'league-titles-5', type: 'stat', value: 'leagueTitles', minimum: 5, label: 'Won 5+ league titles', icon: 'ballon_dor' },
-  { id: 'top-five-clubs-3', type: 'stat', value: 'topFiveLeagueClubs', minimum: 3, label: 'Played for 3+ top-five-league clubs', icon: 'caps' },
-  { id: 'career-assists-200', type: 'stat', value: 'assists', minimum: 200, label: 'Provided 200+ career assists', icon: 'boot' },
+  { id: 'career-goals-400', type: 'stat', value: 'goals', minimum: 400, label: 'Scored 400+ career goals' },
+  { id: 'ucl-titles-3', type: 'stat', value: 'uclTitles', minimum: 3, label: 'Won 3+ Champions League titles' },
+  { id: 'world_cup', type: 'trophy', value: 'world_cup', label: 'Won the World Cup' },
+  { id: 'ballon_dor', type: 'trophy', value: 'ballon_dor', label: 'Won the Ballon d’Or' },
+  { id: 'season-goals-50', type: 'stat', value: 'maxSeasonGoals', minimum: 50, label: 'Scored 50+ goals in a season' },
+  { id: 'ucl-top-15', type: 'stat', value: 'uclAllTimeRank', minimum: 1, maximum: 15, label: 'UCL all-time top 15 scorer' },
+  { id: 'national-captain', type: 'stat', value: 'seniorCaptainAppearances', minimum: 1, label: 'Captained their national team' },
+  { id: 'league-titles-5', type: 'stat', value: 'leagueTitles', minimum: 5, label: 'Won 5+ league titles' },
+  { id: 'top-five-clubs-3', type: 'stat', value: 'topFiveLeagueClubs', minimum: 3, label: 'Played for 3+ top-five-league clubs' },
+  { id: 'career-assists-200', type: 'stat', value: 'assists', minimum: 200, label: 'Provided 200+ career assists' },
   // Retain existing evidence-backed conditions to support varied, solvable boards.
-  { id: 'ucl', type: 'trophy', value: 'ucl', label: 'Won the Champions League', icon: 'ucl' },
+  { id: 'ucl', type: 'trophy', value: 'ucl', label: 'Won the Champions League' },
   { id: 'copa-america', type: 'trophy', value: 'copa_america', label: 'Won the Copa América' },
-  { id: 'career-goals-100', type: 'stat', value: 'goals', minimum: 100, label: 'Scored 100+ career goals', icon: 'boot' },
-  { id: 'senior-caps-100', type: 'stat', value: 'caps', minimum: 100, label: '100+ senior international caps', icon: 'caps' },
-  { id: 'pl-goals-100', type: 'stat', value: 'plGoals', minimum: 100, label: '100+ Premier League goals', icon: 'boot' },
-  { id: 'ucl-goals-50', type: 'stat', value: 'uclGoals', minimum: 50, label: '50+ Champions League goals', icon: 'ucl' },
+  { id: 'career-goals-100', type: 'stat', value: 'goals', minimum: 100, label: 'Scored 100+ career goals' },
+  { id: 'senior-caps-100', type: 'stat', value: 'caps', minimum: 100, label: '100+ senior international caps' },
+  { id: 'pl-goals-100', type: 'stat', value: 'plGoals', minimum: 100, label: '100+ Premier League goals' },
+  { id: 'ucl-goals-50', type: 'stat', value: 'uclGoals', minimum: 50, label: '50+ Champions League goals' },
 ];
-// Every milestone has its own generated transparent artwork. Keep club crests
-// and national flags as their official, existing identity assets.
-const milestoneArt: Record<string, string> = {
-  'career-goals-400': 'career-goals-400',
-  'ucl-titles-3': 'ucl-titles-3',
-  world_cup: 'world-cup',
-  ballon_dor: 'ballon-dor',
-  'season-goals-50': 'season-goals-50',
-  'ucl-top-15': 'ucl-top-15',
-  'national-captain': 'national-captain',
-  'league-titles-5': 'league-titles-5',
-  'top-five-clubs-3': 'top-five-clubs-3',
-  'career-assists-200': 'career-assists-200',
-  ucl: 'ucl-winner',
-  'copa-america': 'copa-america',
-  'career-goals-100': 'career-goals-100',
-  'senior-caps-100': 'senior-caps-100',
-  'pl-goals-100': 'pl-goals-100',
-  'ucl-goals-50': 'ucl-goals-50',
-};
-for (const criterion of milestoneCriteria) {
-  criterion.artUrl = `/img/matrix/criteria/${milestoneArt[criterion.id]}.webp`;
-}
+// Clubs/nations retain their badges; statistical and trophy criteria use text only.
 export const criteriaCatalog: Criterion[] = [...clubCriteria, ...nationCriteria, ...milestoneCriteria];

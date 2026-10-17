@@ -24,8 +24,6 @@ export interface Criterion {
   minimum?: number;
   maximum?: number;
   badgeUrl?: string;
-  artUrl?: string;
-  icon?: 'ucl' | 'world_cup' | 'boot' | 'ballon_dor' | 'caps';
 }
 export interface MatrixPuzzle {
   id: string;

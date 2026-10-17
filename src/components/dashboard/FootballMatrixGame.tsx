@@ -42,10 +42,9 @@ function Dialog({ children, titleId, onClose, className = '' }: { children: Reac
   </div>;
 }
 
-function CriterionArt({ criterion }: { criterion: Criterion }) {
-  const source = criterion.artUrl || criterion.badgeUrl;
-  return source ? <Image className={criterion.artUrl ? 'matrix-criterion-art' : undefined} src={source} alt="" width={64} height={64} />
-    : <Trophy className="matrix-gold-icon" />;
+function CriterionBadge({ criterion }: { criterion: Criterion }) {
+  if ((criterion.type !== 'club' && criterion.type !== 'nation') || !criterion.badgeUrl) return null;
+  return <Image className={`matrix-criterion-badge${criterion.type === 'nation' ? ' is-national' : ''}`} src={criterion.badgeUrl} alt="" width={74} height={74} />;
 }
 
 const PREVIEW = [
@@ -113,9 +112,9 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
       <section className={`matrix-board matrix-board-${puzzle.difficulty}`} id="matrix-board" role="tabpanel" aria-labelledby={`matrix-tab-${puzzle.difficulty}`}>
         <div className="matrix-grid" role="group" aria-label="Three rows by three columns">
           <div className="matrix-corner" aria-hidden="true"><svg viewBox="0 0 160 105"><g fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 78C34 48 49 15 125 17m-12-9 12 9-13 7M89 96c-3-47 34-34 51-77" strokeDasharray="6 4" /><circle cx="28" cy="21" r="6" /><circle cx="73" cy="65" r="6" /><circle cx="146" cy="12" r="6" /><path d="m46 37 8 9m-9-1 10-7M5 97l37-30m-10 1 10-1-1 10" /></g></svg></div>
-          {puzzle.colCriteria.map(criterion => <div className={`matrix-column-header matrix-criterion-${criterion.type}`} key={criterion.id}><CriterionArt criterion={criterion} /><span>{criterion.label}</span></div>)}
+          {puzzle.colCriteria.map(criterion => <div className={`matrix-column-header matrix-criterion-${criterion.type}`} key={criterion.id}><CriterionBadge criterion={criterion} /><span>{criterion.label}</span></div>)}
           {puzzle.rowCriteria.map((criterion, row) => <Fragment key={criterion.id}>
-            <div className={`matrix-row-header matrix-criterion-${criterion.type}`}><CriterionArt criterion={criterion} /><span>{criterion.label}</span></div>
+            <div className={`matrix-row-header matrix-criterion-${criterion.type}`}><CriterionBadge criterion={criterion} /><span>{criterion.label}</span></div>
             {[0, 1, 2].map(col => {
               const cell = row * 3 + col;
               const player = view.cells[cell] ? byId.get(view.cells[cell]!) : null;
@@ -161,7 +160,7 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
 
     {ready && searchOpen && activeCriteria && <Dialog titleId="matrix-search-title" onClose={() => setSearchOpen(false)} className="matrix-search-dialog">
       <div className="matrix-dialog-eyebrow"><Search size={15} />FIND THE CONNECTION</div><h2 id="matrix-search-title">Who fits this square?</h2>
-      <div className="matrix-search-criteria">{activeCriteria.map(c => <span key={c.id}><CriterionArt criterion={c} />{c.label}</span>)}</div>
+      <div className="matrix-search-criteria">{activeCriteria.map(c => <span key={c.id}><CriterionBadge criterion={c} />{c.label}</span>)}</div>
       <label htmlFor="matrix-player-search" className="sr-only">Player name</label><div className="matrix-search-field"><Search size={21} /><input id="matrix-player-search" type="search" data-autofocus autoComplete="off" placeholder="Search a player’s name…" value={query} onChange={e => setQuery(e.target.value)} /><kbd>ESC</kbd></div>
       <div className="matrix-search-meta"><span>{players.length} verified player identities</span><strong>Results hidden until submission</strong></div>
       <div className="matrix-search-results" aria-label="Player search results" aria-busy={query !== debounced}>

@@ -42,48 +42,78 @@ export function createPuzzleGenerator(players: MatrixPlayer[], catalog: Criterio
   const eligible = new Map(catalog.map(c => [c.id, new Set(players.filter(p => satisfies(p, c)).map(p => p.id))]));
   const available = catalog.filter(c => eligible.get(c.id)!.size > 0);
   const intersections = new Map<string, string[]>();
-  const key = (a: Criterion, b: Criterion) => [a.id, b.id].sort().join('|');
+  const key = (a: Criterion, b: Criterion) => a.id < b.id ? a.id + '|' + b.id : b.id + '|' + a.id;
   for (let i = 0; i < available.length; i++) for (let j = i + 1; j < available.length; j++) {
     const a = available[i], b = available[j];
     intersections.set(key(a, b), [...eligible.get(a.id)!].filter(id => eligible.get(b.id)!.has(id)));
   }
-  const clubs = available.filter(c => c.type === 'club');
-  const nations = available.filter(c => c.type === 'nation');
-  const milestones = available.filter(c => c.type === 'stat' || c.type === 'trophy');
-  const clubTriples = triples(clubs), nationTriples = triples(nations), milestoneTriples = triples(milestones);
+  const clubTriples = triples(available.filter(c => c.type === 'club'));
+  const nationTriples = triples(available.filter(c => c.type === 'nation'));
+  const milestoneTriples = triples(available.filter(c => c.type === 'stat' || c.type === 'trophy'));
+  type Option = { rows: Criterion[]; cols: Criterion[]; penalty: number; combination: string; solvable?: boolean };
+  const pools = new Map<MatrixDifficulty, Option[]>();
+  const candidatesFor = (rows: Criterion[], cols: Criterion[]) =>
+    rows.flatMap(a => cols.map(b => intersections.get(key(a, b)) || []));
+  function poolFor(difficulty: MatrixDifficulty): Option[] {
+    const cached = pools.get(difficulty);
+    if (cached) return cached;
+    const rows = difficulty === 'hard' ? milestoneTriples : clubTriples;
+    const cols = difficulty === 'easy' ? nationTriples : milestoneTriples;
+    const [minimum, maximum] = overlapTargets[difficulty];
+    const options: Option[] = [];
+    for (let r = 0; r < rows.length; r++) for (let c = difficulty === 'hard' ? r + 1 : 0; c < cols.length; c++) {
+      const row = rows[r], col = cols[c];
+      if (row.some(a => col.some(b => a.id === b.id))) continue;
+      const candidates = candidatesFor(row, col);
+      if (candidates.some(ids => !ids.length)) continue;
+      const penalty = candidates.reduce((sum, ids) => sum + Math.max(0, minimum - ids.length) ** 2 + Math.max(0, ids.length - maximum) ** 2, 0);
+      options.push({ rows: row, cols: col, penalty,
+        combination: combinationKey({ rowCriteria: row as MatrixPuzzle['rowCriteria'], colCriteria: col as MatrixPuzzle['colCriteria'], difficulty }) });
+    }
+    options.sort((a, b) => a.penalty - b.penalty);
+    pools.set(difficulty, options);
+    return options;
+  }
   const cache = new Map<string, MatrixPuzzle>();
   return (seed: string, difficulty: MatrixDifficulty, number: number, history: string[] = []): MatrixPuzzle => {
-    const excluded = new Set(history);
     const cacheKey = `${seed}:${difficulty}:${number}:${history.join(';')}`;
     const cached = cache.get(cacheKey);
     if (cached) return cached;
     const random = seededRandom(`${version}:${seed}:${difficulty}`);
-    const rows = shuffle(difficulty === 'hard' ? milestoneTriples : clubTriples, random);
-    const cols = shuffle(difficulty === 'easy' ? nationTriples : milestoneTriples, random);
-    const [minimum, maximum] = overlapTargets[difficulty];
-    let best: { rows: Criterion[]; cols: Criterion[]; score: number } | null = null;
-    outer: for (const row of rows) for (const col of cols) {
-      if (new Set([...row, ...col].map(c => c.id)).size !== 6) continue;
-      if (excluded.has(combinationKey({ rowCriteria: row as MatrixPuzzle['rowCriteria'], colCriteria: col as MatrixPuzzle['colCriteria'], difficulty }))) continue;
-      const candidates = row.flatMap(a => col.map(b => intersections.get(key(a, b)) || []));
-      if (candidates.some(ids => !ids.length)) continue;
-      const penalty = candidates.reduce((sum, ids) => sum + Math.max(0, minimum - ids.length) ** 2 + Math.max(0, ids.length - maximum) ** 2, 0);
-      // Seeded jitter gives different rounds varied near-target boards when the
-      // exact overlap bands cannot yet be met by the bundled player database.
-      const score = penalty + random() * 12;
-      if (best && score >= best.score) continue;
-      if (!matchCandidates(candidates)) continue;
-      best = { rows: row, cols: col, score };
-      if (penalty === 0) break outer;
+    const excluded = new Set(history);
+    const options = poolFor(difficulty);
+    let best: Option | null = null, start = 0;
+    // Precompute immutable intersections/penalties once per dataset rather than
+    // re-enumerating the expanded catalog on every unlimited-round request.
+    while (!best && start < options.length) {
+      while (start < options.length && (options[start].solvable === false || excluded.has(options[start].combination))) start++;
+      if (start === options.length) break;
+      const floor = options[start].penalty;
+      const ceiling = floor === 0 ? 0 : floor + 12;
+      let end = start;
+      const choices: Option[] = [];
+      while (end < options.length && options[end].penalty <= ceiling) {
+        const option = options[end++];
+        if (option.solvable !== false && !excluded.has(option.combination)) choices.push(option);
+      }
+      // Seeded sampling keeps near-target boards varied. Every selected option
+      // must still pass the complete nine-distinct-player matching check.
+      const offset = Math.floor(random() * choices.length);
+      for (let index = 0; index < choices.length; index++) {
+        const option = choices[(index + offset) % choices.length];
+        if (option.solvable === undefined) option.solvable = Boolean(matchCandidates(candidatesFor(option.rows, option.cols)));
+        if (option.solvable) { best = option; break; }
+      }
+      start = end;
     }
     if (!best) throw new Error(`No solvable ${difficulty} Matrix board exists in the current catalog.`);
-    const rowCriteria = shuffle(best.rows, random) as MatrixPuzzle['rowCriteria'];
-    const colCriteria = shuffle(best.cols, random) as MatrixPuzzle['colCriteria'];
+    const swap = difficulty === 'hard' && random() < .5;
+    const rowCriteria = shuffle(swap ? best.cols : best.rows, random) as MatrixPuzzle['rowCriteria'];
+    const colCriteria = shuffle(swap ? best.rows : best.cols, random) as MatrixPuzzle['colCriteria'];
     const puzzle: MatrixPuzzle = {
       id: `matrix-${seed}-${difficulty}`, number, difficulty, rowCriteria, colCriteria,
       signature: `${version}|${difficulty}|${[...rowCriteria, ...colCriteria].map(c => c.id).join('|')}`,
     };
-    // Bound cache growth across unlimited rounds and difficulty selections.
     if (cache.size >= 96) cache.delete(cache.keys().next().value!);
     cache.set(cacheKey, puzzle);
     return puzzle;

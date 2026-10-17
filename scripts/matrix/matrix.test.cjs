@@ -32,6 +32,18 @@ test('500 sourced players have local verified portraits and senior team evidence
   assert(!players.find(p=>p.id==='zlatan').honours.includes('ucl'));
   assert(players.find(p=>p.id==='rice').nations.length===2,'Count actual senior appearances for both countries');
 });
+
+test('edition parsing retains recent verified honours and globally scoped UCL ranks',()=>{
+  const player=id=>players.find(p=>p.id===id);
+  assert(player('dembele').honours.includes('ballon_dor'),'The 2025 award uses season start 2024');
+  assert.equal(player('dembele').stats.uclTitles,2,'Include the 2024/25 and 2025/26 PSG titles');
+  assert.equal(player('hakimi').stats.uclTitles,3);
+  assert(player('yamal').honours.includes('world_cup'),'Retain the verified 2026 edition');
+  assert.equal(player('messi').stats.uclAllTimeRank,2);
+  assert.equal(player('kane').stats.uclAllTimeRank,8,'Ties share the global competition rank');
+  assert.equal(player('salah').stats.uclAllTimeRank,11,'Do not rank only the app roster');
+  for(const c of catalog.milestoneCriteria)assert(data.matrixCriteriaAvailability.find(x=>x.criterion.id===c.id).eligiblePlayers>0,c.id);
+});
 test('unlimited rounds follow difficulty rules with new combinations and nine distinct valid answers',()=>{
   for(const difficulty of ['easy','medium','hard']){
     const history=[];
@@ -58,7 +70,7 @@ test('catalog includes 15 clubs, 15 nations and all ten requested milestones wit
   for(const c of [...catalog.clubCriteria,...catalog.nationCriteria])assert(fs.existsSync(path.join(root,'public',c.badgeUrl)));
   assert.equal(catalog.milestoneCriteria.slice(0,10).length,10);
   for(const id of ['career-goals-400','ucl-titles-3','world_cup','ballon_dor','season-goals-50','ucl-top-15','national-captain','league-titles-5','top-five-clubs-3','career-assists-200'])assert(catalog.milestoneCriteria.some(c=>c.id===id));
-  for(const id of ['ucl-titles-3','season-goals-50','ucl-top-15','national-captain','league-titles-5','top-five-clubs-3'])assert.equal(data.matrixCriteriaAvailability.find(x=>x.criterion.id===id).eligiblePlayers,0);
+  for(const id of ['ucl-titles-3','season-goals-50','ucl-top-15','national-captain','league-titles-5','top-five-clubs-3'])assert(data.matrixCriteriaAvailability.find(x=>x.criterion.id===id).eligiblePlayers > 0);
   const rank=catalog.milestoneCriteria.find(c=>c.id==='ucl-top-15');const p=players[0];
   for(const value of [null,0,16,NaN,Infinity])assert(!engine.satisfies({...p,stats:{uclAllTimeRank:value}},rank));
   for(const value of [1,15])assert(engine.satisfies({...p,stats:{uclAllTimeRank:value}},rank));

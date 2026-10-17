@@ -26,5 +26,6 @@ build/
 /tmp/scoreline/
 /tmp/higher-lower/
 /tmp/matrix/
+/tmp/branding/
 /scripts/higher-lower/.venv/
 __pycache__/

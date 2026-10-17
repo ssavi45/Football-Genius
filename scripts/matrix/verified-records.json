@@ -1,0 +1,41 @@
+{
+  "asOf": "2026-10-16T15:26:04.386489Z",
+  "sources": {
+    "ucl2025": "https://www.uefa.com/uefachampionsleague/news/0299-1de417608530-15b01ff7b150-1000--paris-win-champions-league-desire-doue-double-helps-secure/",
+    "ucl2026": "https://www.uefa.com/uefachampionsleague/news/029c-1e9a2f63fe2d-ebf9ad643892-1000--champions-league-2025-26-all-the-results/",
+    "worldCup2026": "https://www.fifa.com/en/articles/final-tournament-standings",
+    "ballonDor": "https://www.uefa.com/ballondor/news/0292-1c27056169a7-bc88d1fdba43-1000--ballon-d-or-laureates-who-has-won-football-s-most-prestig/",
+    "uclScorers": "https://www.uefa.com/uefachampionsleague/news/0257-0e910cf2494a-5185150de9d4-1000--champions-league-all-time-top-scorers-cristiano-ronaldo-lionel-messi-robert-lewandowski/"
+  },
+  "uclScorersEffectiveDate": "2026-10-14",
+  "uclScorersScope": "1992/93 onwards; main competition; qualifying excluded; complete through the top-15 boundary",
+  "uclScorers": [
+    {"id":"ronaldo","goals":140}, {"id":"messi","goals":129},
+    {"id":"lewandowski","goals":109}, {"id":"benzema","goals":90},
+    {"id":"mbappe","goals":72}, {"id":"raul","goals":71},
+    {"id":"haaland","goals":61}, {"id":"kane","goals":57},
+    {"id":"muller","goals":57}, {"id":"van_nistelrooy","goals":56},
+    {"id":"henry","goals":50}, {"id":"salah","goals":50},
+    {"id":"zlatan","goals":48}, {"id":"shevchenko","goals":48},
+    {"id":"inzaghi","goals":46}
+  ],
+  "uclWinningClubsBySeasonStart": {
+    "1992":"244","1993":"5","1994":"610","1995":"506","1996":"16",
+    "1997":"418","1998":"985","1999":"418","2000":"27","2001":"418",
+    "2002":"5","2003":"720","2004":"31","2005":"131","2006":"5",
+    "2007":"985","2008":"131","2009":"46","2010":"131","2011":"631",
+    "2012":"27","2013":"418","2014":"131","2015":"418","2016":"418",
+    "2017":"418","2018":"31","2019":"27","2020":"631","2021":"418",
+    "2022":"281","2023":"418","2024":"583","2025":"583"
+  },
+  "worldCupWinningTeamsByEdition": {
+    "1994":"3439","1998":"3377","2002":"3439","2006":"3376",
+    "2010":"3375","2014":"3262","2018":"3377","2022":"3437","2026":"3375"
+  },
+  "ballonDorWinnerYearsByPlayer": {
+    "ruud_gullit":[1987],"marco_van_basten":[1988,1989,1992],"zidane":[1998],
+    "ronaldinho":[2005],"kaka":[2007],"ronaldo":[2008,2013,2014,2016,2017],
+    "messi":[2009,2010,2011,2012,2015,2019,2021,2023],
+    "modric":[2018],"benzema":[2022],"rodri":[2024],"dembele":[2025]
+  }
+}
