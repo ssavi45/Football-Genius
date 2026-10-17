@@ -47,6 +47,17 @@ function CriterionBadge({ criterion }: { criterion: Criterion }) {
   return <Image className={`matrix-criterion-badge${criterion.type === 'nation' ? ' is-national' : ''}`} src={criterion.badgeUrl} alt="" width={74} height={74} />;
 }
 
+function MatrixGridSkeleton() {
+  return <>
+    <div className="matrix-corner" aria-hidden="true" />
+    {[0, 1, 2].map(col => <div key={col} className="matrix-column-header" aria-hidden="true"><span className="matrix-loading-label" /></div>)}
+    {[0, 1, 2].map(row => <Fragment key={row}>
+      <div className="matrix-row-header" aria-hidden="true"><span className="matrix-loading-label" /></div>
+      {[0, 1, 2].map(col => <div key={col} className="matrix-cell matrix-loading-cell" aria-hidden="true" />)}
+    </Fragment>)}
+  </>;
+}
+
 const PREVIEW = [
   ['footyking', 'ronaldo', 960], ['tacticmaster', 'bruyne', 840], ['goalhunter', 'salah', 790],
   ['midfieldmaestro', 'messi', 720], ['thefootballmind', 'neymar', 710],
@@ -87,15 +98,16 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
     catch { setShareFallback(text); }
   }
   const activeCriteria = selected === null ? null : [puzzle.rowCriteria[Math.floor(selected / 3)], puzzle.colCriteria[selected % 3]];
-  return <div className="matrix-dashboard">
+  const difficulty = ready ? puzzle.difficulty : initialPuzzle.difficulty;
+  return <div className="matrix-dashboard" aria-busy={!ready || pendingRound}>
     <div className="matrix-main">
       <header className="matrix-hero">
         <Image className="matrix-hero-art" src="/img/matrix/puzzle-hero.webp" alt="" fill priority sizes="(max-width: 1100px) 100vw, 70vw" />
         <h1 className="matrix-title"><span className="sr-only">Football Matrix</span><Image src="/img/matrix/football-matrix-logo.webp" alt="" width={2070} height={760} priority /></h1>
         <p>Fill the grid with players who satisfy both row and column conditions.</p>
-        <div className="matrix-hero-meta"><span><Puzzle />Round #{puzzle.number}</span><i /><span className="matrix-grid-label"><Grid2X2 />3 × 3 Matrix</span><i />
+        <div className="matrix-hero-meta"><span><Puzzle />{ready ? `Round #${puzzle.number}` : 'Loading round…'}</span><i /><span className="matrix-grid-label"><Grid2X2 />3 × 3 Matrix</span><i />
           <div className="matrix-difficulty-control"><BarChart3 aria-hidden="true" /><nav className="matrix-difficulty-tabs" role="tablist" aria-label="Puzzle difficulty">
-            {DIFFICULTIES.map(({ id, label, description }) => <Link key={id} href={`/games/matrix?difficulty=${id}`} scroll={false} role="tab" aria-selected={puzzle.difficulty === id} aria-controls="matrix-board" id={`matrix-tab-${id}`} tabIndex={puzzle.difficulty === id ? 0 : -1} title={description}
+            {DIFFICULTIES.map(({ id, label, description }) => <Link key={id} href={`/games/matrix?difficulty=${id}`} scroll={false} role="tab" aria-selected={difficulty === id} aria-controls="matrix-board" id={`matrix-tab-${id}`} tabIndex={difficulty === id ? 0 : -1} title={description}
               onKeyDown={event => {
                 const offset = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
                 if (!offset && event.key !== 'Home' && event.key !== 'End') return;
@@ -109,8 +121,9 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
         </div>
       </header>
 
-      <section className={`matrix-board matrix-board-${puzzle.difficulty}`} id="matrix-board" role="tabpanel" aria-labelledby={`matrix-tab-${puzzle.difficulty}`}>
-        <div className="matrix-grid" role="group" aria-label="Three rows by three columns">
+      <section className={`matrix-board matrix-board-${difficulty}`} id="matrix-board" role="tabpanel" aria-labelledby={`matrix-tab-${difficulty}`}>
+        <div className="matrix-grid" role="group" aria-label={ready ? 'Three rows by three columns' : 'Loading your saved Matrix round'} aria-busy={!ready}>
+          {ready ? <>
           <div className="matrix-corner" aria-hidden="true"><svg viewBox="0 0 160 105"><g fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 78C34 48 49 15 125 17m-12-9 12 9-13 7M89 96c-3-47 34-34 51-77" strokeDasharray="6 4" /><circle cx="28" cy="21" r="6" /><circle cx="73" cy="65" r="6" /><circle cx="146" cy="12" r="6" /><path d="m46 37 8 9m-9-1 10-7M5 97l37-30m-10 1 10-1-1 10" /></g></svg></div>
           {puzzle.colCriteria.map(criterion => <div className={`matrix-column-header matrix-criterion-${criterion.type}`} key={criterion.id}><CriterionBadge criterion={criterion} /><span>{criterion.label}</span></div>)}
           {puzzle.rowCriteria.map((criterion, row) => <Fragment key={criterion.id}>
@@ -127,10 +140,11 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
               </button>;
             })}
           </Fragment>)}
+          </> : <MatrixGridSkeleton />}
         </div>
-        <div className="matrix-feedback" role="status" aria-live="polite"><Info size={15} /><span>{notice || (view.finished ? `${view.correct} correct · ${view.incorrect} incorrect · ${view.blank} blank. Click a cell to review its criteria.` : `${view.filled}/9 selected. You can edit answers or leave blanks. Results reveal on submission.`)}</span></div>
+        <div className="matrix-feedback" role="status" aria-live="polite"><Info size={15} /><span>{!ready ? 'Restoring your saved round…' : notice || (view.finished ? `${view.correct} correct · ${view.incorrect} incorrect · ${view.blank} blank. Click a cell to review its criteria.` : `${view.filled}/9 selected. You can edit answers or leave blanks. Results reveal on submission.`)}</span></div>
         <div className="matrix-board-actions">
-          <button type="button" className="matrix-primary" disabled={!ready || pendingRound} onClick={() => view.finished ? void nextRound() : submit()}>{pendingRound ? 'Loading Round…' : view.finished ? 'Play Another Round' : 'Submit Grid'}<ArrowRight size={20} /></button>
+          <button type="button" className="matrix-primary" disabled={!ready || pendingRound} onClick={() => view.finished ? void nextRound() : submit()}>{!ready || pendingRound ? 'Loading Round…' : view.finished ? 'Play Another Round' : 'Submit Grid'}<ArrowRight size={20} /></button>
           <button type="button" className="matrix-secondary" disabled={!ready || pendingRound} onClick={() => view.finished ? setSummaryOpen(true) : clear()}>{view.finished ? <FileText size={20} /> : <RotateCcw size={20} />}{view.finished ? 'View Results' : 'Clear Grid'}</button>
         </div>
         {storageWarning && <div className="matrix-notice" role="status">Your browser could not save progress. Keep this page open to preserve this round.</div>}
@@ -138,13 +152,13 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
     </div>
 
     <aside className="matrix-widgets" aria-label="Puzzle progress and information">
-      <section className="matrix-widget matrix-progress"><div className="matrix-widget-title"><h2>Game Progress</h2><strong>{view.filled} / 9</strong></div>
-        <div className="matrix-progress-track" aria-label={view.finished ? 'Submitted grid results' : `${view.filled} of 9 cells selected. Results hidden.`}>{view.cells.map((id, index) => <span key={index} className={view.finished ? view.results[index] === 'correct' ? 'is-correct' : view.results[index] === 'incorrect' ? 'is-wrong' : '' : id ? 'is-current' : ''} />)}</div>
+      <section className="matrix-widget matrix-progress"><div className="matrix-widget-title"><h2>Game Progress</h2><strong>{ready ? `${view.filled} / 9` : '— / 9'}</strong></div>
+        <div className="matrix-progress-track" aria-label={!ready ? 'Loading saved progress' : view.finished ? 'Submitted grid results' : `${view.filled} of 9 cells selected. Results hidden.`}>{view.cells.map((id, index) => <span key={index} className={!ready ? '' : view.finished ? view.results[index] === 'correct' ? 'is-correct' : view.results[index] === 'incorrect' ? 'is-wrong' : '' : id ? 'is-current' : ''} />)}</div>
         <div className="matrix-progress-cards">
-          <div className="matrix-stat blue"><span className="matrix-stat-icon"><FileText /></span><div><p>Round</p><strong>#{puzzle.number.toString().padStart(3, '0')}</strong></div></div>
-          <div className="matrix-stat blue"><span className="matrix-stat-icon"><Grid2X2 /></span><div><p>Filled Cells</p><strong>{view.filled} / 9</strong></div></div>
-          <div className="matrix-stat gold"><span className="matrix-stat-icon"><Star /></span><div><p>XP Earned</p><strong>{view.xp} XP</strong></div></div>
-          <div className="matrix-stat pink"><span className="matrix-stat-icon"><Target /></span><div><p>Grid Status</p><strong className="matrix-status-label">{view.finished ? 'Reviewed' : 'Draft'}</strong></div></div>
+          <div className="matrix-stat blue"><span className="matrix-stat-icon"><FileText /></span><div><p>Round</p><strong>{ready ? `#${puzzle.number.toString().padStart(3, '0')}` : '—'}</strong></div></div>
+          <div className="matrix-stat blue"><span className="matrix-stat-icon"><Grid2X2 /></span><div><p>Filled Cells</p><strong>{ready ? `${view.filled} / 9` : '— / 9'}</strong></div></div>
+          <div className="matrix-stat gold"><span className="matrix-stat-icon"><Star /></span><div><p>XP Earned</p><strong>{ready ? `${view.xp} XP` : '— XP'}</strong></div></div>
+          <div className="matrix-stat pink"><span className="matrix-stat-icon"><Target /></span><div><p>Grid Status</p><strong className="matrix-status-label">{!ready ? 'Loading' : view.finished ? 'Reviewed' : 'Draft'}</strong></div></div>
         </div>
       </section>
       <section className="matrix-widget matrix-puzzle-stats"><div className="matrix-widget-title"><h2>Your Round Stats</h2></div>

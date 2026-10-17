@@ -24,6 +24,8 @@ The active round is saved per profile/difficulty in `footygen_matrix_rounds_v2:{
 
 Browser persistence remains local to that browser/profile. It is not an authenticated server anti-cheat system or cross-device save service. A storage failure shows a notice and retains the current session in memory. The leaderboard illustration remains explicitly labelled **Preview** and links to the existing leaderboard.
 
+The initial server render shows a neutral loading grid until the profile and saved session have been restored. The server-generated first-visit candidate is never displayed ahead of an existing saved board. Refresh preserves the active round; **Play Another Round** starts a new combination after submission.
+
 ## Data and evidence
 
 `src/data/matrix-players.json` contains 500 verified identities with:
