@@ -1,0 +1,52 @@
+{
+  "iran": {
+    "sourceUrl": "https://flagcdn.com/w80/ir.png",
+    "localPath": "img/country/iran.png",
+    "sha256": "2b08721b074f09dd599539aae078ca6b5a59c2b7f18c493b0124bce28daf4f8e"
+  },
+  "zimbabwe": {
+    "sourceUrl": "https://flagcdn.com/w80/zw.png",
+    "localPath": "img/country/zimbabwe.png",
+    "sha256": "2a96a36a785b535857baee3e4494dfac275563ab85f0d0ceb6cd112143bdbcfa"
+  },
+  "paraguay": {
+    "sourceUrl": "https://flagcdn.com/w80/py.png",
+    "localPath": "img/country/paraguay.png",
+    "sha256": "3791bcf57ecc71e23b15b941b026ac807470e9fc5b97a624aaef0df74e2d0684"
+  },
+  "peru": {
+    "sourceUrl": "https://flagcdn.com/w80/pe.png",
+    "localPath": "img/country/peru.png",
+    "sha256": "41282776c7f57cd127e6577cbc380f3e252049f976bcf566ee77d4578e50ed57"
+  },
+  "trinidad_and_tobago": {
+    "sourceUrl": "https://flagcdn.com/w80/tt.png",
+    "localPath": "img/country/trinidad_and_tobago.png",
+    "sha256": "22243a94f33d3d307980935b449c78c26f742ab383a66660f8dd0dee5354e5aa"
+  },
+  "togo": {
+    "sourceUrl": "https://flagcdn.com/w80/tg.png",
+    "localPath": "img/country/togo.png",
+    "sha256": "2c99cc0ba6ea2513cf61f2ba32e8c33ef12fa1975898930fc592e0c6fcbfb0bf"
+  },
+  "mali": {
+    "sourceUrl": "https://flagcdn.com/w80/ml.png",
+    "localPath": "img/country/mali.png",
+    "sha256": "a70210ab927c180381cd122ee32f65b4612fa69f641b5fb04d17deeb96779ebe"
+  },
+  "northern_ireland": {
+    "sourceUrl": "https://flagcdn.com/w80/gb-nir.png",
+    "localPath": "img/country/northern_ireland.png",
+    "sha256": "1caeef818b94205deb503363349bc0668cda4c628930bf205abfd22f650fecae"
+  },
+  "liberia": {
+    "sourceUrl": "https://flagcdn.com/w80/lr.png",
+    "localPath": "img/country/liberia.png",
+    "sha256": "2324a3c7b6eb1a1e53a882bd1d5cf692b72efbba7a8670a6fa340b9f13994e73"
+  },
+  "romania": {
+    "sourceUrl": "https://flagcdn.com/w80/ro.png",
+    "localPath": "img/country/romania.png",
+    "sha256": "8c5a6a64e197aba1acadb221486790c1b04022de391c72be5da8023bb2391a1d"
+  }
+}

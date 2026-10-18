@@ -13,7 +13,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem('footygen_sidebar_collapsed');
-      setSidebarCollapsed(saved === null ? pathname === '/games/matrix' : saved === 'true');
+      setSidebarCollapsed(saved === null ? ['/games/matrix', '/games/journeyman'].includes(pathname) : saved === 'true');
     } catch { /* Keep navigation usable without browser storage. */ }
   }, [pathname]);
   const toggleSidebar = () => {
@@ -24,6 +24,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const isScorelinePage = pathname === '/games/scoreline';
   const isHigherLowerPage = pathname === '/games/higher-lower';
   const isMatrixPage = pathname === '/games/matrix';
+  const isJourneymanPage = pathname === '/games/journeyman';
   const isLandingPage = pathname === '/' || pathname === '/game-modes';
 
   return (
@@ -34,7 +35,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         onToggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)}
       />
 
-      <div className={`flex-1 flex w-full mx-auto ${isScorelinePage ? "scoreline-shell" : isHigherLowerPage ? "higher-lower-shell" : isMatrixPage ? "matrix-shell" : isLandingPage ? "" : "max-w-[1440px]"}`}>
+      <div className={`flex-1 flex w-full mx-auto ${isScorelinePage ? "scoreline-shell" : isHigherLowerPage ? "higher-lower-shell" : isMatrixPage ? "matrix-shell" : isJourneymanPage ? "journey-shell" : isLandingPage ? "" : "max-w-[1440px]"}`}>
         {/* On non-landing pages or on mobile menu, show Sidebar */}
         {!isLandingPage && (
           <Sidebar

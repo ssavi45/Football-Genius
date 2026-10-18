@@ -27,7 +27,7 @@ interface SidebarProps {
 
 export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapsed }: SidebarProps) {
   const pathname = usePathname();
-  const isCurrentGame = ['/games/scoreline', '/games/higher-lower', '/games/matrix'].includes(pathname);
+  const isCurrentGame = ['/games/scoreline', '/games/higher-lower', '/games/matrix', '/games/journeyman'].includes(pathname);
 
   const navItems = [
     { label: 'Play Game', href: isCurrentGame ? pathname : '/games/scoreline', icon: Gamepad2, activePattern: isCurrentGame },

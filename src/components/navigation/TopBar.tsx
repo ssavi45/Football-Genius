@@ -33,8 +33,8 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
   const { profile, openAuthModal, soundEnabled, toggleSound, signOut } = useAuth();
   const [profileDropdown, setProfileDropdown] = useState(false);
   const pathname = usePathname();
-  const useSharedNav = pathname === '/' || pathname === '/game-modes' || pathname === '/games/scoreline' || pathname === '/games/higher-lower' || pathname === '/games/matrix';
-  const isGameModesActive = pathname === '/game-modes' || pathname === '/games/higher-lower' || pathname === '/games/matrix';
+  const useSharedNav = pathname === '/' || pathname === '/game-modes' || pathname === '/games/scoreline' || pathname === '/games/higher-lower' || pathname === '/games/matrix' || pathname === '/games/journeyman';
+  const isGameModesActive = pathname === '/game-modes' || pathname === '/games/higher-lower' || pathname === '/games/matrix' || pathname === '/games/journeyman';
 
   return (
     <header

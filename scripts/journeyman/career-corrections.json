@@ -1,0 +1,1497 @@
+{
+  "schemaVersion": 1,
+  "players": {
+    "harry_kane": {
+      "note": "Remove unused pre-Orient Tottenham registration. Preserve actual Tottenham playing spells after Orient and Millwall, before Norwich.",
+      "sources": [
+        {
+          "id": "correction-harry_kane-1",
+          "url": "https://harrykane.com/pages/my-story"
+        },
+        {
+          "id": "correction-harry_kane-2",
+          "url": "https://www.tottenhamhotspur.com/news/featured/1015241/harry-kane-10-years-in-the-premier-league-a-special-feature"
+        },
+        {
+          "id": "correction-harry_kane-3",
+          "url": "https://www.tottenhamhotspur.com/news/1026623/kanes-gains"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "leyton_orient",
+          "label": "Leyton Orient",
+          "logo": "img/journeyman/clubs/leyton_orient.webp",
+          "from": "2011",
+          "to": "2011",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2011-2011",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 18,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "tottenham",
+          "label": "Tottenham Hotspur",
+          "logo": "img/journeyman/clubs/tottenham.webp",
+          "from": "2011",
+          "to": "2012",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2011-2012",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-harry_kane-1",
+            "correction-harry_kane-2",
+            "correction-harry_kane-3"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "millwall",
+          "label": "Millwall",
+          "logo": "img/journeyman/clubs/millwall.webp",
+          "from": "2012",
+          "to": "2012",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2012-2012",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 27,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "tottenham",
+          "label": "Tottenham Hotspur",
+          "logo": "img/journeyman/clubs/tottenham.webp",
+          "from": "2012",
+          "to": "2012",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2012-2012",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-harry_kane-1",
+            "correction-harry_kane-2",
+            "correction-harry_kane-3"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "norwich",
+          "label": "Norwich City",
+          "logo": "img/journeyman/clubs/norwich.webp",
+          "from": "2012",
+          "to": "2013",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2012-2013",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 5,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "leicester",
+          "label": "Leicester City",
+          "logo": "img/journeyman/clubs/leicester.webp",
+          "from": "2013",
+          "to": "2013",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2013-2013",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 15,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 7,
+          "clubId": "tottenham",
+          "label": "Tottenham Hotspur",
+          "logo": "img/journeyman/clubs/tottenham.webp",
+          "from": "2013",
+          "to": "2023",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2013-2023",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 435,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 8,
+          "clubId": "bayern",
+          "label": "Bayern Munich",
+          "logo": "img/journeyman/clubs/bayern.webp",
+          "from": "2023",
+          "to": null,
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2023-present",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 45,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        }
+      ]
+    },
+    "kevin_de_bruyne": {
+      "note": "Remove the unused 2012 Chelsea registration before Bremen. Competitive Chelsea debut was August 2013. Add Napoli playing spell from 2025.",
+      "sources": [
+        {
+          "id": "correction-kevin_de_bruyne-1",
+          "url": "https://www.chelseafc.com/en/news/article/lightning-strikes-twice-chelseas-opening-day-specialists"
+        },
+        {
+          "id": "correction-kevin_de_bruyne-2",
+          "url": "https://www.chelseafc.com/en/news/article/tuchel-reflects-on-de-bruyne-departure-and-draws-comparison-with"
+        },
+        {
+          "id": "correction-kevin_de_bruyne-3",
+          "url": "https://sscnapoli.it/en/match-report-sassuolo-napoli-0-2/"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "genk",
+          "label": "Genk",
+          "logo": "img/journeyman/clubs/genk.webp",
+          "from": "2008",
+          "to": "2012",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2008-2012",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 113,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "werder_bremen",
+          "label": "Werder Bremen",
+          "logo": "img/journeyman/clubs/werder_bremen.webp",
+          "from": "2012",
+          "to": "2013",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2012-2013",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 34,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "cfc",
+          "label": "Chelsea",
+          "logo": "img/journeyman/clubs/cfc.webp",
+          "from": "2013",
+          "to": "2014",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2013-2014",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 9,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "vfl_wolfsburg",
+          "label": "VfL Wolfsburg",
+          "logo": "img/journeyman/clubs/vfl_wolfsburg.webp",
+          "from": "2014",
+          "to": "2015",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2014-2015",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 73,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "mancity",
+          "label": "Manchester City",
+          "logo": "img/journeyman/clubs/mancity.webp",
+          "from": "2015",
+          "to": "2025",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2015-2025",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 382,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "napoli",
+          "label": "Napoli",
+          "logo": "img/journeyman/clubs/napoli.webp",
+          "from": "2025",
+          "to": null,
+          "fromPrecision": "year",
+          "toPrecision": "unknown",
+          "rawDateText": "2025-present",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-kevin_de_bruyne-1",
+            "correction-kevin_de_bruyne-2",
+            "correction-kevin_de_bruyne-3"
+          ]
+        }
+      ]
+    },
+    "luka_modric": {
+      "note": "Senior career starts at Zrinjski, not a zero-appearance Dinamo registration. Add competitive Milan spell from 2025.",
+      "sources": [
+        {
+          "id": "correction-luka_modric-1",
+          "url": "https://hskzrinjski.ba/en/na-danasnji-dan-luki-modricu-trofej-filip-sunjic-pipa/"
+        },
+        {
+          "id": "correction-luka_modric-2",
+          "url": "https://hnl.hr/news/18822/luka-modric-oduvijek-je-bio-poseban-i-najbolji/"
+        },
+        {
+          "id": "correction-luka_modric-3",
+          "url": "https://www.acmilan.com/en/news/articles/coppa-italia/2025-08-17/ac-milan-progress-with-victory-over-bari"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "zrinjski_mostar",
+          "label": "Zrinjski Mostar",
+          "logo": "img/journeyman/clubs/zrinjski_mostar.webp",
+          "from": "2003",
+          "to": "2004",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2003-2004",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 25,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "inter_zapresic",
+          "label": "Inter Zaprešić",
+          "logo": "img/journeyman/clubs/inter_zapresic.webp",
+          "from": "2004",
+          "to": "2005",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2004-2005",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 18,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "dinamo_zagreb",
+          "label": "Dinamo Zagreb",
+          "logo": "img/journeyman/clubs/dinamo_zagreb.webp",
+          "from": "2005",
+          "to": "2008",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2005-2008",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 94,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "tottenham",
+          "label": "Tottenham Hotspur",
+          "logo": "img/journeyman/clubs/tottenham.webp",
+          "from": "2008",
+          "to": "2012",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2008-2012",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 160,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "rmcf",
+          "label": "Real Madrid",
+          "logo": "img/journeyman/clubs/rmcf.webp",
+          "from": "2012",
+          "to": "2025",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2012-2025",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 534,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "acmilan",
+          "label": "AC Milan",
+          "logo": "img/journeyman/clubs/acmilan.webp",
+          "from": "2025",
+          "to": null,
+          "fromPrecision": "year",
+          "toPrecision": "unknown",
+          "rawDateText": "2025-present",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-luka_modric-1",
+            "correction-luka_modric-2",
+            "correction-luka_modric-3"
+          ]
+        }
+      ]
+    },
+    "nemanja_vidic": {
+      "note": "Senior debut was on loan at Spartak Subotica. Remove Red Star youth/unused registration before that debut.",
+      "sources": [
+        {
+          "id": "correction-nemanja_vidic-1",
+          "url": "https://www.reprezentacija.rs/vidic-nemanja/"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "spartak_subotica",
+          "label": "Spartak Subotica",
+          "logo": "img/journeyman/clubs/spartak_subotica.webp",
+          "from": "2000",
+          "to": "2001",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2000-2001",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 27,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-nemanja_vidic-1"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "red_star",
+          "label": "Red Star Belgrade",
+          "logo": "img/journeyman/clubs/red_star.webp",
+          "from": "2001",
+          "to": "2004",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2001-2004",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 92,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "spartak_moscow",
+          "label": "Spartak Moscow",
+          "logo": "img/journeyman/clubs/spartak_moscow.webp",
+          "from": "2004",
+          "to": "2006",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2004-2006",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 41,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "manu",
+          "label": "Manchester United",
+          "logo": "img/journeyman/clubs/manu.webp",
+          "from": "2006",
+          "to": "2014",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2006-2014",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 300,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "inter",
+          "label": "Inter Milan",
+          "logo": "img/journeyman/clubs/inter.webp",
+          "from": "2014",
+          "to": "2016",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2014-2016",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 28,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        }
+      ]
+    },
+    "kyle_walker": {
+      "note": "Start at Northampton senior loan. Merge continuous Sheffield playing spell across permanent-to-loan paperwork. First Spurs playing stint is 2010, then QPR and Villa. Add Milan and Burnley playing spells in 2025.",
+      "sources": [
+        {
+          "id": "correction-kyle_walker-1",
+          "url": "https://en.wikipedia.org/wiki/Kyle_Walker"
+        },
+        {
+          "id": "correction-kyle_walker-2",
+          "url": "https://www.tottenhamhotspur.com/news/1028335/kyle-still-in-dreamland"
+        },
+        {
+          "id": "correction-kyle_walker-3",
+          "url": "https://www.burnleyfootballclub.com/media-article/walkers-career-in-pictures"
+        },
+        {
+          "id": "correction-kyle_walker-4",
+          "url": "https://www.burnleyfootballclub.com/media-article/match-report-tottenham-hotspur-burnley"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "northampton",
+          "label": "Northampton Town",
+          "logo": "img/journeyman/clubs/northampton.webp",
+          "from": "2008",
+          "to": "2009",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2008-2009",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 9,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-kyle_walker-1",
+            "correction-kyle_walker-2",
+            "correction-kyle_walker-3",
+            "correction-kyle_walker-4"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "sheffield_united",
+          "label": "Sheffield United",
+          "logo": "img/journeyman/clubs/sheffield_united.webp",
+          "from": "2009",
+          "to": "2010",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2009-2010",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-kyle_walker-1",
+            "correction-kyle_walker-2",
+            "correction-kyle_walker-3",
+            "correction-kyle_walker-4"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "tottenham",
+          "label": "Tottenham Hotspur",
+          "logo": "img/journeyman/clubs/tottenham.webp",
+          "from": "2010",
+          "to": "2010",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2010-2010",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 2,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-kyle_walker-1",
+            "correction-kyle_walker-2",
+            "correction-kyle_walker-3",
+            "correction-kyle_walker-4"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "qpr",
+          "label": "Queens Park Rangers",
+          "logo": "img/journeyman/clubs/qpr.webp",
+          "from": "2010",
+          "to": "2011",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2010-2011",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 20,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "aston_villa",
+          "label": "Aston Villa",
+          "logo": "img/journeyman/clubs/aston_villa.webp",
+          "from": "2011",
+          "to": "2011",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2011-2011",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": 18,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "tottenham",
+          "label": "Tottenham Hotspur",
+          "logo": "img/journeyman/clubs/tottenham.webp",
+          "from": "2011",
+          "to": "2017",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2011-2017",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 226,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 7,
+          "clubId": "mancity",
+          "label": "Manchester City",
+          "logo": "img/journeyman/clubs/mancity.webp",
+          "from": "2017",
+          "to": "2025",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2017-2025",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 301,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 8,
+          "clubId": "acmilan",
+          "label": "AC Milan",
+          "logo": "img/journeyman/clubs/acmilan.webp",
+          "from": "2025",
+          "to": "2025",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2025-2025",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-kyle_walker-1",
+            "correction-kyle_walker-2",
+            "correction-kyle_walker-3",
+            "correction-kyle_walker-4"
+          ]
+        },
+        {
+          "order": 9,
+          "clubId": "burnley",
+          "label": "Burnley F.C.",
+          "logo": "img/journeyman/clubs/burnley.webp",
+          "from": "2025",
+          "to": null,
+          "fromPrecision": "year",
+          "toPrecision": "unknown",
+          "rawDateText": "2025-present",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-kyle_walker-1",
+            "correction-kyle_walker-2",
+            "correction-kyle_walker-3",
+            "correction-kyle_walker-4"
+          ]
+        }
+      ]
+    },
+    "bebeto": {
+      "note": "Vitória competitive state-league appearance is proven by a goal against Botafogo-BA on 22 September 1982. Zero national-league appearances is not zero senior appearances. Exact all-competition total remains unknown.",
+      "sources": [
+        {
+          "id": "correction-bebeto-1",
+          "url": "https://futebol80.com.br/links/times/vitoria/vitoriajg.htm"
+        },
+        {
+          "id": "correction-bebeto-2",
+          "url": "https://www.worldfootball.net/person/pe41607/bebeto/"
+        },
+        {
+          "id": "correction-bebeto-3",
+          "url": "https://pt.wikipedia.org/wiki/Bebeto"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "vitoria",
+          "label": "Vitória",
+          "logo": "img/journeyman/clubs/vitoria.webp",
+          "from": "1982",
+          "to": "1983",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1982-1983",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-bebeto-1",
+            "correction-bebeto-2",
+            "correction-bebeto-3"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "flamengo",
+          "label": "Flamengo",
+          "logo": "img/journeyman/clubs/flamengo.webp",
+          "from": "1983",
+          "to": "1989",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1983-1989",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 80,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "vasco_da_gama",
+          "label": "Vasco da Gama",
+          "logo": "img/journeyman/clubs/vasco_da_gama.webp",
+          "from": "1989",
+          "to": "1992",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1989-1992",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 53,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "deportivo",
+          "label": "Deportivo La Coruña",
+          "logo": "img/journeyman/clubs/deportivo.webp",
+          "from": "1992",
+          "to": "1996",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1992-1996",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 131,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "flamengo",
+          "label": "Flamengo",
+          "logo": "img/journeyman/clubs/flamengo.webp",
+          "from": "1996",
+          "to": "1996",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1996-1996",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 15,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "sevilla",
+          "label": "Sevilla",
+          "logo": "img/journeyman/clubs/sevilla.webp",
+          "from": "1996",
+          "to": "1997",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1996-1997",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 5,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 7,
+          "clubId": "vitoria",
+          "label": "Vitória",
+          "logo": "img/journeyman/clubs/vitoria.webp",
+          "from": "1997",
+          "to": "1997",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1997-1997",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 8,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 8,
+          "clubId": "botafogo",
+          "label": "Botafogo",
+          "logo": "img/journeyman/clubs/botafogo.webp",
+          "from": "1998",
+          "to": "1999",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1998-1999",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 17,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 9,
+          "clubId": "toros_neza",
+          "label": "Toros Neza",
+          "logo": "img/journeyman/clubs/toros_neza.webp",
+          "from": "1999",
+          "to": "1999",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1999-1999",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 8,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 10,
+          "clubId": "kashima_antlers",
+          "label": "Kashima Antlers",
+          "logo": "img/journeyman/clubs/kashima_antlers.webp",
+          "from": "2000",
+          "to": "2000",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2000-2000",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 8,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 11,
+          "clubId": "vasco_da_gama",
+          "label": "Vasco da Gama",
+          "logo": "img/journeyman/clubs/vasco_da_gama.webp",
+          "from": "2001",
+          "to": "2001",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2001-2001",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 8,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 12,
+          "clubId": "al_ittihad",
+          "label": "Al-Ittihad",
+          "logo": "img/journeyman/clubs/al_ittihad.webp",
+          "from": "2002",
+          "to": "2002",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2002-2002",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 5,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        }
+      ]
+    },
+    "socrates": {
+      "note": "Botafogo confirms seven games in the 1989 return including a farewell friendly. Keep verified competitive return, but do not invent a combined competitive total.",
+      "sources": [
+        {
+          "id": "correction-socrates-1",
+          "url": "https://botafogofutebolsa.com.br/socrateshall/"
+        },
+        {
+          "id": "correction-socrates-2",
+          "url": "https://en.wikipedia.org/wiki/S%C3%B3crates"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "botafogo_sp",
+          "label": "Botafogo-SP",
+          "logo": "img/journeyman/clubs/botafogo_sp.webp",
+          "from": "1974",
+          "to": "1978",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1974-1978",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 57,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "corinthians",
+          "label": "Corinthians",
+          "logo": "img/journeyman/clubs/corinthians.webp",
+          "from": "1978",
+          "to": "1984",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1978-1984",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 298,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "fiorentina",
+          "label": "Fiorentina",
+          "logo": "img/journeyman/clubs/fiorentina.webp",
+          "from": "1984",
+          "to": "1985",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1984-1985",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 25,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "flamengo",
+          "label": "Flamengo",
+          "logo": "img/journeyman/clubs/flamengo.webp",
+          "from": "1986",
+          "to": "1987",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1986-1987",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 11,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "santos",
+          "label": "Santos",
+          "logo": "img/journeyman/clubs/santos.webp",
+          "from": "1988",
+          "to": "1989",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1988-1989",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 25,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "botafogo_sp",
+          "label": "Botafogo-SP",
+          "logo": "img/journeyman/clubs/botafogo_sp.webp",
+          "from": "1989",
+          "to": "1989",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1989-1989",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-socrates-1",
+            "correction-socrates-2"
+          ]
+        },
+        {
+          "order": 7,
+          "clubId": "garforth_town",
+          "label": "Garforth Town",
+          "logo": "img/journeyman/clubs/garforth_town.webp",
+          "from": "2004",
+          "to": "2004",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "2004-2004",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 1,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        }
+      ]
+    },
+    "carlos_alberto": {
+      "note": "Split Santos around the 1971 Botafogo playing loan, preserve the Santos return, and retain the real Flamengo spell. Use null instead of contradictory zero/whole-career totals for split stints.",
+      "sources": [
+        {
+          "id": "correction-carlos_alberto-1",
+          "url": "https://www.santosfc.com.br/memoria-carlos-alberto-torres-jogava-pela-primeira-vez-como-zagueiro-2/"
+        },
+        {
+          "id": "correction-carlos_alberto-2",
+          "url": "https://www.santosfc.com.br/carlos-alberto-torres-o-lateral-que-revolucionou-o-futebol/"
+        },
+        {
+          "id": "correction-carlos_alberto-3",
+          "url": "https://pt.wikipedia.org/wiki/Carlos_Alberto_Torres"
+        },
+        {
+          "id": "correction-carlos_alberto-4",
+          "url": "https://ge.globo.com/futebol/noticia/2016/10/futebol-brasileiro-perde-o-maior-dos-capitaes-morre-carlos-alberto-torres.html"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "fluminense",
+          "label": "Fluminense",
+          "logo": "img/journeyman/clubs/fluminense.webp",
+          "from": "1963",
+          "to": "1965",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1963-1965",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 48,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "santos",
+          "label": "Santos",
+          "logo": "img/journeyman/clubs/santos.webp",
+          "from": "1965",
+          "to": "1971",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1965-1971",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-carlos_alberto-1",
+            "correction-carlos_alberto-2",
+            "correction-carlos_alberto-3",
+            "correction-carlos_alberto-4"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "botafogo",
+          "label": "Botafogo",
+          "logo": "img/journeyman/clubs/botafogo.webp",
+          "from": "1971",
+          "to": "1971",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1971-1971",
+          "stintType": "loan",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-carlos_alberto-1",
+            "correction-carlos_alberto-2",
+            "correction-carlos_alberto-3",
+            "correction-carlos_alberto-4"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "santos",
+          "label": "Santos",
+          "logo": "img/journeyman/clubs/santos.webp",
+          "from": "1971",
+          "to": "1974",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1971-1974",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-carlos_alberto-1",
+            "correction-carlos_alberto-2",
+            "correction-carlos_alberto-3",
+            "correction-carlos_alberto-4"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "fluminense",
+          "label": "Fluminense",
+          "logo": "img/journeyman/clubs/fluminense.webp",
+          "from": "1974",
+          "to": "1976",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1974-1976",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-carlos_alberto-1",
+            "correction-carlos_alberto-2",
+            "correction-carlos_alberto-3",
+            "correction-carlos_alberto-4"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "flamengo",
+          "label": "Flamengo",
+          "logo": "img/journeyman/clubs/flamengo.webp",
+          "from": "1977",
+          "to": "1977",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1977-1977",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-carlos_alberto-1",
+            "correction-carlos_alberto-2",
+            "correction-carlos_alberto-3",
+            "correction-carlos_alberto-4"
+          ]
+        },
+        {
+          "order": 7,
+          "clubId": "ny_cosmos",
+          "label": "New York Cosmos",
+          "logo": "img/journeyman/clubs/ny_cosmos.webp",
+          "from": "1977",
+          "to": "1980",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1977-1980",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 80,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 8,
+          "clubId": "california_surf",
+          "label": "California Surf",
+          "logo": "img/journeyman/clubs/california_surf.webp",
+          "from": "1981",
+          "to": "1981",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1981-1981",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 19,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 9,
+          "clubId": "ny_cosmos",
+          "label": "New York Cosmos",
+          "logo": "img/journeyman/clubs/ny_cosmos.webp",
+          "from": "1982",
+          "to": "1982",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1982-1982",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 19,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        }
+      ]
+    },
+    "jairzinho": {
+      "note": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts.",
+      "sources": [
+        {
+          "id": "correction-jairzinho-1",
+          "url": "https://en.wikipedia.org/wiki/Jairzinho"
+        },
+        {
+          "id": "correction-jairzinho-2",
+          "url": "https://www.national-football-teams.com/player/17928/Jairzinho_1.html"
+        },
+        {
+          "id": "correction-jairzinho-3",
+          "url": "https://www.futebol80.com.br/links/artilheiros/jairzinho.htm"
+        },
+        {
+          "id": "correction-jairzinho-4",
+          "url": "https://historiadofutebol.com/blog/?p=9467"
+        },
+        {
+          "id": "correction-jairzinho-5",
+          "url": "https://www.eluniverso.com/deportes/2015/03/08/nota/4630416/jairzinho-crack-que-fue-octubrino/"
+        }
+      ],
+      "clubs": [
+        {
+          "order": 1,
+          "clubId": "botafogo",
+          "label": "Botafogo",
+          "logo": "img/journeyman/clubs/botafogo.webp",
+          "from": "1959",
+          "to": "1974",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1959-1974",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 413,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 2,
+          "clubId": "marseille",
+          "label": "Marseille",
+          "logo": "img/journeyman/clubs/marseille.webp",
+          "from": "1974",
+          "to": "1975",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1974-1975",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 18,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 3,
+          "clubId": "cruzeiro",
+          "label": "Cruzeiro",
+          "logo": "img/journeyman/clubs/cruzeiro.webp",
+          "from": "1976",
+          "to": "1976",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1976-1976",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 12,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 4,
+          "clubId": "portuguesa_ve",
+          "label": "Portuguesa F.C.",
+          "logo": "img/journeyman/clubs/portuguesa_ve.webp",
+          "from": "1977",
+          "to": "1977",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1977-1977",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-jairzinho-1",
+            "correction-jairzinho-2",
+            "correction-jairzinho-3",
+            "correction-jairzinho-4",
+            "correction-jairzinho-5"
+          ]
+        },
+        {
+          "order": 5,
+          "clubId": "noroeste",
+          "label": "Esporte Clube Noroeste",
+          "logo": "img/journeyman/clubs/noroeste.webp",
+          "from": "1978",
+          "to": "1979",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1978-1979",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-jairzinho-1",
+            "correction-jairzinho-2",
+            "correction-jairzinho-3",
+            "correction-jairzinho-4",
+            "correction-jairzinho-5"
+          ]
+        },
+        {
+          "order": 6,
+          "clubId": "fast_clube",
+          "label": "Nacional Fast Clube",
+          "logo": "img/journeyman/clubs/fast_clube.webp",
+          "from": "1979",
+          "to": "1979",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1979-1979",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-jairzinho-1",
+            "correction-jairzinho-2",
+            "correction-jairzinho-3",
+            "correction-jairzinho-4",
+            "correction-jairzinho-5"
+          ]
+        },
+        {
+          "order": 7,
+          "clubId": "nacional_am",
+          "label": "Nacional Futebol Clube",
+          "logo": "img/journeyman/clubs/nacional_am.webp",
+          "from": "1979",
+          "to": "1979",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1979-1979",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-jairzinho-1",
+            "correction-jairzinho-2",
+            "correction-jairzinho-3",
+            "correction-jairzinho-4",
+            "correction-jairzinho-5"
+          ]
+        },
+        {
+          "order": 8,
+          "clubId": "jorge_wilstermann",
+          "label": "Jorge Wilstermann",
+          "logo": "img/journeyman/clubs/jorge_wilstermann.webp",
+          "from": "1980",
+          "to": "1981",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1980-1981",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": 19,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "src-transfermarkt",
+            "src-wikipedia-archive"
+          ]
+        },
+        {
+          "order": 9,
+          "clubId": "nueve_de_octubre",
+          "label": "9 de Octubre F.C.",
+          "logo": "img/journeyman/clubs/nueve_de_octubre.webp",
+          "from": "1982",
+          "to": "1982",
+          "fromPrecision": "year",
+          "toPrecision": "year",
+          "rawDateText": "1982-1982",
+          "stintType": "permanent",
+          "seniorCompetitiveAppearances": null,
+          "hasVerifiedAppearance": true,
+          "sourceIds": [
+            "correction-jairzinho-1",
+            "correction-jairzinho-2",
+            "correction-jairzinho-3",
+            "correction-jairzinho-4",
+            "correction-jairzinho-5"
+          ]
+        }
+      ]
+    }
+  }
+}

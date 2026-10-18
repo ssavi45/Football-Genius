@@ -9,7 +9,10 @@
     "lint": "next lint",
     "test:scoreline": "node scripts/scoreline/scoreline.test.cjs",
     "test:higher-lower": "node scripts/higher-lower/higher-lower.test.cjs",
-    "test:matrix": "node scripts/matrix/matrix.test.cjs"
+    "test:matrix": "node scripts/matrix/matrix.test.cjs",
+    "test:journeyman": "node scripts/journeyman/journeyman.test.cjs",
+    "build:journeyman": "node scripts/journeyman/import-dataset.cjs",
+    "validate:journeyman": "node scripts/journeyman/import-dataset.cjs --check"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

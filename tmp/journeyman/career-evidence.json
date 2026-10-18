@@ -1,0 +1,3729 @@
+{
+  "schemaVersion": 1,
+  "snapshotAsOf": "2026-10-18T00:00:00Z",
+  "generatedAt": "2026-10-18T05:23:26Z",
+  "sources": [
+    {
+      "id": "src-transfermarkt",
+      "name": "Transfermarkt",
+      "publisher": "Transfermarkt GmbH & Co. KG / Axel Springer SE",
+      "url": "https://www.transfermarkt.com",
+      "description": "Primary football transfer, match sheet, and career appearance database."
+    },
+    {
+      "id": "src-wikipedia-archive",
+      "name": "Wikipedia & Wikimedia Commons Archives",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org",
+      "description": "Cross-referenced player biographies, official competition archives, and authentic club heraldry."
+    },
+    {
+      "id": "src-rsssf",
+      "name": "Rec.Sport.Soccer Statistics Foundation (RSSSF)",
+      "publisher": "RSSSF",
+      "url": "http://www.rsssf.org",
+      "description": "Historical senior football league match statistics and international appearances."
+    },
+    {
+      "id": "correction-harry_kane-1",
+      "url": "https://harrykane.com/pages/my-story",
+      "description": "Remove unused pre-Orient Tottenham registration. Preserve actual Tottenham playing spells after Orient and Millwall, before Norwich."
+    },
+    {
+      "id": "correction-harry_kane-2",
+      "url": "https://www.tottenhamhotspur.com/news/featured/1015241/harry-kane-10-years-in-the-premier-league-a-special-feature",
+      "description": "Remove unused pre-Orient Tottenham registration. Preserve actual Tottenham playing spells after Orient and Millwall, before Norwich."
+    },
+    {
+      "id": "correction-harry_kane-3",
+      "url": "https://www.tottenhamhotspur.com/news/1026623/kanes-gains",
+      "description": "Remove unused pre-Orient Tottenham registration. Preserve actual Tottenham playing spells after Orient and Millwall, before Norwich."
+    },
+    {
+      "id": "correction-kevin_de_bruyne-1",
+      "url": "https://www.chelseafc.com/en/news/article/lightning-strikes-twice-chelseas-opening-day-specialists",
+      "description": "Remove the unused 2012 Chelsea registration before Bremen. Competitive Chelsea debut was August 2013. Add Napoli playing spell from 2025."
+    },
+    {
+      "id": "correction-kevin_de_bruyne-2",
+      "url": "https://www.chelseafc.com/en/news/article/tuchel-reflects-on-de-bruyne-departure-and-draws-comparison-with",
+      "description": "Remove the unused 2012 Chelsea registration before Bremen. Competitive Chelsea debut was August 2013. Add Napoli playing spell from 2025."
+    },
+    {
+      "id": "correction-kevin_de_bruyne-3",
+      "url": "https://sscnapoli.it/en/match-report-sassuolo-napoli-0-2/",
+      "description": "Remove the unused 2012 Chelsea registration before Bremen. Competitive Chelsea debut was August 2013. Add Napoli playing spell from 2025."
+    },
+    {
+      "id": "correction-luka_modric-1",
+      "url": "https://hskzrinjski.ba/en/na-danasnji-dan-luki-modricu-trofej-filip-sunjic-pipa/",
+      "description": "Senior career starts at Zrinjski, not a zero-appearance Dinamo registration. Add competitive Milan spell from 2025."
+    },
+    {
+      "id": "correction-luka_modric-2",
+      "url": "https://hnl.hr/news/18822/luka-modric-oduvijek-je-bio-poseban-i-najbolji/",
+      "description": "Senior career starts at Zrinjski, not a zero-appearance Dinamo registration. Add competitive Milan spell from 2025."
+    },
+    {
+      "id": "correction-luka_modric-3",
+      "url": "https://www.acmilan.com/en/news/articles/coppa-italia/2025-08-17/ac-milan-progress-with-victory-over-bari",
+      "description": "Senior career starts at Zrinjski, not a zero-appearance Dinamo registration. Add competitive Milan spell from 2025."
+    },
+    {
+      "id": "correction-nemanja_vidic-1",
+      "url": "https://www.reprezentacija.rs/vidic-nemanja/",
+      "description": "Senior debut was on loan at Spartak Subotica. Remove Red Star youth/unused registration before that debut."
+    },
+    {
+      "id": "correction-kyle_walker-1",
+      "url": "https://en.wikipedia.org/wiki/Kyle_Walker",
+      "description": "Start at Northampton senior loan. Merge continuous Sheffield playing spell across permanent-to-loan paperwork. First Spurs playing stint is 2010, then QPR and Villa. Add Milan and Burnley playing spells in 2025."
+    },
+    {
+      "id": "correction-kyle_walker-2",
+      "url": "https://www.tottenhamhotspur.com/news/1028335/kyle-still-in-dreamland",
+      "description": "Start at Northampton senior loan. Merge continuous Sheffield playing spell across permanent-to-loan paperwork. First Spurs playing stint is 2010, then QPR and Villa. Add Milan and Burnley playing spells in 2025."
+    },
+    {
+      "id": "correction-kyle_walker-3",
+      "url": "https://www.burnleyfootballclub.com/media-article/walkers-career-in-pictures",
+      "description": "Start at Northampton senior loan. Merge continuous Sheffield playing spell across permanent-to-loan paperwork. First Spurs playing stint is 2010, then QPR and Villa. Add Milan and Burnley playing spells in 2025."
+    },
+    {
+      "id": "correction-kyle_walker-4",
+      "url": "https://www.burnleyfootballclub.com/media-article/match-report-tottenham-hotspur-burnley",
+      "description": "Start at Northampton senior loan. Merge continuous Sheffield playing spell across permanent-to-loan paperwork. First Spurs playing stint is 2010, then QPR and Villa. Add Milan and Burnley playing spells in 2025."
+    },
+    {
+      "id": "correction-bebeto-1",
+      "url": "https://futebol80.com.br/links/times/vitoria/vitoriajg.htm",
+      "description": "Vitória competitive state-league appearance is proven by a goal against Botafogo-BA on 22 September 1982. Zero national-league appearances is not zero senior appearances. Exact all-competition total remains unknown."
+    },
+    {
+      "id": "correction-bebeto-2",
+      "url": "https://www.worldfootball.net/person/pe41607/bebeto/",
+      "description": "Vitória competitive state-league appearance is proven by a goal against Botafogo-BA on 22 September 1982. Zero national-league appearances is not zero senior appearances. Exact all-competition total remains unknown."
+    },
+    {
+      "id": "correction-bebeto-3",
+      "url": "https://pt.wikipedia.org/wiki/Bebeto",
+      "description": "Vitória competitive state-league appearance is proven by a goal against Botafogo-BA on 22 September 1982. Zero national-league appearances is not zero senior appearances. Exact all-competition total remains unknown."
+    },
+    {
+      "id": "correction-socrates-1",
+      "url": "https://botafogofutebolsa.com.br/socrateshall/",
+      "description": "Botafogo confirms seven games in the 1989 return including a farewell friendly. Keep verified competitive return, but do not invent a combined competitive total."
+    },
+    {
+      "id": "correction-socrates-2",
+      "url": "https://en.wikipedia.org/wiki/S%C3%B3crates",
+      "description": "Botafogo confirms seven games in the 1989 return including a farewell friendly. Keep verified competitive return, but do not invent a combined competitive total."
+    },
+    {
+      "id": "correction-carlos_alberto-1",
+      "url": "https://www.santosfc.com.br/memoria-carlos-alberto-torres-jogava-pela-primeira-vez-como-zagueiro-2/",
+      "description": "Split Santos around the 1971 Botafogo playing loan, preserve the Santos return, and retain the real Flamengo spell. Use null instead of contradictory zero/whole-career totals for split stints."
+    },
+    {
+      "id": "correction-carlos_alberto-2",
+      "url": "https://www.santosfc.com.br/carlos-alberto-torres-o-lateral-que-revolucionou-o-futebol/",
+      "description": "Split Santos around the 1971 Botafogo playing loan, preserve the Santos return, and retain the real Flamengo spell. Use null instead of contradictory zero/whole-career totals for split stints."
+    },
+    {
+      "id": "correction-carlos_alberto-3",
+      "url": "https://pt.wikipedia.org/wiki/Carlos_Alberto_Torres",
+      "description": "Split Santos around the 1971 Botafogo playing loan, preserve the Santos return, and retain the real Flamengo spell. Use null instead of contradictory zero/whole-career totals for split stints."
+    },
+    {
+      "id": "correction-carlos_alberto-4",
+      "url": "https://ge.globo.com/futebol/noticia/2016/10/futebol-brasileiro-perde-o-maior-dos-capitaes-morre-carlos-alberto-torres.html",
+      "description": "Split Santos around the 1971 Botafogo playing loan, preserve the Santos return, and retain the real Flamengo spell. Use null instead of contradictory zero/whole-career totals for split stints."
+    },
+    {
+      "id": "correction-jairzinho-1",
+      "url": "https://en.wikipedia.org/wiki/Jairzinho",
+      "description": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts."
+    },
+    {
+      "id": "correction-jairzinho-2",
+      "url": "https://www.national-football-teams.com/player/17928/Jairzinho_1.html",
+      "description": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts."
+    },
+    {
+      "id": "correction-jairzinho-3",
+      "url": "https://www.futebol80.com.br/links/artilheiros/jairzinho.htm",
+      "description": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts."
+    },
+    {
+      "id": "correction-jairzinho-4",
+      "url": "https://historiadofutebol.com/blog/?p=9467",
+      "description": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts."
+    },
+    {
+      "id": "correction-jairzinho-5",
+      "url": "https://www.eluniverso.com/deportes/2015/03/08/nota/4630416/jairzinho-crack-que-fue-octubrino/",
+      "description": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts."
+    }
+  ],
+  "seedCorrections": [
+    {
+      "player": "Toni Kroos",
+      "seedIssue": "Included Hansa Rostock in senior club career.",
+      "correction": "Hansa Rostock was youth academy only (2002-2006; transferred to Bayern Munich youth academy at age 16). Excluded Rostock; career correctly starts at Bayern Munich.",
+      "sources": [
+        "Transfermarkt player 31902",
+        "DFB official player archive"
+      ]
+    },
+    {
+      "player": "Jadon Sancho",
+      "seedIssue": "Included Watford and Manchester City in senior club career.",
+      "correction": "Watford (2007-2015) and Manchester City (2015-2017) were youth academy only. Sancho made 0 senior competitive first-team appearances for Man City before joining Borussia Dortmund in 2017. Excluded Watford and Man City.",
+      "sources": [
+        "Transfermarkt player 401173",
+        "The FA player database"
+      ]
+    },
+    {
+      "player": "David Beckham",
+      "seedIssue": "Omitted 1995 loan to Preston North End (5 appearances, 2 goals including direct corner kick).",
+      "correction": "Added Preston North End senior loan stint in 1995. Correctly handled returns to Manchester United, AC Milan loans from LA Galaxy, and PSG finish.",
+      "sources": [
+        "Transfermarkt player 3139",
+        "Preston North End official archive"
+      ]
+    },
+    {
+      "player": "Thierry Henry",
+      "seedIssue": "Omitted 2012 Arsenal loan return (7 appearances, 2 goals).",
+      "correction": "Added 2012 Arsenal loan return from New York Red Bulls.",
+      "sources": [
+        "Transfermarkt player 3207",
+        "Arsenal FC historical records"
+      ]
+    },
+    {
+      "player": "Arjen Robben",
+      "seedIssue": "Omitted 2020-2021 comeback season at FC Groningen (7 appearances).",
+      "correction": "Added final 2020-2021 Groningen return spell after Bayern Munich retirement.",
+      "sources": [
+        "Transfermarkt player 4360",
+        "Eredivisie official archive"
+      ]
+    },
+    {
+      "player": "Álvaro Morata",
+      "seedIssue": "Contained nonexistent Galatasaray stint in seed data.",
+      "correction": "Removed Galatasaray. Morata never played for Galatasaray. Career sequence: Real Madrid -> Juventus -> Real Madrid -> Chelsea -> Atlético Madrid -> Juventus -> Atlético Madrid -> AC Milan.",
+      "sources": [
+        "Transfermarkt player 128223",
+        "RFEF & FIGC archives"
+      ]
+    },
+    {
+      "player": "João Félix",
+      "seedIssue": "Contained nonexistent AC Milan stint in seed data.",
+      "correction": "Removed AC Milan. João Félix never played for AC Milan. Career sequence: Benfica -> Atlético Madrid -> Chelsea (loan) -> Barcelona (loan) -> Chelsea.",
+      "sources": [
+        "Transfermarkt player 462250",
+        "FPF & Premier League archives"
+      ]
+    }
+  ],
+  "players": [
+    {
+      "id": "cristiano_ronaldo",
+      "name": "Cristiano Ronaldo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Sporting CP B",
+          "reason": "b-team-only",
+          "evidence": "Played 2 matches for Sporting CP B in Segunda Divisão B; senior debut was for Sporting first team vs Inter Milan 14 Aug 2002."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "zlatan_ibrahimovic",
+      "name": "Zlatan Ibrahimović",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "angel_di_maria",
+      "name": "Ángel Di María",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "cesc_fabregas",
+      "name": "Cesc Fàbregas",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Barcelona Youth",
+          "reason": "youth-academy",
+          "evidence": "At La Masia 1997-2003; senior professional debut made at Arsenal on 28 Oct 2003 vs Rotherham United."
+        },
+        {
+          "club": "Monaco B",
+          "reason": "b-team-only",
+          "evidence": "Appeared in 1 match for Monaco B during injury recovery in 2022."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "fernando_torres",
+      "name": "Fernando Torres",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "alvaro_morata",
+      "name": "Álvaro Morata",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Galatasaray",
+          "reason": "administrative-return",
+          "evidence": "Seed data erroneously listed Galatasaray; Morata never transferred to or played for Galatasaray."
+        },
+        {
+          "club": "Real Madrid Castilla",
+          "reason": "b-team-only",
+          "evidence": "Played for Real Madrid Castilla reserve team; first team debut 12 Dec 2010 vs Real Zaragoza."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "robert_lewandowski",
+      "name": "Robert Lewandowski",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Delta Warsaw",
+          "reason": "trial-or-friendly-only",
+          "evidence": "Amateur fourth-tier regional appearances prior to professional breakthrough."
+        },
+        {
+          "club": "Legia Warsaw II",
+          "reason": "b-team-only",
+          "evidence": "Reserve team in third division."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "toni_kroos",
+      "name": "Toni Kroos",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Hansa Rostock",
+          "reason": "youth-academy",
+          "evidence": "Seed data listed Hansa Rostock. Kroos was in Rostock youth teams (2002-2006) and never played a senior competitive first-team match. Professional debut was for Bayern Munich on 26 Sep 2007 vs Energie Cottbus."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "joao_felix",
+      "name": "João Félix",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "AC Milan",
+          "reason": "administrative-return",
+          "evidence": "Seed data erroneously listed AC Milan; Joao Felix has never played for AC Milan."
+        },
+        {
+          "club": "Benfica B",
+          "reason": "b-team-only",
+          "evidence": "Played for Benfica B in LigaPro; first team debut 18 Aug 2018 vs Boavista."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "antoine_griezmann",
+      "name": "Antoine Griezmann",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mats_hummels",
+      "name": "Mats Hummels",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bayern Munich II",
+          "reason": "b-team-only",
+          "evidence": "Played 42 games for Bayern II in Regionalliga."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mario_gotze",
+      "name": "Mario Götze",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "arjen_robben",
+      "name": "Arjen Robben",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [
+        {
+          "stintOrFact": "Second Groningen stint",
+          "sourcesExamined": [
+            "FC Groningen official",
+            "Transfermarkt"
+          ],
+          "resolution": "Robben came out of retirement in June 2020 and played 7 competitive Eredivisie matches for Groningen in 2020-21 before re-retiring."
+        }
+      ]
+    },
+    {
+      "id": "owen_hargreaves",
+      "name": "Owen Hargreaves",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bayern Munich II",
+          "reason": "b-team-only",
+          "evidence": "Played for Bayern II in Regionalliga Süd 1999-2001."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jadon_sancho",
+      "name": "Jadon Sancho",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Watford",
+          "reason": "youth-academy",
+          "evidence": "Seed data listed Watford. Sancho was in Watford youth academy (2007-2015), 0 senior first team appearances."
+        },
+        {
+          "club": "Manchester City",
+          "reason": "youth-academy",
+          "evidence": "Seed data listed Man City. Sancho was in City youth academy (2015-2017), 0 senior first team appearances. Senior debut was for Dortmund 21 Oct 2017 vs Eintracht Frankfurt."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "neymar",
+      "name": "Neymar",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "david_alaba",
+      "name": "David Alaba",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "xabi_alonso",
+      "name": "Xabi Alonso",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "david_beckham",
+      "name": "David Beckham",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [
+        {
+          "stintOrFact": "Preston North End loan",
+          "sourcesExamined": [
+            "Preston North End FC archives",
+            "English Football League logs"
+          ],
+          "resolution": "Beckham played 5 league matches and scored 2 goals on loan for Preston in Feb-March 1995 before returning to Man Utd."
+        }
+      ]
+    },
+    {
+      "id": "thierry_henry",
+      "name": "Thierry Henry",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [
+        {
+          "stintOrFact": "Arsenal 2012 return",
+          "sourcesExamined": [
+            "Arsenal FC official",
+            "Premier League records"
+          ],
+          "resolution": "Henry returned to Arsenal on a two-month loan in Jan-Feb 2012, playing 7 matches and scoring 2 goals (including famous FA Cup winner vs Leeds)."
+        }
+      ]
+    },
+    {
+      "id": "lionel_messi",
+      "name": "Lionel Messi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Barcelona C & B",
+          "reason": "b-team-only",
+          "evidence": "Played for Barcelona C (2003-04) and Barcelona B (2004-05) before permanent first-team promotion; senior debut 16 Oct 2004 vs Espanyol."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "pele",
+      "name": "Pelé",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bauru AC",
+          "reason": "youth-academy",
+          "evidence": "Youth team (1953-1956); senior debut was with Santos on 7 Sep 1956 vs Corinthians Santo André."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "diego_maradona",
+      "name": "Diego Maradona",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "johan_cruyff",
+      "name": "Johan Cruyff",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "zinedine_zidane",
+      "name": "Zinedine Zidane",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ronaldinho",
+      "name": "Ronaldinho",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ronaldo_nazario",
+      "name": "Ronaldo Nazário",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [
+        {
+          "stintOrFact": "Identity separation from Cristiano Ronaldo",
+          "sourcesExamined": [
+            "FIFA Archives",
+            "CBF",
+            "Transfermarkt"
+          ],
+          "resolution": "Ronaldo Nazário (born 18 Sep 1976 Rio de Janeiro) played for Cruzeiro, PSV, Barcelona, Inter, Real Madrid, Milan, Corinthians; distinct from Cristiano Ronaldo (born 1985 Madeira)."
+        }
+      ]
+    },
+    {
+      "id": "rivaldo",
+      "name": "Rivaldo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "romario",
+      "name": "Romário",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "paolo_maldini",
+      "name": "Paolo Maldini",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "francesco_totti",
+      "name": "Francesco Totti",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carles_puyol",
+      "name": "Carles Puyol",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "paul_scholes",
+      "name": "Paul Scholes",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ryan_giggs",
+      "name": "Ryan Giggs",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jamie_carragher",
+      "name": "Jamie Carragher",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "franco_baresi",
+      "name": "Franco Baresi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gary_neville",
+      "name": "Gary Neville",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "tony_adams",
+      "name": "Tony Adams",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "lev_yashin",
+      "name": "Lev Yashin",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ferenc_puskas",
+      "name": "Ferenc Puskás",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marco_van_basten",
+      "name": "Marco van Basten",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kenny_dalglish",
+      "name": "Kenny Dalglish",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "steven_gerrard",
+      "name": "Steven Gerrard",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "matt_le_tissier",
+      "name": "Matt Le Tissier",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "sepp_maier",
+      "name": "Sepp Maier",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "bobby_charlton",
+      "name": "Bobby Charlton",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dennis_bergkamp",
+      "name": "Dennis Bergkamp",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ruud_gullit",
+      "name": "Ruud Gullit",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "frank_rijkaard",
+      "name": "Frank Rijkaard",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Sporting CP",
+          "reason": "administrative-return",
+          "evidence": "Signed for Sporting in 1987 after transfer deadline; could not be registered for competitive appearances; immediately loaned to Zaragoza without appearing for Sporting."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "michel_platini",
+      "name": "Michel Platini",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "franz_beckenbauer",
+      "name": "Franz Beckenbauer",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gerd_muller",
+      "name": "Gerd Müller",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "lothar_matthaus",
+      "name": "Lothar Matthäus",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "roberto_baggio",
+      "name": "Roberto Baggio",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "alessandro_del_piero",
+      "name": "Alessandro Del Piero",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "george_best",
+      "name": "George Best",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "eusebio",
+      "name": "Eusébio",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "alfredo_di_stefano",
+      "name": "Alfredo Di Stéfano",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dino_zoff",
+      "name": "Dino Zoff",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ian_rush",
+      "name": "Ian Rush",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "eric_cantona",
+      "name": "Eric Cantona",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hristo_stoichkov",
+      "name": "Hristo Stoichkov",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gheorghe_hagi",
+      "name": "Gheorghe Hagi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "andriy_shevchenko",
+      "name": "Andriy Shevchenko",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "george_weah",
+      "name": "George Weah",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "samuel_etoo",
+      "name": "Samuel Eto'o",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Espanyol",
+          "reason": "unused-loan",
+          "evidence": "Loaned from Real Madrid to Espanyol in Jan 1999; made 0 official competitive first-team appearances."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "didier_drogba",
+      "name": "Didier Drogba",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "yaya_toure",
+      "name": "Yaya Touré",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jay_jay_okocha",
+      "name": "Jay-Jay Okocha",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "nwankwo_kanu",
+      "name": "Nwankwo Kanu",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "michael_essien",
+      "name": "Michael Essien",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "park_ji_sung",
+      "name": "Park Ji-sung",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hidetoshi_nakata",
+      "name": "Hidetoshi Nakata",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "keisuke_honda",
+      "name": "Keisuke Honda",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "landon_donovan",
+      "name": "Landon Donovan",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "clint_dempsey",
+      "name": "Clint Dempsey",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rafael_marquez",
+      "name": "Rafael Márquez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hugo_sanchez",
+      "name": "Hugo Sánchez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carlos_valderrama",
+      "name": "Carlos Valderrama",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ivan_zamorano",
+      "name": "Iván Zamorano",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marcelo_salas",
+      "name": "Marcelo Salas",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "javier_zanetti",
+      "name": "Javier Zanetti",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gabriel_batistuta",
+      "name": "Gabriel Batistuta",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hernan_crespo",
+      "name": "Hernán Crespo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "juan_roman_riquelme",
+      "name": "Juan Román Riquelme",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "juan_sebastian_veron",
+      "name": "Juan Sebastián Verón",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carlos_tevez",
+      "name": "Carlos Tevez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "sergio_aguero",
+      "name": "Sergio Agüero",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "javier_mascherano",
+      "name": "Javier Mascherano",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "esteban_cambiasso",
+      "name": "Esteban Cambiasso",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Real Madrid B",
+          "reason": "b-team-only",
+          "evidence": "Played for Real Madrid B 1996-1998 before senior first-team breakthrough in Argentina."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "clarence_seedorf",
+      "name": "Clarence Seedorf",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "edgar_davids",
+      "name": "Edgar Davids",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "patrick_kluivert",
+      "name": "Patrick Kluivert",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "robin_van_persie",
+      "name": "Robin van Persie",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ruud_van_nistelrooy",
+      "name": "Ruud van Nistelrooy",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "edwin_van_der_sar",
+      "name": "Edwin van der Sar",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [
+        {
+          "stintOrFact": "VV Noordwijk 2016 appearance",
+          "sourcesExamined": [
+            "KNVB records",
+            "VV Noordwijk official"
+          ],
+          "resolution": "Came out of retirement for one official fourth-tier Hoofdklasse match on 12 Mar 2016 due to an injury crisis, saving a penalty."
+        }
+      ]
+    },
+    {
+      "id": "jaap_stam",
+      "name": "Jaap Stam",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marc_overmars",
+      "name": "Marc Overmars",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "wesley_sneijder",
+      "name": "Wesley Sneijder",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rafael_van_der_vaart",
+      "name": "Rafael van der Vaart",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dirk_kuyt",
+      "name": "Dirk Kuyt",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "giovanni_van_bronckhorst",
+      "name": "Giovanni van Bronckhorst",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "phillip_cocu",
+      "name": "Phillip Cocu",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "frank_de_boer",
+      "name": "Frank de Boer",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ronald_de_boer",
+      "name": "Ronald de Boer",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "michael_laudrup",
+      "name": "Michael Laudrup",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "brian_laudrup",
+      "name": "Brian Laudrup",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "peter_schmeichel",
+      "name": "Peter Schmeichel",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jon_dahl_tomasson",
+      "name": "Jon Dahl Tomasson",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "henrik_larsson",
+      "name": "Henrik Larsson",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "freddie_ljungberg",
+      "name": "Freddie Ljungberg",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jari_litmanen",
+      "name": "Jari Litmanen",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Fulham",
+          "reason": "unused-loan",
+          "evidence": "Signed for Fulham in Jan 2008 on free transfer; suffered heart-rate issues and made 0 competitive appearances for the first team before contract expired in May 2008."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "eidur_gudjohnsen",
+      "name": "Eiður Guðjohnsen",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dimitar_berbatov",
+      "name": "Dimitar Berbatov",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "petr_cech",
+      "name": "Petr Čech",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "pavel_nedved",
+      "name": "Pavel Nedvěd",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "tomas_rosicky",
+      "name": "Tomáš Rosický",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "milan_baros",
+      "name": "Milan Baroš",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jan_koller",
+      "name": "Jan Koller",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marek_hamsik",
+      "name": "Marek Hamšík",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "karim_benzema",
+      "name": "Karim Benzema",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Lyon B",
+          "reason": "b-team-only",
+          "evidence": "Played in Championnat de France Amateur; senior first team debut was 15 Jan 2005 vs Metz."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "harry_kane",
+      "name": "Harry Kane",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-harry_kane-1",
+        "correction-harry_kane-2",
+        "correction-harry_kane-3"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Remove unused pre-Orient Tottenham registration. Preserve actual Tottenham playing spells after Orient and Millwall, before Norwich.",
+        "sourceIds": [
+          "correction-harry_kane-1",
+          "correction-harry_kane-2",
+          "correction-harry_kane-3"
+        ]
+      }
+    },
+    {
+      "id": "mohamed_salah",
+      "name": "Mohamed Salah",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kevin_de_bruyne",
+      "name": "Kevin De Bruyne",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-kevin_de_bruyne-1",
+        "correction-kevin_de_bruyne-2",
+        "correction-kevin_de_bruyne-3"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Remove the unused 2012 Chelsea registration before Bremen. Competitive Chelsea debut was August 2013. Add Napoli playing spell from 2025.",
+        "sourceIds": [
+          "correction-kevin_de_bruyne-1",
+          "correction-kevin_de_bruyne-2",
+          "correction-kevin_de_bruyne-3"
+        ]
+      }
+    },
+    {
+      "id": "luka_modric",
+      "name": "Luka Modrić",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-luka_modric-1",
+        "correction-luka_modric-2",
+        "correction-luka_modric-3"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Senior career starts at Zrinjski, not a zero-appearance Dinamo registration. Add competitive Milan spell from 2025.",
+        "sourceIds": [
+          "correction-luka_modric-1",
+          "correction-luka_modric-2",
+          "correction-luka_modric-3"
+        ]
+      }
+    },
+    {
+      "id": "sergio_ramos",
+      "name": "Sergio Ramos",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Sevilla Atlético",
+          "reason": "b-team-only",
+          "evidence": "Played 26 games in Segunda B before senior first team debut."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "luis_suarez",
+      "name": "Luis Suárez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "edinson_cavani",
+      "name": "Edinson Cavani",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "pierre_emerick_aubameyang",
+      "name": "Pierre-Emerick Aubameyang",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "AC Milan",
+          "reason": "no-senior-appearances",
+          "evidence": "Signed professional youth contract with AC Milan but played 0 senior competitive first team matches; had 4 consecutive loan spells before permanent transfer."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "romelu_lukaku",
+      "name": "Romelu Lukaku",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "son_heung_min",
+      "name": "Son Heung-min",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Hamburger SV II",
+          "reason": "b-team-only",
+          "evidence": "Played 6 games in Regionalliga Nord in 2009-10 before first team debut in August 2010."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "raheem_sterling",
+      "name": "Raheem Sterling",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Queens Park Rangers",
+          "reason": "youth-academy-only",
+          "evidence": "Played at QPR youth academy 2003-2010 before signing for Liverpool youth academy; 0 senior apps."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "sadio_mane",
+      "name": "Sadio Mané",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "roberto_firmino",
+      "name": "Roberto Firmino",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "eden_hazard",
+      "name": "Eden Hazard",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gareth_bale",
+      "name": "Gareth Bale",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "paulo_dybala",
+      "name": "Paulo Dybala",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "victor_osimhen",
+      "name": "Victor Osimhen",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "lautaro_martinez",
+      "name": "Lautaro Martínez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kylian_mbappe",
+      "name": "Kylian Mbappé",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Monaco B",
+          "reason": "b-team-only",
+          "evidence": "Played 12 games in CFA before established first-team regular status."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "erling_haaland",
+      "name": "Erling Haaland",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jude_bellingham",
+      "name": "Jude Bellingham",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rodri",
+      "name": "Rodri",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Villarreal B",
+          "reason": "b-team-only",
+          "evidence": "Played in Segunda División B 2015-16; senior debut vs Huesca in Copa del Rey Dec 2015."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "casemiro",
+      "name": "Casemiro",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Real Madrid Castilla",
+          "reason": "b-team-only",
+          "evidence": "Loan to RM Castilla in 2013 (15 apps in Segunda División); made first team debut vs Real Betis April 2013."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "sergio_busquets",
+      "name": "Sergio Busquets",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Barcelona B",
+          "reason": "b-team-only",
+          "evidence": "Played 32 matches in Tercera División under Pep Guardiola before promotion to first team."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "andres_iniesta",
+      "name": "Andrés Iniesta",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Barcelona B",
+          "reason": "b-team-only",
+          "evidence": "Played 54 matches in Segunda División B 2001-2003; senior first team debut was 29 Oct 2002 vs Club Brugge in Champions League."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "xavi",
+      "name": "Xavi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Barcelona B",
+          "reason": "b-team-only",
+          "evidence": "Played 55 matches in Segunda División 1997-1999."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "andrea_pirlo",
+      "name": "Andrea Pirlo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "frank_lampard",
+      "name": "Frank Lampard",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "david_silva",
+      "name": "David Silva",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Valencia Mestalla",
+          "reason": "b-team-only",
+          "evidence": "Played in Segunda B in 2003-04 before professional senior loans to Eibar and Celta Vigo."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mesut_ozil",
+      "name": "Mesut Özil",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "paul_pogba",
+      "name": "Paul Pogba",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ngolo_kante",
+      "name": "N'Golo Kanté",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ilkay_gundogan",
+      "name": "İlkay Gündoğan",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "VfL Bochum II",
+          "reason": "b-team-only",
+          "evidence": "Played 2 matches in Regionalliga West in 2008-09 before professional transfer to Nürnberg."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jordan_henderson",
+      "name": "Jordan Henderson",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "koke",
+      "name": "Koke",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Atlético Madrid B",
+          "reason": "b-team-only",
+          "evidence": "Played in Segunda División B 2008-2011; senior first-team debut on 19 Sept 2009 vs Almería."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "isco",
+      "name": "Isco",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Valencia Mestalla",
+          "reason": "b-team-only",
+          "evidence": "Played in Tercera División; scored twice in senior debut for Valencia first team in Copa del Rey on 11 Nov 2010."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "alexis_sanchez",
+      "name": "Alexis Sánchez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [
+        {
+          "topic": "Name Disambiguation",
+          "resolution": "Alexis Sánchez (Chilean forward, b. 1988) resolved independently from Davinson Sánchez (Colombian centre-back, b. 1996)."
+        }
+      ]
+    },
+    {
+      "id": "thibaut_courtois",
+      "name": "Thibaut Courtois",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "manuel_neuer",
+      "name": "Manuel Neuer",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Schalke 04 II",
+          "reason": "b-team-only",
+          "evidence": "Played 29 games in Oberliga Westfalen 2004-2008; senior first team debut was August 2006."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gianluigi_buffon",
+      "name": "Gianluigi Buffon",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "iker_casillas",
+      "name": "Iker Casillas",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Real Madrid C / B",
+          "reason": "b-team-only",
+          "evidence": "Played in Tercera and Segunda B 1998-1999 before debut on 12 Sept 1999 vs Athletic Bilbao."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hugo_lloris",
+      "name": "Hugo Lloris",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "keylor_navas",
+      "name": "Keylor Navas",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jan_oblak",
+      "name": "Jan Oblak",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Olhanense",
+          "reason": "no-senior-appearances",
+          "evidence": "Loaned from Benfica in Jan 2011; made 0 official senior appearances."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "alisson_becker",
+      "name": "Alisson Becker",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ederson",
+      "name": "Ederson",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Benfica B",
+          "reason": "b-team-only",
+          "evidence": "Played 4 matches for Benfica B in Segunda Liga 2015-16 before winning first team starting role."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marc_andre_ter_stegen",
+      "name": "Marc-André ter Stegen",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Borussia Mönchengladbach II",
+          "reason": "b-team-only",
+          "evidence": "Played in Regionalliga West 2009-2011 before senior Bundesliga debut on 10 April 2011."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "virgil_van_dijk",
+      "name": "Virgil van Dijk",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "thiago_silva",
+      "name": "Thiago Silva",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Porto",
+          "reason": "b-team-only",
+          "evidence": "Signed by Porto in 2004 but only played for Porto B in Segunda Liga (14 matches); 0 first-team appearances."
+        },
+        {
+          "club": "Dynamo Moscow",
+          "reason": "no-senior-appearances",
+          "evidence": "Loaned/signed in 2005; hospitalized with severe tuberculosis for six months; 0 official senior appearances."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "giorgio_chiellini",
+      "name": "Giorgio Chiellini",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "leonardo_bonucci",
+      "name": "Leonardo Bonucci",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gerard_pique",
+      "name": "Gerard Piqué",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rio_ferdinand",
+      "name": "Rio Ferdinand",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "nemanja_vidic",
+      "name": "Nemanja Vidić",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-nemanja_vidic-1"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Senior debut was on loan at Spartak Subotica. Remove Red Star youth/unused registration before that debut.",
+        "sourceIds": [
+          "correction-nemanja_vidic-1"
+        ]
+      }
+    },
+    {
+      "id": "john_terry",
+      "name": "John Terry",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "vincent_kompany",
+      "name": "Vincent Kompany",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marcelo",
+      "name": "Marcelo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dani_alves",
+      "name": "Dani Alves",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "philipp_lahm",
+      "name": "Philipp Lahm",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bayern Munich II",
+          "reason": "b-team-only",
+          "evidence": "Played 63 matches in Regionalliga Süd 2001-2003."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dani_carvajal",
+      "name": "Dani Carvajal",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Real Madrid Castilla",
+          "reason": "b-team-only",
+          "evidence": "Played 68 matches in Segunda B; transferred to Leverkusen in 2012 before Real Madrid exercised buy-back in 2013."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kyle_walker",
+      "name": "Kyle Walker",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-kyle_walker-1",
+        "correction-kyle_walker-2",
+        "correction-kyle_walker-3",
+        "correction-kyle_walker-4"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Start at Northampton senior loan. Merge continuous Sheffield playing spell across permanent-to-loan paperwork. First Spurs playing stint is 2010, then QPR and Villa. Add Milan and Burnley playing spells in 2025.",
+        "sourceIds": [
+          "correction-kyle_walker-1",
+          "correction-kyle_walker-2",
+          "correction-kyle_walker-3",
+          "correction-kyle_walker-4"
+        ]
+      }
+    },
+    {
+      "id": "trent_alexander_arnold",
+      "name": "Trent Alexander-Arnold",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "andrew_robertson",
+      "name": "Andrew Robertson",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "joshua_kimmich",
+      "name": "Joshua Kimmich",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "marco_reus",
+      "name": "Marco Reus",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Rot Weiss Ahlen II",
+          "reason": "b-team-only",
+          "evidence": "Played 6 games in Oberliga Westfalen 2006-07 before senior 1st team promotion."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "thomas_muller",
+      "name": "Thomas Müller",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bayern Munich II",
+          "reason": "b-team-only",
+          "evidence": "Played 35 games in 3. Liga 2007-2009; senior first team debut was 15 August 2008 vs Hamburger SV."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "bastian_schweinsteiger",
+      "name": "Bastian Schweinsteiger",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bayern Munich II",
+          "reason": "b-team-only",
+          "evidence": "Played in Regionalliga Süd 2002-2004."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mario_balotelli",
+      "name": "Mario Balotelli",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ciro_immobile",
+      "name": "Ciro Immobile",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mauro_icardi",
+      "name": "Mauro Icardi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gonzalo_higuain",
+      "name": "Gonzalo Higuaín",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "radamel_falcao",
+      "name": "Radamel Falcao",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "james_rodriguez",
+      "name": "James Rodríguez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "arturo_vidal",
+      "name": "Arturo Vidal",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "claudio_bravo",
+      "name": "Claudio Bravo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "diego_forlan",
+      "name": "Diego Forlán",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "diego_godin",
+      "name": "Diego Godín",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "bernardo_silva",
+      "name": "Bernardo Silva",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Benfica B",
+          "reason": "b-team-only",
+          "evidence": "Played 38 matches in Segunda Liga 2013-14 before loan to Monaco."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "bruno_fernandes",
+      "name": "Bruno Fernandes",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "martin_odegaard",
+      "name": "Martin Ødegaard",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Real Madrid Castilla",
+          "reason": "b-team-only",
+          "evidence": "Played 62 matches in Segunda B 2015-2017; first team debut was 23 May 2015 vs Getafe."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "christian_eriksen",
+      "name": "Christian Eriksen",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "frenkie_de_jong",
+      "name": "Frenkie de Jong",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Jong Ajax",
+          "reason": "b-team-only",
+          "evidence": "Played 46 matches in Eerste Divisie 2015-2017 before first-team establishment."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "matthijs_de_ligt",
+      "name": "Matthijs de Ligt",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Jong Ajax",
+          "reason": "b-team-only",
+          "evidence": "Played 17 matches in Eerste Divisie 2016-17; first team debut on 21 Sept 2016 vs Willem II."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "achraf_hakimi",
+      "name": "Achraf Hakimi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Real Madrid Castilla",
+          "reason": "b-team-only",
+          "evidence": "Played 28 matches in Segunda B 2016-17 before promotion to first team."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "joao_cancelo",
+      "name": "João Cancelo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Benfica B",
+          "reason": "b-team-only",
+          "evidence": "Played 51 matches in Segunda Liga 2012-2014 before loan to Valencia."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "riyad_mahrez",
+      "name": "Riyad Mahrez",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Le Havre II",
+          "reason": "b-team-only",
+          "evidence": "Played 60 matches in CFA 2010-2013 alongside first team."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hakim_ziyech",
+      "name": "Hakim Ziyech",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kalidou_koulibaly",
+      "name": "Kalidou Koulibaly",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Metz II",
+          "reason": "b-team-only",
+          "evidence": "Played in CFA 2009-2011 before senior first team establishment."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "memphis_depay",
+      "name": "Memphis Depay",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "cafu",
+      "name": "Cafu",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "roberto_carlos",
+      "name": "Roberto Carlos",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "bebeto",
+      "name": "Bebeto",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-bebeto-1",
+        "correction-bebeto-2",
+        "correction-bebeto-3"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Vitória competitive state-league appearance is proven by a goal against Botafogo-BA on 22 September 1982. Zero national-league appearances is not zero senior appearances. Exact all-competition total remains unknown.",
+        "sourceIds": [
+          "correction-bebeto-1",
+          "correction-bebeto-2",
+          "correction-bebeto-3"
+        ]
+      }
+    },
+    {
+      "id": "dunga",
+      "name": "Dunga",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "zico",
+      "name": "Zico",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "socrates",
+      "name": "Sócrates",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-socrates-1",
+        "correction-socrates-2"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Botafogo confirms seven games in the 1989 return including a farewell friendly. Keep verified competitive return, but do not invent a combined competitive total.",
+        "sourceIds": [
+          "correction-socrates-1",
+          "correction-socrates-2"
+        ]
+      }
+    },
+    {
+      "id": "falcao",
+      "name": "Paulo Roberto Falcão",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "junior",
+      "name": "Júnior",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "careca",
+      "name": "Careca",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carlos_alberto",
+      "name": "Carlos Alberto",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-carlos_alberto-1",
+        "correction-carlos_alberto-2",
+        "correction-carlos_alberto-3",
+        "correction-carlos_alberto-4"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Split Santos around the 1971 Botafogo playing loan, preserve the Santos return, and retain the real Flamengo spell. Use null instead of contradictory zero/whole-career totals for split stints.",
+        "sourceIds": [
+          "correction-carlos_alberto-1",
+          "correction-carlos_alberto-2",
+          "correction-carlos_alberto-3",
+          "correction-carlos_alberto-4"
+        ]
+      }
+    },
+    {
+      "id": "garrincha",
+      "name": "Garrincha",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jairzinho",
+      "name": "Jairzinho",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive",
+        "correction-jairzinho-1",
+        "correction-jairzinho-2",
+        "correction-jairzinho-3",
+        "correction-jairzinho-4",
+        "correction-jairzinho-5"
+      ],
+      "exclusions": [],
+      "conflictResolutions": [],
+      "researchedCorrection": {
+        "note": "Exclude friendly-only Botafogo return in 1981; correct Portuguesa to the Venezuelan club; restore Noroeste, Fast, Nacional-AM and 9 de Octubre in chronological order. Do not manufacture exact appearance counts.",
+        "sourceIds": [
+          "correction-jairzinho-1",
+          "correction-jairzinho-2",
+          "correction-jairzinho-3",
+          "correction-jairzinho-4",
+          "correction-jairzinho-5"
+        ]
+      }
+    },
+    {
+      "id": "rivellino",
+      "name": "Rivellino",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "tostao",
+      "name": "Tostão",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gerson",
+      "name": "Gérson",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "didi",
+      "name": "Didi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "nilton_santos",
+      "name": "Nílton Santos",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "djalma_santos",
+      "name": "Djalma Santos",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "javier_saviola",
+      "name": "Javier Saviola",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "pablo_aimar",
+      "name": "Pablo Aimar",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "walter_samuel",
+      "name": "Walter Samuel",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "claudio_caniggia",
+      "name": "Claudio Caniggia",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jorge_valdano",
+      "name": "Jorge Valdano",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mario_kempes",
+      "name": "Mario Kempes",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "daniel_passarella",
+      "name": "Daniel Passarella",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ubaldo_fillol",
+      "name": "Ubaldo Fillol",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "amadeo_carrizo",
+      "name": "Amadeo Carrizo",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jose_luis_chilavert",
+      "name": "José Luis Chilavert",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "roque_santa_cruz",
+      "name": "Roque Santa Cruz",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carlos_gamarra",
+      "name": "Carlos Gamarra",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "claudio_pizarro",
+      "name": "Claudio Pizarro",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "paolo_guerrero",
+      "name": "Paolo Guerrero",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Bayern Munich II",
+          "reason": "b-team-only",
+          "evidence": "Played 66 games in Regionalliga Süd 2002-2004 before senior first team debut."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jefferson_farfan",
+      "name": "Jefferson Farfán",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "teofilo_cubillas",
+      "name": "Teófilo Cubillas",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "nolberto_solano",
+      "name": "Nolberto Solano",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "antonio_valencia",
+      "name": "Antonio Valencia",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "enner_valencia",
+      "name": "Enner Valencia",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "faustino_asprilla",
+      "name": "Faustino Asprilla",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ivan_cordoba",
+      "name": "Iván Córdoba",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mario_yepes",
+      "name": "Mario Yepes",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "juan_cuadrado",
+      "name": "Juan Cuadrado",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "luis_diaz",
+      "name": "Luis Díaz",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "freddy_rincon",
+      "name": "Freddy Rincón",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rene_higuita",
+      "name": "René Higuita",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "alvaro_recoba",
+      "name": "Álvaro Recoba",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "enzo_francescoli",
+      "name": "Enzo Francescoli",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "paolo_montero",
+      "name": "Paolo Montero",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "fernando_muslera",
+      "name": "Fernando Muslera",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "diego_lugano",
+      "name": "Diego Lugano",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "gary_medel",
+      "name": "Gary Medel",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "elias_figueroa",
+      "name": "Elías Figueroa",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carlos_caszely",
+      "name": "Carlos Caszely",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "cuauhtemoc_blanco",
+      "name": "Cuauhtémoc Blanco",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "javier_hernandez",
+      "name": "Javier Hernández",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "guillermo_ochoa",
+      "name": "Guillermo Ochoa",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "andres_guardado",
+      "name": "Andrés Guardado",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "carlos_vela",
+      "name": "Carlos Vela",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Celta Vigo",
+          "reason": "administrative-loan-only",
+          "evidence": "Loaned from Arsenal in Feb 2006 due to work permit restrictions; made 0 official senior appearances."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "jorge_campos",
+      "name": "Jorge Campos",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "tim_howard",
+      "name": "Tim Howard",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "brad_friedel",
+      "name": "Brad Friedel",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "christian_pulisic",
+      "name": "Christian Pulisic",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "michael_bradley",
+      "name": "Michael Bradley",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "brian_mcbride",
+      "name": "Brian McBride",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kasey_keller",
+      "name": "Kasey Keller",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "claudio_reyna",
+      "name": "Claudio Reyna",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "dwight_yorke",
+      "name": "Dwight Yorke",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "shaka_hislop",
+      "name": "Shaka Hislop",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "lucas_radebe",
+      "name": "Lucas Radebe",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "benni_mccarthy",
+      "name": "Benni McCarthy",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "steven_pienaar",
+      "name": "Steven Pienaar",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rigobert_song",
+      "name": "Rigobert Song",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "geremi",
+      "name": "Geremi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "seydou_keita",
+      "name": "Seydou Keita",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "frederic_kanoute",
+      "name": "Frédéric Kanouté",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "emmanuel_adebayor",
+      "name": "Emmanuel Adebayor",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "asamoah_gyan",
+      "name": "Asamoah Gyan",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "sulley_muntari",
+      "name": "Sulley Muntari",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "thomas_partey",
+      "name": "Thomas Partey",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [
+        {
+          "club": "Atlético Madrid B",
+          "reason": "b-team-only",
+          "evidence": "Played 33 matches in Segunda División B 2012-13 before senior loans."
+        }
+      ],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mustapha_hadji",
+      "name": "Mustapha Hadji",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "noureddine_naybet",
+      "name": "Noureddine Naybet",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "rabah_madjer",
+      "name": "Rabah Madjer",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "lakhdar_belloumi",
+      "name": "Lakhdar Belloumi",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "bruce_grobbelaar",
+      "name": "Bruce Grobbelaar",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "shinji_kagawa",
+      "name": "Shinji Kagawa",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "shunsuke_nakamura",
+      "name": "Shunsuke Nakamura",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "kazuyoshi_miura",
+      "name": "Kazuyoshi Miura",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "cha_bum_kun",
+      "name": "Cha Bum-kun",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "ali_daei",
+      "name": "Ali Daei",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "mehdi_mahdavikia",
+      "name": "Mehdi Mahdavikia",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    },
+    {
+      "id": "hakan_sukur",
+      "name": "Hakan Şükür",
+      "sourceIds": [
+        "src-transfermarkt",
+        "src-wikipedia-archive"
+      ],
+      "exclusions": [],
+      "conflictResolutions": []
+    }
+  ]
+}

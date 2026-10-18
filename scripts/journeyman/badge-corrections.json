@@ -1,0 +1,398 @@
+{
+  "chester_city": {
+    "label": "Chester City",
+    "title": "Chester City F.C.",
+    "description": "Former association football club in Chester, England",
+    "extract": "Chester City Football Club was an association football team from Chester, England, that played in several different leagues between 1885 and 2010. The club played its home games at Sealand Road from 1906 to 1991 and moved to the Deva Stadium in 1992 after playing two seasons of home games at Macclesfield Town's Moss Rose. Chester held cross-border derby matches with Welsh club Wrexham.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Chester_City_F.C.",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/4b/Chester_City_FC.svg/330px-Chester_City_FC.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "chester_city.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "24a75feea9e5f0459a6424d7423724ad3603d8835328c5256ec936dc3b6ac7bf"
+  },
+  "espanyol": {
+    "label": "Espanyol",
+    "title": "RCD Espanyol",
+    "description": "Association football club in Spain",
+    "extract": "Reial Club Deportiu Espanyol de Barcelona, S.A.D., commonly known as RCD Espanyol, is a Spanish professional sports club based in the province of Barcelona, Catalonia. The club competes in La Liga, the top tier of Spanish football.",
+    "pageUrl": "https://en.wikipedia.org/wiki/RCD_Espanyol",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/92/RCD_Espanyol_crest.svg/330px-RCD_Espanyol_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "espanyol.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "295b79132ad8fd009261904bdebc6d87f937a70e32a8f67d982bc2b180351493"
+  },
+  "brisbane_lions": {
+    "label": "Brisbane Lions",
+    "title": "Queensland Lions FC",
+    "description": "Australian association football club",
+    "extract": "Lions FC also formerly known as Queensland Lions Football Club, is a semi professional soccer club based in Brisbane, Australia. Founded in 1957 as Hollandia Inala Soccer Club, the club currently competes in the National Premier Leagues Queensland. They also as invitee in Australian Championship after winning as premiers in 2026 NPL QLD season. The team also have men and women sides for competing in Brisbane Metro League and also Queensland Master Football where they have teams from Division 1-9.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Queensland_Lions_FC",
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/72/Queensland_lions_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "rawFile": "brisbane_lions.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "887146f307dea6a3e24e9e5595e35010c10d857219c6f21844f15adc77e68be5"
+  },
+  "sportul_studentesc": {
+    "label": "Sportul Studențesc",
+    "title": "FC Sportul Studențesc București",
+    "description": "Football club",
+    "extract": "Sportul Studențesc, commonly referred to as Sportul, is the name associated with a historic Romanian football club and, since 2026, a supporters-led senior football project based in Bucharest. The original club was founded on 11 February 1916 by a group of university professors and students led by mathematician Traian Lalescu. After the senior team withdrew from competition in 2017, a new project organised by the Asociația Clubul Sportiv al Suporterilor Sportul Studențesc București announced the return of a senior side in 2026, entering the Bucharest division of Liga V.",
+    "pageUrl": "https://en.wikipedia.org/wiki/FC_Sportul_Studen%C8%9Besc_Bucure%C8%99ti",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/91/FC_Sportul_Studen%C8%9Besc_Bucure%C8%99ti_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "rawFile": "sportul_studentesc.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "f00eff2429a5e8f8de7bb67af5af4c8fbc8cddec5f720242a674e3aa136d2528"
+  },
+  "iwuanyanwu_nationale": {
+    "label": "Iwuanyanwu Nationale",
+    "title": "Heartland F.C.",
+    "description": "Nigerian association football club",
+    "extract": "Heartland Football Club, founded as Spartans F.C., later known as Iwuanyanwu Nationale from 1985 to 2006, is a Nigerian football club based in Owerri. The team play their home games at Dan Anyiam Stadium. Their local rivals are Enyimba FC and Enugu Rangers, top teams co-located with Heartland in the same geo-political zone. They reached the finals of the 1988 African Cup of Champions Clubs and 2009 CAF Champions League, the premier African continental club tournament, and won four straight Nigerian league titles from 1987 to 1990.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Heartland_F.C.",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/48/Heartland_F.C._logo.svg/330px-Heartland_F.C._logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "iwuanyanwu_nationale.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "2222a209c039f5c7d070b621682420a1f37b45fb76c8e4fcdc55371599135ffa"
+  },
+  "bellmare_hiratsuka": {
+    "label": "Bellmare Hiratsuka",
+    "title": "Shonan Bellmare",
+    "description": "Association football club in Hiratsuka, Japan",
+    "extract": "Shonan Bellmare  is a Japanese professional football club based in Hiratsuka, in the west of Kanagawa Prefecture, part of the Greater Tokyo Area. The club will play in the J2 League, the second tier of football in the country as of the season 2026–27, after relegated from J1 League, with three matches remaining. Their home stadium is Hiratsuka Athletics Stadium. Shonan refers to a coastal area along Sagami Bay that includes Hiratsuka. Bellmare is a portmanteau of the Italian words bello and mare, meaning \"beautiful sea\".",
+    "pageUrl": "https://en.wikipedia.org/wiki/Shonan_Bellmare",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c8/Shonan_Bellmare_logo.svg/330px-Shonan_Bellmare_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "bellmare_hiratsuka.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "29b4e2e1c2b0165ffa166a63af3338465754b911fe57a0571e0ef986cb3f5718"
+  },
+  "bastia": {
+    "label": "Bastia",
+    "title": "SC Bastia",
+    "description": "Association football club in Furiani, France",
+    "extract": "Sporting Club Bastia is a French professional football club based in Bastia on the island of Corsica. The club plays in Ligue 3, the third tier of French football, having won the 2020–21 Championnat National. The club plays its home matches at the Stade Armand Cesari located within the city. SC Bastia is known for its strong association with Corsican nationalism.",
+    "pageUrl": "https://en.wikipedia.org/wiki/SC_Bastia",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/d7/SC_Bastia_logo_2024.svg/250px-SC_Bastia_logo_2024.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "bastia.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "d72e899b70b3edff09aa5b4c278695d3e9b233ea4d76ff346dab0a5207cbca67"
+  },
+  "club_america": {
+    "label": "América",
+    "title": "Club América",
+    "description": "Association football club in Mexico City",
+    "extract": "Club de Fútbol América S.A. de C.V., commonly known as Club América, and nicknamed Las Águilas, is a professional football club based in Mexico City. The club competes in Liga MX, the top division of Mexican football. The club was founded in 1916, and since 1959, it has been owned by mass media company Televisa. The team plays its home games at Estadio Azteca, the largest stadium in Latin America and one of the largest in the world.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Club_Am%C3%A9rica",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c1/Club_Am%C3%A9rica_crest.svg/250px-Club_Am%C3%A9rica_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "club_america.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "6a0e0a0fb4e7715ecfab91b68053b3e867047f99d4f0f4d740b6d55d53d92f79"
+  },
+  "dallas_burn": {
+    "label": "Dallas Burn",
+    "title": "FC Dallas",
+    "description": "American professional soccer club based in Dallas–Fort Worth metroplex",
+    "extract": "FC Dallas is an American professional soccer club based in the Dallas–Fort Worth metroplex. The club competes in Major League Soccer (MLS) as a member of the Western Conference. The franchise begun playing in 1996 as a charter club of the league. The club was founded in 1995 as the Dallas Burn before adopting its current name in 2004.",
+    "pageUrl": "https://en.wikipedia.org/wiki/FC_Dallas",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c9/FC_Dallas_logo.svg/330px-FC_Dallas_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "rawFile": "dallas_burn.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "59023ae6c9c766de668521cb50095d6cb881bfbd33d632cb2d7edfe200110e0b"
+  },
+  "junior": {
+    "label": "Junior",
+    "title": "Atlético Junior",
+    "pageUrl": "https://en.wikipedia.org/wiki/Atl%C3%A9tico_Junior",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Junior_Barranquilla_logo.svg/250px-Junior_Barranquilla_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "junior.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "8f8feec8b77d351da4a6ebbfb226bc833aaea176bfd015fb58a545f0ec3b0eaa"
+  },
+  "cobreandino": {
+    "label": "Cobreandino",
+    "title": "Trasandino de Los Andes",
+    "description": "Chilean football club",
+    "extract": "Trasandino de Los Andes is a Chilean football club, their home town is Los Andes in the V Región of Valparaíso in Chile. They currently play in the Segunda División.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Trasandino_de_Los_Andes",
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/ae/Trasandino_de_Los_Andes_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "rawFile": "cobreandino.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "49ed3586462da51056f9da466aed3b7cb0e5d5bc9b722ac73520cf3b5eaa4869"
+  },
+  "krylia_sovetov": {
+    "label": "Krylia Sovetov",
+    "title": "PFC Krylia Sovetov Samara",
+    "pageUrl": "https://en.wikipedia.org/wiki/PFC_Krylia_Sovetov_Samara",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/92/PFC_Krylia_Sovetov_Samara.svg/250px-PFC_Krylia_Sovetov_Samara.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "krylia_sovetov.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "fc3e8ae47ceb468bd14849941776f4c29ee7f923815ca0a7ad603598b6c9ec29"
+  },
+  "dundee": {
+    "label": "Dundee",
+    "title": "Dundee F.C.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Dundee_F.C.",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/3b/Dundee_FC_2025_Crest.svg/250px-Dundee_FC_2025_Crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "dundee.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "f75fe2b2e502b85442e4d1e1355082d04a11eb5de69b18508806e9cc09a57f1c"
+  },
+  "inter_zapresic": {
+    "label": "Inter Zaprešić",
+    "title": "NK Inter Zaprešić",
+    "pageUrl": "https://en.wikipedia.org/wiki/NK_Inter_Zapre%C5%A1i%C4%87",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/df/NK_Inter_Zapre%C5%A1i%C4%87_Logo.svg/250px-NK_Inter_Zapre%C5%A1i%C4%87_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "inter_zapresic.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "9cba0dc0bbb58e5230727ba4f86852f6db830fbf6acfcad6f4490c2b05ac42f7"
+  },
+  "al_mokawloon": {
+    "label": "Al Mokawloon Al Arab",
+    "title": "Al Mokawloon Al Arab SC",
+    "pageUrl": "https://en.wikipedia.org/wiki/Al_Mokawloon_Al_Arab_SC",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/27/Al_Mokawloon_Al_Arab_SC_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "rawFile": "al_mokawloon.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "03df992f804e7853e488ee7a9d0ec2f7e09ed18c4573b3d07a38f929a4d8b494"
+  },
+  "cerezo_osaka": {
+    "label": "Cerezo Osaka",
+    "title": "Cerezo Osaka",
+    "pageUrl": "https://en.wikipedia.org/wiki/Cerezo_Osaka",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/85/Cerezo_Osaka_logo.svg/250px-Cerezo_Osaka_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "cerezo_osaka.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "d481cbf82f34f3440656ebac40faa468c4b3622a63ad495b820fa3bc0d5c7bb0"
+  },
+  "cruz_azul": {
+    "label": "Cruz Azul",
+    "title": "Cruz Azul",
+    "pageUrl": "https://en.wikipedia.org/wiki/Cruz_Azul",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Club_de_F%C3%BAtbol_Cruz_Azul_logo.svg/250px-Club_de_F%C3%BAtbol_Cruz_Azul_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "cruz_azul.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "34c7b7e41e479da2ade89e0acce30429c924cb93c4a91f8cb06fdeb994f838aa"
+  },
+  "south_fl_sun": {
+    "label": "South Florida Sun",
+    "title": "South Florida Sun",
+    "pageUrl": "https://en.wikipedia.org/wiki/South_Florida_Sun",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3f/Fort_Lauderdale_Sun_%28Logo%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "rawFile": "south_fl_sun.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "8196303cd7058fcaad9229dc56449afb45fe4376cb8f4921fcaa1019af5ceefb"
+  },
+  "libertad": {
+    "label": "Club Libertad",
+    "title": "Club Libertad",
+    "pageUrl": "https://en.wikipedia.org/wiki/Club_Libertad",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/e/ee/Club_Libertad_logo.png/330px-Club_Libertad_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "libertad.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "868a8d6a0026a3e0e9db65a4e2623310f07149ff9d50a77902ed3c18fd2c2521"
+  },
+  "miami_sharks": {
+    "label": "Miami Sharks",
+    "pageUrl": "https://funwhileitlasted.net/2013/05/18/1988-1989-miami-sharks-soccer/",
+    "image": "https://funwhileitlasted.net/wp-content/uploads/2020/08/miami-sharks-american-soccer-league-logo.jpg",
+    "title": "Miami Sharks (1988–1989 soccer club)",
+    "rawFile": "miami_sharks.jpg",
+    "source": "Historical football crest archive",
+    "sourceSha256": "74dc869969d6ea17d13c5f3ba65cd3e08df8c5f59bbb378418ae8c80ae833b6e"
+  },
+  "emelec": {
+    "label": "Emelec",
+    "title": "C.S. Emelec",
+    "pageUrl": "https://en.wikipedia.org/wiki/C.S._Emelec",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Club-Sport-Emelec2.png/250px-Club-Sport-Emelec2.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "emelec.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "cbbf685f19065a20aff66a4bc115b3485556901605980993542d1c676f50222d"
+  },
+  "america_de_cali": {
+    "label": "América de Cali",
+    "title": "América de Cali",
+    "pageUrl": "https://en.wikipedia.org/wiki/Am%C3%A9rica_de_Cali",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/7/77/Am%C3%A9rica_de_Cali_logo.svg/250px-Am%C3%A9rica_de_Cali_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "america_de_cali.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "d73c027d0cf60d81455f71b75e73e348a96df63efb913dda0b33dc3efd48e8c8"
+  },
+  "venezia": {
+    "label": "Venezia",
+    "title": "Venezia FC",
+    "pageUrl": "https://en.wikipedia.org/wiki/Venezia_FC",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/39/Venezia_FC_crest.svg/250px-Venezia_FC_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "venezia.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "488602c274d8ece823d08427a54d297bc76fae136a9fd532d027ae3b66ba8546"
+  },
+  "atletico_nacional": {
+    "label": "Atlético Nacional",
+    "title": "Atlético Nacional",
+    "pageUrl": "https://en.wikipedia.org/wiki/Atl%C3%A9tico_Nacional",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Atletico_Nacional_Logo.svg/250px-Atletico_Nacional_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "atletico_nacional.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "2164b175de1c898bf0fbba0df6d38636f8cdd11ad4b1b896f2e46e9e489b925f"
+  },
+  "cortulua": {
+    "label": "Cortuluá",
+    "pageUrl": "https://es.wikipedia.org/wiki/Cortulu%C3%A1",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cortulu%C3%A1.jpg",
+    "title": "Cortuluá",
+    "rawFile": "cortulua.jpg",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "9fced1772c3a9bd14949968f332914ee1b0fa2c28c5368d918e1048de59912af"
+  },
+  "guaros": {
+    "label": "Guaros",
+    "title": "Guaros F.C. (Venezuela)",
+    "image": "https://www.escudosdefutbolyequipaciones.com/images_esc3/CONM/VENEZUELA/escudos_jpg/logo-guaros%20f.c.(ven).jpg",
+    "pageUrl": "https://www.escudosdefutbolyequipaciones.com/ESCUDOS+VENEZUELA",
+    "rawFile": "guaros.jpg",
+    "source": "Historical football crest archive",
+    "sourceSha256": "ca5e6fdac2fc19c7e6c46103f1141140757e5560e44f22d414bb8b9fad3253e4"
+  },
+  "avs": {
+    "label": "AVS",
+    "title": "AVS Futebol SAD",
+    "pageUrl": "https://en.wikipedia.org/wiki/AVS_Futebol_SAD",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/34/AVS_Futebol_SAD_logo.svg/250px-AVS_Futebol_SAD_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "avs.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "54beebca3c046d47d735ab2ddb8a21467cc41ae42e4f83c55570b894a2950d5c"
+  },
+  "racing_paris": {
+    "label": "Racing Paris",
+    "title": "Racing Club de France Football",
+    "pageUrl": "https://en.wikipedia.org/wiki/Racing_Club_de_France_Football",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Racing_Club_de_France-logo.svg/250px-Racing_Club_de_France-logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "racing_paris.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "58ece7637a3f589f2eb057c8896a2dc26e0a1e22e0374bcef4d6d85dd6360cfa"
+  },
+  "racing_bafoussam": {
+    "label": "Racing Bafoussam",
+    "title": "RC Bafoussam",
+    "pageUrl": "https://en.wikipedia.org/wiki/RC_Bafoussam",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/0f/Baffoussam_FC.png/250px-Baffoussam_FC.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "racing_bafoussam.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "f1d236cb01a5e293ae5e294f5253a7a4d0d98e85b65bbd204988ffa62e15d29f"
+  },
+  "el_jaish": {
+    "label": "El Jaish",
+    "title": "El Jaish SC",
+    "pageUrl": "https://en.wikipedia.org/wiki/El_Jaish_SC",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/03/AlJaishQatarlogo.png/250px-AlJaishQatarlogo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "el_jaish.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "1af4c3542ad49c92c95519f232c176949381fa4c913a19bff00e6b5823a33a20"
+  },
+  "almeria": {
+    "label": "Almería",
+    "title": "UD Almería",
+    "pageUrl": "https://en.wikipedia.org/wiki/UD_Almer%C3%ADa",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/4a/UD_Almeria_logo.svg/250px-UD_Almeria_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "almeria.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "671ee2612581be1944f324e79733c8f29125fca560c5ae071b415e75f0a6dd37"
+  },
+  "rc_paris": {
+    "label": "Racing Paris",
+    "title": "Racing Club de France Football",
+    "pageUrl": "https://en.wikipedia.org/wiki/Racing_Club_de_France_Football",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Racing_Club_de_France-logo.svg/250px-Racing_Club_de_France-logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "rc_paris.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "58ece7637a3f589f2eb057c8896a2dc26e0a1e22e0374bcef4d6d85dd6360cfa"
+  },
+  "verdy_kawasaki": {
+    "label": "Verdy Kawasaki",
+    "title": "Tokyo Verdy",
+    "pageUrl": "https://en.wikipedia.org/wiki/Tokyo_Verdy",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/f/f8/Tokyo_Verdy_logo.svg/250px-Tokyo_Verdy_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "verdy_kawasaki.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "91a3b7fbc3d7199333a0914269fe93873534c25eaa97b9b0ad82b4237e1f7830"
+  },
+  "wydad": {
+    "label": "Wydad Casablanca",
+    "title": "Wydad AC",
+    "pageUrl": "https://en.wikipedia.org/wiki/Wydad_AC",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/1/18/Wydad_AC_crest_%282022%29.svg/250px-Wydad_AC_crest_%282022%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "wydad.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "c095043cb996a4c9775d7b332460ccca1811c67a39cc61b2a09fc791e1eae9da"
+  },
+  "air_force": {
+    "label": "ROK Air Force",
+    "pageUrl": "https://en.wikipedia.org/wiki/Republic_of_Korea_Air_Force",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Emblem_of_the_Republic_of_Korea_Air_Force.svg",
+    "title": "Republic of Korea Air Force institutional emblem",
+    "note": "Institutional emblem of the service that operated the football team; not claimed as a period-specific football crest.",
+    "rawFile": "air_force.svg",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "c2be70c3ec986053732a2fad0d818cfb73120dad91409bc8eec3fddb3f1b7978"
+  },
+  "portuguesa_ve": {
+    "label": "Portuguesa F.C.",
+    "title": "Portuguesa F.C.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Portuguesa_F.C.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Portuguesa_FC.png/330px-Portuguesa_FC.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "portuguesa_ve.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "4d45cbaa8553e223e13baec00f78714ab3950786ec7e81bb0e16613c907791ea"
+  },
+  "noroeste": {
+    "label": "Esporte Clube Noroeste",
+    "title": "Esporte Clube Noroeste",
+    "pageUrl": "https://en.wikipedia.org/wiki/Esporte_Clube_Noroeste",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Esporte_Clube_Noroeste.svg/250px-Esporte_Clube_Noroeste.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "noroeste.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "4c00fe6a01706b0b58aa6c462b39012bd335447b5975a5df4ed9440d9f72fac8"
+  },
+  "fast_clube": {
+    "label": "Nacional Fast Clube",
+    "title": "Nacional Fast Clube",
+    "pageUrl": "https://en.wikipedia.org/wiki/Nacional_Fast_Clube",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Fast_Clube.png/250px-Fast_Clube.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "fast_clube.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "482d64ad2a179b93dfcb9c3306a96bbbaa8893240bcc2ce8cca552bf3be7e5b7"
+  },
+  "burnley": {
+    "label": "Burnley F.C.",
+    "title": "Burnley F.C.",
+    "pageUrl": "https://en.wikipedia.org/wiki/Burnley_F.C.",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/6/6d/Burnley_FC_Logo.svg/250px-Burnley_FC_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "burnley.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "b3e277f24cfdb58ba9e4d0b0c7cded068d90173f6f44cbaf8e7aa9f0d7884eef"
+  },
+  "nacional_am": {
+    "label": "Nacional Futebol Clube",
+    "title": "Nacional Futebol Clube",
+    "pageUrl": "https://en.wikipedia.org/wiki/Nacional_Futebol_Clube",
+    "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/2/29/Nacional_Futebol_Clube.png/250px-Nacional_Futebol_Clube.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "nacional_am.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "5de0c74068156ecb378944855a9936940559af4eca8eb335811e3200be4531f4"
+  },
+  "nueve_de_octubre": {
+    "label": "9 de Octubre F.C.",
+    "title": "9 de Octubre F.C.",
+    "pageUrl": "https://en.wikipedia.org/wiki/9_de_Octubre_F.C.",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/9_de_Octubre_FC_escudo.png/120px-9_de_Octubre_FC_escudo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "rawFile": "nueve_de_octubre.png",
+    "source": "Club crest sourced from the correctly identified Wikipedia club page",
+    "sourceSha256": "8b9dd6f7be897afe5089ee13654d9eae630bf1e3525a27b5f477455f0586881f"
+  },
+  "esteghlal_ardabil": {
+    "label": "Esteghlal Ardabil",
+    "image": null,
+    "pageUrl": "https://www.persianleague.com/11262-asian-icons-ali-daei",
+    "note": "The supplied badge was fabricated. No reliable club-specific crest was located in the club/player sources reviewed. Do not use Esteghlal Tehran artwork for this different club; show the name without an invented crest."
+  }
+}

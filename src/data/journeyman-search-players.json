@@ -1,0 +1,6181 @@
+{
+  "schemaVersion": 1,
+  "players": [
+    {
+      "id": "roster:wan_bissaka",
+      "name": "Aaron Wan-Bissaka",
+      "aliases": [],
+      "nationality": "Congo DR",
+      "nationalityFlag": "/img/country/congo_dr.png"
+    },
+    {
+      "id": "roster:hakimi",
+      "name": "Achraf Hakimi",
+      "aliases": [
+        "Hakimi",
+        "Achraf Hakimi Mouh"
+      ],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:lookman",
+      "name": "Ademola Lookman",
+      "aliases": [],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:rabiot",
+      "name": "Adrien Rabiot",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:aleix_garcia",
+      "name": "Aleix García",
+      "aliases": [
+        "Aleix García Serrano"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "scouts:garnacho",
+      "name": "Alejandro Garnacho",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "scouts:mitrovic",
+      "name": "Aleksandar Mitrovic",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "roster:bastoni",
+      "name": "Alessandro Bastoni",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:buongiorno",
+      "name": "Alessandro Buongiorno",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:alessandro_del_piero",
+      "name": "Alessandro Del Piero",
+      "aliases": [
+        "Del Piero",
+        "Pinturicchio"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:romagnoli",
+      "name": "Alessio Romagnoli",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:alex_baena",
+      "name": "Álex Baena",
+      "aliases": [
+        "Alejandro Baena Rodríguez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:alex_berenguer",
+      "name": "Álex Berenguer",
+      "aliases": [
+        "Alejandro Berenguer Remiro"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:iwobi",
+      "name": "Alex Iwobi",
+      "aliases": [],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:meret",
+      "name": "Alex Meret",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:alex_remiro",
+      "name": "Álex Remiro",
+      "aliases": [
+        "Alejandro Remiro Gargallo"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:isak",
+      "name": "Alexander Isak",
+      "aliases": [],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "roster:nuebel",
+      "name": "Alexander Nübel",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:sorloth",
+      "name": "Alexander Sørloth",
+      "aliases": [],
+      "nationality": "Norway",
+      "nationalityFlag": "/img/country/norway.png"
+    },
+    {
+      "id": "roster:mac_allister",
+      "name": "Alexis Mac Allister",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "scouts:sanchez",
+      "name": "Alexis Sanchez",
+      "aliases": [
+        "Alexis",
+        "El Nino Maravilla",
+        "Alexis Alejandro Sanchez"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "journey:alfredo_di_stefano",
+      "name": "Alfredo Di Stéfano",
+      "aliases": [
+        "Di Stefano",
+        "Saeta Rubia"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:ali_daei",
+      "name": "Ali Daei",
+      "aliases": [
+        "Shahriar",
+        "Daei"
+      ],
+      "nationality": "Iran",
+      "nationalityFlag": "/img/country/iran.png"
+    },
+    {
+      "id": "roster:alisson",
+      "name": "Alisson Becker",
+      "aliases": [
+        "Alisson",
+        "Alisson Ramses Becker"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:davies",
+      "name": "Alphonso Davies",
+      "aliases": [],
+      "nationality": "Canada",
+      "nationalityFlag": "/img/country/canada.png"
+    },
+    {
+      "id": "roster:alvaro_carreras",
+      "name": "Álvaro Carreras",
+      "aliases": [
+        "Álvaro Fernández Carreras"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "scouts:morata",
+      "name": "Alvaro Morata",
+      "aliases": [
+        "Morata",
+        "Alvaro Borja Morata"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:alvaro_recoba",
+      "name": "Álvaro Recoba",
+      "aliases": [
+        "Recoba",
+        "El Chino",
+        "Alvaro Gerardo Recoba Rivero"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "journey:amadeo_carrizo",
+      "name": "Amadeo Carrizo",
+      "aliases": [
+        "Amadeo Raul Carrizo",
+        "El Gran Amadeo"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:rrahmani",
+      "name": "Amir Rrahmani",
+      "aliases": [],
+      "nationality": "Kosovo",
+      "nationalityFlag": "/img/country/kosovo.png"
+    },
+    {
+      "id": "roster:trubin",
+      "name": "Anatoliy Trubin",
+      "aliases": [],
+      "nationality": "Ukraine",
+      "nationalityFlag": "/img/country/ukraine.png"
+    },
+    {
+      "id": "roster:anderson_talisca",
+      "name": "Anderson Talisca",
+      "aliases": [
+        "Talisca",
+        "Anderson Souza Conceição"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:onana",
+      "name": "André Onana",
+      "aliases": [],
+      "nationality": "Cameroon",
+      "nationalityFlag": "/img/country/cameroon.png"
+    },
+    {
+      "id": "roster:pirlo",
+      "name": "Andrea Pirlo",
+      "aliases": [
+        "Pirlo",
+        "Il Maestro"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:kramaric",
+      "name": "Andrej Kramarić",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "journey:andres_guardado",
+      "name": "Andrés Guardado",
+      "aliases": [
+        "Guardado",
+        "Principito",
+        "Jose Andres Guardado Hernandez"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "roster:iniesta",
+      "name": "Andres Iniesta",
+      "aliases": [
+        "Iniesta",
+        "Don Andres"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:robertson",
+      "name": "Andrew Robertson",
+      "aliases": [
+        "Robertson",
+        "Andy Robertson",
+        "Andrew Henry Robertson"
+      ],
+      "nationality": "Scotland",
+      "nationalityFlag": "/img/country/scotland.png"
+    },
+    {
+      "id": "roster:andrey_santos",
+      "name": "Andrey Santos",
+      "aliases": [
+        "Andrey N. dos Santos"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:lunin",
+      "name": "Andriy Lunin",
+      "aliases": [],
+      "nationality": "Ukraine",
+      "nationalityFlag": "/img/country/ukraine.png"
+    },
+    {
+      "id": "journey:andriy_shevchenko",
+      "name": "Andriy Shevchenko",
+      "aliases": [
+        "Shevchenko",
+        "Sheva",
+        "Andriy Mykolayovych Shevchenko"
+      ],
+      "nationality": "Ukraine",
+      "nationalityFlag": "/img/country/ukraine.png"
+    },
+    {
+      "id": "roster:di_maria",
+      "name": "Ángel Di María",
+      "aliases": [
+        "Di Maria",
+        "El Fideo"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:stiller",
+      "name": "Angelo Stiller",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:budimir",
+      "name": "Ante Budimir",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "roster:elanga",
+      "name": "Anthony Elanga",
+      "aliases": [],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "roster:gordon",
+      "name": "Anthony Gordon",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:griezmann",
+      "name": "Antoine Griezmann",
+      "aliases": [
+        "Griezmann",
+        "Grizou"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:semenyo",
+      "name": "Antoine Semenyo",
+      "aliases": [],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "roster:robinson",
+      "name": "Antonee Robinson",
+      "aliases": [],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:rudiger",
+      "name": "Antonio Rüdiger",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:antonio_valencia",
+      "name": "Antonio Valencia",
+      "aliases": [
+        "Valencia",
+        "Luis Antonio Valencia Mosquera"
+      ],
+      "nationality": "Ecuador",
+      "nationalityFlag": "/img/country/ecuador.png"
+    },
+    {
+      "id": "roster:antony",
+      "name": "Antony",
+      "aliases": [
+        "Antony Matheus dos Santos"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:gueler",
+      "name": "Arda Güler",
+      "aliases": [],
+      "nationality": "Turkey",
+      "nationalityFlag": "/img/country/turkey.png"
+    },
+    {
+      "id": "scouts:robben",
+      "name": "Arjen Robben",
+      "aliases": [
+        "Robben"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:dovbyk",
+      "name": "Artem Dovbyk",
+      "aliases": [],
+      "nationality": "Ukraine",
+      "nationalityFlag": "/img/country/ukraine.png"
+    },
+    {
+      "id": "journey:arturo_vidal",
+      "name": "Arturo Vidal",
+      "aliases": [
+        "Vidal",
+        "King Arturo",
+        "Arturo Erasmo Vidal Pardo"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "journey:asamoah_gyan",
+      "name": "Asamoah Gyan",
+      "aliases": [
+        "Baby Jet",
+        "Gyan"
+      ],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "roster:tchouameni",
+      "name": "Aurelien Tchouameni",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:laporte",
+      "name": "Aymeric Laporte",
+      "aliases": [],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:el_kaabi",
+      "name": "Ayoub El Kaabi",
+      "aliases": [],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:ayoze",
+      "name": "Ayoze",
+      "aliases": [
+        "Ayoze Pérez",
+        "Ayoze Pérez Gutiérrez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:balde",
+      "name": "Balde",
+      "aliases": [
+        "Alejandro Balde",
+        "Alejandro Balde Martínez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:ylmaz",
+      "name": "Barış Alper Yılmaz",
+      "aliases": [],
+      "nationality": "Turkey",
+      "nationalityFlag": "/img/country/turkey.png"
+    },
+    {
+      "id": "roster:bastian_schweinsteiger",
+      "name": "Bastian Schweinsteiger",
+      "aliases": [
+        "Schweinsteiger",
+        "Basti"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:bebeto",
+      "name": "Bebeto",
+      "aliases": [
+        "Jose Roberto Gama de Oliveira"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:andre",
+      "name": "Benjamin André",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:henrichs",
+      "name": "Benjamin Henrichs",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:pavard",
+      "name": "Benjamin Pavard",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:sesko",
+      "name": "Benjamin Šeško",
+      "aliases": [],
+      "nationality": "Slovenia",
+      "nationalityFlag": "/img/country/slovenia.png"
+    },
+    {
+      "id": "roster:white",
+      "name": "Benjamin White",
+      "aliases": [
+        "Ben White"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:benni_mccarthy",
+      "name": "Benni McCarthy",
+      "aliases": [
+        "McCarthy",
+        "Benni",
+        "Benedict Saul McCarthy"
+      ],
+      "nationality": "South Africa",
+      "nationalityFlag": "/img/country/south_africa.png"
+    },
+    {
+      "id": "roster:bento",
+      "name": "Bento",
+      "aliases": [
+        "Bento Matheus Krepski"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:silva",
+      "name": "Bernardo Silva",
+      "aliases": [
+        "Silva",
+        "Bernardo Mota Veiga de Carvalho e Silva"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:leno",
+      "name": "Bernd Leno",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:bobby_charlton",
+      "name": "Bobby Charlton",
+      "aliases": [
+        "Charlton",
+        "Sir Bobby Charlton",
+        "Robert Charlton"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:kamara",
+      "name": "Boubacar Kamara",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:dia",
+      "name": "Boulaye Dia",
+      "aliases": [],
+      "nationality": "Senegal",
+      "nationalityFlag": "/img/country/senegal.png"
+    },
+    {
+      "id": "journey:brad_friedel",
+      "name": "Brad Friedel",
+      "aliases": [
+        "Friedel",
+        "Bradley Howard Friedel"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:barcola",
+      "name": "Bradley Barcola",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:brahim",
+      "name": "Brahim",
+      "aliases": [
+        "Brahim Díaz"
+      ],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:brais_mendez",
+      "name": "Brais Méndez",
+      "aliases": [
+        "Brais Méndez Portela"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:bremer",
+      "name": "Bremer",
+      "aliases": [
+        "Gleison Bremer Silva Nascimento"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:brian_laudrup",
+      "name": "Brian Laudrup",
+      "aliases": [],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "journey:brian_mcbride",
+      "name": "Brian McBride",
+      "aliases": [
+        "McBride",
+        "Brian Robert McBride"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:samba",
+      "name": "Brice Samba",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:bruce_grobbelaar",
+      "name": "Bruce Grobbelaar",
+      "aliases": [
+        "Grobbelaar",
+        "The Jungleman",
+        "Bruce David Grobbelaar"
+      ],
+      "nationality": "Zimbabwe",
+      "nationalityFlag": "/img/country/zimbabwe.png"
+    },
+    {
+      "id": "roster:bruno",
+      "name": "Bruno Fernandes",
+      "aliases": [
+        "Fernandes",
+        "Bruno Miguel Borges Fernandes"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:bruno_guimaraes",
+      "name": "Bruno Guimarães",
+      "aliases": [
+        "Bruno Guimarães Moura"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:cristante",
+      "name": "Bryan Cristante",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:mbeumo",
+      "name": "Bryan Mbeumo",
+      "aliases": [],
+      "nationality": "Cameroon",
+      "nationalityFlag": "/img/country/cameroon.png"
+    },
+    {
+      "id": "roster:saka",
+      "name": "Bukayo Saka",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:cafu",
+      "name": "Cafu",
+      "aliases": [
+        "Marcos Evangelista de Moraes",
+        "Il Pendolino"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "scouts:wilson",
+      "name": "Callum Wilson",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:careca",
+      "name": "Careca",
+      "aliases": [
+        "Antonio de Oliveira Filho"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:puyol",
+      "name": "Carles Puyol",
+      "aliases": [
+        "Puyol",
+        "El Tiburon",
+        "Carles Puyol Saforcada"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:carlos_alberto",
+      "name": "Carlos Alberto",
+      "aliases": [
+        "Carlos Alberto Torres",
+        "O Capitao"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:carlos_augusto",
+      "name": "Carlos Augusto",
+      "aliases": [
+        "Carlos Augusto Zopolato Neves"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:baleba",
+      "name": "Carlos Baleba",
+      "aliases": [],
+      "nationality": "Cameroon",
+      "nationalityFlag": "/img/country/cameroon.png"
+    },
+    {
+      "id": "journey:carlos_caszely",
+      "name": "Carlos Caszely",
+      "aliases": [
+        "Caszely",
+        "El Rey del Metro Cuadrado",
+        "Carlos Humberto Caszely Garrido"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "journey:carlos_gamarra",
+      "name": "Carlos Gamarra",
+      "aliases": [
+        "Gamarra",
+        "El Colorado",
+        "Carlos Alberto Gamarra Pavon"
+      ],
+      "nationality": "Paraguay",
+      "nationalityFlag": "/img/country/paraguay.png"
+    },
+    {
+      "id": "journey:carlos_tevez",
+      "name": "Carlos Tevez",
+      "aliases": [
+        "Tevez",
+        "Apache",
+        "Carlos Alberto Martinez Tevez"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:carlos_valderrama",
+      "name": "Carlos Valderrama",
+      "aliases": [
+        "Valderrama",
+        "El Pibe",
+        "Carlos Alberto Valderrama Palacio"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "journey:carlos_vela",
+      "name": "Carlos Vela",
+      "aliases": [
+        "Vela",
+        "Carlos Alberto Vela Garrido"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "roster:carvajal",
+      "name": "Carvajal",
+      "aliases": [
+        "Daniel Carvajal",
+        "Daniel Carvajal Ramos"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:casemiro",
+      "name": "Casemiro",
+      "aliases": [
+        "Carlos Henrique Casimiro"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:cesc_fabregas",
+      "name": "Cesc Fàbregas",
+      "aliases": [
+        "Fabregas",
+        "Cesc",
+        "Francesc Fabregas"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:cha_bum_kun",
+      "name": "Cha Bum-kun",
+      "aliases": [
+        "Cha Boom",
+        "Tscha Bum"
+      ],
+      "nationality": "South Korea",
+      "nationalityFlag": "/img/country/south_korea.png"
+    },
+    {
+      "id": "roster:de_ketelaere",
+      "name": "Charles De Ketelaere",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:wood",
+      "name": "Chris Wood",
+      "aliases": [],
+      "nationality": "New Zealand",
+      "nationalityFlag": "/img/country/new_zealand.png"
+    },
+    {
+      "id": "journey:christian_eriksen",
+      "name": "Christian Eriksen",
+      "aliases": [
+        "Eriksen",
+        "Christian Dannemann Eriksen"
+      ],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:pulisic",
+      "name": "Christian Pulisic",
+      "aliases": [
+        "Pulisic",
+        "Captain America",
+        "Christian Mate Pulisic"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:nkunku",
+      "name": "Christopher Nkunku",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:tzolis",
+      "name": "Christos Tzolis",
+      "aliases": [],
+      "nationality": "Greece",
+      "nationalityFlag": "/img/country/greece.png"
+    },
+    {
+      "id": "journey:ciro_immobile",
+      "name": "Ciro Immobile",
+      "aliases": [
+        "Immobile"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:clarence_seedorf",
+      "name": "Clarence Seedorf",
+      "aliases": [
+        "Seedorf",
+        "Clarence Clyde Seedorf"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:claudio_bravo",
+      "name": "Claudio Bravo",
+      "aliases": [
+        "Bravo",
+        "Claudio Andres Bravo Munoz"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "journey:claudio_caniggia",
+      "name": "Claudio Caniggia",
+      "aliases": [
+        "Caniggia",
+        "El Hijo del Viento",
+        "Claudio Paul Caniggia"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:claudio_pizarro",
+      "name": "Claudio Pizarro",
+      "aliases": [
+        "Pizarro",
+        "El Bombardero de los Andes",
+        "Claudio Miguel Pizarro Bosio"
+      ],
+      "nationality": "Peru",
+      "nationalityFlag": "/img/country/peru.png"
+    },
+    {
+      "id": "journey:claudio_reyna",
+      "name": "Claudio Reyna",
+      "aliases": [
+        "Reyna",
+        "Captain America"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "journey:clint_dempsey",
+      "name": "Clint Dempsey",
+      "aliases": [
+        "Dempsey",
+        "Deuce",
+        "Clinton Drew Dempsey"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:gakpo",
+      "name": "Cody Gakpo",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:palmer",
+      "name": "Cole Palmer",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:gallagher",
+      "name": "Conor Gallagher",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:tolisso",
+      "name": "Corentin Tolisso",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:romero",
+      "name": "Cristian Romero",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:ronaldo",
+      "name": "Cristiano Ronaldo",
+      "aliases": [
+        "Ronaldo",
+        "CR7",
+        "Cristiano",
+        "Cristiano Ronaldo dos Santos Aveiro"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "journey:cuauhtemoc_blanco",
+      "name": "Cuauhtémoc Blanco",
+      "aliases": [
+        "Blanco",
+        "Cuau",
+        "Cuauhtemoc Blanco Bravo"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "roster:jones",
+      "name": "Curtis Jones",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:dani_alves",
+      "name": "Dani Alves",
+      "aliases": [
+        "Alves",
+        "Daniel Alves da Silva"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:dani_carvajal",
+      "name": "Dani Carvajal",
+      "aliases": [
+        "Carvajal",
+        "Daniel Carvajal Ramos"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:dani_ceballos",
+      "name": "Dani Ceballos",
+      "aliases": [
+        "Daniel Ceballos Fernández"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:dani_olmo",
+      "name": "Dani Olmo",
+      "aliases": [
+        "Daniel Olmo Carvajal"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:munoz",
+      "name": "Daniel Muñoz",
+      "aliases": [],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "journey:daniel_passarella",
+      "name": "Daniel Passarella",
+      "aliases": [
+        "Passarella",
+        "El Gran Capitan",
+        "Daniel Alberto Passarella"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:danilo_pereira",
+      "name": "Danilo Pereira",
+      "aliases": [
+        "Danilo Luís Hélio Pereira"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "scouts:nunez",
+      "name": "Darwin Nunez",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:alaba",
+      "name": "David Alaba",
+      "aliases": [
+        "Alaba",
+        "David Olatukunbo Alaba"
+      ],
+      "nationality": "Austria",
+      "nationalityFlag": "/img/country/austria.png"
+    },
+    {
+      "id": "roster:david_beckham",
+      "name": "David Beckham",
+      "aliases": [
+        "Beckham",
+        "Becks",
+        "David Robert Joseph Beckham"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:hancko",
+      "name": "Dávid Hancko",
+      "aliases": [],
+      "nationality": "Slovakia",
+      "nationalityFlag": "/img/country/slovakia.png"
+    },
+    {
+      "id": "roster:david_neres",
+      "name": "David Neres",
+      "aliases": [
+        "David Neres Campos"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:raum",
+      "name": "David Raum",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:david_raya",
+      "name": "David Raya",
+      "aliases": [
+        "David Raya Martin"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:david_silva",
+      "name": "David Silva",
+      "aliases": [
+        "Silva",
+        "El Mago",
+        "David Josue Jimenez Silva"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:david_soria",
+      "name": "David Soria",
+      "aliases": [
+        "David Soria Solís"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:frattesi",
+      "name": "Davide Frattesi",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:sanchez",
+      "name": "Davinson Sánchez",
+      "aliases": [],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:upamecano",
+      "name": "Dayot Upamecano",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:de_gea",
+      "name": "De Gea",
+      "aliases": [
+        "David de Gea",
+        "David De Gea Quintana"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:henderson",
+      "name": "Dean Henderson",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:huijsen",
+      "name": "Dean Huijsen",
+      "aliases": [],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:rice",
+      "name": "Declan Rice",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:kulusevski",
+      "name": "Dejan Kulusevski",
+      "aliases": [],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "roster:zakaria",
+      "name": "Denis Zakaria",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "journey:dennis_bergkamp",
+      "name": "Dennis Bergkamp",
+      "aliases": [
+        "Bergkamp",
+        "The Non-Flying Dutchman",
+        "Dennis Nicolaas Maria Bergkamp"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:dumfries",
+      "name": "Denzel Dumfries",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:doue",
+      "name": "Désiré Doué",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:udogie",
+      "name": "Destiny Udogie",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:didi",
+      "name": "Didi",
+      "aliases": [
+        "Waldyr Pereira",
+        "The Ethiopian Prince"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:drogba",
+      "name": "Didier Drogba",
+      "aliases": [
+        "Drogba",
+        "Didier Yves Drogba Tebily"
+      ],
+      "nationality": "Ivory Coast",
+      "nationalityFlag": "/img/country/ivory_coast.png"
+    },
+    {
+      "id": "roster:diego_forlan",
+      "name": "Diego Forlán",
+      "aliases": [
+        "Forlan",
+        "Diego Forlan Corazo"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:diego_godin",
+      "name": "Diego Godín",
+      "aliases": [
+        "Godin",
+        "Diego Roberto Godin Leal"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "journey:diego_lugano",
+      "name": "Diego Lugano",
+      "aliases": [
+        "Lugano",
+        "Tota",
+        "Diego Alfredo Lugano Morena"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "scouts:maradona",
+      "name": "Diego Maradona",
+      "aliases": [
+        "Maradona",
+        "Diego Armando Maradona",
+        "El Pibe de Oro"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:dimitar_berbatov",
+      "name": "Dimitar Berbatov",
+      "aliases": [
+        "Berbatov",
+        "Berba",
+        "Dimitar Ivanov Berbatov"
+      ],
+      "nationality": "Bulgaria",
+      "nationalityFlag": "/img/country/bulgaria.png"
+    },
+    {
+      "id": "journey:dino_zoff",
+      "name": "Dino Zoff",
+      "aliases": [
+        "Zoff"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:diogo_costa",
+      "name": "Diogo Costa",
+      "aliases": [
+        "Diogo Meireles Costa"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "scouts:jota",
+      "name": "Diogo Jota",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "journey:dirk_kuyt",
+      "name": "Dirk Kuyt",
+      "aliases": [
+        "Kuyt",
+        "Kuijt",
+        "Dirk Kuijt"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:djalma_santos",
+      "name": "Djalma Santos",
+      "aliases": [
+        "Djalma Pereira Dias dos Santos"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:lukebakio",
+      "name": "Dodi Lukébakio",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:berardi",
+      "name": "Domenico Berardi",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:solanke",
+      "name": "Dominic Solanke",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:livakovic",
+      "name": "Dominik Livaković",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "roster:szoboszlai",
+      "name": "Dominik Szoboszlai",
+      "aliases": [],
+      "nationality": "Hungary",
+      "nationalityFlag": "/img/country/hungary.png"
+    },
+    {
+      "id": "roster:douglas_luiz",
+      "name": "Douglas Luiz",
+      "aliases": [
+        "Douglas Luiz Soares de Paulo"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:dunga",
+      "name": "Dunga",
+      "aliases": [
+        "Carlos Caetano Bledorn Verri"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:vlahovic",
+      "name": "Dušan Vlahović",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "roster:zapata",
+      "name": "Duván Zapata",
+      "aliases": [],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "journey:dwight_yorke",
+      "name": "Dwight Yorke",
+      "aliases": [
+        "Yorke",
+        "The Smiling Assassin",
+        "Dwight Eversley Yorke"
+      ],
+      "nationality": "Trinidad and Tobago",
+      "nationalityFlag": "/img/country/trinidad_and_tobago.png"
+    },
+    {
+      "id": "roster:eze",
+      "name": "Eberechi Eze",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:hazard",
+      "name": "Eden Hazard",
+      "aliases": [
+        "Hazard",
+        "Eden Michael Hazard"
+      ],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:eder_militao",
+      "name": "Éder Militão",
+      "aliases": [
+        "Éder Gabriel Militão"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:ederson",
+      "name": "Ederson",
+      "aliases": [
+        "Ederson Santana de Moraes",
+        "Éderson José dos Santos",
+        "Ederson Moraes"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:edgar_davids",
+      "name": "Edgar Davids",
+      "aliases": [
+        "Davids",
+        "The Pitbull",
+        "Edgar Steven Davids"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:dzeko",
+      "name": "Edin Džeko",
+      "aliases": [],
+      "nationality": "Bosnia and Herzegovina",
+      "nationalityFlag": "/img/country/bosnia_and_herzegovina.png"
+    },
+    {
+      "id": "scouts:cavani",
+      "name": "Edinson Cavani",
+      "aliases": [
+        "Cavani",
+        "El Matador",
+        "Edinson Roberto Cavani Gomez"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:tapsoba",
+      "name": "Edmond Tapsoba",
+      "aliases": [],
+      "nationality": "Burkina Faso",
+      "nationalityFlag": "/img/country/burkina_faso.png"
+    },
+    {
+      "id": "roster:edouard_mendy",
+      "name": "Édouard Mendy",
+      "aliases": [],
+      "nationality": "Senegal",
+      "nationalityFlag": "/img/country/senegal.png"
+    },
+    {
+      "id": "roster:camavinga",
+      "name": "Eduardo Camavinga",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:edwin_van_der_sar",
+      "name": "Edwin van der Sar",
+      "aliases": [
+        "Van der Sar",
+        "The Flying Dutchman"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:eidur_gudjohnsen",
+      "name": "Eiður Guðjohnsen",
+      "aliases": [
+        "Gudjohnsen",
+        "Eidur Gudjohnsen",
+        "Eidur Smari Gudjohnsen"
+      ],
+      "nationality": "Iceland",
+      "nationalityFlag": "/img/country/iceland.png"
+    },
+    {
+      "id": "journey:elias_figueroa",
+      "name": "Elías Figueroa",
+      "aliases": [
+        "Figueroa",
+        "Don Elias",
+        "Elias Ricardo Figueroa Brander"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "roster:anderson",
+      "name": "Elliot Anderson",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:skhiri",
+      "name": "Ellyes Skhiri",
+      "aliases": [],
+      "nationality": "Tunisia",
+      "nationalityFlag": "/img/country/tunisia.png"
+    },
+    {
+      "id": "roster:martinez",
+      "name": "Emiliano Martínez",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:emmanuel_adebayor",
+      "name": "Emmanuel Adebayor",
+      "aliases": [
+        "Adebayor",
+        "Sheyi Emmanuel Adebayor"
+      ],
+      "nationality": "Togo",
+      "nationalityFlag": "/img/country/togo.png"
+    },
+    {
+      "id": "roster:can",
+      "name": "Emre Can",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:enner_valencia",
+      "name": "Enner Valencia",
+      "aliases": [
+        "Valencia",
+        "Superman",
+        "Enner Remberto Valencia Lastra"
+      ],
+      "nationality": "Ecuador",
+      "nationalityFlag": "/img/country/ecuador.png"
+    },
+    {
+      "id": "roster:enzo",
+      "name": "Enzo Fernandez",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:enzo_francescoli",
+      "name": "Enzo Francescoli",
+      "aliases": [
+        "Francescoli",
+        "El Principe",
+        "Enzo Francescoli Uriarte"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "journey:eric_cantona",
+      "name": "Eric Cantona",
+      "aliases": [
+        "Cantona",
+        "King Eric",
+        "Eric Daniel Pierre Cantona"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:haaland",
+      "name": "Erling Haaland",
+      "aliases": [
+        "Haaland",
+        "Erling Braut Haaland"
+      ],
+      "nationality": "Norway",
+      "nationalityFlag": "/img/country/norway.png"
+    },
+    {
+      "id": "roster:demirovic",
+      "name": "Ermedin Demirović",
+      "aliases": [],
+      "nationality": "Bosnia and Herzegovina",
+      "nationalityFlag": "/img/country/bosnia_and_herzegovina.png"
+    },
+    {
+      "id": "journey:esteban_cambiasso",
+      "name": "Esteban Cambiasso",
+      "aliases": [
+        "Cambiasso",
+        "Cuchu",
+        "Esteban Matias Cambiasso"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:eusebio",
+      "name": "Eusébio",
+      "aliases": [
+        "The Black Panther",
+        "Eusebio da Silva Ferreira"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:ndicka",
+      "name": "Evan Ndicka",
+      "aliases": [],
+      "nationality": "Côte d'Ivoire",
+      "nationalityFlag": "/img/country/cote_d_ivoire.png"
+    },
+    {
+      "id": "roster:palacios",
+      "name": "Exequiel Palacios",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:konsa",
+      "name": "Ezri Konsa",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:fabian_ruiz",
+      "name": "Fabián Ruiz",
+      "aliases": [
+        "Fabián Ruiz Peña"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:schaer",
+      "name": "Fabian Schär",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "roster:fabinho",
+      "name": "Fabinho",
+      "aliases": [
+        "Fábio Henrique Tavares"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:faustino_asprilla",
+      "name": "Faustino Asprilla",
+      "aliases": [
+        "Asprilla",
+        "El Tino",
+        "Faustino Hernan Asprilla Hinestroza"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:chiesa",
+      "name": "Federico Chiesa",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:dimarco",
+      "name": "Federico Dimarco",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:valverde",
+      "name": "Federico Valverde",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:nmecha",
+      "name": "Felix Nmecha",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:ferenc_puskas",
+      "name": "Ferenc Puskás",
+      "aliases": [
+        "Puskas",
+        "The Galloping Major",
+        "Ferenc Purczeld Puskas"
+      ],
+      "nationality": "Hungary",
+      "nationalityFlag": "/img/country/hungary.png"
+    },
+    {
+      "id": "roster:mendy",
+      "name": "Ferland Mendy",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:fermin",
+      "name": "Fermín",
+      "aliases": [
+        "Fermín López",
+        "Fermín López Marín"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:fernando_muslera",
+      "name": "Fernando Muslera",
+      "aliases": [
+        "Muslera",
+        "Nestor Fernando Muslera Micol"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "journey:fernando_torres",
+      "name": "Fernando Torres",
+      "aliases": [
+        "Torres",
+        "El Nino",
+        "Fernando Jose Torres Sanz"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:ferran_torres",
+      "name": "Ferran Torres",
+      "aliases": [
+        "Ferran Torres García"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:tomori",
+      "name": "Fikayo Tomori",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:kostic",
+      "name": "Filip Kostić",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "roster:wirtz",
+      "name": "Florian Wirtz",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:acerbi",
+      "name": "Francesco Acerbi",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:francesco_totti",
+      "name": "Francesco Totti",
+      "aliases": [
+        "Totti",
+        "Er Pupone",
+        "Il Capitano"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:honorat",
+      "name": "Franck Honorat",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:franck_ribery",
+      "name": "Franck Ribéry",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:kessie",
+      "name": "Franck Yannick Kessié",
+      "aliases": [
+        "Franck Kessié"
+      ],
+      "nationality": "Côte d'Ivoire",
+      "nationalityFlag": "/img/country/cote_d_ivoire.png"
+    },
+    {
+      "id": "journey:franco_baresi",
+      "name": "Franco Baresi",
+      "aliases": [
+        "Baresi",
+        "Piscinin"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:frank_de_boer",
+      "name": "Frank de Boer",
+      "aliases": [
+        "Franciscus de Boer"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:lampard",
+      "name": "Frank Lampard",
+      "aliases": [
+        "Lampard",
+        "Super Frank",
+        "Frank James Lampard"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:frank_rijkaard",
+      "name": "Frank Rijkaard",
+      "aliases": [
+        "Rijkaard",
+        "Franklin Edmundo Rijkaard"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:franz_beckenbauer",
+      "name": "Franz Beckenbauer",
+      "aliases": [
+        "Beckenbauer",
+        "Der Kaiser",
+        "Franz Anton Beckenbauer"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:fred",
+      "name": "Fred",
+      "aliases": [
+        "Frederico de Paula Santos"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:freddie_ljungberg",
+      "name": "Freddie Ljungberg",
+      "aliases": [
+        "Ljungberg",
+        "Fredrik Ljungberg",
+        "Karl Fredrik Ljungberg"
+      ],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "journey:freddy_rincon",
+      "name": "Freddy Rincón",
+      "aliases": [
+        "Rincon",
+        "El Coloso",
+        "Freddy Eusebio Rincon Valencia"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "journey:frederic_kanoute",
+      "name": "Frédéric Kanouté",
+      "aliases": [
+        "Kanoute",
+        "Frederic Oumar Kanoute"
+      ],
+      "nationality": "Mali",
+      "nationalityFlag": "/img/country/mali.png"
+    },
+    {
+      "id": "roster:ronnow",
+      "name": "Frederik Rønnow",
+      "aliases": [
+        "Frederik Rönnow"
+      ],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:aursnes",
+      "name": "Fredrik Aursnes",
+      "aliases": [],
+      "nationality": "Norway",
+      "nationalityFlag": "/img/country/norway.png"
+    },
+    {
+      "id": "roster:dejong",
+      "name": "Frenkie de Jong",
+      "aliases": [
+        "De Jong",
+        "Frenkie"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:gabriel",
+      "name": "Gabriel",
+      "aliases": [
+        "Gabriel dos S. Magalhães"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:gabriel_batistuta",
+      "name": "Gabriel Batistuta",
+      "aliases": [
+        "Batistuta",
+        "Batigol",
+        "Gabriel Omar Batistuta"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:gabriel_jesus",
+      "name": "Gabriel Jesus",
+      "aliases": [
+        "Gabriel Fernando de Jesus"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:martinelli",
+      "name": "Gabriel Martinelli",
+      "aliases": [],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:gabriel_sara",
+      "name": "Gabriel Sara",
+      "aliases": [
+        "Gabriel Davi Gomes Sara"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:galeno",
+      "name": "Galeno",
+      "aliases": [
+        "Wenderson Nascimento Galeno"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:bale",
+      "name": "Gareth Bale",
+      "aliases": [
+        "Bale",
+        "Gareth Frank Bale"
+      ],
+      "nationality": "Wales",
+      "nationalityFlag": "/img/country/wales.png"
+    },
+    {
+      "id": "journey:garrincha",
+      "name": "Garrincha",
+      "aliases": [
+        "Manuel Francisco dos Santos",
+        "Mane Garrincha",
+        "The Joy of the People"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:gary_medel",
+      "name": "Gary Medel",
+      "aliases": [
+        "Medel",
+        "Pitbull",
+        "Gary Alexis Medel Soto"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "journey:gary_neville",
+      "name": "Gary Neville",
+      "aliases": [
+        "Neville",
+        "Gary Alexander Neville"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:gavi",
+      "name": "Gavi",
+      "aliases": [],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:gaya",
+      "name": "Gayà",
+      "aliases": [
+        "José Gayà",
+        "José Luís Gayà Peña"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:george_best",
+      "name": "George Best",
+      "aliases": [
+        "Best",
+        "El Beatle"
+      ],
+      "nationality": "Northern Ireland",
+      "nationalityFlag": "/img/country/northern_ireland.png"
+    },
+    {
+      "id": "journey:george_weah",
+      "name": "George Weah",
+      "aliases": [
+        "Weah",
+        "King George",
+        "George Manneh Oppong Weah"
+      ],
+      "nationality": "Liberia",
+      "nationalityFlag": "/img/country/liberia.png"
+    },
+    {
+      "id": "roster:sudakov",
+      "name": "Georgiy Sudakov",
+      "aliases": [],
+      "nationality": "Ukraine",
+      "nationalityFlag": "/img/country/ukraine.png"
+    },
+    {
+      "id": "roster:gerard_moreno",
+      "name": "Gerard Moreno",
+      "aliases": [
+        "Gerard Moreno Balagueró"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:pique",
+      "name": "Gerard Pique",
+      "aliases": [
+        "Pique",
+        "Gerard Pique Bernabeu"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:gerd_muller",
+      "name": "Gerd Müller",
+      "aliases": [
+        "Muller",
+        "Der Bomber",
+        "Gerhard Muller",
+        "Gerd Mueller"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:geremi",
+      "name": "Geremi",
+      "aliases": [
+        "Geremi Njitap",
+        "Geremi Sorele Njitap Fotso"
+      ],
+      "nationality": "Cameroon",
+      "nationalityFlag": "/img/country/cameroon.png"
+    },
+    {
+      "id": "roster:rulli",
+      "name": "Gerónimo Rulli",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:gerson",
+      "name": "Gérson",
+      "aliases": [
+        "The Golden Left Foot"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:gheorghe_hagi",
+      "name": "Gheorghe Hagi",
+      "aliases": [
+        "Hagi",
+        "The Maradona of the Carpathians"
+      ],
+      "nationality": "Romania",
+      "nationalityFlag": "/img/country/romania.png"
+    },
+    {
+      "id": "roster:mancini",
+      "name": "Gianluca Mancini",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:buffon",
+      "name": "Gianluigi Buffon",
+      "aliases": [
+        "Buffon",
+        "Gigi Buffon"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:donnarumma",
+      "name": "Gianluigi Donnarumma",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:mamardashvili",
+      "name": "Giorgi Mamardashvili",
+      "aliases": [],
+      "nationality": "Georgia",
+      "nationalityFlag": "/img/country/georgia.png"
+    },
+    {
+      "id": "roster:chiellini",
+      "name": "Giorgio Chiellini",
+      "aliases": [
+        "Chiellini"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:lo_celso",
+      "name": "Giovani Lo Celso",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:di_lorenzo",
+      "name": "Giovanni Di Lorenzo",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:giovanni_van_bronckhorst",
+      "name": "Giovanni van Bronckhorst",
+      "aliases": [
+        "Van Bronckhorst",
+        "Gio",
+        "Giovanni Christiaan van Bronckhorst"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:simeone",
+      "name": "Giuliano Simeone",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:goncalo_inacio",
+      "name": "Gonçalo Inácio",
+      "aliases": [
+        "Gonçalo Bernardo Inácio"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:goncalo_ramos",
+      "name": "Gonçalo Ramos",
+      "aliases": [
+        "Gonçalo Matias Ramos"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:gonzalo_higuain",
+      "name": "Gonzalo Higuaín",
+      "aliases": [
+        "Higuain",
+        "El Pipita",
+        "Gonzalo Gerardo Higuain"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:xhaka",
+      "name": "Granit Xhaka",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "roster:kobel",
+      "name": "Gregor Kobel",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "roster:grimaldo",
+      "name": "Grimaldo",
+      "aliases": [
+        "Alejandro Grimaldo",
+        "Alejandro Grimaldo García"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:vicario",
+      "name": "Guglielmo Vicario",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:guillermo_ochoa",
+      "name": "Guillermo Ochoa",
+      "aliases": [
+        "Ochoa",
+        "Memo Ochoa",
+        "Francisco Guillermo Ochoa Magana"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "roster:calhanoglu",
+      "name": "Hakan Çalhanoğlu",
+      "aliases": [],
+      "nationality": "Turkey",
+      "nationalityFlag": "/img/country/turkey.png"
+    },
+    {
+      "id": "journey:hakan_sukur",
+      "name": "Hakan Şükür",
+      "aliases": [
+        "Sukur",
+        "Bull of the Bosphorus"
+      ],
+      "nationality": "Turkey",
+      "nationalityFlag": "/img/country/turkey.png"
+    },
+    {
+      "id": "journey:hakim_ziyech",
+      "name": "Hakim Ziyech",
+      "aliases": [
+        "Ziyech",
+        "The Wizard"
+      ],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:vanaken",
+      "name": "Hans Vanaken",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:kane",
+      "name": "Harry Kane",
+      "aliases": [
+        "Kane",
+        "Harry Edward Kane"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:barnes",
+      "name": "Harvey Barnes",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:henrik_larsson",
+      "name": "Henrik Larsson",
+      "aliases": [
+        "Larsson",
+        "Henke",
+        "Henrik Edward Larsson"
+      ],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "roster:mkhitaryan",
+      "name": "Henrikh Mkhitaryan",
+      "aliases": [],
+      "nationality": "Armenia",
+      "nationalityFlag": "/img/country/armenia.png"
+    },
+    {
+      "id": "journey:hernan_crespo",
+      "name": "Hernán Crespo",
+      "aliases": [
+        "Crespo",
+        "Hernan Jorge Crespo",
+        "Valdanito"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:son",
+      "name": "Heung-min Son",
+      "aliases": [
+        "Son Heung-min"
+      ],
+      "nationality": "South Korea",
+      "nationalityFlag": "/img/country/south_korea.png"
+    },
+    {
+      "id": "journey:hidetoshi_nakata",
+      "name": "Hidetoshi Nakata",
+      "aliases": [
+        "Nakata"
+      ],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "journey:hristo_stoichkov",
+      "name": "Hristo Stoichkov",
+      "aliases": [
+        "Stoichkov",
+        "The Dagger",
+        "Hristo Stoichkov Stoichkov"
+      ],
+      "nationality": "Bulgaria",
+      "nationalityFlag": "/img/country/bulgaria.png"
+    },
+    {
+      "id": "roster:ekitike",
+      "name": "Hugo Ekitiké",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "scouts:lloris",
+      "name": "Hugo Lloris",
+      "aliases": [
+        "Lloris",
+        "Hugo Hadrien Dominique Lloris"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:hugo_sanchez",
+      "name": "Hugo Sánchez",
+      "aliases": [
+        "Hugol",
+        "Pentapichichi",
+        "Hugo Sanchez Marquez"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "roster:iago_aspas",
+      "name": "Iago Aspas",
+      "aliases": [
+        "Iago Aspas Juncal"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:ian_rush",
+      "name": "Ian Rush",
+      "aliases": [
+        "Rush",
+        "Ian James Rush"
+      ],
+      "nationality": "Wales",
+      "nationalityFlag": "/img/country/wales.png"
+    },
+    {
+      "id": "roster:ibanez",
+      "name": "Ibañez",
+      "aliases": [
+        "Roger Ibañez",
+        "Roger Ibañez da Silva"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:konate",
+      "name": "Ibrahima Konaté",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:igor_paixao",
+      "name": "Igor Paixão",
+      "aliases": [
+        "Igor Guilherme Barbosa da Paixão"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:casillas",
+      "name": "Iker Casillas",
+      "aliases": [
+        "Casillas",
+        "San Iker",
+        "Iker Casillas Fernandez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:guendogan",
+      "name": "İlkay Gündoğan",
+      "aliases": [
+        "Gundogan",
+        "Ilkay Guendogan"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:inaki_williams",
+      "name": "Iñaki Williams",
+      "aliases": [
+        "Iñaki Williams Arthuer"
+      ],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "roster:inigo_martinez",
+      "name": "Iñigo Martínez",
+      "aliases": [
+        "Iñigo Martínez Berridi"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:isco",
+      "name": "Isco",
+      "aliases": [
+        "Francisco Román Alarcón Suárez",
+        "Francisco Roman Alarcon Suarez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:bennacer",
+      "name": "Ismaël Bennacer",
+      "aliases": [],
+      "nationality": "Algeria",
+      "nationalityFlag": "/img/country/algeria.png"
+    },
+    {
+      "id": "journey:ivan_cordoba",
+      "name": "Iván Córdoba",
+      "aliases": [
+        "Cordoba",
+        "Ivan Ramiro Cordoba Sepulveda"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:perisic",
+      "name": "Ivan Perišić",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "roster:provedel",
+      "name": "Ivan Provedel",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:toney",
+      "name": "Ivan Toney",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:ivan_zamorano",
+      "name": "Iván Zamorano",
+      "aliases": [
+        "Zamorano",
+        "Bam Bam",
+        "Ivan Luis Zamorano Zamora"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "journey:jaap_stam",
+      "name": "Jaap Stam",
+      "aliases": [
+        "Stam",
+        "Jakob Stam",
+        "The Rock of Kampen"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:grealish",
+      "name": "Jack Grealish",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:murphy",
+      "name": "Jacob Murphy",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:jadon_sancho",
+      "name": "Jadon Sancho",
+      "aliases": [
+        "Sancho"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:jairzinho",
+      "name": "Jairzinho",
+      "aliases": [
+        "Jair Ventura Filho",
+        "The Hurricane"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:musiala",
+      "name": "Jamal Musiala",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:maddison",
+      "name": "James Maddison",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:james_rodriguez",
+      "name": "James Rodríguez",
+      "aliases": [
+        "James",
+        "James David Rodriguez Rubio"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "journey:jamie_carragher",
+      "name": "Jamie Carragher",
+      "aliases": [
+        "Carragher",
+        "James Lee Duncan Carragher"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:jan_koller",
+      "name": "Jan Koller",
+      "aliases": [
+        "Koller",
+        "Dino"
+      ],
+      "nationality": "Czech Republic",
+      "nationalityFlag": "/img/country/czech_republic.png"
+    },
+    {
+      "id": "roster:oblak",
+      "name": "Jan Oblak",
+      "aliases": [
+        "Oblak"
+      ],
+      "nationality": "Slovenia",
+      "nationalityFlag": "/img/country/slovenia.png"
+    },
+    {
+      "id": "journey:jari_litmanen",
+      "name": "Jari Litmanen",
+      "aliases": [
+        "Litmanen",
+        "Kuningas",
+        "The King",
+        "Jari Olavi Litmanen"
+      ],
+      "nationality": "Finland",
+      "nationalityFlag": "/img/country/finland.png"
+    },
+    {
+      "id": "roster:bowen",
+      "name": "Jarrod Bowen",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:javi_galan",
+      "name": "Javi Galán",
+      "aliases": [
+        "Javier Galán Gil"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:javier_hernandez",
+      "name": "Javier Hernández",
+      "aliases": [
+        "Chicharito",
+        "Javier Hernandez Balcazar"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "journey:javier_mascherano",
+      "name": "Javier Mascherano",
+      "aliases": [
+        "Mascherano",
+        "El Jefecito",
+        "Javier Alejandro Mascherano"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:javier_saviola",
+      "name": "Javier Saviola",
+      "aliases": [
+        "Saviola",
+        "El Conejo",
+        "Javier Pedro Saviola Fernandez"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:javier_zanetti",
+      "name": "Javier Zanetti",
+      "aliases": [
+        "Zanetti",
+        "El Tractor",
+        "Il Capitano",
+        "Javier Adelmar Zanetti"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:jay_jay_okocha",
+      "name": "Jay-Jay Okocha",
+      "aliases": [
+        "Okocha",
+        "Augustine Azuka Okocha"
+      ],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:mateta",
+      "name": "Jean-Philippe Mateta",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:jefferson_farfan",
+      "name": "Jefferson Farfán",
+      "aliases": [
+        "Farfan",
+        "La Foquita",
+        "Jefferson Agustin Farfan Guadalupe"
+      ],
+      "nationality": "Peru",
+      "nationalityFlag": "/img/country/peru.png"
+    },
+    {
+      "id": "roster:schouten",
+      "name": "Jerdy Schouten",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:frimpong",
+      "name": "Jeremie Frimpong",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:doku",
+      "name": "Jérémy Doku",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:joan_garcia",
+      "name": "Joan García",
+      "aliases": [
+        "Joan García Pons"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:cancelo",
+      "name": "Joao Cancelo",
+      "aliases": [
+        "Cancelo",
+        "Joao Pedro Cavaco Cancelo"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "scouts:felix",
+      "name": "Joao Felix",
+      "aliases": [
+        "Felix"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:joao_neves",
+      "name": "João Neves",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:joelinton",
+      "name": "Joelinton",
+      "aliases": [
+        "Joelinton Apolinário de Lira"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "scouts:cruyff",
+      "name": "Johan Cruyff",
+      "aliases": [
+        "Cruyff",
+        "Johan Cruijff",
+        "Hendrik Johannes Cruijff"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:mcginn",
+      "name": "John McGinn",
+      "aliases": [],
+      "nationality": "Scotland",
+      "nationalityFlag": "/img/country/scotland.png"
+    },
+    {
+      "id": "roster:stones",
+      "name": "John Stones",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:terry",
+      "name": "John Terry",
+      "aliases": [
+        "Terry",
+        "Captain, Leader, Legend",
+        "John George Terry"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:johnny_cardoso",
+      "name": "Johnny Cardoso",
+      "aliases": [
+        "João Lucas de Souza Cardoso"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "journey:jon_dahl_tomasson",
+      "name": "Jon Dahl Tomasson",
+      "aliases": [
+        "Tomasson",
+        "Jon Dahl"
+      ],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:burkardt",
+      "name": "Jonathan Burkardt",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:clauss",
+      "name": "Jonathan Clauss",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:david",
+      "name": "Jonathan David",
+      "aliases": [],
+      "nationality": "Canada",
+      "nationalityFlag": "/img/country/canada.png"
+    },
+    {
+      "id": "roster:tah",
+      "name": "Jonathan Tah",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:jordan_henderson",
+      "name": "Jordan Henderson",
+      "aliases": [
+        "Henderson",
+        "Jordan Brian Henderson"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:pickford",
+      "name": "Jordan Pickford",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:jorge_campos",
+      "name": "Jorge Campos",
+      "aliases": [
+        "Campos",
+        "El Brody",
+        "Jorge Campos Navarrete"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "journey:jorge_valdano",
+      "name": "Jorge Valdano",
+      "aliases": [
+        "Valdano",
+        "Jorge Alberto Valdano"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:jose_luis_chilavert",
+      "name": "José Luis Chilavert",
+      "aliases": [
+        "Chilavert",
+        "El Buldog"
+      ],
+      "nationality": "Paraguay",
+      "nationalityFlag": "/img/country/paraguay.png"
+    },
+    {
+      "id": "roster:gimenez",
+      "name": "José María Giménez",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:kimmich",
+      "name": "Joshua Kimmich",
+      "aliases": [
+        "Kimmich",
+        "Joshua Walter Kimmich"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:gvardiol",
+      "name": "Josko Gvardiol",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "journey:juan_cuadrado",
+      "name": "Juan Cuadrado",
+      "aliases": [
+        "Cuadrado",
+        "Juan Guillermo Cuadrado Bello"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "journey:juan_roman_riquelme",
+      "name": "Juan Román Riquelme",
+      "aliases": [
+        "Riquelme"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:juan_sebastian_veron",
+      "name": "Juan Sebastián Verón",
+      "aliases": [
+        "Veron",
+        "La Brujita"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:bellingham",
+      "name": "Jude Bellingham",
+      "aliases": [
+        "Bellingham",
+        "Jude Victor William Bellingham"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:kounde",
+      "name": "Jules Koundé",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:alvarez",
+      "name": "Julián Álvarez",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:brandt",
+      "name": "Julian Brandt",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:quinones",
+      "name": "Julian Quiñones",
+      "aliases": [],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "journey:junior",
+      "name": "Júnior",
+      "aliases": [
+        "Leovegildo Lins da Gama Junior"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:timber",
+      "name": "Jurriën Timber",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:havertz",
+      "name": "Kai Havertz",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:kaka",
+      "name": "Kaka",
+      "aliases": [],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:koulibaly",
+      "name": "Kalidou Koulibaly",
+      "aliases": [
+        "Koulibaly"
+      ],
+      "nationality": "Senegal",
+      "nationalityFlag": "/img/country/senegal.png"
+    },
+    {
+      "id": "roster:mitoma",
+      "name": "Kaoru Mitoma",
+      "aliases": [],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "roster:adeyemi",
+      "name": "Karim Adeyemi",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:benzema",
+      "name": "Karim Benzema",
+      "aliases": [
+        "Benzema",
+        "KB9",
+        "Karim Mostafa Benzema"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:kasey_keller",
+      "name": "Kasey Keller",
+      "aliases": [
+        "Keller",
+        "Kasey C. Keller"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "journey:kazuyoshi_miura",
+      "name": "Kazuyoshi Miura",
+      "aliases": [
+        "King Kazu",
+        "Miura"
+      ],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "journey:keisuke_honda",
+      "name": "Keisuke Honda",
+      "aliases": [
+        "Honda",
+        "Emperor Keisuke"
+      ],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "journey:kenny_dalglish",
+      "name": "Kenny Dalglish",
+      "aliases": [
+        "Dalglish",
+        "King Kenny",
+        "Kenneth Mathieson Dalglish"
+      ],
+      "nationality": "Scotland",
+      "nationalityFlag": "/img/country/scotland.png"
+    },
+    {
+      "id": "roster:bruyne",
+      "name": "Kevin De Bruyne",
+      "aliases": [
+        "De Bruyne",
+        "KDB"
+      ],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:trapp",
+      "name": "Kevin Trapp",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "scouts:navas",
+      "name": "Keylor Navas",
+      "aliases": [
+        "Navas",
+        "Keilor Antonio Navas Gamboa"
+      ],
+      "nationality": "Costa Rica",
+      "nationalityFlag": "/img/country/costa_rica.png"
+    },
+    {
+      "id": "roster:khephren_thuram",
+      "name": "Khéphren Thuram",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:kvaratskhelia",
+      "name": "Khvicha Kvaratskhelia",
+      "aliases": [],
+      "nationality": "Georgia",
+      "nationalityFlag": "/img/country/georgia.png"
+    },
+    {
+      "id": "roster:trippier",
+      "name": "Kieran Trippier",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:kim_min_jae",
+      "name": "Kim Min Jae",
+      "aliases": [
+        "Min-jae Kim",
+        "Min Jae Kim"
+      ],
+      "nationality": "Korea Republic",
+      "nationalityFlag": "/img/country/korea_republic.png"
+    },
+    {
+      "id": "roster:coman",
+      "name": "Kingsley Coman",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:casteels",
+      "name": "Koen Casteels",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:koke",
+      "name": "Koke",
+      "aliases": [
+        "Jorge Resurrección",
+        "Jorge Resurreccion Merodio"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:laimer",
+      "name": "Konrad Laimer",
+      "aliases": [],
+      "nationality": "Austria",
+      "nationalityFlag": "/img/country/austria.png"
+    },
+    {
+      "id": "scouts:walker",
+      "name": "Kyle Walker",
+      "aliases": [
+        "Walker",
+        "Kyle Andrew Walker"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:mbappe",
+      "name": "Kylian Mbappé",
+      "aliases": [
+        "Mbappe"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:lakhdar_belloumi",
+      "name": "Lakhdar Belloumi",
+      "aliases": [
+        "Belloumi"
+      ],
+      "nationality": "Algeria",
+      "nationalityFlag": "/img/country/algeria.png"
+    },
+    {
+      "id": "roster:yamal",
+      "name": "Lamine Yamal",
+      "aliases": [],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:landon_donovan",
+      "name": "Landon Donovan",
+      "aliases": [
+        "Donovan",
+        "Landon Timothy Donovan"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:lautaro",
+      "name": "Lautaro Martinez",
+      "aliases": [
+        "Lautaro",
+        "El Toro"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:trossard",
+      "name": "Leandro Trossard",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:goretzka",
+      "name": "Leon Goretzka",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:balerdi",
+      "name": "Leonardo Balerdi",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:leonardo_bonucci",
+      "name": "Leonardo Bonucci",
+      "aliases": [
+        "Bonucci"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:sane",
+      "name": "Leroy Sané",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:lev_yashin",
+      "name": "Lev Yashin",
+      "aliases": [
+        "Yashin",
+        "The Black Spider",
+        "Lev Ivanovich Yashin"
+      ],
+      "nationality": "Soviet Union",
+      "nationalityFlag": "/img/country/soviet_union.png"
+    },
+    {
+      "id": "roster:hall",
+      "name": "Lewis Hall",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:messi",
+      "name": "Lionel Messi",
+      "aliases": [
+        "Messi",
+        "Leo Messi",
+        "Lionel Andres Messi",
+        "La Pulga"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:lisandro_martinez",
+      "name": "Lisandro Martínez",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:openda",
+      "name": "Loïs Openda",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:pellegrini",
+      "name": "Lorenzo Pellegrini",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:lothar_matthaus",
+      "name": "Lothar Matthäus",
+      "aliases": [
+        "Matthaus",
+        "Lothar Herbert Matthaus",
+        "Lothar Matthaeus"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:chevalier",
+      "name": "Lucas Chevalier",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:digne",
+      "name": "Lucas Digne",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:lucas_hernandez",
+      "name": "Lucas Hernández",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:lucas_paqueta",
+      "name": "Lucas Paquetá",
+      "aliases": [
+        "Lucas Tolentino Coelho de Lima"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:lucas_perri",
+      "name": "Lucas Perri",
+      "aliases": [
+        "Lucas Estella Perri"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:lucas_radebe",
+      "name": "Lucas Radebe",
+      "aliases": [
+        "Radebe",
+        "The Chief",
+        "Lucas Valeriu Radebe"
+      ],
+      "nationality": "South Africa",
+      "nationalityFlag": "/img/country/south_africa.png"
+    },
+    {
+      "id": "roster:torreira",
+      "name": "Lucas Torreira",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:diaz",
+      "name": "Luis Díaz",
+      "aliases": [
+        "Diaz",
+        "Lucho Diaz",
+        "Luis Fernando Diaz Marulanda"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:suarez",
+      "name": "Luis Suarez",
+      "aliases": [
+        "Suarez",
+        "El Pistolero",
+        "Luis Alberto Suarez Diaz"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:modric",
+      "name": "Luka Modrić",
+      "aliases": [
+        "Modric"
+      ],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "roster:hradecky",
+      "name": "Lukáš Hrádecký",
+      "aliases": [],
+      "nationality": "Finland",
+      "nationalityFlag": "/img/country/finland.png"
+    },
+    {
+      "id": "roster:malcom",
+      "name": "Malcom",
+      "aliases": [
+        "Malcom Filipe Silva de Oliveira"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:tillman",
+      "name": "Malik Tillman",
+      "aliases": [],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:akanji",
+      "name": "Manuel Akanji",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "roster:locatelli",
+      "name": "Manuel Locatelli",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:neuer",
+      "name": "Manuel Neuer",
+      "aliases": [
+        "Neuer",
+        "Manuel Peter Neuer"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:marc_cucurella",
+      "name": "Marc Cucurella",
+      "aliases": [
+        "Marc Cucurella Saseta"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:guehi",
+      "name": "Marc Guéhi",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:marc_overmars",
+      "name": "Marc Overmars",
+      "aliases": [
+        "Overmars",
+        "The Roadrunner"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:ter_stegen",
+      "name": "Marc-André ter Stegen",
+      "aliases": [
+        "Marc ter Stegen",
+        "Ter Stegen"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:sabitzer",
+      "name": "Marcel Sabitzer",
+      "aliases": [],
+      "nationality": "Austria",
+      "nationalityFlag": "/img/country/austria.png"
+    },
+    {
+      "id": "roster:marcelo",
+      "name": "Marcelo",
+      "aliases": [
+        "Marcelo Vieira",
+        "Marcelo Vieira da Silva Junior"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:brozovic",
+      "name": "Marcelo Brozović",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "journey:marcelo_salas",
+      "name": "Marcelo Salas",
+      "aliases": [
+        "Salas",
+        "El Matador",
+        "Jose Marcelo Salas Melinao"
+      ],
+      "nationality": "Chile",
+      "nationalityFlag": "/img/country/chile.png"
+    },
+    {
+      "id": "roster:carnesecchi",
+      "name": "Marco Carnesecchi",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "scouts:reus",
+      "name": "Marco Reus",
+      "aliases": [
+        "Reus"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:marco_van_basten",
+      "name": "Marco van Basten",
+      "aliases": [
+        "Van Basten",
+        "Marcel van Basten"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:marcos_llorente",
+      "name": "Marcos Llorente",
+      "aliases": [
+        "Marcos Llorente Moreno"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:rashford",
+      "name": "Marcus Rashford",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:thuram",
+      "name": "Marcus Thuram",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:marek_hamsik",
+      "name": "Marek Hamšík",
+      "aliases": [
+        "Hamsik",
+        "Marekiaro"
+      ],
+      "nationality": "Slovakia",
+      "nationalityFlag": "/img/country/slovakia.png"
+    },
+    {
+      "id": "journey:mario_balotelli",
+      "name": "Mario Balotelli",
+      "aliases": [
+        "Balotelli",
+        "Super Mario",
+        "Mario Balotelli Barwuah"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:goetze",
+      "name": "Mario Götze",
+      "aliases": [
+        "Gotze",
+        "Goetze",
+        "Mario Goetze"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:mario_hermoso",
+      "name": "Mario Hermoso",
+      "aliases": [
+        "Mario Hermoso Canseco"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:mario_kempes",
+      "name": "Mario Kempes",
+      "aliases": [
+        "Kempes",
+        "El Matador",
+        "Mario Alberto Kempes"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:pasalic",
+      "name": "Mario Pašalić",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "journey:mario_yepes",
+      "name": "Mario Yepes",
+      "aliases": [
+        "Yepes",
+        "Super Mario",
+        "Mario Alberto Yepes Diaz"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:marquinhos",
+      "name": "Marquinhos",
+      "aliases": [
+        "Marcos Aoás Corrêa"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:de_roon",
+      "name": "Marten de Roon",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:odegaard",
+      "name": "Martin Odegaard",
+      "aliases": [],
+      "nationality": "Norway",
+      "nationalityFlag": "/img/country/norway.png"
+    },
+    {
+      "id": "journey:martin_odegaard",
+      "name": "Martin Ødegaard",
+      "aliases": [
+        "Odegaard",
+        "Martin Odegaard"
+      ],
+      "nationality": "Norway",
+      "nationalityFlag": "/img/country/norway.png"
+    },
+    {
+      "id": "roster:greenwood",
+      "name": "Mason Greenwood",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:kovacic",
+      "name": "Mateo Kovačić",
+      "aliases": [],
+      "nationality": "Croatia",
+      "nationalityFlag": "/img/country/croatia.png"
+    },
+    {
+      "id": "roster:retegui",
+      "name": "Mateo Retegui",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:matheus_cunha",
+      "name": "Matheus Cunha",
+      "aliases": [
+        "Matheus Santos Carneiro da Cunha"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:mats_hummels",
+      "name": "Mats Hummels",
+      "aliases": [
+        "Hummels",
+        "Mats Julian Hummels"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:matt_le_tissier",
+      "name": "Matt Le Tissier",
+      "aliases": [
+        "Le Tissier",
+        "Le God",
+        "Matthew Le Tissier"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:darmian",
+      "name": "Matteo Darmian",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:guendouzi",
+      "name": "Mattéo Guendouzi",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:politano",
+      "name": "Matteo Politano",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:ginter",
+      "name": "Matthias Ginter",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:de_ligt",
+      "name": "Matthijs de Ligt",
+      "aliases": [
+        "De Ligt",
+        "Matthijs"
+      ],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:zaccagni",
+      "name": "Mattia Zaccagni",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:sels",
+      "name": "Matz Sels",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:arambarri",
+      "name": "Mauro Arambarri",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:icardi",
+      "name": "Mauro Icardi",
+      "aliases": [
+        "Icardi",
+        "Mauro Emanuel Icardi"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:de_cuyper",
+      "name": "Maxim De Cuyper",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:beier",
+      "name": "Maximilian Beier",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:mittelstaedt",
+      "name": "Maximilian Mittelstädt",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:mehdi_mahdavikia",
+      "name": "Mehdi Mahdavikia",
+      "aliases": [
+        "The Rocket",
+        "Mahdavikia"
+      ],
+      "nationality": "Iran",
+      "nationalityFlag": "/img/country/iran.png"
+    },
+    {
+      "id": "journey:memphis_depay",
+      "name": "Memphis Depay",
+      "aliases": [
+        "Memphis"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:mesut_ozil",
+      "name": "Mesut Özil",
+      "aliases": [
+        "Ozil",
+        "Mesut Oezil"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:michael_bradley",
+      "name": "Michael Bradley",
+      "aliases": [
+        "Bradley",
+        "Michael Sheehan Bradley"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "journey:michael_essien",
+      "name": "Michael Essien",
+      "aliases": [
+        "Essien",
+        "The Bison",
+        "Michael Kojo Essien"
+      ],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "journey:michael_laudrup",
+      "name": "Michael Laudrup",
+      "aliases": [
+        "Laudrup",
+        "Michael"
+      ],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:olise",
+      "name": "Michael Olise",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:michel_platini",
+      "name": "Michel Platini",
+      "aliases": [
+        "Platini",
+        "Le Roi",
+        "Michel Francois Platini"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:di_gregorio",
+      "name": "Michele Di Gregorio",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:van_de_ven",
+      "name": "Micky van de Ven",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:miguel_gutierrez",
+      "name": "Miguel Gutiérrez",
+      "aliases": [
+        "Miguel Gutiérrez Ortega"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:maignan",
+      "name": "Mike Maignan",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:mikel_merino",
+      "name": "Mikel Merino",
+      "aliases": [
+        "Mikel Merino Zazón"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:damsgaard",
+      "name": "Mikkel Damsgaard",
+      "aliases": [],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "journey:milan_baros",
+      "name": "Milan Baroš",
+      "aliases": [
+        "Baros"
+      ],
+      "nationality": "Czech Republic",
+      "nationalityFlag": "/img/country/czech_republic.png"
+    },
+    {
+      "id": "roster:skriniar",
+      "name": "Milan Škriniar",
+      "aliases": [],
+      "nationality": "Slovakia",
+      "nationalityFlag": "/img/country/slovakia.png"
+    },
+    {
+      "id": "roster:svilar",
+      "name": "Mile Svilar",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "roster:kerkez",
+      "name": "Milos Kerkez",
+      "aliases": [],
+      "nationality": "Hungary",
+      "nationalityFlag": "/img/country/hungary.png"
+    },
+    {
+      "id": "roster:mingueza",
+      "name": "Mingueza",
+      "aliases": [
+        "Óscar Mingueza",
+        "Óscar Mingueza García"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:amoura",
+      "name": "Mohamed Amoura",
+      "aliases": [],
+      "nationality": "Algeria",
+      "nationalityFlag": "/img/country/algeria.png"
+    },
+    {
+      "id": "roster:salah",
+      "name": "Mohamed Salah",
+      "aliases": [
+        "Salah",
+        "Mo Salah",
+        "The Egyptian King"
+      ],
+      "nationality": "Egypt",
+      "nationalityFlag": "/img/country/egypt.png"
+    },
+    {
+      "id": "roster:simakan",
+      "name": "Mohamed Simakan",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:kudus",
+      "name": "Mohammed Kudus",
+      "aliases": [],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "roster:kean",
+      "name": "Moise Kean",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:caicedo",
+      "name": "Moisés Caicedo",
+      "aliases": [],
+      "nationality": "Ecuador",
+      "nationalityFlag": "/img/country/ecuador.png"
+    },
+    {
+      "id": "roster:morata",
+      "name": "Morata",
+      "aliases": [
+        "Álvaro Morata",
+        "Álvaro Borja Morata Martín"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:gibbs_white",
+      "name": "Morgan Gibbs-White",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:rogers",
+      "name": "Morgan Rogers",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:hjulmand",
+      "name": "Morten Hjulmand",
+      "aliases": [],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:diaby",
+      "name": "Moussa Diaby",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:murillo",
+      "name": "Murillo",
+      "aliases": [
+        "Murillo Costa dos Santos"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:mustapha_hadji",
+      "name": "Mustapha Hadji",
+      "aliases": [
+        "Hadji"
+      ],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:kante",
+      "name": "N'Golo Kante",
+      "aliases": [
+        "Kante"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:nacho_fernandez",
+      "name": "Nacho Fernández",
+      "aliases": [
+        "José Ignacio Fernández Iglesias"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:amiri",
+      "name": "Nadiem Amiri",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:ake",
+      "name": "Nathan Aké",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:aguerd",
+      "name": "Nayef Aguerd",
+      "aliases": [],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:vidic",
+      "name": "Nemanja Vidic",
+      "aliases": [
+        "Vidic"
+      ],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "journey:neymar",
+      "name": "Neymar",
+      "aliases": [
+        "Neymar Jr",
+        "Ney",
+        "Neymar da Silva Santos Junior"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:neymar",
+      "name": "Neymar Jr",
+      "aliases": [
+        "Neymar"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:pope",
+      "name": "Nick Pope",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:schlotterbeck",
+      "name": "Nico Schlotterbeck",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:nico_williams",
+      "name": "Nico Williams",
+      "aliases": [
+        "Nicholas Williams Arthuer"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:jackson",
+      "name": "Nicolas Jackson",
+      "aliases": [],
+      "nationality": "Senegal",
+      "nationalityFlag": "/img/country/senegal.png"
+    },
+    {
+      "id": "roster:otamendi",
+      "name": "Nicolás Otamendi",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:nicolas_pepe",
+      "name": "Nicolas Pépé",
+      "aliases": [],
+      "nationality": "Côte d'Ivoire",
+      "nationalityFlag": "/img/country/cote_d_ivoire.png"
+    },
+    {
+      "id": "roster:barella",
+      "name": "Nicolo Barella",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:suele",
+      "name": "Niklas Süle",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:milenkovic",
+      "name": "Nikola Milenković",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "journey:nilton_santos",
+      "name": "Nílton Santos",
+      "aliases": [
+        "Nilton dos Santos",
+        "The Encyclopedia"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:lang",
+      "name": "Noa Lang",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:nolberto_solano",
+      "name": "Nolberto Solano",
+      "aliases": [
+        "Solano",
+        "Nobby",
+        "Nolberto Albino Solano Todco"
+      ],
+      "nationality": "Peru",
+      "nationalityFlag": "/img/country/peru.png"
+    },
+    {
+      "id": "roster:madueke",
+      "name": "Noni Madueke",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:noureddine_naybet",
+      "name": "Noureddine Naybet",
+      "aliases": [
+        "Naybet"
+      ],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:mazraoui",
+      "name": "Noussair Mazraoui",
+      "aliases": [],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:nuno_mendes",
+      "name": "Nuno Mendes",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "journey:nwankwo_kanu",
+      "name": "Nwankwo Kanu",
+      "aliases": [
+        "Kanu",
+        "Papilo",
+        "Nwankwo Christian Kanu"
+      ],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:aina",
+      "name": "Ola Aina",
+      "aliases": [],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:baumann",
+      "name": "Oliver Baumann",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:watkins",
+      "name": "Ollie Watkins",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:marmoush",
+      "name": "Omar Marmoush",
+      "aliases": [],
+      "nationality": "Egypt",
+      "nationalityFlag": "/img/country/egypt.png"
+    },
+    {
+      "id": "roster:koekcue",
+      "name": "Orkun Kökçü",
+      "aliases": [],
+      "nationality": "Turkey",
+      "nationalityFlag": "/img/country/turkey.png"
+    },
+    {
+      "id": "roster:otavio",
+      "name": "Otávio",
+      "aliases": [
+        "Otávio Edmilson da Silva Monteiro"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:dembele",
+      "name": "Ousmane Dembélé",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:owen_hargreaves",
+      "name": "Owen Hargreaves",
+      "aliases": [
+        "Hargreaves"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:oyarzabal",
+      "name": "Oyarzabal",
+      "aliases": [
+        "Mikel Oyarzabal",
+        "Mikel Oyarzabal Ugarte"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:pablo_aimar",
+      "name": "Pablo Aimar",
+      "aliases": [
+        "Aimar",
+        "El Payaso",
+        "Pablo Cesar Aimar Giordano"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:pablo_barrios",
+      "name": "Pablo Barrios",
+      "aliases": [
+        "Pablo Barrios Rivas"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:palhinha",
+      "name": "Palhinha",
+      "aliases": [
+        "João Palhinha",
+        "João Maria Palhinha Gonçalves"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "journey:paolo_guerrero",
+      "name": "Paolo Guerrero",
+      "aliases": [
+        "Guerrero",
+        "El Depredador",
+        "Jose Paolo Guerrero Gonzales"
+      ],
+      "nationality": "Peru",
+      "nationalityFlag": "/img/country/peru.png"
+    },
+    {
+      "id": "roster:maldini",
+      "name": "Paolo Maldini",
+      "aliases": [
+        "Maldini",
+        "Il Capitano",
+        "Paolo Cesare Maldini"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:paolo_montero",
+      "name": "Paolo Montero",
+      "aliases": [
+        "Montero",
+        "Ronald Paolo Montero Iglesias"
+      ],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:parejo",
+      "name": "Parejo",
+      "aliases": [
+        "Dani Parejo",
+        "Daniel Parejo Muñoz"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:park_ji_sung",
+      "name": "Park Ji-sung",
+      "aliases": [
+        "Three Lungs Park"
+      ],
+      "nationality": "South Korea",
+      "nationalityFlag": "/img/country/south_korea.png"
+    },
+    {
+      "id": "roster:gross",
+      "name": "Pascal Groß",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:patrick_kluivert",
+      "name": "Patrick Kluivert",
+      "aliases": [
+        "Kluivert",
+        "Patrick Stephan Kluivert"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:schick",
+      "name": "Patrik Schick",
+      "aliases": [],
+      "nationality": "Czech Republic",
+      "nationalityFlag": "/img/country/czech_republic.png"
+    },
+    {
+      "id": "roster:pau_cubarsi",
+      "name": "Pau Cubarsí",
+      "aliases": [
+        "Pau Cubarsí Paredes"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "scouts:pogba",
+      "name": "Paul Pogba",
+      "aliases": [
+        "Pogba",
+        "Paul Labile Pogba"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:scholes",
+      "name": "Paul Scholes",
+      "aliases": [
+        "Scholes",
+        "The Ginger Prince"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:dybala",
+      "name": "Paulo Dybala",
+      "aliases": [
+        "Dybala",
+        "La Joya"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "journey:falcao",
+      "name": "Paulo Roberto Falcão",
+      "aliases": [
+        "Falcao",
+        "Eighth King of Rome"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:pavel_nedved",
+      "name": "Pavel Nedvěd",
+      "aliases": [
+        "Nedved",
+        "The Czech Cannon"
+      ],
+      "nationality": "Czech Republic",
+      "nationalityFlag": "/img/country/czech_republic.png"
+    },
+    {
+      "id": "roster:pedri",
+      "name": "Pedri",
+      "aliases": [],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:pedro_goncalves",
+      "name": "Pedro Gonçalves",
+      "aliases": [
+        "Pedro António Pereira Gonçalves"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:pedro_neto",
+      "name": "Pedro Neto",
+      "aliases": [
+        "Pedro Lomba Neto"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:pedro_porro",
+      "name": "Pedro Porro",
+      "aliases": [
+        "Pedro Antonio Porro Sauceda"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "scouts:pele",
+      "name": "Pele",
+      "aliases": [
+        "Edson Arantes do Nascimento",
+        "O Rei"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:pepe",
+      "name": "Pepe",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:gulacsi",
+      "name": "Péter Gulácsi",
+      "aliases": [],
+      "nationality": "Hungary",
+      "nationalityFlag": "/img/country/hungary.png"
+    },
+    {
+      "id": "scouts:schmeichel",
+      "name": "Peter Schmeichel",
+      "aliases": [
+        "Schmeichel",
+        "The Great Dane",
+        "Peter Boleslaw Schmeichel"
+      ],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:cech",
+      "name": "Petr Cech",
+      "aliases": [
+        "Cech",
+        "Big Pete"
+      ],
+      "nationality": "Czech Republic",
+      "nationalityFlag": "/img/country/czech_republic.png"
+    },
+    {
+      "id": "roster:foden",
+      "name": "Phil Foden",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:philipp_lahm",
+      "name": "Philipp Lahm",
+      "aliases": [
+        "Lahm",
+        "The Magic Dwarf"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:phillip_cocu",
+      "name": "Phillip Cocu",
+      "aliases": [
+        "Cocu",
+        "Phillip John-William Cocu"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:hincapie",
+      "name": "Piero Hincapié",
+      "aliases": [],
+      "nationality": "Ecuador",
+      "nationalityFlag": "/img/country/ecuador.png"
+    },
+    {
+      "id": "roster:kalulu",
+      "name": "Pierre Kalulu",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:aubameyang",
+      "name": "Pierre-Emerick Aubameyang",
+      "aliases": [
+        "Aubameyang",
+        "Auba"
+      ],
+      "nationality": "Gabon",
+      "nationalityFlag": "/img/country/gabon.png"
+    },
+    {
+      "id": "roster:hojbjerg",
+      "name": "Pierre-Emile Højbjerg",
+      "aliases": [],
+      "nationality": "Denmark",
+      "nationalityFlag": "/img/country/denmark.png"
+    },
+    {
+      "id": "roster:zielinski",
+      "name": "Piotr Zieliński",
+      "aliases": [],
+      "nationality": "Poland",
+      "nationalityFlag": "/img/country/poland.png"
+    },
+    {
+      "id": "roster:rajkovic",
+      "name": "Predrag Rajković",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "roster:quinten_timber",
+      "name": "Quinten Timber",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:rabah_madjer",
+      "name": "Rabah Madjer",
+      "aliases": [
+        "Madjer",
+        "Mustapha Madjer"
+      ],
+      "nationality": "Algeria",
+      "nationalityFlag": "/img/country/algeria.png"
+    },
+    {
+      "id": "journey:radamel_falcao",
+      "name": "Radamel Falcao",
+      "aliases": [
+        "Falcao",
+        "El Tigre",
+        "Radamel Falcao Garcia Zarate"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:rafa",
+      "name": "Rafa",
+      "aliases": [
+        "Rafa Silva",
+        "Rafael A. Ferreira Silva"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:leao",
+      "name": "Rafael Leão",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "journey:rafael_marquez",
+      "name": "Rafael Márquez",
+      "aliases": [
+        "Marquez",
+        "El Kaiser de Michoacan",
+        "Rafael Marquez Alvarez"
+      ],
+      "nationality": "Mexico",
+      "nationalityFlag": "/img/country/mexico.png"
+    },
+    {
+      "id": "journey:rafael_van_der_vaart",
+      "name": "Rafael van der Vaart",
+      "aliases": [
+        "Van der Vaart",
+        "Rafa",
+        "Rafael Ferdinand van der Vaart"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:raheem_sterling",
+      "name": "Raheem Sterling",
+      "aliases": [
+        "Sterling",
+        "Raheem Shaquille Sterling"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:raillo",
+      "name": "Raíllo",
+      "aliases": [
+        "Antonio Raíllo",
+        "Antonio José Raíllo Arenas"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:kolo_muani",
+      "name": "Randal Kolo Muani",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:guerreiro",
+      "name": "Raphaël Guerreiro",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:raphinha",
+      "name": "Raphinha",
+      "aliases": [],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:ait_nouri",
+      "name": "Rayan Aït-Nouri",
+      "aliases": [],
+      "nationality": "Algeria",
+      "nationalityFlag": "/img/country/algeria.png"
+    },
+    {
+      "id": "roster:cherki",
+      "name": "Rayan Cherki",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:james",
+      "name": "Reece James",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:freuler",
+      "name": "Remo Freuler",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "journey:rene_higuita",
+      "name": "René Higuita",
+      "aliases": [
+        "Higuita",
+        "El Loco",
+        "Jose Rene Higuita Zapata"
+      ],
+      "nationality": "Colombia",
+      "nationalityFlag": "/img/country/colombia.png"
+    },
+    {
+      "id": "roster:ricardo_horta",
+      "name": "Ricardo Horta",
+      "aliases": [
+        "Ricardo Jorge da Luz Horta"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:orsolini",
+      "name": "Riccardo Orsolini",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "journey:rigobert_song",
+      "name": "Rigobert Song",
+      "aliases": [
+        "Song",
+        "Magnan",
+        "Rigobert Song Bahanag"
+      ],
+      "nationality": "Cameroon",
+      "nationalityFlag": "/img/country/cameroon.png"
+    },
+    {
+      "id": "roster:ferdinand",
+      "name": "Rio Ferdinand",
+      "aliases": [
+        "Ferdinand",
+        "Rio Gavin Ferdinand"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:doan",
+      "name": "Ritsu Doan",
+      "aliases": [],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "journey:rivaldo",
+      "name": "Rivaldo",
+      "aliases": [
+        "Rivaldo Vitor Borba Ferreira"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:rivellino",
+      "name": "Rivellino",
+      "aliases": [
+        "Roberto Rivellino",
+        "Atomic Kick"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:mahrez",
+      "name": "Riyad Mahrez",
+      "aliases": [
+        "Mahrez",
+        "Riyad Karim Mahrez"
+      ],
+      "nationality": "Algeria",
+      "nationalityFlag": "/img/country/algeria.png"
+    },
+    {
+      "id": "roster:andrich",
+      "name": "Robert Andrich",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:lewandowski",
+      "name": "Robert Lewandowski",
+      "aliases": [
+        "Lewandowski",
+        "Lewy",
+        "Lewa"
+      ],
+      "nationality": "Poland",
+      "nationalityFlag": "/img/country/poland.png"
+    },
+    {
+      "id": "journey:roberto_baggio",
+      "name": "Roberto Baggio",
+      "aliases": [
+        "Baggio",
+        "Il Divin Codino"
+      ],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:roberto_carlos",
+      "name": "Roberto Carlos",
+      "aliases": [
+        "Roberto Carlos da Silva Rocha",
+        "El Hombre Bala"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "scouts:firmino",
+      "name": "Roberto Firmino",
+      "aliases": [
+        "Firmino",
+        "Bobby Firmino"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:gosens",
+      "name": "Robin Gosens",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:koch",
+      "name": "Robin Koch",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:le_normand",
+      "name": "Robin Le Normand",
+      "aliases": [],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "journey:robin_van_persie",
+      "name": "Robin van Persie",
+      "aliases": [
+        "Van Persie",
+        "RVP"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:rodri",
+      "name": "Rodri",
+      "aliases": [
+        "Rodrigo",
+        "Rodrigo Hernandez Cascante",
+        "Rodrigo Hernandez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:bentancur",
+      "name": "Rodrigo Bentancur",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "roster:de_paul",
+      "name": "Rodrigo De Paul",
+      "aliases": [],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:rodrygo",
+      "name": "Rodrygo",
+      "aliases": [],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:romario",
+      "name": "Romário",
+      "aliases": [
+        "O Baixinho",
+        "Romario de Souza Faria"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:lukaku",
+      "name": "Romelu Lukaku",
+      "aliases": [
+        "Lukaku",
+        "Big Rom"
+      ],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:araujo",
+      "name": "Ronald Araujo",
+      "aliases": [],
+      "nationality": "Uruguay",
+      "nationalityFlag": "/img/country/uruguay.png"
+    },
+    {
+      "id": "journey:ronald_de_boer",
+      "name": "Ronald de Boer",
+      "aliases": [
+        "Ronaldus de Boer"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:ronaldinho",
+      "name": "Ronaldinho",
+      "aliases": [
+        "Ronaldinho Gaucho",
+        "Ronaldo de Assis Moreira",
+        "Dinho"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "scouts:fenomeno",
+      "name": "Ronaldo Nazario",
+      "aliases": [
+        "Ronaldo",
+        "R9",
+        "O Fenomeno",
+        "Ronaldo Luis Nazario de Lima"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:roque_santa_cruz",
+      "name": "Roque Santa Cruz",
+      "aliases": [
+        "Santa Cruz",
+        "Roque Luis Santa Cruz Cantero"
+      ],
+      "nationality": "Paraguay",
+      "nationalityFlag": "/img/country/paraguay.png"
+    },
+    {
+      "id": "roster:ruben_dias",
+      "name": "Ruben Dias",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:loftus_cheek",
+      "name": "Ruben Loftus-Cheek",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:ruben_neves",
+      "name": "Rúben Neves",
+      "aliases": [
+        "Rúben Diogo da Silva Neves"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:rui_silva",
+      "name": "Rui Silva",
+      "aliases": [
+        "Rui Tiago Dantas da Silva"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:ruiz_de_galarreta",
+      "name": "Ruiz de Galarreta",
+      "aliases": [
+        "Iñigo Ruiz de Galarreta"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:ruud_gullit",
+      "name": "Ruud Gullit",
+      "aliases": [
+        "Gullit",
+        "Rudi Dil Gullit"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:ruud_van_nistelrooy",
+      "name": "Ruud van Nistelrooy",
+      "aliases": [
+        "Van Nistelrooy",
+        "Van Nistelrooij",
+        "Rutgerus Johannes Martinus van Nistelrooy"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:ryan_giggs",
+      "name": "Ryan Giggs",
+      "aliases": [
+        "Giggs",
+        "Ryan Joseph Giggs"
+      ],
+      "nationality": "Wales",
+      "nationalityFlag": "/img/country/wales.png"
+    },
+    {
+      "id": "roster:gravenberch",
+      "name": "Ryan Gravenberch",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:mane",
+      "name": "Sadio Mane",
+      "aliases": [
+        "Mane"
+      ],
+      "nationality": "Senegal",
+      "nationalityFlag": "/img/country/senegal.png"
+    },
+    {
+      "id": "roster:etoo",
+      "name": "Samuel Eto'o",
+      "aliases": [
+        "Eto'o",
+        "Samuel Eto'o Fils"
+      ],
+      "nationality": "Cameroon",
+      "nationalityFlag": "/img/country/cameroon.png"
+    },
+    {
+      "id": "roster:sancet",
+      "name": "Sancet",
+      "aliases": [
+        "Oihan Sancet",
+        "Oihan Sancet Tirapu"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:tonali",
+      "name": "Sandro Tonali",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:savinho",
+      "name": "Savinho",
+      "aliases": [
+        "Sávio",
+        "Sávio Moreira de Oliveira"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:mctominay",
+      "name": "Scott McTominay",
+      "aliases": [],
+      "nationality": "Scotland",
+      "nationalityFlag": "/img/country/scotland.png"
+    },
+    {
+      "id": "journey:sepp_maier",
+      "name": "Sepp Maier",
+      "aliases": [
+        "Maier",
+        "Josef Dieter Maier",
+        "Die Katze von Anzing"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:gnabry",
+      "name": "Serge Gnabry",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:milinkovic_savic",
+      "name": "Sergej Milinković-Savić",
+      "aliases": [],
+      "nationality": "Serbia",
+      "nationalityFlag": "/img/country/serbia.png"
+    },
+    {
+      "id": "roster:sergi_darder",
+      "name": "Sergi Darder",
+      "aliases": [
+        "Sergi Darder Moll"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:aguero",
+      "name": "Sergio Aguero",
+      "aliases": [
+        "Aguero",
+        "Kun Aguero",
+        "Sergio Leonel Aguero del Castillo"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "scouts:busquets",
+      "name": "Sergio Busquets",
+      "aliases": [
+        "Busquets",
+        "Sergio Busquets Burgos"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "scouts:ramos",
+      "name": "Sergio Ramos",
+      "aliases": [
+        "Ramos",
+        "Sergio Ramos García"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:guirassy",
+      "name": "Serhou Guirassy",
+      "aliases": [],
+      "nationality": "Guinea",
+      "nationalityFlag": "/img/country/guinea.png"
+    },
+    {
+      "id": "journey:seydou_keita",
+      "name": "Seydou Keita",
+      "aliases": [
+        "Keita"
+      ],
+      "nationality": "Mali",
+      "nationalityFlag": "/img/country/mali.png"
+    },
+    {
+      "id": "journey:shaka_hislop",
+      "name": "Shaka Hislop",
+      "aliases": [
+        "Hislop",
+        "Neil Shaka Hislop"
+      ],
+      "nationality": "Trinidad and Tobago",
+      "nationalityFlag": "/img/country/trinidad_and_tobago.png"
+    },
+    {
+      "id": "journey:shinji_kagawa",
+      "name": "Shinji Kagawa",
+      "aliases": [
+        "Kagawa"
+      ],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "journey:shunsuke_nakamura",
+      "name": "Shunsuke Nakamura",
+      "aliases": [
+        "Nakamura"
+      ],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "roster:banza",
+      "name": "Simon Banza",
+      "aliases": [],
+      "nationality": "Congo DR",
+      "nationalityFlag": "/img/country/congo_dr.png"
+    },
+    {
+      "id": "journey:socrates",
+      "name": "Sócrates",
+      "aliases": [
+        "Dr. Socrates"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "journey:son_heung_min",
+      "name": "Son Heung-min",
+      "aliases": [
+        "Son",
+        "Sonny"
+      ],
+      "nationality": "South Korea",
+      "nationalityFlag": "/img/country/south_korea.png"
+    },
+    {
+      "id": "roster:lobotka",
+      "name": "Stanislav Lobotka",
+      "aliases": [],
+      "nationality": "Slovakia",
+      "nationalityFlag": "/img/country/slovakia.png"
+    },
+    {
+      "id": "roster:de_vrij",
+      "name": "Stefan de Vrij",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:posch",
+      "name": "Stefan Posch",
+      "aliases": [],
+      "nationality": "Austria",
+      "nationalityFlag": "/img/country/austria.png"
+    },
+    {
+      "id": "roster:bergwijn",
+      "name": "Steven Bergwijn",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:gerrard",
+      "name": "Steven Gerrard",
+      "aliases": [
+        "Gerrard",
+        "Stevie G",
+        "Steven George Gerrard"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:steven_pienaar",
+      "name": "Steven Pienaar",
+      "aliases": [
+        "Pienaar",
+        "Schillo",
+        "Steven Jerome Pienaar"
+      ],
+      "nationality": "South Africa",
+      "nationalityFlag": "/img/country/south_africa.png"
+    },
+    {
+      "id": "journey:sulley_muntari",
+      "name": "Sulley Muntari",
+      "aliases": [
+        "Muntari",
+        "Suleyman Ali Muntari"
+      ],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "roster:botman",
+      "name": "Sven Botman",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:kubo",
+      "name": "Takefusa Kubo",
+      "aliases": [],
+      "nationality": "Japan",
+      "nationalityFlag": "/img/country/japan.png"
+    },
+    {
+      "id": "journey:teofilo_cubillas",
+      "name": "Teófilo Cubillas",
+      "aliases": [
+        "Cubillas",
+        "El Nene",
+        "Teofilo Juan Cubillas Arizaga"
+      ],
+      "nationality": "Peru",
+      "nationalityFlag": "/img/country/peru.png"
+    },
+    {
+      "id": "roster:koopmeiners",
+      "name": "Teun Koopmeiners",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:hernandez",
+      "name": "Theo Hernández",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "scouts:thiago_silva",
+      "name": "Thiago Silva",
+      "aliases": [
+        "Silva",
+        "O Monstro",
+        "Thiago Emiliano da Silva"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:courtois",
+      "name": "Thibaut Courtois",
+      "aliases": [
+        "Courtois",
+        "Thibaut Nicolas Marc Courtois"
+      ],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:henry",
+      "name": "Thierry Henry",
+      "aliases": [
+        "Henry",
+        "King Henry",
+        "Thierry Daniel Henry"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "scouts:muller",
+      "name": "Thomas Muller",
+      "aliases": [
+        "Muller",
+        "Thomas Mueller"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:partey",
+      "name": "Thomas Partey",
+      "aliases": [
+        "Partey",
+        "Thomas Teye Partey"
+      ],
+      "nationality": "Ghana",
+      "nationalityFlag": "/img/country/ghana.png"
+    },
+    {
+      "id": "roster:reijnders",
+      "name": "Tijjani Reijnders",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "journey:tim_howard",
+      "name": "Tim Howard",
+      "aliases": [
+        "Howard",
+        "Timothy Matthew Howard"
+      ],
+      "nationality": "United States",
+      "nationalityFlag": "/img/country/united_states.png"
+    },
+    {
+      "id": "roster:kleindienst",
+      "name": "Tim Kleindienst",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "roster:livramento",
+      "name": "Tino Livramento",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:tomas_rosicky",
+      "name": "Tomáš Rosický",
+      "aliases": [
+        "Rosicky",
+        "The Little Mozart"
+      ],
+      "nationality": "Czech Republic",
+      "nationalityFlag": "/img/country/czech_republic.png"
+    },
+    {
+      "id": "roster:kroos",
+      "name": "Toni Kroos",
+      "aliases": [
+        "Kroos"
+      ],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:tony_adams",
+      "name": "Tony Adams",
+      "aliases": [
+        "Adams",
+        "Mr. Arsenal",
+        "Tony Alexander Adams"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "journey:tostao",
+      "name": "Tostão",
+      "aliases": [
+        "Eduardo Goncalves de Andrade"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:trent",
+      "name": "Trent Alexander-Arnold",
+      "aliases": [
+        "Alexander-Arnold",
+        "TAA",
+        "Trent John Alexander-Arnold"
+      ],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:trincao",
+      "name": "Trincão",
+      "aliases": [
+        "Francisco Trincão"
+      ],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "journey:ubaldo_fillol",
+      "name": "Ubaldo Fillol",
+      "aliases": [
+        "Fillol",
+        "El Pato",
+        "Ubaldo Matildo Fillol"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:cakr",
+      "name": "Uğurcan Çakır",
+      "aliases": [],
+      "nationality": "Turkey",
+      "nationalityFlag": "/img/country/turkey.png"
+    },
+    {
+      "id": "roster:unai_simon",
+      "name": "Unai Simón",
+      "aliases": [
+        "Unai Simón Mendibil"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:castellanos",
+      "name": "Valentin Castellanos",
+      "aliases": [
+        "Taty Castellanos"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:pavlidis",
+      "name": "Vangelis Pavlidis",
+      "aliases": [],
+      "nationality": "Greece",
+      "nationalityFlag": "/img/country/greece.png"
+    },
+    {
+      "id": "roster:boniface",
+      "name": "Victor Boniface",
+      "aliases": [],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:osimhen",
+      "name": "Victor Osimhen",
+      "aliases": [
+        "Osimhen",
+        "Victor James Osimhen"
+      ],
+      "nationality": "Nigeria",
+      "nationalityFlag": "/img/country/nigeria.png"
+    },
+    {
+      "id": "roster:gyokeres",
+      "name": "Viktor Gyökeres",
+      "aliases": [],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "journey:vincent_kompany",
+      "name": "Vincent Kompany",
+      "aliases": [
+        "Kompany",
+        "Vincent Jean Mpoy Kompany"
+      ],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:vinicius",
+      "name": "Vinícius Júnior",
+      "aliases": [
+        "Vini Jr."
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:van_dijk",
+      "name": "Virgil van Dijk",
+      "aliases": [
+        "Van Dijk",
+        "VVD"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:vitinha",
+      "name": "Vitinha",
+      "aliases": [],
+      "nationality": "Portugal",
+      "nationalityFlag": "/img/country/portugal.png"
+    },
+    {
+      "id": "roster:vivian",
+      "name": "Vivian",
+      "aliases": [
+        "Dani Vivian",
+        "Daniel Vivian Moreno"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:anton",
+      "name": "Waldemar Anton",
+      "aliases": [],
+      "nationality": "Germany",
+      "nationalityFlag": "/img/country/germany.png"
+    },
+    {
+      "id": "journey:walter_samuel",
+      "name": "Walter Samuel",
+      "aliases": [
+        "Samuel",
+        "Il Muro",
+        "Walter Adrian Lujan Samuel"
+      ],
+      "nationality": "Argentina",
+      "nationalityFlag": "/img/country/argentina.png"
+    },
+    {
+      "id": "roster:zaire_emery",
+      "name": "Warren Zaïre-Emery",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:rooney",
+      "name": "Wayne Rooney",
+      "aliases": [],
+      "nationality": "England",
+      "nationalityFlag": "/img/country/england.png"
+    },
+    {
+      "id": "roster:wesley_sneijder",
+      "name": "Wesley Sneijder",
+      "aliases": [
+        "Sneijder"
+      ],
+      "nationality": "Netherlands",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:singo",
+      "name": "Wilfried Singo",
+      "aliases": [],
+      "nationality": "Côte d'Ivoire",
+      "nationalityFlag": "/img/country/cote_d_ivoire.png"
+    },
+    {
+      "id": "roster:orban",
+      "name": "Willi Orban",
+      "aliases": [],
+      "nationality": "Hungary",
+      "nationalityFlag": "/img/country/hungary.png"
+    },
+    {
+      "id": "roster:saliba",
+      "name": "William Saliba",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:pacho",
+      "name": "Willian Pacho",
+      "aliases": [],
+      "nationality": "Ecuador",
+      "nationalityFlag": "/img/country/ecuador.png"
+    },
+    {
+      "id": "roster:falcone",
+      "name": "Wladimiro Falcone",
+      "aliases": [],
+      "nationality": "Italy",
+      "nationalityFlag": "/img/country/italy.png"
+    },
+    {
+      "id": "roster:szczesny",
+      "name": "Wojciech Szczęsny",
+      "aliases": [],
+      "nationality": "Poland",
+      "nationalityFlag": "/img/country/poland.png"
+    },
+    {
+      "id": "journey:xabi_alonso",
+      "name": "Xabi Alonso",
+      "aliases": [
+        "Xabi",
+        "Xabi Alonso Olano"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:schlager",
+      "name": "Xaver Schlager",
+      "aliases": [],
+      "nationality": "Austria",
+      "nationalityFlag": "/img/country/austria.png"
+    },
+    {
+      "id": "journey:xavi",
+      "name": "Xavi",
+      "aliases": [
+        "Xavier Hernandez",
+        "Xavier Hernandez Creus",
+        "Xavi Hernandez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:xavi",
+      "name": "Xavi Hernandez",
+      "aliases": [
+        "Xavi"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    },
+    {
+      "id": "roster:simons",
+      "name": "Xavi Simons",
+      "aliases": [],
+      "nationality": "Holland",
+      "nationalityFlag": "/img/country/netherlands.png"
+    },
+    {
+      "id": "roster:herrera",
+      "name": "Yangel Herrera",
+      "aliases": [],
+      "nationality": "Venezuela",
+      "nationalityFlag": "/img/country/venezuela.png"
+    },
+    {
+      "id": "roster:sommer",
+      "name": "Yann Sommer",
+      "aliases": [],
+      "nationality": "Switzerland",
+      "nationalityFlag": "/img/country/switzerland.png"
+    },
+    {
+      "id": "roster:carrasco",
+      "name": "Yannick Carrasco",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:bounou",
+      "name": "Yassine Bounou",
+      "aliases": [],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "journey:yaya_toure",
+      "name": "Yaya Touré",
+      "aliases": [
+        "Gnegneri Yaya Toure"
+      ],
+      "nationality": "Ivory Coast",
+      "nationalityFlag": "/img/country/ivory_coast.png"
+    },
+    {
+      "id": "roster:wissa",
+      "name": "Yoane Wissa",
+      "aliases": [],
+      "nationality": "Congo DR",
+      "nationalityFlag": "/img/country/congo_dr.png"
+    },
+    {
+      "id": "roster:tielemans",
+      "name": "Youri Tielemans",
+      "aliases": [],
+      "nationality": "Belgium",
+      "nationalityFlag": "/img/country/belgium.png"
+    },
+    {
+      "id": "roster:en_nesyri",
+      "name": "Youssef En-Nesyri",
+      "aliases": [],
+      "nationality": "Morocco",
+      "nationalityFlag": "/img/country/morocco.png"
+    },
+    {
+      "id": "roster:fofana",
+      "name": "Youssouf Fofana",
+      "aliases": [],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "journey:zico",
+      "name": "Zico",
+      "aliases": [
+        "Arthur Antunes Coimbra",
+        "White Pele"
+      ],
+      "nationality": "Brazil",
+      "nationalityFlag": "/img/country/brazil.png"
+    },
+    {
+      "id": "roster:zidane",
+      "name": "Zinedine Zidane",
+      "aliases": [
+        "Zidane",
+        "Zizou",
+        "Zinedine Yazid Zidane"
+      ],
+      "nationality": "France",
+      "nationalityFlag": "/img/country/france.png"
+    },
+    {
+      "id": "roster:zlatan",
+      "name": "Zlatan Ibrahimović",
+      "aliases": [
+        "Zlatan",
+        "Ibrahimovic",
+        "Ibra"
+      ],
+      "nationality": "Sweden",
+      "nationalityFlag": "/img/country/sweden.png"
+    },
+    {
+      "id": "roster:zubimendi",
+      "name": "Zubimendi",
+      "aliases": [
+        "Martín Zubimendi",
+        "Martín Zubimendi Ibáñez"
+      ],
+      "nationality": "Spain",
+      "nationalityFlag": "/img/country/spain.png"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "blockedClubBadges": {
+    "bastia": "Identical badge bytes to Real Sociedad; provider ID 681 is Real Sociedad, not Bastia.",
+    "chester_city": "Identical badge bytes to Manchester City; provider ID 281 is Manchester City, not Chester City.",
+    "espanyol": "Identical badge bytes to Feyenoord; provider ID 234 is Feyenoord, not Espanyol.",
+    "almeria": "Identical badge bytes to Palmeiras; requires correct club identity and crest.",
+    "venezia": "Identical badge bytes to Club Leon; requires correct club identity and crest.",
+    "cortulua": "Identical badge bytes to Independiente Medellin; requires correct club identity and crest.",
+    "cerezo_osaka": "Identical badge bytes to Queens Park; requires correct club identity and crest.",
+    "dundee": "Identical badge bytes to Dundee United; these are different clubs.",
+    "cruz_azul": "Identical badge bytes to UNAM Pumas; these are different clubs."
+  },
+  "equivalentClubIds": [
+    [
+      "psv_eindhoven",
+      "psv"
+    ],
+    [
+      "asroma",
+      "roma"
+    ],
+    [
+      "frankfruit",
+      "eintracht_frankfurt"
+    ],
+    [
+      "preston_north_end",
+      "preston"
+    ],
+    [
+      "new_york_red_bulls",
+      "metrostars"
+    ],
+    [
+      "deportivo_la_coruna",
+      "deportivo"
+    ],
+    [
+      "fort_lauderdale_strikers",
+      "fl_strikers"
+    ],
+    [
+      "real_zaragoza",
+      "zaragoza"
+    ],
+    [
+      "borussia_monchengladbach",
+      "bmg"
+    ],
+    [
+      "leeds_united",
+      "leeds"
+    ],
+    [
+      "anzhi_makhachkala",
+      "anzhi"
+    ],
+    [
+      "west_bromwich_albion",
+      "west_brom"
+    ],
+    [
+      "queens_park_rangers",
+      "qpr"
+    ],
+    [
+      "hellas_verona",
+      "verona"
+    ],
+    [
+      "universidad_de_chile",
+      "u_de_chile"
+    ],
+    [
+      "leicester_city",
+      "leicester"
+    ],
+    [
+      "real_betis",
+      "betis"
+    ],
+    [
+      "stoke_city",
+      "stoke"
+    ],
+    [
+      "dalian_pro",
+      "dalian_aerbin"
+    ],
+    [
+      "racing_paris",
+      "rc_paris"
+    ]
+  ],
+  "contradictedClaims": [
+    {
+      "playerId": "alvaro_morata",
+      "claim": "Morata never played for Galatasaray.",
+      "officialSource": "https://www.galatasaray.org/haber/futbol/turkiye-kupasi/alvaro-morata-burada-evimde-hissediyorum/57171",
+      "finding": "Galatasaray's 6 February 2025 report records his first official goal. The supplied trail is incomplete."
+    },
+    {
+      "playerId": "joao_felix",
+      "claim": "Joao Felix never played for AC Milan.",
+      "officialSource": "https://www.acmilan.com/en/news/articles/press-conference/2025-02-10/joao-felix-in-love-with-san-siro",
+      "finding": "Milan's 10 February 2025 report confirms his debut and goal. The supplied trail is incomplete."
+    }
+  ],
+  "resolvedClubBadges": {
+    "chester_city": {
+      "sha256": "aa0c7eb3063f025902f1cdc6ca775f6eeda8ce039ea1ea77adaaa677d7224eec",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/4b/Chester_City_FC.svg/330px-Chester_City_FC.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Chester_City_F.C."
+    },
+    "espanyol": {
+      "sha256": "720af8777a3675d0a57a853a737d2b5eadb7f591eed3fa95a1211453d89eba1d",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/92/RCD_Espanyol_crest.svg/330px-RCD_Espanyol_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/RCD_Espanyol"
+    },
+    "brisbane_lions": {
+      "sha256": "686fb3868588ad87e42428e005a301a025ad127419c16cde78dd16290faeee8f",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/72/Queensland_lions_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Queensland_Lions_FC"
+    },
+    "sportul_studentesc": {
+      "sha256": "edbfcce8d7d9242c607555674c31a0ba3739be0a5d104bdf2e54a31d378e074f",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/91/FC_Sportul_Studen%C8%9Besc_Bucure%C8%99ti_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/FC_Sportul_Studen%C8%9Besc_Bucure%C8%99ti"
+    },
+    "iwuanyanwu_nationale": {
+      "sha256": "cd7bb262e0068ebd169dd96860d365ed14bf591332cc69a3830c24a08a789d0c",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/48/Heartland_F.C._logo.svg/330px-Heartland_F.C._logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Heartland_F.C."
+    },
+    "bellmare_hiratsuka": {
+      "sha256": "67e01df3fdbcb7fb690400d8db6999a4c63ed11000a8867983a111387c437b0b",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c8/Shonan_Bellmare_logo.svg/330px-Shonan_Bellmare_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Shonan_Bellmare"
+    },
+    "bastia": {
+      "sha256": "f39e0dc8dadf52ec3fe46ba6cb3eeb8a70a58dc084320061758b5d1b6a33752b",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/d7/SC_Bastia_logo_2024.svg/250px-SC_Bastia_logo_2024.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/SC_Bastia"
+    },
+    "club_america": {
+      "sha256": "f6e11fb67d7379f42229cc1112eba63e8d5b6cccf6bbf7d74c74d11f1770e05e",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c1/Club_Am%C3%A9rica_crest.svg/250px-Club_Am%C3%A9rica_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Club_Am%C3%A9rica"
+    },
+    "dallas_burn": {
+      "sha256": "a3816336c53a5802f83cd6652d672ca54ebfb22538d4b92e07ff9559507f61b6",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/c/c9/FC_Dallas_logo.svg/330px-FC_Dallas_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/FC_Dallas"
+    },
+    "junior": {
+      "sha256": "ad696b639746d00c6ed83958473d754e1c2e496fdf5c2fcc1fbcc0f6695e62bf",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Junior_Barranquilla_logo.svg/250px-Junior_Barranquilla_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Atl%C3%A9tico_Junior"
+    },
+    "cobreandino": {
+      "sha256": "f0e45abf73e9d0fe8ee35d9c816c5d796189f74142305f0a501db564c87eb824",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Trasandino_de_Los_Andes_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Trasandino_de_Los_Andes"
+    },
+    "krylia_sovetov": {
+      "sha256": "8d28abf42e83352319e46b2e6bf06087e35022b056f1463198018daa861117af",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/92/PFC_Krylia_Sovetov_Samara.svg/250px-PFC_Krylia_Sovetov_Samara.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/PFC_Krylia_Sovetov_Samara"
+    },
+    "dundee": {
+      "sha256": "5ac7af9c099ab1109f22a9c0df1df9019ebd8d64afeddd700084b001ec9fa4e4",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/3b/Dundee_FC_2025_Crest.svg/250px-Dundee_FC_2025_Crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Dundee_F.C."
+    },
+    "inter_zapresic": {
+      "sha256": "56f90a956c0b2651bd3c498b478a03ac7bb90c7e13eb8aa751a08de262f392b5",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/df/NK_Inter_Zapre%C5%A1i%C4%87_Logo.svg/250px-NK_Inter_Zapre%C5%A1i%C4%87_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/NK_Inter_Zapre%C5%A1i%C4%87"
+    },
+    "al_mokawloon": {
+      "sha256": "dda54073f09890b8a261e1c55b0d81e5e5a135b4f5de84b6c40d48f735e9c688",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/2/27/Al_Mokawloon_Al_Arab_SC_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Al_Mokawloon_Al_Arab_SC"
+    },
+    "cerezo_osaka": {
+      "sha256": "ed86d64ff9ea0fe0a77335c05982c83d29e838bc9be717a94fb8330efa46794e",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/85/Cerezo_Osaka_logo.svg/250px-Cerezo_Osaka_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Cerezo_Osaka"
+    },
+    "cruz_azul": {
+      "sha256": "521a679832905af7ef2a49019db541536a59c9bf4ee587250549cf4a9482e06e",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Club_de_F%C3%BAtbol_Cruz_Azul_logo.svg/250px-Club_de_F%C3%BAtbol_Cruz_Azul_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Cruz_Azul"
+    },
+    "south_fl_sun": {
+      "sha256": "a088da9eea16b0fdf8d80694f501546681b2f3b70c11cc6588efa23bf2219986",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/3/3f/Fort_Lauderdale_Sun_%28Logo%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/South_Florida_Sun"
+    },
+    "libertad": {
+      "sha256": "ce9a8f4d458147740a43078bccb2ecee60dbb9acaedd798f0ee7c2a0aeab8774",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/e/ee/Club_Libertad_logo.png/330px-Club_Libertad_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Club_Libertad"
+    },
+    "miami_sharks": {
+      "sha256": "4d80c88fff76e845821b99649ba56616e12ccefb671364ffc5ab4c49d6b451e5",
+      "sourceUrl": "https://funwhileitlasted.net/wp-content/uploads/2020/08/miami-sharks-american-soccer-league-logo.jpg",
+      "supportingPageUrl": "https://funwhileitlasted.net/2013/05/18/1988-1989-miami-sharks-soccer/"
+    },
+    "emelec": {
+      "sha256": "51f64249bc1c970410e0b823fafed5803f01f6a74d2c7126a6b7eb23c8638115",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Club-Sport-Emelec2.png/250px-Club-Sport-Emelec2.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/C.S._Emelec"
+    },
+    "america_de_cali": {
+      "sha256": "7e0c6d517a5f9e97ce896efb59740efbac4c60932f72deac29092bbef631197d",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/7/77/Am%C3%A9rica_de_Cali_logo.svg/250px-Am%C3%A9rica_de_Cali_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Am%C3%A9rica_de_Cali"
+    },
+    "venezia": {
+      "sha256": "5dbbbb36f7157fb313b10fd36940c519cb2e581e98512c8c33154822177556fc",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/39/Venezia_FC_crest.svg/250px-Venezia_FC_crest.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Venezia_FC"
+    },
+    "atletico_nacional": {
+      "sha256": "359a1c650fe1f62cfba862b8dedae10025ae56a6687770771c5d46f024f69220",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Atletico_Nacional_Logo.svg/250px-Atletico_Nacional_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Atl%C3%A9tico_Nacional"
+    },
+    "cortulua": {
+      "sha256": "31cbbc3472891865a0d8a908abd59a7270642e082bf05068d06093223950563b",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cortulu%C3%A1.jpg",
+      "supportingPageUrl": "https://es.wikipedia.org/wiki/Cortulu%C3%A1"
+    },
+    "guaros": {
+      "sha256": "8a415fd4418dbe75788407afd94a87d736098c9f4c98878293c698ee12b543f5",
+      "sourceUrl": "https://www.escudosdefutbolyequipaciones.com/images_esc3/CONM/VENEZUELA/escudos_jpg/logo-guaros%20f.c.(ven).jpg",
+      "supportingPageUrl": "https://www.escudosdefutbolyequipaciones.com/ESCUDOS+VENEZUELA"
+    },
+    "avs": {
+      "sha256": "588c0a6648084c7442f9dd3d28c78d09d0235c5aa45e1783d7131bd0e4e71078",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/34/AVS_Futebol_SAD_logo.svg/250px-AVS_Futebol_SAD_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/AVS_Futebol_SAD"
+    },
+    "racing_paris": {
+      "sha256": "f902e75b4390cfd8675332f4050aad5de00fcf131ae565068eed57e33ec93578",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Racing_Club_de_France-logo.svg/250px-Racing_Club_de_France-logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Racing_Club_de_France_Football"
+    },
+    "racing_bafoussam": {
+      "sha256": "d8db725e3becb3e31ba976e24487006c8754c6d060ff412fcd6d0e7b99e15a5c",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/0f/Baffoussam_FC.png/250px-Baffoussam_FC.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/RC_Bafoussam"
+    },
+    "el_jaish": {
+      "sha256": "608cdde6b762a758ea87d9a58e9b4e4d3a6677732fc580f273c81e22d774c201",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/03/AlJaishQatarlogo.png/250px-AlJaishQatarlogo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/El_Jaish_SC"
+    },
+    "almeria": {
+      "sha256": "d34a62452b29ba335230a995adf2f3a9527fa516dbf5e7c64611908fbd517dc2",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/4a/UD_Almeria_logo.svg/250px-UD_Almeria_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/UD_Almer%C3%ADa"
+    },
+    "rc_paris": {
+      "sha256": "f902e75b4390cfd8675332f4050aad5de00fcf131ae565068eed57e33ec93578",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Racing_Club_de_France-logo.svg/250px-Racing_Club_de_France-logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Racing_Club_de_France_Football"
+    },
+    "verdy_kawasaki": {
+      "sha256": "382c672eb85eb85ab5a99a8ec731c37b57ec988a1b32c3f7009a3733271dfe14",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/f/f8/Tokyo_Verdy_logo.svg/250px-Tokyo_Verdy_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Tokyo_Verdy"
+    },
+    "wydad": {
+      "sha256": "4c476dafdfa71e271ab514905ef35bcfe7f328163c17358c698fc138399ff5c7",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/1/18/Wydad_AC_crest_%282022%29.svg/250px-Wydad_AC_crest_%282022%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Wydad_AC"
+    },
+    "air_force": {
+      "sha256": "95fd79eff8e1cf5e04379a5a89cd4da5fe9b372618323f7a5c34beff06066ff7",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Emblem_of_the_Republic_of_Korea_Air_Force.svg",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Republic_of_Korea_Air_Force"
+    },
+    "portuguesa_ve": {
+      "sha256": "9608a8475f542eae91114806bf403eb733d86eff9123585d95cc87fe5ec48be8",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Portuguesa_FC.png/330px-Portuguesa_FC.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Portuguesa_F.C."
+    },
+    "noroeste": {
+      "sha256": "8d569a6807259f87bfadc91878861179481422b0f0fc27cb903e5757c56cdd0c",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Esporte_Clube_Noroeste.svg/250px-Esporte_Clube_Noroeste.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Esporte_Clube_Noroeste"
+    },
+    "fast_clube": {
+      "sha256": "a64b248a2be8573618b21f90b3d7a5a500dd3b319498d387377d4fac85fd44be",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Fast_Clube.png/250px-Fast_Clube.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Nacional_Fast_Clube"
+    },
+    "burnley": {
+      "sha256": "3ffbc0f373ccd5cc7b9679873c06bbc2ea4224017760bf039efd21d10a210918",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/6/6d/Burnley_FC_Logo.svg/250px-Burnley_FC_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Burnley_F.C."
+    },
+    "nacional_am": {
+      "sha256": "05ba9adb10e3ab9a7ca0b4a69aee50a5b4e8bf8a6da73ded963c439efa788670",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/2/29/Nacional_Futebol_Clube.png/250px-Nacional_Futebol_Clube.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/Nacional_Futebol_Clube"
+    },
+    "nueve_de_octubre": {
+      "sha256": "fff6e32a4a52857bea3a6d4ba011fb3c4b9d8ce51dc112cb93fd056d536537af",
+      "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/9_de_Octubre_FC_escudo.png/120px-9_de_Octubre_FC_escudo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+      "supportingPageUrl": "https://en.wikipedia.org/wiki/9_de_Octubre_F.C."
+    }
+  },
+  "unavailableClubBadges": {
+    "esteghlal_ardabil": {
+      "supportingPageUrl": "https://www.persianleague.com/11262-asian-icons-ali-daei",
+      "note": "The supplied badge was fabricated. No reliable club-specific crest was located in the club/player sources reviewed. Do not use Esteghlal Tehran artwork for this different club; show the name without an invented crest."
+    }
+  }
+}

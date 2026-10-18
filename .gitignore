@@ -27,5 +27,6 @@ build/
 /tmp/higher-lower/
 /tmp/matrix/
 /tmp/branding/
+/tmp/journeyman/corrections/
 /scripts/higher-lower/.venv/
 __pycache__/

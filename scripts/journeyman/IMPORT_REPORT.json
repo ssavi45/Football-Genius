@@ -1,0 +1,1937 @@
+{
+  "status": "CONNECTED_WITH_QUARANTINED_RECORDS",
+  "factualVerification": "NOT_ESTABLISHED_BY_SUPPLIED_EVIDENCE",
+  "note": "Passing these structural and asset checks is not an independent verification of every historical career. The original candidate used generic site-homepage citations; the targeted career corrections now include supporting page URLs.",
+  "sourceSnapshotAsOf": "2026-10-18T00:00:00Z",
+  "contentVersion": "3c2e3b688a96cde41cab33a24ac89bfc51677c6f11825ca45e4d79760f654e1a",
+  "totalPlayers": 300,
+  "enabledQuestions": 269,
+  "withheldQuestions": 31,
+  "sourceIncompleteCareers": 93,
+  "eligibilityPolicy": "Career completion and retirement are not required. careerComplete is informational only.",
+  "blockedBadges": {},
+  "unavailableBadges": {
+    "esteghlal_ardabil": {
+      "supportingPageUrl": "https://www.persianleague.com/11262-asian-icons-ali-daei",
+      "note": "The supplied badge was fabricated. No reliable club-specific crest was located in the club/player sources reviewed. Do not use Esteghlal Tehran artwork for this different club; show the name without an invented crest."
+    }
+  },
+  "contradictedClaims": [
+    {
+      "playerId": "alvaro_morata",
+      "claim": "Morata never played for Galatasaray.",
+      "officialSource": "https://www.galatasaray.org/haber/futbol/turkiye-kupasi/alvaro-morata-burada-evimde-hissediyorum/57171",
+      "finding": "Galatasaray's 6 February 2025 report records his first official goal. The supplied trail is incomplete."
+    },
+    {
+      "playerId": "joao_felix",
+      "claim": "Joao Felix never played for AC Milan.",
+      "officialSource": "https://www.acmilan.com/en/news/articles/press-conference/2025-02-10/joao-felix-in-love-with-san-siro",
+      "finding": "Milan's 10 February 2025 report confirms his debut and goal. The supplied trail is incomplete."
+    }
+  ],
+  "players": [
+    {
+      "id": "cristiano_ronaldo",
+      "name": "Cristiano Ronaldo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "zlatan_ibrahimovic",
+      "name": "Zlatan Ibrahimović",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "angel_di_maria",
+      "name": "Ángel Di María",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "cesc_fabregas",
+      "name": "Cesc Fàbregas",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "fernando_torres",
+      "name": "Fernando Torres",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "alvaro_morata",
+      "name": "Álvaro Morata",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "robert_lewandowski",
+      "name": "Robert Lewandowski",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "toni_kroos",
+      "name": "Toni Kroos",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "joao_felix",
+      "name": "João Félix",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "antoine_griezmann",
+      "name": "Antoine Griezmann",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mats_hummels",
+      "name": "Mats Hummels",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mario_gotze",
+      "name": "Mario Götze",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "arjen_robben",
+      "name": "Arjen Robben",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "owen_hargreaves",
+      "name": "Owen Hargreaves",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jadon_sancho",
+      "name": "Jadon Sancho",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "neymar",
+      "name": "Neymar",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "david_alaba",
+      "name": "David Alaba",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "xabi_alonso",
+      "name": "Xabi Alonso",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "david_beckham",
+      "name": "David Beckham",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "thierry_henry",
+      "name": "Thierry Henry",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "lionel_messi",
+      "name": "Lionel Messi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "pele",
+      "name": "Pelé",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "diego_maradona",
+      "name": "Diego Maradona",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "johan_cruyff",
+      "name": "Johan Cruyff",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "zinedine_zidane",
+      "name": "Zinedine Zidane",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ronaldinho",
+      "name": "Ronaldinho",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ronaldo_nazario",
+      "name": "Ronaldo Nazário",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rivaldo",
+      "name": "Rivaldo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "romario",
+      "name": "Romário",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "paolo_maldini",
+      "name": "Paolo Maldini",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "francesco_totti",
+      "name": "Francesco Totti",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "carles_puyol",
+      "name": "Carles Puyol",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "paul_scholes",
+      "name": "Paul Scholes",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "ryan_giggs",
+      "name": "Ryan Giggs",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "jamie_carragher",
+      "name": "Jamie Carragher",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "franco_baresi",
+      "name": "Franco Baresi",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "gary_neville",
+      "name": "Gary Neville",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "tony_adams",
+      "name": "Tony Adams",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "lev_yashin",
+      "name": "Lev Yashin",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "ferenc_puskas",
+      "name": "Ferenc Puskás",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "marco_van_basten",
+      "name": "Marco van Basten",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "kenny_dalglish",
+      "name": "Kenny Dalglish",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "steven_gerrard",
+      "name": "Steven Gerrard",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "matt_le_tissier",
+      "name": "Matt Le Tissier",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "sepp_maier",
+      "name": "Sepp Maier",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "bobby_charlton",
+      "name": "Bobby Charlton",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dennis_bergkamp",
+      "name": "Dennis Bergkamp",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ruud_gullit",
+      "name": "Ruud Gullit",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "frank_rijkaard",
+      "name": "Frank Rijkaard",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "michel_platini",
+      "name": "Michel Platini",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "franz_beckenbauer",
+      "name": "Franz Beckenbauer",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gerd_muller",
+      "name": "Gerd Müller",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "lothar_matthaus",
+      "name": "Lothar Matthäus",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "roberto_baggio",
+      "name": "Roberto Baggio",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "alessandro_del_piero",
+      "name": "Alessandro Del Piero",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "george_best",
+      "name": "George Best",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "eusebio",
+      "name": "Eusébio",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "alfredo_di_stefano",
+      "name": "Alfredo Di Stéfano",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dino_zoff",
+      "name": "Dino Zoff",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ian_rush",
+      "name": "Ian Rush",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "eric_cantona",
+      "name": "Eric Cantona",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "hristo_stoichkov",
+      "name": "Hristo Stoichkov",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gheorghe_hagi",
+      "name": "Gheorghe Hagi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "andriy_shevchenko",
+      "name": "Andriy Shevchenko",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "george_weah",
+      "name": "George Weah",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "samuel_etoo",
+      "name": "Samuel Eto'o",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "didier_drogba",
+      "name": "Didier Drogba",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "yaya_toure",
+      "name": "Yaya Touré",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jay_jay_okocha",
+      "name": "Jay-Jay Okocha",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "nwankwo_kanu",
+      "name": "Nwankwo Kanu",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "michael_essien",
+      "name": "Michael Essien",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "park_ji_sung",
+      "name": "Park Ji-sung",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "hidetoshi_nakata",
+      "name": "Hidetoshi Nakata",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "keisuke_honda",
+      "name": "Keisuke Honda",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "landon_donovan",
+      "name": "Landon Donovan",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "clint_dempsey",
+      "name": "Clint Dempsey",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rafael_marquez",
+      "name": "Rafael Márquez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "hugo_sanchez",
+      "name": "Hugo Sánchez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "carlos_valderrama",
+      "name": "Carlos Valderrama",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ivan_zamorano",
+      "name": "Iván Zamorano",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "marcelo_salas",
+      "name": "Marcelo Salas",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "javier_zanetti",
+      "name": "Javier Zanetti",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gabriel_batistuta",
+      "name": "Gabriel Batistuta",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "hernan_crespo",
+      "name": "Hernán Crespo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "juan_roman_riquelme",
+      "name": "Juan Román Riquelme",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "juan_sebastian_veron",
+      "name": "Juan Sebastián Verón",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "carlos_tevez",
+      "name": "Carlos Tevez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "sergio_aguero",
+      "name": "Sergio Agüero",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "javier_mascherano",
+      "name": "Javier Mascherano",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "esteban_cambiasso",
+      "name": "Esteban Cambiasso",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "clarence_seedorf",
+      "name": "Clarence Seedorf",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "edgar_davids",
+      "name": "Edgar Davids",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "patrick_kluivert",
+      "name": "Patrick Kluivert",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "robin_van_persie",
+      "name": "Robin van Persie",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ruud_van_nistelrooy",
+      "name": "Ruud van Nistelrooy",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "edwin_van_der_sar",
+      "name": "Edwin van der Sar",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jaap_stam",
+      "name": "Jaap Stam",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "marc_overmars",
+      "name": "Marc Overmars",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "wesley_sneijder",
+      "name": "Wesley Sneijder",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rafael_van_der_vaart",
+      "name": "Rafael van der Vaart",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dirk_kuyt",
+      "name": "Dirk Kuyt",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "giovanni_van_bronckhorst",
+      "name": "Giovanni van Bronckhorst",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "phillip_cocu",
+      "name": "Phillip Cocu",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "frank_de_boer",
+      "name": "Frank de Boer",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ronald_de_boer",
+      "name": "Ronald de Boer",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "michael_laudrup",
+      "name": "Michael Laudrup",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "brian_laudrup",
+      "name": "Brian Laudrup",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "peter_schmeichel",
+      "name": "Peter Schmeichel",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jon_dahl_tomasson",
+      "name": "Jon Dahl Tomasson",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "henrik_larsson",
+      "name": "Henrik Larsson",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "freddie_ljungberg",
+      "name": "Freddie Ljungberg",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jari_litmanen",
+      "name": "Jari Litmanen",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "eidur_gudjohnsen",
+      "name": "Eiður Guðjohnsen",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dimitar_berbatov",
+      "name": "Dimitar Berbatov",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "petr_cech",
+      "name": "Petr Čech",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "pavel_nedved",
+      "name": "Pavel Nedvěd",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "tomas_rosicky",
+      "name": "Tomáš Rosický",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "milan_baros",
+      "name": "Milan Baroš",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jan_koller",
+      "name": "Jan Koller",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "marek_hamsik",
+      "name": "Marek Hamšík",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "karim_benzema",
+      "name": "Karim Benzema",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "harry_kane",
+      "name": "Harry Kane",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mohamed_salah",
+      "name": "Mohamed Salah",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "kevin_de_bruyne",
+      "name": "Kevin De Bruyne",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "luka_modric",
+      "name": "Luka Modrić",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "sergio_ramos",
+      "name": "Sergio Ramos",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "luis_suarez",
+      "name": "Luis Suárez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "edinson_cavani",
+      "name": "Edinson Cavani",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "pierre_emerick_aubameyang",
+      "name": "Pierre-Emerick Aubameyang",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "romelu_lukaku",
+      "name": "Romelu Lukaku",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "son_heung_min",
+      "name": "Son Heung-min",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "raheem_sterling",
+      "name": "Raheem Sterling",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "sadio_mane",
+      "name": "Sadio Mané",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "roberto_firmino",
+      "name": "Roberto Firmino",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "eden_hazard",
+      "name": "Eden Hazard",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gareth_bale",
+      "name": "Gareth Bale",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "paulo_dybala",
+      "name": "Paulo Dybala",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "victor_osimhen",
+      "name": "Victor Osimhen",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "lautaro_martinez",
+      "name": "Lautaro Martínez",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "kylian_mbappe",
+      "name": "Kylian Mbappé",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "erling_haaland",
+      "name": "Erling Haaland",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jude_bellingham",
+      "name": "Jude Bellingham",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rodri",
+      "name": "Rodri",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "casemiro",
+      "name": "Casemiro",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "sergio_busquets",
+      "name": "Sergio Busquets",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "andres_iniesta",
+      "name": "Andrés Iniesta",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "xavi",
+      "name": "Xavi",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "andrea_pirlo",
+      "name": "Andrea Pirlo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "frank_lampard",
+      "name": "Frank Lampard",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "david_silva",
+      "name": "David Silva",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mesut_ozil",
+      "name": "Mesut Özil",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "paul_pogba",
+      "name": "Paul Pogba",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ngolo_kante",
+      "name": "N'Golo Kanté",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ilkay_gundogan",
+      "name": "İlkay Gündoğan",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jordan_henderson",
+      "name": "Jordan Henderson",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "koke",
+      "name": "Koke",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "isco",
+      "name": "Isco",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "alexis_sanchez",
+      "name": "Alexis Sánchez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "thibaut_courtois",
+      "name": "Thibaut Courtois",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "manuel_neuer",
+      "name": "Manuel Neuer",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "gianluigi_buffon",
+      "name": "Gianluigi Buffon",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "iker_casillas",
+      "name": "Iker Casillas",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "hugo_lloris",
+      "name": "Hugo Lloris",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "keylor_navas",
+      "name": "Keylor Navas",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jan_oblak",
+      "name": "Jan Oblak",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "alisson_becker",
+      "name": "Alisson Becker",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ederson",
+      "name": "Ederson",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "marc_andre_ter_stegen",
+      "name": "Marc-André ter Stegen",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "virgil_van_dijk",
+      "name": "Virgil van Dijk",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "thiago_silva",
+      "name": "Thiago Silva",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "giorgio_chiellini",
+      "name": "Giorgio Chiellini",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "leonardo_bonucci",
+      "name": "Leonardo Bonucci",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gerard_pique",
+      "name": "Gerard Piqué",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rio_ferdinand",
+      "name": "Rio Ferdinand",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "nemanja_vidic",
+      "name": "Nemanja Vidić",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "john_terry",
+      "name": "John Terry",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "vincent_kompany",
+      "name": "Vincent Kompany",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "marcelo",
+      "name": "Marcelo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dani_alves",
+      "name": "Dani Alves",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "philipp_lahm",
+      "name": "Philipp Lahm",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dani_carvajal",
+      "name": "Dani Carvajal",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "kyle_walker",
+      "name": "Kyle Walker",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "trent_alexander_arnold",
+      "name": "Trent Alexander-Arnold",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "andrew_robertson",
+      "name": "Andrew Robertson",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "joshua_kimmich",
+      "name": "Joshua Kimmich",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "marco_reus",
+      "name": "Marco Reus",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "thomas_muller",
+      "name": "Thomas Müller",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints",
+        "ambiguous-full-trail"
+      ]
+    },
+    {
+      "id": "bastian_schweinsteiger",
+      "name": "Bastian Schweinsteiger",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mario_balotelli",
+      "name": "Mario Balotelli",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ciro_immobile",
+      "name": "Ciro Immobile",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mauro_icardi",
+      "name": "Mauro Icardi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gonzalo_higuain",
+      "name": "Gonzalo Higuaín",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "radamel_falcao",
+      "name": "Radamel Falcao",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "james_rodriguez",
+      "name": "James Rodríguez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "arturo_vidal",
+      "name": "Arturo Vidal",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "claudio_bravo",
+      "name": "Claudio Bravo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "diego_forlan",
+      "name": "Diego Forlán",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "diego_godin",
+      "name": "Diego Godín",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "bernardo_silva",
+      "name": "Bernardo Silva",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "bruno_fernandes",
+      "name": "Bruno Fernandes",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "martin_odegaard",
+      "name": "Martin Ødegaard",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "christian_eriksen",
+      "name": "Christian Eriksen",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "frenkie_de_jong",
+      "name": "Frenkie de Jong",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "matthijs_de_ligt",
+      "name": "Matthijs de Ligt",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "achraf_hakimi",
+      "name": "Achraf Hakimi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "joao_cancelo",
+      "name": "João Cancelo",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "riyad_mahrez",
+      "name": "Riyad Mahrez",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "hakim_ziyech",
+      "name": "Hakim Ziyech",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "kalidou_koulibaly",
+      "name": "Kalidou Koulibaly",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "memphis_depay",
+      "name": "Memphis Depay",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "cafu",
+      "name": "Cafu",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "roberto_carlos",
+      "name": "Roberto Carlos",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "bebeto",
+      "name": "Bebeto",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dunga",
+      "name": "Dunga",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "zico",
+      "name": "Zico",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "socrates",
+      "name": "Sócrates",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "falcao",
+      "name": "Paulo Roberto Falcão",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "junior",
+      "name": "Júnior",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "careca",
+      "name": "Careca",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "carlos_alberto",
+      "name": "Carlos Alberto",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "garrincha",
+      "name": "Garrincha",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jairzinho",
+      "name": "Jairzinho",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rivellino",
+      "name": "Rivellino",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "tostao",
+      "name": "Tostão",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gerson",
+      "name": "Gérson",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "didi",
+      "name": "Didi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "nilton_santos",
+      "name": "Nílton Santos",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "djalma_santos",
+      "name": "Djalma Santos",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "javier_saviola",
+      "name": "Javier Saviola",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "pablo_aimar",
+      "name": "Pablo Aimar",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "walter_samuel",
+      "name": "Walter Samuel",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "claudio_caniggia",
+      "name": "Claudio Caniggia",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jorge_valdano",
+      "name": "Jorge Valdano",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mario_kempes",
+      "name": "Mario Kempes",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "daniel_passarella",
+      "name": "Daniel Passarella",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ubaldo_fillol",
+      "name": "Ubaldo Fillol",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "amadeo_carrizo",
+      "name": "Amadeo Carrizo",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "jose_luis_chilavert",
+      "name": "José Luis Chilavert",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "roque_santa_cruz",
+      "name": "Roque Santa Cruz",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "carlos_gamarra",
+      "name": "Carlos Gamarra",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "claudio_pizarro",
+      "name": "Claudio Pizarro",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "paolo_guerrero",
+      "name": "Paolo Guerrero",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jefferson_farfan",
+      "name": "Jefferson Farfán",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "teofilo_cubillas",
+      "name": "Teófilo Cubillas",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "nolberto_solano",
+      "name": "Nolberto Solano",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "antonio_valencia",
+      "name": "Antonio Valencia",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "enner_valencia",
+      "name": "Enner Valencia",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "faustino_asprilla",
+      "name": "Faustino Asprilla",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ivan_cordoba",
+      "name": "Iván Córdoba",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mario_yepes",
+      "name": "Mario Yepes",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "juan_cuadrado",
+      "name": "Juan Cuadrado",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "luis_diaz",
+      "name": "Luis Díaz",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "freddy_rincon",
+      "name": "Freddy Rincón",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rene_higuita",
+      "name": "René Higuita",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "alvaro_recoba",
+      "name": "Álvaro Recoba",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "enzo_francescoli",
+      "name": "Enzo Francescoli",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "paolo_montero",
+      "name": "Paolo Montero",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "fernando_muslera",
+      "name": "Fernando Muslera",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "diego_lugano",
+      "name": "Diego Lugano",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "gary_medel",
+      "name": "Gary Medel",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "elias_figueroa",
+      "name": "Elías Figueroa",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "carlos_caszely",
+      "name": "Carlos Caszely",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "cuauhtemoc_blanco",
+      "name": "Cuauhtémoc Blanco",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "javier_hernandez",
+      "name": "Javier Hernández",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "guillermo_ochoa",
+      "name": "Guillermo Ochoa",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "andres_guardado",
+      "name": "Andrés Guardado",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "carlos_vela",
+      "name": "Carlos Vela",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "jorge_campos",
+      "name": "Jorge Campos",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "tim_howard",
+      "name": "Tim Howard",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "brad_friedel",
+      "name": "Brad Friedel",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "christian_pulisic",
+      "name": "Christian Pulisic",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "michael_bradley",
+      "name": "Michael Bradley",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "brian_mcbride",
+      "name": "Brian McBride",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "kasey_keller",
+      "name": "Kasey Keller",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "claudio_reyna",
+      "name": "Claudio Reyna",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "dwight_yorke",
+      "name": "Dwight Yorke",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "shaka_hislop",
+      "name": "Shaka Hislop",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "lucas_radebe",
+      "name": "Lucas Radebe",
+      "enabled": false,
+      "reasons": [
+        "source-ineligible",
+        "fewer-than-three-stints"
+      ]
+    },
+    {
+      "id": "benni_mccarthy",
+      "name": "Benni McCarthy",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "steven_pienaar",
+      "name": "Steven Pienaar",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rigobert_song",
+      "name": "Rigobert Song",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "geremi",
+      "name": "Geremi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "seydou_keita",
+      "name": "Seydou Keita",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "frederic_kanoute",
+      "name": "Frédéric Kanouté",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "emmanuel_adebayor",
+      "name": "Emmanuel Adebayor",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "asamoah_gyan",
+      "name": "Asamoah Gyan",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "sulley_muntari",
+      "name": "Sulley Muntari",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "thomas_partey",
+      "name": "Thomas Partey",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mustapha_hadji",
+      "name": "Mustapha Hadji",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "noureddine_naybet",
+      "name": "Noureddine Naybet",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "rabah_madjer",
+      "name": "Rabah Madjer",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "lakhdar_belloumi",
+      "name": "Lakhdar Belloumi",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "bruce_grobbelaar",
+      "name": "Bruce Grobbelaar",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "shinji_kagawa",
+      "name": "Shinji Kagawa",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "shunsuke_nakamura",
+      "name": "Shunsuke Nakamura",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "kazuyoshi_miura",
+      "name": "Kazuyoshi Miura",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "cha_bum_kun",
+      "name": "Cha Bum-kun",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "ali_daei",
+      "name": "Ali Daei",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "mehdi_mahdavikia",
+      "name": "Mehdi Mahdavikia",
+      "enabled": true,
+      "reasons": []
+    },
+    {
+      "id": "hakan_sukur",
+      "name": "Hakan Şükür",
+      "enabled": true,
+      "reasons": []
+    }
+  ]
+}
