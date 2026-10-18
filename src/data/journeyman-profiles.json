@@ -1,0 +1,1802 @@
+{
+  "achraf_hakimi": {
+    "nationality": "Morocco",
+    "nationalityFlag": "/img/country/morocco.png",
+    "portrait": "/img/higher-lower/players/hakimi.png",
+    "cutout": true
+  },
+  "alessandro_del_piero": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/alessandro_del_piero.webp",
+    "cutout": false
+  },
+  "alexis_sanchez": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/alexis_sanchez.webp",
+    "cutout": false
+  },
+  "alfredo_di_stefano": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/alfredo_di_stefano.webp",
+    "cutout": false
+  },
+  "ali_daei": {
+    "nationality": "Iran",
+    "nationalityFlag": "/img/country/iran.png",
+    "portrait": "/img/journeyman/portraits/ali_daei.webp",
+    "cutout": false
+  },
+  "alisson_becker": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/alisson.png",
+    "cutout": true
+  },
+  "alvaro_morata": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/morata.png",
+    "cutout": true
+  },
+  "alvaro_recoba": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/journeyman/portraits/alvaro_recoba.webp",
+    "cutout": false
+  },
+  "amadeo_carrizo": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/amadeo_carrizo.webp",
+    "cutout": false
+  },
+  "andrea_pirlo": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/higher-lower/players/pirlo.png",
+    "cutout": true
+  },
+  "andres_guardado": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/andres_guardado.webp",
+    "cutout": false
+  },
+  "andres_iniesta": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/iniesta.png",
+    "cutout": true
+  },
+  "andrew_robertson": {
+    "nationality": "Scotland",
+    "nationalityFlag": "/img/country/scotland.png",
+    "portrait": "/img/higher-lower/players/robertson.png",
+    "cutout": true
+  },
+  "andriy_shevchenko": {
+    "nationality": "Ukraine",
+    "nationalityFlag": "/img/country/ukraine.png",
+    "portrait": "/img/journeyman/portraits/andriy_shevchenko.webp",
+    "cutout": false
+  },
+  "angel_di_maria": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/di_maria.png",
+    "cutout": true
+  },
+  "antoine_griezmann": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/higher-lower/players/griezmann.png",
+    "cutout": true
+  },
+  "antonio_valencia": {
+    "nationality": "Ecuador",
+    "nationalityFlag": "/img/country/ecuador.png",
+    "portrait": "/img/journeyman/portraits/antonio_valencia.webp",
+    "cutout": false
+  },
+  "arjen_robben": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/arjen_robben.webp",
+    "cutout": false
+  },
+  "arturo_vidal": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/arturo_vidal.webp",
+    "cutout": false
+  },
+  "asamoah_gyan": {
+    "nationality": "Ghana",
+    "nationalityFlag": "/img/country/ghana.png",
+    "portrait": "/img/journeyman/portraits/asamoah_gyan.webp",
+    "cutout": false
+  },
+  "bastian_schweinsteiger": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/bastian_schweinsteiger.png",
+    "cutout": true
+  },
+  "bebeto": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/bebeto.webp",
+    "cutout": false
+  },
+  "benni_mccarthy": {
+    "nationality": "South Africa",
+    "nationalityFlag": "/img/country/south_africa.png",
+    "portrait": "/img/journeyman/portraits/benni_mccarthy.webp",
+    "cutout": false
+  },
+  "bernardo_silva": {
+    "nationality": "Portugal",
+    "nationalityFlag": "/img/country/portugal.png",
+    "portrait": "/img/higher-lower/players/bernardo.png",
+    "cutout": true
+  },
+  "bobby_charlton": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/bobby_charlton.webp",
+    "cutout": false
+  },
+  "brad_friedel": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/brad_friedel.webp",
+    "cutout": false
+  },
+  "brian_laudrup": {
+    "nationality": "Denmark",
+    "nationalityFlag": "/img/country/denmark.png",
+    "portrait": "/img/journeyman/portraits/brian_laudrup.webp",
+    "cutout": false
+  },
+  "brian_mcbride": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/brian_mcbride.webp",
+    "cutout": false
+  },
+  "bruce_grobbelaar": {
+    "nationality": "Zimbabwe",
+    "nationalityFlag": "/img/country/zimbabwe.png",
+    "portrait": "/img/journeyman/portraits/bruce_grobbelaar.webp",
+    "cutout": false
+  },
+  "bruno_fernandes": {
+    "nationality": "Portugal",
+    "nationalityFlag": "/img/country/portugal.png",
+    "portrait": "/img/higher-lower/players/bruno.png",
+    "cutout": true
+  },
+  "cafu": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/cafu.png",
+    "cutout": true
+  },
+  "careca": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/careca.webp",
+    "cutout": false
+  },
+  "carles_puyol": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/puyol.png",
+    "cutout": true
+  },
+  "carlos_alberto": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/carlos_alberto.webp",
+    "cutout": false
+  },
+  "carlos_caszely": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/carlos_caszely.webp",
+    "cutout": false
+  },
+  "carlos_gamarra": {
+    "nationality": "Paraguay",
+    "nationalityFlag": "/img/country/paraguay.png",
+    "portrait": "/img/journeyman/portraits/carlos_gamarra.webp",
+    "cutout": false
+  },
+  "carlos_tevez": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/carlos_tevez.webp",
+    "cutout": false
+  },
+  "carlos_valderrama": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/carlos_valderrama.webp",
+    "cutout": false
+  },
+  "carlos_vela": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/carlos_vela.webp",
+    "cutout": false
+  },
+  "casemiro": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/casemiro.png",
+    "cutout": true
+  },
+  "cesc_fabregas": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/cesc_fabregas.webp",
+    "cutout": false
+  },
+  "cha_bum_kun": {
+    "nationality": "South Korea",
+    "nationalityFlag": "/img/country/south_korea.png",
+    "portrait": "/img/journeyman/portraits/cha_bum_kun.webp",
+    "cutout": false
+  },
+  "christian_eriksen": {
+    "nationality": "Denmark",
+    "nationalityFlag": "/img/country/denmark.png",
+    "portrait": "/img/journeyman/portraits/christian_eriksen.webp",
+    "cutout": false
+  },
+  "christian_pulisic": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/higher-lower/players/pulisic.png",
+    "cutout": true
+  },
+  "ciro_immobile": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/ciro_immobile.webp",
+    "cutout": false
+  },
+  "clarence_seedorf": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/clarence_seedorf.webp",
+    "cutout": false
+  },
+  "claudio_bravo": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/claudio_bravo.webp",
+    "cutout": false
+  },
+  "claudio_caniggia": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/claudio_caniggia.webp",
+    "cutout": false
+  },
+  "claudio_pizarro": {
+    "nationality": "Peru",
+    "nationalityFlag": "/img/country/peru.png",
+    "portrait": "/img/journeyman/portraits/claudio_pizarro.webp",
+    "cutout": false
+  },
+  "claudio_reyna": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/claudio_reyna.webp",
+    "cutout": false
+  },
+  "clint_dempsey": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/clint_dempsey.webp",
+    "cutout": false
+  },
+  "cristiano_ronaldo": {
+    "nationality": "Portugal",
+    "nationalityFlag": "/img/country/portugal.png",
+    "portrait": "/img/higher-lower/players/ronaldo.png",
+    "cutout": true
+  },
+  "cuauhtemoc_blanco": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/cuauhtemoc_blanco.webp",
+    "cutout": false
+  },
+  "dani_alves": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/dani_alves.webp",
+    "cutout": false
+  },
+  "dani_carvajal": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/dani_carvajal.webp",
+    "cutout": false
+  },
+  "daniel_passarella": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/daniel_passarella.webp",
+    "cutout": false
+  },
+  "david_alaba": {
+    "nationality": "Austria",
+    "nationalityFlag": "/img/country/austria.png",
+    "portrait": "/img/higher-lower/players/alaba.png",
+    "cutout": true
+  },
+  "david_beckham": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/david_beckham.png",
+    "cutout": true
+  },
+  "david_silva": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/david_silva.png",
+    "cutout": true
+  },
+  "dennis_bergkamp": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/dennis_bergkamp.webp",
+    "cutout": false
+  },
+  "didi": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/didi.webp",
+    "cutout": false
+  },
+  "didier_drogba": {
+    "nationality": "Ivory Coast",
+    "nationalityFlag": "/img/country/ivory_coast.png",
+    "portrait": "/img/higher-lower/players/drogba.png",
+    "cutout": true
+  },
+  "diego_forlan": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/higher-lower/players/diego_forlan.png",
+    "cutout": true
+  },
+  "diego_godin": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/higher-lower/players/diego_godin.png",
+    "cutout": true
+  },
+  "diego_lugano": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/journeyman/portraits/diego_lugano.webp",
+    "cutout": false
+  },
+  "diego_maradona": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/diego_maradona.webp",
+    "cutout": false
+  },
+  "dimitar_berbatov": {
+    "nationality": "Bulgaria",
+    "nationalityFlag": "/img/country/bulgaria.png",
+    "portrait": "/img/higher-lower/players/dimitar_berbatov.png",
+    "cutout": true
+  },
+  "dino_zoff": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/dino_zoff.webp",
+    "cutout": false
+  },
+  "dirk_kuyt": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/dirk_kuyt.webp",
+    "cutout": false
+  },
+  "djalma_santos": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/djalma_santos.webp",
+    "cutout": false
+  },
+  "dunga": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/dunga.webp",
+    "cutout": false
+  },
+  "dwight_yorke": {
+    "nationality": "Trinidad and Tobago",
+    "nationalityFlag": "/img/country/trinidad_and_tobago.png",
+    "portrait": "/img/journeyman/portraits/dwight_yorke.webp",
+    "cutout": false
+  },
+  "eden_hazard": {
+    "nationality": "Belgium",
+    "nationalityFlag": "/img/country/belgium.png",
+    "portrait": "/img/higher-lower/players/hazard.png",
+    "cutout": true
+  },
+  "ederson": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/ederson.png",
+    "cutout": true
+  },
+  "edgar_davids": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/edgar_davids.webp",
+    "cutout": false
+  },
+  "edinson_cavani": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/journeyman/portraits/edinson_cavani.webp",
+    "cutout": false
+  },
+  "edwin_van_der_sar": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/edwin_van_der_sar.webp",
+    "cutout": false
+  },
+  "eidur_gudjohnsen": {
+    "nationality": "Iceland",
+    "nationalityFlag": "/img/country/iceland.png",
+    "portrait": "/img/journeyman/portraits/eidur_gudjohnsen.webp",
+    "cutout": false
+  },
+  "elias_figueroa": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/elias_figueroa.webp",
+    "cutout": false
+  },
+  "emmanuel_adebayor": {
+    "nationality": "Togo",
+    "nationalityFlag": "/img/country/togo.png",
+    "portrait": "/img/journeyman/portraits/emmanuel_adebayor.webp",
+    "cutout": false
+  },
+  "enner_valencia": {
+    "nationality": "Ecuador",
+    "nationalityFlag": "/img/country/ecuador.png",
+    "portrait": "/img/journeyman/portraits/enner_valencia.webp",
+    "cutout": false
+  },
+  "enzo_francescoli": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/journeyman/portraits/enzo_francescoli.webp",
+    "cutout": false
+  },
+  "eric_cantona": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/journeyman/portraits/eric_cantona.webp",
+    "cutout": false
+  },
+  "erling_haaland": {
+    "nationality": "Norway",
+    "nationalityFlag": "/img/country/norway.png",
+    "portrait": "/img/higher-lower/players/haaland.png",
+    "cutout": true
+  },
+  "esteban_cambiasso": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/esteban_cambiasso.webp",
+    "cutout": false
+  },
+  "eusebio": {
+    "nationality": "Portugal",
+    "nationalityFlag": "/img/country/portugal.png",
+    "portrait": "/img/journeyman/portraits/eusebio.webp",
+    "cutout": false
+  },
+  "falcao": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/falcao.webp",
+    "cutout": false
+  },
+  "faustino_asprilla": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/faustino_asprilla.webp",
+    "cutout": false
+  },
+  "ferenc_puskas": {
+    "nationality": "Hungary",
+    "nationalityFlag": "/img/country/hungary.png",
+    "portrait": "/img/journeyman/portraits/ferenc_puskas.webp",
+    "cutout": false
+  },
+  "fernando_muslera": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/journeyman/portraits/fernando_muslera.webp",
+    "cutout": false
+  },
+  "fernando_torres": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/fernando_torres.webp",
+    "cutout": false
+  },
+  "francesco_totti": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/francesco_totti.webp",
+    "cutout": false
+  },
+  "franco_baresi": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/franco_baresi.webp",
+    "cutout": false
+  },
+  "frank_de_boer": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/frank_de_boer.webp",
+    "cutout": false
+  },
+  "frank_lampard": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/lampard.png",
+    "cutout": true
+  },
+  "frank_rijkaard": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/frank_rijkaard.webp",
+    "cutout": false
+  },
+  "franz_beckenbauer": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/franz_beckenbauer.webp",
+    "cutout": false
+  },
+  "freddie_ljungberg": {
+    "nationality": "Sweden",
+    "nationalityFlag": "/img/country/sweden.png",
+    "portrait": "/img/journeyman/portraits/freddie_ljungberg.webp",
+    "cutout": false
+  },
+  "freddy_rincon": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/freddy_rincon.webp",
+    "cutout": false
+  },
+  "frederic_kanoute": {
+    "nationality": "Mali",
+    "nationalityFlag": "/img/country/mali.png",
+    "portrait": "/img/journeyman/portraits/frederic_kanoute.webp",
+    "cutout": false
+  },
+  "frenkie_de_jong": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/higher-lower/players/dejong.png",
+    "cutout": true
+  },
+  "gabriel_batistuta": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/gabriel_batistuta.webp",
+    "cutout": false
+  },
+  "gareth_bale": {
+    "nationality": "Wales",
+    "nationalityFlag": "/img/country/wales.png",
+    "portrait": "/img/higher-lower/players/bale.png",
+    "cutout": true
+  },
+  "garrincha": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/garrincha.webp",
+    "cutout": false
+  },
+  "gary_medel": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/gary_medel.webp",
+    "cutout": false
+  },
+  "gary_neville": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/gary_neville.webp",
+    "cutout": false
+  },
+  "george_best": {
+    "nationality": "Northern Ireland",
+    "nationalityFlag": "/img/country/northern_ireland.png",
+    "portrait": "/img/journeyman/portraits/george_best.webp",
+    "cutout": false
+  },
+  "george_weah": {
+    "nationality": "Liberia",
+    "nationalityFlag": "/img/country/liberia.png",
+    "portrait": "/img/journeyman/portraits/george_weah.webp",
+    "cutout": false
+  },
+  "gerard_pique": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/pique.png",
+    "cutout": true
+  },
+  "gerd_muller": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/gerd_muller.webp",
+    "cutout": false
+  },
+  "geremi": {
+    "nationality": "Cameroon",
+    "nationalityFlag": "/img/country/cameroon.png",
+    "portrait": "/img/journeyman/portraits/geremi.webp",
+    "cutout": false
+  },
+  "gerson": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/gerson.webp",
+    "cutout": false
+  },
+  "gheorghe_hagi": {
+    "nationality": "Romania",
+    "nationalityFlag": "/img/country/romania.png",
+    "portrait": "/img/journeyman/portraits/gheorghe_hagi.webp",
+    "cutout": false
+  },
+  "gianluigi_buffon": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/higher-lower/players/buffon.png",
+    "cutout": true
+  },
+  "giorgio_chiellini": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/higher-lower/players/chiellini.png",
+    "cutout": true
+  },
+  "giovanni_van_bronckhorst": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/giovanni_van_bronckhorst.webp",
+    "cutout": false
+  },
+  "gonzalo_higuain": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/gonzalo_higuain.png",
+    "cutout": true
+  },
+  "guillermo_ochoa": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/guillermo_ochoa.webp",
+    "cutout": false
+  },
+  "hakan_sukur": {
+    "nationality": "Turkey",
+    "nationalityFlag": "/img/country/turkey.png",
+    "portrait": "/img/journeyman/portraits/hakan_sukur.webp",
+    "cutout": false
+  },
+  "hakim_ziyech": {
+    "nationality": "Morocco",
+    "nationalityFlag": "/img/country/morocco.png",
+    "portrait": "/img/journeyman/portraits/hakim_ziyech.webp",
+    "cutout": false
+  },
+  "harry_kane": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/kane.png",
+    "cutout": true
+  },
+  "henrik_larsson": {
+    "nationality": "Sweden",
+    "nationalityFlag": "/img/country/sweden.png",
+    "portrait": "/img/journeyman/portraits/henrik_larsson.webp",
+    "cutout": false
+  },
+  "hernan_crespo": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/hernan_crespo.webp",
+    "cutout": false
+  },
+  "hidetoshi_nakata": {
+    "nationality": "Japan",
+    "nationalityFlag": "/img/country/japan.png",
+    "portrait": "/img/journeyman/portraits/hidetoshi_nakata.webp",
+    "cutout": false
+  },
+  "hristo_stoichkov": {
+    "nationality": "Bulgaria",
+    "nationalityFlag": "/img/country/bulgaria.png",
+    "portrait": "/img/journeyman/portraits/hristo_stoichkov.webp",
+    "cutout": false
+  },
+  "hugo_lloris": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/journeyman/portraits/hugo_lloris.webp",
+    "cutout": false
+  },
+  "hugo_sanchez": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/hugo_sanchez.webp",
+    "cutout": false
+  },
+  "ian_rush": {
+    "nationality": "Wales",
+    "nationalityFlag": "/img/country/wales.png",
+    "portrait": "/img/journeyman/portraits/ian_rush.webp",
+    "cutout": false
+  },
+  "iker_casillas": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/casillas.png",
+    "cutout": true
+  },
+  "ilkay_gundogan": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/guendogan.png",
+    "cutout": true
+  },
+  "isco": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/isco.png",
+    "cutout": true
+  },
+  "ivan_cordoba": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/ivan_cordoba.webp",
+    "cutout": false
+  },
+  "ivan_zamorano": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/ivan_zamorano.webp",
+    "cutout": false
+  },
+  "jaap_stam": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/jaap_stam.webp",
+    "cutout": false
+  },
+  "jadon_sancho": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/jadon_sancho.webp",
+    "cutout": false
+  },
+  "jairzinho": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/jairzinho.webp",
+    "cutout": false
+  },
+  "james_rodriguez": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/james_rodriguez.webp",
+    "cutout": false
+  },
+  "jamie_carragher": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/jamie_carragher.webp",
+    "cutout": false
+  },
+  "jan_koller": {
+    "nationality": "Czech Republic",
+    "nationalityFlag": "/img/country/czech_republic.png",
+    "portrait": "/img/journeyman/portraits/jan_koller.webp",
+    "cutout": false
+  },
+  "jan_oblak": {
+    "nationality": "Slovenia",
+    "nationalityFlag": "/img/country/slovenia.png",
+    "portrait": "/img/higher-lower/players/oblak.png",
+    "cutout": true
+  },
+  "jari_litmanen": {
+    "nationality": "Finland",
+    "nationalityFlag": "/img/country/finland.png",
+    "portrait": "/img/journeyman/portraits/jari_litmanen.webp",
+    "cutout": false
+  },
+  "javier_hernandez": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/javier_hernandez.webp",
+    "cutout": false
+  },
+  "javier_mascherano": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/javier_mascherano.webp",
+    "cutout": false
+  },
+  "javier_saviola": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/javier_saviola.webp",
+    "cutout": false
+  },
+  "javier_zanetti": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/javier_zanetti.png",
+    "cutout": true
+  },
+  "jay_jay_okocha": {
+    "nationality": "Nigeria",
+    "nationalityFlag": "/img/country/nigeria.png",
+    "portrait": "/img/journeyman/portraits/jay_jay_okocha.webp",
+    "cutout": false
+  },
+  "jefferson_farfan": {
+    "nationality": "Peru",
+    "nationalityFlag": "/img/country/peru.png",
+    "portrait": "/img/journeyman/portraits/jefferson_farfan.webp",
+    "cutout": false
+  },
+  "joao_cancelo": {
+    "nationality": "Portugal",
+    "nationalityFlag": "/img/country/portugal.png",
+    "portrait": "/img/higher-lower/players/cancelo.png",
+    "cutout": true
+  },
+  "joao_felix": {
+    "nationality": "Portugal",
+    "nationalityFlag": "/img/country/portugal.png",
+    "portrait": "/img/journeyman/portraits/joao_felix.webp",
+    "cutout": false
+  },
+  "johan_cruyff": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/johan_cruyff.webp",
+    "cutout": false
+  },
+  "john_terry": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/terry.png",
+    "cutout": true
+  },
+  "jon_dahl_tomasson": {
+    "nationality": "Denmark",
+    "nationalityFlag": "/img/country/denmark.png",
+    "portrait": "/img/journeyman/portraits/jon_dahl_tomasson.webp",
+    "cutout": false
+  },
+  "jordan_henderson": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/jordan_henderson.webp",
+    "cutout": false
+  },
+  "jorge_campos": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/jorge_campos.webp",
+    "cutout": false
+  },
+  "jorge_valdano": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/jorge_valdano.webp",
+    "cutout": false
+  },
+  "jose_luis_chilavert": {
+    "nationality": "Paraguay",
+    "nationalityFlag": "/img/country/paraguay.png",
+    "portrait": "/img/journeyman/portraits/jose_luis_chilavert.webp",
+    "cutout": false
+  },
+  "joshua_kimmich": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/kimmich.png",
+    "cutout": true
+  },
+  "juan_cuadrado": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/juan_cuadrado.webp",
+    "cutout": false
+  },
+  "juan_roman_riquelme": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/juan_roman_riquelme.webp",
+    "cutout": false
+  },
+  "juan_sebastian_veron": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/juan_sebastian_veron.webp",
+    "cutout": false
+  },
+  "jude_bellingham": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/bellingham.png",
+    "cutout": true
+  },
+  "junior": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/junior.webp",
+    "cutout": false
+  },
+  "kalidou_koulibaly": {
+    "nationality": "Senegal",
+    "nationalityFlag": "/img/country/senegal.png",
+    "portrait": "/img/higher-lower/players/koulibaly.png",
+    "cutout": true
+  },
+  "karim_benzema": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/higher-lower/players/benzema.png",
+    "cutout": true
+  },
+  "kasey_keller": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/kasey_keller.webp",
+    "cutout": false
+  },
+  "kazuyoshi_miura": {
+    "nationality": "Japan",
+    "nationalityFlag": "/img/country/japan.png",
+    "portrait": "/img/journeyman/portraits/kazuyoshi_miura.webp",
+    "cutout": false
+  },
+  "keisuke_honda": {
+    "nationality": "Japan",
+    "nationalityFlag": "/img/country/japan.png",
+    "portrait": "/img/journeyman/portraits/keisuke_honda.webp",
+    "cutout": false
+  },
+  "kenny_dalglish": {
+    "nationality": "Scotland",
+    "nationalityFlag": "/img/country/scotland.png",
+    "portrait": "/img/journeyman/portraits/kenny_dalglish.webp",
+    "cutout": false
+  },
+  "kevin_de_bruyne": {
+    "nationality": "Belgium",
+    "nationalityFlag": "/img/country/belgium.png",
+    "portrait": "/img/higher-lower/players/bruyne.png",
+    "cutout": true
+  },
+  "keylor_navas": {
+    "nationality": "Costa Rica",
+    "nationalityFlag": "/img/country/costa_rica.png",
+    "portrait": "/img/journeyman/portraits/keylor_navas.webp",
+    "cutout": false
+  },
+  "koke": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/koke.png",
+    "cutout": true
+  },
+  "kyle_walker": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/kyle_walker.webp",
+    "cutout": false
+  },
+  "kylian_mbappe": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/higher-lower/players/mbappe.png",
+    "cutout": true
+  },
+  "lakhdar_belloumi": {
+    "nationality": "Algeria",
+    "nationalityFlag": "/img/country/algeria.png",
+    "portrait": "/img/journeyman/portraits/lakhdar_belloumi.webp",
+    "cutout": false
+  },
+  "landon_donovan": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/landon_donovan.webp",
+    "cutout": false
+  },
+  "lautaro_martinez": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/lautaro.png",
+    "cutout": true
+  },
+  "leonardo_bonucci": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/higher-lower/players/leonardo_bonucci.png",
+    "cutout": true
+  },
+  "lev_yashin": {
+    "nationality": "Soviet Union",
+    "nationalityFlag": "/img/country/soviet_union.png",
+    "portrait": "/img/journeyman/portraits/lev_yashin.webp",
+    "cutout": false
+  },
+  "lionel_messi": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/messi.png",
+    "cutout": true
+  },
+  "lothar_matthaus": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/lothar_matthaus.webp",
+    "cutout": false
+  },
+  "lucas_radebe": {
+    "nationality": "South Africa",
+    "nationalityFlag": "/img/country/south_africa.png",
+    "portrait": "/img/journeyman/portraits/lucas_radebe.webp",
+    "cutout": false
+  },
+  "luis_diaz": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/higher-lower/players/diaz.png",
+    "cutout": true
+  },
+  "luis_suarez": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/higher-lower/players/suarez.png",
+    "cutout": true
+  },
+  "luka_modric": {
+    "nationality": "Croatia",
+    "nationalityFlag": "/img/country/croatia.png",
+    "portrait": "/img/higher-lower/players/modric.png",
+    "cutout": true
+  },
+  "manuel_neuer": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/neuer.png",
+    "cutout": true
+  },
+  "marc_andre_ter_stegen": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/ter_stegen.png",
+    "cutout": true
+  },
+  "marc_overmars": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/marc_overmars.webp",
+    "cutout": false
+  },
+  "marcelo": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/marcelo.png",
+    "cutout": true
+  },
+  "marcelo_salas": {
+    "nationality": "Chile",
+    "nationalityFlag": "/img/country/chile.png",
+    "portrait": "/img/journeyman/portraits/marcelo_salas.webp",
+    "cutout": false
+  },
+  "marco_reus": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/marco_reus.webp",
+    "cutout": false
+  },
+  "marco_van_basten": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/higher-lower/players/marco_van_basten.png",
+    "cutout": true
+  },
+  "marek_hamsik": {
+    "nationality": "Slovakia",
+    "nationalityFlag": "/img/country/slovakia.png",
+    "portrait": "/img/journeyman/portraits/marek_hamsik.webp",
+    "cutout": false
+  },
+  "mario_balotelli": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/mario_balotelli.webp",
+    "cutout": false
+  },
+  "mario_gotze": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/goetze.png",
+    "cutout": true
+  },
+  "mario_kempes": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/mario_kempes.webp",
+    "cutout": false
+  },
+  "mario_yepes": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/mario_yepes.webp",
+    "cutout": false
+  },
+  "martin_odegaard": {
+    "nationality": "Norway",
+    "nationalityFlag": "/img/country/norway.png",
+    "portrait": "/img/higher-lower/players/odegaard.png",
+    "cutout": true
+  },
+  "mats_hummels": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/mats_hummels.webp",
+    "cutout": false
+  },
+  "matt_le_tissier": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/matt_le_tissier.webp",
+    "cutout": false
+  },
+  "matthijs_de_ligt": {
+    "nationality": "Holland",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/higher-lower/players/de_ligt.png",
+    "cutout": true
+  },
+  "mauro_icardi": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/icardi.png",
+    "cutout": true
+  },
+  "mehdi_mahdavikia": {
+    "nationality": "Iran",
+    "nationalityFlag": "/img/country/iran.png",
+    "portrait": "/img/journeyman/portraits/mehdi_mahdavikia.webp",
+    "cutout": false
+  },
+  "memphis_depay": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/memphis_depay.webp",
+    "cutout": false
+  },
+  "mesut_ozil": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/mesut_ozil.png",
+    "cutout": true
+  },
+  "michael_bradley": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/michael_bradley.webp",
+    "cutout": false
+  },
+  "michael_essien": {
+    "nationality": "Ghana",
+    "nationalityFlag": "/img/country/ghana.png",
+    "portrait": "/img/journeyman/portraits/michael_essien.webp",
+    "cutout": false
+  },
+  "michael_laudrup": {
+    "nationality": "Denmark",
+    "nationalityFlag": "/img/country/denmark.png",
+    "portrait": "/img/journeyman/portraits/michael_laudrup.webp",
+    "cutout": false
+  },
+  "michel_platini": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/journeyman/portraits/michel_platini.webp",
+    "cutout": false
+  },
+  "milan_baros": {
+    "nationality": "Czech Republic",
+    "nationalityFlag": "/img/country/czech_republic.png",
+    "portrait": "/img/journeyman/portraits/milan_baros.webp",
+    "cutout": false
+  },
+  "mohamed_salah": {
+    "nationality": "Egypt",
+    "nationalityFlag": "/img/country/egypt.png",
+    "portrait": "/img/higher-lower/players/salah.png",
+    "cutout": true
+  },
+  "mustapha_hadji": {
+    "nationality": "Morocco",
+    "nationalityFlag": "/img/country/morocco.png",
+    "portrait": "/img/journeyman/portraits/mustapha_hadji.webp",
+    "cutout": false
+  },
+  "nemanja_vidic": {
+    "nationality": "Serbia",
+    "nationalityFlag": "/img/country/serbia.png",
+    "portrait": "/img/higher-lower/players/vidic.png",
+    "cutout": true
+  },
+  "neymar": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/neymar.png",
+    "cutout": true
+  },
+  "ngolo_kante": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/higher-lower/players/kante.png",
+    "cutout": true
+  },
+  "nilton_santos": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/nilton_santos.webp",
+    "cutout": false
+  },
+  "nolberto_solano": {
+    "nationality": "Peru",
+    "nationalityFlag": "/img/country/peru.png",
+    "portrait": "/img/journeyman/portraits/nolberto_solano.webp",
+    "cutout": false
+  },
+  "noureddine_naybet": {
+    "nationality": "Morocco",
+    "nationalityFlag": "/img/country/morocco.png",
+    "portrait": "/img/journeyman/portraits/noureddine_naybet.webp",
+    "cutout": false
+  },
+  "nwankwo_kanu": {
+    "nationality": "Nigeria",
+    "nationalityFlag": "/img/country/nigeria.png",
+    "portrait": "/img/journeyman/portraits/nwankwo_kanu.webp",
+    "cutout": false
+  },
+  "owen_hargreaves": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/owen_hargreaves.webp",
+    "cutout": false
+  },
+  "pablo_aimar": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/pablo_aimar.webp",
+    "cutout": false
+  },
+  "paolo_guerrero": {
+    "nationality": "Peru",
+    "nationalityFlag": "/img/country/peru.png",
+    "portrait": "/img/journeyman/portraits/paolo_guerrero.webp",
+    "cutout": false
+  },
+  "paolo_maldini": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/higher-lower/players/maldini.png",
+    "cutout": true
+  },
+  "paolo_montero": {
+    "nationality": "Uruguay",
+    "nationalityFlag": "/img/country/uruguay.png",
+    "portrait": "/img/journeyman/portraits/paolo_montero.webp",
+    "cutout": false
+  },
+  "park_ji_sung": {
+    "nationality": "South Korea",
+    "nationalityFlag": "/img/country/south_korea.png",
+    "portrait": "/img/journeyman/portraits/park_ji_sung.webp",
+    "cutout": false
+  },
+  "patrick_kluivert": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/patrick_kluivert.webp",
+    "cutout": false
+  },
+  "paul_pogba": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/journeyman/portraits/paul_pogba.webp",
+    "cutout": false
+  },
+  "paul_scholes": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/scholes.png",
+    "cutout": true
+  },
+  "paulo_dybala": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/dybala.png",
+    "cutout": true
+  },
+  "pavel_nedved": {
+    "nationality": "Czech Republic",
+    "nationalityFlag": "/img/country/czech_republic.png",
+    "portrait": "/img/journeyman/portraits/pavel_nedved.webp",
+    "cutout": false
+  },
+  "pele": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/pele.webp",
+    "cutout": false
+  },
+  "peter_schmeichel": {
+    "nationality": "Denmark",
+    "nationalityFlag": "/img/country/denmark.png",
+    "portrait": "/img/journeyman/portraits/peter_schmeichel.webp",
+    "cutout": false
+  },
+  "petr_cech": {
+    "nationality": "Czech Republic",
+    "nationalityFlag": "/img/country/czech_republic.png",
+    "portrait": "/img/higher-lower/players/cech.png",
+    "cutout": true
+  },
+  "philipp_lahm": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/philipp_lahm.png",
+    "cutout": true
+  },
+  "phillip_cocu": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/phillip_cocu.webp",
+    "cutout": false
+  },
+  "pierre_emerick_aubameyang": {
+    "nationality": "Gabon",
+    "nationalityFlag": "/img/country/gabon.png",
+    "portrait": "/img/higher-lower/players/aubameyang.png",
+    "cutout": true
+  },
+  "rabah_madjer": {
+    "nationality": "Algeria",
+    "nationalityFlag": "/img/country/algeria.png",
+    "portrait": "/img/journeyman/portraits/rabah_madjer.webp",
+    "cutout": false
+  },
+  "radamel_falcao": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/radamel_falcao.webp",
+    "cutout": false
+  },
+  "rafael_marquez": {
+    "nationality": "Mexico",
+    "nationalityFlag": "/img/country/mexico.png",
+    "portrait": "/img/journeyman/portraits/rafael_marquez.webp",
+    "cutout": false
+  },
+  "rafael_van_der_vaart": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/rafael_van_der_vaart.webp",
+    "cutout": false
+  },
+  "raheem_sterling": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/raheem_sterling.webp",
+    "cutout": false
+  },
+  "rene_higuita": {
+    "nationality": "Colombia",
+    "nationalityFlag": "/img/country/colombia.png",
+    "portrait": "/img/journeyman/portraits/rene_higuita.webp",
+    "cutout": false
+  },
+  "rigobert_song": {
+    "nationality": "Cameroon",
+    "nationalityFlag": "/img/country/cameroon.png",
+    "portrait": "/img/journeyman/portraits/rigobert_song.webp",
+    "cutout": false
+  },
+  "rio_ferdinand": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/ferdinand.png",
+    "cutout": true
+  },
+  "rivaldo": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/rivaldo.webp",
+    "cutout": false
+  },
+  "rivellino": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/rivellino.webp",
+    "cutout": false
+  },
+  "riyad_mahrez": {
+    "nationality": "Algeria",
+    "nationalityFlag": "/img/country/algeria.png",
+    "portrait": "/img/higher-lower/players/mahrez.png",
+    "cutout": true
+  },
+  "robert_lewandowski": {
+    "nationality": "Poland",
+    "nationalityFlag": "/img/country/poland.png",
+    "portrait": "/img/higher-lower/players/lewandowski.png",
+    "cutout": true
+  },
+  "roberto_baggio": {
+    "nationality": "Italy",
+    "nationalityFlag": "/img/country/italy.png",
+    "portrait": "/img/journeyman/portraits/roberto_baggio.webp",
+    "cutout": false
+  },
+  "roberto_carlos": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/roberto_carlos.png",
+    "cutout": true
+  },
+  "roberto_firmino": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/roberto_firmino.webp",
+    "cutout": false
+  },
+  "robin_van_persie": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/robin_van_persie.webp",
+    "cutout": false
+  },
+  "rodri": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/rodri.png",
+    "cutout": true
+  },
+  "romario": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/romario.webp",
+    "cutout": false
+  },
+  "romelu_lukaku": {
+    "nationality": "Belgium",
+    "nationalityFlag": "/img/country/belgium.png",
+    "portrait": "/img/higher-lower/players/lukaku.png",
+    "cutout": true
+  },
+  "ronald_de_boer": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/ronald_de_boer.webp",
+    "cutout": false
+  },
+  "ronaldinho": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/higher-lower/players/ronaldinho.png",
+    "cutout": true
+  },
+  "ronaldo_nazario": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/ronaldo_nazario.webp",
+    "cutout": false
+  },
+  "roque_santa_cruz": {
+    "nationality": "Paraguay",
+    "nationalityFlag": "/img/country/paraguay.png",
+    "portrait": "/img/journeyman/portraits/roque_santa_cruz.webp",
+    "cutout": false
+  },
+  "ruud_gullit": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/higher-lower/players/ruud_gullit.png",
+    "cutout": true
+  },
+  "ruud_van_nistelrooy": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/journeyman/portraits/ruud_van_nistelrooy.webp",
+    "cutout": false
+  },
+  "ryan_giggs": {
+    "nationality": "Wales",
+    "nationalityFlag": "/img/country/wales.png",
+    "portrait": "/img/journeyman/portraits/ryan_giggs.webp",
+    "cutout": false
+  },
+  "sadio_mane": {
+    "nationality": "Senegal",
+    "nationalityFlag": "/img/country/senegal.png",
+    "portrait": "/img/higher-lower/players/mane.png",
+    "cutout": true
+  },
+  "samuel_etoo": {
+    "nationality": "Cameroon",
+    "nationalityFlag": "/img/country/cameroon.png",
+    "portrait": "/img/higher-lower/players/etoo.png",
+    "cutout": true
+  },
+  "sepp_maier": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/sepp_maier.webp",
+    "cutout": false
+  },
+  "sergio_aguero": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/higher-lower/players/aguero.png",
+    "cutout": true
+  },
+  "sergio_busquets": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/sergio_busquets.webp",
+    "cutout": false
+  },
+  "sergio_ramos": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/sergio_ramos.webp",
+    "cutout": false
+  },
+  "seydou_keita": {
+    "nationality": "Mali",
+    "nationalityFlag": "/img/country/mali.png",
+    "portrait": "/img/journeyman/portraits/seydou_keita.webp",
+    "cutout": false
+  },
+  "shaka_hislop": {
+    "nationality": "Trinidad and Tobago",
+    "nationalityFlag": "/img/country/trinidad_and_tobago.png",
+    "portrait": "/img/journeyman/portraits/shaka_hislop.webp",
+    "cutout": false
+  },
+  "shinji_kagawa": {
+    "nationality": "Japan",
+    "nationalityFlag": "/img/country/japan.png",
+    "portrait": "/img/journeyman/portraits/shinji_kagawa.webp",
+    "cutout": false
+  },
+  "shunsuke_nakamura": {
+    "nationality": "Japan",
+    "nationalityFlag": "/img/country/japan.png",
+    "portrait": "/img/journeyman/portraits/shunsuke_nakamura.webp",
+    "cutout": false
+  },
+  "socrates": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/socrates.webp",
+    "cutout": false
+  },
+  "son_heung_min": {
+    "nationality": "South Korea",
+    "nationalityFlag": "/img/country/south_korea.png",
+    "portrait": "/img/journeyman/portraits/son_heung_min.webp",
+    "cutout": false
+  },
+  "steven_gerrard": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/gerrard.png",
+    "cutout": true
+  },
+  "steven_pienaar": {
+    "nationality": "South Africa",
+    "nationalityFlag": "/img/country/south_africa.png",
+    "portrait": "/img/journeyman/portraits/steven_pienaar.webp",
+    "cutout": false
+  },
+  "sulley_muntari": {
+    "nationality": "Ghana",
+    "nationalityFlag": "/img/country/ghana.png",
+    "portrait": "/img/journeyman/portraits/sulley_muntari.webp",
+    "cutout": false
+  },
+  "teofilo_cubillas": {
+    "nationality": "Peru",
+    "nationalityFlag": "/img/country/peru.png",
+    "portrait": "/img/journeyman/portraits/teofilo_cubillas.webp",
+    "cutout": false
+  },
+  "thiago_silva": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/thiago_silva.webp",
+    "cutout": false
+  },
+  "thibaut_courtois": {
+    "nationality": "Belgium",
+    "nationalityFlag": "/img/country/belgium.png",
+    "portrait": "/img/higher-lower/players/courtois.png",
+    "cutout": true
+  },
+  "thierry_henry": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/higher-lower/players/henry.png",
+    "cutout": true
+  },
+  "thomas_muller": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/journeyman/portraits/thomas_muller.webp",
+    "cutout": false
+  },
+  "thomas_partey": {
+    "nationality": "Ghana",
+    "nationalityFlag": "/img/country/ghana.png",
+    "portrait": "/img/higher-lower/players/partey.png",
+    "cutout": true
+  },
+  "tim_howard": {
+    "nationality": "United States",
+    "nationalityFlag": "/img/country/united_states.png",
+    "portrait": "/img/journeyman/portraits/tim_howard.webp",
+    "cutout": false
+  },
+  "tomas_rosicky": {
+    "nationality": "Czech Republic",
+    "nationalityFlag": "/img/country/czech_republic.png",
+    "portrait": "/img/journeyman/portraits/tomas_rosicky.webp",
+    "cutout": false
+  },
+  "toni_kroos": {
+    "nationality": "Germany",
+    "nationalityFlag": "/img/country/germany.png",
+    "portrait": "/img/higher-lower/players/kroos.png",
+    "cutout": true
+  },
+  "tony_adams": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/journeyman/portraits/tony_adams.webp",
+    "cutout": false
+  },
+  "tostao": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/tostao.webp",
+    "cutout": false
+  },
+  "trent_alexander_arnold": {
+    "nationality": "England",
+    "nationalityFlag": "/img/country/england.png",
+    "portrait": "/img/higher-lower/players/trent.png",
+    "cutout": true
+  },
+  "ubaldo_fillol": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/ubaldo_fillol.webp",
+    "cutout": false
+  },
+  "victor_osimhen": {
+    "nationality": "Nigeria",
+    "nationalityFlag": "/img/country/nigeria.png",
+    "portrait": "/img/higher-lower/players/osimhen.png",
+    "cutout": true
+  },
+  "vincent_kompany": {
+    "nationality": "Belgium",
+    "nationalityFlag": "/img/country/belgium.png",
+    "portrait": "/img/journeyman/portraits/vincent_kompany.webp",
+    "cutout": false
+  },
+  "virgil_van_dijk": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/higher-lower/players/vandijk.png",
+    "cutout": true
+  },
+  "walter_samuel": {
+    "nationality": "Argentina",
+    "nationalityFlag": "/img/country/argentina.png",
+    "portrait": "/img/journeyman/portraits/walter_samuel.webp",
+    "cutout": false
+  },
+  "wesley_sneijder": {
+    "nationality": "Netherlands",
+    "nationalityFlag": "/img/country/netherlands.png",
+    "portrait": "/img/higher-lower/players/wesley_sneijder.png",
+    "cutout": true
+  },
+  "xabi_alonso": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/journeyman/portraits/xabi_alonso.webp",
+    "cutout": false
+  },
+  "xavi": {
+    "nationality": "Spain",
+    "nationalityFlag": "/img/country/spain.png",
+    "portrait": "/img/higher-lower/players/xavi.png",
+    "cutout": true
+  },
+  "yaya_toure": {
+    "nationality": "Ivory Coast",
+    "nationalityFlag": "/img/country/ivory_coast.png",
+    "portrait": "/img/journeyman/portraits/yaya_toure.webp",
+    "cutout": false
+  },
+  "zico": {
+    "nationality": "Brazil",
+    "nationalityFlag": "/img/country/brazil.png",
+    "portrait": "/img/journeyman/portraits/zico.webp",
+    "cutout": false
+  },
+  "zinedine_zidane": {
+    "nationality": "France",
+    "nationalityFlag": "/img/country/france.png",
+    "portrait": "/img/higher-lower/players/zidane.png",
+    "cutout": true
+  },
+  "zlatan_ibrahimovic": {
+    "nationality": "Sweden",
+    "nationalityFlag": "/img/country/sweden.png",
+    "portrait": "/img/higher-lower/players/zlatan.png",
+    "cutout": true
+  }
+}

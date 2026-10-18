@@ -1,14 +1,15 @@
 export interface JourneyClub { clubId?: string; label: string; logo: string | null; }
-export interface JourneyPlayer { id?: string; name: string; aliases: string[]; clubs: JourneyClub[]; puzzleEligible?: boolean; status?: string; }
+export interface JourneyProfile { nationality?: string; nationalityFlag?: string; portrait?: string; cutout?: boolean; }
+export interface JourneyPlayer extends JourneyProfile { id?: string; name: string; aliases: string[]; clubs: JourneyClub[]; puzzleEligible?: boolean; status?: string; }
 export interface JourneySearchPlayer { id: string; name: string; aliases: string[]; nationality?: string; nationalityFlag?: string; }
 export interface JourneySearchOption { id: string; name: string; typed: boolean; nationality?: string; nationalityFlag?: string; }
 export type JourneyOutcome = 'playing' | 'correct' | 'incorrect';
 export type JourneyRevealMethod = 'next' | 'random' | 'final';
 export interface JourneyReveal { index: number; method: JourneyRevealMethod; }
-export interface JourneyResult { name: string; outcome: JourneyOutcome | 'skipped'; points: number; reveals: number; nextReveals: number; }
+export interface JourneyResult { name: string; outcome: 'correct' | 'incorrect'; points: number; reveals: number; nextReveals: number; }
 export interface JourneyState {
   deck: number[]; question: number; reveals: JourneyReveal[]; attempts: number;
-  outcome: JourneyOutcome; results: JourneyResult[]; complete: boolean;
+  outcome: JourneyOutcome; results: JourneyResult[]; skippedPlayers: number[]; complete: boolean;
 }
 export const normalizeGuess = (value: string) => value.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
 export function journeySearchOptions(input: string, directory: JourneySearchPlayer[]): JourneySearchOption[] {
@@ -25,7 +26,7 @@ export function journeySearchOptions(input: string, directory: JourneySearchPlay
 }
 export const journeyRevealLimit = (totalClubs: number) => Math.min(9, Math.max(0, totalClubs - 2));
 export const JOURNEY_SKIPS_PER_ROUND = 3;
-export const journeySkipsLeft = (state: Pick<JourneyState, 'results'>) => Math.max(0, JOURNEY_SKIPS_PER_ROUND - state.results.filter(result => result.outcome === 'skipped').length);
+export const journeySkipsLeft = (state: Pick<JourneyState, 'skippedPlayers'>) => Math.max(0, JOURNEY_SKIPS_PER_ROUND - state.skippedPlayers.length);
 export const journeyCanSkip = (state: JourneyState) => !state.complete && state.outcome === 'playing' && state.reveals.length === 0 && journeySkipsLeft(state) > 0;
 export const roundJourneyPoints = (points: number) => Math.round((points + Number.EPSILON) * 100) / 100;
 export const formatJourneyPoints = (points: number) => String(roundJourneyPoints(points));
@@ -81,12 +82,23 @@ export function createJourneyDeck(players: JourneyPlayer[], random: () => number
   return shuffle(selected);
 }
 export function createJourneyState(deck: number[]): JourneyState {
-  return { deck: deck.slice(0, 10), question: 0, reveals: [], attempts: 0, outcome: 'playing', results: [], complete: false };
+  return { deck: deck.slice(0, 10), question: 0, reveals: [], attempts: 0, outcome: 'playing', results: [], skippedPlayers: [], complete: false };
 }
-export type JourneyAction = { type: 'guess'; name: string } | { type: 'reveal'; method: 'next' | 'random' } | { type: 'next' };
+export type JourneyAction = { type: 'guess'; name: string } | { type: 'reveal'; method: 'next' | 'random' } | { type: 'skip' } | { type: 'next' };
 export function advanceJourney(state: JourneyState, action: JourneyAction, players: JourneyPlayer[], random: () => number = Math.random): JourneyState {
   if (state.complete) return state;
   const player = players[state.deck[state.question]];
+  if (action.type === 'skip') {
+    if (!journeyCanSkip(state)) return state;
+    const excluded = new Set([...state.deck, ...state.skippedPlayers]);
+    const available = players.flatMap((candidate, index) => !excluded.has(index) && candidate.puzzleEligible === true && candidate.clubs.length >= 3 ? [index] : []);
+    if (!available.length) return state;
+    const band = (total: number) => total <= 5 ? 0 : total <= 8 ? 1 : 2;
+    const sameDifficulty = available.filter(index => band(players[index].clubs.length) === band(player.clubs.length));
+    const candidates = sameDifficulty.length ? sameDifficulty : available;
+    const replacement = candidates[Math.min(candidates.length - 1, Math.max(0, Math.floor(random() * candidates.length)))];
+    return { ...state, deck: state.deck.map((index, i) => i === state.question ? replacement : index), skippedPlayers: [...state.skippedPlayers, state.deck[state.question]], reveals: [], attempts: 0 };
+  }
   if (action.type === 'reveal') {
     if (state.outcome !== 'playing' || state.reveals.length >= journeyRevealLimit(player.clubs.length)) return state;
     const hidden = journeyHiddenClubs(player.clubs.length, state.reveals);
@@ -101,7 +113,7 @@ export function advanceJourney(state: JourneyState, action: JourneyAction, playe
     const attempts = state.attempts + 1;
     return { ...state, attempts, outcome: correct ? 'correct' : attempts >= 2 ? 'incorrect' : 'playing' };
   }
-  if (state.outcome === 'playing' && !journeyCanSkip(state)) return state;
-  const results = [...state.results, { name: player.name, outcome: state.outcome === 'playing' ? 'skipped' as const : state.outcome, points: state.outcome === 'correct' ? roundJourneyPoints(potentialPoints(player.clubs.length, state.reveals)) : 0, reveals: state.reveals.length, nextReveals: state.reveals.filter(reveal => reveal.method === 'next').length }];
+  if (state.outcome === 'playing') return state;
+  const results = [...state.results, { name: player.name, outcome: state.outcome, points: state.outcome === 'correct' ? roundJourneyPoints(potentialPoints(player.clubs.length, state.reveals)) : 0, reveals: state.reveals.length, nextReveals: state.reveals.filter(reveal => reveal.method === 'next').length }];
   return { ...state, results, complete: state.question === state.deck.length - 1, question: Math.min(state.question + 1, state.deck.length - 1), reveals: [], attempts: 0, outcome: 'playing' };
 }

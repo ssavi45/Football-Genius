@@ -4,11 +4,12 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import confetti from 'canvas-confetti';
-import { ArrowRight, Check, ChevronRight, Eye, FastForward, GitBranch, Info, ListOrdered, RotateCcw, Search, Send, Shield, Shuffle, Target, Trophy, UserRound, X } from 'lucide-react';
+import { ArrowRight, ChevronRight, Eye, FastForward, GitBranch, Info, ListOrdered, RotateCcw, Search, Send, Shield, Shuffle, Target, Trophy, UserRound } from 'lucide-react';
 import { useAuth } from '@/context/auth-context';
 import searchDirectory from '@/data/journeyman-search-players.json';
 import { advanceJourney, createJourneyDeck, createJourneyState, formatJourneyPoints, journeyCanSkip, journeyHiddenClubs, journeyLastClubLabel, journeyRevealCost, journeyRevealLimit, journeySearchOptions, journeySkipsLeft, potentialPoints, roundJourneyPoints, visibleClub, type JourneyAction, type JourneyPlayer } from '@/lib/journeyman';
 import JourneymanWidgets from './JourneymanWidgets';
+import JourneyAnswerCard from './JourneyAnswerCard';
 
 export default function JourneymanGame({ players, initialDeck }: { players: JourneyPlayer[]; initialDeck: number[] }) {
   const { addXP, recordGameResult } = useAuth();
@@ -30,7 +31,7 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
   const nextCost = journeyRevealCost(player.clubs.length, game.reveals, 'next');
   const skipsLeft = journeySkipsLeft(game);
   const canSkip = journeyCanSkip(game);
-  const skipReason = game.reveals.length > 0 ? 'You revealed a club. Guess this player before continuing.' : skipsLeft === 0 ? 'All three skips have been used this round.' : `${skipsLeft} of 3 skips left this round`;
+  const skipReason = game.reveals.length > 0 ? 'You revealed a club. Guess this player before continuing.' : skipsLeft === 0 ? 'All three skips have been used this round.' : `Replace this question. ${skipsLeft} of 3 skips left this round`;
   const score = roundJourneyPoints(game.results.reduce((sum, r) => sum + r.points, 0) + (!game.complete && game.outcome === 'correct' ? roundJourneyPoints(potential) : 0));
   const correct = game.results.filter(r => r.outcome === 'correct').length + (!game.complete && game.outcome === 'correct' ? 1 : 0);
   const suggestions = useMemo(() => journeySearchOptions(input, searchDirectory.players), [input]);
@@ -45,7 +46,7 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
       window.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     });
     return () => cancelAnimationFrame(frame);
-  }, [game.question, game.complete, roundId, player.clubs.length]);
+  }, [game.question, game.complete, roundId, player]);
 
   useEffect(() => {
     if (!ended || game.complete) return;
@@ -65,7 +66,7 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
       const next = advanceJourney(game, action, players);
       if (next === game) return;
       setGame(next); setInput(''); setSearchOpen(false); setActiveSuggestion(-1);
-      setNotice(next.outcome === 'correct' ? `Journey solved! ${player.name} — +${formatJourneyPoints(potential)} points and +80 XP.` : next.outcome === 'incorrect' ? `The player was ${player.name}. The full career is now revealed.` : 'Not quite. You have one guess left — try another player or reveal a club.');
+      setNotice(next.outcome === 'playing' ? 'Incorrect guess. You have one attempt left.' : '');
       return;
     }
     if (action.type === 'reveal') {
@@ -77,14 +78,13 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
     } else {
       const next = advanceJourney(game, action, players);
       if (next === game) return;
-      if (!ended) void recordGameResult('journeyman', false, 0).catch(() => {});
       setGame(next); setInput(''); setSearchOpen(false); setActiveSuggestion(-1);
-      setNotice('');
+      setNotice(action.type === 'skip' ? `Question replaced. ${journeySkipsLeft(next)} ${journeySkipsLeft(next) === 1 ? 'skip' : 'skips'} left this round.` : '');
     }
   }
   function restart() {
-    setGame(createJourneyState(createJourneyDeck(players, Math.random, game.deck))); setRoundId(id => id + 1); setInput(''); setSearchOpen(false); setActiveSuggestion(-1);
-    setNotice('A new journey begins. First and last clubs are visible.');
+    setGame(createJourneyState(createJourneyDeck(players, Math.random, [...game.deck, ...game.skippedPlayers]))); setRoundId(id => id + 1); setInput(''); setSearchOpen(false); setActiveSuggestion(-1);
+    setNotice('');
   }
 
   return <div className={`journey-dashboard ${!game.complete && player.clubs.length <= 5 ? 'journey-single-row' : ''}`}>
@@ -92,7 +92,7 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
       <section className="journey-hero">
         <Image className="journey-hero-art" src="/img/journeyman/travel-hero.webp" fill sizes="(max-width: 1100px) 100vw, 70vw" alt="" priority />
         <h1>The <span>Journeyman</span></h1>
-        <p>Identify the globe-trotting star from their transfer history<br className="journey-desktop-break" /> and badges. A true test for football historians.</p>
+        <p>Guess the footballer from their club history.</p>
         <div className="journey-hero-pills">
           <span><Target />Round {game.question + 1} of 10</span><span><Shield />{player.clubs.length} clubs</span>
           <span><Eye />{game.complete ? 0 : revealsLeft} reveals left</span><span><GitBranch />Career Timeline</span>
@@ -105,7 +105,7 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
           <h2>You know your way around football.</h2><div className="journey-final-score">{formatJourneyPoints(score)}<span>/ 100 points</span></div>
           <p>{correct} correct {correct === 1 ? 'guess' : 'guesses'} · {correct * 80} XP earned</p>
           <button className="journey-primary" onClick={restart}><RotateCcw size={19} />Play a New Round</button>
-          <div className="journey-review">{game.results.map((r, i) => <div key={i} className={`journey-review-${r.outcome}`}><span>{i + 1}</span><strong>{r.name}</strong><small>{r.outcome === 'correct' ? 'Correct' : r.outcome === 'skipped' ? 'Skipped' : 'Incorrect'}</small><b>{formatJourneyPoints(r.points)} pts</b></div>)}</div>
+          <div className="journey-review">{game.results.map((r, i) => <div key={i} className={`journey-review-${r.outcome}`}><span>{i + 1}</span><strong>{r.name}</strong><small>{r.outcome === 'correct' ? 'Correct' : 'Incorrect'}</small><b>{formatJourneyPoints(r.points)} pts</b></div>)}</div>
           <Link href="/game-modes">Explore Game Modes <ArrowRight size={16} /></Link>
         </div> : <>
           <div className="journey-board-heading"><div><p className="journey-kicker">CAREER TIMELINE</p><h2>First and last clubs are visible. The rest is up to you.</h2></div><span className="journey-handwritten">Different<br />clubs. Same legend?</span></div>
@@ -125,8 +125,8 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
 
           <div className="journey-search-card">
             <svg className="journey-search-watermark" viewBox="0 0 160 160" fill="none" aria-hidden="true"><circle cx="80" cy="80" r="70" /><path d="m80 48 30 22-11 35H61L50 70Zm0 0V10m30 60 37-12m-48 47 23 32m-61-32-23 32M50 70 13 58M80 10l42 24 25 24-1 44-24 35-42 13-42-13-24-35-1-44 25-24Z" /></svg>
-            <label className="journey-search-label" htmlFor={ended ? undefined : 'journey-player-search'}><span className="journey-search-icon"><Search /></span><span><strong className={ended ? undefined : 'journey-search-prompt'}>{ended ? 'JOURNEY REVEALED' : 'GUESS THE FOOTBALLER'}</strong>{ended && <small>THE STORY BEHIND THE BADGES</small>}</span></label>
-            {ended ? <div className={`journey-result ${game.outcome}`} role="status">{game.outcome === 'correct' ? <Check /> : <X />}<div><h3>{game.outcome === 'correct' ? `That’s right — ${player.name}!` : `The player was ${player.name}`}</h3><p>{game.outcome === 'correct' ? `+${formatJourneyPoints(potential)} points · +80 XP earned` : 'Every club has a story. Another journey awaits.'}</p></div><button className="journey-primary" onClick={() => act({ type: 'next' })}>{game.question === 9 ? 'View Results' : 'Next Player'}<ArrowRight size={18} /></button></div> : <form onSubmit={e => { e.preventDefault(); act({ type: 'guess', name: activeSuggestion >= 0 && suggestions[activeSuggestion] ? suggestions[activeSuggestion].name : input }); }}>
+            {!ended && <label className="journey-search-label" htmlFor="journey-player-search"><span className="journey-search-icon"><Search /></span><span><strong className="journey-search-prompt">GUESS THE FOOTBALLER</strong></span></label>}
+            {ended ? <JourneyAnswerCard player={player} correct={game.outcome === 'correct'} points={potential} lastQuestion={game.question === 9} onNext={() => act({ type: 'next' })} /> : <form onSubmit={e => { e.preventDefault(); act({ type: 'guess', name: activeSuggestion >= 0 && suggestions[activeSuggestion] ? suggestions[activeSuggestion].name : input }); }}>
               <div className="journey-guess-row"><div className="journey-search-wrap"><Search size={20} /><input ref={searchRef} id="journey-player-search" placeholder="Type a footballer’s name..." autoComplete="off" value={input} role="combobox" aria-autocomplete="list" aria-expanded={searchOpen && suggestions.length > 0} aria-controls="journey-suggestions" aria-activedescendant={activeSuggestion >= 0 ? `journey-suggestion-${activeSuggestion}` : undefined} onChange={e => { setInput(e.target.value); setSearchOpen(true); setActiveSuggestion(-1); }} onFocus={() => setSearchOpen(true)} onBlur={() => setSearchOpen(false)} onKeyDown={e => { if (e.key === 'Escape') setSearchOpen(false); if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); setSearchOpen(true); setActiveSuggestion(i => e.key === 'ArrowDown' ? Math.min(i + 1, suggestions.length - 1) : Math.max(i - 1, 0)); } }} />
                 {searchOpen && suggestions.length > 0 && <ul className="journey-suggestions" id="journey-suggestions" role="listbox">{suggestions.map((p, i) => <li key={p.id} id={`journey-suggestion-${i}`} role="option" aria-selected={activeSuggestion === i} onMouseDown={e => { e.preventDefault(); setInput(p.name); setSearchOpen(false); setActiveSuggestion(-1); }}>
                   {p.nationalityFlag ? <Image className="journey-suggestion-flag" src={p.nationalityFlag} width={30} height={20} alt={`${p.nationality} flag`} /> : <UserRound className="journey-suggestion-person" size={18} />}
@@ -139,9 +139,9 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
                 <button className="journey-secondary journey-reveal journey-reveal-random" disabled={!revealsLeft} title="Reveal any random hidden stop" onClick={() => act({ type: 'reveal', method: 'random' })}><Shuffle size={23} /><span>{revealsLeft ? `Reveal random club (-${formatJourneyPoints(randomCost)} ${randomCost === 1 ? 'point' : 'points'})` : 'Reveal limit reached'}</span></button>
                 <button className="journey-secondary journey-reveal journey-reveal-next" disabled={!revealsLeft} title="Reveal the earliest hidden stop in career order" onClick={() => act({ type: 'reveal', method: 'next' })}><ListOrdered size={23} /><span>{revealsLeft ? `Reveal next club (-${formatJourneyPoints(nextCost)} ${nextCost === 1 ? 'point' : 'points'})` : 'Reveal limit reached'}</span></button>
               </>}
-              <button className="journey-secondary journey-skip" disabled={!canSkip} title={skipReason} aria-label={`Skip question (${skipsLeft} skips left). ${skipReason}`} onClick={() => act({ type: 'next' })}><FastForward size={20} /><span>Skip ({skipsLeft})</span></button>
+              <button className="journey-secondary journey-skip" disabled={!canSkip} title={skipReason} aria-label={`Skip question (${skipsLeft} ${skipsLeft === 1 ? 'skip' : 'skips'} left). ${skipReason}`} onClick={() => act({ type: 'skip' })}><FastForward size={20} /><span>Skip ({skipsLeft})</span></button>
             </div>}
-            <div className={`journey-notice ${game.attempts > 0 && !ended ? 'is-warning' : ''}`} aria-live="polite"><span className="journey-notice-icon"><Info /></span><p>{notice || 'Follow the badges. Find the player.'}</p></div>
+            {!ended && <div className={`journey-notice ${game.attempts > 0 ? 'is-warning' : ''}`} aria-live="polite"><span className="journey-notice-icon"><Info /></span><p>{notice || 'Follow the badges. Find the player.'}</p></div>}
           </div>
         </>}
       </section>

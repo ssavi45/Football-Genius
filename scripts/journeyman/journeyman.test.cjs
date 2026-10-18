@@ -54,6 +54,18 @@ test('300 career identities are connected; only the reviewed subset enters quest
   assert(!players.some(p => p.clubs.some(c => importReport.blockedBadges[c.clubId])));
   for (const p of collection) assert(journeySearchOptions(p.name, directory).some(s => normalizeGuess(s.name) === normalizeGuess(p.name)));
 });
+
+test('every playable answer has a local portrait and national flag', () => {
+  const profiles = JSON.parse(fs.readFileSync(path.join(root, 'src/data/journeyman-profiles.json'), 'utf8'));
+  for (const player of players) {
+    const profile = profiles[player.id];
+    assert(profile?.nationality, `${player.name} needs a nationality`);
+    for (const field of ['portrait', 'nationalityFlag']) {
+      assert(profile[field]?.startsWith('/img/'), `${player.name} needs a local ${field}`);
+      assert(fs.existsSync(path.join(root, 'public', profile[field])), `${player.name}: missing ${field}`);
+    }
+  }
+});
 test('all fifty corrected players are released; only short careers remain excluded', () => {
   assert.equal(players.length, 269);
   assert.equal(collection.filter(p => !p.puzzleEligible).length, 31);
@@ -226,42 +238,60 @@ test('wrong guesses consume the two attempts without awarding points', () => {
   assert.equal(s.attempts, 0);
   assert.equal(s.question, 1);
 });
-test('ten questions finish once, sum earned points, retain skips and restart cleanly', () => {
+test('three replacements still require ten answered questions and preserve the full score ceiling', () => {
   let s = start();
   for (let i = 0; i < 10; i++) {
-    if (i !== 4) {
-      if (i === 0) s = act(s, { type: 'reveal', method:'next' });
-      s = act(s, { type: 'guess', name: players[s.deck[s.question]].name });
+    if ([2,4,9].includes(i)) {
+      s=act(s,{type:'skip'});
+      assert.equal(s.question,i);
+      assert.equal(s.results.length,i);
+      assert.equal(s.complete,false, 'a replacement on the last question must not complete the round');
     }
+    if (i === 0) s = act(s, { type: 'reveal', method:'next' });
+    s = act(s, { type: 'guess', name: players[s.deck[s.question]].name });
     s = act(s, { type: 'next' });
   }
   assert.equal(s.complete, true);
   assert.equal(s.results.length, 10);
-  assert.equal(s.results[4].outcome, 'skipped');
-  assert.equal(s.results.reduce((sum, r) => sum + r.points, 0), 87.5);
+  assert(s.results.every(r=>r.outcome==='correct'));
+  assert.equal(s.results.reduce((sum, r) => sum + r.points, 0), 97.5);
+  assert.equal(journeySkipsLeft(s),0);
   assert.equal(act(s, { type: 'next' }), s);
+  assert.equal(act(s, { type: 'skip' }), s);
   assert.equal(start().results.length, 0);
+  assert.equal(journeySkipsLeft(start()),3);
 });
 
-test('only three unanswered questions can be skipped per round', () => {
+test('skip replaces the current question at most three times without consuming a result', () => {
   let s=start();
+  const originalDeck=Array.from(s.deck);
+  const seen=new Set(s.deck);
+  const band=n=>n<=5?0:n<=8?1:2;
   assert.equal(journeySkipsLeft(s),3);
   for(let i=0;i<3;i++) {
     assert(journeyCanSkip(s));
-    s=act(s,{type:'next'});
+    const current=s.deck[s.question];
+    s=advanceJourney(s,{type:'skip'},players,()=>.57);
     assert.equal(journeySkipsLeft(s),2-i);
+    assert.equal(s.question,0);
+    assert.equal(s.results.length,0);
+    assert.equal(s.attempts,0);
+    assert.equal(s.outcome,'playing');
+    assert.equal(s.skippedPlayers[i],current);
+    assert(!seen.has(s.deck[0]), 'replacement must exclude the original deck and every discarded player');
+    assert.deepEqual(Array.from(s.deck.slice(1)),originalDeck.slice(1), 'upcoming questions stay unchanged');
+    assert.equal(band(players[current].clubs.length),band(players[s.deck[0]].clubs.length));
+    seen.add(s.deck[0]);
   }
-  assert.equal(s.question,3);
-  assert.equal(s.results.filter(r=>r.outcome==='skipped').length,3);
   assert.equal(journeyCanSkip(s),false);
+  assert.equal(act(s,{type:'skip'}),s);
   assert.equal(act(s,{type:'next'}),s);
   s=act(s,{type:'guess',name:'Wrong player'});
   s=act(s,{type:'guess',name:'Still wrong'});
   s=act(s,{type:'next'});
-  assert.equal(s.question,4, 'normal advancement must still work without skips');
-  assert.equal(s.results[3].outcome,'incorrect');
+  assert.equal(s.question,1, 'normal advancement must still work without skips');
+  assert.equal(s.results[0].outcome,'incorrect');
   assert.equal(journeySkipsLeft(s),0);
-  assert.equal(journeySkipsLeft(start()),3);
 });
 
 test('every paid reveal locks skipping, but answered questions can always advance', () => {
@@ -270,8 +300,10 @@ test('every paid reveal locks skipping, but answered questions can always advanc
     let s=advanceJourney(createJourneyState([0,0]),{type:'reveal',method},pool);
     assert.equal(journeyCanSkip(s),false);
     assert.equal(journeySkipsLeft(s),3);
+    assert.equal(advanceJourney(s,{type:'skip'},pool),s);
     assert.equal(advanceJourney(s,{type:'next'},pool),s);
     s=advanceJourney(s,{type:'guess',name:pool[0].name},pool);
+    assert.equal(advanceJourney(s,{type:'skip'},pool),s, 'answered questions cannot be replaced');
     s=advanceJourney(s,{type:'next'},pool);
     assert.equal(s.question,1);
     assert.equal(s.results[0].outcome,'correct');
@@ -280,6 +312,19 @@ test('every paid reveal locks skipping, but answered questions can always advanc
   }
   let s=act(start(),{type:'guess',name:'Wrong player'});
   assert(journeyCanSkip(s), 'a wrong guess without a reveal does not lock skipping');
-  s=act(s,{type:'next'});
+  s=act(s,{type:'skip'});
   assert.equal(journeySkipsLeft(s),2);
+  assert.equal(s.attempts,0);
+  assert.equal(s.results.length,0);
+});
+
+test('skip falls back to another trail length when needed, but never reuses a reserved player', () => {
+  const pool=[...fixture(3),...fixture(9)].map((p,i)=>({...p,name:`Player ${i}`}));
+  let s=createJourneyState([0]);
+  s=advanceJourney(s,{type:'skip'},pool,()=>.5);
+  assert.equal(s.deck[0],1);
+  assert.equal(s.question,0);
+  assert.equal(s.results.length,0);
+  assert.equal(journeySkipsLeft(s),2);
+  assert.equal(advanceJourney(s,{type:'skip'},pool,()=>{throw Error('no replacement must not roll randomness');}),s);
 });

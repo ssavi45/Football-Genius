@@ -11,10 +11,10 @@ const community = [
   { name: 'GoalAtlas', avatar: 'salah', points: 88 }, { name: 'MidfieldMind', avatar: 'bellingham', points: 84 }, { name: 'JerseyHunter', avatar: 'cruyff', points: 82 },
 ];
 const instructions = [
-  ['Read the career timeline', 'First and last clubs are visible. The rest are hidden.'],
-  ['Guess the player', 'Type a footballer’s name and submit your guess.'],
-  ['Clues and skips', '9 reveals max. 3 skips per round; no skipping after a reveal.'],
-  ['Score points', 'Half-point clue costs. Full reveal: 2 pts. Correct: +80 XP.'],
+  'Follow the clubs. You have two guesses.',
+  'Reveal clubs for clues; each reveal costs points.',
+  '3 skips swap players. No skips after a reveal.',
+  'Correct answers earn up to 10 pts + 80 XP.',
 ];
 
 export default function JourneymanWidgets({ game, player, score, correct }: { game: JourneyState; player: JourneyPlayer; score: number; correct: number }) {
@@ -36,6 +36,6 @@ export default function JourneymanWidgets({ game, player, score, correct }: { ga
       <div><dt><Target />Correct guesses</dt><dd>{correct}</dd></div><div><dt><Eye />Reveals used</dt><dd>{revealsUsed}{!game.complete && `/${revealLimit}`}</dd></div><div><dt><GitBranch />{game.complete ? 'Journeys completed' : 'Clubs uncovered'}</dt><dd>{game.complete ? '10/10' : `${uncovered}/${player.clubs.length}`}</dd></div><div><dt><Star />Round score</dt><dd>{formatJourneyPoints(score)} pts</dd></div>
     </dl></section>
     <section className="journey-widget journey-leaderboard"><div className="journey-widget-heading"><h2><Trophy /><span>Global Leaderboard<small>Preview</small></span></h2><Link href="/leaderboard">View All<ArrowRight size={16} /></Link></div><ol>{community.map((entry, i) => <li key={entry.name}><span className={`journey-rank journey-rank-${i + 1}`}>{i + 1}</span><Image src={`/img/players/${entry.avatar}.jpg`} width={28} height={28} alt="" /><span>{entry.name}</span><strong>{entry.points} pts</strong></li>)}</ol></section>
-    <section className="journey-widget journey-howto"><button className="journey-widget-heading" onClick={() => setHowToOpen(open => !open)} aria-expanded={howToOpen} aria-controls="journey-instructions"><h2><BookOpen fill="currentColor" />How to Play</h2><ChevronRight className={howToOpen ? 'is-open' : ''} size={21} /></button>{howToOpen && <ol id="journey-instructions">{instructions.map(([title, text], i) => <li key={title}><span>{i + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>}</section>
+    <section className="journey-widget journey-howto"><button type="button" className="journey-widget-heading" onClick={() => setHowToOpen(open => !open)} aria-expanded={howToOpen} aria-controls="journey-instructions"><h2><span className="journey-howto-icon"><BookOpen size={23} /></span>How to Play</h2><ChevronRight className={howToOpen ? 'is-open' : ''} size={21} /></button>{howToOpen && <ol id="journey-instructions">{instructions.map((text, i) => <li key={text}><span>{i + 1}</span><p>{text}</p></li>)}</ol>}</section>
   </aside>;
 }
