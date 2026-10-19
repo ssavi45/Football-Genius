@@ -1,15 +1,4 @@
-.matrix-shell { max-width:1920px; gap:20px; padding:12px 14px 18px; background:radial-gradient(ellipse at 44% 26%,#dcecff88,transparent 70%),#edf6ff; }
-.matrix-shell .sidebar-desktop { width:200px; padding:0; }
-.matrix-shell .sidebar-card { top:78px; height:calc(100dvh - 96px); min-height:700px; padding:0; border-radius:19px; background:linear-gradient(130deg,#fffffff0,#e8f3ffb3); box-shadow:0 9px 25px #527fc20a; }
-.matrix-shell .sidebar-content { padding:10px 10px 20px; }
-.matrix-shell .sidebar-links { display:flex; flex-direction:column; gap:9px; }
-.matrix-shell .sidebar-links > * + * { margin:0; }
-.matrix-shell .sidebar-links a { height:50px; padding:0 15px; gap:14px; border-radius:13px; color:#0c2464; font-size:15px; font-weight:450; }
-.matrix-shell .sidebar-links a svg { width:22px; height:22px; color:#6c7ca4; }
-.matrix-shell .sidebar-links a.bg-blue-600 { color:white; background:linear-gradient(120deg,#1682ff,#0052ff); box-shadow:0 5px 12px #0060ff2a,inset 0 1px 2px #fff8; transform:none; }
-.matrix-shell .sidebar-links a.bg-blue-600 svg { color:white; }
-.matrix-shell .sidebar-quote { border:0; }
-.matrix-dashboard { display:grid; grid-template-columns:minmax(0,1fr) minmax(335px,27.8%); gap:20px; min-height:calc(100dvh - 96px); color:#080e27; }
+.matrix-dashboard { display:grid; grid-template-columns:minmax(0,1fr) minmax(335px,27.8%); gap:20px; min-height:var(--app-content-height); color:#080e27; }
 .matrix-main { display:flex; flex-direction:column; gap:14px; min-width:0; }
 .matrix-hero { position:relative; isolation:isolate; overflow:hidden; flex-shrink:0; height:201px; padding:12px 28px 15px; border:1px solid #d7e8ff; border-radius:16px; background:#f7fcff; }
 .matrix-hero-art { z-index:-2; left:auto !important; width:65% !important; object-fit:cover; object-position:right center; mask-image:linear-gradient(90deg,transparent,#000 18%); }
@@ -209,7 +198,7 @@
 @keyframes matrix-backdrop { from { opacity:0; } to { opacity:1; } }
 
 @media (min-width:1151px) and (min-height:850px) {
-  .matrix-dashboard { height:calc(100dvh - 96px); }
+  .matrix-dashboard { height:var(--app-content-height); }
   .matrix-main,.matrix-widgets { min-height:0; }
   .matrix-board { min-height:0; }
   .matrix-grid { min-height:0; }
@@ -230,7 +219,6 @@
   .matrix-howto { min-height:170px; }
 }
 @media (min-width:1151px) and (max-width:1450px) {
-  .matrix-shell { gap:15px; }
   .matrix-dashboard { gap:15px; grid-template-columns:minmax(0,1fr) 335px; }
   .matrix-hero { padding-left:19px; }
   .matrix-hero > p { font-size:16px; }
@@ -256,12 +244,10 @@
   .matrix-hero > p { font-size:16px; }
 }
 @media (max-width:1023px) {
-  .matrix-shell { padding:12px 18px 20px; }
   .matrix-hero { height:210px; }
   .matrix-title { width:min(650px,77%); }
 }
 @media (max-width:700px) {
-  .matrix-shell { padding:10px 12px 20px; }
   .matrix-main { gap:11px; }
   .matrix-hero { height:205px; padding:13px 15px; }
   .matrix-hero-art { width:100% !important; object-position:right center; opacity:.35; }
@@ -345,8 +331,7 @@
   .matrix-cell,.matrix-dialog,.matrix-dialog-backdrop,.matrix-primary,.matrix-secondary { animation:none; transition:none; }
 }
 @media (min-width:1151px) and (max-height:849px) {
-  .matrix-shell .sidebar-card { height:max(704px,calc(100dvh - 96px)); min-height:704px; }
-  .matrix-dashboard { height:calc(100dvh - 96px); min-height:704px; }
+  .matrix-dashboard { height:var(--app-content-height); min-height:704px; }
   .matrix-main,.matrix-widgets { min-height:0; }
   .matrix-board,.matrix-grid { min-height:0; }
   .matrix-cell { min-height:0; }

@@ -6,6 +6,7 @@ import TopBar from '@/components/navigation/TopBar';
 import Sidebar from '@/components/navigation/Sidebar';
 import AuthModal from '@/components/auth/AuthModal';
 import { isSharedGameRoute } from '@/lib/navigation';
+import './AppShell.css';
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -14,9 +15,10 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem('footygen_sidebar_collapsed');
-      setSidebarCollapsed(saved === null ? ['/games/matrix', '/games/journeyman', '/games/scouts-duel'].includes(pathname) : saved === 'true');
+      setSidebarCollapsed(saved === 'true');
     } catch { /* Keep navigation usable without browser storage. */ }
-  }, [pathname]);
+  }, []);
+  useEffect(() => { setMobileMenuOpen(false); }, [pathname]);
   const toggleSidebar = () => {
     const next = !sidebarCollapsed;
     setSidebarCollapsed(next);
@@ -29,43 +31,18 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const isScoutsDuelPage = pathname === '/games/scouts-duel';
   const isLandingPage = pathname === '/' || pathname === '/game-modes';
 
+  const pageClass = isScorelinePage ? 'scoreline-shell' : isHigherLowerPage ? 'higher-lower-shell' : isMatrixPage ? 'matrix-shell' : isJourneymanPage ? 'journey-shell' : isScoutsDuelPage ? 'scout-shell' : isLandingPage ? 'landing-shell' : 'standard-shell';
+
   return (
-    <div className="min-h-screen flex flex-col bg-transparent text-slate-900" suppressHydrationWarning>
-      {/* Top Bar */}
-      <TopBar
-        isMobileMenuOpen={mobileMenuOpen}
-        onToggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)}
-      />
-
-      <div className={`flex-1 flex w-full mx-auto ${isSharedGameRoute(pathname) ? 'shared-game-shell' : ''} ${isScorelinePage ? "scoreline-shell" : isHigherLowerPage ? "higher-lower-shell" : isMatrixPage ? "matrix-shell" : isJourneymanPage ? "journey-shell" : isScoutsDuelPage ? "scout-shell" : isLandingPage ? "" : "max-w-[1440px]"}`}>
-        {/* On non-landing pages or on mobile menu, show Sidebar */}
-        {!isLandingPage && (
-          <Sidebar
-            isOpen={mobileMenuOpen}
-            onClose={() => setMobileMenuOpen(false)}
-            collapsed={sidebarCollapsed}
-            onToggleCollapsed={toggleSidebar}
-          />
-        )}
-
-        {/* Mobile drawer if toggled on landing page */}
-        {isLandingPage && mobileMenuOpen && (
-          <Sidebar
-            isOpen={mobileMenuOpen}
-            onClose={() => setMobileMenuOpen(false)}
-            collapsed={sidebarCollapsed}
-            onToggleCollapsed={toggleSidebar}
-          />
-        )}
-
-        {/* Main Content Area */}
-        <main className="flex-1 min-w-0 max-w-full">
+    <div className={`app-frame ${sidebarCollapsed?'is-sidebar-collapsed':''}`} suppressHydrationWarning>
+      <Sidebar isOpen={mobileMenuOpen} onClose={()=>setMobileMenuOpen(false)} collapsed={sidebarCollapsed} onToggleCollapsed={toggleSidebar}/>
+      <div className="app-workspace">
+        <TopBar isMobileMenuOpen={mobileMenuOpen} onToggleMobileMenu={()=>setMobileMenuOpen(!mobileMenuOpen)}/>
+        <main className={`app-page-shell ${isSharedGameRoute(pathname)?'shared-game-shell':''} ${pageClass}`}>
           {children}
         </main>
       </div>
-
-      {/* Global Auth Modal */}
-      <AuthModal />
+      <AuthModal/>
     </div>
   );
 }

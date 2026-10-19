@@ -5,5 +5,18 @@
   "width": 640,
   "height": 196,
   "bytes": 19860,
-  "sha256": "e91d1dd78cd0a590ecc6db0d70fb802eebffa44bac25dfb6654c11355ccbdebe"
+  "sha256": "e91d1dd78cd0a590ecc6db0d70fb802eebffa44bac25dfb6654c11355ccbdebe",
+  "mark": {
+    "url": "/branding/football-genius-mark.webp",
+    "width": 256,
+    "height": 214,
+    "sourceCrop": {
+      "left": 0,
+      "top": 0,
+      "width": 476,
+      "height": 397
+    },
+    "bytes": 8124,
+    "sha256": "03378d331dc29a5764cea79c2b83cb7d3aea005be64a3c54bc0d6b2489575822"
+  }
 }

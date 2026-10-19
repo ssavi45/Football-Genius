@@ -41,7 +41,8 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
     const frame = requestAnimationFrame(() => {
       const board = boardRef.current;
       if (!board) return;
-      const headerHeight = document.querySelector('header')?.getBoundingClientRect().height ?? 0;
+      const header = document.querySelector('.topbar');
+      const headerHeight = header ? header.getBoundingClientRect().height + parseFloat(getComputedStyle(header).top || '0') : 0;
       const top = window.scrollY + board.getBoundingClientRect().top - headerHeight - 8;
       window.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     });

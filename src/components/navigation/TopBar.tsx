@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import brandLogo from '../../../public/branding/football-genius-logo.webp';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/auth-context';
 import { sound } from '@/lib/utils/sound';
@@ -41,40 +39,21 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_1px_3px_rgba(0,0,0,0.02)] transition-all ${useSharedNav ? "landing-header" : ""}`}
+      className="topbar"
       suppressHydrationWarning
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-18 py-2.5 flex items-center justify-between gap-4">
+      <div className="topbar-inner">
 
-        {/* Left: Hamburger (mobile) & Brand Logo */}
-        <div className="brand-group flex items-center gap-3">
-          <button
-            onClick={onToggleMobileMenu}
-            className="menu-toggle lg:hidden p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition"
-            aria-label="Toggle navigation menu"
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <div className="topbar-mobile-heading">
+          <button type="button" onClick={onToggleMobileMenu} className="menu-toggle" aria-label="Toggle navigation menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-sidebar">
+            {isMobileMenuOpen?<X size={21}/>:<Menu size={21}/>}
           </button>
-
-          <Link
-            href="/"
-            onMouseEnter={() => sound.playHover()}
-            onClick={() => sound.playClick()}
-            className="brand-link flex items-center gap-2.5 group"
-          >
-            <Image
-              src={brandLogo}
-              alt="Football Genius"
-              className="brand-logo"
-              sizes="(max-width: 600px) 150px, (max-width: 1100px) 170px, 180px"
-              priority
-            />
-          </Link>
+          <span>{pathname==='/'?'Home':pathname==='/game-modes'?'Game Modes':pathname==='/leaderboard'?'Leaderboard':pathname==='/profile'?'My Profile':isGameModesActive?'Game Modes':'Football Genius'}</span>
         </div>
 
         {/* Center: In-Game vs Standard Nav */}
         {pathname.startsWith('/games') && !useSharedNav ? (
-          <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold">
+          <nav className="topbar-nav" aria-label="Top navigation">
             {/* Play (Active Blue Pill) */}
             <Link
               href="/games/scoreline"
@@ -120,7 +99,7 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
             </Link>
           </nav>
         ) : (
-          <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold">
+          <nav className="topbar-nav" aria-label="Top navigation">
             {/* Home (active with blue bottom underline) */}
             <Link
               href="/"

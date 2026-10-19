@@ -1,6 +1,4 @@
-.journey-shell { max-width:1920px; gap:20px; padding:10px 14px 14px 9px; background:radial-gradient(ellipse at 40% 25%,#e0f1ff80,transparent 65%),#eef7ff; }
-.journey-shell .sidebar-card { min-height:820px; }
-.journey-dashboard { display:grid; grid-template-columns:minmax(0,1fr) minmax(355px,29.7%); gap:18px; min-height:max(820px,calc(100dvh - 90px)); color:#080e27; }
+.journey-dashboard { display:grid; grid-template-columns:minmax(0,1fr) minmax(355px,29.7%); gap:18px; min-height:max(820px,var(--app-content-height)); color:#080e27; }
 .journey-main { display:flex; flex-direction:column; gap:14px; min-width:0; min-height:0; }
 .journey-hero { position:relative; isolation:isolate; display:flex; flex-direction:column; flex-shrink:0; min-height:clamp(250px,29.2dvh,290px); overflow:hidden; padding:22px 36px; border:1px solid #daecff; border-radius:14px; background:#f2faff; }
 .journey-hero-art { z-index:-2; object-fit:cover; object-position:center; }
@@ -171,14 +169,12 @@
 .journey-complete > a { display:inline-flex; align-items:center; gap:8px; margin-top:4px; color:#0662ee; font-size:13px; }
 .journey-dashboard button:focus-visible,.journey-dashboard a:focus-visible { outline:3px solid #0066ff; outline-offset:3px; }
 @media (min-width:1101px) {
-  .journey-shell .sidebar-card { height:100%; }
   .journey-dashboard:has(.journey-timeline-long) .journey-widgets { align-self:start; }
   .journey-dashboard:has(.journey-timeline-long) .journey-leaderboard { flex:none; }
   .journey-dashboard:has(.journey-timeline-long) .journey-leaderboard ol { height:auto; justify-content:flex-start; }
 }
 @media (min-width:1101px) and (max-width:1450px) {
   .journey-dashboard { grid-template-columns:minmax(0,1fr) 340px; gap:14px; }
-  .journey-shell { gap:14px; }
   .journey-hero { padding:22px 24px; }
   .journey-hero h1 { font-size:clamp(44px,3.75vw,57px); }
   .journey-hero > p { max-width:65%; font-size:17px; }
@@ -202,7 +198,7 @@
   .journey-howto li > span { width:23px; height:23px; }
 }
 @media (max-height:850px) and (min-width:1101px) {
-  .journey-dashboard,.journey-shell .sidebar-card { min-height:720px; }
+  .journey-dashboard { min-height:720px; }
   .journey-hero { min-height:225px; padding-top:15px; }
   .journey-hero h1 { font-size:52px; }
   .journey-hero > p { font-size:17px; }
@@ -229,9 +225,7 @@
   .journey-round dl > div { min-height:30px; }
 }
 @media (max-width:1100px) {
-  .journey-shell { gap:14px; padding:12px; }
   .journey-dashboard { grid-template-columns:minmax(0,1fr); height:auto; min-height:0; }
-  .journey-shell .sidebar-card { min-height:0; }
   .journey-hero { min-height:270px; }
   .journey-hero h1 { font-size:58px; }
   .journey-board { min-height:570px; padding-top:24px; }
@@ -244,7 +238,6 @@
   .journey-hero > p { max-width:64%; font-size:18px; }
 }
 @media (max-width:700px) {
-  .journey-shell { padding:10px; }
   .journey-dashboard { gap:13px; }
   .journey-main { gap:12px; }
   .journey-hero { height:auto; min-height:290px; padding:19px 19px 18px; border-radius:16px; }
@@ -319,7 +312,7 @@
   .journey-review { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (min-width:1101px) {
-  .journey-dashboard.journey-single-row { height:calc(100dvh - 90px); min-height:0; }
+  .journey-dashboard.journey-single-row { height:var(--app-content-height); min-height:0; }
   .journey-single-row .journey-main { display:grid; grid-template-rows:clamp(148px,20dvh,205px) minmax(0,1fr); gap:clamp(8px,1.2dvh,12px); }
   .journey-single-row .journey-hero { min-height:0; padding:clamp(10px,1.5dvh,16px) 28px; }
   .journey-single-row .journey-hero h1 { font-size:clamp(42px,6.4dvh,64px); line-height:1.05; letter-spacing:-2px; }
@@ -370,7 +363,6 @@
   .journey-single-row .journey-howto-icon { width:32px; height:32px; }
   .journey-single-row .journey-howto li > span { width:22px; height:22px; font-size:12px; }
   .journey-single-row .journey-howto p { font-size:12px; line-height:1.35; }
-  .journey-shell:has(.journey-single-row) .sidebar-card { height:calc(100dvh - 90px); min-height:0; }
 }
 @media (min-width:1101px) and (max-height:850px) {
   .journey-timeline { --club-name-height:42px; }
@@ -386,7 +378,6 @@
   .journey-single-row .journey-round dl > div { min-height:22px; padding-block:1px; }
   .journey-single-row .journey-round dt,.journey-single-row .journey-round dd { line-height:1.2; }
   .journey-single-row .journey-howto li { gap:7px; align-items:center; }
-  .journey-shell:has(.journey-single-row) .sidebar-quote { display:none; }
 }
 @media (min-width:1101px) and (max-height:700px) {
   .journey-timeline { --crest-size:62px; --club-name-height:38px; --club-label-height:25px; }
