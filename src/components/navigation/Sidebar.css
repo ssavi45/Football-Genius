@@ -5,7 +5,7 @@
 .sidebar-collapse-toggle { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #d4e4fb; border-radius: 50%; background: #fff; color: #607ba9; box-shadow: 0 2px 6px #264b8514; transition: color .15s,background .15s; }
 .sidebar-collapse-toggle:hover { color: #075bff; background: #eff6ff; }
 .sidebar-collapse-toggle:focus-visible,.sidebar-desktop .sidebar-links a:focus-visible { outline: 3px solid #075bff; outline-offset: 3px; }
-.sidebar-desktop.is-collapsed,.scoreline-shell .sidebar-desktop.is-collapsed { width: 72px; padding-inline: 0; }
+.sidebar-desktop.is-collapsed { width: 72px; padding-inline: 0; }
 .sidebar-desktop.is-collapsed .sidebar-card { padding: 0; border-radius: 20px; }
 .sidebar-desktop.is-collapsed .sidebar-toolbar { justify-content: center; }
 .sidebar-desktop.is-collapsed .sidebar-content { padding: 14px 8px 20px; }
@@ -16,3 +16,26 @@
 .sidebar-desktop.is-collapsed .sidebar-links a:hover::after,.sidebar-desktop.is-collapsed .sidebar-links a:focus-visible::after { opacity: 1; visibility: visible; transform: translate(0,-50%); }
 @media (max-height: 760px) { .sidebar-desktop .sidebar-quote { display: none; } }
 @media (prefers-reduced-motion: reduce) { .sidebar-desktop,.sidebar-collapse-toggle,.sidebar-desktop.is-collapsed .sidebar-links a::after { transition: none; } }
+
+/* Shared navigation treatment for Journeyman and Scout's Duel. */
+:is(.journey-shell,.scout-shell) .sidebar-desktop { width:200px; padding:0; }
+:is(.journey-shell,.scout-shell) .sidebar-card { top:76px; height:calc(100dvh - 90px); min-height:0; padding:0; border-radius:17px; background:linear-gradient(140deg,#ffffffed,#e9f5ffb8); box-shadow:0 8px 25px #4772aa08; }
+:is(.journey-shell,.scout-shell) .sidebar-content { padding:12px 10px 20px; }
+:is(.journey-shell,.scout-shell) .sidebar-links { display:flex; flex-direction:column; gap:11px; }
+:is(.journey-shell,.scout-shell) .sidebar-links > * + * { margin:0; }
+:is(.journey-shell,.scout-shell) .sidebar-links a { height:49px; padding:0 14px; gap:13px; border-radius:12px; color:#0d275f; font-size:14px; font-weight:500; }
+:is(.journey-shell,.scout-shell) .sidebar-links a svg { width:21px; height:21px; color:#7185b0; }
+:is(.journey-shell,.scout-shell) .sidebar-links a.bg-blue-600 { color:#fff; background:linear-gradient(130deg,#1887ff,#0055ff); box-shadow:0 4px 10px #0067ff25,inset 0 1px 2px #fff7; transform:none; }
+:is(.journey-shell,.scout-shell) .sidebar-links a.bg-blue-600 svg { color:white; }
+
+/* Keep the collapsed rail identical across every game, regardless of page CSS. */
+.shared-game-shell .sidebar-desktop.is-collapsed { width:66px; padding:0; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-card { top:78px; height:calc(100dvh - 96px); min-height:0; padding:0; border-radius:19px; background:linear-gradient(130deg,#fffffff0,#e8f3ffb3); box-shadow:0 9px 25px #527fc20a; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-toolbar { justify-content:center; min-height:38px; padding:8px 0 0; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-content { padding:8px 8px 20px; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-links { display:flex; flex-direction:column; gap:9px; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-links > * + * { margin:0; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-links a { display:flex; align-items:center; justify-content:center; height:46px; padding:0; gap:0; border-radius:13px; color:#0c2464; transform:none; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-links a svg { width:22px; height:22px; flex-shrink:0; color:#6c7ca4; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-links a[aria-current=page] { color:white; background:linear-gradient(120deg,#1682ff,#0052ff); box-shadow:0 5px 12px #0060ff2a,inset 0 1px 2px #fff8; }
+.shared-game-shell .sidebar-desktop.is-collapsed .sidebar-links a[aria-current=page] svg { color:white; }

@@ -28,5 +28,6 @@ build/
 /tmp/matrix/
 /tmp/branding/
 /tmp/journeyman/corrections/
+/tmp/scouts-duel/
 /scripts/higher-lower/.venv/
 __pycache__/

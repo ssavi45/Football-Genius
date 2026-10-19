@@ -17,6 +17,7 @@ interface AuthContextType {
   addXP: (amount: number, reason?: string) => Promise<void>;
   recordGameResult: (mode: string, won: boolean, score: number) => Promise<void>;
   updateUsername: (newUsername: string) => Promise<void>;
+  refreshProfile: () => Promise<void>;
 }
 
 const DEFAULT_GUEST_PROFILE: UserProfile = {
@@ -266,6 +267,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
+  const refreshProfile = useCallback(async () => {
+    if (profile.is_guest) return;
+    const { data, error } = await supabase.from('profiles')
+      .select('total_xp,games_played,games_won,streak_days').eq('id', profile.id).single();
+    if (error || !data) return;
+    setProfile(previous => previous.id !== profile.id ? previous : {
+      ...previous,
+      total_xp: data.total_xp ?? previous.total_xp,
+      level: Math.floor((data.total_xp ?? previous.total_xp) / 200) + 1,
+      games_played: data.games_played ?? previous.games_played,
+      games_won: data.games_won ?? previous.games_won,
+      current_streak: data.streak_days ?? previous.current_streak,
+    });
+  }, [profile.id, profile.is_guest]);
+
   const updateUsername = useCallback(async (newUsername: string) => {
     if (!newUsername.trim()) return;
     setProfile(prev => {
@@ -298,6 +314,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         addXP,
         recordGameResult,
         updateUsername,
+        refreshProfile,
       }}
     >
       {children}

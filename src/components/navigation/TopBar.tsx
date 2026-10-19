@@ -2,9 +2,12 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import brandLogo from '../../../public/branding/football-genius-logo.webp';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/auth-context';
 import { sound } from '@/lib/utils/sound';
+import { isSharedGameRoute } from '@/lib/navigation';
 import './TopBar.css';
 import {
   Search,
@@ -33,8 +36,8 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
   const { profile, openAuthModal, soundEnabled, toggleSound, signOut } = useAuth();
   const [profileDropdown, setProfileDropdown] = useState(false);
   const pathname = usePathname();
-  const useSharedNav = pathname === '/' || pathname === '/game-modes' || pathname === '/games/scoreline' || pathname === '/games/higher-lower' || pathname === '/games/matrix' || pathname === '/games/journeyman';
-  const isGameModesActive = pathname === '/game-modes' || pathname === '/games/higher-lower' || pathname === '/games/matrix' || pathname === '/games/journeyman';
+  const useSharedNav = pathname === '/' || pathname === '/game-modes' || isSharedGameRoute(pathname);
+  const isGameModesActive = pathname === '/game-modes' || isSharedGameRoute(pathname);
 
   return (
     <header
@@ -59,18 +62,13 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
             onClick={() => sound.playClick()}
             className="brand-link flex items-center gap-2.5 group"
           >
-            {/* Dark Styled Soccer Crest Badge matching mockup */}
-            <div className="brand-ball relative h-9 w-9 flex items-center justify-center rounded-full bg-slate-950 text-white shadow-sm group-hover:scale-105 transition-transform">
-              <span className="text-xl leading-none select-none">⚽</span>
-            </div>
-            <div className="flex items-baseline">
-              <span className="brand-name text-xl font-black font-outfit tracking-tight text-slate-900">
-                Football
-              </span>
-              <span className="brand-name text-xl font-black font-outfit tracking-tight text-[#1D68FE] ml-1">
-                Genius
-              </span>
-            </div>
+            <Image
+              src={brandLogo}
+              alt="Football Genius"
+              className="brand-logo"
+              sizes="(max-width: 600px) 150px, (max-width: 1100px) 170px, 180px"
+              priority
+            />
           </Link>
         </div>
 

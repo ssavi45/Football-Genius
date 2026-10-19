@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { sound } from '@/lib/utils/sound';
+import { isSharedGameRoute } from '@/lib/navigation';
 import './Sidebar.css';
 import {
   Gamepad2,
@@ -27,14 +28,14 @@ interface SidebarProps {
 
 export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapsed }: SidebarProps) {
   const pathname = usePathname();
-  const isCurrentGame = ['/games/scoreline', '/games/higher-lower', '/games/matrix', '/games/journeyman'].includes(pathname);
+  const isCurrentGame = isSharedGameRoute(pathname);
 
   const navItems = [
     { label: 'Play Game', href: isCurrentGame ? pathname : '/games/scoreline', icon: Gamepad2, activePattern: isCurrentGame },
     { label: 'Game Modes', href: '/game-modes', icon: Grid2X2, activePattern: pathname === '/game-modes' },
     { label: 'Leaderboard', href: '/leaderboard', icon: Trophy, activePattern: pathname === '/leaderboard' },
     { label: 'My Stats', href: '/profile', icon: BarChart2, activePattern: pathname === '/profile' },
-    { label: 'Challenges', href: '/games/scouts-duel', icon: Users2, activePattern: pathname === '/games/scouts-duel' },
+    { label: 'Challenges', href: '/games/scouts-duel', icon: Users2, activePattern: false },
     { label: 'Achievements', href: '/profile#badges', icon: ShieldCheck, activePattern: false },
     { label: 'Settings', href: '/profile#settings', icon: Settings, activePattern: false },
   ];

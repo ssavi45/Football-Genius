@@ -1,0 +1,2024 @@
+{
+  "method": "Real sourced transparent portraits; alpha bounds trimmed, resized proportionally and centered on a 256x256 transparent canvas. No generated faces.",
+  "players": {
+    "aguero": {
+      "name": "Sergio Aguero",
+      "path": "/img/scouts-duel/players/aguero.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11902,
+      "sha256": "08b2109e2b20ef4acf9cde81546a01a599736b4dd9e8e3b7b5e0ce5d680d4853",
+      "source": {
+        "local": "/img/higher-lower/players/aguero.png",
+        "sha256": "77ae260505d72855653a142e99f23a42701ce8ead057f0f109754b1a446776d7",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "alisson": {
+      "name": "Alisson Becker",
+      "path": "/img/scouts-duel/players/alisson.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14720,
+      "sha256": "7704d2230388c833ab0742667b8f482f4a247570a352bf4ad7837e3ce6d37b44",
+      "source": {
+        "local": "/img/higher-lower/players/alisson.png",
+        "sha256": "319be9a8aeb3d3963e56ab87a1f271fbaf24db421fd1ea85349bf2ddf42ee53d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "alvarez": {
+      "name": "Julián Álvarez",
+      "path": "/img/scouts-duel/players/alvarez.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15428,
+      "sha256": "b0181c7804b74293485911d5f889a8bcbebaefe857b7158713957837ead5ae8c",
+      "source": {
+        "local": "/img/higher-lower/players/alvarez.png",
+        "sha256": "08f7c70097443b5db693abb3c9c99ae5089d62bbff63bdf4925ef70374e49ab7",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "antony": {
+      "name": "Antony",
+      "path": "/img/scouts-duel/players/antony.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16108,
+      "sha256": "49de7dc932f133516405a4d3fe6d2d33cc73275851ee427dd539765924745aa5",
+      "source": {
+        "local": "/img/higher-lower/players/antony.png",
+        "sha256": "d4720aab77e6e0be6ada05784fadfc7fc48a34935ee0c6923e21465de024c7ac",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "araujo": {
+      "name": "Ronald Araujo",
+      "path": "/img/scouts-duel/players/araujo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17184,
+      "sha256": "f899d0ce6d785a610cd3506a69c66edb2510dc88b2e403ff445be4ccd7eb24c7",
+      "source": {
+        "local": "/img/higher-lower/players/araujo.png",
+        "sha256": "d7c76e2a0129a4569e429718ee3d1923dd94f2f5ad22c645c7ecfb37432713d0",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "aubameyang": {
+      "name": "Pierre-Emerick Aubameyang",
+      "path": "/img/scouts-duel/players/aubameyang.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13750,
+      "sha256": "069a8aa20e15340884b780b2a6a350ed2c9660e52a2fbaf3065b1aef2d307d14",
+      "source": {
+        "local": "/img/higher-lower/players/aubameyang.png",
+        "sha256": "b1e582a6c82b7099db7bee873651270a98998800b3f22d2d6ece4dadc37b4dd3",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "bale": {
+      "name": "Gareth Bale",
+      "path": "/img/scouts-duel/players/bale.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11648,
+      "sha256": "8e702d97ea79de7329d7079e56327f249c175e96a90d62c3acf8098fe0788807",
+      "source": {
+        "local": "/img/higher-lower/players/bale.png",
+        "sha256": "eac68e6b32cdba0eec08a40a9b37760323ad4b4db79e9bede8ced54e5c7f86bb",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "barella": {
+      "name": "Nicolo Barella",
+      "path": "/img/scouts-duel/players/barella.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13502,
+      "sha256": "18d624429e03aaee803eab0fc8949421db992d31c831e0ad034460543e4ad4c1",
+      "source": {
+        "local": "/img/higher-lower/players/barella.png",
+        "sha256": "b9a565feba2b20232dcab5e9fd216e1649dcc21e093b6612f721f6a25827f665",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "bastoni": {
+      "name": "Alessandro Bastoni",
+      "path": "/img/scouts-duel/players/bastoni.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12984,
+      "sha256": "83babb72425c7f0cf464a740001f0bed889c4a177fb5c76d7bbdc44e65f4bc65",
+      "source": {
+        "local": "/img/higher-lower/players/bastoni.png",
+        "sha256": "52f519809355835fc81ae17d62af1575677878a957695e3d2e880bc27219cc12",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "bellingham": {
+      "name": "Jude Bellingham",
+      "path": "/img/scouts-duel/players/bellingham.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14034,
+      "sha256": "4a9043e797de07368eaf46936d604becd6c6ea9df67809c2f37881c80088bdff",
+      "source": {
+        "local": "/img/higher-lower/players/bellingham.png",
+        "sha256": "03163f08e18cbd56410b9691c5e918c8b7122b3b302bb6981345c4e81b045c6d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "benzema": {
+      "name": "Karim Benzema",
+      "path": "/img/scouts-duel/players/benzema.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16368,
+      "sha256": "85177df3d58d2bd98a8bb63587347fc32c8ec5834fd18f4cc09bda86537ac23e",
+      "source": {
+        "local": "/img/higher-lower/players/benzema.png",
+        "sha256": "125ffacfb950a5cbfd8613353ea90779a665f9a45e554551036e2c201eaadafa",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "bonucci": {
+      "name": "Leonardo Bonucci",
+      "path": "/img/scouts-duel/players/bonucci.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14632,
+      "sha256": "f3c078f86b1ae9d242648c1b463811ef73d1297e91a03e5670479a67a78c821e",
+      "source": {
+        "local": "/img/higher-lower/players/leonardo_bonucci.png",
+        "sha256": "9872404c505a1e71e27d1651c32db743e35b00be131befe52abc3570d754ccc5",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "bruno": {
+      "name": "Bruno Fernandes",
+      "path": "/img/scouts-duel/players/bruno.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17460,
+      "sha256": "cbdbce5e2f23b0d71bc0a0c66cd4fdefc7bb435c58c25be53b9aec7590e12ad2",
+      "source": {
+        "local": "/img/higher-lower/players/bruno.png",
+        "sha256": "28c70956a0dafb39043a44f9dfd0bf110bd57327ef976d1590be14a306950663",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "bruyne": {
+      "name": "Kevin De Bruyne",
+      "path": "/img/scouts-duel/players/bruyne.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19338,
+      "sha256": "f82c021b935bff4ca77f526e0ed743e62700c3b610ad156e9cbdb069ce5ad405",
+      "source": {
+        "local": "/img/higher-lower/players/bruyne.png",
+        "sha256": "593969b280ea444b990f20268c50a6f7a51d490174bfecf9edc42834bfd94bf2",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "buffon": {
+      "name": "Gianluigi Buffon",
+      "path": "/img/scouts-duel/players/buffon.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20652,
+      "sha256": "db71afa7ac6b0844dcdc2cf4c762355b4ca6c5503cb370487d019a8fc85f4bbe",
+      "source": {
+        "local": "/img/higher-lower/players/buffon.png",
+        "sha256": "41c6af6debc8debad9ee8a237f437cf47b7c2fc64dbd7d6cbe091e5f8bfbd208",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "busquets": {
+      "name": "Sergio Busquets",
+      "path": "/img/scouts-duel/players/busquets.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15802,
+      "sha256": "7a89fc74de380cb6307bbba591eb7cbe8b2ffd0aedc26c440b6b598973237c24",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/189511.png",
+        "page": "https://www.fut.gg/players/189511-sergio-busquets/",
+        "identityTitle": "Sergio Busquets FIFA History: All 42 FUT Cards - FUT.GG",
+        "eaPlayerId": 189511,
+        "cache": "tmp/scouts-duel/portrait-sources/busquets.png",
+        "sha256": "496b5d03010d3c40aeda458e6a76d00dc3b677ba92ecdf96c411d14caca50714"
+      }
+    },
+    "cafu": {
+      "name": "Cafu",
+      "path": "/img/scouts-duel/players/cafu.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20520,
+      "sha256": "06daa60fdf408b7fbf04d86c4584d1205c87ff85e0f45a551165db3d7725cb23",
+      "source": {
+        "local": "/img/higher-lower/players/cafu.png",
+        "sha256": "fdaa3629b98c0f5c7e371c55727a8f7a23818c8d9a4926800fcd77e9c2ccec73",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "calhanoglu": {
+      "name": "Hakan Calhanoglu",
+      "path": "/img/scouts-duel/players/calhanoglu.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14690,
+      "sha256": "903326675afca42bcc1681e8401806733c8071d4954fa433dffa7e7268c415d9",
+      "source": {
+        "local": "/img/higher-lower/players/calhanoglu.png",
+        "sha256": "0fb5130b27aaed22bbbddb41847e1da99c552d2a578d3a00847efa6bad645d7a",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "camavinga": {
+      "name": "Eduardo Camavinga",
+      "path": "/img/scouts-duel/players/camavinga.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13784,
+      "sha256": "6a2d5d6bd2d095a5445c5ab28d753d5e0099c5c2479cb81b9f24d7af2aca7381",
+      "source": {
+        "local": "/img/higher-lower/players/camavinga.png",
+        "sha256": "7cf8adfdefa5de9046dc4c62981c41d203376ffd482ad1ac8f57aede0fdc64ed",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "cancelo": {
+      "name": "Joao Cancelo",
+      "path": "/img/scouts-duel/players/cancelo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15120,
+      "sha256": "57de3be83965c3358ae88f7b28fdc928be09e0a662db7b5e98db7a604ffa8428",
+      "source": {
+        "local": "/img/higher-lower/players/cancelo.png",
+        "sha256": "9a34d8c5b8c5782a84effdb032294e46b6a0df640b07cc51825f5c9fbd3b3815",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "casemiro": {
+      "name": "Casemiro",
+      "path": "/img/scouts-duel/players/casemiro.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15322,
+      "sha256": "434e0765c491cc3257d7984a621115294d2b51b38bb1396f4c3b1da98588b88f",
+      "source": {
+        "local": "/img/higher-lower/players/casemiro.png",
+        "sha256": "eee325a2db69cf67435bb299f62fd829e4a7eb6aba55efcace774acb9760e15d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "casillas": {
+      "name": "Iker Casillas",
+      "path": "/img/scouts-duel/players/casillas.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21500,
+      "sha256": "f96b7985add042c6e2cd0a5e824ba7bbb6c3c180f58b8ce6bf791e55312acb54",
+      "source": {
+        "local": "/img/higher-lower/players/casillas.png",
+        "sha256": "2f441179cfece3507b650566f81c2f7cab366ca837e2e2ea008ad50600cfc96d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "cavani": {
+      "name": "Edinson Cavani",
+      "path": "/img/scouts-duel/players/cavani.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21370,
+      "sha256": "e077b88a10edfb842c0545836e3e567561962a262016f9005ca773bb25b0bb1a",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/179813.png",
+        "page": "https://www.fut.gg/players/179813-edinson-cavani/",
+        "identityTitle": "Edinson Cavani FIFA History: All 70 FUT Cards - FUT.GG",
+        "eaPlayerId": 179813,
+        "cache": "tmp/scouts-duel/portrait-sources/cavani.png",
+        "sha256": "ce398ab14d1b8d8671ba50462b48276dd360663ab00321c106f1062c502e6b39"
+      }
+    },
+    "cech": {
+      "name": "Petr Cech",
+      "path": "/img/scouts-duel/players/cech.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21826,
+      "sha256": "661ad89c1e58f49ca9d42e3e8ad2e3b463ede140b392a03a00bc125a4a0595dd",
+      "source": {
+        "local": "/img/higher-lower/players/cech.png",
+        "sha256": "7e7d0c590cf3164cc08b34416cc73e1cc153ddbdf421573eb9a66952b7450c8a",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "chiellini": {
+      "name": "Giorgio Chiellini",
+      "path": "/img/scouts-duel/players/chiellini.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12584,
+      "sha256": "8ffcd6c9ca2d38e87aaceefdf936aa8cc0e30aedb0f546af0bd9bb413dcea782",
+      "source": {
+        "local": "/img/higher-lower/players/chiellini.png",
+        "sha256": "78a6ed9383fe2c2db06751fb46f948c1d03209dc0e81fd8b897c85aa0fea679f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "chiesa": {
+      "name": "Federico Chiesa",
+      "path": "/img/scouts-duel/players/chiesa.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14804,
+      "sha256": "c201c5aa87a8234088764f53baba1f62344fd99ad7afe308f1b15675f6a1af7c",
+      "source": {
+        "local": "/img/higher-lower/players/chiesa.png",
+        "sha256": "9c4c12d1e2981dc01a8532f48d699360aa34b5130485891f10280a6955e238e7",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "coman": {
+      "name": "Kingsley Coman",
+      "path": "/img/scouts-duel/players/coman.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15144,
+      "sha256": "f591dca4c5faba8404d3bdb1aa2c8282cb7c7570bc35776833337fe33d7e40bb",
+      "source": {
+        "local": "/img/higher-lower/players/coman.png",
+        "sha256": "471ed5b9d761c07e8f671c1d4cd0d63dd311a001991f3814d84559b8bbcbf1a0",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "courtois": {
+      "name": "Thibaut Courtois",
+      "path": "/img/scouts-duel/players/courtois.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16400,
+      "sha256": "ec7ea8a6325183262e67ad15398dd9f71cfdd84b23ec85a1990387c5a9791199",
+      "source": {
+        "local": "/img/higher-lower/players/courtois.png",
+        "sha256": "615ff11de32863c741b7280312a4fe3a1792505f91c0971adb7cf9411e44f406",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "cruyff": {
+      "name": "Johan Cruyff",
+      "path": "/img/scouts-duel/players/cruyff.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 24206,
+      "sha256": "88953971abba56a8e26bec85d35045815a5241e60884edb8b378d665a18241b8",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/190045.png",
+        "page": "https://www.fut.gg/players/190045-johan-cruyff/",
+        "identityTitle": "Johan Cruyff EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 190045,
+        "cache": "tmp/scouts-duel/portrait-sources/cruyff.png",
+        "sha256": "de1b66a66b214b144858d3bca75abd741f6a215bab0da9a34688590c1559b023"
+      }
+    },
+    "davies": {
+      "name": "Alphonso Davies",
+      "path": "/img/scouts-duel/players/davies.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13644,
+      "sha256": "4495e70490b622766e43f2c2bdcb76a31de92d66e28e6fe9044bf382a4062a2b",
+      "source": {
+        "local": "/img/higher-lower/players/davies.png",
+        "sha256": "dba99079f19ab5fd74330cf3209bbdf7ecb40718435b8ff8360d216aaf34b48e",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "de_ligt": {
+      "name": "Matthijs de Ligt",
+      "path": "/img/scouts-duel/players/de_ligt.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17448,
+      "sha256": "9df62cf6067663d0bd900e73cb327a18ca2472b6b084696df0eb7766ac624556",
+      "source": {
+        "local": "/img/higher-lower/players/de_ligt.png",
+        "sha256": "e306474514545f67184607c669089235ee4b74c3b7bdc4804ba1d8f5d8345e2e",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "dejong": {
+      "name": "Frenkie de Jong",
+      "path": "/img/scouts-duel/players/dejong.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14926,
+      "sha256": "f8331c9a1b1f838485e64a568bbf050335cb5d1333d97531809c60e2db7b2e01",
+      "source": {
+        "local": "/img/higher-lower/players/dejong.png",
+        "sha256": "3b6fcf517bc1cfa6e89693d8db74088fa0dab978c6926556b872d8fd30f15eb9",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "dembele": {
+      "name": "Ousmane Dembélé",
+      "path": "/img/scouts-duel/players/dembele.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16682,
+      "sha256": "33400a491a40dbd572980db6a6ed751cb71fa000f8ae232a2ca63a7d78fb7f44",
+      "source": {
+        "local": "/img/higher-lower/players/dembele.png",
+        "sha256": "f5a400e5cfb171ef1febf4b39803bc8f11592af4e53051bfcda90e7488e40dee",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "diaz": {
+      "name": "Luis Diaz",
+      "path": "/img/scouts-duel/players/diaz.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17230,
+      "sha256": "a611b93041b914f9d1a0719bd514888b253fda97b5a2571086a1fd2fcbbf79bc",
+      "source": {
+        "local": "/img/higher-lower/players/diaz.png",
+        "sha256": "61a9b79533245c6b36c55461abd285d5d814e5f23f5504a8ddbc8a3e9fe7e6a8",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "dimaria": {
+      "name": "Angel Di Maria",
+      "path": "/img/scouts-duel/players/dimaria.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15270,
+      "sha256": "e949f0daf306e80805bd9ab30b7ca35ff5b107a8636aff62900d4118424d4840",
+      "source": {
+        "local": "/img/higher-lower/players/di_maria.png",
+        "sha256": "e74f40bf03221ff43f689e0399d0f6370d36c529a020bb11a48b0de4c3ea4071",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "doku": {
+      "name": "Jeremy Doku",
+      "path": "/img/scouts-duel/players/doku.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16430,
+      "sha256": "4b3643bc2749bb21f2dfe650da356a478d298281e9f13629f71f645bbb4659da",
+      "source": {
+        "local": "/img/higher-lower/players/doku.png",
+        "sha256": "8c78b0786e2ddf87ef77f59e55e4c01c539c92cf3833649f01d248eaf9e64e28",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "donnarumma": {
+      "name": "Gianluigi Donnarumma",
+      "path": "/img/scouts-duel/players/donnarumma.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15856,
+      "sha256": "57f7598db2875c76139681a64f7976593c4c6f6259b4caad6fc681ff3cdd320a",
+      "source": {
+        "local": "/img/higher-lower/players/donnarumma.png",
+        "sha256": "4bf3c4e55345d85bd08732c99e40a5949b64fe782eb9e3c77315bf0c7cebfa71",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "drogba": {
+      "name": "Didier Drogba",
+      "path": "/img/scouts-duel/players/drogba.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 27138,
+      "sha256": "a4cecda2af5c9590edf1c52260f33422131b4fd5dd7df38ca3a254fbcd7aac28",
+      "source": {
+        "local": "/img/higher-lower/players/drogba.png",
+        "sha256": "54ed2510333eb26914ab310d7600113178c03f8006e11dfa0af3f121a7b340fc",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "ederson": {
+      "name": "Ederson",
+      "path": "/img/scouts-duel/players/ederson.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11486,
+      "sha256": "3bbf99b56028d3d3cd41dba08a05e5b326e89d829409b7b29dd1bde4becd70fb",
+      "source": {
+        "local": "/img/higher-lower/players/ederson.png",
+        "sha256": "5ada5220508e87d844cee47a49715732bc72a5d9d59a9f984001ce92d602404c",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "emi_martinez": {
+      "name": "Emiliano Martinez",
+      "path": "/img/scouts-duel/players/emi_martinez.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19064,
+      "sha256": "369143f00419af6f2e74287448975db01b9273a494f83bad1b5956543b961064",
+      "source": {
+        "local": "/img/higher-lower/players/martinez.png",
+        "sha256": "ad443edf03c01347c8b1de826686abb62a6b95d3eb692cd099c4048cffcad155",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "enzo": {
+      "name": "Enzo Fernandez",
+      "path": "/img/scouts-duel/players/enzo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18172,
+      "sha256": "2d7e9d69600683f1d631ce114268869ea18f8503baf2a64578c6ed948b4ceb87",
+      "source": {
+        "local": "/img/higher-lower/players/enzo.png",
+        "sha256": "c62b8bd96393d60cde0a0f8e31fd5529a40117718f96ed52cc9dc419a0549d86",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "etoo": {
+      "name": "Samuel Eto'o",
+      "path": "/img/scouts-duel/players/etoo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 22354,
+      "sha256": "8fac5266b6e3bbada44042c476b06d4c03965547fd2a92e52af9827ad009a434",
+      "source": {
+        "local": "/img/higher-lower/players/etoo.png",
+        "sha256": "c8d660054eb4b10407ed51b89c0ef22579c103801594c990306ab3d64719c43c",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "fabinho": {
+      "name": "Fabinho",
+      "path": "/img/scouts-duel/players/fabinho.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14470,
+      "sha256": "bfc6bd090755e610334898a898dc077ae2cc0be0bccff0519269ba131b8aea69",
+      "source": {
+        "local": "/img/higher-lower/players/fabinho.png",
+        "sha256": "0d260f6344b42668aa512fe4f0b06e5848dbcac868b3fe5545f267e4f48c9cf6",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "felix": {
+      "name": "Joao Felix",
+      "path": "/img/scouts-duel/players/felix.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15878,
+      "sha256": "1e3ad267a4a73fece49463784eb29459414f16a9f62c322fd2d7520d3c913b7e",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/242444.png",
+        "page": "https://www.fut.gg/players/242444-joao-felix/",
+        "identityTitle": "João Félix EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 242444,
+        "cache": "tmp/scouts-duel/portrait-sources/felix.png",
+        "sha256": "2cab4ef2fd6add0a9f006ad1e6ab6ac0d0e9ac2f9b46cc4ee25f6d0f9cf9f0ba"
+      }
+    },
+    "fenomeno": {
+      "name": "Ronaldo Nazario",
+      "path": "/img/scouts-duel/players/fenomeno.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19724,
+      "sha256": "2c726131327cab028e3fbca5a1cfb4813dca70f8763c45959693d7a0641a6376",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/37576.png",
+        "page": "https://www.fut.gg/players/37576-ronaldo/",
+        "identityTitle": "Ronaldo EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 37576,
+        "cache": "tmp/scouts-duel/portrait-sources/fenomeno.png",
+        "sha256": "d6df5a24a45329dfcad14688526bb1b6df674e894193b7cb194032f2d2cbe3e5"
+      }
+    },
+    "ferdinand": {
+      "name": "Rio Ferdinand",
+      "path": "/img/scouts-duel/players/ferdinand.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21576,
+      "sha256": "4a0cba6b95ab85c615f983c417d301379de487043b7fe957f42df63a2392aa95",
+      "source": {
+        "local": "/img/higher-lower/players/ferdinand.png",
+        "sha256": "afd48295076e2f4fbd2d3f9d9faf9b6fa3561ac231f36e8fae9dcd133535b32a",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "firmino": {
+      "name": "Roberto Firmino",
+      "path": "/img/scouts-duel/players/firmino.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18244,
+      "sha256": "1b51a05f8c8c321661f30c3edec12486f40b4bdd36c62d56eda17179f0ef2eb6",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/201942.png",
+        "page": "https://www.fut.gg/players/201942-roberto-firmino/",
+        "identityTitle": "Roberto Firmino FIFA History: All 55 FUT Cards - FUT.GG",
+        "eaPlayerId": 201942,
+        "cache": "tmp/scouts-duel/portrait-sources/firmino.png",
+        "sha256": "ffb4208591fe3855018edcb76a4ebb8fe92fce677be51a52c57389aff8b0edcc"
+      }
+    },
+    "foden": {
+      "name": "Phil Foden",
+      "path": "/img/scouts-duel/players/foden.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16476,
+      "sha256": "55d64cf43f97f81f1de3e33defb81012e83c01d7dbff922fe48e9ef5ba4f4fe6",
+      "source": {
+        "local": "/img/higher-lower/players/foden.png",
+        "sha256": "f5f167aa1348820f97d604e14f0f83f1a8389a9d3bf6a4ea47f256bbac64b1ff",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "garnacho": {
+      "name": "Alejandro Garnacho",
+      "path": "/img/scouts-duel/players/garnacho.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19404,
+      "sha256": "31fdbe9109411472c453388e15af447665aabe6c97e6f9c20d9c1beb5d8a8891",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/268438.png",
+        "page": "https://www.fut.gg/players/268438-alejandro-garnacho/",
+        "identityTitle": "Alejandro Garnacho EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 268438,
+        "cache": "tmp/scouts-duel/portrait-sources/garnacho.png",
+        "sha256": "8863ec2b85588eadcf7fe66195ae6d5144822a78ca08781106c5f71a58af54cc"
+      }
+    },
+    "gavi": {
+      "name": "Gavi",
+      "path": "/img/scouts-duel/players/gavi.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14986,
+      "sha256": "97d2fa3723b067402c1e173daf3331951534f36cbcfc9a32ca52ccae1e0cc074",
+      "source": {
+        "local": "/img/higher-lower/players/gavi.png",
+        "sha256": "abdea5373bcb2b588ea0d7777c9d70352f6e1e07b2acfdae7f9c9fbaf95418af",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "gerrard": {
+      "name": "Steven Gerrard",
+      "path": "/img/scouts-duel/players/gerrard.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20706,
+      "sha256": "b8e682a66ea0916733bc78340a50d8304f065cd283b5e4165a54e99914e3192a",
+      "source": {
+        "local": "/img/higher-lower/players/gerrard.png",
+        "sha256": "8c5867e7b24b35730cb43af9dc58bb14ec790d9f66fdcbf5ada3a7cc9924d030",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "gnabry": {
+      "name": "Serge Gnabry",
+      "path": "/img/scouts-duel/players/gnabry.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19594,
+      "sha256": "d48cb2f04258a26283482fe636d7dbd442d289769c653ceee024dc65f614935b",
+      "source": {
+        "local": "/img/higher-lower/players/gnabry.png",
+        "sha256": "40dcb218d6187ec75d77afcce6b420188b93efad5c95762986ccdea08d4edd5d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "grealish": {
+      "name": "Jack Grealish",
+      "path": "/img/scouts-duel/players/grealish.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18556,
+      "sha256": "35372f014dca5b247a6a12cf8d037a154d220be6b40323774a25a2121a5cafa4",
+      "source": {
+        "local": "/img/higher-lower/players/grealish.png",
+        "sha256": "0be0fc3e1870d246cf72d8d82884b8d3c038d5f0b1f0ab978d123f916ba46973",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "griezmann": {
+      "name": "Antoine Griezmann",
+      "path": "/img/scouts-duel/players/griezmann.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15458,
+      "sha256": "b749057a75d774b0eb856620280a582da1343554d6055ddd944cf7d86974b610",
+      "source": {
+        "local": "/img/higher-lower/players/griezmann.png",
+        "sha256": "f1de86a6b379adbe8e53db8bcae5ed6e2d29d4521684eeb4d938b0d8c1147c2e",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "gundogan": {
+      "name": "Ilkay Gundogan",
+      "path": "/img/scouts-duel/players/gundogan.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15588,
+      "sha256": "19564539b876a562ff8f24c3e9002057475b425bc86d5694f003968d3238800a",
+      "source": {
+        "local": "/img/higher-lower/players/guendogan.png",
+        "sha256": "4a5d2df3edf773bafcf22bfa730b40427b41bbff6a930cbbf68f5a7239bbd70e",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "gvardiol": {
+      "name": "Josko Gvardiol",
+      "path": "/img/scouts-duel/players/gvardiol.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17454,
+      "sha256": "0d638d4b41b4f77da6d17e5eb0bafcc8db7dbb8056965a90e51793471e678e82",
+      "source": {
+        "local": "/img/higher-lower/players/gvardiol.png",
+        "sha256": "a44161f66e7c873307f27b76e7eb30769835eee917639d34f17272fc66fdb0b1",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "gyokeres": {
+      "name": "Viktor Gyökeres",
+      "path": "/img/scouts-duel/players/gyokeres.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12598,
+      "sha256": "31dc77455f1bbd7406d475afc5d98aabb15d9d204f7bee6a9b6ec131651dff11",
+      "source": {
+        "local": "/img/higher-lower/players/gyokeres.png",
+        "sha256": "64430df4f7737bdd9a772adb7a4f8bf156a0765c372087f6ed139c96b3b8c7c3",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "haaland": {
+      "name": "Erling Haaland",
+      "path": "/img/scouts-duel/players/haaland.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15546,
+      "sha256": "db16aa65bad036cf8b08942b7e4b4b57062f8b8b49d5d727daae4cad11bcdf92",
+      "source": {
+        "local": "/img/higher-lower/players/haaland.png",
+        "sha256": "14cc4874c1fdc1873693892f555b814df85bfac4df3806fa1fd1855c433af9cc",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "hakimi": {
+      "name": "Achraf Hakimi",
+      "path": "/img/scouts-duel/players/hakimi.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15242,
+      "sha256": "37666140a2006c93a8a964134463ef3bf6be8b7b520c1f06d926d2ffaaf160d9",
+      "source": {
+        "local": "/img/higher-lower/players/hakimi.png",
+        "sha256": "a77aebc43c458706cd241f64b7f2e8b973cfb9b245a2b857c5e5812c9f6edc00",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "hazard": {
+      "name": "Eden Hazard",
+      "path": "/img/scouts-duel/players/hazard.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14560,
+      "sha256": "bcc07825422e172ea57e000cffefc106eb6d6304ba630dd907757f400ff468b7",
+      "source": {
+        "local": "/img/higher-lower/players/hazard.png",
+        "sha256": "39109dd58c60e8da289f351727814300e9b2aac8084867665e76cc32a76e7c8c",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "henry": {
+      "name": "Thierry Henry",
+      "path": "/img/scouts-duel/players/henry.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 23322,
+      "sha256": "8a2efea8429a05cebdda7d1b0287d78bf00aed99810b469da6f7e113629fe6a1",
+      "source": {
+        "local": "/img/higher-lower/players/henry.png",
+        "sha256": "987d7b6973947c8f21dad185a4da2286b9871ac3ef2edd11711acc369312804e",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "iniesta": {
+      "name": "Andres Iniesta",
+      "path": "/img/scouts-duel/players/iniesta.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11136,
+      "sha256": "486fe369d21fd52c094003a185bbe383c9e52efae164981bfba2efaa1d7d2be4",
+      "source": {
+        "local": "/img/higher-lower/players/iniesta.png",
+        "sha256": "d9853d4a13e4a37ea7979ba8890358b7a290fc14dae7e04c01df15c608777e6c",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "isak": {
+      "name": "Alexander Isak",
+      "path": "/img/scouts-duel/players/isak.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15286,
+      "sha256": "17e8f521567a63cdd3db7494899e384c1e12e49c047ca75da9f00b590a66bc2a",
+      "source": {
+        "local": "/img/higher-lower/players/isak.png",
+        "sha256": "841ece7951131efffca8f06d6eba449cb1634cef6481729315afcb27c78bf69a",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "jota": {
+      "name": "Diogo Jota",
+      "path": "/img/scouts-duel/players/jota.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16766,
+      "sha256": "bea0805f7202050ed71344fd5604d2c8b03971f5212ebe83faf9bfa55445dd34",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/224458.png",
+        "page": "https://www.fut.gg/players/224458-diogo-jota/",
+        "identityTitle": "Diogo Jota FIFA History: All 39 FUT Cards - FUT.GG",
+        "eaPlayerId": 224458,
+        "cache": "tmp/scouts-duel/portrait-sources/jota.png",
+        "sha256": "1a8da18c78222a4933aa5b6a3c0f773846e1e3cc2436690c6610ada1de1eb6b4"
+      }
+    },
+    "kaka": {
+      "name": "Kaka",
+      "path": "/img/scouts-duel/players/kaka.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 23218,
+      "sha256": "9fac831524075018ed0e431e2cb7c0bd761baa8e458b99b96cea49a35e1063a0",
+      "source": {
+        "local": "/img/higher-lower/players/kaka.png",
+        "sha256": "ade7d582a137c7a9c999469c329fc9b1cdbb312eb39dcc5366da2851b15d36e2",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "kane": {
+      "name": "Harry Kane",
+      "path": "/img/scouts-duel/players/kane.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14840,
+      "sha256": "d530954d20c49c25d09bd6c45f67ffa4c8decd4e122ce41712e125a3710454c5",
+      "source": {
+        "local": "/img/higher-lower/players/kane.png",
+        "sha256": "d35b3e19a00e59519e34c3b75b0969894eed84f5fe8d24d1689a1374ba03c55d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "kante": {
+      "name": "N'Golo Kante",
+      "path": "/img/scouts-duel/players/kante.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 9580,
+      "sha256": "c551182536d867f8622e4435840d3c9d30bb7877c58d882d50b590c8237cbf3f",
+      "source": {
+        "local": "/img/higher-lower/players/kante.png",
+        "sha256": "afddb13775cc98670f6ee2f7e7c913e41fa304522202ec94b30a8ff3add29d84",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "kimmich": {
+      "name": "Joshua Kimmich",
+      "path": "/img/scouts-duel/players/kimmich.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16398,
+      "sha256": "87f455a48ff8461d24933fd55541b26096ff3d2092be191c94e6c00e032ec582",
+      "source": {
+        "local": "/img/higher-lower/players/kimmich.png",
+        "sha256": "441c92d159db419d37f235e5f478265d063961f0ae3cfa27dc29b3e8041b4bf4",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "kroos": {
+      "name": "Toni Kroos",
+      "path": "/img/scouts-duel/players/kroos.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11744,
+      "sha256": "234e787b452f01bc620e2283db07e59e4b38caf59891ecae39b5765746b4412f",
+      "source": {
+        "local": "/img/higher-lower/players/kroos.png",
+        "sha256": "d862d614775b04f1f391abb7f68e2564261e4eb99b4e9fdf1757fd3a5ded267d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "kvaratskhelia": {
+      "name": "Khvicha Kvaratskhelia",
+      "path": "/img/scouts-duel/players/kvaratskhelia.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13336,
+      "sha256": "1abda175e1634cb510485a72f36208a63feb6c1f414759222660010a9ae69321",
+      "source": {
+        "local": "/img/higher-lower/players/kvaratskhelia.png",
+        "sha256": "12e5c1eb0b6116688b84465c18be7585bcd54e942b296b3d64e20354738e437d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "lampard": {
+      "name": "Frank Lampard",
+      "path": "/img/scouts-duel/players/lampard.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21998,
+      "sha256": "a188663c926660599b67bcca4e5dd945a068c79bc5c04647f8477da04beb9595",
+      "source": {
+        "local": "/img/higher-lower/players/lampard.png",
+        "sha256": "0bdc2f26d5d75cf3b21c81b548fce46e2711b5486d07e0902360805d43f0236f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "lautaro": {
+      "name": "Lautaro Martinez",
+      "path": "/img/scouts-duel/players/lautaro.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12364,
+      "sha256": "3c45a2f9db23901525c9128f48f17c7110bca80ccb060b28c03d3bb0f49a63ae",
+      "source": {
+        "local": "/img/higher-lower/players/lautaro.png",
+        "sha256": "797398801e7f40e0d3c2e24f0f3bb9cf40031388724a3bbfcfbbf176e929547f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "leao": {
+      "name": "Rafael Leão",
+      "path": "/img/scouts-duel/players/leao.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12126,
+      "sha256": "4e485b1894d68807ddf200c1ebb4de21e4273a1ec3ff6a7771f915ed736c1c61",
+      "source": {
+        "local": "/img/higher-lower/players/leao.png",
+        "sha256": "5c4f8666fe65b75115be7bd22510eca340c672204363e0e6685eb6f7af72db03",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "lewandowski": {
+      "name": "Robert Lewandowski",
+      "path": "/img/scouts-duel/players/lewandowski.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13984,
+      "sha256": "b2b844f5266c4e28f2f60bd39dba0bc5c8d4a5a33d8429022c5fece58289594d",
+      "source": {
+        "local": "/img/higher-lower/players/lewandowski.png",
+        "sha256": "a2e046b0ac6a8c1e3d40191f526ff03b6e5ab830e8fd819090063e70e25c20ca",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "lloris": {
+      "name": "Hugo Lloris",
+      "path": "/img/scouts-duel/players/lloris.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16432,
+      "sha256": "5b40f4936a2b4d31783865fa59c6acf2ad438041bfa04eb6617ef45754c2cb49",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/167948.png",
+        "page": "https://www.fut.gg/players/167948-hugo-lloris/",
+        "identityTitle": "Hugo Lloris EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 167948,
+        "cache": "tmp/scouts-duel/portrait-sources/lloris.png",
+        "sha256": "de8d60a1111fc75fa3e6827e6816b73a442a54851e64b5cc6e71ce9e65b6952a"
+      }
+    },
+    "mac_allister": {
+      "name": "Alexis Mac Allister",
+      "path": "/img/scouts-duel/players/mac_allister.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16274,
+      "sha256": "8b369e9a45177c6a7912ae370c1f3215202e64310984514551c96f78de2e541d",
+      "source": {
+        "local": "/img/higher-lower/players/mac_allister.png",
+        "sha256": "3756842e751a3b5a7d0bfa2932f7b71947de629025c3414dc68fcdc0e2c18474",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "maldini": {
+      "name": "Paolo Maldini",
+      "path": "/img/scouts-duel/players/maldini.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 26236,
+      "sha256": "65f337ae2f8d6c8ecffed51475f926c0d7ffe36dcdc99d4f786ffbdb2749570d",
+      "source": {
+        "local": "/img/higher-lower/players/maldini.png",
+        "sha256": "c3cc1a709b22b05a7af2744326f4e0760fdc12e59d6f1d5fffb01f7d1dffa22d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "mane": {
+      "name": "Sadio Mane",
+      "path": "/img/scouts-duel/players/mane.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15036,
+      "sha256": "c6db7483090e82972db84102c9345066be42227a3f269776dcaae713931a7144",
+      "source": {
+        "local": "/img/higher-lower/players/mane.png",
+        "sha256": "86555d0ea83ee726e6017f9b24f8bbd32f3d2d3d057bfe83595c0d16744a41c0",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "maradona": {
+      "name": "Diego Maradona",
+      "path": "/img/scouts-duel/players/maradona.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17798,
+      "sha256": "604aa80651b3e8d5cee5eb055e7f84c68cf2138aede8af41442ff0177c9be41e",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/190042.png",
+        "page": "https://www.fut.gg/players/190042-diego-armando-maradona/",
+        "identityTitle": "Diego Armando Maradona EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 190042,
+        "cache": "tmp/scouts-duel/portrait-sources/maradona.png",
+        "sha256": "5ee93e333cbd701559d2f1fbafb197c02e781b22d4ce58cfad06f1a5cf703a28"
+      }
+    },
+    "marquinhos": {
+      "name": "Marquinhos",
+      "path": "/img/scouts-duel/players/marquinhos.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17320,
+      "sha256": "835d9dfa7338b73184c8c6ff77eeae7e48b5f66f7a05427bf0ddc8602c7d5c1b",
+      "source": {
+        "local": "/img/higher-lower/players/marquinhos.png",
+        "sha256": "5f7b3b7b5c19a49f05dbbe296f34874c31005295ac5b2dda23b33a2badb5ece4",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "martinelli": {
+      "name": "Gabriel Martinelli",
+      "path": "/img/scouts-duel/players/martinelli.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15766,
+      "sha256": "c332232c7587ace961f532ff7e757fed99be155379874df5d6ddd3998a21f7b6",
+      "source": {
+        "local": "/img/higher-lower/players/martinelli.png",
+        "sha256": "df4a1e9c2b4742064676881567f2902f79ce2da709a532509c8353edf858ad18",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "mbappe": {
+      "name": "Kylian Mbappé",
+      "path": "/img/scouts-duel/players/mbappe.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12854,
+      "sha256": "7b87233a541acedf1c1354c8cb135ce94fc10981f04c6efc8468401f6d6871e4",
+      "source": {
+        "local": "/img/higher-lower/players/mbappe.png",
+        "sha256": "8e7658231761799ff7ec12f5494b47722e94c6a31e62539a07a33e1c15aa368f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "messi": {
+      "name": "Lionel Messi",
+      "path": "/img/scouts-duel/players/messi.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17040,
+      "sha256": "14f7c5bd04a1489e23444d7485e9a6af18b2966c2878924d9cda2e2b7c7791aa",
+      "source": {
+        "local": "/img/higher-lower/players/messi.png",
+        "sha256": "97e76cef92d48b53fa2d348a311144f65014c58368cda58847fcaa00783873a2",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "mitrovic": {
+      "name": "Aleksandar Mitrovic",
+      "path": "/img/scouts-duel/players/mitrovic.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17116,
+      "sha256": "4c0c67f7ce0545d8b1f2f59da9242c2e0fa1aa62edeeb10e454a234bb55f1d63",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/215716.png",
+        "page": "https://www.fut.gg/players/215716-aleksandar-mitrovic/",
+        "identityTitle": "Aleksandar Mitrović FIFA History: All 32 FUT Cards - FUT.GG",
+        "eaPlayerId": 215716,
+        "cache": "tmp/scouts-duel/portrait-sources/mitrovic.png",
+        "sha256": "2643f50fd255e5cc3591def27f6dbf7c50b30e29c09e77c43ab8d3ad19e4edd8"
+      }
+    },
+    "modric": {
+      "name": "Luka Modrić",
+      "path": "/img/scouts-duel/players/modric.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 23482,
+      "sha256": "70ed10c86fc028d72908faba79385875dd003afa4458d3855b2d51206887f4c6",
+      "source": {
+        "local": "/img/higher-lower/players/modric.png",
+        "sha256": "c5e27ed916ae5dda63472e7d97f41a4348b6f0e159fd362e573c460194fea424",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "morata": {
+      "name": "Alvaro Morata",
+      "path": "/img/scouts-duel/players/morata.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12252,
+      "sha256": "b10472776cb04312e125e297701a9daeeb550956c5c59d803f8b8bf66b20aa5a",
+      "source": {
+        "local": "/img/higher-lower/players/morata.png",
+        "sha256": "82a7fd7db837b7a7ce49091aca0980c821d982132c69d1003554cc0eb4170ef2",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "muller": {
+      "name": "Thomas Muller",
+      "path": "/img/scouts-duel/players/muller.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18150,
+      "sha256": "e44deeee44b6cd28b8847d2b2de6a42f80078cd5bdb53167a05a40a4166b48c4",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/189596.png",
+        "page": "https://www.fut.gg/players/189596-thomas-muller/",
+        "identityTitle": "Thomas Müller EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 189596,
+        "cache": "tmp/scouts-duel/portrait-sources/muller.png",
+        "sha256": "cb3d94fa968b689061f2e50d5523571155dfa7b3e695e9cf633d1eaf4206f1b3"
+      }
+    },
+    "musiala": {
+      "name": "Jamal Musiala",
+      "path": "/img/scouts-duel/players/musiala.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15184,
+      "sha256": "1106a13954e73f45c65aad5df0e29053f5de27da01f4dfc18425d2c119b6a32b",
+      "source": {
+        "local": "/img/higher-lower/players/musiala.png",
+        "sha256": "eb2d96caa06d8096c0f1929e7866e940dddb25ba2b268c017f9fa17860bbb4e8",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "navas": {
+      "name": "Keylor Navas",
+      "path": "/img/scouts-duel/players/navas.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11780,
+      "sha256": "8293be1a2599b6c8c56aff95d67d06953c6fa497f23135661edf38f6e39082f8",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/193041.png",
+        "page": "https://www.fut.gg/players/193041-keylor-navas/",
+        "identityTitle": "Keylor Navas EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 193041,
+        "cache": "tmp/scouts-duel/portrait-sources/navas.png",
+        "sha256": "8f58d623125c149b02686a159fd395bab5bc4a3f61a17cae1a11248762160c3d"
+      }
+    },
+    "neuer": {
+      "name": "Manuel Neuer",
+      "path": "/img/scouts-duel/players/neuer.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15114,
+      "sha256": "d8a95cf3274911e312d835ca815a9f50b9d9cfa39e5260cf8d2e6904f3544188",
+      "source": {
+        "local": "/img/higher-lower/players/neuer.png",
+        "sha256": "d39daf357ef294c3fd11635ae5ec30fb6f361d0803be1c17f9787516e2b283a0",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "neymar": {
+      "name": "Neymar Jr",
+      "path": "/img/scouts-duel/players/neymar.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15242,
+      "sha256": "9a81e2b17fafba471193f8678c15d729a331a5a54d44d19bec5f1064b0ee9da3",
+      "source": {
+        "local": "/img/higher-lower/players/neymar.png",
+        "sha256": "aa7fc9392b347522d9567642c458f36bc051505f1858986fbf027dd20de7173b",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "nunez": {
+      "name": "Darwin Nunez",
+      "path": "/img/scouts-duel/players/nunez.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15518,
+      "sha256": "e1a89f8913c331e90300be3a5426dbe5ae1d0f5e3d88e324a6bb7b0653f38e67",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/253072.png",
+        "page": "https://www.fut.gg/players/253072-darwin-nunez/",
+        "identityTitle": "Darwin Núñez EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 253072,
+        "cache": "tmp/scouts-duel/portrait-sources/nunez.png",
+        "sha256": "6370e0d9805bb6c92a8d7b744455f6c422b9302f036089ee40e138ab190d553f"
+      }
+    },
+    "nuno_mendes": {
+      "name": "Nuno Mendes",
+      "path": "/img/scouts-duel/players/nuno_mendes.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14860,
+      "sha256": "0f95567dafc8deb62d010ee9a5dfa9337a183fd2495daa1d2e1c660cc3cc5bd3",
+      "source": {
+        "local": "/img/higher-lower/players/nuno_mendes.png",
+        "sha256": "dd7feedaba3396cf6a9453d68b87364ee51fb2278e2bc86da9a6ebaca4fc3c05",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "oblak": {
+      "name": "Jan Oblak",
+      "path": "/img/scouts-duel/players/oblak.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12602,
+      "sha256": "cd257343c1ba0b08b32a3632f15e71064e65583d1210d9dea23cac93b44dd480",
+      "source": {
+        "local": "/img/higher-lower/players/oblak.png",
+        "sha256": "1c856ab1fad6eb5a0590ca88ad04ff82f698d3aeb77671b0fc368c3c315c3db2",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "odegaard": {
+      "name": "Martin Odegaard",
+      "path": "/img/scouts-duel/players/odegaard.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17362,
+      "sha256": "e530bb21ecfdf6031e0019ee3aae32d41b75caf025baf4c2b68f5e14d481f9e3",
+      "source": {
+        "local": "/img/higher-lower/players/odegaard.png",
+        "sha256": "239a843a09d409914628b82c29715c25a5991e037abe149b601415cc31635e46",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "osimhen": {
+      "name": "Victor Osimhen",
+      "path": "/img/scouts-duel/players/osimhen.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15758,
+      "sha256": "718f3a55276a8e35209bbeb450d3d13d9446b54e7e64ecf9efef0a3f27618f16",
+      "source": {
+        "local": "/img/higher-lower/players/osimhen.png",
+        "sha256": "435a91a4da2291efd38a0a3013ae7293b5e96e187f29726326edc447ea1cd062",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "palmer": {
+      "name": "Cole Palmer",
+      "path": "/img/scouts-duel/players/palmer.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16790,
+      "sha256": "f57d553f0fae053c14994a2d5f318e0f46c901822b0b2756178640e8cf8aa191",
+      "source": {
+        "local": "/img/higher-lower/players/palmer.png",
+        "sha256": "b8f16cc211cc65f7c49456f5233f81655b374ef2238c931028ad193b66175762",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "pedri": {
+      "name": "Pedri",
+      "path": "/img/scouts-duel/players/pedri.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13462,
+      "sha256": "31429a46b91d80a29af97d7b0807c9bafbec1a9be2a65a23c274cf66ccac4f11",
+      "source": {
+        "local": "/img/higher-lower/players/pedri.png",
+        "sha256": "e92949fa338bb9fe68afef16497773402f8d655c371902804696389fbcf7b639",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "pele": {
+      "name": "Pele",
+      "path": "/img/scouts-duel/players/pele.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21972,
+      "sha256": "018494a8bf618374ef834c0f20ccb8bfd338f77eed9fe3d4b5b9c8a01676790d",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/237067.png",
+        "page": "https://www.fut.gg/players/237067-pele/",
+        "identityTitle": "Pelé EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 237067,
+        "cache": "tmp/scouts-duel/portrait-sources/pele.png",
+        "sha256": "35ecb7aea262141dd39db89ac4a5382761b9327a271b8863ecf6eab8eaf3dab9"
+      }
+    },
+    "pique": {
+      "name": "Gerard Pique",
+      "path": "/img/scouts-duel/players/pique.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11206,
+      "sha256": "3a0dd2c89277f8835096d4a44aad0624736d091b767eb27f36ba9180e319572b",
+      "source": {
+        "local": "/img/higher-lower/players/pique.png",
+        "sha256": "2ea5ad76d540616ba997e8bffcdfb84983043605267e8b485d6453cdcc93b88f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "pirlo": {
+      "name": "Andrea Pirlo",
+      "path": "/img/scouts-duel/players/pirlo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 28622,
+      "sha256": "e301e3d33fa5851e3cf4d56df9fc5a7954f87740cee638a5259a7ae752001501",
+      "source": {
+        "local": "/img/higher-lower/players/pirlo.png",
+        "sha256": "465d6f6eae7baab973a51fbe7337d51b50f917e2f93647ac256151b4c02dec5a",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "pogba": {
+      "name": "Paul Pogba",
+      "path": "/img/scouts-duel/players/pogba.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13572,
+      "sha256": "6cbbc20443f7bb6f7a6102a801d819c52fec75d1fbd4ab873cb1c02aaa470ed4",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/195864.png",
+        "page": "https://www.fut.gg/players/195864-paul-pogba/",
+        "identityTitle": "Paul Pogba FIFA History: All 80 FUT Cards - FUT.GG",
+        "eaPlayerId": 195864,
+        "cache": "tmp/scouts-duel/portrait-sources/pogba.png",
+        "sha256": "7accb331401ce8a3140c96bef14b2ca5c86a1d15f42c98c46a7b3e379aeede64"
+      }
+    },
+    "puyol": {
+      "name": "Carles Puyol",
+      "path": "/img/scouts-duel/players/puyol.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 30280,
+      "sha256": "9203ba72324aeb58b49bdaf4d8fea7a247c7b949b5bf6d5afc7d99058cb572c0",
+      "source": {
+        "local": "/img/higher-lower/players/puyol.png",
+        "sha256": "a3b73fe7280ce0b3071e1cce4833bb494e47d7b5c92d790022b8ddc656ee03c8",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "ramos": {
+      "name": "Sergio Ramos",
+      "path": "/img/scouts-duel/players/ramos.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13870,
+      "sha256": "9497d2510b6f1c1ffa939eac2a41333d007ff9b9b46f8bdf44257c7159be7e29",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/155862.png",
+        "page": "https://www.fut.gg/players/155862-sergio-ramos/",
+        "identityTitle": "Sergio Ramos FIFA History: All 68 FUT Cards - FUT.GG",
+        "eaPlayerId": 155862,
+        "cache": "tmp/scouts-duel/portrait-sources/ramos.png",
+        "sha256": "ffb5429b748f2baddfb82a00caa1b12c5b67b0a22ae5286a8f36638d1cc16b89"
+      }
+    },
+    "raphinha": {
+      "name": "Raphinha",
+      "path": "/img/scouts-duel/players/raphinha.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13086,
+      "sha256": "cd89955c6bccc9c9d3c4951b0a44b9998e8e24a1b6b7d7ec472f06633e2daaf1",
+      "source": {
+        "local": "/img/higher-lower/players/raphinha.png",
+        "sha256": "cf32b96a2e0c4596a04202f56530d269efc0e9452c42dcfb26e50c11ea42d9aa",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "rashford": {
+      "name": "Marcus Rashford",
+      "path": "/img/scouts-duel/players/rashford.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17270,
+      "sha256": "468f60164c5ff66ad958ca701d51d9eab60647f3110a06cde6f09cbe1a241719",
+      "source": {
+        "local": "/img/higher-lower/players/rashford.png",
+        "sha256": "3137c115293a2962c32fd9bd28b6a4080ccc1f4dab7029a3965505ec4cc20948",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "reus": {
+      "name": "Marco Reus",
+      "path": "/img/scouts-duel/players/reus.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14600,
+      "sha256": "16523d83d07fe74c3bfcd2041de9bbcd5c5bcce32949be0a1f3602f964c0d65b",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/188350.png",
+        "page": "https://www.fut.gg/players/188350-marco-reus/",
+        "identityTitle": "Marco Reus EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 188350,
+        "cache": "tmp/scouts-duel/portrait-sources/reus.png",
+        "sha256": "3c551cf94159d721a4efab3d88d7649f83a312560868ef3c05e42ead12a5f367"
+      }
+    },
+    "ribery": {
+      "name": "Franck Ribery",
+      "path": "/img/scouts-duel/players/ribery.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 19964,
+      "sha256": "e2591f00eaefe9316a7dfba9b47451da9b245792b0cee3dc42b63a42a2f4502c",
+      "source": {
+        "local": "/img/higher-lower/players/franck_ribery.png",
+        "sha256": "6a92aa090c3df329b24ce0a8fb7f0d89083b938477f2928978e5b2c99d494236",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "rice": {
+      "name": "Declan Rice",
+      "path": "/img/scouts-duel/players/rice.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15772,
+      "sha256": "09c838c4c5bab0db5fa41aeef63db675349f1e49bc8042b5e370ed0c4e44437c",
+      "source": {
+        "local": "/img/higher-lower/players/rice.png",
+        "sha256": "b5488ac862b77ddcad910377cc65487c64d7d9f75968c201d8ebda0bfea73caa",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "robben": {
+      "name": "Arjen Robben",
+      "path": "/img/scouts-duel/players/robben.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 10402,
+      "sha256": "4942b7d0cfaab1fac82bb8f1aae9324c5bcc2c4157c86ed2d0f2a1ff2c469b87",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa21/img/players/9014.png",
+        "page": "https://www.fut.gg/players/9014-arjen-robben/",
+        "identityTitle": "Arjen Robben FIFA History: All 44 FUT Cards - FUT.GG",
+        "eaPlayerId": 9014,
+        "cache": "tmp/scouts-duel/portrait-sources/robben.png",
+        "sha256": "990314584ff001e61d5495c91ab065a022754a2fd13d2df731bc531cf0aa0658"
+      }
+    },
+    "roberto_carlos": {
+      "name": "Roberto Carlos",
+      "path": "/img/scouts-duel/players/roberto_carlos.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14960,
+      "sha256": "5990848384b83e0f728f82ed8e0c8977cbcc2fe77d8ee2c52e9e456b8a781b64",
+      "source": {
+        "local": "/img/higher-lower/players/roberto_carlos.png",
+        "sha256": "5f07263e95f222f67a8d67b19fed1e23589b6144c467728c816895b6ee57fa69",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "robertson": {
+      "name": "Andrew Robertson",
+      "path": "/img/scouts-duel/players/robertson.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14902,
+      "sha256": "43d8e2ae7b548620149bd549e8c818d6dbbb15f9e731041e133f7f998f05dc9e",
+      "source": {
+        "local": "/img/higher-lower/players/robertson.png",
+        "sha256": "47b3333cd636f69aa9cea30915f5f7dc69c2de4ce52a5ab74445fdaec2058058",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "rodri": {
+      "name": "Rodri",
+      "path": "/img/scouts-duel/players/rodri.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18046,
+      "sha256": "04611dabe402ece3a2ab8aa7d2accd03bf9da80e46dfb1e5c53d4921577d4d29",
+      "source": {
+        "local": "/img/higher-lower/players/rodri.png",
+        "sha256": "74cdce511ba758ec949df3fbe55fec4dbd2ae5873f5b2ca1b0e8211f25dc0910",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "rodrygo": {
+      "name": "Rodrygo",
+      "path": "/img/scouts-duel/players/rodrygo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14096,
+      "sha256": "19d54fb739a0330b02d671ec945f3527721170fd607105f8169427500ff411f3",
+      "source": {
+        "local": "/img/higher-lower/players/rodrygo.png",
+        "sha256": "bc3dc6e7df349b0a58f77f333dc0068203f9650e39671e1ebc839b94a1e890c4",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "ronaldinho": {
+      "name": "Ronaldinho",
+      "path": "/img/scouts-duel/players/ronaldinho.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 22310,
+      "sha256": "7363345c36f6b8bd61183323fdb3149a978c87ffa1fac9413c7866f76e6da998",
+      "source": {
+        "local": "/img/higher-lower/players/ronaldinho.png",
+        "sha256": "57d9258a5dbe4578b0ab7336c7c6cf5d8a42313bd7d7ba8da9fb9d3742008ace",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "ronaldo": {
+      "name": "Cristiano Ronaldo",
+      "path": "/img/scouts-duel/players/ronaldo.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15884,
+      "sha256": "39eb16db2aa48a86ce98599af472f9e7f14b1aaaa50d3b32682cd77a1a75ec4b",
+      "source": {
+        "local": "/img/higher-lower/players/ronaldo.png",
+        "sha256": "d5d256e52bb225352494692585c5fe03dfcd7fb5e45ee89467eb835150c56182",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "rooney": {
+      "name": "Wayne Rooney",
+      "path": "/img/scouts-duel/players/rooney.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 21398,
+      "sha256": "124926b44dc470eb978d4f3628ccff9226fcdce8be77f8f420e9ab9a21e82e83",
+      "source": {
+        "local": "/img/higher-lower/players/rooney.png",
+        "sha256": "8e9e0a6d76ae7f93c63c3d6ebabf45e9a3e3bcea975f5f0eb1fb918446681f3a",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "ruben_dias": {
+      "name": "Ruben Dias",
+      "path": "/img/scouts-duel/players/ruben_dias.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18050,
+      "sha256": "2dbe7571d9dea975785167347c82d61425d9e5ec654eb55a567950bba6091b8e",
+      "source": {
+        "local": "/img/higher-lower/players/ruben_dias.png",
+        "sha256": "31c7d97bed3596ff666ea774b109f63aec66c4558af747d518640accd52de9ea",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "rudiger": {
+      "name": "Antonio Rüdiger",
+      "path": "/img/scouts-duel/players/rudiger.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 12182,
+      "sha256": "80d7ec84d6759f68bea4449b12edf0d210549c77e8b1d133cd43feda84fddf39",
+      "source": {
+        "local": "/img/higher-lower/players/rudiger.png",
+        "sha256": "294d584b1a739cf4cc6fd502910d3893f3fc67eabdbc639572fb5d8b17674eec",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "saka": {
+      "name": "Bukayo Saka",
+      "path": "/img/scouts-duel/players/saka.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15850,
+      "sha256": "ccb5da31bffe8a30bbf76795b6a209e3948ecd16acdf928f066f17ecee2ac0f0",
+      "source": {
+        "local": "/img/higher-lower/players/saka.png",
+        "sha256": "7ec6aa0eabae67834046361a16c7b6909ae8fc73c79f246cd8f320d63aa84bdb",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "salah": {
+      "name": "Mohamed Salah",
+      "path": "/img/scouts-duel/players/salah.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17570,
+      "sha256": "5a49d0cea228cb77253277c61b9b18b5c201cbe60bf107e7630290f51030b736",
+      "source": {
+        "local": "/img/higher-lower/players/salah.png",
+        "sha256": "2273df85fecd50a6fba07a85ac7c94f2db520631fd057d1383d916c130b10205",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "saliba": {
+      "name": "William Saliba",
+      "path": "/img/scouts-duel/players/saliba.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15668,
+      "sha256": "4e6fda7f28a937904004506092a78e00df56d62dabefa5b74ea2b02032c2e49c",
+      "source": {
+        "local": "/img/higher-lower/players/saliba.png",
+        "sha256": "a6f97ead65f5c4038542e6eea282d1cf080947e2ece4b2871eb9b079c2c58a2e",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "sanchez": {
+      "name": "Alexis Sanchez",
+      "path": "/img/scouts-duel/players/sanchez.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14126,
+      "sha256": "8647ddd273942282a0250efd43e5c4e6389107186d9fea8a22ebbcb64f7e2984",
+      "source": {
+        "local": "/img/higher-lower/players/sanchez.png",
+        "sha256": "6dc1da544f02c6b082ea0e9a204c1332e9450c7e3bfc5bd60a62970e8e472182",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "sane": {
+      "name": "Leroy Sane",
+      "path": "/img/scouts-duel/players/sane.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20522,
+      "sha256": "f6229902a301ecc97528f90f23f261d1c6d5e88a18ff354befb9d11df86290ca",
+      "source": {
+        "local": "/img/higher-lower/players/sane.png",
+        "sha256": "dab251b261a07d1de450bf96c4d8268735e79188925e8b148eafaa2417da6334",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "schmeichel": {
+      "name": "Peter Schmeichel",
+      "path": "/img/scouts-duel/players/schmeichel.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 22092,
+      "sha256": "b39253f82a4776132a6073fe45ecb00f1e372773801276f0bf0e5c2f933827d6",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/238428.png",
+        "page": "https://www.fut.gg/players/238428-peter-schmeichel/",
+        "identityTitle": "Peter Schmeichel EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 238428,
+        "cache": "tmp/scouts-duel/portrait-sources/schmeichel.png",
+        "sha256": "c4ac5d0842e2a766e3c84dc1300d7b51cc8d6f7aa828dd2592f8fc2baeb871ca"
+      }
+    },
+    "scholes": {
+      "name": "Paul Scholes",
+      "path": "/img/scouts-duel/players/scholes.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20246,
+      "sha256": "41b3ef0a097003f5f6a89b07e24b210425a08bfec67094940efe9ec9299f23ba",
+      "source": {
+        "local": "/img/higher-lower/players/scholes.png",
+        "sha256": "d779ad184a39df178957a7d3ac7ef2b8552ef348cb62ba7eaa10be46835cdeab",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "silva": {
+      "name": "Bernardo Silva",
+      "path": "/img/scouts-duel/players/silva.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17958,
+      "sha256": "94f521c5319a8b73d20c3238c65755ced868ffd57676d8f92b7826a26bebeeb7",
+      "source": {
+        "local": "/img/higher-lower/players/bernardo.png",
+        "sha256": "74fb243b8c94f80707d5b69bd9b0aafede48e132d6aec9ec0c4581534fd48b76",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "son": {
+      "name": "Heung-min Son",
+      "path": "/img/scouts-duel/players/son.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15582,
+      "sha256": "a028e90fe4aa406b6c24df1908097bfe21bb9b845bc26376aa43ee889afc0292",
+      "source": {
+        "local": "/img/higher-lower/players/son.png",
+        "sha256": "13a6397d840caeb1a3633b1813ba86f4a5460cf57d9bdd75d6d1b5b7da5f52f7",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "suarez": {
+      "name": "Luis Suarez",
+      "path": "/img/scouts-duel/players/suarez.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15304,
+      "sha256": "6755735030fbdf346020ff3360031191e37f22134e821b2e5558363671eb8622",
+      "source": {
+        "local": "/img/higher-lower/players/suarez.png",
+        "sha256": "29b12813446954b2222fc90ee61d3c300661487651bccf9ba81d155e15b23546",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "szoboszlai": {
+      "name": "Dominik Szoboszlai",
+      "path": "/img/scouts-duel/players/szoboszlai.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14972,
+      "sha256": "1a2a8575ea6dbe778ee9390ded960f3f601832fb2cd12596bca002cf4017e3dc",
+      "source": {
+        "local": "/img/higher-lower/players/szoboszlai.png",
+        "sha256": "06b813e71c97b6108d3ed4ec7c3f56a3da3a00feaf2204aa22e0f1ac9a1b6db5",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "tchouameni": {
+      "name": "Aurelien Tchouameni",
+      "path": "/img/scouts-duel/players/tchouameni.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14098,
+      "sha256": "935325c153b62cb807261ce6eaa5ed3a9985175c9d1ddb587e3d0449cea07ea2",
+      "source": {
+        "local": "/img/higher-lower/players/tchouameni.png",
+        "sha256": "9349b73e1fb7127859b70b639895b3910eeb40d37e1bc06910ce7b716750152f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "ter_stegen": {
+      "name": "Marc-Andre ter Stegen",
+      "path": "/img/scouts-duel/players/ter_stegen.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13504,
+      "sha256": "de31d13ac5ce3a4869feb5c5f8971617dd2951b4054fdaf1288946af9b925c1f",
+      "source": {
+        "local": "/img/higher-lower/players/ter_stegen.png",
+        "sha256": "2cef32d082b04d45f3e2cb78725523fbf8f32f94b7c9226ec2fe76737fb8e5d5",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "terry": {
+      "name": "John Terry",
+      "path": "/img/scouts-duel/players/terry.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 11574,
+      "sha256": "ee2f85c405f5f1bb42b09883dada6cde9dc67f2ed3f9c4d525b9ffa59099e2fe",
+      "source": {
+        "local": "/img/higher-lower/players/terry.png",
+        "sha256": "e36036944c02e5c78f8be3b5b282efb595278c80ff301cc6c43e27c3aaa09766",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "thiago_silva": {
+      "name": "Thiago Silva",
+      "path": "/img/scouts-duel/players/thiago_silva.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14274,
+      "sha256": "a8b15fee3413ca46be4c8eb78612a4d9f766250ac6f1fc4529294943c8437fda",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/164240.png",
+        "page": "https://www.fut.gg/players/164240-thiago-silva/",
+        "identityTitle": "Thiago Silva FIFA History: All 72 FUT Cards - FUT.GG",
+        "eaPlayerId": 164240,
+        "cache": "tmp/scouts-duel/portrait-sources/thiago_silva.png",
+        "sha256": "8489414b2f5b4073e42ac1dab38ba9f21a9a12742ef46be7999394aeeb77b1fa"
+      }
+    },
+    "toney": {
+      "name": "Ivan Toney",
+      "path": "/img/scouts-duel/players/toney.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16428,
+      "sha256": "5c0488f3ccfd9d9a1a20413faaf46c84154fc62b60b7608014d434d8a1bd6b1c",
+      "source": {
+        "local": "/img/higher-lower/players/toney.png",
+        "sha256": "3f768f816b564f9c7611408f6c832fc0cee45db6ee4a08cb5f6bfd9e8e1f77b9",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "trent": {
+      "name": "Trent Alexander-Arnold",
+      "path": "/img/scouts-duel/players/trent.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15026,
+      "sha256": "ffb3aa7aa9ed5709076c0653f4ce447ed2181b5060c54cc3b1c34347eb737077",
+      "source": {
+        "local": "/img/higher-lower/players/trent.png",
+        "sha256": "b5c48e55b77dfa1e5042fb853716c6a68b7383b296b9beaf13765ea357d25162",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "trossard": {
+      "name": "Leandro Trossard",
+      "path": "/img/scouts-duel/players/trossard.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15452,
+      "sha256": "5fa306b6bda589a3608f77f87fbfbf86c2cbe68af6769b4d239cadd1d32f5a36",
+      "source": {
+        "local": "/img/higher-lower/players/trossard.png",
+        "sha256": "7650d8b25936e79454b5df257c573e673acd0194832e4b209be0c7e166b0b340",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "valverde": {
+      "name": "Federico Valverde",
+      "path": "/img/scouts-duel/players/valverde.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14666,
+      "sha256": "208928cdd241f99635d2790a697879bf9c8b3e79c27569db982361c2ebb2ba21",
+      "source": {
+        "local": "/img/higher-lower/players/valverde.png",
+        "sha256": "4954946792655e3105985c73f89766c371829339f0f48c6a5baf57766603abbb",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "van_dijk": {
+      "name": "Virgil van Dijk",
+      "path": "/img/scouts-duel/players/van_dijk.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 15184,
+      "sha256": "f01cb30648d77e2330ad96b4418fae211a4e3e712163684f4a75932f12c7421a",
+      "source": {
+        "local": "/img/higher-lower/players/vandijk.png",
+        "sha256": "a326cad4c2ce0fb37344ce8ca95f0262af16c4214b2ecfc17db6e3ec995963a8",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "vidic": {
+      "name": "Nemanja Vidic",
+      "path": "/img/scouts-duel/players/vidic.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 20880,
+      "sha256": "9b70b513d85b8b0a2879c962fb631ab3feb6210976ce4e3ddbf6548f65d4ab15",
+      "source": {
+        "local": "/img/higher-lower/players/vidic.png",
+        "sha256": "7e15af8498475a46eb51bafb39b264305e8a1ac7a9779039d93ccdf0b124aa45",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "vinicius": {
+      "name": "Vinícius Júnior",
+      "path": "/img/scouts-duel/players/vinicius.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 13080,
+      "sha256": "97521553ae24e2edeae0c804f2f6871e0e83f350badf82248d924907d31b9df7",
+      "source": {
+        "local": "/img/higher-lower/players/vinicius.png",
+        "sha256": "717d87ecafc415d850b39fda13703455e3402127b54eff2924a974a757d41f8d",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "vlahovic": {
+      "name": "Dusan Vlahovic",
+      "path": "/img/scouts-duel/players/vlahovic.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 14426,
+      "sha256": "3e7cd7367167e248c2fda65bacabee5994a22ab6aba5f245990fc3384260357b",
+      "source": {
+        "local": "/img/higher-lower/players/vlahovic.png",
+        "sha256": "1ec56f79eea6d6e418bb6286ba26fd01fc539f165b15532982de619c6e2dd8b8",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "walker": {
+      "name": "Kyle Walker",
+      "path": "/img/scouts-duel/players/walker.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 18844,
+      "sha256": "300609b04ab34294126a89f80e315cc93c055a7ff199ca0b46536a13c95d165e",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/188377.png",
+        "page": "https://www.fut.gg/players/188377-kyle-walker/",
+        "identityTitle": "Kyle Walker EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 188377,
+        "cache": "tmp/scouts-duel/portrait-sources/walker.png",
+        "sha256": "8e2b3878c22d44a932f26e6a05aa0ee03d19a3359d8d99d4c31f106b76b8260a"
+      }
+    },
+    "watkins": {
+      "name": "Ollie Watkins",
+      "path": "/img/scouts-duel/players/watkins.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16448,
+      "sha256": "67a0daa4689425d111b9236606e42b2d82947c43c6cbb2f63e19b6a9e9b2f39a",
+      "source": {
+        "local": "/img/higher-lower/players/watkins.png",
+        "sha256": "bc208cabb157b414d814b12f9556b61624a826ab830548cd6605e8c00e9dc1ef",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "wilson": {
+      "name": "Callum Wilson",
+      "path": "/img/scouts-duel/players/wilson.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 16790,
+      "sha256": "8fb0dbdc26cc8681efba5cca679ee957da9849ff5d60ec3e7c851c490374e21e",
+      "source": {
+        "url": "https://cdn.futbin.com/content/fifa25/img/players/196978.png",
+        "page": "https://www.fut.gg/players/196978-callum-wilson/",
+        "identityTitle": "Callum Wilson EA FC 27 Ratings, Prices &amp; Cards - FUT.GG",
+        "eaPlayerId": 196978,
+        "cache": "tmp/scouts-duel/portrait-sources/wilson.png",
+        "sha256": "06d690ae25bd424a4e9809fe71647decb5db1688da9b8056c39632b2aef09b7d"
+      }
+    },
+    "wirtz": {
+      "name": "Florian Wirtz",
+      "path": "/img/scouts-duel/players/wirtz.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17614,
+      "sha256": "50aebd4fbb362c4a1882194dfd93ac9a5b6ecd763680000e2147e7679bf7d03e",
+      "source": {
+        "local": "/img/higher-lower/players/wirtz.png",
+        "sha256": "61f70084c477db197af662f5003bb3842be27e044f1673faa4e655a3336016bf",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "xavi": {
+      "name": "Xavi Hernandez",
+      "path": "/img/scouts-duel/players/xavi.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 22364,
+      "sha256": "2afc6cb344cd3c7591cbd645e0f0301b18443e46d4c839d7612038d4023cfc6a",
+      "source": {
+        "local": "/img/higher-lower/players/xavi.png",
+        "sha256": "b4d304386eb1dced95677f9e1732dd1e15faa6892567d07b1fe6e632d8aa35c4",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "yamal": {
+      "name": "Lamine Yamal",
+      "path": "/img/scouts-duel/players/yamal.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 17540,
+      "sha256": "3af807e27390acb5adcf62f641d1c9b38ee650ce6d1ee5939f831dfc480fe768",
+      "source": {
+        "local": "/img/higher-lower/players/yamal.png",
+        "sha256": "c4ff4fea7e04fec7268e4c6a988af664f3d4f79ceaafbe207e4474259a67740f",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "zidane": {
+      "name": "Zinedine Zidane",
+      "path": "/img/scouts-duel/players/zidane.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 22882,
+      "sha256": "e79d248087d590a2d3c765c3265be36d7f11cc02ad61379d9d117a988db3943b",
+      "source": {
+        "local": "/img/higher-lower/players/zidane.png",
+        "sha256": "370a8389e615c9ffe501df02791435d12cb54b8c4dbe9feaba08320633e88c55",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    },
+    "zlatan": {
+      "name": "Zlatan Ibrahimović",
+      "path": "/img/scouts-duel/players/zlatan.webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 10386,
+      "sha256": "569d998b181eb88add18b735c694198986831cb80efb599e18fcc7b37b95d1dd",
+      "source": {
+        "local": "/img/higher-lower/players/zlatan.png",
+        "sha256": "0ab1856c6f0bb28e842fcce2cc92d3abc0e8b24f4b8b9a7058d9f7e295dd78e8",
+        "provenance": "/img/higher-lower/asset-sources.json"
+      }
+    }
+  }
+}

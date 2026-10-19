@@ -11,6 +11,9 @@
     "test:higher-lower": "node scripts/higher-lower/higher-lower.test.cjs",
     "test:matrix": "node scripts/matrix/matrix.test.cjs",
     "test:journeyman": "node scripts/journeyman/journeyman.test.cjs",
+    "test:scouts-duel": "node scripts/scouts-duel/scouts-duel.test.cjs",
+    "test:scouts-duel:api": "node scripts/scouts-duel/api-smoke.cjs",
+    "validate:scouts-duel": "node scripts/scouts-duel/validate-data.cjs",
     "build:journeyman": "node scripts/journeyman/import-dataset.cjs",
     "validate:journeyman": "node scripts/journeyman/import-dataset.cjs --check"
   },

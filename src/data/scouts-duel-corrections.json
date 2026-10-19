@@ -1,0 +1,20 @@
+{
+  "reviewedAt": "2026-10-18",
+  "notes": "Reviewed corrections only; this is not a claim that every legacy field has been independently verified.",
+  "sources": {
+    "psg-2025": "https://www.uefa.com/uefachampionsleague/news/0299-1de417608530-15b01ff7b150-1000--paris-win-champions-league-desire-doue-double-helps-secure/",
+    "dembele": "https://www.psg.fr/en/players/ousmane-dembele",
+    "jota": "https://www.liverpoolfc.com/news/diogo-jota-1996-2025",
+    "casillas": "https://www.transfermarkt.com/iker-casillas/profil/spieler/3979"
+  },
+  "players": {
+    "donnarumma": { "clWinner": true, "source": "psg-2025" },
+    "hakimi": { "clWinner": true, "source": "psg-2025" },
+    "marquinhos": { "clWinner": true, "source": "psg-2025" },
+    "nuno_mendes": { "clWinner": true, "source": "psg-2025" },
+    "kvaratskhelia": { "clWinner": true, "source": "psg-2025" },
+    "dembele": { "clWinner": true, "ballonDor": true, "footedness": "both", "source": "dembele" },
+    "casillas": { "footedness": "right", "source": "casillas" },
+    "jota": { "isRetired": true, "source": "jota", "note": "Career ended in 2025. Active/retired questions group historical players as no longer active." }
+  }
+}

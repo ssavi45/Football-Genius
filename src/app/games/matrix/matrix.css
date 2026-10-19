@@ -1,6 +1,5 @@
 .matrix-shell { max-width:1920px; gap:20px; padding:12px 14px 18px; background:radial-gradient(ellipse at 44% 26%,#dcecff88,transparent 70%),#edf6ff; }
 .matrix-shell .sidebar-desktop { width:200px; padding:0; }
-.matrix-shell .sidebar-desktop.is-collapsed { width:66px; }
 .matrix-shell .sidebar-card { top:78px; height:calc(100dvh - 96px); min-height:700px; padding:0; border-radius:19px; background:linear-gradient(130deg,#fffffff0,#e8f3ffb3); box-shadow:0 9px 25px #527fc20a; }
 .matrix-shell .sidebar-content { padding:10px 10px 20px; }
 .matrix-shell .sidebar-links { display:flex; flex-direction:column; gap:9px; }
@@ -9,9 +8,6 @@
 .matrix-shell .sidebar-links a svg { width:22px; height:22px; color:#6c7ca4; }
 .matrix-shell .sidebar-links a.bg-blue-600 { color:white; background:linear-gradient(120deg,#1682ff,#0052ff); box-shadow:0 5px 12px #0060ff2a,inset 0 1px 2px #fff8; transform:none; }
 .matrix-shell .sidebar-links a.bg-blue-600 svg { color:white; }
-.matrix-shell .sidebar-desktop.is-collapsed .sidebar-links a { padding:0; }
-.matrix-shell .sidebar-desktop.is-collapsed .sidebar-content { padding:8px 8px 20px; }
-.matrix-shell .sidebar-desktop.is-collapsed .sidebar-links a { height:46px; }
 .matrix-shell .sidebar-quote { border:0; }
 .matrix-dashboard { display:grid; grid-template-columns:minmax(0,1fr) minmax(335px,27.8%); gap:20px; min-height:calc(100dvh - 96px); color:#080e27; }
 .matrix-main { display:flex; flex-direction:column; gap:14px; min-width:0; }

@@ -1,6 +1,5 @@
 .higher-lower-shell { max-width:1920px; gap:24px; padding:12px 14px 18px; background:radial-gradient(ellipse at 44% 26%,#dcecff88,transparent 70%),#edf6ff; }
 .higher-lower-shell .sidebar-desktop { width:200px; padding:0; }
-.higher-lower-shell .sidebar-desktop.is-collapsed { width:66px; }
 .higher-lower-shell .sidebar-card { top:78px; height:calc(100dvh - 96px); min-height:660px; padding:0; border-radius:20px; background:linear-gradient(130deg,#fffffff0,#e8f3ffb3); box-shadow:0 9px 25px #527fc20a; }
 .higher-lower-shell .sidebar-content { padding:14px 10px 20px; }
 .higher-lower-shell .sidebar-links { display:flex; flex-direction:column; gap:9px; }
@@ -9,8 +8,6 @@
 .higher-lower-shell .sidebar-links a svg { width:22px; height:22px; color:#6c7ca4; }
 .higher-lower-shell .sidebar-links a.bg-blue-600 { color:white; background:linear-gradient(120deg,#1682ff,#0052ff); box-shadow:0 5px 12px #0060ff2a,inset 0 1px 2px #fff8; transform:none; }
 .higher-lower-shell .sidebar-links a.bg-blue-600 svg { color:white; }
-.higher-lower-shell .sidebar-desktop.is-collapsed .sidebar-links a { padding:0; }
-.higher-lower-shell .sidebar-desktop.is-collapsed .sidebar-content { padding:14px 8px 20px; }
 .higher-lower-shell .sidebar-quote { border:0; }
 .hl-dashboard { display:grid; grid-template-columns:minmax(0,1fr) minmax(340px,29.4%); gap:20px; min-width:0; min-height:calc(100dvh - 96px); color:#090f23; }
 .hl-main { display:flex; flex-direction:column; gap:14px; min-width:0; }

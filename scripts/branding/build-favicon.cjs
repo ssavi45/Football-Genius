@@ -18,7 +18,7 @@ const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
   const archive = path.join(root, 'tmp/branding');
   fs.mkdirSync(dir, { recursive: true });
   fs.mkdirSync(archive, { recursive: true });
-  fs.writeFileSync(path.join(archive, 'football-brain-' + sourceVersion + '.png'), original);
+  fs.writeFileSync(path.join(archive, 'favicon-' + sourceVersion + '.png'), original);
   // Mask before downsampling so small icons retain smooth transparent corners.
   const square = await sharp(original).autoOrient()
     .resize(512, 512, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
@@ -50,7 +50,7 @@ const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
   }
   const touch = await render(180), touchUrl = '/branding/apple-touch-icon.png';
   fs.writeFileSync(path.join(root, 'public', touchUrl), touch);
-  const manifest = { version, source: 'User-supplied Football Brain Lightbulb Logo.png', cornerRadius: '22%',
+  const manifest = { version, source: `User-supplied ${path.basename(input)}`, cornerRadius: '22%',
     icon: icons, apple: { url: touchUrl, type: 'image/png', sizes: '180x180', bytes: touch.length, sha256: hash(touch) } };
   fs.writeFileSync(path.join(dir, 'favicon-assets.json'), JSON.stringify(manifest, null, 2) + '\n');
   console.log(JSON.stringify(manifest, null, 2));

@@ -1,35 +1,35 @@
 {
-  "version": "4cf5efbc241e",
-  "source": "User-supplied Football Brain Lightbulb Logo.png",
+  "version": "5e993f08a252",
+  "source": "User-supplied favicon.png",
   "cornerRadius": "22%",
   "icon": [
     {
       "url": "/favicon.ico",
       "type": "image/x-icon",
       "sizes": "16x16 32x32 48x48",
-      "bytes": 10218,
-      "sha256": "715862cc8f24a28a24df6a529afeff76c78334488d79615561177a6934d8e3ba"
+      "bytes": 6909,
+      "sha256": "c82a7d41c822cd02f33039d1a79e9ec919e624534d933a9515f99f9989cedd46"
     },
     {
       "url": "/branding/favicon-16x16.png",
       "type": "image/png",
       "sizes": "16x16",
-      "bytes": 948,
-      "sha256": "5c47910e0712bd3ab129340dcbfd0981ca36c7f0456a6090ddd81067fef5cd4e"
+      "bytes": 787,
+      "sha256": "2122a07268421cb46f9051bfe5e279309119136ed24ab0f82882d6d733536ba5"
     },
     {
       "url": "/branding/favicon-32x32.png",
       "type": "image/png",
       "sizes": "32x32",
-      "bytes": 3044,
-      "sha256": "d1b1e45735f5495181cfed1a29d357100b622aab2a0dec2517df49dc03249162"
+      "bytes": 2132,
+      "sha256": "4e49e472d5d67740a9fa1ef058f6b9ce8169d778486f69ea371db7a2fbf0f629"
     }
   ],
   "apple": {
     "url": "/branding/apple-touch-icon.png",
     "type": "image/png",
     "sizes": "180x180",
-    "bytes": 58092,
-    "sha256": "e1532dc2f3f55cacd211b910bd0819cbd721f3ce24738bef21fd2a34adaff108"
+    "bytes": 32227,
+    "sha256": "1d241307cd3aedb9986ad47a6724ac2b15d662ba8d02e3e780228aa0aac1b156"
   }
 }

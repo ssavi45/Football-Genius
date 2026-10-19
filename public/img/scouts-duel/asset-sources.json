@@ -1,0 +1,87 @@
+{
+  "method": "Responsive hero artwork regenerated with built-in imagegen from the user-supplied Guess Who_ Football Showdown.png. Mode-card illustrations generated with built-in imagegen. All delivery assets optimized as WebP.",
+  "referenceScreen": {
+    "width": 1672,
+    "height": 941
+  },
+  "assets": [
+    {
+      "file": "title-tactical.webp",
+      "active": true,
+      "source": "User-provided title artwork",
+      "referenceFilename": "Scout’s Duel_ Tactical Blue Logo.png",
+      "width": 1200,
+      "height": 489,
+      "bytes": 197636,
+      "hasAlpha": true,
+      "sourceSha256": "073313148412e3bcfbfea732d5f5413559b7222f21850d36217eb465693f665f",
+      "sha256": "5709a6f0be8ed1c8d886132fea0217517e617f394f630c14f29e4f1b37c9b659"
+    },
+    {
+      "file": "hero-desktop-v3.webp",
+      "active": true,
+      "variant": "desktop",
+      "source": "Built-in imagegen adaptation of user-provided artwork",
+      "referenceFilename": "Guess Who_ Football Showdown.png",
+      "promptFile": "scripts/scouts-duel/hero-artwork-prompts.json",
+      "width": 2172,
+      "height": 395,
+      "bytes": 209522,
+      "sha256": "3e06a3d87a1618c1517daaba2d08fcb14d0fbbcdfbc2648825542035eab02635"
+    },
+    {
+      "file": "hero-tablet-v3.webp",
+      "active": true,
+      "variant": "tablet",
+      "source": "Built-in imagegen adaptation of user-provided artwork",
+      "referenceFilename": "Guess Who_ Football Showdown.png",
+      "promptFile": "scripts/scouts-duel/hero-artwork-prompts.json",
+      "width": 1600,
+      "height": 533,
+      "bytes": 223054,
+      "sha256": "5795dd117478c7ec16b69d889ee6465ce6cb9c7874f460110ce3d1eddba20eb6"
+    },
+    {
+      "file": "hero-mobile-v3.webp",
+      "active": true,
+      "variant": "mobile",
+      "source": "Built-in imagegen adaptation of user-provided artwork",
+      "referenceFilename": "Guess Who_ Football Showdown.png",
+      "promptFile": "scripts/scouts-duel/hero-artwork-prompts.json",
+      "width": 960,
+      "height": 1200,
+      "bytes": 215166,
+      "sha256": "744e08aee9219648338d5d88f7c03db0ec36f06c9866893b51acaaf930fe8a40"
+    },
+    {
+      "file": "hero-showdown.webp",
+      "active": false,
+      "source": "User-supplied artwork",
+      "sourceFilename": "Guess Who_ Football Showdown.png",
+      "sourceSha256": "f014a193183ed4da533558cefc190c947617449de92d9a3938cc7e6c370d9638",
+      "sourceWidth": 2048,
+      "sourceHeight": 768,
+      "width": 2048,
+      "height": 768,
+      "bytes": 304320,
+      "sha256": "2a40367eb525092ecb2faf033e861ec80629432642c72463ed58a81f7d46aa19"
+    },
+    {
+      "file": "hero-v2.webp",
+      "prompt": "Use case: stylized-concept. ORIGINAL premium football deduction game hero background artwork. Generate landscape 3:1 at high resolution. CRITICAL COMPOSITION: this image will be center-cropped to an extremely shallow 5:1 website banner. Put ALL important objects ONLY WITHIN THE MIDDLE 52% OF THE IMAGE HEIGHT (from y=24% to y=76%). Top quarter and bottom quarter must be just soft pale blue stadium atmosphere and light, absolutely NO heads or bodies there. On RIGHT 58% of image width, two SMALL anonymous male footballers in opposing three-quarter back view, from waist up. Entire heads including hair fit well inside middle band, heads start at y=27%, shoulders around y=43%, waist ends y=70%. One cobalt blue jersey figure centered x=64%, one crimson red jersey figure centered x=82%. They are seen from behind, their faces not visible. A sharp painterly diagonal blue-versus-red lightning slash separates them. Around their waists within the middle band are floating little silver frosted portrait scouting cards with dark headshot silhouettes. All important objects within y=24%-76%, NO BIG CLOSE-UP PEOPLE. Full canvas background an airy white and icy blue football stadium, soft white floodlights, light crystalline blue paint accents, spacious white mist on LEFT 43% reserved for live HTML heading. At top and bottom only atmospheric stadium haze that can be cropped away. Refined realistic sports video-game key art, detailed clothing texture and fine rim lighting, bright blue and crimson color contrast. NO words, NO letters, NO logos, NO crowns, NO arrows, NO scribbles, NO marks or question marks on either footballer's head or body, NO watermarks, NO interface elements, NO borders. This must be newly created original art, not derived or traced from a screenshot.",
+      "active": false
+    },
+    {
+      "file": "ai.webp",
+      "prompt": "Use case: stylized-concept. ORIGINAL wide 3:1 editorial game card background artwork for a football tactical AI mode. White and mint green football tactics board with faint white pitch markings, soft green sparkling stadium lights. On the right half a highly detailed friendly futuristic white and graphite humanoid robot scout, in three-quarter back view, shoulders and head with luminous green circular temple sensors and metallic football coach styling. Center/right bright emerald stadium depth with tactical pitch lines. Left quarter softly lit pale mint, leaving empty space for an HTML icon. Bottom 20% fades naturally to white mist for overlaid HTML text below. Photorealistic 3D sports marketing rendering with painterly motion accents, premium professional sports game aesthetic, high clarity. Landscape 1536x512 or 3:1. No text, no words, no letters, no numbers, no logos, no crests, no crown, no overlay icons, no watermark. Independently create all artwork."
+    },
+    {
+      "file": "online.webp",
+      "prompt": "Use case: stylized-concept. ORIGINAL premium sports game wide 3:1 card illustration. A luminous digital globe of tiny electric blue lights and thin orbital arcs dominates the center-right, showing Europe Africa and Asia, in a vast bright blue football stadium under glowing floodlights, subtle crystalline blue energy accents. Two small anonymous football scout silhouettes in the lower right and lower middle looking toward globe. Left quarter pale icy blue and clear for an HTML icon. Bottom 20% fades to bright white mist to blend with a white interface card. Crisp realistic 3D sports advertising artwork, rich cobalt blue but airy and bright, refined high detail. Landscape1536x512 or3:1. No text, no words, no logos, no crests, no crowns, no overlay icons, no watermarks. Independently create all artwork."
+    },
+    {
+      "file": "friend.webp",
+      "prompt": "Use case: stylized-concept. ORIGINAL premium football game card background, landscape 3:1. Two anonymous young adult male footballers from behind, shoulders upper-body only, standing side by side with friendly competitive camaraderie, looking toward a football stadium full of white and lavender floodlights. Dark violet jerseys, fine purple rim lighting around hair and shoulders; centered on right two-thirds. Dynamic violet paint splashes and crystalline lavender energy streaks, soft pale lilac on left quarter leaving room for an HTML icon. Bottom20% white luminous mist fades into interface white. High quality realistic 3D sports game key art with clean painterly accents. No text, no jersey numbers, no words, no logos, no crests, no crowns, no drawn arrows, no UI elements, no watermark. Independently create all artwork."
+    }
+  ]
+}
