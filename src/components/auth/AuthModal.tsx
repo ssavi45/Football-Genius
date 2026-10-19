@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/context/auth-context';
 import { sound } from '@/lib/utils/sound';
 import { X, Trophy, Flame, Zap, Shield, Check } from 'lucide-react';
@@ -10,6 +10,8 @@ export default function AuthModal() {
   const [nickname, setNickname] = useState(profile.username);
   const [isSaved, setIsSaved] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+  useEffect(()=>{if(isAuthModalOpen){setNickname(profile.username);setError(new URLSearchParams(window.location.search).has('auth_error')?'Sign-in could not be completed. Please try again.':'');}},[isAuthModalOpen,profile.username]);
 
   if (!isAuthModalOpen) return null;
 
@@ -17,11 +19,10 @@ export default function AuthModal() {
     e.preventDefault();
     if (!nickname.trim()) return;
     setIsSubmitting(true);
-    await updateUsername(nickname);
-    setIsSubmitting(false);
-    setIsSaved(true);
-    sound.playSuccess();
-    setTimeout(() => setIsSaved(false), 2000);
+    setError('');
+    try { await updateUsername(nickname);setIsSaved(true);sound.playSuccess();setTimeout(() => setIsSaved(false), 2000); }
+    catch(cause){setError(cause instanceof Error?cause.message:'Could not save your name.');}
+    finally{setIsSubmitting(false);}
   };
 
   const handleGoogleSignIn = async () => {
@@ -29,7 +30,7 @@ export default function AuthModal() {
       sound.playClick();
       await signInWithGoogle();
     } catch (e) {
-      console.error(e);
+      setError(e instanceof Error?e.message:'Could not start sign-in. Please retry.');
     }
   };
 
@@ -119,6 +120,7 @@ export default function AuthModal() {
         </div>
 
         {/* Feature Highlights */}
+        {error && <p role="alert" className="mb-4 text-center text-xs text-rose-600">{error}</p>}
         <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 text-center">
           <div className="p-2 rounded-xl bg-slate-50">
             <Flame className="h-4 w-4 text-orange-500 mx-auto mb-1" />

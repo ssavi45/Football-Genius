@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:scoreline": "node scripts/scoreline/scoreline.test.cjs",
+    "test:account": "node scripts/account/account.test.cjs",
+    "backend:setup": "node scripts/backend/build-setup.cjs",
+    "backend:check": "node scripts/backend/check.cjs",
+    "backend:publish": "node scripts/backend/publish-snapshot.cjs",
+    "test:backend": "node scripts/backend/database.test.cjs && node scripts/backend/games.test.cjs && node scripts/backend/auth.test.cjs",
+    "test:scoreline": "node scripts/scoreline/scoreline.test.cjs && node scripts/scoreline/api.test.cjs",
     "test:higher-lower": "node scripts/higher-lower/higher-lower.test.cjs",
     "test:matrix": "node scripts/matrix/matrix.test.cjs",
     "test:journeyman": "node scripts/journeyman/journeyman.test.cjs",
@@ -29,6 +34,7 @@
     "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.10",

@@ -17,7 +17,7 @@ import ShootModal from './ShootModal';
 import QuestionLogDrawer,{ScoutLogList} from './QuestionLogDrawer';
 
 export default function ScoutsDuelGame(){
-  const {profile,addXP,recordGameResult,soundEnabled,refreshProfile}=useAuth();
+  const {profile,isLoading,addXP,recordGameResult,soundEnabled,refreshProfile}=useAuth();
   const [match,setMatch]=useState<ScoutView|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[networkError,setNetworkError]=useState('');
   const [capabilities,setCapabilities]=useState<{available:boolean;store:string}|null>(null),[restoring,setRestoring]=useState(true);
   const [shootOpen,setShootOpen]=useState(false),[logOpen,setLogOpen]=useState(false),[resignOpen,setResignOpen]=useState(false),[now,setNow]=useState(Date.now());
@@ -26,19 +26,19 @@ export default function ScoutsDuelGame(){
   useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),250);return()=>clearInterval(timer);},[]);
   useEffect(()=>{if(match)offset.current=match.serverNow-Date.now();},[match?.serverNow]);
   useEffect(()=>{if(match?.status==='active'&&match.activeSeat!==match.seat)setShootOpen(false);if(match?.status==='completed'){setShootOpen(false);setLogOpen(false);setResignOpen(false);}},[match?.activeSeat,match?.status,match?.seat]);
-  useEffect(()=>{let active=true;void(async()=>{
-    try{const cap=await fetch('/api/games/scouts-duel').then(r=>r.json());if(active)setCapabilities(cap);
+  useEffect(()=>{if(isLoading)return;let active=true;setRestoring(true);void(async()=>{
+    try{const cap=await fetch(`/api/games/scouts-duel${profile.is_guest?'':'?resume=1'}`).then(r=>r.json());if(active)setCapabilities(cap);if(cap.match){if(active){accept(cap.match);localStorage.setItem('scouts_duel_room',cap.match.id);}return;}
       const saved=localStorage.getItem('scouts_duel_room');if(saved){const response=await fetch(`/api/games/scouts-duel/rooms/${saved}`);if(response.ok){const data=await response.json();if(active)accept(data.match);}else localStorage.removeItem('scouts_duel_room');}
     }catch{if(active)setNetworkError('Could not connect to the match service. Refresh to try again.');}finally{if(active)setRestoring(false);}
-  })();return()=>{active=false;};},[accept]);
+  })();return()=>{active=false;};},[accept,profile.id,profile.is_guest,isLoading]);
   useEffect(()=>{
     if(!match||match.status==='completed')return;let active=true,running=false;
     const controller=new AbortController();
     const refresh=async()=>{if(running)return;running=true;try{const response=await fetch(`/api/games/scouts-duel/rooms/${match.id}`,{cache:'no-store',signal:controller.signal});const data=await response.json();if(!response.ok){if(active&&[401,403,404,409].includes(response.status)){lobby();setError(data.error);return;}throw Error(data.error);}if(active){accept(data.match);setNetworkError('');}}catch(e){if(active&&!controller.signal.aborted)setNetworkError(e instanceof Error?e.message:'Reconnecting…');}finally{running=false;}};
     const timer=setInterval(refresh,1000);
-    const channel=capabilities?.store==='supabase'?supabase.channel(`scout-${match.id}`).on('postgres_changes',{event:'*',schema:'public',table:'scout_duel_signals',filter:`room_id=eq.${match.id}`},()=>void refresh()).subscribe():null;
+    const channel=capabilities?.store==='supabase'&&!profile.is_guest?supabase.channel(`scout-${match.id}`).on('postgres_changes',{event:'*',schema:'public',table:'scout_duel_signals',filter:`room_id=eq.${match.id}`},()=>void refresh()).subscribe():null;
     return()=>{active=false;controller.abort();clearInterval(timer);if(channel)void supabase.removeChannel(channel);};
-  },[match?.id,match?.status==='completed',capabilities?.store,accept]);
+  },[match?.id,match?.status==='completed',capabilities?.store,accept,profile.is_guest]);
   function sound(yes:boolean){if(!soundEnabled)return;try{const context=audio.current||new AudioContext();audio.current=context;void context.resume();const oscillator=context.createOscillator(),gain=context.createGain();oscillator.connect(gain);gain.connect(context.destination);oscillator.frequency.value=yes?660:180;gain.gain.setValueAtTime(.025,context.currentTime);gain.gain.exponentialRampToValueAtTime(.001,context.currentTime+.15);oscillator.start();oscillator.stop(context.currentTime+.16);}catch{/* Audio is optional. */}}
   useEffect(()=>{const log=match?.logs.at(-1);if(!match||!log)return;const key=`${match.id}:${log.id}`;if(lastLog.current===key)return;lastLog.current=key;sound(log.answer===true);},[match?.logs.length,match?.id,soundEnabled]);
   useEffect(()=>{

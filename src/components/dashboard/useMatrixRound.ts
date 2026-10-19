@@ -6,9 +6,13 @@ import { useAuth } from '@/context/auth-context';
 import { newMatrixRound } from '@/app/games/matrix/actions';
 import { clearAnswers, combinationKey, emptyState, restoreSession, setAnswer, submitGrid, viewState } from '@/lib/matrix/engine';
 import type { Criterion, MatrixPlayer, MatrixPuzzle, MatrixSession, MatrixState } from '@/lib/matrix/types';
+import { cloudGame } from '@/lib/backend/client';
+import type { CloudRun } from '@/lib/backend/types';
 
 export function useMatrixRound(initialPuzzle: MatrixPuzzle, players: MatrixPlayer[], catalog: Criterion[], datasetVersion: string) {
-  const { profile, isLoading, addXP, recordGameResult } = useAuth();
+  const { profile, isLoading, addXP, recordGameResult, refreshProfile } = useAuth();
+  const cloud=useRef<CloudRun<MatrixSession>|null>(null);
+  const saves=useRef<Promise<void>>(Promise.resolve());
   const [session, setSession] = useState<MatrixSession>(() => ({ puzzle: initialPuzzle, state: emptyState(initialPuzzle), history: [combinationKey(initialPuzzle)] }));
   const active = useRef(session);
   const request = useRef(0);
@@ -23,14 +27,30 @@ export function useMatrixRound(initialPuzzle: MatrixPuzzle, players: MatrixPlaye
   const view = useMemo(() => viewState(state, puzzle, players), [state, puzzle, players]);
   const decode = (raw: string) => restoreSession(JSON.parse(raw), players, catalog, datasetVersion, initialPuzzle.difficulty);
 
-  function commit(next: MatrixSession) {
+  function commit(next: MatrixSession, sync=true) {
     // Persist submission before awarding rewards. Reloads only restore it.
     try { localStorage.setItem(storageKey, JSON.stringify(next)); } catch { setStorageWarning(true); }
     active.current = next; setSession(next);
+    if(sync&&!profile.is_guest){
+      const generation=request.current;
+      saves.current=saves.current.then(async()=>{
+        const before=cloud.current;if(!before||request.current!==generation)return;
+        const result=await cloudGame<MatrixSession>('matrix',next.puzzle.difficulty,'save',{runId:before.runId,revision:before.revision,puzzleId:next.puzzle.id,answers:next.state.answers,submitted:next.state.submitted});
+        cloud.current=result;if(next.state.submitted)await refreshProfile();
+      }).catch(cause=>{if(request.current===generation)setNotice(cause instanceof Error?cause.message:'Could not sync this grid. Reload to retry.');});
+    }
   }
   useEffect(() => {
     if (isLoading) return;
-    request.current++; busy.current = false; setPendingRound(false); setNotice(''); setStorageWarning(false);
+    request.current++; busy.current = false; setPendingRound(false); setNotice(''); setStorageWarning(false);setReadyKey('');
+    cloud.current=null;
+    if(!profile.is_guest){
+      const token=request.current;
+      void cloudGame<MatrixSession>('matrix',initialPuzzle.difficulty,'resume').then(result=>{
+        if(request.current!==token)return;cloud.current=result;active.current=result.state;setSession(result.state);setReadyKey(storageKey);
+      }).catch(cause=>{if(request.current===token)setNotice(cause instanceof Error?cause.message:'Could not load your saved grid.');});
+      return()=>{request.current++;busy.current=false;};
+    }
     let next: MatrixSession = { puzzle: initialPuzzle, state: emptyState(initialPuzzle), history: [combinationKey(initialPuzzle)] };
     try {
       const raw = localStorage.getItem(storageKey);
@@ -43,10 +63,10 @@ export function useMatrixRound(initialPuzzle: MatrixPuzzle, players: MatrixPlaye
     } catch { setStorageWarning(true); }
     active.current = next; setSession(next); setReadyKey(storageKey);
     return () => { request.current++; busy.current = false; };
-  }, [storageKey, isLoading, initialPuzzle, players, catalog, datasetVersion]);
+  }, [storageKey, isLoading, initialPuzzle, players, catalog, datasetVersion,profile.is_guest]);
 
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || !profile.is_guest) return;
     const update = (event: StorageEvent) => {
       if (event.key !== storageKey || !event.newValue) return;
       try {
@@ -60,9 +80,10 @@ export function useMatrixRound(initialPuzzle: MatrixPuzzle, players: MatrixPlaye
     };
     window.addEventListener('storage', update);
     return () => window.removeEventListener('storage', update);
-  }, [ready, storageKey, players, catalog, datasetVersion, initialPuzzle.difficulty]);
+  }, [ready, storageKey, players, catalog, datasetVersion, initialPuzzle.difficulty,profile.is_guest]);
 
   function latest(): MatrixSession | null {
+    if(!profile.is_guest)return active.current;
     let before = active.current;
     try {
       const raw = localStorage.getItem(storageKey);
@@ -104,14 +125,22 @@ export function useMatrixRound(initialPuzzle: MatrixPuzzle, players: MatrixPlaye
   async function nextRound() {
     if (!ready || busy.current || !active.current.state.submitted) return;
     const before = latest(); if (!before || !before.state.submitted) return;
-    const token = ++request.current;
+    const token = request.current;
     busy.current = true;
     setPendingRound(true); setNotice('');
     try {
+      if(!profile.is_guest){
+        await saves.current;
+        if(request.current!==token)return;
+        const saved=cloud.current;if(!saved)throw new Error('Reload your saved grid before continuing.');
+        if(!saved.state.state.submitted)throw new Error('Your result has not synced yet. Reload the grid and submit it again.');
+        const result=await cloudGame<MatrixSession>('matrix',before.puzzle.difficulty,'restart',{runId:saved.runId,revision:saved.revision});
+        if(request.current!==token)return;cloud.current=result;commit(result.state,false);return;
+      }
       const next = await newMatrixRound(before.puzzle.difficulty, before.puzzle.number + 1, before.history);
       if (request.current !== token || active.current.puzzle.id !== before.puzzle.id) return;
       commit({ puzzle: next, state: emptyState(next), history: [...before.history, combinationKey(next)].slice(-200) });
-    } catch { if (request.current === token) setNotice('Could not load a new round. Your result is saved. Please try again.'); }
+    } catch (cause) { if (request.current === token) setNotice(cause instanceof Error?cause.message:'Could not load a new round. Please try again.'); }
     finally { if (request.current === token) { busy.current = false; setPendingRound(false); } }
   }
   return { puzzle, state, view, ready, storageWarning, pendingRound, notice, edit, clear, submit, nextRound };

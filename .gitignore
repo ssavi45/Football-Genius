@@ -29,5 +29,7 @@ build/
 /tmp/branding/
 /tmp/journeyman/corrections/
 /tmp/scouts-duel/
+/tmp/backend/
+/tmp/npm-cache/
 /scripts/higher-lower/.venv/
 __pycache__/

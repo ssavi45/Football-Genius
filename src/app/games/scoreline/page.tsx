@@ -17,7 +17,7 @@ function writeStorage(key: string,value: string) { try { localStorage.setItem(ke
 function history(): string[] { try { const data=JSON.parse(readStorage(HISTORY_KEY)||'[]'); return Array.isArray(data) ? data.filter(id=>typeof id==='string').slice(-200) : []; } catch { return []; } }
 
 export default function ScorelineHeroPage() {
-  const { profile, isLoading, addXP, recordGameResult } = useAuth();
+  const { profile, isLoading, addXP, recordGameResult,refreshProfile } = useAuth();
   const [round,setRound] = useState<RoundView|null>(null);
   const [busy,setBusy] = useState(false);
   const [error,setError] = useState<string|null>(null);
@@ -30,7 +30,7 @@ export default function ScorelineHeroPage() {
     if (pending.current) return;
     pending.current=true;setBusy(true);setError(null);
     try {
-      const response=await fetch('/api/scoreline',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,token:current.current?.token,recent:action==='start'?history():undefined,...fields})});
+      const response=await fetch('/api/scoreline',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,requestId:crypto.randomUUID(),runId:current.current?.id,cloudRevision:current.current?.cloudRevision,token:current.current?.token,recent:action==='start'?history():undefined,...fields})});
       const data=await response.json();
       if (!response.ok) throw new Error(data.error || 'Unable to load this round.');
       const view=data as RoundView;
@@ -51,6 +51,7 @@ export default function ScorelineHeroPage() {
 
   useEffect(() => {
     if (!round?.complete) return;
+    if(round.rewardOnServer){void refreshProfile().catch(()=>{});return;}
     const claimKey=`footygen_scoreline_claimed_v1:${profile.id}`;
     let claimed:string[]=[];
     try { const stored=JSON.parse(readStorage(claimKey)||'[]'); claimed=Array.isArray(stored)?stored:[]; } catch { /* Start fresh after invalid local data. */ }
@@ -58,10 +59,10 @@ export default function ScorelineHeroPage() {
     writeStorage(claimKey,JSON.stringify([...claimed,round.id].slice(-200)));
     void addXP(round.score,'Scoreline Hero round');
     void recordGameResult('scoreline',round.review.every(answer=>answer.points>0),round.score);
-  },[round,profile.id,addXP,recordGameResult]);
+  },[round,profile.id,addXP,recordGameResult,refreshProfile]);
 
   const onAction = (action:Action) => { const {type,...fields}=action;void request(type,fields); };
-  const freshRound = () => { sound.playClick();void request('start'); };
+  const freshRound = () => { sound.playClick();void request('start',{force:true}); };
   if (!round) return <div className="scoreline-loading" role="status"><Trophy size={40} /><h1>{error ? 'Your round needs a fresh start' : 'Setting up your next ten matches…'}</h1><p>{error || 'A balanced mix of club classics and international memories.'}</p>{error && <button onClick={freshRound} disabled={busy}>Start a New Round</button>}</div>;
 
   return <div className="scoreline-dashboard">

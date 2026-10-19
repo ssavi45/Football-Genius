@@ -6,7 +6,7 @@ import type { ScoutRoom } from './types';
 import { joinScoutRoom, ScoutRuleError } from './engine';
 
 const url=process.env.SUPABASE_URL||process.env.NEXT_PUBLIC_SUPABASE_URL;
-const key=process.env.SUPABASE_SERVICE_ROLE_KEY;
+const key=process.env.SUPABASE_SECRET_KEY||process.env.SUPABASE_SERVICE_ROLE_KEY;
 export const scoutStoreKind = url&&key ? 'supabase' : process.env.NODE_ENV!=='production' ? 'local' : 'unavailable';
 export const scoutAdmin = url&&key ? createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}}) : null;
 const root=path.join(process.cwd(),'tmp','scouts-duel');

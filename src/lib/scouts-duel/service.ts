@@ -4,6 +4,7 @@ import { scoutPlayers, SCOUT_DATASET_VERSION } from './data';
 import { applyScoutAction, createScoutMember, createScoutRoom, joinScoutRoom, ScoutRuleError, scoutView, tickScoutRoom } from './engine';
 import { findScoutRoom, matchmakeScout, loadScoutRoom, mutateScoutRoom, newScoutIdentity, saveNewScoutRoom, scoutAdmin } from './store';
 import type { ScoutAction, ScoutOptions, ScoutRoom, Seat } from './types';
+import { requestUser } from '@/lib/supabase/server';
 
 export const SCOUT_COOKIE='scouts_duel_session';
 const random=()=>randomInt(0,2**32)/2**32;
@@ -32,9 +33,15 @@ export function checkScoutOrigin(request:NextRequest) {
   if(!allowed.includes(source.host)&&!localDevelopment)throw new ScoutRuleError('This action must come from the game page.');
 }
 async function userId(request:NextRequest) {
-  const token=request.headers.get('authorization')?.replace(/^Bearer\s+/i,'');
-  if(!token||!scoutAdmin)return null;
-  const {data,error}=await scoutAdmin.auth.getUser(token);return error?null:data.user?.id||null;
+  if(!scoutAdmin)return null;
+  return (await requestUser(request))?.id||null;
+}
+export async function restoreScoutAccount(request:NextRequest,hash:string) {
+  const id=await userId(request);if(!id||!scoutAdmin)return null;
+  const {data,error}=await scoutAdmin.from('scout_duel_rooms').select('id').contains('state',{members:[{userId:id}]}).in('status',['waiting','selecting','active']).order('updated_at',{ascending:false}).limit(1).maybeSingle();
+  if(error)throw Error('Could not restore your active duel. Please retry.');if(!data)return null;
+  const room=await mutateScoutRoom(data.id,current=>{const member=current.members.find(item=>item?.userId===id);if(!member)throw Error('This duel belongs to another account.');member.tokenHash=hash;member.lastSeen=Date.now();});
+  return publicView(room,hash);
 }
 function options(body:Record<string,unknown>):ScoutOptions {
   return {difficulty:['rookie','tactician','world-class'].includes(String(body.difficulty))?body.difficulty as ScoutOptions['difficulty']:'tactician',assistance:body.assistance===true,hardcore:false,turnSeconds:body.turnSeconds===60?60:45};

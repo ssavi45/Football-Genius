@@ -2,7 +2,7 @@
 require.extensions['.ts']=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,file);
 const test=require('node:test'),assert=require('node:assert/strict'),path=require('node:path');
 const {database,createRound,transition,roundView,potential,matchesById}=require('../../src/lib/scoreline/engine.ts');
-const {sign,verify}=require('../../src/lib/scoreline/session.ts');
+const {sign,verify,signCloudRound,verifyCloudRound}=require('../../src/lib/scoreline/session.ts');
 function rng(seed){return()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};}
 function round(seed=1){return createRound('test-round',[],rng(seed));}
 
@@ -72,4 +72,16 @@ test('public responses omit future scores, scorer evidence and locked hint text'
 });
 test('round tokens survive serialization and reject tampering or expiry',()=>{
  const r=round();assert.deepEqual(verify(sign(r)),r);assert.throws(()=>verify(sign(r)+'x'));assert.throws(()=>verify(sign({...r,createdAt:0})));
+});
+
+test('cloud round tokens bind the saved state to one account, run and revision',()=>{
+ const r=round(),token=signCloudRound(r,'account-a',4);
+ assert.deepEqual(verifyCloudRound(token,'account-a',4,r.id),r);
+ assert.throws(()=>verifyCloudRound(token,'account-b',4,r.id));
+ assert.throws(()=>verifyCloudRound(token,'account-a',3,r.id));
+ assert.throws(()=>verifyCloudRound(token,'account-a',4,'other-round'));
+ assert.throws(()=>verifyCloudRound(token+'x','account-a',4,r.id));
+ assert.throws(()=>verifyCloudRound(sign(r),'account-a',4,r.id));
+ assert.throws(()=>verifyCloudRound(signCloudRound({...r,createdAt:0},'account-a',4),'account-a',4,r.id));
+ assert.throws(()=>verify(token));
 });

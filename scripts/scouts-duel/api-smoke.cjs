@@ -20,7 +20,12 @@ async function main() {
   const created = await a('', { mode: 'custom', name: 'API Scout A', turnSeconds: 60 });
   assert.equal(created.status, 200, JSON.stringify(created));
   const initial = created.match, path = '/rooms/' + initial.id;
-  const action = (c, action, requestId = randomUUID()) => c(path, { requestId, action });
+  const action = async (c, action, requestId = randomUUID()) => {
+    // The real clients poll continuously. Keep the idle test peer connected
+    // while cold development compilation or cloud requests take longer.
+    await (c === a ? b : a)(path);
+    return c(path, { requestId, action });
+  };
   const joined = await b('', { joinCode: initial.code, name: 'API Scout B' });
   assert.equal(joined.status, 200); assert.equal(joined.match.options.turnSeconds, 60);
   assert.deepEqual(initial.board.map(p => p.id), joined.match.board.map(p => p.id));

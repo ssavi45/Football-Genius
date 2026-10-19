@@ -142,7 +142,7 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
           </Fragment>)}
           </> : <MatrixGridSkeleton />}
         </div>
-        <div className="matrix-feedback" role="status" aria-live="polite"><Info size={15} /><span>{!ready ? 'Restoring your saved round…' : notice || (view.finished ? `${view.correct} correct · ${view.incorrect} incorrect · ${view.blank} blank. Click a cell to review its criteria.` : `${view.filled}/9 selected. You can edit answers or leave blanks. Results reveal on submission.`)}</span></div>
+        <div className="matrix-feedback" role="status" aria-live="polite"><Info size={15} /><span>{notice || (!ready ? 'Restoring your saved round…' : view.finished ? `${view.correct} correct · ${view.incorrect} incorrect · ${view.blank} blank. Click a cell to review its criteria.` : `${view.filled}/9 selected. You can edit answers or leave blanks. Results reveal on submission.`)}</span>{!ready&&notice&&<button type="button" onClick={()=>window.location.reload()}>Retry</button>}</div>
         <div className="matrix-board-actions">
           <button type="button" className="matrix-primary" disabled={!ready || pendingRound} onClick={() => view.finished ? void nextRound() : submit()}>{!ready || pendingRound ? 'Loading Round…' : view.finished ? 'Play Another Round' : 'Submit Grid'}<ArrowRight size={20} /></button>
           <button type="button" className="matrix-secondary" disabled={!ready || pendingRound} onClick={() => view.finished ? setSummaryOpen(true) : clear()}>{view.finished ? <FileText size={20} /> : <RotateCcw size={20} />}{view.finished ? 'View Results' : 'Clear Grid'}</button>

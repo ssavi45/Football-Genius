@@ -7,12 +7,16 @@ import confetti from 'canvas-confetti';
 import { ArrowRight, ChevronRight, Eye, FastForward, GitBranch, Info, ListOrdered, RotateCcw, Search, Send, Shield, Shuffle, Target, Trophy, UserRound } from 'lucide-react';
 import { useAuth } from '@/context/auth-context';
 import searchDirectory from '@/data/journeyman-search-players.json';
-import { advanceJourney, createJourneyDeck, createJourneyState, formatJourneyPoints, journeyCanSkip, journeyHiddenClubs, journeyLastClubLabel, journeyRevealCost, journeyRevealLimit, journeySearchOptions, journeySkipsLeft, potentialPoints, roundJourneyPoints, visibleClub, type JourneyAction, type JourneyPlayer } from '@/lib/journeyman';
+import { advanceJourney, createJourneyDeck, createJourneyState, formatJourneyPoints, journeyCanSkip, journeyHiddenClubs, journeyLastClubLabel, journeyRevealCost, journeyRevealLimit, journeySearchOptions, journeySkipsLeft, potentialPoints, roundJourneyPoints, visibleClub, type JourneyAction, type JourneyPlayer, type JourneyState } from '@/lib/journeyman';
+import { cloudGame } from '@/lib/backend/client';
+import type { CloudRun } from '@/lib/backend/types';
 import JourneymanWidgets from './JourneymanWidgets';
 import JourneyAnswerCard from './JourneyAnswerCard';
 
 export default function JourneymanGame({ players, initialDeck }: { players: JourneyPlayer[]; initialDeck: number[] }) {
-  const { addXP, recordGameResult } = useAuth();
+  const { profile,isLoading,addXP,recordGameResult,refreshProfile } = useAuth();
+  const cloud=useRef<CloudRun<JourneyState>|null>(null);
+  const cloudLocked=useRef(false);
   const [game, setGame] = useState(() => createJourneyState(initialDeck));
   const [input, setInput] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -35,6 +39,13 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
   const score = roundJourneyPoints(game.results.reduce((sum, r) => sum + r.points, 0) + (!game.complete && game.outcome === 'correct' ? roundJourneyPoints(potential) : 0));
   const correct = game.results.filter(r => r.outcome === 'correct').length + (!game.complete && game.outcome === 'correct' ? 1 : 0);
   const suggestions = useMemo(() => journeySearchOptions(input, searchDirectory.players), [input]);
+  useEffect(()=>{
+    if(isLoading)return;let active=true;cloud.current=null;
+    if(profile.is_guest){cloudLocked.current=false;return;}
+    cloudLocked.current=true;setNotice('Loading your saved journey...');
+    void cloudGame<JourneyState>('journeyman','default','resume').then(result=>{if(active){cloud.current=result;setGame(result.state);setNotice('');}}).catch(cause=>{if(active)setNotice(cause instanceof Error?cause.message:'Could not load your saved journey.');}).finally(()=>{if(active)cloudLocked.current=false;});
+    return()=>{active=false;};
+  },[isLoading,profile.id,profile.is_guest]);
 
   useEffect(() => {
     if (game.complete || player.clubs.length <= 5 || !window.matchMedia('(min-width: 1101px)').matches) return;
@@ -62,7 +73,19 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
     void recordGameResult('journeyman', won, won ? 80 : 0).catch(() => {});
   }, [ended, game.complete, game.question, game.outcome, roundId, addXP, recordGameResult]);
 
-  function act(action: JourneyAction) {
+  async function act(action: JourneyAction) {
+    if(isLoading||cloudLocked.current)return;
+    if(!profile.is_guest){
+      const before=cloud.current;if(!before){setNotice('Reload this page to reconnect your saved journey.');return;}
+      cloudLocked.current=true;
+      try{
+        const result=await cloudGame<JourneyState>('journeyman','default','play',{runId:before.runId,revision:before.revision,move:action});cloud.current=result;const next=result.state;setGame(next);
+        if(action.type==='guess'){setInput('');setSearchOpen(false);setActiveSuggestion(-1);setNotice(next.outcome==='playing'?'Incorrect guess. You have one attempt left.':'');if(next.outcome!=='playing')void refreshProfile().catch(()=>{});}
+        else if(action.type==='reveal'){const reveal=next.reveals.at(-1);if(reveal){const label=reveal.method==='random'?`Random club revealed at stop ${reveal.index+1}`:'Next club revealed';setNotice(`${label}. Potential score is now ${formatJourneyPoints(potentialPoints(player.clubs.length,next.reveals))} points.`);}}
+        else{setInput('');setSearchOpen(false);setActiveSuggestion(-1);setNotice(action.type==='skip'?`Question replaced. ${journeySkipsLeft(next)} skips left this round.`:'');}
+      }catch(cause){setNotice(cause instanceof Error?cause.message:'Could not save this action. Please retry.');}finally{cloudLocked.current=false;}
+      return;
+    }
     if (action.type === 'guess') {
       const next = advanceJourney(game, action, players);
       if (next === game) return;
@@ -83,7 +106,13 @@ export default function JourneymanGame({ players, initialDeck }: { players: Jour
       setNotice(action.type === 'skip' ? `Question replaced. ${journeySkipsLeft(next)} ${journeySkipsLeft(next) === 1 ? 'skip' : 'skips'} left this round.` : '');
     }
   }
-  function restart() {
+  async function restart() {
+    if(isLoading||cloudLocked.current)return;
+    if(!profile.is_guest){
+      const before=cloud.current;if(!before)return;cloudLocked.current=true;
+      try{const result=await cloudGame<JourneyState>('journeyman','default','restart',{runId:before.runId,revision:before.revision});cloud.current=result;setGame(result.state);setRoundId(id=>id+1);setInput('');setNotice('');}catch(cause){setNotice(cause instanceof Error?cause.message:'Could not start a new journey.');}finally{cloudLocked.current=false;}
+      return;
+    }
     setGame(createJourneyState(createJourneyDeck(players, Math.random, [...game.deck, ...game.skippedPlayers]))); setRoundId(id => id + 1); setInput(''); setSearchOpen(false); setActiveSuggestion(-1);
     setNotice('');
   }

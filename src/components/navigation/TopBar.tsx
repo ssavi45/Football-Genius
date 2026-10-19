@@ -133,6 +133,7 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
             {/* Global Leaderboard */}
             <Link
               href="/leaderboard"
+              aria-current={pathname === '/leaderboard' ? 'page' : undefined}
               onMouseEnter={() => sound.playHover()}
               onClick={() => sound.playClick()}
               className="text-slate-600 hover:text-slate-900 transition"

@@ -9,6 +9,8 @@ import { sound } from '@/lib/utils/sound';
 import { comparisonLabels, playersFromSnapshot, comparisonPool, comparisonValue, chooseComparisonPlayer as choosePlayer, displayLeague, formatComparison, resolveComparisonPick, type Comparison, type ComparisonPlayer, type HigherLowerSnapshot } from '@/lib/higher-lower';
 import HigherLowerWidgets from './HigherLowerWidgets';
 import { CoinStack, FootballIcon } from './HigherLowerIcons';
+import { cloudGame } from '@/lib/backend/client';
+import type { CloudRun,HigherLowerRun } from '@/lib/backend/types';
 
 const CATEGORIES = [
   { id: 'marketValue', label: 'Market Value', icon: CoinStack, available: true },
@@ -55,7 +57,10 @@ function PlayerCard({ player, side, next, opening, mode, hidden, locked, selecte
 }
 
 export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSnapshot }) {
-  const { profile, addXP, recordGameResult } = useAuth();
+  const { profile,isLoading,addXP,recordGameResult,refreshProfile } = useAuth();
+  const cloud=useRef<CloudRun<HigherLowerRun>|null>(null);
+  const [syncError,setSyncError]=useState('');
+  const [syncing,setSyncing]=useState(false);
   // A running game keeps its dataset even when a newer snapshot is published.
   const [runSnapshot, setRunSnapshot] = useState(snapshot);
   const players = useMemo(() => playersFromSnapshot(runSnapshot), [runSnapshot]);
@@ -78,8 +83,17 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
   const bestKey = `footygen_higher_lower_best:${profile.id}:${mode}`;
   const winningPlayer = picked === 'left' ? right : left;
 
-  const reset = (nextMode: Comparison = mode) => {
+  function applyCloud(result:CloudRun<HigherLowerRun>) {
+    cloud.current=result;const saved=result.state;
+    setRunSnapshot({...snapshot,version:saved.version,createdAt:saved.createdAt});setLeft(saved.left);setRight(saved.right);setScore(saved.score);setBest(saved.best);setRoundsPlayed(saved.roundsPlayed);setCurrentSide(saved.currentSide);setGameOver(saved.gameOver);setRevealed(saved.gameOver);setCorrect(saved.gameOver?false:null);setPicked(saved.gameOver?saved.lastPick??null:null);locked.current=false;
+  }
+  const reset = async (nextMode: Comparison = mode,resume=false) => {
     if (timer.current) clearTimeout(timer.current);
+    if(!profile.is_guest){
+      if(isLoading||syncing)return;setSyncing(true);locked.current=true;setSyncError('');
+      try{const before=cloud.current;const result=await cloudGame<HigherLowerRun>('higher-lower',nextMode,resume?'resume':'restart',before?{runId:before.runId,revision:before.revision}:{});applyCloud(result);}catch(cause){setSyncError(cause instanceof Error?cause.message:'Could not load your saved streak.');locked.current=false;}finally{setSyncing(false);}
+      return;
+    }
     locked.current = false;
     const nextPlayers = playersFromSnapshot(snapshot);
     setRunSnapshot(snapshot);
@@ -94,15 +108,22 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
     setLeft(first); setRight(choosePlayer('marketValue', players, [first.id]));
     return () => { if (timer.current) clearTimeout(timer.current); };
   }, []);
+  useEffect(()=>{
+    if(isLoading)return;let active=true;cloud.current=null;
+    if(profile.is_guest)return;
+    locked.current=true;setSyncing(true);setSyncError('');
+    void cloudGame<HigherLowerRun>('higher-lower',mode,'resume').then(result=>{if(active)applyCloud(result);}).catch(cause=>{if(active)setSyncError(cause instanceof Error?cause.message:'Could not load your saved streak.');}).finally(()=>{if(active){setSyncing(false);locked.current=false;}});
+    return()=>{active=false;if(timer.current)clearTimeout(timer.current);};
+  },[profile.id,profile.is_guest,isLoading]);
   useEffect(() => {
-    try { setBest(Number(localStorage.getItem(bestKey)) || 0); } catch { setBest(0); }
-  }, [bestKey]);
+    if(profile.is_guest){try { setBest(Number(localStorage.getItem(bestKey)) || 0); } catch { setBest(0); }}
+  }, [bestKey,profile.is_guest]);
   useEffect(() => {
     if (gameOver) restartButton.current?.focus({ preventScroll: true });
   }, [gameOver]);
 
-  const guess = (side: CardSide) => {
-    if (locked.current || gameOver) return;
+  const guess = async (side: CardSide) => {
+    if (isLoading || syncing || locked.current || gameOver) return;
     const leftValue = comparisonValue(left, mode);
     const rightValue = comparisonValue(right, mode);
     if (leftValue === null || rightValue === null) return;
@@ -110,6 +131,18 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
     sound.playClick();
     const result = resolveComparisonPick(leftValue, rightValue, side, roundsPlayed);
     const won = result.correct;
+    if(!profile.is_guest){
+      const before=cloud.current;if(!before){locked.current=false;setSyncError('Reload this page to reconnect your saved streak.');return;}
+      setSyncing(true);setSyncError('');
+      try{
+        const response=await cloudGame<HigherLowerRun>('higher-lower',mode,'pick',{runId:before.runId,revision:before.revision,side});cloud.current=response;
+        const correct=!response.state.gameOver;setPicked(side);setRevealed(true);setCorrect(correct);setScore(response.state.score);setBest(response.state.best);
+        if(correct){sound.playSuccess();if(response.state.score%5===0)void confetti({particleCount:80,spread:60,origin:{y:.6},colors:['#0866ff','#11cc86','#ffbc32'],disableForReducedMotion:true});}
+        void refreshProfile().catch(()=>{});
+        timer.current=setTimeout(()=>applyCloud(response),1200);
+      }catch(cause){setSyncError(cause instanceof Error?cause.message:'Could not save your pick. Please retry.');locked.current=false;}finally{setSyncing(false);}
+      return;
+    }
     setPicked(side); setRevealed(true); setCorrect(won);
     if (won) {
       const nextScore = score + 1;
@@ -142,13 +175,14 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
 
   return <div className="hl-dashboard">
     <div className="hl-main">
+      {syncError&&<div role="alert" className="rounded-2xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-700">{syncError}<button type="button" className="ml-3 font-bold" onClick={()=>void reset(mode,true)}>Reconnect</button></div>}
       <header className="hl-hero">
         <Image className="hl-hero-art" src="/img/game-modes/higher-lower.webp" alt="" width={800} height={533} priority aria-hidden="true" />
         <h1 className="hl-title"><ArrowBigUp className="hl-title-up" /><span>Higher</span><small>or</small><span>Lower</span><ArrowBigDown className="hl-title-down" /></h1>
         <p>Build the longest streak by guessing whether the next player’s stat is higher or lower.</p>
         <div className="hl-hero-meta"><span title={comparisonLabels[mode].description}><CoinStack />{comparisonLabels[mode].label}</span><i /><span title={`${mode === 'marketValue' ? 'Active players with current valuations only' : mode === 'transfer' ? 'Players with known completed permanent club transfers; one move per card' : 'Active and retired players; missing values are excluded'}.`}><Trophy />{comparisonPool(mode, players).length} Players</span><i /><span title={`Transfermarkt · ${runSnapshot.source.adapter} · Snapshot ${runSnapshot.version}`}><CalendarDays />Updated {new Date(runSnapshot.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</span></div>
       </header>
-      <nav className="hl-categories" aria-label="Comparison category">{CATEGORIES.map(({ id, label, icon: Icon, available }) => <button type="button" key={id} className={id === mode ? 'is-active' : ''} aria-label={available ? label : `${label} (coming soon)`} aria-pressed={id === mode} disabled={!available} title={available ? comparisonLabels[id as Comparison].description : `${label} is coming soon`} onClick={() => { if (available && id !== mode) { sound.playClick(); setMode(id as Comparison); reset(id as Comparison); } }}><Icon /><span className="hl-category-label">{label}{!available && <small>Coming soon</small>}</span></button>)}</nav>
+      <nav className="hl-categories" aria-label="Comparison category">{CATEGORIES.map(({ id, label, icon: Icon, available }) => <button type="button" key={id} className={id === mode ? 'is-active' : ''} aria-label={available ? label : `${label} (coming soon)`} aria-pressed={id === mode} disabled={!available || syncing} title={available ? comparisonLabels[id as Comparison].description : `${label} is coming soon`} onClick={() => { if (available && id !== mode) { sound.playClick(); setMode(id as Comparison); void reset(id as Comparison,true); } }}><Icon /><span className="hl-category-label">{label}{!available && <small>Coming soon</small>}</span></button>)}</nav>
       <section className="hl-arena" aria-labelledby="hl-instruction">
         <div className="hl-round-meta"><span className="hl-round-count">Round {score + (revealed && correct ? 0 : 1)} of <span className="hl-infinity">∞</span></span><span>Current Streak: <strong>{score}</strong><Flame size={21} /></span></div>
         <div className="hl-instruction"><span><Hand /></span><h2 id="hl-instruction">Tap the card with the <strong>higher {categoryLabel}</strong></h2></div>

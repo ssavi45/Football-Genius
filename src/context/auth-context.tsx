@@ -1,332 +1,98 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { supabase } from '../lib/supabase/client';
-import { UserProfile } from '../lib/types/games';
+import React, { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
+import type { User } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase/client';
+import { supabaseConfigured } from '@/lib/supabase/config';
+import type { UserProfile } from '@/lib/types/games';
+import { appendLocalHistory } from '@/lib/account/history';
 
 interface AuthContextType {
-  profile: UserProfile;
-  isLoading: boolean;
-  isAuthModalOpen: boolean;
-  soundEnabled: boolean;
-  openAuthModal: () => void;
-  closeAuthModal: () => void;
-  toggleSound: () => void;
-  signInWithGoogle: () => Promise<void>;
-  signOut: () => Promise<void>;
+  profile: UserProfile; isLoading: boolean; isAuthModalOpen: boolean; soundEnabled: boolean;
+  openAuthModal: () => void; closeAuthModal: () => void; toggleSound: () => void;
+  signInWithGoogle: () => Promise<void>; signOut: () => Promise<void>;
   addXP: (amount: number, reason?: string) => Promise<void>;
   recordGameResult: (mode: string, won: boolean, score: number) => Promise<void>;
-  updateUsername: (newUsername: string) => Promise<void>;
-  refreshProfile: () => Promise<void>;
+  updateUsername: (name: string) => Promise<void>; refreshProfile: () => Promise<void>;
 }
+const EMPTY_GUEST: UserProfile = { id:'guest_default',username:'ScoutGuest',total_xp:0,level:1,current_streak:0,best_streak:0,coins:0,is_guest:true,games_played:0,games_won:0,created_at:'2026-10-19T00:00:00Z' };
+const GUEST_KEY='footygen_guest_profile_v2', SOUND_KEY='footygen_sound_enabled';
+const AuthContext=createContext<AuthContextType|undefined>(undefined);
 
-const DEFAULT_GUEST_PROFILE: UserProfile = {
-  id: 'guest_default',
-  username: 'ScoutGuest',
-  avatar_url: '/img/players/bellingham.jpg',
-  total_xp: 250,
-  level: 2,
-  current_streak: 3,
-  best_streak: 5,
-  coins: 100,
-  is_guest: true,
-  games_played: 12,
-  games_won: 8,
-  created_at: '2026-01-01T00:00:00.000Z',
-};
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-const GUEST_STORAGE_KEY = 'footygen_guest_profile_v2';
-const SOUND_STORAGE_KEY = 'footygen_sound_enabled';
-
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [profile, setProfile] = useState<UserProfile>(DEFAULT_GUEST_PROFILE);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
-
-  // Load initial settings & profile
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    // Sound preference
-    const savedSound = localStorage.getItem(SOUND_STORAGE_KEY);
-    if (savedSound !== null) {
-      setSoundEnabled(savedSound === 'true');
-    }
-
-    // Load guest profile or check Supabase session
-    async function initAuth() {
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-
-        if (session?.user) {
-          await loadSupabaseProfile(session.user);
-        } else {
-          loadStoredGuestProfile();
-        }
-      } catch (err) {
-        console.warn('Auth init fallback to guest mode:', err);
-        loadStoredGuestProfile();
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    initAuth();
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (session?.user) {
-        await loadSupabaseProfile(session.user);
-      } else {
-        loadStoredGuestProfile();
-      }
-    });
-
-    return () => {
-      subscription.unsubscribe();
+function readGuest():UserProfile {
+  try {
+    const raw=localStorage.getItem(GUEST_KEY);
+    if(raw){const saved=JSON.parse(raw);if(saved.is_guest&&typeof saved.id==='string'&&typeof saved.username==='string')return {...EMPTY_GUEST,...saved};}
+    const id='guest_'+crypto.randomUUID();const guest={...EMPTY_GUEST,id,username:'Scout_'+id.slice(-4).toUpperCase(),created_at:new Date().toISOString()};
+    localStorage.setItem(GUEST_KEY,JSON.stringify(guest));return guest;
+  } catch { return EMPTY_GUEST; }
+}
+export function AuthProvider({children}:{children:React.ReactNode}) {
+  const [profile,setProfile]=useState<UserProfile>(EMPTY_GUEST),[isLoading,setIsLoading]=useState(true);
+  const [isAuthModalOpen,setIsAuthModalOpen]=useState(false),[soundEnabled,setSoundEnabled]=useState(true);
+  const current=useRef(profile);current.current=profile;
+  const generation=useRef(0),mounted=useRef(true);
+  const loadUser=useCallback(async(user:User)=>{
+    const token=++generation.current;
+    const [account,settings]=await Promise.all([
+      supabase.from('profiles').select('*').eq('id',user.id).single(),
+      supabase.from('user_preferences').select('sound_enabled').eq('user_id',user.id).maybeSingle(),
+    ]);
+    const {data,error}=account;
+    if(error||!data)throw new Error('Your account profile could not be loaded. Please retry.');
+    if(!mounted.current||generation.current!==token)return;
+    setProfile({id:user.id,username:data.username,email:user.email,avatar_url:data.avatar_url||undefined,total_xp:Number(data.total_xp)||0,level:Math.floor((Number(data.total_xp)||0)/200)+1,current_streak:data.streak_days??0,best_streak:data.best_streak??0,coins:Number(data.coins)||0,is_guest:false,games_played:data.games_played??0,games_won:data.games_won??0,created_at:data.created_at,last_played_at:data.last_played_at});
+    const {data:preferences}=settings;
+    if(preferences&&mounted.current&&generation.current===token){setSoundEnabled(preferences.sound_enabled);try{localStorage.setItem(SOUND_KEY,String(preferences.sound_enabled));}catch{}}
+  },[]);
+  useEffect(()=>{
+    mounted.current=true;try{setSoundEnabled(localStorage.getItem(SOUND_KEY)!=='false');if(new URLSearchParams(window.location.search).has('auth_error'))setIsAuthModalOpen(true);}catch{}
+    const guest=()=>{generation.current++;if(mounted.current)setProfile(readGuest());};
+    const initialize=async()=>{
+      try{if(!supabaseConfigured){guest();return;}const {data:{session}}=await supabase.auth.getSession();if(session?.user)await loadUser(session.user);else guest();}
+      catch{guest();}finally{if(mounted.current)setIsLoading(false);}
     };
-  }, []);
-
-  const loadStoredGuestProfile = () => {
-    try {
-      const stored = localStorage.getItem(GUEST_STORAGE_KEY);
-      if (stored) {
-        setProfile(JSON.parse(stored));
-      } else {
-        const randomId = 'guest_' + Math.random().toString(36).substring(2, 9);
-        const initialGuest: UserProfile = {
-          ...DEFAULT_GUEST_PROFILE,
-          id: randomId,
-          username: `Scout_${randomId.slice(-4).toUpperCase()}`,
-        };
-        localStorage.setItem(GUEST_STORAGE_KEY, JSON.stringify(initialGuest));
-        setProfile(initialGuest);
-      }
-    } catch {
-      setProfile(DEFAULT_GUEST_PROFILE);
-    }
-  };
-
-  const loadSupabaseProfile = async (authUser: { id: string; email?: string; user_metadata?: Record<string, unknown> }) => {
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', authUser.id)
-        .single();
-
-      if (error && error.code !== 'PGRST116') {
-        console.error('Error fetching profile:', error);
-      }
-
-      if (data) {
-        setProfile({
-          id: data.id,
-          username: data.username || authUser.email?.split('@')[0] || 'FootballPro',
-          email: authUser.email,
-          avatar_url: data.avatar_url || (authUser.user_metadata?.avatar_url as string) || '/img/players/messi.jpg',
-          total_xp: data.total_xp || 0,
-          level: Math.floor((data.total_xp || 0) / 200) + 1,
-          current_streak: data.streak_days || 1,
-          best_streak: data.streak_days || 1,
-          coins: data.coins || 50,
-          is_guest: false,
-          games_played: data.games_played || 0,
-          games_won: data.games_won || 0,
-          created_at: data.created_at || new Date().toISOString(),
-        });
-      } else {
-        // Create initial profile in Supabase
-        const initialProfile: UserProfile = {
-          id: authUser.id,
-          username: (authUser.user_metadata?.name as string) || authUser.email?.split('@')[0] || 'FootballPro',
-          email: authUser.email,
-          avatar_url: (authUser.user_metadata?.avatar_url as string) || '/img/players/messi.jpg',
-          total_xp: profile.is_guest ? profile.total_xp : 100, // migrate guest XP
-          level: Math.floor((profile.is_guest ? profile.total_xp : 100) / 200) + 1,
-          current_streak: profile.is_guest ? profile.current_streak : 1,
-          best_streak: profile.is_guest ? profile.best_streak : 1,
-          coins: 100,
-          is_guest: false,
-          games_played: profile.is_guest ? profile.games_played : 0,
-          games_won: profile.is_guest ? profile.games_won : 0,
-          created_at: new Date().toISOString(),
-        };
-
-        await supabase.from('profiles').upsert({
-          id: initialProfile.id,
-          username: initialProfile.username,
-          avatar_url: initialProfile.avatar_url,
-          total_xp: initialProfile.total_xp,
-          streak_days: initialProfile.current_streak,
-        });
-
-        setProfile(initialProfile);
-      }
-    } catch (err) {
-      console.error('Supabase profile load exception:', err);
-    }
-  };
-
-  const toggleSound = useCallback(() => {
-    setSoundEnabled(prev => {
-      const next = !prev;
-      localStorage.setItem(SOUND_STORAGE_KEY, String(next));
-      return next;
+    void initialize();
+    const {data:{subscription}}=supabase.auth.onAuthStateChange((event,session)=>{
+      if(event==='INITIAL_SESSION')return;
+      // Run database reads after the auth callback releases its session lock.
+      queueMicrotask(()=>{if(!mounted.current)return;if(session?.user)void loadUser(session.user).then(()=>setIsAuthModalOpen(false)).catch(()=>{}).finally(()=>setIsLoading(false));else{guest();setIsLoading(false);}});
     });
-  }, []);
-
-  const openAuthModal = useCallback(() => setIsAuthModalOpen(true), []);
-  const closeAuthModal = useCallback(() => setIsAuthModalOpen(false), []);
-
-  const signInWithGoogle = useCallback(async () => {
-    try {
-      const redirectUrl = typeof window !== 'undefined' ? `${window.location.origin}/auth/callback` : undefined;
-      await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: redirectUrl,
-        },
-      });
-    } catch (err) {
-      console.error('Google sign in error:', err);
-    }
-  }, []);
-
-  const signOut = useCallback(async () => {
-    try {
-      await supabase.auth.signOut();
-      loadStoredGuestProfile();
-    } catch (err) {
-      console.error('Sign out error:', err);
-    }
-  }, []);
-
-  const addXP = useCallback(async (amount: number) => {
-    setProfile(prev => {
-      const newXP = prev.total_xp + amount;
-      const newLevel = Math.floor(newXP / 200) + 1;
-      const updated: UserProfile = {
-        ...prev,
-        total_xp: newXP,
-        level: newLevel,
-        coins: prev.coins + Math.floor(amount / 5),
-      };
-
-      if (prev.is_guest) {
-        localStorage.setItem(GUEST_STORAGE_KEY, JSON.stringify(updated));
-      } else {
-        supabase
-          .from('profiles')
-          .update({ total_xp: newXP })
-          .eq('id', prev.id)
-          .then();
-      }
-
-      return updated;
-    });
-  }, []);
-
-  const recordGameResult = useCallback(async (mode: string, won: boolean, score: number) => {
-    setProfile(prev => {
-      const updated: UserProfile = {
-        ...prev,
-        games_played: prev.games_played + 1,
-        games_won: won ? prev.games_won + 1 : prev.games_won,
-        current_streak: won ? prev.current_streak + 1 : prev.current_streak,
-        best_streak: won ? Math.max(prev.best_streak, prev.current_streak + 1) : prev.best_streak,
-      };
-
-      if (prev.is_guest) {
-        localStorage.setItem(GUEST_STORAGE_KEY, JSON.stringify(updated));
-      } else {
-        supabase
-          .from('profiles')
-          .update({
-            streak_days: updated.current_streak,
-          })
-          .eq('id', prev.id)
-          .then();
-
-        // Record in game_sessions
-        supabase
-          .from('game_sessions')
-          .insert({
-            user_id: prev.id,
-            game_mode: mode,
-            score: score,
-            won: won,
-          })
-          .then();
-      }
-
-      return updated;
-    });
-  }, []);
-
-  const refreshProfile = useCallback(async () => {
-    if (profile.is_guest) return;
-    const { data, error } = await supabase.from('profiles')
-      .select('total_xp,games_played,games_won,streak_days').eq('id', profile.id).single();
-    if (error || !data) return;
-    setProfile(previous => previous.id !== profile.id ? previous : {
-      ...previous,
-      total_xp: data.total_xp ?? previous.total_xp,
-      level: Math.floor((data.total_xp ?? previous.total_xp) / 200) + 1,
-      games_played: data.games_played ?? previous.games_played,
-      games_won: data.games_won ?? previous.games_won,
-      current_streak: data.streak_days ?? previous.current_streak,
-    });
-  }, [profile.id, profile.is_guest]);
-
-  const updateUsername = useCallback(async (newUsername: string) => {
-    if (!newUsername.trim()) return;
-    setProfile(prev => {
-      const updated = { ...prev, username: newUsername.trim() };
-      if (prev.is_guest) {
-        localStorage.setItem(GUEST_STORAGE_KEY, JSON.stringify(updated));
-      } else {
-        supabase
-          .from('profiles')
-          .update({ username: newUsername.trim() })
-          .eq('id', prev.id)
-          .then();
-      }
-      return updated;
-    });
-  }, []);
-
-  return (
-    <AuthContext.Provider
-      value={{
-        profile,
-        isLoading,
-        isAuthModalOpen,
-        soundEnabled,
-        openAuthModal,
-        closeAuthModal,
-        toggleSound,
-        signInWithGoogle,
-        signOut,
-        addXP,
-        recordGameResult,
-        updateUsername,
-        refreshProfile,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+    return()=>{mounted.current=false;generation.current++;subscription.unsubscribe();};
+  },[loadUser]);
+  const refreshProfile=useCallback(async()=>{if(current.current.is_guest)return;const {data:{session},error}=await supabase.auth.getSession();if(error||!session?.user)throw new Error('Please sign in again.');await loadUser(session.user);},[loadUser]);
+  const toggleSound=useCallback(()=>setSoundEnabled(previous=>{const next=!previous;try{localStorage.setItem(SOUND_KEY,String(next));}catch{}if(!current.current.is_guest)void supabase.from('user_preferences').upsert({user_id:current.current.id,sound_enabled:next,updated_at:new Date().toISOString()}).then(()=>{});return next;}),[]);
+  const openAuthModal=useCallback(()=>setIsAuthModalOpen(true),[]),closeAuthModal=useCallback(()=>setIsAuthModalOpen(false),[]);
+  const signInWithGoogle=useCallback(async()=>{
+    if(!supabaseConfigured)throw new Error('Sign-in is not connected yet.');
+    const next=window.location.pathname+window.location.hash;
+    const {error}=await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:`${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`}});
+    if(error)throw new Error(error.message);
+  },[]);
+  const signOut=useCallback(async()=>{const {error}=await supabase.auth.signOut();if(error)throw error;generation.current++;setProfile(readGuest());},[]);
+  // Signed-in rewards are credited exclusively by validated game APIs.
+  const addXP=useCallback(async(amount:number)=>{
+    if(!current.current.is_guest)return;
+    if(!Number.isSafeInteger(amount)||amount<0||amount>10000)return;
+    const previous=current.current;const total=previous.total_xp+amount;
+    const updated={...previous,total_xp:total,level:Math.floor(total/200)+1,coins:previous.coins+Math.floor(amount/5)};
+    current.current=updated;setProfile(updated);try{localStorage.setItem(GUEST_KEY,JSON.stringify(updated));}catch{}
+  },[]);
+  const recordGameResult=useCallback(async(mode:string,won:boolean,score:number)=>{
+    if(!current.current.is_guest)return;
+    const previous=current.current,streak=won?previous.current_streak+1:0;
+    const updated={...previous,games_played:previous.games_played+1,games_won:previous.games_won+(won?1:0),current_streak:streak,best_streak:Math.max(previous.best_streak,streak)};
+    current.current=updated;setProfile(updated);try{localStorage.setItem(GUEST_KEY,JSON.stringify(updated));}catch{}
+    appendLocalHistory(previous.id,mode,won,score);
+  },[]);
+  const updateUsername=useCallback(async(value:string)=>{
+    const username=value.trim();if(!username||username.length>32)throw new Error('Use a display name between 1 and 32 characters.');
+    const before=current.current;
+    if(!before.is_guest){const {error}=await supabase.from('profiles').update({username}).eq('id',before.id).select('id').single();if(error)throw new Error('Could not save your display name. Please retry.');}
+    const updated={...current.current,username};if(updated.id!==before.id)return;
+    if(updated.is_guest){try{localStorage.setItem(GUEST_KEY,JSON.stringify(updated));}catch{throw new Error('Could not save on this device. Check browser storage settings.');}}
+    current.current=updated;setProfile(updated);
+  },[]);
+  return <AuthContext.Provider value={{profile,isLoading,isAuthModalOpen,soundEnabled,openAuthModal,closeAuthModal,toggleSound,signInWithGoogle,signOut,addXP,recordGameResult,updateUsername,refreshProfile}}>{children}</AuthContext.Provider>;
 }
-
-export function useAuth() {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-}
-
+export function useAuth(){const context=useContext(AuthContext);if(!context)throw new Error('useAuth must be used within an AuthProvider');return context;}
