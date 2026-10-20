@@ -61,8 +61,7 @@ export const FOOTBALLER_AVATARS: FootballerAvatar[] = [
 
 export function findAvatarByUrl(url?: string | null): FootballerAvatar | undefined {
   if (!url) return undefined;
-  const normalized = url.trim().toLowerCase();
-  return FOOTBALLER_AVATARS.find(a => a.avatarUrl.toLowerCase() === normalized || a.avatarUrl.toLowerCase().endsWith(normalized.replace(/^\//, '')));
+  return FOOTBALLER_AVATARS.find(avatar => avatar.avatarUrl === url.trim());
 }
 
 export function getAvatarLabel(url?: string | null): string | null {

@@ -2,6 +2,9 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import type { RankingEntry } from './leaderboard';
+import type { GameModeId } from '@/lib/types/games';
+import { useAuth } from '@/context/auth-context';
+import { fetchRankings } from './fetchRankings';
 
 export interface UseModeLeaderboardResult {
   entries: RankingEntry[];
@@ -10,7 +13,13 @@ export interface UseModeLeaderboardResult {
   retry: () => void;
 }
 
-export function useModeLeaderboard(mode: string, limit = 5): UseModeLeaderboardResult {
+export function useModeLeaderboard(mode: GameModeId | 'combined', limit = 5): UseModeLeaderboardResult {
+  const { profile } = useAuth();
+  // Refresh after the server commits a result, rather than on an optimistic game update.
+  const accountId = profile.is_guest ? null : profile.id;
+  const recordedGames = profile.is_guest ? 0 : profile.games_played;
+  const avatar = profile.is_guest ? null : profile.avatar_url;
+  const username = profile.is_guest ? null : profile.username;
   const [entries, setEntries] = useState<RankingEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -25,19 +34,12 @@ export function useModeLeaderboard(mode: string, limit = 5): UseModeLeaderboardR
     const controller = new AbortController();
     setLoading(true);
     setError(null);
+    setEntries([]);
 
     void (async () => {
       try {
-        const response = await fetch(`/api/leaderboard?mode=${encodeURIComponent(mode)}`, {
-          signal: controller.signal,
-          cache: 'no-store',
-        });
-        const result = await response.json();
-        if (!response.ok) {
-          throw new Error(result?.error || 'Leaderboard is currently unavailable.');
-        }
+        const list = await fetchRankings(mode, controller.signal);
         if (active) {
-          const list: RankingEntry[] = Array.isArray(result?.entries) ? result.entries : [];
           setEntries(list.slice(0, limit));
           setLoading(false);
         }
@@ -54,7 +56,7 @@ export function useModeLeaderboard(mode: string, limit = 5): UseModeLeaderboardR
       active = false;
       controller.abort();
     };
-  }, [mode, limit, reloadKey]);
+  }, [mode, limit, reloadKey, accountId, recordedGames, avatar, username]);
 
   return { entries, loading, error, retry };
 }

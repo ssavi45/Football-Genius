@@ -2,10 +2,12 @@
 
 import { useEffect, useState, type CSSProperties } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { ArrowRight, Crown, Globe2, Layers3, Medal, RefreshCw, Search, ShieldCheck, Trophy, Users } from 'lucide-react';
 import { useAuth } from '@/context/auth-context';
-import { ACCOUNT_MODES } from '@/lib/account/modes';
-import type { RankingEntry } from '@/lib/account/leaderboard';
+import { ACCOUNT_MODES, accountMode } from '@/lib/account/modes';
+import { rankingUnit } from '@/lib/account/leaderboard';
+import { useModeLeaderboard } from '@/lib/account/useModeLeaderboard';
 import type { GameModeId } from '@/lib/types/games';
 import AccountAvatar from './AccountAvatar';
 import ModeIcon from './ModeIcon';
@@ -13,33 +15,21 @@ import './account.css';
 
 export default function LeaderboardPage() {
   const { profile, openAuthModal } = useAuth();
-  const [section, setSection] = useState<'combined' | 'individual'>('combined');
-  const [modeId, setModeId] = useState<GameModeId>('scoreline');
-  const [entries, setEntries] = useState<RankingEntry[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const requestedMode = accountMode(useSearchParams().get('mode') || '');
+  const [section, setSection] = useState<'combined' | 'individual'>(requestedMode ? 'individual' : 'combined');
+  const [modeId, setModeId] = useState<GameModeId>(requestedMode?.id || 'scoreline');
   const [query, setQuery] = useState('');
-  const [refresh, setRefresh] = useState(0);
   const mode = ACCOUNT_MODES.find(item => item.id === modeId)!;
   const combined = section === 'combined';
   const rankingTitle = combined ? 'Combined ranking' : mode.title;
-  const unit = combined ? 'XP' : 'pts';
+  const unit = rankingUnit(combined ? 'combined' : modeId);
+  const { entries, loading, error, retry } = useModeLeaderboard(combined ? 'combined' : modeId, 50);
 
   useEffect(() => {
-    const controller = new AbortController();
-    setLoading(true); setError(''); setEntries([]); setQuery('');
-    void (async () => {
-      try {
-        const response = await fetch(`/api/leaderboard?mode=${combined ? 'combined' : modeId}`, { signal: controller.signal, cache: 'no-store' });
-        const result = await response.json();
-        if (!response.ok) throw new Error(result.error || 'Could not load rankings.');
-        if (!controller.signal.aborted) setEntries(result.entries);
-      } catch (cause) {
-        if (!controller.signal.aborted) setError(cause instanceof Error ? cause.message : 'Could not load rankings.');
-      } finally { if (!controller.signal.aborted) setLoading(false); }
-    })();
-    return () => controller.abort();
-  }, [combined, modeId, refresh]);
+    setSection(requestedMode ? 'individual' : 'combined');
+    if (requestedMode) setModeId(requestedMode.id);
+  }, [requestedMode]);
+  useEffect(() => { setQuery(''); }, [combined, modeId]);
 
   const myEntry = profile.is_guest ? undefined : entries.find(entry => entry.userId === profile.id);
   const filtered = entries.filter(entry => entry.name.toLocaleLowerCase().includes(query.toLocaleLowerCase().trim()));
@@ -60,13 +50,13 @@ export default function LeaderboardPage() {
 
     <div className="leaderboard-layout">
       <section className="account-panel ranking-panel" aria-labelledby="ranking-heading" aria-busy={loading}>
-        <div className="account-panel-heading"><div><h2 id="ranking-heading"><Trophy size={21} />{rankingTitle}</h2><p>{combined ? 'Total XP earned across every game mode.' : 'Your best recorded score in this game mode.'}</p></div><button type="button" className="account-icon-button" aria-label="Refresh leaderboard" disabled={loading} onClick={() => setRefresh(value => value + 1)}><RefreshCw size={17} className={loading ? 'account-spinning' : ''} /></button></div>
+        <div className="account-panel-heading"><div><h2 id="ranking-heading"><Trophy size={21} />{rankingTitle}</h2><p>{combined ? 'Total XP earned across every game mode.' : 'Your best recorded score in this game mode.'}</p></div><button type="button" className="account-icon-button" aria-label="Refresh leaderboard" disabled={loading} onClick={retry}><RefreshCw size={17} className={loading ? 'account-spinning' : ''} /></button></div>
 
         {!loading && !error && entries.length >= 3 && <div className="ranking-podium" aria-label="Top three players">{[entries[1], entries[0], entries[2]].map(entry => <article key={entry.userId} className={`podium-place podium-${entry.rank}`}><span className="podium-medal">{entry.rank === 1 ? <Crown size={19} /> : <Medal size={18} />}</span><AccountAvatar name={entry.name} image={entry.avatar} /><strong>{entry.name}</strong><span>{entry.score.toLocaleString()} <small>{unit}</small></span><b>#{entry.rank}</b></article>)}</div>}
 
         {!loading && !error && entries.length > 0 && <label className="ranking-search"><Search size={18} /><input type="search" aria-label="Search these rankings" placeholder="Find a player in these rankings..." value={query} onChange={event => setQuery(event.target.value)} /><span>Top {entries.length}</span></label>}
         <div aria-live="polite">
-          {loading ? <div className="account-empty"><RefreshCw className="account-spinning" size={30} /><h3>Loading the standings</h3><p>Finding the latest rankings.</p></div> : error ? <div className="account-empty"><Globe2 size={34} /><h3>We couldn&apos;t load the rankings</h3><p>{error}</p><button type="button" className="account-secondary-button" onClick={() => setRefresh(value => value + 1)}>Try again</button></div> : entries.length === 0 ? <div className="account-empty"><span className="account-empty-medal"><Trophy size={38} /></span><h3>{!combined && mode.comingSoon ? 'This leaderboard is coming soon' : 'A new leaderboard starts here'}</h3><p>{!combined && mode.comingSoon ? `${mode.title} is warming up. Explore another mode while you wait.` : 'Rankings will appear when players have recorded results.'}</p><Link className="account-primary-button" href="/game-modes">Explore game modes<ArrowRight size={17} /></Link></div> : <div className="ranking-table-wrap"><table className="ranking-table"><thead><tr><th scope="col">Rank</th><th scope="col">Player</th><th scope="col">{combined ? 'Level' : 'Games'}</th><th scope="col">{combined ? 'Total XP' : 'Best score'}</th></tr></thead><tbody>{filtered.map(entry => <tr key={entry.userId} className={entry.userId === profile.id ? 'is-you' : ''}><td><span className={`ranking-number rank-${entry.rank}`}>{entry.rank}</span></td><td><div className="ranking-player"><AccountAvatar name={entry.name} image={entry.avatar} /><span>{entry.name}</span>{entry.userId === profile.id && <small>You</small>}</div></td><td>{combined ? `Level ${entry.level}` : entry.games}</td><td><strong>{entry.score.toLocaleString()}</strong><small>{unit}</small></td></tr>)}</tbody></table>{filtered.length === 0 && <div className="account-empty compact"><Search size={25} /><p>No players match &ldquo;{query}&rdquo;.</p></div>}</div>}
+          {loading ? <div className="account-empty"><RefreshCw className="account-spinning" size={30} /><h3>Loading the standings</h3><p>Finding the latest rankings.</p></div> : error ? <div className="account-empty"><Globe2 size={34} /><h3>We couldn&apos;t load the rankings</h3><p>{error}</p><button type="button" className="account-secondary-button" onClick={retry}>Try again</button></div> : entries.length === 0 ? <div className="account-empty"><span className="account-empty-medal"><Trophy size={38} /></span><h3>{!combined && mode.comingSoon ? 'This leaderboard is coming soon' : 'A new leaderboard starts here'}</h3><p>{!combined && mode.comingSoon ? `${mode.title} is warming up. Explore another mode while you wait.` : 'Rankings will appear when players have recorded results.'}</p><Link className="account-primary-button" href="/game-modes">Explore game modes<ArrowRight size={17} /></Link></div> : <div className="ranking-table-wrap"><table className="ranking-table"><thead><tr><th scope="col">Rank</th><th scope="col">Player</th><th scope="col">{combined ? 'Level' : 'Games'}</th><th scope="col">{combined ? 'Total XP' : 'Best score'}</th></tr></thead><tbody>{filtered.map(entry => <tr key={entry.userId} className={entry.userId === profile.id ? 'is-you' : ''}><td><span className={`ranking-number rank-${entry.rank}`}>{entry.rank}</span></td><td><div className="ranking-player"><AccountAvatar name={entry.name} image={entry.avatar} /><span>{entry.name}</span>{entry.userId === profile.id && <small>You</small>}</div></td><td>{combined ? `Level ${entry.level}` : entry.games}</td><td><strong>{entry.score.toLocaleString()}</strong><small>{unit}</small></td></tr>)}</tbody></table>{filtered.length === 0 && <div className="account-empty compact"><Search size={25} /><p>No players match &ldquo;{query}&rdquo;.</p></div>}</div>}
         </div>
       </section>
 

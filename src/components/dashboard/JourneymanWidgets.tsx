@@ -15,7 +15,7 @@ function JourneymanLeaderboardSection() {
     <section className="journey-widget journey-leaderboard" aria-labelledby="journey-leaderboard-heading">
       <div className="journey-widget-heading">
         <h2 id="journey-leaderboard-heading"><Trophy /><span>Global Leaderboard<small>Standings</small></span></h2>
-        <Link href="/leaderboard">View All<ArrowRight size={16} /></Link>
+        <Link href="/leaderboard?mode=journeyman">View All<ArrowRight size={16} /></Link>
       </div>
 
       {loading ? (
@@ -46,11 +46,11 @@ function JourneymanLeaderboardSection() {
       ) : (
         <ol>
           {entries.map(entry => (
-            <li key={entry.userId || entry.rank}>
+            <li key={entry.userId}>
               <span className={`journey-rank journey-rank-${entry.rank}`}>{entry.rank}</span>
               <AccountAvatar name={entry.name} image={entry.avatar} className="journey-player-avatar" />
               <span>{entry.name}</span>
-              <strong>{entry.score} pts</strong>
+              <strong>{entry.score.toLocaleString()} pts</strong>
             </li>
           ))}
         </ol>

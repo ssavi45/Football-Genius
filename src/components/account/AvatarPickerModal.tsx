@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
-import Image from 'next/image';
-import { Check, Crown, Flame, RefreshCw, Search, Sparkles, User, X } from 'lucide-react';
-import { FOOTBALLER_AVATARS, findAvatarByUrl, type FootballerAvatar } from '@/data/avatar-catalog';
+import { useEffect, useRef, useState } from 'react';
+import { Check, RefreshCw, Search, X } from 'lucide-react';
+import { FOOTBALLER_AVATARS, findAvatarByUrl } from '@/data/avatar-catalog';
+import AccountAvatar from './AccountAvatar';
 
 interface AvatarPickerModalProps {
   isOpen: boolean;
@@ -12,289 +12,108 @@ interface AvatarPickerModalProps {
   onSaveAvatar: (avatarUrl: string) => Promise<void>;
 }
 
-export default function AvatarPickerModal({
-  isOpen,
-  onClose,
-  currentAvatarUrl,
-  onSaveAvatar,
-}: AvatarPickerModalProps) {
+export default function AvatarPickerModal(props: AvatarPickerModalProps) {
+  // Mount a fresh selection session each time the picker opens.
+  return props.isOpen ? <AvatarPicker {...props} /> : null;
+}
+
+function AvatarPicker({ onClose, currentAvatarUrl, onSaveAvatar }: AvatarPickerModalProps) {
   const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState<'all' | 'Legend' | 'Modern'>('all');
-  const [selected, setSelected] = useState<FootballerAvatar | null>(() => findAvatarByUrl(currentAvatarUrl) || FOOTBALLER_AVATARS[0]);
+  const [selected, setSelected] = useState(() => findAvatarByUrl(currentAvatarUrl));
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef(onClose);
+  const savingRef = useRef(false);
+  const mountedRef = useRef(false);
+  closeRef.current = onClose;
 
-  // Sync selected with current avatar on open
   useEffect(() => {
-    if (isOpen) {
-      setSelected(findAvatarByUrl(currentAvatarUrl) || FOOTBALLER_AVATARS[0]);
-      setSearch('');
-      setFilter('all');
-      setError('');
-    }
-  }, [isOpen, currentAvatarUrl]);
-
-  // Handle ESC and Tab trap
-  useEffect(() => {
-    if (!isOpen) return;
-    const previous = document.activeElement as HTMLElement | null;
+    mountedRef.current = true;
+    const previous = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const overflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    const dialog = dialogRef.current!;
+    const initialFocus = dialog.querySelector<HTMLElement>('[aria-pressed="true"]') || dialog;
+    initialFocus.focus({ preventScroll: true });
+    if (initialFocus !== dialog) initialFocus.scrollIntoView({ block: 'nearest' });
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        onClose();
-        return;
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!savingRef.current) closeRef.current();
       }
-      if (e.key !== 'Tab') return;
-      const elements = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('button:not(:disabled), input, [tabindex="0"]') || []);
-      if (!elements.length) return;
+      if (event.key !== 'Tab') return;
+      const elements = Array.from(dialog.querySelectorAll<HTMLElement>('button:not(:disabled), input:not(:disabled)'));
       const first = elements[0];
-      const last = elements[elements.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
+      const last = elements.at(-1);
+      if (!first || !last) { event.preventDefault(); dialog.focus(); return; }
+      if (event.shiftKey && (document.activeElement === first || !elements.includes(document.activeElement as HTMLElement))) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !elements.includes(document.activeElement as HTMLElement))) {
+        event.preventDefault(); first.focus();
       }
     };
-
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', keydown);
     return () => {
+      mountedRef.current = false;
       document.body.style.overflow = overflow;
-      document.removeEventListener('keydown', handleKeyDown);
-      previous?.focus();
+      document.removeEventListener('keydown', keydown);
+      if (previous?.isConnected) previous.focus({ preventScroll: true });
     };
-  }, [isOpen, onClose]);
+  }, []);
 
-  const filteredAvatars = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return FOOTBALLER_AVATARS.filter(avatar => {
-      const matchesEra = filter === 'all' || avatar.era === filter;
-      const matchesSearch = !q || avatar.name.toLowerCase().includes(q) || avatar.role.toLowerCase().includes(q);
-      return matchesEra && matchesSearch;
-    });
-  }, [search, filter]);
-
-  if (!isOpen) return null;
-
-  async function handleApply() {
-    if (!selected) return;
-    setSaving(true);
-    setError('');
+  async function apply() {
+    if (!selected || savingRef.current || selected.avatarUrl === currentAvatarUrl) return;
+    savingRef.current = true;
+    setSaving(true); setError('');
     try {
       await onSaveAvatar(selected.avatarUrl);
-      onClose();
+      if (mountedRef.current) closeRef.current();
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : 'Could not save your avatar.');
+      if (mountedRef.current) setError(cause instanceof Error ? cause.message : 'Could not save your avatar. Please retry.');
     } finally {
-      setSaving(false);
+      savingRef.current = false;
+      if (mountedRef.current) setSaving(false);
     }
   }
 
-  const isCurrentActive = selected?.avatarUrl === currentAvatarUrl;
+  const query = search.trim().toLocaleLowerCase();
+  const avatars = FOOTBALLER_AVATARS.filter(avatar => avatar.name.toLocaleLowerCase().includes(query));
+  const unchanged = selected?.avatarUrl === currentAvatarUrl;
 
-  return (
-    <div
-      className="avatar-picker-backdrop"
-      onMouseDown={e => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="avatar-picker-title"
-    >
-      <div ref={dialogRef} className="avatar-picker-modal">
-        {/* Header */}
-        <header className="avatar-picker-header">
-          <div>
-            <span className="avatar-picker-eyebrow">
-              <Sparkles size={14} /> 50 FOOTBALL LEGENDS &amp; STARS
-            </span>
-            <h2 id="avatar-picker-title">Choose Your Footballer Avatar</h2>
-            <p>Pick your football icon. This will represent you on the navbar, leaderboards, and game rooms.</p>
-          </div>
-          <button
-            type="button"
-            className="avatar-picker-close"
-            onClick={onClose}
-            aria-label="Close avatar picker"
-          >
-            <X size={18} />
-          </button>
-        </header>
+  return <div className="avatar-picker-backdrop" onMouseDown={event => {
+    if (event.target === event.currentTarget && !savingRef.current) closeRef.current();
+  }}>
+    <div ref={dialogRef} className="avatar-picker-modal" role="dialog" aria-modal="true" aria-labelledby="avatar-picker-title" aria-describedby="avatar-picker-description" aria-busy={saving} tabIndex={-1}>
+      <header className="avatar-picker-header">
+        <div><h2 id="avatar-picker-title">Choose your avatar</h2><p id="avatar-picker-description">Pick a portrait for your profile.</p></div>
+        <button type="button" className="avatar-picker-close" onClick={onClose} disabled={saving} aria-label="Close avatar picker"><X size={18} /></button>
+      </header>
 
-        {/* Search & Filter Toolbar */}
-        <div className="avatar-picker-toolbar">
-          <div className="avatar-picker-search">
-            <Search size={16} />
-            <input
-              type="search"
-              placeholder="Search by footballer name or position..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              autoFocus
-              aria-label="Search footballer avatars"
-            />
-            {search && (
-              <button
-                type="button"
-                onClick={() => setSearch('')}
-                className="avatar-search-clear"
-                aria-label="Clear search"
-              >
-                <X size={14} />
-              </button>
-            )}
-          </div>
-
-          <div className="avatar-picker-tabs" role="tablist" aria-label="Avatar categories">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={filter === 'all'}
-              className={`avatar-tab ${filter === 'all' ? 'is-active' : ''}`}
-              onClick={() => setFilter('all')}
-            >
-              All (50)
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={filter === 'Legend'}
-              className={`avatar-tab ${filter === 'Legend' ? 'is-active' : ''}`}
-              onClick={() => setFilter('Legend')}
-            >
-              <Crown size={13} /> Legends (25)
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={filter === 'Modern'}
-              className={`avatar-tab ${filter === 'Modern' ? 'is-active' : ''}`}
-              onClick={() => setFilter('Modern')}
-            >
-              <Flame size={13} /> Modern (25)
-            </button>
-          </div>
-        </div>
-
-        {/* Avatars Grid */}
-        <div className="avatar-picker-grid-wrap" tabIndex={0} aria-label="Available footballer avatars">
-          {filteredAvatars.length === 0 ? (
-            <div className="avatar-picker-empty">
-              <Search size={28} />
-              <p>No footballers match &ldquo;{search}&rdquo;</p>
-              <span>Try a different name like &ldquo;Messi&rdquo;, &ldquo;Zidane&rdquo;, or &ldquo;Haaland&rdquo;.</span>
-            </div>
-          ) : (
-            <div className="avatar-picker-grid">
-              {filteredAvatars.map(avatar => {
-                const isSelected = selected?.id === avatar.id;
-                const isCurrent = currentAvatarUrl === avatar.avatarUrl;
-
-                return (
-                  <button
-                    key={avatar.id}
-                    type="button"
-                    className={`avatar-card ${isSelected ? 'is-selected' : ''} ${isCurrent ? 'is-current' : ''}`}
-                    onClick={() => setSelected(avatar)}
-                    aria-label={`Select ${avatar.name} (${avatar.role})`}
-                    aria-pressed={isSelected}
-                  >
-                    <div className="avatar-card-image-wrap">
-                      <Image
-                        src={avatar.avatarUrl}
-                        alt=""
-                        width={64}
-                        height={64}
-                        className="avatar-card-image"
-                      />
-                      {isSelected && (
-                        <span className="avatar-check-badge">
-                          <Check size={13} strokeWidth={3} />
-                        </span>
-                      )}
-                      {isCurrent && !isSelected && (
-                        <span className="avatar-current-dot" title="Current avatar" />
-                      )}
-                    </div>
-                    <span className="avatar-card-name">{avatar.name}</span>
-                    <span className="avatar-card-meta">{avatar.role}</span>
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </div>
-
-        {/* Error notice if saving fails */}
-        {error && (
-          <div className="avatar-picker-error" role="alert">
-            <p>{error}</p>
-          </div>
-        )}
-
-        {/* Footer / Selection Preview */}
-        <footer className="avatar-picker-footer">
-          {selected ? (
-            <div className="avatar-preview-selected">
-              <div className="avatar-preview-image">
-                <Image
-                  src={selected.avatarUrl}
-                  alt={selected.name}
-                  width={42}
-                  height={42}
-                />
-              </div>
-              <div className="avatar-preview-info">
-                <strong>{selected.name}</strong>
-                <span>{selected.era} · {selected.role}</span>
-              </div>
-            </div>
-          ) : (
-            <div className="avatar-preview-selected">
-              <User size={20} />
-              <span>Select an avatar</span>
-            </div>
-          )}
-
-          <div className="avatar-picker-actions">
-            <button
-              type="button"
-              className="account-secondary-button"
-              onClick={onClose}
-              disabled={saving}
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              className="account-primary-button avatar-save-button"
-              onClick={handleApply}
-              disabled={saving || !selected || isCurrentActive}
-            >
-              {saving ? (
-                <>
-                  <RefreshCw className="account-spinning" size={15} /> Saving...
-                </>
-              ) : isCurrentActive ? (
-                <>
-                  <Check size={15} /> Already Set
-                </>
-              ) : (
-                <>
-                  <Check size={15} /> Set Avatar
-                </>
-              )}
-            </button>
-          </div>
-        </footer>
+      <div className="avatar-picker-toolbar">
+        <label className="avatar-picker-search"><Search size={17} aria-hidden="true" /><input type="search" placeholder="Find a portrait..." value={search} onChange={event => setSearch(event.target.value)} disabled={saving} aria-label="Search portraits by footballer name" />{search && <button type="button" onClick={() => setSearch('')} disabled={saving} className="avatar-search-clear" aria-label="Clear search"><X size={14} /></button>}</label>
       </div>
-    </div>
-  );
-}
 
+      <div className="avatar-picker-grid-wrap">
+        <div className="avatar-picker-grid" role="group" aria-label="Available portraits">
+          {avatars.map(avatar => <button key={avatar.id} type="button" className={`avatar-card${selected?.id === avatar.id ? ' is-selected' : ''}`} onClick={() => { setSelected(avatar); setError(''); }} disabled={saving} aria-label={`Select ${avatar.name}`} aria-pressed={selected?.id === avatar.id}>
+            <AccountAvatar name={avatar.name} image={avatar.avatarUrl} className="avatar-card-portrait" />
+            {selected?.id === avatar.id ? <span className="avatar-check-badge" aria-hidden="true"><Check size={12} strokeWidth={3} /></span> : currentAvatarUrl === avatar.avatarUrl && <span className="avatar-current-dot" aria-hidden="true" />}
+          </button>)}
+        </div>
+        {avatars.length === 0 && <div className="avatar-picker-empty" role="status"><Search size={28} /><p>No portraits found.</p><button type="button" className="account-secondary-button" onClick={() => setSearch('')}>Clear search</button></div>}
+      </div>
+
+      {error && <div className="avatar-picker-error" role="alert">{error}</div>}
+      <footer className="avatar-picker-footer">
+        <div className="avatar-preview-selected" aria-label={selected ? `Selected portrait: ${selected.name}` : 'No portrait selected'}>{selected && <AccountAvatar name={selected.name} image={selected.avatarUrl} className="avatar-preview-image" />}</div>
+        <div className="avatar-picker-actions">
+          <button type="button" className="account-secondary-button" onClick={onClose} disabled={saving}>Cancel</button>
+          <button type="button" className="account-primary-button avatar-save-button" onClick={() => void apply()} disabled={saving || !selected || unchanged}>{saving ? <><RefreshCw className="account-spinning" size={16} />Saving...</> : <><Check size={16} />Save avatar</>}</button>
+        </div>
+      </footer>
+    </div>
+  </div>;
+}

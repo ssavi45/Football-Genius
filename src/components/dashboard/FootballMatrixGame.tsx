@@ -67,7 +67,7 @@ function MatrixLeaderboardWidget() {
     <section className="matrix-widget matrix-leaderboard" aria-labelledby="matrix-leaderboard-heading">
       <div className="matrix-widget-title">
         <h2 id="matrix-leaderboard-heading">Global Leaderboard <small>Standings</small></h2>
-        <Link href="/leaderboard">View All <ArrowRight size={15} /></Link>
+        <Link href="/leaderboard?mode=matrix">View All <ArrowRight size={15} /></Link>
       </div>
 
       {loading ? (
@@ -98,11 +98,11 @@ function MatrixLeaderboardWidget() {
       ) : (
         <ol>
           {entries.map(entry => (
-            <li key={entry.userId || entry.rank}>
+            <li key={entry.userId}>
               <span className={`matrix-rank matrix-rank-${entry.rank}`}>{entry.rank}</span>
               <AccountAvatar name={entry.name} image={entry.avatar} className="matrix-player-avatar" />
               <span>{entry.name}</span>
-              <strong>{entry.score} XP</strong>
+              <strong>{entry.score.toLocaleString()} cells</strong>
             </li>
           ))}
         </ol>

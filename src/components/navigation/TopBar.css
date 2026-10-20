@@ -9,12 +9,28 @@
 .topbar .search-button { width:36px; height:36px; border:1px solid #dce7f7; background:#fff; box-shadow:none; }
 .topbar .sound-toggle { display:grid; place-items:center; width:30px; height:34px; padding:5px; opacity:.65; }
 .topbar .sound-toggle:hover,.topbar .sound-toggle:focus-visible { opacity:1; }
-.topbar .sign-in { display:inline-flex; align-items:center; justify-content:center; height:44px; padding:0 22px; border:1px solid #dce7f7; border-radius:25px; font-size:14px; }
-.topbar .play-now { height:44px; padding:0 24px; gap:14px; border-radius:25px; background:#1d60ff; box-shadow:none; font-size:14px; }
+.topbar .sign-in { display:inline-flex; flex-shrink:0; align-items:center; justify-content:center; gap:12px; height:44px; padding:0 24px; border:1px solid #1d60ff; border-radius:25px; background:#1d60ff; color:#fff; font-size:14px; font-weight:700; white-space:nowrap; }
+.topbar .sign-in:hover { background:#074bec; border-color:#074bec; }
+.topbar .user-menu-btn { display:inline-flex; align-items:center; gap:8px; height:44px; padding:0 16px 0 6px; border:1px solid #dce7f7; border-radius:25px; background:#fff; color:#0f172a; font-size:13px; font-weight:700; box-shadow:none; cursor:pointer; transition:all .15s ease; }
+.topbar .user-menu-btn:hover { background:#f8fafc; border-color:#cbd5e1; }
+.topbar-profile { position:relative; min-width:0; }
+.topbar .navbar-profile-avatar.account-avatar { width:28px; height:28px; border:0; font-size:11px; }
+.navbar-profile-name { max-width:100px; min-width:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.navbar-profile-chevron { flex-shrink:0; color:#94a3b8; }
+.navbar-profile-panel { position:absolute; right:0; top:calc(100% + 10px); width:220px; padding:8px; border:1px solid #dce7f7; border-radius:18px; background:#fff; box-shadow:0 12px 32px #15376920; }
+.navbar-profile-summary { display:flex; align-items:center; gap:10px; padding:8px 10px 12px; margin-bottom:4px; border-bottom:1px solid #edf2fa; }
+.navbar-profile-summary > div { display:grid; gap:2px; min-width:0; }
+.navbar-profile-summary small { color:#8494ac; font-size:10px; }
+.navbar-profile-summary strong { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#102345; font-size:13px; }
+.navbar-profile-summary .navbar-menu-avatar.account-avatar { width:32px; height:32px; border:0; font-size:12px; }
+.navbar-profile-panel > :is(a,button) { display:flex; align-items:center; gap:8px; width:100%; padding:10px; border-radius:11px; background:transparent; color:#344868; text-align:left; text-decoration:none; font-size:13px; font-weight:600; }
+.navbar-profile-panel > :is(a,button):hover { background:#edf5ff; color:#075bff; }
+.navbar-profile-panel > button { color:#df365e; }
+.topbar-account-loading { width:210px; max-width:35vw; height:44px; border:1px solid #e2eaf6; border-radius:25px; background:#edf2f9; }
 .topbar a:focus-visible,.topbar button:focus-visible { outline:3px solid #438cff; outline-offset:3px; }
 @media(min-width:1351px) { .topbar-inner { padding-inline-start:38px; } }
 @media(min-width:1101px) and (max-width:1350px) { .topbar .topbar-inner { padding-inline-start:24px; } }
-@media(max-width:1350px) { .topbar-inner { gap:15px; padding-inline:18px; } .topbar-nav { gap:24px; font-size:15px; } .topbar .header-actions { gap:9px; } .topbar .sound-toggle { display:none; } .topbar .sign-in { padding-inline:17px; } .topbar .play-now { padding-inline:19px; } }
+@media(max-width:1350px) { .topbar-inner { gap:15px; padding-inline:18px; } .topbar-nav { gap:24px; font-size:15px; } .topbar .header-actions { gap:9px; } .topbar .sound-toggle { display:none; } .topbar .sign-in { padding-inline:19px; } }
 @media(max-width:1100px) { .topbar-nav { gap:18px; font-size:14px; } }
 @media(max-width:1023px) {
   .topbar-nav { display:none; }
@@ -27,6 +43,10 @@
   .topbar { border-radius:19px; }
   .topbar-inner { padding-inline:12px; gap:10px; }
   .topbar-mobile-heading { gap:8px; font-size:13px; }
-  .topbar .search-button,.topbar .play-now { display:none; }
-  .topbar .sign-in { height:36px; padding-inline:14px; font-size:12px; }
+  .topbar .search-button { display:none; }
+  .topbar .sign-in { height:36px; padding-inline:14px; gap:7px; font-size:12px; }
+  .topbar .user-menu-btn { height:36px; padding:0 8px 0 4px; gap:6px; font-size:12px; }
+  .navbar-profile-name { max-width:80px; }
+  .topbar-account-loading { height:36px; }
 }
+@media(max-width:420px) { .navbar-profile-name { max-width:60px; } .topbar .sign-in > svg { display:none; } }

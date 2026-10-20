@@ -4,7 +4,6 @@ import { useEffect, useState, type CSSProperties, type FormEvent } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Award, BarChart3, CalendarDays, Camera, Check, ChevronRight, Coins, Crown, Flame, Gamepad2, LockKeyhole, LogIn, LogOut, Medal, RefreshCw, Settings2, ShieldCheck, Target, Trophy, UserRound, Users, Volume2, VolumeX, Zap } from 'lucide-react';
 import AvatarPickerModal from './AvatarPickerModal';
-import { getAvatarLabel } from '@/data/avatar-catalog';
 import { useAuth } from '@/context/auth-context';
 import { ACCOUNT_MODES } from '@/lib/account/modes';
 import { careerAchievements } from '@/lib/account/history';
@@ -30,13 +29,12 @@ export default function ProfilePage() {
   const [avatarModalOpen, setAvatarModalOpen] = useState(false);
   const [avatarNotice, setAvatarNotice] = useState('');
   const [avatarError, setAvatarError] = useState('');
-  const currentAvatarName = getAvatarLabel(profile.avatar_url);
 
   async function handleSaveAvatar(avatarUrl: string) {
     setAvatarNotice(''); setAvatarError('');
     try {
       await updateAvatar(avatarUrl);
-      setAvatarNotice('Footballer avatar updated.');
+      setAvatarNotice('Profile photo updated.');
     } catch (cause) {
       setAvatarError(cause instanceof Error ? cause.message : 'Could not save your avatar.');
       throw cause;
@@ -103,23 +101,20 @@ export default function ProfilePage() {
               type="button"
               className="profile-avatar-camera-btn"
               onClick={() => setAvatarModalOpen(true)}
-              aria-label="Change footballer avatar"
-              title="Change footballer avatar"
+              aria-label="Change profile photo"
+              title="Change profile photo"
             >
               <Camera size={14} />
             </button>
           </div>
           <div className="profile-avatar-details">
-            <span className="profile-avatar-label">Profile Avatar</span>
-            <strong className="profile-avatar-current-name">
-              {currentAvatarName || 'Default Initials'}
-            </strong>
+            <span className="profile-avatar-label">Profile photo</span>
             <button
               type="button"
               className="account-secondary-button profile-change-avatar-action"
               onClick={() => setAvatarModalOpen(true)}
             >
-              <Users size={14} /> Change footballer
+              <Users size={14} /> Change avatar
             </button>
           </div>
         </div>
@@ -139,6 +134,7 @@ export default function ProfilePage() {
       <section className="account-panel"><div className="account-panel-heading"><div><h3><ShieldCheck size={20} />Account</h3></div><span className={`account-status-pill ${profile.is_guest ? '' : 'is-connected'}`}>{profile.is_guest ? 'Guest account' : 'Connected'}</span></div><div className="account-connection"><p>{profile.is_guest ? 'Your guest progress is saved on this device. Sign in to keep playing across devices.' : profile.email || 'Your account is connected.'}</p>{profile.is_guest ? <button type="button" className="account-secondary-button" onClick={openAuthModal}><LogIn size={17} />Sign in with Google<ChevronRight size={16} /></button> : <button type="button" className="account-sign-out" onClick={leaveAccount} disabled={signingOut}><LogOut size={17} />{signingOut ? 'Signing out...' : 'Sign out'}</button>}</div></section></div>
     </div></section>
     <AvatarPickerModal
+      key={profile.id}
       isOpen={avatarModalOpen}
       onClose={() => setAvatarModalOpen(false)}
       currentAvatarUrl={profile.avatar_url}

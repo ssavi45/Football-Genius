@@ -6,6 +6,8 @@ import { supabase } from '@/lib/supabase/client';
 import { supabaseConfigured } from '@/lib/supabase/config';
 import type { UserProfile } from '@/lib/types/games';
 import { appendLocalHistory } from '@/lib/account/history';
+import { findAvatarByUrl } from '@/data/avatar-catalog';
+import { EMPTY_GUEST, GUEST_KEY, readGuest } from '@/lib/account/guest-profile';
 
 interface AuthContextType {
   profile: UserProfile; isLoading: boolean; isAuthModalOpen: boolean; soundEnabled: boolean;
@@ -15,18 +17,9 @@ interface AuthContextType {
   recordGameResult: (mode: string, won: boolean, score: number) => Promise<void>;
   updateUsername: (name: string) => Promise<void>; updateAvatar: (avatarUrl: string) => Promise<void>; refreshProfile: () => Promise<void>;
 }
-const EMPTY_GUEST: UserProfile = { id:'guest_default',username:'ScoutGuest',total_xp:0,level:1,current_streak:0,best_streak:0,coins:0,is_guest:true,games_played:0,games_won:0,created_at:'2026-10-19T00:00:00Z' };
-const GUEST_KEY='footygen_guest_profile_v2', SOUND_KEY='footygen_sound_enabled';
+const SOUND_KEY='footygen_sound_enabled';
 const AuthContext=createContext<AuthContextType|undefined>(undefined);
 
-function readGuest():UserProfile {
-  try {
-    const raw=localStorage.getItem(GUEST_KEY);
-    if(raw){const saved=JSON.parse(raw);if(saved.is_guest&&typeof saved.id==='string'&&typeof saved.username==='string')return {...EMPTY_GUEST,...saved};}
-    const id='guest_'+crypto.randomUUID();const guest={...EMPTY_GUEST,id,username:'Scout_'+id.slice(-4).toUpperCase(),created_at:new Date().toISOString()};
-    localStorage.setItem(GUEST_KEY,JSON.stringify(guest));return guest;
-  } catch { return EMPTY_GUEST; }
-}
 export function AuthProvider({children}:{children:React.ReactNode}) {
   const [profile,setProfile]=useState<UserProfile>(EMPTY_GUEST),[isLoading,setIsLoading]=useState(true);
   const [isAuthModalOpen,setIsAuthModalOpen]=useState(false),[soundEnabled,setSoundEnabled]=useState(true);
@@ -94,8 +87,9 @@ export function AuthProvider({children}:{children:React.ReactNode}) {
     current.current=updated;setProfile(updated);
   },[]);
   const updateAvatar=useCallback(async(value:string)=>{
-    const avatarUrl=value.trim();
-    if(!avatarUrl||!/^(?:\/(?!\/)|https:\/\/)/.test(avatarUrl))throw new Error("Please choose a valid avatar image.");
+    const avatar=findAvatarByUrl(value);
+    if(!avatar)throw new Error("Please choose an avatar from the collection.");
+    const avatarUrl=avatar.avatarUrl;
     const before=current.current;
     if(!before.is_guest){
       const {error}=await supabase.from("profiles").update({avatar_url:avatarUrl}).eq("id",before.id).select("id").single();

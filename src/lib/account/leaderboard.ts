@@ -8,6 +8,25 @@ export interface RankingEntry {
   games?: number;
 }
 
+export function isRankingEntries(input: unknown): input is RankingEntry[] {
+  if (!Array.isArray(input)) return false;
+  const seen = new Set<string>();
+  return input.every(entry => {
+    if (!entry || typeof entry !== 'object' || typeof entry.userId !== 'string' || !entry.userId.trim() || seen.has(entry.userId)
+      || typeof entry.name !== 'string' || !entry.name.trim() || !Number.isSafeInteger(entry.rank) || entry.rank < 1
+      || typeof entry.score !== 'number' || !Number.isFinite(entry.score) || entry.score < 0
+      || !(entry.avatar === null || (typeof entry.avatar === 'string' && /^(?:\/(?!\/)|https:\/\/)/.test(entry.avatar)))
+      || (entry.games !== undefined && (!Number.isSafeInteger(entry.games) || entry.games < 0))
+      || (entry.level !== undefined && (!Number.isSafeInteger(entry.level) || entry.level < 1))) return false;
+    seen.add(entry.userId);
+    return true;
+  });
+}
+
+export function rankingUnit(mode: string) {
+  return mode === 'combined' ? 'XP' : mode === 'matrix' ? 'cells' : mode === 'higher-lower' ? 'picks' : 'pts';
+}
+
 export function readRankingRows(input: unknown, combined: boolean): RankingEntry[] {
   if (!Array.isArray(input)) throw new Error('Invalid ranking data');
   return input.map((row, index) => {

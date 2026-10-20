@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '@/context/auth-context';
@@ -22,8 +22,6 @@ import {
   Trophy,
   Info,
   BookOpen,
-  Flame,
-  Star,
 } from 'lucide-react';
 
 interface TopBarProps {
@@ -32,11 +30,29 @@ interface TopBarProps {
 }
 
 export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarProps) {
-  const { profile, openAuthModal, soundEnabled, toggleSound, signOut } = useAuth();
+  const { profile, isLoading, openAuthModal, soundEnabled, toggleSound, signOut } = useAuth();
   const [profileDropdown, setProfileDropdown] = useState(false);
   const pathname = usePathname();
   const useSharedNav = pathname === '/' || pathname === '/game-modes' || isSharedGameRoute(pathname);
   const isGameModesActive = pathname === '/game-modes' || isSharedGameRoute(pathname);
+
+  const profileMenuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => { setProfileDropdown(false); }, [pathname, profile.id]);
+  useEffect(() => {
+    if (!profileDropdown) return;
+    const pointerdown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !profileMenuRef.current?.contains(event.target)) setProfileDropdown(false);
+    };
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setProfileDropdown(false);
+        profileMenuRef.current?.querySelector('button')?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', pointerdown);
+    document.addEventListener('keydown', keydown);
+    return () => { document.removeEventListener('pointerdown', pointerdown); document.removeEventListener('keydown', keydown); };
+  }, [profileDropdown]);
 
   return (
     <header
@@ -154,166 +170,35 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
           </nav>
         )}
 
-        {/* Right Actions: In-game Status Bar vs Standard Header Actions */}
-        {pathname.startsWith('/games') && !useSharedNav ? (
-          <div className="header-actions flex items-center gap-2.5 sm:gap-3">
-            {/* Search Button */}
-            <button
-              onMouseEnter={() => sound.playHover()}
-              onClick={() => { sound.playClick(); }}
-              className="search-button h-9 w-9 rounded-full bg-slate-100 hover:bg-slate-200/80 flex items-center justify-center text-slate-600 transition shadow-2xs cursor-pointer"
-              title="Search"
-              aria-label="Search"
-            >
-              <Search className="h-4 w-4" />
-            </button>
+        <div className="header-actions">
+          <button type="button" onMouseEnter={() => sound.playHover()} onClick={() => { sound.playClick(); window.location.href = '/game-modes#mode-search'; }} className="search-button flex items-center justify-center rounded-full text-slate-600" aria-label="Search">
+            <Search size={16} />
+          </button>
+          <button type="button" onClick={toggleSound} className="sound-toggle rounded-full text-blue-600" title={soundEnabled ? 'Mute sound' : 'Enable sound'} aria-label={soundEnabled ? 'Mute sound' : 'Enable sound'}>
+            {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
+          </button>
 
-            {/* Level 3 Badge with Progress Bar */}
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
-              <Star className="h-3.5 w-3.5 text-amber-500 fill-amber-500" />
-              <span className="text-xs font-bold text-slate-800">Level 3</span>
-              <div className="w-10 h-1.5 rounded-full bg-slate-100 overflow-hidden border border-slate-200/60">
-                <div className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 w-2/5" />
-              </div>
-            </div>
-
-            {/* 12 Day Streak Badge */}
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
-              <Flame className="h-4 w-4 text-orange-500 fill-orange-500" />
-              <div className="flex flex-col text-left leading-none">
-                <span className="text-xs font-black text-slate-900">12</span>
-                <span className="text-[8px] font-semibold text-slate-400">Day Streak</span>
-              </div>
-            </div>
-
-            {/* User Avatar Circle */}
-            <div className="relative">
-              <button
-                onClick={() => setProfileDropdown(!profileDropdown)}
-                className="flex items-center gap-1.5 p-0.5 rounded-full hover:bg-slate-100 transition cursor-pointer"
-                aria-label="User profile menu"
-              >
-                <AccountAvatar name={profile.username} image={profile.avatar_url} className="!w-9 !h-9 !text-sm !border-0 shadow-xs flex-shrink-0" />
-                <ChevronDown className="h-3.5 w-3.5 text-slate-500" />
+          {isLoading ? <div className="topbar-account-loading" role="status" aria-label="Loading profile" /> : <>
+            <div className="topbar-profile" ref={profileMenuRef}>
+              <button type="button" onClick={() => setProfileDropdown(open => !open)} className="user-menu-btn" aria-label={`${profile.is_guest ? 'Guest' : 'User'} profile menu: ${profile.username}`} aria-expanded={profileDropdown} aria-controls="navbar-profile-panel">
+                <AccountAvatar name={profile.username} image={profile.avatar_url} className="navbar-profile-avatar" />
+                <span className="navbar-profile-name">{profile.username || 'Scout'}</span>
+                <ChevronDown size={14} className="navbar-profile-chevron" />
               </button>
-
-              {profileDropdown && (
-                <div className="absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-slate-100 p-2 shadow-xl z-50 animate-fadeIn">
-                  <div className="px-3 py-2 border-b border-slate-100 mb-1 flex items-center gap-2.5">
-                    <AccountAvatar name={profile.username} image={profile.avatar_url} className="!w-8 !h-8 !text-xs !border-0 flex-shrink-0" />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[10px] font-semibold text-slate-400">Signed in as</p>
-                      <p className="text-xs font-bold text-slate-900 truncate">{profile.username || 'Scout'}</p>
-                    </div>
-                  </div>
-                  <Link
-                    href="/profile"
-                    onClick={() => setProfileDropdown(false)}
-                    className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition"
-                  >
-                    <User className="h-4 w-4" /> My Profile
-                  </Link>
-                  <button
-                    onClick={() => {
-                      signOut();
-                      setProfileDropdown(false);
-                    }}
-                    className="w-full flex items-center gap-2 px-3 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 rounded-xl transition"
-                  >
-                    <LogOut className="h-4 w-4" /> Sign Out
-                  </button>
+              {profileDropdown && <div id="navbar-profile-panel" className="navbar-profile-panel">
+                <div className="navbar-profile-summary">
+                  <AccountAvatar name={profile.username} image={profile.avatar_url} className="navbar-menu-avatar" />
+                  <div><small>{profile.is_guest ? 'Guest profile' : 'Signed in as'}</small><strong>{profile.username}</strong></div>
                 </div>
-              )}
+                <Link href="/profile" onClick={() => setProfileDropdown(false)}><User size={16} />My Profile</Link>
+                {!profile.is_guest && <button type="button" onClick={() => { setProfileDropdown(false); void signOut().catch(() => openAuthModal()); }}><LogOut size={16} />Sign Out</button>}
+              </div>}
             </div>
-          </div>
-        ) : (
-          <div className="header-actions flex items-center gap-2.5 sm:gap-3">
-            {/* Search Button */}
-            <button
-              onMouseEnter={() => sound.playHover()}
-              onClick={() => { sound.playClick(); window.location.href = "/game-modes#mode-search"; }}
-              className="search-button h-9 w-9 rounded-full bg-white hover:bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 transition shadow-2xs"
-              title="Search"
-              aria-label="Search"
-            >
-              <Search className="h-4 w-4" />
-            </button>
-
-            {/* Sound Toggle (Subtle) */}
-            <button
-              onClick={toggleSound}
-              className="sound-toggle p-2 rounded-full text-slate-400 hover:text-blue-600 hover:bg-slate-100 transition hidden sm:flex"
-              title={soundEnabled ? 'Mute sound' : 'Enable sound'}
-              aria-label="Toggle sound"
-            >
-              {soundEnabled ? <Volume2 className="h-4 w-4 text-blue-600" /> : <VolumeX className="h-4 w-4 text-slate-300" />}
-            </button>
-
-            {/* Sign In Button / User Menu */}
-            {profile.is_guest ? (
-              <button
-                onClick={() => {
-                  sound.playClick();
-                  openAuthModal();
-                }}
-                onMouseEnter={() => sound.playHover()}
-                className="sign-in px-5 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-800 hover:bg-slate-50 transition active:scale-95 shadow-2xs"
-              >
-                Sign In
-              </button>
-            ) : (
-              <div className="relative">
-                <button
-                  onClick={() => setProfileDropdown(!profileDropdown)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 hover:bg-slate-50 transition text-xs font-bold text-slate-800"
-                >
-                  <AccountAvatar name={profile.username} image={profile.avatar_url} className="!w-6 !h-6 !text-[11px] !border-0 flex-shrink-0" />
-                  <span className="hidden sm:inline max-w-[90px] truncate">{profile.username}</span>
-                  <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
-                </button>
-
-                {profileDropdown && (
-                  <div className="absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-slate-100 p-2 shadow-xl z-50 animate-fadeIn">
-                    <div className="px-3 py-2 border-b border-slate-100 mb-1 flex items-center gap-2.5">
-                      <AccountAvatar name={profile.username} image={profile.avatar_url} className="!w-8 !h-8 !text-xs !border-0 flex-shrink-0" />
-                      <div className="min-w-0 flex-1">
-                        <p className="text-[10px] font-semibold text-slate-400">Signed in as</p>
-                        <p className="text-xs font-bold text-slate-900 truncate">{profile.username}</p>
-                      </div>
-                    </div>
-                    <Link
-                      href="/profile"
-                      onClick={() => setProfileDropdown(false)}
-                      className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition"
-                    >
-                      <User className="h-4 w-4" /> My Profile
-                    </Link>
-                    <button
-                      onClick={() => {
-                        signOut();
-                        setProfileDropdown(false);
-                      }}
-                      className="w-full flex items-center gap-2 px-3 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 rounded-xl transition"
-                    >
-                      <LogOut className="h-4 w-4" /> Sign Out
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* Primary CTA: Play Now → */}
-            <Link
-              href="/games/scoreline"
-              onMouseEnter={() => sound.playHover()}
-              onClick={() => sound.playClick()}
-              className="play-now inline-flex items-center gap-1.5 px-5 sm:px-6 py-2.5 rounded-full bg-[#1D68FE] hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-500/20 transition-all active:scale-95"
-            >
-              <span>Play Now</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-        )}
+            {profile.is_guest && <button type="button" onClick={() => { sound.playClick(); setProfileDropdown(false); openAuthModal(); }} onMouseEnter={() => sound.playHover()} className="sign-in">
+              <span>Sign In</span><ArrowRight size={16} />
+            </button>}
+          </>}
+        </div>
 
       </div>
     </header>

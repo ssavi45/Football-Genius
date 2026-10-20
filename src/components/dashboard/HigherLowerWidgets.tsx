@@ -24,7 +24,7 @@ export default function HigherLowerWidgets({ score, best, gameOver }: Props) {
       </div>
     </section>
     <section className="hl-leaderboard hl-widget" aria-labelledby="hl-leaderboard-heading">
-      <div className="hl-widget-title"><h2 id="hl-leaderboard-heading">Global Leaderboard <small>Standings</small></h2><Link href="/leaderboard">View All<ArrowRight size={15} /></Link></div>
+      <div className="hl-widget-title"><h2 id="hl-leaderboard-heading">Global Leaderboard <small>Standings</small></h2><Link href="/leaderboard?mode=higher-lower">View All<ArrowRight size={15} /></Link></div>
       {loading ? (
         <div className="hl-leaderboard-loading" aria-label="Loading standings" aria-busy="true">
           {[1, 2, 3, 4, 5].map(rank => (
@@ -53,11 +53,11 @@ export default function HigherLowerWidgets({ score, best, gameOver }: Props) {
       ) : (
         <ol>
           {entries.map(entry => (
-            <li key={entry.userId || entry.rank}>
+            <li key={entry.userId}>
               <span className={`hl-rank hl-rank-${entry.rank}`}>{entry.rank}</span>
               <AccountAvatar name={entry.name} image={entry.avatar} className="hl-player-avatar" />
               <span>{entry.name}</span>
-              <strong>{entry.score} pts</strong>
+              <strong>{entry.score.toLocaleString()} picks</strong>
             </li>
           ))}
         </ol>
