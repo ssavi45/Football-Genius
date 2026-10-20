@@ -1,38 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, BookOpen, ChevronRight, Crown, Flame, Gift, Target } from 'lucide-react';
-import { isLeaderboardEntries, type LeaderboardEntry } from '@/lib/higher-lower/leaderboard';
+import { AlertCircle, ArrowRight, BookOpen, ChevronRight, Crown, Flame, Gift, RefreshCw, Target, Trophy } from 'lucide-react';
+import AccountAvatar from '@/components/account/AccountAvatar';
+import { useModeLeaderboard } from '@/lib/account/useModeLeaderboard';
 
 interface Props { score: number; best: number; gameOver: boolean; }
-const PREVIEW: LeaderboardEntry[] = [
-  { name: 'CruyffTactician', avatar: '/img/players/cruyff.jpg', xp: 3840 },
-  { name: 'BernabeuKing', avatar: '/img/players/zidane.jpg', xp: 3420 },
-  { name: 'CampNouMaestro', avatar: '/img/players/messi.jpg', xp: 3180 },
-  { name: 'KloppHeavyMetal', avatar: '/img/players/salah.jpg', xp: 2890 },
-  { name: 'CalcioStrategist', avatar: '/img/players/maldini.jpg', xp: 2640 },
-];
 
 export default function HigherLowerWidgets({ score, best, gameOver }: Props) {
-  const [entries, setEntries] = useState(PREVIEW);
-  const [preview, setPreview] = useState(true);
-  useEffect(() => {
-    let active = true;
-    const controller = new AbortController();
-    void (async () => {
-      const response = await fetch('/api/higher-lower/leaderboard', { signal: controller.signal, cache: 'no-store' });
-      if (!response.ok) return;
-      const payload: unknown = await response.json();
-      const data = payload && typeof payload === 'object' && 'entries' in payload ? payload.entries : null;
-      if (active && isLeaderboardEntries(data) && data.length > 0) {
-        setEntries(data);
-        setPreview(false);
-      }
-    })().catch(() => { /* Keep the explicitly labelled community preview available offline. */ });
-    return () => { active = false; controller.abort(); };
-  }, []);
+  const { entries, loading, error, retry } = useModeLeaderboard('higher-lower', 5);
   const milestone = Math.floor(score / 5) * 5 + 5;
   const accuracy = score || gameOver ? `${Math.round(score / (score + (gameOver ? 1 : 0)) * 100)}%` : '—';
   return <aside className="hl-widgets" aria-label="Game information">
@@ -47,9 +23,45 @@ export default function HigherLowerWidgets({ score, best, gameOver }: Props) {
         <div className="hl-stat hl-stat-wide"><div><span className="hl-stat-icon hl-target"><Target /></span><div><p>Total Correct Picks</p><strong>{score}</strong></div></div><div><span className="hl-stat-icon"><Target /></span><div><p>Accuracy</p><strong>{accuracy}</strong></div></div></div>
       </div>
     </section>
-    <section className="hl-leaderboard hl-widget">
-      <div className="hl-widget-title"><h2>Leaderboard {preview && <small>Preview</small>}</h2><Link href="/leaderboard">View All<ArrowRight size={15} /></Link></div>
-      <ol>{entries.map((entry, i) => <li key={entry.name}><span className={`hl-rank hl-rank-${i + 1}`}>{i + 1}</span><Image src={entry.avatar} alt="" width={28} height={28} /><span>{entry.name}</span><strong>{entry.xp.toLocaleString('en-US')} XP</strong></li>)}</ol>
+    <section className="hl-leaderboard hl-widget" aria-labelledby="hl-leaderboard-heading">
+      <div className="hl-widget-title"><h2 id="hl-leaderboard-heading">Global Leaderboard <small>Standings</small></h2><Link href="/leaderboard">View All<ArrowRight size={15} /></Link></div>
+      {loading ? (
+        <div className="hl-leaderboard-loading" aria-label="Loading standings" aria-busy="true">
+          {[1, 2, 3, 4, 5].map(rank => (
+            <div key={rank} className="hl-leaderboard-skeleton">
+              <span className={`hl-rank hl-rank-${rank}`}>{rank}</span>
+              <span className="hl-skeleton-avatar" />
+              <span className="hl-skeleton-name" />
+              <span className="hl-skeleton-score" />
+            </div>
+          ))}
+        </div>
+      ) : error ? (
+        <div className="hl-leaderboard-error" role="alert">
+          <span className="hl-leaderboard-error-icon"><AlertCircle size={20} /></span>
+          <p>Rankings unavailable</p>
+          <button type="button" onClick={retry} className="hl-retry-button">
+            <RefreshCw size={13} /> Try again
+          </button>
+        </div>
+      ) : entries.length === 0 ? (
+        <div className="hl-leaderboard-empty" role="status">
+          <span className="hl-leaderboard-empty-icon"><Trophy size={22} /></span>
+          <h3>No rankings yet</h3>
+          <p>Build your streak to claim the #1 spot.</p>
+        </div>
+      ) : (
+        <ol>
+          {entries.map(entry => (
+            <li key={entry.userId || entry.rank}>
+              <span className={`hl-rank hl-rank-${entry.rank}`}>{entry.rank}</span>
+              <AccountAvatar name={entry.name} image={entry.avatar} className="hl-player-avatar" />
+              <span>{entry.name}</span>
+              <strong>{entry.score} pts</strong>
+            </li>
+          ))}
+        </ol>
+      )}
     </section>
     <section className="hl-howto hl-widget">
       <div className="hl-widget-title"><h2><span><BookOpen size={23} /></span>How to Play</h2><ChevronRight size={23} /></div>

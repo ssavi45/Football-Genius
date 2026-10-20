@@ -3,7 +3,9 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BarChart3, BookOpen, Check, ChevronRight, CircleCheck, FileText, Grid2X2, Info, Plus, Puzzle, RotateCcw, Search, Share2, Sparkles, Star, Target, Trophy, X } from 'lucide-react';
+import { AlertCircle, ArrowRight, BarChart3, BookOpen, Check, ChevronRight, CircleCheck, FileText, Grid2X2, Info, Plus, Puzzle, RefreshCw, RotateCcw, Search, Share2, Sparkles, Star, Target, Trophy, X } from 'lucide-react';
+import AccountAvatar from '@/components/account/AccountAvatar';
+import { useModeLeaderboard } from '@/lib/account/useModeLeaderboard';
 import { cellReview, searchPlayers, shareText } from '@/lib/matrix/engine';
 import { useMatrixRound } from './useMatrixRound';
 import type { Criterion, MatrixDifficulty, MatrixPlayer, MatrixPuzzle } from '@/lib/matrix/types';
@@ -58,10 +60,56 @@ function MatrixGridSkeleton() {
   </>;
 }
 
-const PREVIEW = [
-  ['footyking', 'ronaldo', 960], ['tacticmaster', 'bruyne', 840], ['goalhunter', 'salah', 790],
-  ['midfieldmaestro', 'messi', 720], ['thefootballmind', 'neymar', 710],
-] as const;
+function MatrixLeaderboardWidget() {
+  const { entries, loading, error, retry } = useModeLeaderboard('matrix', 5);
+
+  return (
+    <section className="matrix-widget matrix-leaderboard" aria-labelledby="matrix-leaderboard-heading">
+      <div className="matrix-widget-title">
+        <h2 id="matrix-leaderboard-heading">Global Leaderboard <small>Standings</small></h2>
+        <Link href="/leaderboard">View All <ArrowRight size={15} /></Link>
+      </div>
+
+      {loading ? (
+        <div className="matrix-leaderboard-loading" aria-label="Loading standings" aria-busy="true">
+          {[1, 2, 3, 4, 5].map(rank => (
+            <div key={rank} className="matrix-leaderboard-skeleton">
+              <span className={`matrix-rank matrix-rank-${rank}`}>{rank}</span>
+              <span className="matrix-skeleton-avatar" />
+              <span className="matrix-skeleton-name" />
+              <span className="matrix-skeleton-score" />
+            </div>
+          ))}
+        </div>
+      ) : error ? (
+        <div className="matrix-leaderboard-error" role="alert">
+          <span className="matrix-leaderboard-error-icon"><AlertCircle size={20} /></span>
+          <p>Rankings unavailable</p>
+          <button type="button" onClick={retry} className="matrix-retry-button">
+            <RefreshCw size={13} /> Try again
+          </button>
+        </div>
+      ) : entries.length === 0 ? (
+        <div className="matrix-leaderboard-empty" role="status">
+          <span className="matrix-leaderboard-empty-icon"><Trophy size={22} /></span>
+          <h3>No rankings yet</h3>
+          <p>Complete a matrix round to claim the #1 spot.</p>
+        </div>
+      ) : (
+        <ol>
+          {entries.map(entry => (
+            <li key={entry.userId || entry.rank}>
+              <span className={`matrix-rank matrix-rank-${entry.rank}`}>{entry.rank}</span>
+              <AccountAvatar name={entry.name} image={entry.avatar} className="matrix-player-avatar" />
+              <span>{entry.name}</span>
+              <strong>{entry.score} XP</strong>
+            </li>
+          ))}
+        </ol>
+      )}
+    </section>
+  );
+}
 
 export default function FootballMatrixGame({ puzzle: initialPuzzle, players, catalog, datasetVersion }: { puzzle: MatrixPuzzle; players: MatrixPlayer[]; catalog: Criterion[]; datasetVersion: string }) {
   const { puzzle, state, view, ready, storageWarning, pendingRound, notice, edit, clear, submit, nextRound } = useMatrixRound(initialPuzzle, players, catalog, datasetVersion);
@@ -164,9 +212,7 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
       <section className="matrix-widget matrix-puzzle-stats"><div className="matrix-widget-title"><h2>Your Round Stats</h2></div>
         <dl><div><dt>Correct answers</dt><dd>{view.finished ? `${view.correct} / 9` : '—'}</dd></div><div><dt>Incorrect answers</dt><dd>{view.incorrect ?? '—'}</dd></div><div><dt>Cell XP</dt><dd>{view.finished ? `${(view.correct ?? 0) * 25} / 225` : 'Revealed on submit'}</dd></div><div><dt>Perfect grid bonus</dt><dd className="matrix-bonus">+100 XP</dd></div></dl>
       </section>
-      <section className="matrix-widget matrix-leaderboard"><div className="matrix-widget-title"><h2>Global Leaderboard <small>Preview</small></h2><Link href="/leaderboard">View All <ArrowRight size={15} /></Link></div>
-        <ol>{PREVIEW.map(([name, id, score], i) => <li key={name}><span className={`matrix-rank matrix-rank-${i + 1}`}>{i + 1}</span><Image src={byId.get(id)?.photoUrl || '/img/players/messi.jpg'} alt="" width={25} height={25} /><span>{name}</span><strong>{score}</strong></li>)}</ol>
-      </section>
+      <MatrixLeaderboardWidget />
       <section className="matrix-widget matrix-howto"><button type="button" className="matrix-howto-heading" onClick={() => setHowOpen(true)}><span><i><BookOpen size={23} /></i>How to Play</span><ChevronRight size={22} /></button>
         <ol>{['Match both criteria. Use each player once.', 'Edit freely or leave unknown cells blank.', 'Submit the grid to reveal and review results.', 'Play unlimited rounds. Earn up to 325 XP.'].map((text, i) => <li key={text}><span>{i + 1}</span><p>{text}</p></li>)}</ol>
       </section>

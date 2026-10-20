@@ -13,7 +13,7 @@ interface AuthContextType {
   signInWithGoogle: () => Promise<void>; signOut: () => Promise<void>;
   addXP: (amount: number, reason?: string) => Promise<void>;
   recordGameResult: (mode: string, won: boolean, score: number) => Promise<void>;
-  updateUsername: (name: string) => Promise<void>; refreshProfile: () => Promise<void>;
+  updateUsername: (name: string) => Promise<void>; updateAvatar: (avatarUrl: string) => Promise<void>; refreshProfile: () => Promise<void>;
 }
 const EMPTY_GUEST: UserProfile = { id:'guest_default',username:'ScoutGuest',total_xp:0,level:1,current_streak:0,best_streak:0,coins:0,is_guest:true,games_played:0,games_won:0,created_at:'2026-10-19T00:00:00Z' };
 const GUEST_KEY='footygen_guest_profile_v2', SOUND_KEY='footygen_sound_enabled';
@@ -93,6 +93,22 @@ export function AuthProvider({children}:{children:React.ReactNode}) {
     if(updated.is_guest){try{localStorage.setItem(GUEST_KEY,JSON.stringify(updated));}catch{throw new Error('Could not save on this device. Check browser storage settings.');}}
     current.current=updated;setProfile(updated);
   },[]);
-  return <AuthContext.Provider value={{profile,isLoading,isAuthModalOpen,soundEnabled,openAuthModal,closeAuthModal,toggleSound,signInWithGoogle,signOut,addXP,recordGameResult,updateUsername,refreshProfile}}>{children}</AuthContext.Provider>;
+  const updateAvatar=useCallback(async(value:string)=>{
+    const avatarUrl=value.trim();
+    if(!avatarUrl||!/^(?:\/(?!\/)|https:\/\/)/.test(avatarUrl))throw new Error("Please choose a valid avatar image.");
+    const before=current.current;
+    if(!before.is_guest){
+      const {error}=await supabase.from("profiles").update({avatar_url:avatarUrl}).eq("id",before.id).select("id").single();
+      if(error)throw new Error("Could not save your avatar. Please retry.");
+    }
+    const updated={...current.current,avatar_url:avatarUrl};
+    if(updated.id!==before.id)return;
+    if(updated.is_guest){
+      try{localStorage.setItem(GUEST_KEY,JSON.stringify(updated));}catch{throw new Error("Could not save on this device. Check browser storage settings.");}
+    }
+    current.current=updated;
+    setProfile(updated);
+  },[]);
+  return <AuthContext.Provider value={{profile,isLoading,isAuthModalOpen,soundEnabled,openAuthModal,closeAuthModal,toggleSound,signInWithGoogle,signOut,addXP,recordGameResult,updateUsername,updateAvatar,refreshProfile}}>{children}</AuthContext.Provider>;
 }
 export function useAuth(){const context=useContext(AuthContext);if(!context)throw new Error('useAuth must be used within an AuthProvider');return context;}

@@ -2,7 +2,9 @@
 
 import { useEffect, useState, type CSSProperties, type FormEvent } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Award, BarChart3, CalendarDays, Check, ChevronRight, Coins, Crown, Flame, Gamepad2, LockKeyhole, LogIn, LogOut, Medal, RefreshCw, Settings2, ShieldCheck, Target, Trophy, UserRound, Volume2, VolumeX, Zap } from 'lucide-react';
+import { ArrowRight, Award, BarChart3, CalendarDays, Camera, Check, ChevronRight, Coins, Crown, Flame, Gamepad2, LockKeyhole, LogIn, LogOut, Medal, RefreshCw, Settings2, ShieldCheck, Target, Trophy, UserRound, Users, Volume2, VolumeX, Zap } from 'lucide-react';
+import AvatarPickerModal from './AvatarPickerModal';
+import { getAvatarLabel } from '@/data/avatar-catalog';
 import { useAuth } from '@/context/auth-context';
 import { ACCOUNT_MODES } from '@/lib/account/modes';
 import { careerAchievements } from '@/lib/account/history';
@@ -16,7 +18,7 @@ const number = (value: number) => value.toLocaleString();
 const sectionForHash = () => typeof window === 'undefined' ? 'stats' : window.location.hash === '#badges' ? 'badges' : window.location.hash === '#settings' ? 'settings' : 'stats';
 
 export default function ProfilePage() {
-  const { profile, isLoading, updateUsername, soundEnabled, toggleSound, openAuthModal, signOut } = useAuth();
+  const { profile, isLoading, updateUsername, updateAvatar, soundEnabled, toggleSound, openAuthModal, signOut } = useAuth();
   const { history, loading: historyLoading, error: historyError, retry } = useAccountHistory(profile.id, profile.is_guest, isLoading);
   const [section, setSection] = useState('stats');
   const [badgeFilter, setBadgeFilter] = useState<'all' | 'earned' | 'locked'>('all');
@@ -25,6 +27,21 @@ export default function ProfilePage() {
   const [saveNotice, setSaveNotice] = useState('');
   const [saveError, setSaveError] = useState('');
   const [signingOut, setSigningOut] = useState(false);
+  const [avatarModalOpen, setAvatarModalOpen] = useState(false);
+  const [avatarNotice, setAvatarNotice] = useState('');
+  const [avatarError, setAvatarError] = useState('');
+  const currentAvatarName = getAvatarLabel(profile.avatar_url);
+
+  async function handleSaveAvatar(avatarUrl: string) {
+    setAvatarNotice(''); setAvatarError('');
+    try {
+      await updateAvatar(avatarUrl);
+      setAvatarNotice('Footballer avatar updated.');
+    } catch (cause) {
+      setAvatarError(cause instanceof Error ? cause.message : 'Could not save your avatar.');
+      throw cause;
+    }
+  }
   const badges = careerAchievements(profile);
   const earned = badges.filter(badge => badge.current >= badge.target);
   const visibleBadges = badges.filter(badge => badgeFilter === 'all' || (badgeFilter === 'earned' ? badge.current >= badge.target : badge.current < badge.target));
@@ -77,9 +94,55 @@ export default function ProfilePage() {
     })}</div>{visibleBadges.length === 0 && <div className="account-panel account-empty"><Award size={32} /><h3>{badgeFilter === 'earned' ? 'Your first badge is waiting' : 'You have earned every badge'}</h3><p>{badgeFilter === 'earned' ? 'Complete challenges to start your collection.' : 'Keep playing and build your football story.'}</p></div>}</section>
 
     <section id="settings" className="profile-section" aria-labelledby="settings-title"><div className="account-section-heading"><div><span className="account-eyebrow">MAKE YOURSELF AT HOME</span><h2 id="settings-title">Settings</h2></div></div><div className="profile-settings-grid">
-      <section className="account-panel"><div className="account-panel-heading"><div><h3><UserRound size={20} />Your profile</h3><p>The name other football fans will see.</p></div></div><form className="profile-settings-form" onSubmit={saveName}><label htmlFor="profile-display-name">Display name</label><input id="profile-display-name" type="text" required minLength={1} maxLength={32} value={nameInput} onChange={event => { setNameInput(event.target.value); setSaveNotice(''); setSaveError(''); }} autoComplete="nickname" /><span className="account-field-help">Between 1 and 32 characters.</span><div aria-live="polite">{saveNotice && <p className="account-save-success"><Check size={16} />{saveNotice}</p>}{saveError && <p className="account-save-error" role="alert">{saveError}</p>}</div><button type="submit" className="account-primary-button" disabled={saving || !nameInput.trim() || nameInput.trim() === profile.username}>{saving ? 'Saving...' : 'Save changes'}{!saving && <Check size={16} />}</button></form></section>
+      <section className="account-panel">
+        <div className="account-panel-heading"><div><h3><UserRound size={20} />Your profile</h3><p>The name and icon other football fans will see.</p></div></div>
+        <div className="profile-avatar-control">
+          <div className="profile-avatar-frame">
+            <AccountAvatar name={profile.username} image={profile.avatar_url} className="profile-edit-avatar" />
+            <button
+              type="button"
+              className="profile-avatar-camera-btn"
+              onClick={() => setAvatarModalOpen(true)}
+              aria-label="Change footballer avatar"
+              title="Change footballer avatar"
+            >
+              <Camera size={14} />
+            </button>
+          </div>
+          <div className="profile-avatar-details">
+            <span className="profile-avatar-label">Profile Avatar</span>
+            <strong className="profile-avatar-current-name">
+              {currentAvatarName || 'Default Initials'}
+            </strong>
+            <button
+              type="button"
+              className="account-secondary-button profile-change-avatar-action"
+              onClick={() => setAvatarModalOpen(true)}
+            >
+              <Users size={14} /> Change footballer
+            </button>
+          </div>
+        </div>
+        <div aria-live="polite">
+          {avatarNotice && <p className="account-save-success" style={{ marginInline: '24px', marginBottom: '12px' }}><Check size={16} />{avatarNotice}</p>}
+          {avatarError && <p className="account-save-error" role="alert" style={{ marginInline: '24px', marginBottom: '12px' }}>{avatarError}</p>}
+        </div>
+        <form className="profile-settings-form" onSubmit={saveName}>
+          <label htmlFor="profile-display-name">Display name</label>
+          <input id="profile-display-name" type="text" required minLength={1} maxLength={32} value={nameInput} onChange={event => { setNameInput(event.target.value); setSaveNotice(''); setSaveError(''); }} autoComplete="nickname" />
+          <span className="account-field-help">Between 1 and 32 characters.</span>
+          <div aria-live="polite">{saveNotice && <p className="account-save-success"><Check size={16} />{saveNotice}</p>}{saveError && <p className="account-save-error" role="alert">{saveError}</p>}</div>
+          <button type="submit" className="account-primary-button" disabled={saving || !nameInput.trim() || nameInput.trim() === profile.username}>{saving ? 'Saving...' : 'Save changes'}{!saving && <Check size={16} />}</button>
+        </form>
+      </section>
       <div className="profile-settings-stack"><section className="account-panel"><div className="account-panel-heading"><div><h3><Volume2 size={20} />Game preferences</h3></div></div><div className="account-setting-row"><span className="account-card-icon">{soundEnabled ? <Volume2 size={22} /> : <VolumeX size={22} />}</span><div><h4 id="sound-setting-label">Sound effects</h4><p id="sound-setting-description">Clicks, clues, and match celebrations.</p></div><button type="button" role="switch" className="account-switch" aria-checked={soundEnabled} aria-labelledby="sound-setting-label" aria-describedby="sound-setting-description" onClick={toggleSound}><span /></button></div></section>
       <section className="account-panel"><div className="account-panel-heading"><div><h3><ShieldCheck size={20} />Account</h3></div><span className={`account-status-pill ${profile.is_guest ? '' : 'is-connected'}`}>{profile.is_guest ? 'Guest account' : 'Connected'}</span></div><div className="account-connection"><p>{profile.is_guest ? 'Your guest progress is saved on this device. Sign in to keep playing across devices.' : profile.email || 'Your account is connected.'}</p>{profile.is_guest ? <button type="button" className="account-secondary-button" onClick={openAuthModal}><LogIn size={17} />Sign in with Google<ChevronRight size={16} /></button> : <button type="button" className="account-sign-out" onClick={leaveAccount} disabled={signingOut}><LogOut size={17} />{signingOut ? 'Signing out...' : 'Sign out'}</button>}</div></section></div>
     </div></section>
+    <AvatarPickerModal
+      isOpen={avatarModalOpen}
+      onClose={() => setAvatarModalOpen(false)}
+      currentAvatarUrl={profile.avatar_url}
+      onSaveAvatar={handleSaveAvatar}
+    />
   </div>;
 }

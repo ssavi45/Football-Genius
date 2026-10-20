@@ -3,13 +3,61 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BarChart3, BookOpen, ChevronRight, Eye, GitBranch, Star, Target, Trophy, UserRound } from 'lucide-react';
+import { AlertCircle, ArrowRight, BarChart3, BookOpen, ChevronRight, Eye, GitBranch, RefreshCw, Star, Target, Trophy, UserRound } from 'lucide-react';
+import AccountAvatar from '@/components/account/AccountAvatar';
+import { useModeLeaderboard } from '@/lib/account/useModeLeaderboard';
 import { formatJourneyPoints, journeyRevealLimit, journeySkipsLeft, potentialPoints, type JourneyPlayer, type JourneyState } from '@/lib/journeyman';
 
-const community = [
-  { name: 'FootyKing', avatar: 'messi', points: 96 }, { name: 'TacticalPro', avatar: 'zidane', points: 92 },
-  { name: 'GoalAtlas', avatar: 'salah', points: 88 }, { name: 'MidfieldMind', avatar: 'bellingham', points: 84 }, { name: 'JerseyHunter', avatar: 'cruyff', points: 82 },
-];
+function JourneymanLeaderboardSection() {
+  const { entries, loading, error, retry } = useModeLeaderboard('journeyman', 5);
+
+  return (
+    <section className="journey-widget journey-leaderboard" aria-labelledby="journey-leaderboard-heading">
+      <div className="journey-widget-heading">
+        <h2 id="journey-leaderboard-heading"><Trophy /><span>Global Leaderboard<small>Standings</small></span></h2>
+        <Link href="/leaderboard">View All<ArrowRight size={16} /></Link>
+      </div>
+
+      {loading ? (
+        <div className="journey-leaderboard-loading" aria-label="Loading standings" aria-busy="true">
+          {[1, 2, 3, 4, 5].map(rank => (
+            <div key={rank} className="journey-leaderboard-skeleton">
+              <span className={`journey-rank journey-rank-${rank}`}>{rank}</span>
+              <span className="journey-skeleton-avatar" />
+              <span className="journey-skeleton-name" />
+              <span className="journey-skeleton-score" />
+            </div>
+          ))}
+        </div>
+      ) : error ? (
+        <div className="journey-leaderboard-error" role="alert">
+          <span className="journey-leaderboard-error-icon"><AlertCircle size={20} /></span>
+          <p>Rankings unavailable</p>
+          <button type="button" onClick={retry} className="journey-retry-button">
+            <RefreshCw size={13} /> Try again
+          </button>
+        </div>
+      ) : entries.length === 0 ? (
+        <div className="journey-leaderboard-empty" role="status">
+          <span className="journey-leaderboard-empty-icon"><Trophy size={22} /></span>
+          <h3>No rankings yet</h3>
+          <p>Complete today&apos;s journey to claim the #1 spot.</p>
+        </div>
+      ) : (
+        <ol>
+          {entries.map(entry => (
+            <li key={entry.userId || entry.rank}>
+              <span className={`journey-rank journey-rank-${entry.rank}`}>{entry.rank}</span>
+              <AccountAvatar name={entry.name} image={entry.avatar} className="journey-player-avatar" />
+              <span>{entry.name}</span>
+              <strong>{entry.score} pts</strong>
+            </li>
+          ))}
+        </ol>
+      )}
+    </section>
+  );
+}
 const instructions = [
   'Follow the clubs. You have two guesses.',
   'Reveal clubs for clues; each reveal costs points.',
@@ -35,7 +83,7 @@ export default function JourneymanWidgets({ game, player, score, correct }: { ga
     <section className="journey-widget journey-round"><div className="journey-widget-heading"><h2><UserRound fill="currentColor" />Your Round</h2><small>{journeySkipsLeft(game)}/3 skips left</small></div><dl>
       <div><dt><Target />Correct guesses</dt><dd>{correct}</dd></div><div><dt><Eye />Reveals used</dt><dd>{revealsUsed}{!game.complete && `/${revealLimit}`}</dd></div><div><dt><GitBranch />{game.complete ? 'Journeys completed' : 'Clubs uncovered'}</dt><dd>{game.complete ? '10/10' : `${uncovered}/${player.clubs.length}`}</dd></div><div><dt><Star />Round score</dt><dd>{formatJourneyPoints(score)} pts</dd></div>
     </dl></section>
-    <section className="journey-widget journey-leaderboard"><div className="journey-widget-heading"><h2><Trophy /><span>Global Leaderboard<small>Preview</small></span></h2><Link href="/leaderboard">View All<ArrowRight size={16} /></Link></div><ol>{community.map((entry, i) => <li key={entry.name}><span className={`journey-rank journey-rank-${i + 1}`}>{i + 1}</span><Image src={`/img/players/${entry.avatar}.jpg`} width={28} height={28} alt="" /><span>{entry.name}</span><strong>{entry.points} pts</strong></li>)}</ol></section>
+    <JourneymanLeaderboardSection />
     <section className="journey-widget journey-howto"><button type="button" className="journey-widget-heading" onClick={() => setHowToOpen(open => !open)} aria-expanded={howToOpen} aria-controls="journey-instructions"><h2><span className="journey-howto-icon"><BookOpen size={23} /></span>How to Play</h2><ChevronRight className={howToOpen ? 'is-open' : ''} size={21} /></button>{howToOpen && <ol id="journey-instructions">{instructions.map((text, i) => <li key={text}><span>{i + 1}</span><p>{text}</p></li>)}</ol>}</section>
   </aside>;
 }
