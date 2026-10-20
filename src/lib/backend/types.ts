@@ -5,5 +5,6 @@ export interface HigherLowerRun {
   score:number; best:number; roundsPlayed:Record<'left'|'right',number>;
   currentSide:'left'|'right'|null; gameOver:boolean;
   lastPick?:'left'|'right';
+  upcomingImages?:string[];
 }
 export interface RewardEvent { source:string; score:number; xp:number; won:boolean; countsGame?:boolean }

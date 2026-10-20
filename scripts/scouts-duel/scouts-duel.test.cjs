@@ -11,6 +11,8 @@ function room(ai=false,settings={}){const r=createScoutRoom('test-room','ABC234'
 function active(settings={}){const r=room(false,settings);act(r,0,{type:'LOCK_IN_PLAYER',playerId:r.boardIds[0]},players,1001);act(r,1,{type:'LOCK_IN_PLAYER',playerId:r.boardIds[1]},players,1002);r.activeSeat=0;return r;}
 const question=r=>scoutQuestions(players.filter(p=>r.boardIds.includes(p.id))).find(q=>!r.members[r.activeSeat].questions.includes(q.id));
 const ask=(r,seat=r.activeSeat,now=1100)=>act(r,seat,{type:'ASK_QUESTION',questionId:question(r).id},players,now);
+function settle(r){const now=r.pendingShot.resolveAt;r.members.forEach(m=>{if(m)m.lastSeen=now;});tickScoutRoom(r,players,now);}
+function shoot(r,seat,playerId,now){act(r,seat,{type:'SHOOT_GUESS',playerId},players,now);settle(r);}
 
 test('150 unique player identities have valid positions, flags, portraits, and typed truth fields',()=>{
  assert.equal(players.length,150);assert.equal(new Set(players.map(p=>p.id)).size,150);
@@ -62,19 +64,52 @@ test('auto-assist eliminates only contradictions and preserves the actual target
 });
 test('missed shots force elimination and a cooldown without ending the match',()=>{
  const r=active(),wrong=r.boardIds.filter(id=>id!==r.members[1].secretId);
- act(r,0,{type:'SHOOT_GUESS',playerId:wrong[0]},players,1100);assert.equal(r.status,'active');assert.equal(r.activeSeat,1);assert(!r.members[0].remaining.includes(wrong[0]));assert.throws(()=>act(r,0,{type:'UPDATE_BOARD_STATE',playerId:wrong[0]},players,1101),/restored/);
- ask(r);assert.throws(()=>act(r,0,{type:'SHOOT_GUESS',playerId:wrong[1]},players,1200),/question/);ask(r);ask(r);act(r,0,{type:'SHOOT_GUESS',playerId:wrong[1]},players,1300);assert.equal(r.status,'active');assert.equal(r.winner,null);assert.equal(r.members[0].misses,2);
+ shoot(r,0,wrong[0],1100);assert.equal(r.status,'active');assert.equal(r.activeSeat,1);assert(!r.members[0].remaining.includes(wrong[0]));assert.throws(()=>act(r,0,{type:'UPDATE_BOARD_STATE',playerId:wrong[0]},players,1101),/restored/);
+ ask(r);assert.throws(()=>act(r,0,{type:'SHOOT_GUESS',playerId:wrong[1]},players,1200),/question/);ask(r);ask(r);shoot(r,0,wrong[1],1300);assert.equal(r.status,'active');assert.equal(r.winner,null);assert.equal(r.members[0].misses,2);
+});
+
+test('a committed shot has a shared reveal window without exposing the chosen identity or secret',()=>{
+ const r=active(),guess=r.members[1].secretId;
+ act(r,0,{type:'SHOOT_GUESS',playerId:guess},players,1100);
+ assert.equal(r.status,'active');assert.equal(r.logs.length,0);assert(r.pendingShot);
+ for(const seat of [0,1]){
+  const view=scoutView(r,seat,players,1101);assert.equal(view.shot.seat,0);assert.equal(view.shot.resolveAt,3300);
+  assert.equal(view.secrets,null);assert.equal(view.shootAllowed,false);assert(!('playerId' in view.shot));assert(!('pendingShot' in view));
+ }
+ assert.throws(()=>act(r,0,{type:'SHOOT_GUESS',playerId:guess},players,1200),/being resolved/);
+ assert.throws(()=>ask(r,0,1200),/being resolved/);
+ assert.throws(()=>act(r,1,{type:'UPDATE_BOARD_STATE',playerId:r.boardIds[5]},players,1200),/being resolved/);
+ tickScoutRoom(r,players,3299);assert.equal(r.status,'active');assert.equal(r.logs.length,0);
+ settle(r);assert.equal(r.winner,0);assert.equal(r.logs[0].playerId,guess);assert.equal(r.pendingShot,null);
+ tickScoutRoom(r,players,3301);assert.equal(r.logs.length,1);
+});
+
+test('a shot committed just before zero resolves before the turn can time out',()=>{
+ const r=active(),now=r.deadline-1;r.members.forEach(m=>m.lastSeen=now);
+ act(r,0,{type:'SHOOT_GUESS',playerId:r.members[1].secretId},players,now);
+ settle(r);assert.equal(r.status,'completed');assert.equal(r.reason,'CORRECT_SHOOT');assert.equal(r.logs.length,1);assert.equal(r.logs[0].kind,'shoot');
+});
+
+test('resigning during a reveal cancels the pending shot cleanly',()=>{
+ const r=active();act(r,0,{type:'SHOOT_GUESS',playerId:r.members[1].secretId},players,1100);
+ act(r,0,{type:'RESIGN'},players,1200);assert.equal(r.pendingShot,null);assert.equal(r.winner,1);
+ tickScoutRoom(r,players,5000);assert.equal(r.reason,'OPPONENT_RESIGNED');assert.equal(r.logs.length,0);
+});
+
+test('a correct committed shot still resolves if both connections drop during the reveal',()=>{
+ const r=active();act(r,0,{type:'SHOOT_GUESS',playerId:r.members[1].secretId},players,1100);
+ tickScoutRoom(r,players,70000);assert.equal(r.reason,'CORRECT_SHOOT');assert.equal(r.winner,0);
 });
 test('saved hardcore rooms allow repeated misses; correct shots alone award victory XP',()=>{
  const r=active({hardcore:true}),wrong=r.boardIds.filter(id=>id!==r.members[1].secretId);
  for(let i=0;i<4;i++){
-  act(r,0,{type:'SHOOT_GUESS',playerId:wrong[i]},players,r.deadline-1);assert.equal(r.status,'active');assert.equal(r.winner,null);
+  shoot(r,0,wrong[i],r.deadline-1);assert.equal(r.status,'active');assert.equal(r.winner,null);
   // Opponent turn, own cooldown turn, then opponent turn.
   for(let j=0;j<3;j++){const now=r.deadline+1;r.members.forEach(m=>m.lastSeen=now);tickScoutRoom(r,players,now);}
  }
  assert.equal(r.members[0].misses,4);assert.equal(r.activeSeat,0);
- act(r,0,{type:'SHOOT_GUESS',playerId:r.members[1].secretId},players,r.deadline-1);assert.equal(r.reason,'CORRECT_SHOOT');assert.equal(r.winner,0);
- const win=active();act(win,0,{type:'SHOOT_GUESS',playerId:win.members[1].secretId},players,1100);assert.equal(win.winner,0);assert.equal(scoutView(win,0,players,1101).earnedXp,200);assert.equal(scoutView(win,1,players,1101).earnedXp,0);assert(scoutView(win,0,players,1101).secrets.every(Boolean));assert.throws(()=>ask(win),/finished/);
+ shoot(r,0,r.members[1].secretId,r.deadline-1);assert.equal(r.reason,'CORRECT_SHOOT');assert.equal(r.winner,0);
+ const win=active();shoot(win,0,win.members[1].secretId,1100);assert.equal(win.winner,0);assert.equal(scoutView(win,0,players,1101).earnedXp,200);assert.equal(scoutView(win,1,players,1101).earnedXp,0);assert(scoutView(win,0,players,1101).secrets.every(Boolean));assert.throws(()=>ask(win),/finished/);
 });
 test('unsupported custom text does not silently map to false or consume a turn',()=>{
  const r=active(),q=scoutQuestions(players.filter(p=>r.boardIds.includes(p.id)));
@@ -106,7 +141,7 @@ test('questions and timeouts continue past the former turn cap until a correct s
  }
  const seat=r.activeSeat,now=r.deadline-1000;
  ask(r,seat,now);assert.equal(r.status,'active');assert(r.members.every(m=>m.turns>15));assert.equal(scoutView(r,seat,players,now).secrets,null);
- const shooter=r.activeSeat;act(r,shooter,{type:'SHOOT_GUESS',playerId:r.members[1-shooter].secretId},players,now+1);
+ const shooter=r.activeSeat;shoot(r,shooter,r.members[1-shooter].secretId,now+1);
  assert.equal(r.status,'completed');assert.equal(r.winner,shooter);assert.equal(r.reason,'CORRECT_SHOOT');
 });
 
@@ -117,7 +152,7 @@ test('saved final-shootout rooms resume normal alternating play with their secre
  ask(r,1,2002);assert.equal(r.activeSeat,0);assert.equal(r.status,'active');
 });
 test('an empty manually narrowed board reports zero and can restore another candidate after a missed shot',()=>{
- const r=active(),wrong=r.boardIds[2];r.members[0].remaining=[wrong];act(r,0,{type:'SHOOT_GUESS',playerId:wrong},players,1100);
+ const r=active(),wrong=r.boardIds[2];r.members[0].remaining=[wrong];shoot(r,0,wrong,1100);
  assert.equal(scoutView(r,1,players,1101).opponentRemaining,0);
  act(r,0,{type:'UPDATE_BOARD_STATE',playerId:r.boardIds[1]},players,1102);assert.equal(r.members[0].remaining.length,1);
 });
@@ -134,6 +169,7 @@ test('AI games across difficulties reach valid results with both targets retaine
   act(r,0,{type:'LOCK_IN_PLAYER',playerId:r.boardIds[i%24]},players,1001);
   let now=1100;
   for(let step=0;step<80&&r.status!=='completed';step++){
+   if(r.pendingShot){now=r.pendingShot.resolveAt;tickScoutRoom(r,players,now,random);continue;}
    for(const seat of [0,1])assert(r.members[seat].deductions.includes(r.members[1-seat].secretId));
    if(r.activeSeat===1){now=Math.max(now,r.aiDue||now);tickScoutRoom(r,players,now,random);}
    else {const me=r.members[0],board=players.filter(p=>r.boardIds.includes(p.id));const decision=chooseScoutAI(board.filter(p=>me.deductions.includes(p.id)),scoutQuestions(board),me.questions,settings.difficulty,me.turns>=me.shootBlockedUntil,random);act(r,0,decision,players,now);}

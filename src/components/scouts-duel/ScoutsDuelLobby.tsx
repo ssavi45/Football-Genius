@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { ArrowRight, Bot, Globe, LockKeyhole, Users, Copy, Check, LoaderCircle, Settings, Info } from 'lucide-react';
+import { ArrowRight, Bot, Globe, LockKeyhole, Users, Settings, Info } from 'lucide-react';
 import type { ScoutOptions, ScoutRoom, ScoutView } from '@/lib/scouts-duel/types';
+import { ScoutWaitingScreen } from './ScoutMatchMoments';
 
 const MODES = [
   { mode: 'ai' as const, Icon: Bot, image: 'ai', title: 'Duel the AI', copy: 'An instant match against a tactical scout.', action: 'Play vs AI' },
@@ -18,26 +19,14 @@ interface LobbyProps {
   onJoin: (code: string) => void;
   waiting: ScoutView | null;
   onCancel: () => void;
+  error?:string;
 }
 
-export default function ScoutsDuelLobby({ busy, available, onStart, onJoin, waiting, onCancel }: LobbyProps) {
+export default function ScoutsDuelLobby({ busy, available, onStart, onJoin, waiting, onCancel,error }: LobbyProps) {
   const [code, setCode] = useState('');
-  const [copied, setCopied] = useState(false);
   const [options, setOptions] = useState<ScoutOptions>({ difficulty: 'tactician', assistance: false, hardcore: false, turnSeconds: 45 });
 
-  if (waiting) return (
-    <section className="scout-panel scout-waiting">
-      <span className="scout-lobby-emblem"><Users size={35} /></span>
-      <h2>{waiting.mode === 'online' ? 'Finding your opponent' : 'Your room is ready'}</h2>
-      <p>{waiting.mode === 'online' ? 'Keep this page open while another scout joins.' : 'Send this six-character code to your friend.'}</p>
-      {waiting.mode === 'custom' && <button className="scout-room-code" onClick={async () => {
-        try { await navigator.clipboard.writeText(waiting.code); setCopied(true); }
-        catch { setCopied(false); }
-      }}>{waiting.code}{copied ? <Check size={20} /> : <Copy size={20} />}</button>}
-      <p className="scout-waiting-note"><LoaderCircle className="scout-spinner" size={17} />Waiting for another scout…</p>
-      <button className="scout-secondary" onClick={onCancel} disabled={busy}>Cancel search</button>
-    </section>
-  );
+  if(waiting)return <ScoutWaitingScreen match={waiting} mode={waiting.mode} busy={busy} error={error} onCancel={onCancel}/>;
 
   return (
     <div className="scout-lobby">

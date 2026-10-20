@@ -3,6 +3,7 @@ import { evaluateScoutQuestion, scoutQuestions } from './questions';
 import type { Difficulty, ScoutAction, ScoutMember, ScoutOptions, ScoutPlayer, ScoutRoom, ScoutView, Seat } from './types';
 
 const other = (seat: Seat): Seat => seat === 0 ? 1 : 0;
+export const SCOUT_SHOT_REVEAL_MS=2200;
 export class ScoutRuleError extends Error {}
 function requireRule(value: unknown, message: string): asserts value { if (!value) throw new ScoutRuleError(message); }
 export function createScoutMember(name: string, tokenHash: string, now: number, userId: string | null = null, bot = false): ScoutMember {
@@ -21,7 +22,7 @@ export function joinScoutRoom(room: ScoutRoom, member: ScoutMember, now: number)
   member.remaining=[...room.boardIds]; member.deductions=[...room.boardIds]; room.members[1]=member;
   room.status='selecting'; room.deadline=now+30000;
 }
-function finish(room: ScoutRoom, winner: Seat | null, reason: string) { room.status='completed';room.winner=winner;room.reason=reason;room.aiDue=null;room.pause=null; }
+function finish(room: ScoutRoom, winner: Seat | null, reason: string) { room.status='completed';room.winner=winner;room.reason=reason;room.aiDue=null;room.pause=null;room.pendingShot=null; }
 function scheduleAI(room: ScoutRoom, now: number) {
   const delays: Record<Difficulty,number> = { rookie:2500,tactician:1800,'world-class':1200 };
   room.aiDue = room.members[room.activeSeat]?.bot ? now+delays[room.options.difficulty] : null;
@@ -45,6 +46,7 @@ export function applyScoutAction(room: ScoutRoom, seat: Seat, action: ScoutActio
   requireRule(me,'Player not found.'); requireRule(room.status!=='completed','The duel has finished.');
   resumeLegacyShootout(room,now);
   if(action.type==='RESIGN') { if(opponent)finish(room,other(seat),'OPPONENT_RESIGNED');else finish(room,null,'CANCELLED');return; }
+  requireRule(!room.pendingShot,'A shot is being resolved.');
   if(action.type==='LOCK_IN_PLAYER') {
     requireRule(room.status==='selecting'&&!me.secretId,'Selection is already locked.');
     requireRule(room.boardIds.includes(action.playerId),'Choose a player on this board.');
@@ -79,12 +81,19 @@ export function applyScoutAction(room: ScoutRoom, seat: Seat, action: ScoutActio
   requireRule(action.type==='SHOOT_GUESS','Unknown action.');
   requireRule(me.turns>=me.shootBlockedUntil,'Ask a question this turn before shooting again.');
   requireRule(me.remaining.includes(action.playerId),'Choose a remaining candidate.');
-  const hit=action.playerId===opponent.secretId;
-  const player=players.find(p=>p.id===action.playerId)!;
+  room.pendingShot={seat,playerId:action.playerId,resolveAt:now+SCOUT_SHOT_REVEAL_MS};
+  room.aiDue=null;
+}
+function resolveShot(room:ScoutRoom,players:ScoutPlayer[],now:number) {
+  const shot=room.pendingShot!;room.pendingShot=null;
+  const seat=shot.seat,me=room.members[seat]!,opponent=room.members[other(seat)]!;
+  const hit=shot.playerId===opponent.secretId;
+  const player=players.find(p=>p.id===shot.playerId)!;
   log(room,seat,'shoot',`Shoot: ${player.name}`,hit,now);
+  room.logs[room.logs.length-1].playerId=player.id;
   if(hit) { me.turns++;finish(room,seat,'CORRECT_SHOOT');return; }
-  me.misses++; me.forcedOut.push(action.playerId);
-  me.remaining=me.remaining.filter(id=>id!==action.playerId);me.deductions=me.deductions.filter(id=>id!==action.playerId);
+  me.misses++; me.forcedOut.push(player.id);
+  me.remaining=me.remaining.filter(id=>id!==player.id);me.deductions=me.deductions.filter(id=>id!==player.id);
   me.shootBlockedUntil=me.turns+2;pass(room,seat,now);
 }
 
@@ -111,6 +120,8 @@ export function tickScoutRoom(room: ScoutRoom, players: ScoutPlayer[], now: numb
     if(now>=room.deadline) { for(const m of room.members)if(m&&!m.secretId)m.secretId=room.boardIds[Math.floor(random()*24)];start(room,now); }
     return;
   }
+  // Once committed, resolve the shot before any later timeout or disconnect.
+  if(room.pendingShot){if(now>=room.pendingShot.resolveAt)resolveShot(room,players,now);return;}
   if(room.mode!=='ai') {
     const absent=room.members.map(m=>!!m&&!m.bot&&now-m.lastSeen>53000);
     if(absent.every(Boolean)){finish(room,null,'ABANDONED');return;}
@@ -138,5 +149,5 @@ export function tickScoutRoom(room: ScoutRoom, players: ScoutPlayer[], now: numb
 export function scoutView(room: ScoutRoom, seat: Seat, players: ScoutPlayer[], now: number): ScoutView {
   const me=room.members[seat]!,opponent=room.members[other(seat)];
   const find=(id: string | null | undefined)=>players.find(p=>p.id===id)||null;
-  return {id:room.id,code:room.code,mode:room.mode,version:room.version,datasetVersion:room.datasetVersion,seed:room.seed,status:room.status,board:room.boardIds.map(id=>find(id)!),options:room.options,seat,activeSeat:room.activeSeat,deadline:room.deadline,serverNow:now,mySecret:find(me.secretId),opponentLocked:!!opponent?.secretId,opponentName:opponent?.name||'Waiting for a scout',opponentRemaining:opponent?.remaining.length??24,remaining:me.remaining,forcedOut:me.forcedOut,questionCount:me.questions.length,askedIds:me.questions,turn:me.turns+1,shootAllowed:room.status==='active'&&room.activeSeat===seat&&me.turns>=me.shootBlockedUntil,misses:me.misses,logs:room.logs,winner:room.winner,reason:room.reason,secrets:room.status==='completed'?[find(room.members[0].secretId),find(room.members[1]?.secretId)]:null,pause:room.pause?{seat:room.pause.seat,until:room.pause.since+45000}:null,shootoutSubmitted:false,earnedXp:room.status==='completed'&&room.winner===seat?200:0,rewardOnServer:false};
+  return {id:room.id,code:room.code,mode:room.mode,version:room.version,datasetVersion:room.datasetVersion,seed:room.seed,status:room.status,board:room.boardIds.map(id=>find(id)!),options:room.options,seat,activeSeat:room.activeSeat,deadline:room.deadline,serverNow:now,mySecret:find(me.secretId),opponentLocked:!!opponent?.secretId,opponentName:opponent?.name||'Waiting for a scout',opponentRemaining:opponent?.remaining.length??24,remaining:me.remaining,forcedOut:me.forcedOut,questionCount:me.questions.length,askedIds:me.questions,turn:me.turns+1,shootAllowed:room.status==='active'&&!room.pendingShot&&room.activeSeat===seat&&me.turns>=me.shootBlockedUntil,misses:me.misses,logs:room.logs,winner:room.winner,reason:room.reason,secrets:room.status==='completed'?[find(room.members[0].secretId),find(room.members[1]?.secretId)]:null,pause:room.pause?{seat:room.pause.seat,until:room.pause.since+45000}:null,shot:room.pendingShot?{seat:room.pendingShot.seat,resolveAt:room.pendingShot.resolveAt}:null,shootoutSubmitted:false,earnedXp:room.status==='completed'&&room.winner===seat?200:0,rewardOnServer:false};
 }

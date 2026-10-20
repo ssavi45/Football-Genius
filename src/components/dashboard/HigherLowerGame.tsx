@@ -11,7 +11,7 @@ import HigherLowerWidgets from './HigherLowerWidgets';
 import { CoinStack, FootballIcon } from './HigherLowerIcons';
 import { cloudGame } from '@/lib/backend/client';
 import type { CloudRun,HigherLowerRun } from '@/lib/backend/types';
-import { preloadImage } from '@/lib/images/preload';
+import { PORTRAIT_SIZES,preloadComparisonPlayer,preloadPlayerImages } from '@/lib/higher-lower/images';
 
 const CATEGORIES = [
   { id: 'marketValue', label: 'Market Value', icon: CoinStack, available: true },
@@ -36,7 +36,7 @@ function PlayerCard({ player, side, next, opening, mode, hidden, locked, selecte
   return <article data-transfer-id={transfer?.id} className={`hl-player-card ${side === 'right' ? 'hl-next' : 'hl-current'} ${transfer ? 'hl-transfer-card' : ''} ${selected ? correct ? 'hl-picked-correct' : 'hl-picked-wrong' : ''}`}>
     <button type="button" className="hl-card-hit" onClick={onPick} disabled={locked} aria-label={`Choose ${player.name}${transfer ? `, ${transfer.from.name} to ${transfer.to.name}, ${transfer.date}` : ''} as the player with the higher ${comparisonLabels[mode].question}`} />
     <div className="hl-card-background" aria-hidden="true" />
-    <Image key={player.id} className="hl-player-photo" src={player.portrait} alt={player.name} width={512} height={512} sizes="(max-width:700px) 44vw,(max-width:1100px) 35vw,360px" priority />
+    <Image key={player.id} className="hl-player-photo" src={player.portrait} alt={player.name} width={512} height={512} sizes={PORTRAIT_SIZES} priority />
     <div className="hl-player-info">
       <span className={`hl-player-tag ${next ? 'is-next' : ''}`}>{opening ? side === 'left' ? 'Player One' : 'Player Two' : next ? 'Next Player' : 'Current Player'}</span>
       <h2>{player.name}</h2>
@@ -79,6 +79,8 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
   const [picked, setPicked] = useState<CardSide | null>(null);
   const [gameOver, setGameOver] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const transition = useRef(0);
+  const upcoming = useRef<{key:string;player:ComparisonPlayer}|null>(null);
   const locked = useRef(false);
   const restartButton = useRef<HTMLButtonElement>(null);
   const bestKey = `footygen_higher_lower_best:${profile.id}:${mode}`;
@@ -86,9 +88,11 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
 
   function applyCloud(result:CloudRun<HigherLowerRun>) {
     cloud.current=result;const saved=result.state;
+    void preloadPlayerImages(saved.upcomingImages);
     setRunSnapshot({...snapshot,version:saved.version,createdAt:saved.createdAt});setLeft(saved.left);setRight(saved.right);setScore(saved.score);setBest(saved.best);setRoundsPlayed(saved.roundsPlayed);setCurrentSide(saved.currentSide);setGameOver(saved.gameOver);setRevealed(saved.gameOver);setCorrect(saved.gameOver?false:null);setPicked(saved.gameOver?saved.lastPick??null:null);locked.current=false;
   }
   const reset = async (nextMode: Comparison = mode,resume=false) => {
+    transition.current++;upcoming.current=null;
     if (timer.current) clearTimeout(timer.current);
     if(!profile.is_guest){
       if(isLoading||syncing)return;setSyncing(true);locked.current=true;setSyncError('');
@@ -107,21 +111,34 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
   useEffect(() => {
     const first = choosePlayer('marketValue', players);
     setLeft(first); setRight(choosePlayer('marketValue', players, [first.id]));
-    return () => { if (timer.current) clearTimeout(timer.current); };
+    return () => { transition.current++;if (timer.current) clearTimeout(timer.current); };
   }, []);
   useEffect(()=>{
     if(isLoading)return;let active=true;cloud.current=null;
     if(profile.is_guest)return;
     locked.current=true;setSyncing(true);setSyncError('');
     void cloudGame<HigherLowerRun>('higher-lower',mode,'resume').then(result=>{if(active)applyCloud(result);}).catch(cause=>{if(active)setSyncError(cause instanceof Error?cause.message:'Could not load your saved streak.');}).finally(()=>{if(active){setSyncing(false);locked.current=false;}});
-    return()=>{active=false;if(timer.current)clearTimeout(timer.current);};
+    return()=>{active=false;transition.current++;if(timer.current)clearTimeout(timer.current);};
   },[profile.id,profile.is_guest,isLoading]);
+  useEffect(()=>{
+    if(!profile.is_guest||gameOver)return;
+    const key=`${mode}:${runSnapshot.version}:${left.id}:${right.id}`;
+    if(upcoming.current?.key!==key)upcoming.current={key,player:choosePlayer(mode,players,[left.id,right.id])};
+    void preloadComparisonPlayer(upcoming.current.player);
+  },[profile.is_guest,gameOver,mode,runSnapshot.version,left.id,right.id,players]);
   useEffect(() => {
     if(profile.is_guest){try { setBest(Number(localStorage.getItem(bestKey)) || 0); } catch { setBest(0); }}
   }, [bestKey,profile.is_guest]);
   useEffect(() => {
     if (gameOver) restartButton.current?.focus({ preventScroll: true });
   }, [gameOver]);
+
+  function afterReveal(ready:Promise<unknown>,show:()=>void) {
+    const current=++transition.current;
+    timer.current=setTimeout(()=>{
+      void ready.then(()=>{if(transition.current===current)show();});
+    },1200);
+  }
 
   const guess = async (side: CardSide) => {
     if (isLoading || syncing || locked.current || gameOver) return;
@@ -134,14 +151,18 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
     const won = result.correct;
     if(!profile.is_guest){
       const before=cloud.current;if(!before){locked.current=false;setSyncError('Reload this page to reconnect your saved streak.');return;}
+      const requestedAt=transition.current;
       setSyncing(true);setSyncError('');
       try{
-        const response=await cloudGame<HigherLowerRun>('higher-lower',mode,'pick',{runId:before.runId,revision:before.revision,side});cloud.current=response;
-        preloadImage(response.state.left.portrait,360);preloadImage(response.state.right.portrait,360);
+        const response=await cloudGame<HigherLowerRun>('higher-lower',mode,'pick',{runId:before.runId,revision:before.revision,side});
+        if(transition.current!==requestedAt)return;
+        cloud.current=response;
+        const portraits=Promise.all([preloadComparisonPlayer(response.state.left),preloadComparisonPlayer(response.state.right)]);
+        void preloadPlayerImages(response.state.upcomingImages);
         const correct=!response.state.gameOver;setPicked(side);setRevealed(true);setCorrect(correct);setScore(response.state.score);setBest(response.state.best);
         if(correct){sound.playSuccess();if(response.state.score%5===0)void confetti({particleCount:80,spread:60,origin:{y:.6},colors:['#0866ff','#11cc86','#ffbc32'],disableForReducedMotion:true});}
         void refreshProfile().catch(()=>{});
-        timer.current=setTimeout(()=>applyCloud(response),1200);
+        afterReveal(portraits,()=>applyCloud(response));
       }catch(cause){setSyncError(cause instanceof Error?cause.message:'Could not save your pick. Please retry.');locked.current=false;}finally{setSyncing(false);}
       return;
     }
@@ -156,9 +177,9 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
       void addXP(15, 'Higher or Lower Correct Pick');
       sound.playSuccess();
       if (nextScore % 5 === 0) void confetti({ particleCount: 80, spread: 60, origin: { y: .6 }, colors: ['#0866ff', '#11cc86', '#ffbc32'], disableForReducedMotion: true });
-      const replacement = choosePlayer(mode, players, [left.id, right.id]);
-      preloadImage(replacement.portrait,360);
-      timer.current = setTimeout(() => {
+      const key=`${mode}:${runSnapshot.version}:${left.id}:${right.id}`;
+      const replacement=upcoming.current?.key===key?upcoming.current.player:choosePlayer(mode,players,[left.id,right.id]);
+      afterReveal(preloadComparisonPlayer(replacement),() => {
         // Retire a card after its second matchup, even if it wins. Never move the retained card.
         if (result.replace === 'left') {
           setLeft(replacement);
@@ -168,7 +189,7 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
         setCurrentSide(result.survivor);
         setRoundsPlayed(result.roundsPlayed);
         setRevealed(false); setCorrect(null); setPicked(null); locked.current = false;
-      }, 1200);
+      });
     } else {
       // Leave both revealed values visible before showing the end-of-streak panel.
       timer.current = setTimeout(() => setGameOver(true), 1200);

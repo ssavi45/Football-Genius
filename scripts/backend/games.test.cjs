@@ -69,6 +69,65 @@ test('Higher or Lower verifies each pick, grants 15 XP, and records the actual s
   assert.equal(loss.state.gameOver,true);assert.equal(loss.events[0].score,before);assert.equal(loss.events[0].xp,0);
   assert.equal((await games.transitionCloudState('higher-lower',loss.state,'higher-run','pick',{side:'left'})).events.length,0);
 });
+
+test('Higher or Lower reserves the next card before a pick and exposes only its media',async()=>{
+  for(const category of ['marketValue','goals','assists','transfer']){
+    const state=await games.initialCloudState('higher-lower',category),queued=state.queuedPlayer;
+    assert(queued);assert(![state.left.id,state.right.id].includes(queued.id));
+    const publicState=games.publicCloudState('higher-lower',state);
+    assert.equal(publicState.queuedPlayer,undefined);
+    assert.equal(publicState.upcomingImages[0],queued.portrait);
+    assert(publicState.upcomingImages.every(src=>typeof src==='string'));
+    const left=higher.comparisonValue(state.left,category),right=higher.comparisonValue(state.right,category);
+    const rotation=higher.resolveComparisonPick(left,right,left>=right?'left':'right',state.roundsPlayed);
+    const result=await games.transitionCloudState('higher-lower',state,'queued-run','pick',{side:left>=right?'left':'right',queuedPlayer:state.left});
+    assert.equal(result.state[rotation.replace].id,queued.id);
+    assert.equal(result.state[rotation.replace].selectedTransfer?.id,queued.selectedTransfer?.id);
+    assert(![result.state.left.id,result.state.right.id].includes(result.state.queuedPlayer.id));
+  }
+});
+
+test('Higher or Lower can continue old saved streaks without a queued portrait',async()=>{
+  const state=await games.initialCloudState('higher-lower','marketValue');delete state.queuedPlayer;
+  assert.equal(games.publicCloudState('higher-lower',state).upcomingImages.length,0);
+  const left=higher.comparisonValue(state.left,state.category),right=higher.comparisonValue(state.right,state.category);
+  const result=await games.transitionCloudState('higher-lower',state,'legacy-run','pick',{side:left>=right?'left':'right'});
+  assert.equal(result.state.score,1);assert(result.state.queuedPlayer);
+  assert.equal(games.publicCloudState('higher-lower',{...result.state,gameOver:true}).upcomingImages.length,0);
+});
+
+test('Higher or Lower API keeps the queued card in storage across resume, pick and replay',async()=>{
+  let saved=null;
+  const admin={from(){
+    const query={select(){return query;},eq(){return query;},async maybeSingle(){return {data:saved,error:null};},async single(){return {data:saved,error:null};},async upsert(row){saved={...row,revision:0,requests:[]};return {error:null};}};
+    return query;
+  },async rpc(name,input){
+    assert.equal(name,'apply_game_progress');assert.equal(input.p_revision,saved.revision);
+    saved={...saved,state:input.p_state,run_id:input.p_run,revision:saved.revision+1,requests:[...saved.requests,input.p_request]};
+    return {data:saved,error:null};
+  }};
+  const route=path.join(root,'src/app/api/game-progress/route.ts'),exports={};
+  const source=ts.transpileModule(fs.readFileSync(route,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS}}).outputText;
+  vm.runInNewContext(source,{exports,require(name){
+    if(name==='next/server')return {NextResponse:{json:(value,init)=>Response.json(value,init)}};
+    if(name==='@/lib/supabase/server')return {adminSupabase:()=>admin,checkSameOrigin(){},requestUser:async()=>({id:'portrait-test'})};
+    if(name==='@/lib/backend/games')return games;
+    return require(name);
+  }});
+  async function send(action,view,fields={}){
+    const response=await exports.POST(new Request('https://football.test/api/game-progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:'higher-lower',variant:'transfer',action,requestId:require('node:crypto').randomUUID(),runId:view?.runId,revision:view?.revision,...fields})}));
+    assert.equal(response.status,200);const value=await response.json();assert(!('queuedPlayer' in value.state));
+    assert.equal(value.state.upcomingImages[0],saved.state.queuedPlayer.portrait);return value;
+  }
+  const initial=await send('resume'),queued=saved.state.queuedPlayer;
+  const resumed=await send('resume',initial);assert.equal(resumed.state.upcomingImages[0],queued.portrait);
+  const left=higher.comparisonValue(initial.state.left,'transfer'),right=higher.comparisonValue(initial.state.right,'transfer');
+  const requestId=require('node:crypto').randomUUID(),fields={side:left>=right?'left':'right',requestId};
+  const picked=await send('pick',initial,fields);
+  assert([picked.state.left.id,picked.state.right.id].includes(queued.id));
+  const replay=await send('pick',initial,fields);assert.equal(replay.revision,picked.revision);
+  await send('restart',picked);
+});
 test('OAuth return URLs cannot redirect to another origin',()=>{
   const {safeAuthReturnPath}=load(path.join(root,'src/lib/supabase/redirect.ts'));
   assert.equal(safeAuthReturnPath('/profile#settings','https://football.test'),'/profile#settings');

@@ -27,6 +27,7 @@ test('responsive selection caps at source size and leaves external URLs intact',
   assert.equal(imageUrl(src,200),imageUrl(src,256));
   assert.equal(imageUrl(src,9000),imageUrl(src,512));
   assert.match(imageSrcSet(src),/256w/);
+  assert.equal(imageSrcSet(`${src}?v=portrait-hash`),imageSrcSet(src));
   for(const external of ['https://lh3.googleusercontent.com/avatar?s=96','data:image/png;base64,abc','/unlisted.svg'])assert.equal(imageUrl(external,128),external);
 });
 

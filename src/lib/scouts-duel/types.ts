@@ -16,7 +16,7 @@ export interface ScoutMember {
   remaining: string[]; deductions: string[]; forcedOut: string[]; questions: string[];
   turns: number; misses: number; shootBlockedUntil: number; lastSeen: number; shootoutGuess: string | null;
 }
-export interface ScoutLog { id: number; seat: Seat; kind: 'question' | 'shoot' | 'timeout'; text: string; answer: boolean | null; at: number; }
+export interface ScoutLog { id: number; seat: Seat; kind: 'question' | 'shoot' | 'timeout'; text: string; answer: boolean | null; at: number; playerId?:string; }
 // Private server state. Never serialize this object to a browser or Realtime.
 export interface ScoutRoom {
   id: string; code: string; mode: 'ai' | 'online' | 'custom'; version: number; datasetVersion: string;
@@ -26,6 +26,7 @@ export interface ScoutRoom {
   winner: Seat | null; reason: string | null; logs: ScoutLog[]; processed: string[];
   createdAt: number; updatedAt: number; aiDue: number | null;
   pause: { seat: Seat; since: number; remainingMs: number } | null;
+  pendingShot?:{seat:Seat;playerId:string;resolveAt:number}|null;
 }
 export interface ScoutView {
   id: string; code: string; mode: ScoutRoom['mode']; version: number; datasetVersion: string; seed: string;
@@ -35,6 +36,7 @@ export interface ScoutView {
   questionCount: number; askedIds: string[]; turn: number; shootAllowed: boolean; misses: number;
   logs: ScoutLog[]; winner: Seat | null; reason: string | null; secrets: [ScoutPlayer | null, ScoutPlayer | null] | null;
   pause: { seat: Seat; until: number } | null; shootoutSubmitted: boolean; earnedXp: number; rewardOnServer: boolean;
+  shot?:{seat:Seat;resolveAt:number}|null;
 }
 export type ScoutAction = { type: 'LOCK_IN_PLAYER'; playerId: string }
   | { type: 'ASK_QUESTION'; questionId: string }

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "images:build": "node scripts/images/build.cjs",
-    "test:images": "node scripts/images/images.test.cjs",
+    "test:images": "node scripts/images/images.test.cjs && node scripts/images/preload.test.cjs",
     "predev": "npm run images:build",
     "prebuild": "npm run images:build",
     "dev": "next dev -H 0.0.0.0",
@@ -20,7 +20,7 @@
     "test:higher-lower": "node scripts/higher-lower/higher-lower.test.cjs",
     "test:matrix": "node scripts/matrix/matrix.test.cjs",
     "test:journeyman": "node scripts/journeyman/journeyman.test.cjs",
-    "test:scouts-duel": "node scripts/scouts-duel/scouts-duel.test.cjs",
+    "test:scouts-duel": "node scripts/scouts-duel/scouts-duel.test.cjs && node scripts/scouts-duel/feedback.test.cjs",
     "test:scouts-duel:api": "node scripts/scouts-duel/api-smoke.cjs",
     "validate:scouts-duel": "node scripts/scouts-duel/validate-data.cjs",
     "build:journeyman": "node scripts/journeyman/import-dataset.cjs",

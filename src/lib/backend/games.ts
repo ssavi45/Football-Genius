@@ -5,7 +5,7 @@ import { advanceJourney,createJourneyDeck,createJourneyState,journeyQuestionPool
 import { matrixPlayers,getMatrixRound } from '@/lib/matrix/data';
 import { combinationKey,emptyState,setAnswer,submitGrid,viewState } from '@/lib/matrix/engine';
 import type { MatrixDifficulty,MatrixSession } from '@/lib/matrix/types';
-import { chooseComparisonPlayer,comparisonValue,playersFromSnapshot,resolveComparisonPick,type Comparison } from '@/lib/higher-lower';
+import { chooseComparisonPlayer,comparisonValue,playersFromSnapshot,resolveComparisonPick,type Comparison,type ComparisonPlayer } from '@/lib/higher-lower';
 import { getHigherLowerSnapshot } from '@/lib/higher-lower/snapshot-store';
 import bundled from '@/data/higher-lower-snapshot.json';
 import { adminSupabase } from '@/lib/supabase/server';
@@ -13,9 +13,19 @@ import type { HigherLowerSnapshot } from '@/lib/higher-lower/types';
 import type { HigherLowerRun,RewardEvent } from './types';
 
 export type CloudMode='matrix'|'journeyman'|'higher-lower';
-type State=MatrixSession|JourneyState|HigherLowerRun;
+interface HigherLowerState extends HigherLowerRun { queuedPlayer?:ComparisonPlayer }
+type State=MatrixSession|JourneyState|HigherLowerState;
 const random=()=>randomInt(0,2**32)/2**32;
 const journeyPlayers=journeyQuestionPool(roster);
+/** Only media URLs for the queued card leave the server; its stats stay private. */
+export function publicCloudState(mode:CloudMode,state:State):State {
+  if(mode!=='higher-lower')return state;
+  const {queuedPlayer,...view}=state as HigherLowerState;
+  const badges=queuedPlayer?.selectedTransfer
+    ?[queuedPlayer.selectedTransfer.from.crest,queuedPlayer.selectedTransfer.to.crest]
+    :[queuedPlayer?.isRetired?'/img/icons/retired.png':queuedPlayer?.clubBadge,queuedPlayer?.nationalityFlag];
+  return {...view,upcomingImages:queuedPlayer&&!view.gameOver?[queuedPlayer.portrait,...badges.filter((src):src is string=>!!src)]:[]};
+}
 export function gameVariant(mode:string,value:unknown):string {
   if(mode==='matrix')return ['easy','medium','hard'].includes(String(value))?String(value):'medium';
   if(mode==='higher-lower')return ['marketValue','goals','assists','transfer'].includes(String(value))?String(value):'marketValue';
@@ -38,7 +48,8 @@ export async function initialCloudState(mode:CloudMode,variant:string,previous?:
   if(mode==='journeyman')return createJourneyState(createJourneyDeck(journeyPlayers,random,(previous as JourneyState|undefined)?.deck));
   const dataset=await snapshot(),players=playersFromSnapshot(dataset),category=variant as Comparison;
   const left=chooseComparisonPlayer(category,players,[],random),right=chooseComparisonPlayer(category,players,[left.id],random);
-  return {version:dataset.version,createdAt:dataset.createdAt,category,left,right,score:0,best:(previous as HigherLowerRun|undefined)?.best||0,roundsPlayed:{left:0,right:0},currentSide:null,gameOver:false};
+  const queuedPlayer=chooseComparisonPlayer(category,players,[left.id,right.id],random);
+  return {version:dataset.version,createdAt:dataset.createdAt,category,left,right,queuedPlayer,score:0,best:(previous as HigherLowerRun|undefined)?.best||0,roundsPlayed:{left:0,right:0},currentSide:null,gameOver:false};
 }
 export async function transitionCloudState(mode:CloudMode,state:State,runId:string,action:string,input:Record<string,unknown>):Promise<{state:State;events:RewardEvent[]}> {
   const events:RewardEvent[]=[];
@@ -69,12 +80,16 @@ export async function transitionCloudState(mode:CloudMode,state:State,runId:stri
     return {state:next,events};
   }
   if(action!=='pick'||!['left','right'].includes(String(input.side)))throw new Error('Choose a player card.');
-  const before=state as HigherLowerRun;if(before.gameOver)return {state,events};
+  const before=state as HigherLowerState;if(before.gameOver)return {state,events};
   const left=comparisonValue(before.left,before.category),right=comparisonValue(before.right,before.category);
   if(left===null||right===null)throw new Error('This comparison is unavailable.');
   const result=resolveComparisonPick(left,right,input.side as 'left'|'right',before.roundsPlayed);
   if(!result.correct){events.push({source:`${runId}:finished`,score:before.score,xp:0,won:before.score>=3});return {state:{...before,gameOver:true,lastPick:input.side as 'left'|'right'},events};}
   const score=before.score+1;events.push({source:`${runId}:pick:${score}`,score,xp:15,won:true,countsGame:false});
-  const dataset=await snapshot(before.version),replacement=chooseComparisonPlayer(before.category,playersFromSnapshot(dataset),[before.left.id,before.right.id],random);
-  return {state:{...before,[result.replace]:replacement,score,best:Math.max(before.best,score),roundsPlayed:result.roundsPlayed,currentSide:result.survivor},events};
+  const dataset=await snapshot(before.version),players=playersFromSnapshot(dataset);
+  // Older saved streaks have no reservation; prepare their first replacement here.
+  const replacement=before.queuedPlayer||chooseComparisonPlayer(before.category,players,[before.left.id,before.right.id],random);
+  const leftPlayer=result.replace==='left'?replacement:before.left,rightPlayer=result.replace==='right'?replacement:before.right;
+  const queuedPlayer=chooseComparisonPlayer(before.category,players,[leftPlayer.id,rightPlayer.id],random);
+  return {state:{...before,left:leftPlayer,right:rightPlayer,queuedPlayer,score,best:Math.max(before.best,score),roundsPlayed:result.roundsPlayed,currentSide:result.survivor},events};
 }

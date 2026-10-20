@@ -5,7 +5,7 @@ import ScoutPlayerDetails from './ScoutPlayerDetails';
 
 export default function ScoutMatchHud({match,active,seconds,reconnecting}:{match:ScoutView;active:boolean;seconds:number;reconnecting:boolean}) {
   const finished=match.status==='completed';
-  const status=finished?'Duel complete':match.pause||reconnecting?'Reconnecting':match.status==='selecting'?'Choose your secret':active?'Your turn':"Opponent’s turn";
+  const status=finished?'Duel complete':match.pause||reconnecting?'Reconnecting':match.shot?(match.shot.seat===match.seat?'Taking your shot':'Incoming shot'):match.status==='selecting'?'Choose your secret':match.activeSeat===match.seat?'Your turn':"Opponent’s turn";
   const duration=match.pause?45:match.status==='selecting'?30:match.options.turnSeconds;
   const progress=Math.min(1,Math.max(0,seconds/duration));
   const urgent=!finished&&!match.pause&&!reconnecting&&seconds<=10;

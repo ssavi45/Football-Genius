@@ -49,10 +49,21 @@ async function main() {
   const flipped = await action(contexts[seat], { type: 'UPDATE_BOARD_STATE', playerId: flipId });
   assert.equal(flipped.match.remaining.length, 23); assert.equal(flipped.match.questionCount, 1);
   assert.equal((await action(contexts[seat], { type: 'UPDATE_BOARD_STATE', playerId: flipId })).match.remaining.length, 24);
-  const winner = 1 - seat;
-  const win = await action(contexts[winner], { type: 'SHOOT_GUESS', playerId: secret[seat] });
-  assert.equal(win.status, 200); assert.equal(win.match.status, 'completed'); assert.equal(win.match.earnedXp, 200);
-  const loser = await contexts[seat](path);
+  const misser=1-seat,wrong=initial.board.find(player=>player.id!==secret[seat]).id;
+  let missed=await action(contexts[misser],{type:'SHOOT_GUESS',playerId:wrong});
+  assert.equal(missed.status,200);assert.equal(missed.match.shot.seat,misser);
+  for(let poll=0;poll<15&&missed.match.shot;poll++){await new Promise(resolve=>setTimeout(resolve,400));await contexts[seat](path);missed=await contexts[misser](path);}
+  assert.equal(missed.match.status,'active');assert.equal(missed.match.logs.at(-1).answer,false);
+  assert.equal(missed.match.logs.at(-1).playerId,wrong);assert(!missed.match.remaining.includes(wrong));
+  assert.equal(missed.match.activeSeat,seat);assert.equal(missed.match.secrets,null);
+  const winner = seat;
+  let win = await action(contexts[winner], { type: 'SHOOT_GUESS', playerId: secret[1-winner] });
+  assert.equal(win.status, 200);assert.equal(win.match.status,'active');assert.equal(win.match.shot.seat,winner);
+  assert(!('playerId' in win.match.shot));assert.equal(win.match.secrets,null);
+  const incoming=await contexts[1-winner](path);assert.equal(incoming.match.shot.seat,winner);
+  for(let poll=0;poll<15&&win.match.status!=='completed';poll++){await new Promise(resolve=>setTimeout(resolve,400));await contexts[1-winner](path);win=await contexts[winner](path);}
+  assert.equal(win.match.status, 'completed'); assert.equal(win.match.earnedXp, 200);
+  const loser = await contexts[1-winner](path);
   assert.equal(loser.match.earnedXp, 0); assert.equal(loser.match.secrets.filter(Boolean).length, 2);
   await intruder('', { mode: 'ai', name: 'API Intruder' });
   assert.equal((await intruder(path)).status, 403); assert.equal((await client()(path)).status, 401);

@@ -12,6 +12,6 @@ export function imageUrl(src:string,width:number):string {
 }
 
 export function imageSrcSet(src:string):string|undefined {
-  const asset=assets[src];
+  const asset=assets[src.split('?')[0]];
   return asset?.[1].length?asset[1].map(width=>`${imageUrl(src,width)} ${width}w`).join(', '):undefined;
 }
