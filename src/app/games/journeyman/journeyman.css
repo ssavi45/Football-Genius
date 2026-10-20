@@ -10,7 +10,7 @@
 .journey-hero-pills > span { display:flex; align-items:center; justify-content:center; gap:10px; min-height:39px; padding:0 17px; border:1px solid #ffffffa8; border-radius:25px; background:#ffffffed; color:#10204b; box-shadow:0 4px 14px #3769ae06; font-size:13px; font-weight:550; }
 .journey-hero-pills svg { width:21px; height:21px; color:#005eff; stroke-width:2.5; }
 .journey-hero-pills > span:nth-child(3) svg { color:#00a964; }
-.journey-board { position:relative; isolation:isolate; display:flex; flex:1 0 auto; flex-direction:column; justify-content:space-between; gap:18px; min-height:0; padding:18px 22px 20px; border:1px solid #dcecff; border-radius:20px; background:#edf8ff url('/img/journeyman/stadium-timeline.webp') center / cover no-repeat; }
+.journey-board { position:relative; isolation:isolate; display:flex; flex:1 0 auto; flex-direction:column; justify-content:space-between; gap:18px; min-height:0; padding:18px 22px 20px; border:1px solid #dcecff; border-radius:20px; background:#edf8ff var(--image-journey-stadium) center / cover no-repeat; }
 .journey-board::before { content:''; position:absolute; z-index:-1; inset:0; border-radius:inherit; background:linear-gradient(#f4fbff38,#f4fbff35 38%,#eff8ff88 72%,#f6fbffec); }
 .journey-board-heading { display:flex; flex-shrink:0; align-items:center; justify-content:space-between; gap:20px; padding:0 36px; }
 .journey-kicker { margin:0 0 5px; color:#607ca3; font-size:12px; font-weight:750; letter-spacing:1.8px; }

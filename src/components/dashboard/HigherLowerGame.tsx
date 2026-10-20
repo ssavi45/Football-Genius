@@ -11,6 +11,7 @@ import HigherLowerWidgets from './HigherLowerWidgets';
 import { CoinStack, FootballIcon } from './HigherLowerIcons';
 import { cloudGame } from '@/lib/backend/client';
 import type { CloudRun,HigherLowerRun } from '@/lib/backend/types';
+import { preloadImage } from '@/lib/images/preload';
 
 const CATEGORIES = [
   { id: 'marketValue', label: 'Market Value', icon: CoinStack, available: true },
@@ -35,7 +36,7 @@ function PlayerCard({ player, side, next, opening, mode, hidden, locked, selecte
   return <article data-transfer-id={transfer?.id} className={`hl-player-card ${side === 'right' ? 'hl-next' : 'hl-current'} ${transfer ? 'hl-transfer-card' : ''} ${selected ? correct ? 'hl-picked-correct' : 'hl-picked-wrong' : ''}`}>
     <button type="button" className="hl-card-hit" onClick={onPick} disabled={locked} aria-label={`Choose ${player.name}${transfer ? `, ${transfer.from.name} to ${transfer.to.name}, ${transfer.date}` : ''} as the player with the higher ${comparisonLabels[mode].question}`} />
     <div className="hl-card-background" aria-hidden="true" />
-    <Image key={player.id} className="hl-player-photo" src={player.portrait} alt={player.name} width={512} height={512} priority />
+    <Image key={player.id} className="hl-player-photo" src={player.portrait} alt={player.name} width={512} height={512} sizes="(max-width:700px) 44vw,(max-width:1100px) 35vw,360px" priority />
     <div className="hl-player-info">
       <span className={`hl-player-tag ${next ? 'is-next' : ''}`}>{opening ? side === 'left' ? 'Player One' : 'Player Two' : next ? 'Next Player' : 'Current Player'}</span>
       <h2>{player.name}</h2>
@@ -136,6 +137,7 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
       setSyncing(true);setSyncError('');
       try{
         const response=await cloudGame<HigherLowerRun>('higher-lower',mode,'pick',{runId:before.runId,revision:before.revision,side});cloud.current=response;
+        preloadImage(response.state.left.portrait,360);preloadImage(response.state.right.portrait,360);
         const correct=!response.state.gameOver;setPicked(side);setRevealed(true);setCorrect(correct);setScore(response.state.score);setBest(response.state.best);
         if(correct){sound.playSuccess();if(response.state.score%5===0)void confetti({particleCount:80,spread:60,origin:{y:.6},colors:['#0866ff','#11cc86','#ffbc32'],disableForReducedMotion:true});}
         void refreshProfile().catch(()=>{});
@@ -154,9 +156,10 @@ export default function HigherLowerGame({ snapshot }: { snapshot: HigherLowerSna
       void addXP(15, 'Higher or Lower Correct Pick');
       sound.playSuccess();
       if (nextScore % 5 === 0) void confetti({ particleCount: 80, spread: 60, origin: { y: .6 }, colors: ['#0866ff', '#11cc86', '#ffbc32'], disableForReducedMotion: true });
+      const replacement = choosePlayer(mode, players, [left.id, right.id]);
+      preloadImage(replacement.portrait,360);
       timer.current = setTimeout(() => {
         // Retire a card after its second matchup, even if it wins. Never move the retained card.
-        const replacement = choosePlayer(mode, players, [left.id, right.id]);
         if (result.replace === 'left') {
           setLeft(replacement);
         } else {

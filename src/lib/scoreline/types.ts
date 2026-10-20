@@ -20,6 +20,7 @@ export interface PublicMatch {
 }
 export interface Review extends Answer { homeTeam: Team; awayTeam: Team; score: Match['score']; date: string; competition: string; sources: string[]; }
 export interface RoundView {
+  upcomingImages?: string[];
   cloudRevision?: number; rewardOnServer?: boolean;
   token: string; id: string; currentQuestion: number; totalQuestions: number; score: number;
   potential: number; skipsLeft: number; complete: boolean; match: PublicMatch | null;

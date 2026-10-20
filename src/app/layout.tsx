@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Outfit, Orbitron, Bebas_Neue } from 'next/font/google';
 import './globals.css';
+import './image-assets.css';
 import { AuthProvider } from '@/context/auth-context';
 import AppShell from '@/components/layout/AppShell';
 import faviconAssets from '../../public/branding/favicon-assets.json';

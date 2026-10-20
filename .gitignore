@@ -31,5 +31,6 @@ build/
 /tmp/scouts-duel/
 /tmp/backend/
 /tmp/npm-cache/
+/public/img/optimized/
 /scripts/higher-lower/.venv/
 __pycache__/

@@ -10,6 +10,8 @@ import { useAuth } from '@/context/auth-context';
 import { sound } from '@/lib/utils/sound';
 import type { Action, RoundView } from '@/lib/scoreline/types';
 import './scoreline.css';
+import { preloadImage } from '@/lib/images/preload';
+import ImagePreload from '@/components/images/ImagePreload';
 
 const HISTORY_KEY = 'footygen_scoreline_history_v1';
 function readStorage(key: string) { try { return localStorage.getItem(key); } catch { return null; } }
@@ -50,6 +52,10 @@ export default function ScorelineHeroPage() {
   },[isLoading,profile.id,storageKey,request]);
 
   useEffect(() => {
+    round?.upcomingImages?.forEach((src,index)=>preloadImage(src,index===0?480:220));
+  },[round?.id,round?.currentQuestion]);
+
+  useEffect(() => {
     if (!round?.complete) return;
     if(round.rewardOnServer){void refreshProfile().catch(()=>{});return;}
     const claimKey=`footygen_scoreline_claimed_v1:${profile.id}`;
@@ -63,7 +69,7 @@ export default function ScorelineHeroPage() {
 
   const onAction = (action:Action) => { const {type,...fields}=action;void request(type,fields); };
   const freshRound = () => { sound.playClick();void request('start',{force:true}); };
-  if (!round) return <div className="scoreline-loading" role="status"><Trophy size={40} /><h1>{error ? 'Your round needs a fresh start' : 'Setting up your next ten matches…'}</h1><p>{error || 'A balanced mix of club classics and international memories.'}</p>{error && <button onClick={freshRound} disabled={busy}>Start a New Round</button>}</div>;
+  if (!round) return <div className="scoreline-loading" role="status"><ImagePreload src="/img/scoreline/scoreline-hero-logo.png" sizes="(max-width:700px) 100vw,560px"/><Trophy size={40} /><h1>{error ? 'Your round needs a fresh start' : 'Setting up your next ten matches…'}</h1><p>{error || 'A balanced mix of club classics and international memories.'}</p>{error && <button onClick={freshRound} disabled={busy}>Start a New Round</button>}</div>;
 
   return <div className="scoreline-dashboard">
     <div className="scoreline-main">

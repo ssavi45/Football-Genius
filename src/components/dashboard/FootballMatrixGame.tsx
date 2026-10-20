@@ -103,7 +103,7 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
     <div className="matrix-main">
       <header className="matrix-hero">
         <Image className="matrix-hero-art" src="/img/matrix/puzzle-hero.webp" alt="" fill priority sizes="(max-width: 1100px) 100vw, 70vw" />
-        <h1 className="matrix-title"><span className="sr-only">Football Matrix</span><Image src="/img/matrix/football-matrix-logo.webp" alt="" width={2070} height={760} priority /></h1>
+        <h1 className="matrix-title"><span className="sr-only">Football Matrix</span><Image src="/img/matrix/football-matrix-logo.webp" alt="" width={2070} height={760} sizes="(max-width:700px) 85vw,(max-width:1100px) 65vw,620px" priority /></h1>
         <p>Fill the grid with players who satisfy both row and column conditions.</p>
         <div className="matrix-hero-meta"><span><Puzzle />{ready ? `Round #${puzzle.number}` : 'Loading round…'}</span><i /><span className="matrix-grid-label"><Grid2X2 />3 × 3 Matrix</span><i />
           <div className="matrix-difficulty-control"><BarChart3 aria-hidden="true" /><nav className="matrix-difficulty-tabs" role="tablist" aria-label="Puzzle difficulty">

@@ -1,0 +1,13 @@
+tmp
+node_modules
+.next
+.git
+.playwright-mcp
+.vscode
+.env*
+public/img/optimized
+scripts/node_modules
+**/.venv
+__pycache__
+*.log
+tsconfig.tsbuildinfo

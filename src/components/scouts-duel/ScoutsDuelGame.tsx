@@ -1,7 +1,8 @@
 'use client';
 import { useCallback,useEffect,useRef,useState } from 'react';
 import Image from 'next/image';
-import scoutTitle from '../../../public/img/scouts-duel/title-tactical.webp';
+import { imageUrl,imageSrcSet } from '@/lib/images/assets';
+import ImagePreload from '@/components/images/ImagePreload';
 import confetti from 'canvas-confetti';
 import { BookOpen,Check,Crosshair,Flag,History,RotateCcw,Swords,Trophy,Users,Zap } from 'lucide-react';
 import { useAuth } from '@/context/auth-context';
@@ -64,14 +65,20 @@ export default function ScoutsDuelGame(){
   const active=!!match&&match.status==='active'&&match.activeSeat===match.seat&&!match.pause&&!networkError;
   const won=!!match&&match.winner===match.seat;
   return <div className={`scout-game ${match&&match.status!=='waiting'?'has-match':''}`}>
+    {!match&&<>
+      <ImagePreload src="/img/scouts-duel/title-tactical.webp" sizes="(max-width:700px) 245px,380px"/>
+      <ImagePreload src="/img/scouts-duel/hero-mobile-v3.webp" sizes="100vw" media="(max-width:700px)"/>
+      <ImagePreload src="/img/scouts-duel/hero-tablet-v3.webp" sizes="100vw" media="(min-width:701px) and (max-width:1440px) and (max-aspect-ratio:2/1)"/>
+      <ImagePreload src="/img/scouts-duel/hero-desktop-v3.webp" sizes="100vw" media="(min-width:1441px),(min-width:701px) and (min-aspect-ratio:2/1)"/>
+    </>}
     {!restoring&&(!match||match.status==='waiting')&&<section className="scout-hero" aria-labelledby="scout-game-title">
       <picture className="scout-hero-visual" aria-hidden="true">
-        <source media="(max-width: 700px)" srcSet="/img/scouts-duel/hero-mobile-v3.webp" />
-        <source media="(max-width: 1440px) and (max-aspect-ratio: 2/1)" srcSet="/img/scouts-duel/hero-tablet-v3.webp" />
-        <img className="scout-hero-art" src="/img/scouts-duel/hero-desktop-v3.webp" width={2172} height={395} alt="" fetchPriority="high" decoding="async" />
+        <source media="(max-width: 700px)" srcSet={imageSrcSet('/img/scouts-duel/hero-mobile-v3.webp')} sizes="100vw" />
+        <source media="(max-width: 1440px) and (max-aspect-ratio: 2/1)" srcSet={imageSrcSet('/img/scouts-duel/hero-tablet-v3.webp')} sizes="100vw" />
+        <img className="scout-hero-art" src={imageUrl('/img/scouts-duel/hero-desktop-v3.webp',1920)} srcSet={imageSrcSet('/img/scouts-duel/hero-desktop-v3.webp')} sizes="100vw" width={2172} height={395} alt="" fetchPriority="high" decoding="async" />
       </picture>
       <div className="scout-hero-copy">
-        <h1 id="scout-game-title"><Image className="scout-title-art" src={scoutTitle} alt="Scout’s Duel" sizes="(max-width: 700px) 245px, 380px" priority/></h1>
+        <h1 id="scout-game-title"><Image className="scout-title-art" src="/img/scouts-duel/title-tactical.webp" width={1200} height={489} alt="Scout’s Duel" sizes="(max-width: 700px) 245px, 380px" priority/></h1>
         <p className="scout-hero-tagline">Find their player before they find yours.</p>
         <p className="scout-hero-description">24 footballers. Ask questions, rule out suspects, and take your shot.</p>
         <div className="scout-hero-pills"><span><Users size={21}/>1 vs 1</span><span><Zap size={21}/>Instant answers</span><span><Trophy size={21}/>+200 XP</span></div>

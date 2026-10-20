@@ -39,7 +39,7 @@
 .hl-player-card { --accent:#0765ff; --glow:#1476ff24; --edge:#68b0ff; --wash:#e6f2ff; position:relative; isolation:isolate; overflow:hidden; min-width:0; min-height:310px; border:1.5px solid var(--edge); border-radius:22px; background:#fbfdff; box-shadow:0 10px 24px var(--glow),inset 0 0 0 3px white; }
 .hl-player-card::after { position:absolute; z-index:1; content:''; pointer-events:none; inset:2px; border:1px solid #fff; border-radius:20px; }
 .hl-next { --accent:#ff3e64; --edge:#ff90a6; --wash:#fff0f5; --glow:#ff406022; }
-.hl-card-background { position:absolute; z-index:-1; overflow:hidden; inset:3px; border-radius:19px; background:white url('/img/higher-lower/player-burst.png') 15% 50% / cover no-repeat; }
+.hl-card-background { position:absolute; z-index:-1; overflow:hidden; inset:3px; border-radius:19px; background:white var(--image-higher-lower-burst) 15% 50% / cover no-repeat; }
 .hl-next .hl-card-background { filter:hue-rotate(138deg) saturate(.85); }
 .hl-card-background::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent 25%,#f9fcffb0 54%,#f9fcffef 76%),linear-gradient(180deg,transparent 60%,#f9fcff); }
 .hl-next .hl-card-background::after { background:linear-gradient(90deg,transparent 25%,#fff9fbb0 54%,#fff9fbef 76%),linear-gradient(180deg,transparent 60%,#fff9fb); }

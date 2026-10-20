@@ -85,7 +85,9 @@ function review(round: Round, index: number): Review {
 /** Future scores and locked hint text never enter the public response. */
 export function roundView(round: Round, token: string): RoundView {
   const match = matchesById.get(round.matchIds[round.index])!;
+  const upcoming=!round.complete?matchesById.get(round.matchIds[round.index+1]):undefined;
   return {
+    upcomingImages:upcoming?[database.competitions[upcoming.competition].banner,database.teams[upcoming.homeTeam].emblem,database.teams[upcoming.awayTeam].emblem]:[],
     token,id:round.id,currentQuestion:round.complete ? ROUND_LENGTH : round.index+1,totalQuestions:ROUND_LENGTH,
     score:sum(round.answers.map(a=>a.points)),potential:round.complete ? 0 : potential(round.hints),skipsLeft:MAX_SKIPS-round.skips,complete:round.complete,
     match:round.complete ? null : { id:match.id,date:match.date,kind:match.kind,competition:database.competitions[match.competition],competitionLabel:match.competitionLabel,stage:match.stage,homeTeam:database.teams[match.homeTeam],awayTeam:database.teams[match.awayTeam],venue:match.venue,hints:HINT_COSTS.map((cost,index)=>({cost,text:round.hints.includes(index) ? match.hints[index] : null})) },

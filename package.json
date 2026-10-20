@@ -3,6 +3,10 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "images:build": "node scripts/images/build.cjs",
+    "test:images": "node scripts/images/images.test.cjs",
+    "predev": "npm run images:build",
+    "prebuild": "npm run images:build",
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
@@ -41,6 +45,7 @@
     "@types/react-dom": "^19.0.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.2",
+    "sharp": "^0.35.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
   }

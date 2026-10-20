@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import flagBounds from '@/data/scoreline-flag-bounds.json';
+import { imageUrl } from '@/lib/images/assets';
 
 interface Props {
   name: string;
@@ -25,7 +26,7 @@ export default function TeamEmblem({ name, emblem, national }: Props) {
       style={{ width: `${Math.min(1, ratio * .76) * 100}%`, aspectRatio: ratio }}
     >
       {/* Exclude transparent asset padding so rounding follows the flag edges. */}
-      <image href={emblem} width={bounds.canvasWidth} height={bounds.canvasHeight} />
+      <image href={imageUrl(emblem,512)} width={bounds.canvasWidth} height={bounds.canvasHeight} />
     </svg>
   </div>;
 }
