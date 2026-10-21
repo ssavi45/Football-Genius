@@ -295,3 +295,30 @@ test('navbar shows guest portrait and name before Sign In and removes Play Now f
     if (isGuest) assert(html.indexOf('class="navbar-profile-name"') < html.indexOf('class="sign-in"'));
   }
 });
+
+test('leaderboard redesign uses real podium data, removes search, and preserves empty and error states', () => {
+  const React = require('react'); const { renderToStaticMarkup } = require('react-dom/server');
+  let state = { loading: false, error: null, entries: [
+    { rank: 1, userId: 'a', name: 'Alpha Scout', avatar: null, score: 353, level: 2 },
+    { rank: 2, userId: 'b', name: 'Bravo Scout', avatar: null, score: 225, level: 2 },
+    { rank: 3, userId: 'c', name: 'Charlie Scout', avatar: null, score: 200, level: 2 },
+  ], retry() {} };
+  const Page = loader({}, {
+    'lucide-react': new Proxy({}, { get: () => () => React.createElement('svg') }),
+    'next/navigation': { useSearchParams: () => new URLSearchParams() },
+    'next/link': { __esModule: true, default: ({ children, ...props }) => React.createElement('a', props, children) },
+    'next/image': { __esModule: true, default: () => null },
+    '@/context/auth-context': { useAuth: () => ({ profile: { id: 'guest', is_guest: true, username: 'Guest Scout', total_xp: 150, level: 1 } }) },
+    '@/lib/account/useModeLeaderboard': { useModeLeaderboard: () => state },
+  })('src/components/account/LeaderboardPage.tsx').default;
+  const render = () => renderToStaticMarkup(React.createElement(Page));
+  let html = render();
+  assert(html.includes('<h1>Global Leaderboard</h1>')); assert(!html.includes('<input')); assert(!html.includes('ranking-search'));
+  for (const name of ['Alpha Scout', 'Bravo Scout', 'Charlie Scout']) assert(html.includes(name));
+  assert.equal((html.match(/class="lb-podium-place /g) || []).length, 3);
+  assert(html.indexOf('Rank 2: Bravo Scout') < html.indexOf('Rank 1: Alpha Scout')); assert(html.indexOf('Rank 1: Alpha Scout') < html.indexOf('Rank 3: Charlie Scout'));
+  assert(html.includes('Sign in to compete')); assert(html.includes('href="/game-modes"'));
+  state = { ...state, entries: [] }; html = render(); assert(html.includes('A new leaderboard starts here')); assert(!html.includes('Alpha Scout'));
+  state = { ...state, error: 'Service unavailable' }; html = render(); assert(html.includes('Service unavailable')); assert(html.includes('Try again'));
+  state = { ...state, loading: true, error: null }; html = render(); assert(html.includes('Loading the standings'));
+});

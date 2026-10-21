@@ -1,9 +1,12 @@
+import { pageMetadata } from '@/lib/seo/metadata';
 import FootballMatrixGame from '@/components/dashboard/FootballMatrixGame';
 import { randomUUID } from 'node:crypto';
 import { getMatrixRound, matrixDatasetVersion, matrixPlayers } from '@/lib/matrix/data';
 import { criteriaCatalog } from '@/lib/matrix/criteria';
 import type { MatrixDifficulty } from '@/lib/matrix/types';
 import './matrix.css';
+
+export const metadata = pageMetadata('/games/matrix');
 
 export const dynamic = 'force-dynamic';
 

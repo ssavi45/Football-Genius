@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import TopBar from '@/components/navigation/TopBar';
 import Sidebar from '@/components/navigation/Sidebar';
 import AuthModal from '@/components/auth/AuthModal';
+import SiteFooter from './SiteFooter';
 import { isSharedGameRoute } from '@/lib/navigation';
 import './AppShell.css';
 
@@ -41,6 +42,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <main className={`app-page-shell ${isSharedGameRoute(pathname)?'shared-game-shell':''} ${pageClass}`}>
           {children}
         </main>
+        <SiteFooter />
       </div>
       <AuthModal/>
     </div>

@@ -21,7 +21,7 @@ export default function LandingHero() {
         <p className="hero-description">From iconic moments to obscure trivia, challenge yourself<br className="desktop-break" /> across multiple game modes and climb the global leaderboard.</p>
         <div className="hero-actions">
           <Link href="/games/scoreline" className="hero-primary" onClick={() => sound.playClick()} onMouseEnter={() => sound.playHover()}>Start Playing <ArrowRight size={19} /></Link>
-          <a href="/game-modes" className="hero-secondary" onClick={() => sound.playClick()}><Grid2X2 size={23} />Explore Game Modes<ArrowRight size={18} /></a>
+          <Link href="/game-modes" className="hero-secondary" onClick={() => sound.playClick()}><Grid2X2 size={23} />Explore Game Modes<ArrowRight size={18} /></Link>
         </div>
         <div className="hero-stats">
           <div><span className="stat-icon blue"><Users /></span><span><strong>50K+</strong><small>Players Worldwide</small></span></div>

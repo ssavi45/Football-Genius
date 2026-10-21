@@ -1,0 +1,47 @@
+[
+  {
+    "name": "@supabase/ssr",
+    "version": "0.5.2",
+    "licence": "MIT"
+  },
+  {
+    "name": "@supabase/supabase-js",
+    "version": "2.118.0",
+    "licence": "MIT"
+  },
+  {
+    "name": "canvas-confetti",
+    "version": "1.9.4",
+    "licence": "ISC"
+  },
+  {
+    "name": "clsx",
+    "version": "2.1.1",
+    "licence": "MIT"
+  },
+  {
+    "name": "lucide-react",
+    "version": "0.475.0",
+    "licence": "ISC"
+  },
+  {
+    "name": "next",
+    "version": "15.5.28",
+    "licence": "MIT"
+  },
+  {
+    "name": "react",
+    "version": "19.3.1",
+    "licence": "MIT"
+  },
+  {
+    "name": "react-dom",
+    "version": "19.3.1",
+    "licence": "MIT"
+  },
+  {
+    "name": "tailwind-merge",
+    "version": "3.7.0",
+    "licence": "MIT"
+  }
+]

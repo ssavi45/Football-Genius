@@ -6,7 +6,7 @@
     "images:build": "node scripts/images/build.cjs",
     "test:images": "node scripts/images/images.test.cjs && node scripts/images/preload.test.cjs",
     "predev": "npm run images:build",
-    "prebuild": "npm run images:build",
+    "prebuild": "npm run images:build && npm run seo:assets",
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
@@ -24,7 +24,9 @@
     "test:scouts-duel:api": "node scripts/scouts-duel/api-smoke.cjs",
     "validate:scouts-duel": "node scripts/scouts-duel/validate-data.cjs",
     "build:journeyman": "node scripts/journeyman/import-dataset.cjs",
-    "validate:journeyman": "node scripts/journeyman/import-dataset.cjs --check"
+    "validate:journeyman": "node scripts/journeyman/import-dataset.cjs --check",
+    "seo:assets": "node scripts/seo/build-assets.cjs",
+    "test:site": "node scripts/site/site.test.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

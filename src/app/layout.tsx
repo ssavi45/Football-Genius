@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata, SITE_URL } from '@/lib/seo/metadata';
 import { Outfit, Orbitron, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import './image-assets.css';
@@ -26,28 +27,11 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://footygen.online'),
-  title: 'FootyGen Arena — The Ultimate Football IQ Arena',
-  description: 'Test your football encyclopedic knowledge across 8 gamified modes: Scoreline Hero, Scout\'s Duel, Football Matrix, The Journeyman, and more.',
+  ...pageMetadata('/'),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: faviconAssets.icon.map(({ url, type, sizes }) => ({ url: `${url}?v=${faviconAssets.version}`, type, sizes })),
     apple: { url: `${faviconAssets.apple.url}?v=${faviconAssets.version}`, type: faviconAssets.apple.type, sizes: faviconAssets.apple.sizes },
-  },
-  openGraph: {
-    title: 'FootyGen Arena — The Ultimate Football IQ Arena',
-    description: 'Test your football encyclopedic knowledge across 8 gamified modes.',
-    url: 'https://footygen.online',
-    siteName: 'FootyGen Arena',
-    images: [
-      {
-        url: '/stadium_bg.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'FootyGen Arena',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
   },
 };
 

@@ -1,0 +1,152 @@
+[
+  {
+    "path": "/",
+    "title": "Football Genius | Free Football Quiz & Trivia Games",
+    "description": "Play free football quiz games: predict classic scores, solve player grids, follow transfer journeys and challenge a friend in Scout's Duel.",
+    "slug": "home",
+    "tagline": "Know the game. Prove it.",
+    "art": "/img/hero/football_trio_hero.jpg",
+    "accent": "#0865ff",
+    "index": true
+  },
+  {
+    "path": "/game-modes",
+    "title": "Football Quiz Game Modes",
+    "description": "Choose your football challenge. Play Scoreline Hero, Football Matrix, Scout's Duel, The Journeyman and Higher or Lower on Football Genius.",
+    "slug": "game-modes",
+    "tagline": "Choose your game mode.",
+    "art": "/img/game-modes/hero.webp",
+    "accent": "#0865ff",
+    "index": true
+  },
+  {
+    "path": "/games/scoreline",
+    "title": "Scoreline Hero — Football Score Quiz",
+    "description": "Predict the final scores of classic football matches. Use tactical hints, test your memory and earn XP in the free Scoreline Hero football quiz.",
+    "slug": "scoreline",
+    "tagline": "Remember the match. Name the score.",
+    "art": "/img/game-modes/scoreline.webp",
+    "accent": "#0865ff",
+    "index": true
+  },
+  {
+    "path": "/games/matrix",
+    "title": "Football Matrix — Player Grid Quiz",
+    "description": "Solve a nine-cell football grid by matching players to clubs, nations, statistics and trophies. Test your knowledge in the Football Matrix quiz.",
+    "slug": "matrix",
+    "tagline": "Nine cells. Endless connections.",
+    "art": "/img/matrix/puzzle-hero.webp",
+    "accent": "#e79100",
+    "index": true
+  },
+  {
+    "path": "/games/scouts-duel",
+    "title": "Scout's Duel — Football Guess Who Game",
+    "description": "Identify the secret footballer before your opponent does. Ask yes-or-no questions and duel an AI scout or a friend in Scout's Duel.",
+    "slug": "scouts-duel",
+    "tagline": "Find their player before they find yours.",
+    "art": "/img/scouts-duel/hero-desktop-v3.webp",
+    "accent": "#0865ff",
+    "index": true
+  },
+  {
+    "path": "/games/journeyman",
+    "title": "The Journeyman — Football Transfer Quiz",
+    "description": "Recognise a footballer from their club career. Follow transfer trails, reveal clues and identify players in The Journeyman football quiz.",
+    "slug": "journeyman",
+    "tagline": "Follow the clubs. Find the player.",
+    "art": "/img/journeyman/travel-hero.webp",
+    "accent": "#00a875",
+    "index": true
+  },
+  {
+    "path": "/games/higher-lower",
+    "title": "Higher or Lower — Football Value Quiz",
+    "description": "Which footballer has the higher value? Compare players, make your picks and build a streak in the Higher or Lower football quiz on Football Genius.",
+    "slug": "higher-lower",
+    "tagline": "Make the pick. Build your streak.",
+    "art": "/img/game-modes/higher-lower.webp",
+    "accent": "#8d45e8",
+    "index": true
+  },
+  {
+    "path": "/games/tunnel-talk",
+    "title": "Tunnel Talk — Coming Soon",
+    "description": "Tunnel Talk is coming to Football Genius. Get ready to identify football voices and explore our available football quiz games while you wait.",
+    "slug": "tunnel-talk",
+    "tagline": "A new football challenge. Coming soon.",
+    "art": "/img/game-modes/tunnel-talk.webp",
+    "accent": "#3576e9",
+    "index": false
+  },
+  {
+    "path": "/games/pixel-pitch",
+    "title": "Pixel Pitch — Coming Soon",
+    "description": "Pixel Pitch is coming to Football Genius. A football image challenge is on its way. Explore our available football quizzes and games in the meantime.",
+    "slug": "pixel-pitch",
+    "tagline": "A new football challenge. Coming soon.",
+    "art": "/img/game-modes/pixel-pitch.webp",
+    "accent": "#0097bb",
+    "index": false
+  },
+  {
+    "path": "/games/scramble",
+    "title": "Bootroom Scramble — Coming Soon",
+    "description": "Bootroom Scramble is coming to Football Genius. Get ready for football word puzzles and try our available football quiz games while you wait.",
+    "slug": "scramble",
+    "tagline": "A new football challenge. Coming soon.",
+    "art": "/img/game-modes/scramble.webp",
+    "accent": "#e98b15",
+    "index": false
+  },
+  {
+    "path": "/leaderboard",
+    "title": "Football Quiz Leaderboards",
+    "description": "Explore combined XP rankings and individual game leaderboards. See the best recorded scores across Football Genius and find your next challenge.",
+    "slug": "leaderboard",
+    "tagline": "Know the game. Climb the ranks.",
+    "art": "/img/leaderboard/hero.webp",
+    "accent": "#e79100",
+    "index": true
+  },
+  {
+    "path": "/profile",
+    "title": "My Stats, Achievements & Settings",
+    "description": "View your Football Genius game progress, XP, achievements and recent results. Personalise your profile and manage your account preferences.",
+    "slug": "profile",
+    "tagline": "Your football story.",
+    "art": "/img/game-modes/hero.webp",
+    "accent": "#0865ff",
+    "index": false
+  },
+  {
+    "path": "/privacy",
+    "title": "Privacy Policy",
+    "description": "Learn how Football Genius handles account information, guest progress, game results, browser storage and messages submitted through our contact form.",
+    "slug": "privacy",
+    "tagline": "Your privacy. Clearly explained.",
+    "art": null,
+    "accent": "#0865ff",
+    "index": true
+  },
+  {
+    "path": "/licences",
+    "title": "Licences & Credits",
+    "description": "Find third-party software notices, font credits and image source records used by Football Genius, plus information for rights holders.",
+    "slug": "licences",
+    "tagline": "The people and tools behind the game.",
+    "art": null,
+    "accent": "#00a875",
+    "index": true
+  },
+  {
+    "path": "/contact",
+    "title": "Contact Football Genius",
+    "description": "Get in touch with Football Genius. Report a bug, suggest a football quiz improvement or ask a question using our contact form.",
+    "slug": "contact",
+    "tagline": "Talk football. Talk to us.",
+    "art": null,
+    "accent": "#0865ff",
+    "index": true
+  }
+]

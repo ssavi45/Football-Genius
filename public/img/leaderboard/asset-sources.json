@@ -1,0 +1,21 @@
+{
+  "method": "Original artwork created with the built-in Imagegen tool from textual briefs. No screenshot assets were cropped, extracted, traced or reused. Converted to WebP for the site.",
+  "created": "2026-10-21",
+  "assets": [
+    {
+      "path": "/img/leaderboard/hero.webp",
+      "prompt": "Use case: ads-marketing. Asset type: very wide website banner background artwork, 3:1 landscape composition, no typography. Create an original photorealistic premium football arena at night in deep royal blue and midnight navy, cinematic stadium floodlights across the top with a dazzling icy white light just right of centre, curving stadium grandstands and subtle atmospheric haze. One large polished silver-white and navy pentagon football standing on the pitch around 62 percent of image width, occupying 65 percent of image height, entire ball visible, low camera angle. Leave the left 45 percent dark navy and uncluttered for live HTML heading; leave rightmost 20 percent dark blue for a short overlay motto. Crisp realistic football panel seams, specular highlights, blue glow, rich photographic depth, premium sports broadcast visual, visually impressive without excessive lightning. No lettering, no words, no numbers, no logos, no interface, no people, no watermark. The artwork will be cropped responsively to a shallow banner; important ball centred vertically and 62 percent horizontally.",
+      "sha256": "9a49779ecb9656424551b93a4d1c5e5efcd0c829a5b26775474c8d30c16dd460"
+    },
+    {
+      "path": "/img/leaderboard/standing.webp",
+      "prompt": "Use case: ads-marketing. Asset type: portrait website profile card background, 2:3 composition. Original photorealistic football stadium interior at night, midnight navy and electric royal blue. View from pitch level into a bowl of grandstands, luminous cool white stadium floodlights on the upper left and upper right edges, a soft brilliant pale blue-white atmospheric glow around the lower third, clean open navy central sky across the upper half for an HTML avatar and label. Lower quarter fades naturally to very pale icy blue, space to overlay profile statistics in HTML. Premium glossy sports game atmosphere, subtle floating blue particles, elegant realistic depth, realistic green pitch barely visible along the bottom. No football, no trophy, no people, no portraits, no text, no letters, no symbols, no interface, no watermarks.",
+      "sha256": "c9f6e81f4742b16f87b26e9537c60b874554782586a3e73fb340eb94a7097034"
+    },
+    {
+      "path": "/img/leaderboard/trophy.webp",
+      "prompt": "Use case: ads-marketing. Asset type: small horizontal website feature card background artwork, landscape 3:2. Original polished silver European-style football cup with two tall curved handles, on the right third of the image, full trophy visible including its base, set in a nighttime navy-blue stadium. Intense electric blue stadium lighting and a narrow luminous blue diagonal light trail behind the trophy from lower centre to upper right. Dark uncluttered midnight navy negative space filling the left 60 percent for HTML heading and paragraph. A small patch of realistic dark green grass around the trophy base in bottom right. Cinematic polished metal, premium sports broadcast visual, rich photographic detail, high contrast. No logos, no lettering, no words, no numbers, no crowns, no people, no interface, no watermarks.",
+      "sha256": "fca1bbaca806e412e927dc765267d0b4b2c463932c2657fe6f7dfbf53b9ad635"
+    }
+  ]
+}

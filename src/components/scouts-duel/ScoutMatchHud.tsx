@@ -13,7 +13,7 @@ export default function ScoutMatchHud({match,active,seconds,reconnecting}:{match
     <h1 className="sr-only">Scout&rsquo;s Duel</h1>
     <div className="scout-secret">
       <span className="scout-secret-portrait">
-        {match.mySecret?<Image src={match.mySecret.image} width={60} height={68} alt=""/>:<ShieldCheck size={32}/>}
+        {match.mySecret?<Image src={match.mySecret.image} width={60} height={68} alt={`Your secret player: ${match.mySecret.name}`}/>:<ShieldCheck size={32}/>}
         <span className="scout-secret-lock"><LockKeyhole size={11}/></span>
       </span>
       <div className="scout-secret-info"><small>YOUR SECRET PLAYER</small><strong>{match.mySecret?.name||'Choose your player'}</strong>{match.mySecret&&<ScoutPlayerDetails player={match.mySecret}/>}</div>

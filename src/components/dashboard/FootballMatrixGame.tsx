@@ -46,7 +46,7 @@ function Dialog({ children, titleId, onClose, className = '' }: { children: Reac
 
 function CriterionBadge({ criterion }: { criterion: Criterion }) {
   if ((criterion.type !== 'club' && criterion.type !== 'nation') || !criterion.badgeUrl) return null;
-  return <Image className={`matrix-criterion-badge${criterion.type === 'nation' ? ' is-national' : ''}`} src={criterion.badgeUrl} alt="" width={74} height={74} />;
+  return <Image className={`matrix-criterion-badge${criterion.type === 'nation' ? ' is-national' : ''}`} src={criterion.badgeUrl} alt={`${criterion.label} ${criterion.type === 'nation' ? 'flag' : 'crest'}`} width={74} height={74} />;
 }
 
 function MatrixGridSkeleton() {
@@ -184,7 +184,7 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
                 disabled={!ready || pendingRound}
                 aria-label={`${criterion.label} × ${puzzle.colCriteria[col].label}: ${player ? player.name : 'Empty'}${view.finished ? `, ${result}, review criteria` : ', edit player'}`}
                 onClick={() => openCell(cell)}>
-                {player ? <><Image className="matrix-cell-photo" src={player.photoUrl} alt="" width={130} height={130} /><span className="matrix-cell-name">{player.name}</span>{result && <span className="matrix-cell-check">{result === 'correct' ? <Check size={13} /> : <X size={13} />}</span>}</> : view.finished ? <span className="matrix-cell-blank">No answer</span> : <span className="matrix-cell-plus"><Plus strokeWidth={1.8} /></span>}
+                {player ? <><Image className="matrix-cell-photo" src={player.photoUrl} alt={player.name} width={130} height={130} /><span className="matrix-cell-name">{player.name}</span>{result && <span className="matrix-cell-check">{result === 'correct' ? <Check size={13} /> : <X size={13} />}</span>}</> : view.finished ? <span className="matrix-cell-blank">No answer</span> : <span className="matrix-cell-plus"><Plus strokeWidth={1.8} /></span>}
               </button>;
             })}
           </Fragment>)}
@@ -227,7 +227,7 @@ export default function FootballMatrixGame({ puzzle: initialPuzzle, players, cat
         {debounced.trim().length < 2 ? <div className="matrix-search-empty"><Search size={30} /><p>Find your football connection</p><span>Type at least two letters to search by name.</span></div> : results.length ? results.map(player => {
           const used = view.cells.some((id, cell) => cell !== selected && id === player.id);
           const current = selected !== null && view.cells[selected] === player.id;
-          return <button type="button" key={player.id} className="matrix-search-result" disabled={used || current} onClick={() => pick(player)}><span className="matrix-search-avatar"><Image src={player.photoUrl} alt="" width={58} height={58} /></span><span><strong>{player.name}</strong><small>{player.nationality} <b>·</b> {player.club || 'Free agent'}</small></span><em>{used ? 'Used in another cell' : current ? 'Selected' : 'Select'}{!used && !current && <ArrowRight size={17} />}</em></button>;
+          return <button type="button" key={player.id} className="matrix-search-result" disabled={used || current} onClick={() => pick(player)}><span className="matrix-search-avatar"><Image src={player.photoUrl} alt={player.name} width={58} height={58} /></span><span><strong>{player.name}</strong><small>{player.nationality} <b>·</b> {player.club || 'Free agent'}</small></span><em>{used ? 'Used in another cell' : current ? 'Selected' : 'Select'}{!used && !current && <ArrowRight size={17} />}</em></button>;
         }) : <div className="matrix-search-empty"><Search size={28} /><p>No players found</p><span>Try a surname or a different spelling.</span></div>}
       </div><p className="matrix-search-note"><Info size={14} />Selections are editable. Submit the whole grid when you’re ready.</p>
       {selected !== null && view.cells[selected] && <button type="button" className="matrix-remove-answer" onClick={() => { if (edit(selected, null)) setSearchOpen(false); }}><X size={15} />Remove player from this cell</button>}

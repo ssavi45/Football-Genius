@@ -1,9 +1,12 @@
+import { pageMetadata } from '@/lib/seo/metadata';
 ﻿import JourneymanGame from '@/components/dashboard/JourneymanGame';
 import { randomInt } from 'node:crypto';
 import roster from '@/data/transfer-players.json';
 import profiles from '@/data/journeyman-profiles.json';
 import { createJourneyDeck, journeyQuestionPool, type JourneyProfile } from '@/lib/journeyman';
 import './journeyman.css';
+
+export const metadata = pageMetadata('/games/journeyman');
 
 export const dynamic = 'force-dynamic';
 

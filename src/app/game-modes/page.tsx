@@ -190,7 +190,7 @@ export default function GameModesPage() {
           {filteredModes.map(mode => {
             const Icon = mode.icon;
             return <Link key={mode.id} href={mode.route} className={`game-mode-card mode-${mode.id}`} style={{ '--mode-color': mode.color } as React.CSSProperties} onMouseEnter={() => sound.playHover()} onClick={() => sound.playClick()}>
-              <div className="game-mode-art"><Image src={mode.art} alt="" fill sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" /></div>
+              <div className="game-mode-art"><Image src={mode.art} alt={`${mode.title} game illustration`} fill sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" /></div>
               <span className="game-mode-icon" aria-hidden="true">{Icon ? <Icon size={34} strokeWidth={2.8} /> : <span>A</span>}</span>
               <div className="game-mode-copy"><h2>{mode.title}</h2><p>{mode.description}</p></div>
               <span className="game-mode-reward">{mode.xp}</span>
