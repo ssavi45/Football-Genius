@@ -2,12 +2,11 @@
   --app-edge:12px;
   --app-gap:14px;
   --app-navbar-height:64px;
-  --app-footer-height:48px;
   --app-sidebar-width:212px;
   --sidebar-motion-duration:320ms;
   --sidebar-motion-easing:cubic-bezier(.22,1,.36,1);
   --app-header-offset:calc(var(--app-edge) + var(--app-navbar-height) + var(--app-gap));
-  --app-content-height:calc(100dvh - var(--app-edge) * 2 - var(--app-navbar-height) - var(--app-footer-height) - var(--app-gap) * 2);
+  --app-content-height:calc(100dvh - var(--app-edge) * 2 - var(--app-navbar-height) - var(--app-gap));
   display:grid;
   grid-template-columns:var(--app-sidebar-width) minmax(0,1fr);
   align-items:start;
@@ -21,7 +20,7 @@
 }
 .app-frame.is-sidebar-collapsed { --app-sidebar-width:76px; }
 .app-workspace { display:flex; flex-direction:column; gap:var(--app-gap); min-width:0; min-height:calc(100dvh - var(--app-edge) * 2); }
-.app-page-shell { flex:1; min-width:0; width:100%; }
+.app-page-shell { flex:1 0 auto; min-width:0; width:100%; }
 .app-page-shell [id] { scroll-margin-top:calc(var(--app-header-offset) + 8px); }
 .app-page-shell :is(.landing-page,.game-modes-page) { border-radius:22px; overflow:clip; }
 @media(min-width:1024px) {
