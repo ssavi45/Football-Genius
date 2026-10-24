@@ -25,8 +25,10 @@
 .phone-side-button-left { left:-4px; top:109px; height:33px; box-shadow:0 43px 0 #47566e; }
 .phone-side-button-right { right:-8px; top:135px; height:51px; }
 .phone-screen { position:relative; display:flex; flex-direction:column; height:100%; overflow:hidden; padding:30px 0 11px; border:1px solid #0c111f; border-radius:36px; background:#020c16; box-shadow:inset 0 0 0 1px #8bbcff26; }
-.phone-screen-content { position:relative; flex:1; min-height:0; }
+.phone-screen-content { position:relative; display:flex; align-items:center; justify-content:center; flex:1; min-height:0; }
+.phone-screen-art { position:relative; flex:none; height:100%; max-width:100%; aspect-ratio:941 / 1672; }
 .phone-screen-content img { object-fit:contain; object-position:center; }
+.phone-preview-logo { position:absolute; z-index:1; top:.7%; left:2.8%; width:39%; height:7%; overflow:hidden; border-radius:3px; background:#fff; }
 .phone-screen::after { content:''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(113deg,#ffffff24 0%,transparent 36%,transparent 78%,#adc9ff0c); pointer-events:none; }
 .phone-status-bar { position:absolute; z-index:3; top:8px; right:16px; left:20px; display:flex; align-items:center; justify-content:space-between; height:20px; color:#f5f8ff; pointer-events:none; }
 .phone-status-time { font-family:Arial,sans-serif; font-size:10.5px; font-weight:700; line-height:1; letter-spacing:.2px; font-variant-numeric:tabular-nums; }

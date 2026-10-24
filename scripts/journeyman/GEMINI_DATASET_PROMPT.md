@@ -1,10 +1,10 @@
-# Football Genius — verified 300-player Journeyman dataset
+# FootyGen — verified 300-player Journeyman dataset
 
 Copy everything below into Gemini together with the project files it requests.
 
 ---
 
-You are the football data researcher and data engineer for Football Genius. Build a production candidate dataset containing the complete chronological senior club careers of exactly 300 famous real footballers, active and retired, across football history. Accuracy, identity resolution, complete trails, and auditable evidence take priority over filling a quota quickly.
+You are the football data researcher and data engineer for FootyGen. Build a production candidate dataset containing the complete chronological senior club careers of exactly 300 famous real footballers, active and retired, across football history. Accuracy, identity resolution, complete trails, and auditable evidence take priority over filling a quota quickly.
 
 Do actual research. Do not generate plausible careers from memory. Do not state “100% verified”, “all checks passed”, or “runtime ready” unless the attached evidence and executed validators support those specific claims. No model can establish infallibility by assertion. Treat an unresolved fact as a blocker, not permission to guess. If fewer than 300 records can be verified, deliver that honest count and a blocker list; do not invent records to reach 300.
 

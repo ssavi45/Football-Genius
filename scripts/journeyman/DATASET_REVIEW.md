@@ -11,7 +11,7 @@
 
 ## 1. Executive Summary
 
-This deliverable provides the canonical dataset, asset pipeline, search directory, and release validation for the expansion of **The Journeyman** game mode in Football Genius from 20 seed players to **exactly 300 real, verified footballers**.
+This deliverable provides the canonical dataset, asset pipeline, search directory, and release validation for the expansion of **The Journeyman** game mode in FootyGen from 20 seed players to **exactly 300 real, verified footballers**.
 
 Every career record represents the senior, competitive first-team club career of an authentic association football player, audited against historical match sheets, official club archives, Transfermarkt records, and RSSSF databases. No statistics, dates, or club affiliations have been hallucinated.
 

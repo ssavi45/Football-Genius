@@ -1,5 +1,5 @@
 /**
- * Football Genius — One-Time Data Migration to Supabase
+ * FootyGen — One-Time Data Migration to Supabase
  * =====================================================
  * Reads all 3 JSON data files and inserts them into Supabase tables.
  *
@@ -221,7 +221,7 @@ async function migrateGridPlayers() {
 
 // ─── Main ─────────────────────────────────────────────────────────
 async function main() {
-  console.log('🚀 Football Genius — Data Migration to Supabase');
+  console.log('🚀 FootyGen — Data Migration to Supabase');
   console.log('   URL:', SUPABASE_URL);
 
   await migrateGlobalPlayers();

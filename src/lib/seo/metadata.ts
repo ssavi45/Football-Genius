@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import pages from '@/data/page-seo.json';
+import logo from '../../../public/branding/logo-assets.json';
 
 export const SITE_URL = 'https://www.footygen.online';
-export const SITE_NAME = 'Football Genius';
+export const SITE_NAME = 'FootyGen';
 export const CONTACT_EMAIL = 'football.genius.site@gmail.com';
 export const SEO_PAGES = pages;
 
@@ -10,7 +11,7 @@ export function pageMetadata(path: string): Metadata {
   const page = pages.find(item => item.path === path);
   if (!page) throw new Error(`Missing page metadata: ${path}`);
   const title = path === '/' ? page.title : `${page.title} | ${SITE_NAME}`;
-  const image = { url: `${SITE_URL}/social/${page.slug}.jpg`, width: 1200, height: 630, alt: `${SITE_NAME}: ${page.tagline}` };
+  const image = { url: `${SITE_URL}/social/${page.slug}.jpg?v=${logo.sha256.slice(0, 12)}`, width: 1200, height: 630, alt: `${SITE_NAME}: ${page.tagline}` };
   return {
     title: { absolute: title },
     description: page.description,

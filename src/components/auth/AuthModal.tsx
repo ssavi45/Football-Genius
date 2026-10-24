@@ -58,7 +58,7 @@ export default function AuthModal() {
             <Trophy className="h-6 w-6" />
           </div>
           <h2 className="text-2xl font-black text-slate-900 font-outfit tracking-tight">
-            Football Genius Profile
+            FootyGen Profile
           </h2>
           <p className="text-xs text-slate-500 mt-1">
             Save your match streaks & compete on the global leaderboard

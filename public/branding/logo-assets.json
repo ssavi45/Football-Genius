@@ -1,22 +1,18 @@
 {
-  "source": "User-supplied FG Football Genius Logo.png",
-  "sourceSha256": "80f42b5fd8b06d500769520a4b31565a58c68342a7ddee3927327d1925290563",
-  "url": "/branding/football-genius-logo.webp",
+  "source": "User-supplied FootyGen Forward Motion Logo (1).png",
+  "sourceSha256": "c742e2a33e1a31f8d9df8d125e033c78753ddde31fad33d10754b9016f293a94",
+  "url": "/branding/footygen-logo.webp",
   "width": 640,
-  "height": 196,
-  "bytes": 19860,
-  "sha256": "e91d1dd78cd0a590ecc6db0d70fb802eebffa44bac25dfb6654c11355ccbdebe",
+  "height": 174,
+  "bytes": 16154,
+  "sha256": "9d9c1b71e495ef42f7b0f3619a6ed395f3709392669252e3b38e9b4244204d91",
   "mark": {
-    "url": "/branding/football-genius-mark.webp",
+    "source": "User-supplied Glossy FG Soccer App Icon.png",
+    "sourceSha256": "25f3e00bf8334dd299cb52e04dd89978637d146821beeeac5ffcb5ea9487668a",
+    "url": "/branding/footygen-mark.webp",
     "width": 256,
-    "height": 214,
-    "sourceCrop": {
-      "left": 0,
-      "top": 0,
-      "width": 476,
-      "height": 397
-    },
-    "bytes": 8124,
-    "sha256": "03378d331dc29a5764cea79c2b83cb7d3aea005be64a3c54bc0d6b2489575822"
+    "height": 256,
+    "bytes": 16338,
+    "sha256": "6e45f3a57e79d084b5a5f5394e341016a63f3816cdc8daed04bae04dae89e9f2"
   }
 }

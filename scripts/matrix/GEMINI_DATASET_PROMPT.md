@@ -1,4 +1,4 @@
-You are building the verified production dataset for Football Genius's Football Matrix game. Act as a football data researcher and data engineer. Produce auditable data and executable validation, not a memory-based list of plausible statistics.
+You are building the verified production dataset for FootyGen's Football Matrix game. Act as a football data researcher and data engineer. Produce auditable data and executable validation, not a memory-based list of plausible statistics.
 
 1. OBJECTIVE AND INPUTS
 

@@ -1,10 +1,10 @@
 [
   {
     "path": "/",
-    "title": "Football Genius | Free Football Quiz & Trivia Games",
+    "title": "FootyGen | Free Football Quiz & Trivia Games",
     "description": "Play free football quiz games: predict classic scores, solve player grids, follow transfer journeys and challenge a friend in Scout's Duel.",
     "slug": "home",
-    "tagline": "Know the game. Prove it.",
+    "tagline": "Know Football. Prove It.",
     "art": "/img/hero/football_trio_hero.jpg",
     "accent": "#0865ff",
     "index": true
@@ -12,7 +12,7 @@
   {
     "path": "/game-modes",
     "title": "Football Quiz Game Modes",
-    "description": "Choose your football challenge. Play Scoreline Hero, Football Matrix, Scout's Duel, The Journeyman and Higher or Lower on Football Genius.",
+    "description": "Choose your football challenge. Play Scoreline Hero, Football Matrix, Scout's Duel, The Journeyman and Higher or Lower on FootyGen.",
     "slug": "game-modes",
     "tagline": "Choose your game mode.",
     "art": "/img/game-modes/hero.webp",
@@ -62,7 +62,7 @@
   {
     "path": "/games/higher-lower",
     "title": "Higher or Lower — Football Value Quiz",
-    "description": "Which footballer has the higher value? Compare players, make your picks and build a streak in the Higher or Lower football quiz on Football Genius.",
+    "description": "Which footballer has the higher value? Compare players, make your picks and build a streak in the Higher or Lower football quiz on FootyGen.",
     "slug": "higher-lower",
     "tagline": "Make the pick. Build your streak.",
     "art": "/img/game-modes/higher-lower.webp",
@@ -72,7 +72,7 @@
   {
     "path": "/games/tunnel-talk",
     "title": "Tunnel Talk — Coming Soon",
-    "description": "Tunnel Talk is coming to Football Genius. Get ready to identify football voices and explore our available football quiz games while you wait.",
+    "description": "Tunnel Talk is coming to FootyGen. Get ready to identify football voices and explore our available football quiz games while you wait.",
     "slug": "tunnel-talk",
     "tagline": "A new football challenge. Coming soon.",
     "art": "/img/game-modes/tunnel-talk.webp",
@@ -82,7 +82,7 @@
   {
     "path": "/games/pixel-pitch",
     "title": "Pixel Pitch — Coming Soon",
-    "description": "Pixel Pitch is coming to Football Genius. A football image challenge is on its way. Explore our available football quizzes and games in the meantime.",
+    "description": "Pixel Pitch is coming to FootyGen. A football image challenge is on its way. Explore our available football quizzes and games in the meantime.",
     "slug": "pixel-pitch",
     "tagline": "A new football challenge. Coming soon.",
     "art": "/img/game-modes/pixel-pitch.webp",
@@ -92,7 +92,7 @@
   {
     "path": "/games/scramble",
     "title": "Bootroom Scramble — Coming Soon",
-    "description": "Bootroom Scramble is coming to Football Genius. Get ready for football word puzzles and try our available football quiz games while you wait.",
+    "description": "Bootroom Scramble is coming to FootyGen. Get ready for football word puzzles and try our available football quiz games while you wait.",
     "slug": "scramble",
     "tagline": "A new football challenge. Coming soon.",
     "art": "/img/game-modes/scramble.webp",
@@ -102,7 +102,7 @@
   {
     "path": "/leaderboard",
     "title": "Football Quiz Leaderboards",
-    "description": "Explore combined XP rankings and individual game leaderboards. See the best recorded scores across Football Genius and find your next challenge.",
+    "description": "Explore combined XP rankings and individual game leaderboards. See the best recorded scores across FootyGen and find your next challenge.",
     "slug": "leaderboard",
     "tagline": "Know the game. Climb the ranks.",
     "art": "/img/leaderboard/hero.webp",
@@ -112,7 +112,7 @@
   {
     "path": "/profile",
     "title": "My Stats, Achievements & Settings",
-    "description": "View your Football Genius game progress, XP, achievements and recent results. Personalise your profile and manage your account preferences.",
+    "description": "View your FootyGen game progress, XP, achievements and recent results. Personalise your profile and manage your account preferences.",
     "slug": "profile",
     "tagline": "Your football story.",
     "art": "/img/game-modes/hero.webp",
@@ -122,7 +122,7 @@
   {
     "path": "/privacy",
     "title": "Privacy Policy",
-    "description": "Learn how Football Genius handles account information, guest progress, game results, browser storage and messages submitted through our contact form.",
+    "description": "Learn how FootyGen handles account information, guest progress, game results, browser storage and messages submitted through our contact form.",
     "slug": "privacy",
     "tagline": "Your privacy. Clearly explained.",
     "art": null,
@@ -132,7 +132,7 @@
   {
     "path": "/licences",
     "title": "Licences & Credits",
-    "description": "Find third-party software notices, font credits and image source records used by Football Genius, plus information for rights holders.",
+    "description": "Find third-party software notices, font credits and image source records used by FootyGen, plus information for rights holders.",
     "slug": "licences",
     "tagline": "The people and tools behind the game.",
     "art": null,
@@ -141,8 +141,8 @@
   },
   {
     "path": "/contact",
-    "title": "Contact Football Genius",
-    "description": "Get in touch with Football Genius. Report a bug, suggest a football quiz improvement or ask a question using our contact form.",
+    "title": "Contact FootyGen",
+    "description": "Get in touch with FootyGen. Report a bug, suggest a football quiz improvement or ask a question using our contact form.",
     "slug": "contact",
     "tagline": "Talk football. Talk to us.",
     "art": null,

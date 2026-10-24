@@ -1,6 +1,7 @@
 ﻿// Run against a built local server: node scripts/site/smoke.cjs http://127.0.0.1:3107
 const assert = require('node:assert/strict');
 const pages = require('../../src/data/page-seo.json');
+const logo = require('../../public/branding/logo-assets.json');
 const base = process.argv[2] || 'http://127.0.0.1:3107';
 const site = 'https://www.footygen.online';
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&#39;', "'").replaceAll('&quot;', '"');
@@ -11,10 +12,10 @@ async function main() {
     const response = await fetch(base + page.path, { headers: { 'User-Agent': 'facebookexternalhit/1.1' } });
     assert.equal(response.status, 200, page.path);
     const html = await response.text(), head = html.split('</head>')[0];
-    const expectedTitle = page.path === '/' ? page.title : page.title + ' | Football Genius';
+    const expectedTitle = page.path === '/' ? page.title : page.title + ' | FootyGen';
     assert.equal(decode(html.match(/<title>(.*?)<\/title>/)?.[1] || ''), expectedTitle, page.path);
     assert(meta(head, 'description').includes(page.description), page.path + ' crawler description');
-    assert(meta(head, 'og:image').includes(`${site}/social/${page.slug}.jpg`), page.path + ' crawler share image');
+    assert(meta(head, 'og:image').includes(`${site}/social/${page.slug}.jpg?v=${logo.sha256.slice(0, 12)}`), page.path + ' crawler share image');
     assert(meta(head, 'twitter:card').includes('summary_large_image'));
     assert(html.includes('href="/privacy"') && html.includes('href="/licences"') && html.includes('href="/contact"'), page.path + ' footer links');
     if (!page.index) assert(meta(head, 'robots').some(value => value.includes('noindex')), page.path);

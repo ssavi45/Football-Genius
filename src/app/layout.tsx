@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { pageMetadata, SITE_URL } from '@/lib/seo/metadata';
+import { pageMetadata, SITE_NAME, SITE_URL } from '@/lib/seo/metadata';
 import { Outfit, Orbitron, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import './image-assets.css';
@@ -28,6 +28,7 @@ const bebas = Bebas_Neue({
 
 export const metadata: Metadata = {
   ...pageMetadata('/'),
+  applicationName: SITE_NAME,
   metadataBase: new URL(SITE_URL),
   icons: {
     icon: faviconAssets.icon.map(({ url, type, sizes }) => ({ url: `${url}?v=${faviconAssets.version}`, type, sizes })),

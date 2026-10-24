@@ -31,7 +31,7 @@ export default function ContactForm() {
     } finally { pending.current = false; setSending(false); }
   }
 
-  return <form className="contact-form" onSubmit={submit} onChange={() => { submissionId.current = null; setNotice(''); }} aria-label="Contact Football Genius" aria-busy={sending}>
+  return <form className="contact-form" onSubmit={submit} onChange={() => { submissionId.current = null; setNotice(''); }} aria-label="Contact FootyGen" aria-busy={sending}>
     <div className="contact-row"><div className="contact-field"><label htmlFor="contact-name">Your name</label><input id="contact-name" name="name" autoComplete="name" required maxLength={80} disabled={sending} /></div><div className="contact-field"><label htmlFor="contact-email">Email address</label><input id="contact-email" name="email" type="email" autoComplete="email" required maxLength={254} disabled={sending} /></div></div>
     <div className="contact-field"><label htmlFor="contact-topic">What’s it about?</label><select id="contact-topic" name="topic" disabled={sending}>{CONTACT_TOPICS.map(topic => <option key={topic}>{topic}</option>)}</select></div>
     <div className="contact-field"><label htmlFor="contact-message">Your message</label><textarea id="contact-message" name="message" required minLength={10} maxLength={4000} value={message} onChange={event => setMessage(event.target.value)} placeholder="Tell us how we can help. For a bug, include the game mode and what happened." disabled={sending} /><small>{message.length.toLocaleString()} / 4,000</small></div>

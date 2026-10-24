@@ -1,35 +1,36 @@
 {
-  "version": "5e993f08a252",
-  "source": "User-supplied favicon.png",
-  "cornerRadius": "22%",
+  "version": "4a540f3b410b",
+  "source": "User-supplied Glossy FG Soccer App Icon.png",
+  "sourceSha256": "25f3e00bf8334dd299cb52e04dd89978637d146821beeeac5ffcb5ea9487668a",
+  "shape": "Original supplied artwork; no additional crop or corner mask",
   "icon": [
     {
       "url": "/favicon.ico",
       "type": "image/x-icon",
       "sizes": "16x16 32x32 48x48",
-      "bytes": 6909,
-      "sha256": "c82a7d41c822cd02f33039d1a79e9ec919e624534d933a9515f99f9989cedd46"
+      "bytes": 8121,
+      "sha256": "2267e19435a0c8bb5e923a8d44f5ce3bfe78e54501db0fc048b87c381109b05e"
     },
     {
       "url": "/branding/favicon-16x16.png",
       "type": "image/png",
       "sizes": "16x16",
-      "bytes": 787,
-      "sha256": "2122a07268421cb46f9051bfe5e279309119136ed24ab0f82882d6d733536ba5"
+      "bytes": 907,
+      "sha256": "d57059b1a0c37139403edee47b7e721b2a6a5996d670e54b3f39b78791047dc2"
     },
     {
       "url": "/branding/favicon-32x32.png",
       "type": "image/png",
       "sizes": "32x32",
-      "bytes": 2132,
-      "sha256": "4e49e472d5d67740a9fa1ef058f6b9ce8169d778486f69ea371db7a2fbf0f629"
+      "bytes": 2502,
+      "sha256": "2f8908b158b62cb83c393b120cf0b69a98d4862e83927dc6afe73f9ab9c9c25c"
     }
   ],
   "apple": {
     "url": "/branding/apple-touch-icon.png",
     "type": "image/png",
     "sizes": "180x180",
-    "bytes": 32227,
-    "sha256": "1d241307cd3aedb9986ad47a6724ac2b15d662ba8d02e3e780228aa0aac1b156"
+    "bytes": 40496,
+    "sha256": "8caaf3e0ad211684eba879722b50346911bfe8513fff0c7becc7b74a2b831c6b"
   }
 }

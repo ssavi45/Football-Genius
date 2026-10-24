@@ -1,5 +1,5 @@
 -- =====================================================================
---  Football Genius — Supabase Player Data Schema
+--  FootyGen — Supabase Player Data Schema
 --  Run this in your Supabase SQL Editor (Dashboard → SQL Editor → New Query)
 -- =====================================================================
 

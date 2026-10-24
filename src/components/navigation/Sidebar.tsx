@@ -49,7 +49,7 @@ export default function Sidebar({isOpen,onClose,collapsed,onToggleCollapsed}:Sid
     {label:'Achievements',href:'/profile#badges',icon:ShieldCheck,active:pathname==='/profile'&&profileSection==='badges'},
     {label:'Settings',href:'/profile#settings',icon:Settings,active:pathname==='/profile'&&profileSection==='settings'},
   ];
-  const brand=(compact:boolean)=><Link href="/" className="sidebar-brand" aria-label="Football Genius home" onClick={()=>{sound.playClick();onClose();}}><BrandLogo compact={compact}/></Link>;
+  const brand=(compact:boolean)=><Link href="/" className="sidebar-brand" aria-label="FootyGen home" onClick={()=>{sound.playClick();onClose();}}><BrandLogo compact={compact}/></Link>;
   const content=(compact:boolean,id:string)=><div className="sidebar-content">
     <nav id={id} className="sidebar-links" aria-label="Main navigation">{items.map(item=><Link key={item.label} href={item.href} aria-label={item.label} aria-current={item.active?'page':undefined} data-tooltip={compact?item.label:undefined} onMouseEnter={()=>sound.playHover()} onClick={event=>{if(item.href.startsWith('/profile#')&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey&&!event.altKey){const section=item.href.split('#')[1];setProfileSection(section);if(pathname==='/profile'){event.preventDefault();window.location.hash=section;}}sound.playClick();onClose();}}>
       <item.icon aria-hidden="true"/><span className="sidebar-label">{item.label}</span>

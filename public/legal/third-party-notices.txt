@@ -1,8 +1,8 @@
-Football Genius — third-party software notices
+FootyGen — third-party software notices
 
 Generated from installed production packages and their supplied licence files.
 
-These notices do not license Football Genius site artwork, player photographs, club crests or other third-party content.
+These notices do not license FootyGen site artwork, player photographs, club crests or other third-party content.
 
 
 ========================================================================

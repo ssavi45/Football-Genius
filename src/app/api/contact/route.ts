@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 const headers = { 'Cache-Control': 'no-store' };
 
 export async function POST(request: Request) {
-  try { checkSameOrigin(request); } catch { return NextResponse.json({ error: 'Please submit the form from Football Genius.' }, { status: 403, headers }); }
+  try { checkSameOrigin(request); } catch { return NextResponse.json({ error: 'Please submit the form from FootyGen.' }, { status: 403, headers }); }
   try {
     const message = contactMessage(await contactBody(request));
     if (!message) return NextResponse.json({ ok: true }, { headers });

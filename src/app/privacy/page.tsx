@@ -5,9 +5,9 @@ import { CONTACT_EMAIL, pageMetadata } from '@/lib/seo/metadata';
 export const metadata = pageMetadata('/privacy');
 
 export default function PrivacyPage() {
-  return <InfoPage eyebrow="YOUR PRIVACY" title="Privacy policy" description="What we collect, why we use it, and the choices you have when you play Football Genius.">
+  return <InfoPage eyebrow="YOUR PRIVACY" title="Privacy policy" description="What we collect, why we use it, and the choices you have when you play FootyGen.">
     <article className="info-body"><p className="info-date">Last updated: 21 October 2026</p>
-      <p>This policy covers Football Genius at <a href="https://www.footygen.online">www.footygen.online</a>. For privacy questions or requests, use our <Link href="/contact">contact form</Link> or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      <p>This policy covers FootyGen at <a href="https://www.footygen.online">www.footygen.online</a>. For privacy questions or requests, use our <Link href="/contact">contact form</Link> or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       <h2>1. Information you provide</h2>
       <ul><li><strong>Guest play:</strong> a generated guest identifier, display name, chosen avatar, preferences and progress are stored in your browser.</li><li><strong>Signed-in play:</strong> when you sign in with Google, our authentication service receives your account identifier and the profile information supplied during sign-in, such as your name, email address and profile picture. You can choose a different display name and footballer avatar.</li><li><strong>Game activity:</strong> saved rounds, submitted answers, scores, XP, achievements and multiplayer room activity are used to run games and maintain progress and rankings.</li><li><strong>Contact requests:</strong> we receive the name, email address, topic and message you submit, together with the information needed to process the request.</li></ul>
       <h2>2. How we use information</h2>

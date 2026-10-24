@@ -4,7 +4,7 @@ const {createHash}=require('node:crypto');
 const root=path.resolve(__dirname,'../..');
 const folder=path.join(root,'supabase/migrations');
 const files=fs.readdirSync(folder).filter(name=>/^\d+_[a-z0-9_]+\.sql$/.test(name)).sort();
-let sql=`-- Football Genius: fresh-project backend setup\n-- Run in the Supabase SQL Editor for project bcghsiwettjrjxgzbtvu.\n-- Includes migration history; safe to rerun the identical setup.\n-- No API keys or passwords are included.\nbegin;\ncreate table if not exists public.football_genius_migrations(name text primary key,sha256 text not null,applied_at timestamptz not null default now());\nalter table public.football_genius_migrations enable row level security;\nrevoke all on public.football_genius_migrations from anon,authenticated;\ngrant all on public.football_genius_migrations to service_role;\n`;
+let sql=`-- FootyGen: fresh-project backend setup\n-- Run in the Supabase SQL Editor for project bcghsiwettjrjxgzbtvu.\n-- Includes migration history; safe to rerun the identical setup.\n-- No API keys or passwords are included.\nbegin;\ncreate table if not exists public.football_genius_migrations(name text primary key,sha256 text not null,applied_at timestamptz not null default now());\nalter table public.football_genius_migrations enable row level security;\nrevoke all on public.football_genius_migrations from anon,authenticated;\ngrant all on public.football_genius_migrations to service_role;\n`;
 for(const name of files){
   const source=fs.readFileSync(path.join(folder,name),'utf8'),hash=createHash('sha256').update(source).digest('hex');
   const delimiter=`$fg_sql_${hash.slice(0,16)}$`;

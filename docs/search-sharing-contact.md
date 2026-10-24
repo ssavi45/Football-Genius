@@ -18,7 +18,7 @@ The endpoint is `POST /api/contact`. It always sends to **football.genius.site@g
 2. Add a domain you own, such as `footygen.online` or a mail subdomain, and verify the DNS records Resend supplies. The From address must belong to that verified domain. A Gmail address cannot be used as a Resend-verified sending domain.
 3. Create a sending API key. Configure these **server-only** environment variables in `.env.local` for local development and in Vercel **Production** and **Preview**:
    - `RESEND_API_KEY`: the sending API key.
-   - `CONTACT_FROM_EMAIL`: e.g. `Football Genius <contact@footygen.online>`, adjusted to your verified domain.
+   - `CONTACT_FROM_EMAIL`: e.g. `FootyGen <contact@footygen.online>`, adjusted to your verified domain.
 4. Redeploy after updating Vercel environment variables.
 5. Submit a contact request yourself and check both the Resend activity log and the Gmail inbox/spam folder.
 

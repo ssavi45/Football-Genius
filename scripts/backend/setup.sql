@@ -1,4 +1,4 @@
--- Football Genius: fresh-project backend setup
+-- FootyGen: fresh-project backend setup
 -- Run in the Supabase SQL Editor for project bcghsiwettjrjxgzbtvu.
 -- Includes migration history; safe to rerun the identical setup.
 -- No API keys or passwords are included.

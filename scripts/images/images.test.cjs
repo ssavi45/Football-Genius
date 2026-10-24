@@ -32,7 +32,7 @@ test('responsive selection caps at source size and leaves external URLs intact',
 });
 
 test('generated portraits and title artwork retain aspect ratio and transparency',async()=>{
-  for(const[src,width]of [['/img/higher-lower/players/pirlo.png',256],['/img/scoreline/scoreline-hero-logo.png',640],['/img/scouts-duel/title-tactical.webp',640],['/branding/football-genius-logo.webp',320]]){
+  for(const[src,width]of [['/img/higher-lower/players/pirlo.png',256],['/img/scoreline/scoreline-hero-logo.png',640],['/img/scouts-duel/title-tactical.webp',640],['/branding/footygen-logo.webp',320]]){
     const before=await sharp(path.join(root,'public',src)).metadata(),after=await sharp(path.join(root,'public',imageUrl(src,width))).metadata();
     assert.equal(after.format,'webp');assert(after.width<=before.width);
     assert(Math.abs(after.height-Math.round(before.height*after.width/before.width))<=1);

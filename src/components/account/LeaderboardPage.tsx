@@ -64,7 +64,7 @@ export default function LeaderboardPage() {
   return <div className="account-page lb-page">
     <header className="lb-banner">
       <Image className="lb-banner-image" src="/img/leaderboard/hero.webp" alt="" fill priority sizes="(max-width: 1023px) 100vw, 85vw" />
-      <div className="lb-banner-copy"><span>FOOTBALL GENIUS</span><h1>Global Leaderboard</h1><p>Compete with football fans worldwide. Predict, Play, Climb.</p></div>
+      <div className="lb-banner-copy"><span>FOOTYGEN</span><h1>Global Leaderboard</h1><p>Compete with football fans worldwide. Predict, Play, Climb.</p></div>
       <div className="lb-banner-motto" aria-hidden="true"><Crown strokeWidth={1.5} /><span>Same Game.<br />Bigger Minds.</span></div>
     </header>
 

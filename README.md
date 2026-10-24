@@ -1,10 +1,10 @@
 
-# Football Genius — Football Trivia Game
+# FootyGen — Football Trivia Game
 
 [![Live Demo](https://img.shields.io/badge/%F0%9F%9A%80%20Live%20Demo-Production-brightgreen?style=for-the-badge)](https://www.footygen.online/)
 [![Architecture Notes](https://img.shields.io/badge/%F0%9F%93%84%20Architecture-Notes-blue?style=for-the-badge)](#-core-engineering--pipeline-highlights)
 
-**Football Genius** is a production-grade, cloud-native football trivia and interactive game hub designed for football enthusiasts. It showcases automated data-scraping pipelines, secure distributed authentication, real-time multiplayer lobbies, and an intelligent LLM agent engine powered by Google Gemini.
+**FootyGen** (short for *Footy Genius*) is a production-grade, cloud-native football trivia and interactive game hub designed for football enthusiasts. **Know Football. Prove It.** It showcases automated data-scraping pipelines, secure distributed authentication, real-time multiplayer lobbies, and an intelligent LLM agent engine powered by Google Gemini.
 
 ---
 

@@ -67,7 +67,7 @@ export async function sendContact(message: ContactMessage, key: string, from: st
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST', signal: AbortSignal.timeout(12_000),
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', 'Idempotency-Key': `contact-${message.submissionId}` },
-    body: JSON.stringify({ from, to: [CONTACT_EMAIL], reply_to: message.email, subject: `[Football Genius] ${message.topic}`, text: `Name: ${message.name}\nEmail: ${message.email}\nTopic: ${message.topic}\n\n${message.message}` }),
+    body: JSON.stringify({ from, to: [CONTACT_EMAIL], reply_to: message.email, subject: `[FootyGen] ${message.topic}`, text: `Name: ${message.name}\nEmail: ${message.email}\nTopic: ${message.topic}\n\n${message.message}` }),
   });
   if (!response.ok) throw new ContactError(unavailable, 502);
   const result: unknown = await response.json();

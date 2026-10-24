@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import logo from '../../../public/branding/logo-assets.json';
 import './app-download.css';
 import { ArrowUpRight, Check, Wifi, Zap } from 'lucide-react';
 
@@ -23,10 +24,10 @@ export default function AppDownloadSection() {
         <div className="app-promo-copy">
           <span className="app-coming-soon"><span />THE NEXT CHAPTER · COMING SOON</span>
           <h2 id="app-download-title">Big football energy.<br /><span>Pocket-sized.</span></h2>
-          <p>Your football obsession, on the go. Football Genius is coming to iOS and Android. Your next great challenge is always a tap away.</p>
+          <p>Your football obsession, on the go. FootyGen is coming to iOS and Android. Your next great challenge is always a tap away.</p>
           <div className="app-store-links">
-            <a href={APP_URL} className="app-store-link" aria-label="Football Genius on the App Store — coming soon; visit FootyGen for now"><StoreIcon apple /><span><small>COMING SOON ON THE</small><strong>App Store</strong></span><ArrowUpRight className="store-arrow" size={16} /></a>
-            <a href={APP_URL} className="app-store-link" aria-label="Football Genius on Google Play — coming soon; visit FootyGen for now"><StoreIcon /><span><small>COMING SOON ON</small><strong>Google Play</strong></span><ArrowUpRight className="store-arrow" size={16} /></a>
+            <a href={APP_URL} className="app-store-link" aria-label="FootyGen on the App Store — coming soon; visit FootyGen for now"><StoreIcon apple /><span><small>COMING SOON ON THE</small><strong>App Store</strong></span><ArrowUpRight className="store-arrow" size={16} /></a>
+            <a href={APP_URL} className="app-store-link" aria-label="FootyGen on Google Play — coming soon; visit FootyGen for now"><StoreIcon /><span><small>COMING SOON ON</small><strong>Google Play</strong></span><ArrowUpRight className="store-arrow" size={16} /></a>
           </div>
         </div>
         <div className="app-promo-visual" aria-hidden="true">
@@ -44,7 +45,7 @@ export default function AppDownloadSection() {
                 </div>
               </div>
               <div className="phone-camera" />
-              <div className="phone-screen-content"><Image src="/img/app-promo/neon-game-screen.webp" alt="" fill sizes="(max-width: 360px) 190px, (max-width: 480px) 235px, 270px" /></div>
+              <div className="phone-screen-content"><div className="phone-screen-art"><Image src="/img/app-promo/neon-game-screen.webp" alt="" fill sizes="(max-width: 360px) 190px, (max-width: 480px) 235px, 270px" /><span className="phone-preview-logo"><Image src={logo.url} alt="" fill sizes="105px" /></span></div></div>
               <div className="phone-home-bar" />
             </div>
           </div>

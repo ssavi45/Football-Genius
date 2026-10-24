@@ -1,5 +1,5 @@
 /**
- * Football Genius — Automated Stats Updater
+ * FootyGen — Automated Stats Updater
  * ==========================================
  * Scrapes Transfermarkt for updated player stats and pushes changes to Supabase.
  * Designed to run daily via GitHub Actions (see .github/workflows/update-stats.yml).
@@ -406,7 +406,7 @@ async function updateGridPlayers() {
 
 // ─── Main ─────────────────────────────────────────────────────────
 async function main() {
-  console.log('🚀 Football Genius — Automated Stats Update');
+  console.log('🚀 FootyGen — Automated Stats Update');
   console.log(`   Timestamp: ${new Date().toISOString()}`);
   console.log(`   Supabase: ${SUPABASE_URL}`);
 

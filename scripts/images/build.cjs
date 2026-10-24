@@ -79,7 +79,7 @@ async function main(){
   const manifest=Object.fromEntries([...entries].sort(([a],[b])=>a.localeCompare(b)));
   await writeIfChanged(manifestFile,JSON.stringify(manifest)+'\n');
   const backgrounds={
-    'stadium':'/stadium_bg.jpg',
+    'stadium':'/img/hero/stadium.webp',
     'higher-lower-burst':'/img/higher-lower/player-burst.png',
     'journey-stadium':'/img/journeyman/stadium-timeline.webp',
     'matrix-stadium':'/img/matrix/stadium-board.webp',

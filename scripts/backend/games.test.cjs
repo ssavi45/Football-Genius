@@ -143,6 +143,6 @@ test('game requests use the browser Host when Next exposes its internal bind add
   assert.doesNotThrow(()=>checkSameOrigin(request('https://football.test/api/scoreline','https://football.test'),false));
   assert.doesNotThrow(()=>checkSameOrigin(request('http://localhost:3000/api/scoreline'),true));
   for(const [origin,host,development] of [['https://evil.test','localhost:3000',true],['http://localhost:3001','localhost:3000',true],['http://localhost:3000','127.0.0.1:3000',false],['null','localhost:3000',true]]){
-    assert.throws(()=>checkSameOrigin(request('http://0.0.0.0:3000/api/scoreline',origin,host),development),/must come from Football Genius/);
+    assert.throws(()=>checkSameOrigin(request('http://0.0.0.0:3000/api/scoreline',origin,host),development),/must come from FootyGen/);
   }
 });

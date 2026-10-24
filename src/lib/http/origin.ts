@@ -17,5 +17,5 @@ export function checkSameOrigin(request: Request, development = process.env.NODE
       && source.port === destination.port) return;
   } catch { /* Invalid origins are rejected along with foreign hosts. */ }
 
-  throw new Error('This request must come from Football Genius.');
+  throw new Error('This request must come from FootyGen.');
 }

@@ -1,4 +1,4 @@
-# Football Genius backend setup
+# FootyGen backend setup
 
 Project: `bcghsiwettjrjxgzbtvu` (`footygen`). The app's ignored `.env.local` now contains the supplied project URL and publishable key. Both required Supabase packages are already installed.
 

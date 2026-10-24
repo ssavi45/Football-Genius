@@ -29,6 +29,9 @@ test('every public page has a unique title, description, canonical and valid sha
   const titles = new Set(), descriptions = new Set();
   for (const page of SEO_PAGES) {
     const metadata = pageMetadata(page.path);
+    assert(metadata.title.absolute.includes('FootyGen'));
+    assert.equal(metadata.openGraph.siteName, 'FootyGen');
+    assert(!/football genius/i.test(metadata.description));
     assert(!titles.has(metadata.title.absolute)); titles.add(metadata.title.absolute);
     assert(!descriptions.has(metadata.description)); descriptions.add(metadata.description);
     assert(!metadata.title.absolute.includes(' ? ')); assert(metadata.description.length >= 80);
@@ -65,10 +68,10 @@ test('contact JSON reader enforces the actual streamed body size', async () => {
 test('contact email fixes the destination, uses reply-to, and deduplicates retries', async () => {
   let called;
   const send = loader({ fetch: async (url, options) => { called = { url, options }; return { ok: true, json: async () => ({ id: 'provider-message' }) }; } })('src/lib/contact.ts').sendContact;
-  await send(body, 'test-key', 'Football Genius <contact@footygen.online>');
+  await send(body, 'test-key', 'FootyGen <contact@footygen.online>');
   const sent = JSON.parse(called.options.body);
   assert.equal(called.url, 'https://api.resend.com/emails'); assert.deepEqual(sent.to, ['football.genius.site@gmail.com']); assert.equal(sent.reply_to, body.email);
-  assert.equal(sent.from, 'Football Genius <contact@footygen.online>'); assert.equal(called.options.headers['Idempotency-Key'], 'contact-' + body.submissionId); assert.equal(sent.html, undefined);
+  assert.equal(sent.from, 'FootyGen <contact@footygen.online>'); assert.equal(called.options.headers['Idempotency-Key'], 'contact-' + body.submissionId); assert.equal(sent.html, undefined);
 });
 function route(env = {}, fetch = () => { throw Error('Unexpected email send'); }) {
   return loader({ fetch, process: { env: { NODE_ENV: 'production', ...env } } }, { 'next/server': { NextResponse: { json: (value, options) => Response.json(value, options) } } })('src/app/api/contact/route.ts').POST;

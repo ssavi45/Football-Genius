@@ -1,8 +1,8 @@
 {
-  "name": "football-genius-updater",
+  "name": "footygen-updater",
   "version": "1.0.0",
   "private": true,
-  "description": "Data migration and automated stat updater for Football Genius",
+  "description": "Data migration and automated stat updater for FootyGen",
   "scripts": {
     "migrate": "node migrate-to-supabase.js",
     "update": "node update-stats.js"

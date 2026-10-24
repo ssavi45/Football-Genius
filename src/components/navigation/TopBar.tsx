@@ -65,7 +65,7 @@ export default function TopBar({ onToggleMobileMenu, isMobileMenuOpen }: TopBarP
           <button type="button" onClick={onToggleMobileMenu} className="menu-toggle" aria-label="Toggle navigation menu" aria-expanded={isMobileMenuOpen} aria-controls="mobile-sidebar">
             {isMobileMenuOpen?<X size={21}/>:<Menu size={21}/>}
           </button>
-          <span>{pathname==='/'?'Home':pathname==='/game-modes'?'Game Modes':pathname==='/leaderboard'?'Leaderboard':pathname==='/profile'?'My Profile':isGameModesActive?'Game Modes':'Football Genius'}</span>
+          <span>{pathname==='/'?'Home':pathname==='/game-modes'?'Game Modes':pathname==='/leaderboard'?'Leaderboard':pathname==='/profile'?'My Profile':isGameModesActive?'Game Modes':'FootyGen'}</span>
         </div>
 
         {/* Center: In-Game vs Standard Nav */}
