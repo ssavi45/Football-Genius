@@ -1,176 +1,93 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/asset_paths.dart';
+
+import '../home_style.dart';
 
 class ScoutsDuelBanner extends StatelessWidget {
+  const ScoutsDuelBanner({super.key, this.onPlayNow, this.extraHeight = 0});
+  final double extraHeight;
   final VoidCallback? onPlayNow;
-
-  const ScoutsDuelBanner({
-    super.key,
-    this.onPlayNow,
-  });
-
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      child: Container(
-        height: 126,
+    final u = HomeStyle.unit(context);
+    final large = HomeStyle.largeText(context);
+    return LayoutBuilder(
+      builder: (context, constraints) => Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: AppColors.trophyGold.withAlpha(90),
-            width: 1.2,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.trophyGold.withAlpha(20),
-              blurRadius: 16,
-              spreadRadius: 1,
-            ),
-          ],
+          borderRadius: BorderRadius.circular(15 * u),
+          boxShadow: HomeStyle.shadow,
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(19),
+          borderRadius: BorderRadius.circular(15 * u),
           child: Stack(
             children: [
-              // High-res Scout's Duel background artwork
-              Positioned.fill(
-                child: Image.asset(
-                  AssetPaths.cardScoutsDuel,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) =>
-                      const SizedBox.shrink(),
+              const Positioned.fill(child: HomeArtwork(HomeArt.scoutsDuel)),
+              if (large)
+                const Positioned.fill(
+                  child: ColoredBox(color: Color(0x85031D25)),
                 ),
-              ),
-
-              // Gradient fade from dark left (for text readability) to transparent right
-              Positioned.fill(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        AppColors.pitchBlack.withAlpha(240),
-                        AppColors.pitchBlack.withAlpha(170),
-                        AppColors.pitchBlack.withAlpha(40),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                  ),
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight:
+                      (constraints.maxWidth / 3.6).clamp(
+                        112 * u,
+                        double.infinity,
+                      ) +
+                      extraHeight,
                 ),
-              ),
-
-              // Content Layout
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-                child: Row(
-                  children: [
-                    // Left: Crossed Swords Icon with golden halo
-                    Container(
-                      width: 48,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: AppColors.pitchBlack.withAlpha(180),
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: AppColors.trophyGold.withAlpha(120),
-                          width: 1.2,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.trophyGold.withAlpha(30),
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                      child: const Center(
-                        child: Icon(
-                          Icons.military_tech_rounded,
-                          color: AppColors.trophyGold,
-                          size: 28,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 14),
-
-                    // Middle Column: Title, Subtitle, Play Now Button
-                    Expanded(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(37 * u, 11 * u, 12 * u, 7 * u),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    heightFactor: 1,
+                    child: SizedBox(
+                      width: constraints.maxWidth * (large ? .9 : .57),
                       child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          RichText(
-                            text: TextSpan(
-                              style: GoogleFonts.outfit(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: -0.3,
-                              ),
-                              children: const [
+                          Text.rich(
+                            const TextSpan(
+                              children: [
+                                TextSpan(text: "Scout’s "),
                                 TextSpan(
-                                  text: "Scout's ",
-                                  style: TextStyle(color: AppColors.textPrimary),
-                                ),
-                                TextSpan(
-                                  text: "Duel",
-                                  style: TextStyle(color: AppColors.trophyGold),
+                                  text: 'Duel',
+                                  style: TextStyle(color: Color(0xFFFFD43A)),
                                 ),
                               ],
                             ),
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                            'Play AI or a friend',
-                            style: GoogleFonts.outfit(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.textSecondary,
+                            style: HomeStyle.text(
+                              22 * u,
+                              color: Colors.white,
+                              weight: FontWeight.w800,
+                              spacing: -.5,
                             ),
                           ),
-                          const SizedBox(height: 8),
-                          // Small Pill Button: Play Now >
-                          GestureDetector(
-                            onTap: onPlayNow,
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 6,
+                          SizedBox(height: 2 * u),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.people_alt_rounded,
+                                size: 18 * u,
+                                color: const Color(0xFFCBD4D5),
                               ),
-                              decoration: BoxDecoration(
-                                color: AppColors.pitchBlack.withAlpha(220),
-                                borderRadius: BorderRadius.circular(16),
-                                border: Border.all(
-                                  color: AppColors.trophyGold.withAlpha(180),
-                                  width: 1.2,
+                              SizedBox(width: 6 * u),
+                              Expanded(
+                                child: Text(
+                                  'Play AI or a friend',
+                                  style: HomeStyle.text(
+                                    12 * u,
+                                    color: const Color(0xFFC8CECF),
+                                  ),
                                 ),
                               ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Play Now',
-                                    style: GoogleFonts.outfit(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w800,
-                                      color: AppColors.textPrimary,
-                                    ),
-                                  ),
-                                  const SizedBox(width: 5),
-                                  const Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    size: 10,
-                                    color: AppColors.trophyGold,
-                                  ),
-                                ],
-                              ),
-                            ),
+                            ],
                           ),
+                          SizedBox(height: 2 * u),
+                          HomeGoldButton(label: 'Play Now', onTap: onPlayNow),
                         ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ],

@@ -1,244 +1,172 @@
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../../../../core/constants/app_colors.dart';
+
+import '../home_style.dart';
 
 class HomeStatsRibbon extends StatelessWidget {
   const HomeStatsRibbon({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-        decoration: BoxDecoration(
-          color: AppColors.darkPill,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppColors.borderSubtle),
+    final u = HomeStyle.unit(context);
+    final large = HomeStyle.largeText(context);
+    final sections = [
+      _metric(
+        context,
+        Icon(
+          Icons.local_fire_department_rounded,
+          color: const Color(0xFFFF8A00),
+          size: 30 * u,
         ),
-        child: Row(
-          children: [
-            // Segment 1: 7 Day Streak
-            Expanded(
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.local_fire_department_rounded,
-                    color: AppColors.flameOrange,
-                    size: 24,
-                  ),
-                  const SizedBox(width: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        '7 Day',
-                        style: GoogleFonts.outfit(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w800,
-                          color: AppColors.textPrimary,
-                          height: 1.1,
-                        ),
-                      ),
-                      Text(
-                        'Streak',
-                        style: GoogleFonts.outfit(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+        Text('7 Day', style: HomeStyle.text(14 * u, weight: FontWeight.w800)),
+        Text('Streak', style: HomeStyle.text(12 * u, color: HomeStyle.muted)),
+      ),
+      _metric(
+        context,
+        CustomPaint(
+          painter: _HexagonPainter(),
+          child: SizedBox(
+            width: 29 * u,
+            height: 32 * u,
+            child: Center(
+              child: Text(
+                '12',
+                style: HomeStyle.text(13 * u, weight: FontWeight.w800),
               ),
             ),
-
-            // Divider 1
-            Container(
-              width: 1,
-              height: 28,
-              color: AppColors.borderSubtle,
-            ),
-            const SizedBox(width: 10),
-
-            // Segment 2: Level 12
-            Expanded(
-              child: Row(
-                children: [
-                  CustomPaint(
-                    size: const Size(26, 26),
-                    painter: _HexagonBadgePainter(),
-                    child: SizedBox(
-                      width: 26,
-                      height: 26,
-                      child: Center(
-                        child: Text(
-                          '12',
-                          style: GoogleFonts.outfit(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w900,
-                            color: AppColors.textPrimary,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: GoogleFonts.outfit(fontSize: 13, height: 1.1),
-                            children: const [
-                              TextSpan(
-                                text: 'Level ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.textSecondary,
-                                ),
-                              ),
-                              TextSpan(
-                                text: '12',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  color: AppColors.textPrimary,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        // Mini level progress bar
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(3),
-                          child: Container(
-                            height: 4,
-                            width: double.infinity,
-                            color: Colors.white12,
-                            child: FractionallySizedBox(
-                              alignment: Alignment.centerLeft,
-                              widthFactor: 0.55,
-                              child: Container(
-                                color: AppColors.neonGreen,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+          ),
+        ),
+        Text.rich(
+          TextSpan(
+            children: [
+              const TextSpan(
+                text: 'Level ',
+                style: TextStyle(
+                  color: Color(0xFF626B77),
+                  fontWeight: FontWeight.w500,
+                ),
               ),
+              const TextSpan(text: '12'),
+            ],
+          ),
+          style: HomeStyle.text(13.5 * u, weight: FontWeight.w800),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 4 * u),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: LinearProgressIndicator(
+              value: .55,
+              minHeight: 5 * u,
+              color: HomeStyle.green,
+              backgroundColor: const Color(0xFFE3E8E8),
             ),
-
-            const SizedBox(width: 10),
-            // Divider 2
-            Container(
-              width: 1,
-              height: 28,
-              color: AppColors.borderSubtle,
-            ),
-            const SizedBox(width: 10),
-
-            // Segment 3: 1,240 XP
-            Expanded(
-              child: Row(
-                children: [
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.trophyGold.withAlpha(40),
-                      border: Border.all(
-                        color: AppColors.trophyGold.withAlpha(140),
-                        width: 1,
-                      ),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.star_rounded,
-                        color: AppColors.trophyGold,
-                        size: 16,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          style: GoogleFonts.outfit(fontSize: 13, height: 1.1),
-                          children: const [
-                            TextSpan(
-                              text: '1,240 ',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                color: AppColors.textPrimary,
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'XP',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.trophyGold,
-                                fontSize: 11,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Text(
-                        'to Level 13',
-                        style: GoogleFonts.outfit(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
+      _metric(
+        context,
+        Container(
+          width: 28 * u,
+          height: 28 * u,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              colors: [Color(0xFFE6BB3E), Color(0xFFBA7E0D)],
+            ),
+          ),
+          child: Icon(
+            Icons.star_rounded,
+            size: 22 * u,
+            color: const Color(0xFFFFE780),
+          ),
+        ),
+        Text.rich(
+          const TextSpan(
+            children: [
+              TextSpan(text: '1,240 '),
+              TextSpan(
+                text: 'XP',
+                style: TextStyle(color: Color(0xFFD59A20)),
+              ),
+            ],
+          ),
+          style: HomeStyle.text(13 * u, weight: FontWeight.w800),
+        ),
+        Text(
+          'to Level 13',
+          style: HomeStyle.text(11.5 * u, color: HomeStyle.muted),
+        ),
+      ),
+    ];
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: HomeStyle.margin * u),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12 * u, vertical: 9 * u),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: .8),
+          borderRadius: BorderRadius.circular(15 * u),
+          border: Border.all(color: const Color(0xFFF0EFEC)),
+          boxShadow: HomeStyle.shadow,
+        ),
+        child: large
+            ? Column(
+                children: [
+                  for (var i = 0; i < sections.length; i++)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 7),
+                      child: sections[i],
+                    ),
+                ],
+              )
+            : Row(
+                children: [
+                  for (var i = 0; i < sections.length; i++) ...[
+                    if (i > 0)
+                      Container(
+                        width: 1,
+                        height: 30 * u,
+                        margin: EdgeInsets.symmetric(horizontal: 10 * u),
+                        color: const Color(0xFFD8DCDF),
+                      ),
+                    Expanded(child: sections[i]),
+                  ],
+                ],
+              ),
+      ),
+    );
+  }
+
+  Widget _metric(BuildContext context, Widget icon, Widget title, Widget sub) {
+    final u = HomeStyle.unit(context);
+    return Row(
+      children: [
+        icon,
+        SizedBox(width: 8 * u),
+        Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              title,
+              SizedBox(height: 2 * u),
+              sub,
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
 
-class _HexagonBadgePainter extends CustomPainter {
+class _HexagonPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = AppColors.neonGreen
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.5;
-
-    final fillPaint = Paint()
-      ..color = AppColors.neonGreen.withAlpha(30)
-      ..style = PaintingStyle.fill;
-
     final path = Path();
-    final w = size.width;
-    final h = size.height;
-    final r = w / 2;
-    final cx = w / 2;
-    final cy = h / 2;
-
-    for (int i = 0; i < 6; i++) {
-      final angle = (60 * i - 30) * math.pi / 180;
-      final x = cx + r * math.cos(angle);
-      final y = cy + r * math.sin(angle);
+    for (var i = 0; i < 6; i++) {
+      final a = math.pi / 3 * i - math.pi / 2;
+      final x = size.width / 2 + (size.width / 2 - 1) * math.cos(a);
+      final y = size.height / 2 + (size.height / 2 - 1) * math.sin(a);
       if (i == 0) {
         path.moveTo(x, y);
       } else {
@@ -246,11 +174,15 @@ class _HexagonBadgePainter extends CustomPainter {
       }
     }
     path.close();
-
-    canvas.drawPath(path, fillPaint);
-    canvas.drawPath(path, paint);
+    canvas.drawPath(
+      path,
+      Paint()
+        ..color = HomeStyle.green
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2,
+    );
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(_HexagonPainter oldDelegate) => false;
 }

@@ -1,0 +1,21 @@
+{
+  "description": "Original FootyGen artwork reused unchanged from the website branch. Other catalogue art reuses the independently generated Home artwork.",
+  "originalProvenance": "# Game mode artwork\n\nOriginal images generated for Football Genius on 2026-10-16. No assets were extracted, traced, or cropped from the supplied reference screenshot. The generated originals were resized and encoded as WebP for delivery.\n\n- hero: football, tactics clipboard, blue paint and stadium\n- scoreline: blue stadium scoreboard\n- matrix: golden player puzzle grid\n- duel: fictional footballers facing off\n- journeyman: football passport and travel map\n- higher-lower: fictional player cards and market arrows\n- tunnel-talk: press microphone and quote card\n- scramble: floating wooden letter tiles\n- pixel-pitch: original retro pixel football scene\n\nThese illustrations are decorative. All headings, badges, category filters, rewards, and navigation are implemented separately in the page.\n",
+  "assets": [
+    {
+      "asset": "assets/images/game-modes/matrix.webp",
+      "source": "web-nextjs:public/img/game-modes/matrix.webp",
+      "sha256": "4d236a943ba4d829fad02c4d074d74e68208006e496dfbce39964903675d04fc"
+    },
+    {
+      "asset": "assets/images/game-modes/journeyman.webp",
+      "source": "web-nextjs:public/img/game-modes/journeyman.webp",
+      "sha256": "5c32be55b68a617f715a076b2c821cdd10c5dc7b84a6cc2aafe4db9b6692298c"
+    },
+    {
+      "asset": "assets/images/game-modes/tunnel-talk.webp",
+      "source": "web-nextjs:public/img/game-modes/tunnel-talk.webp",
+      "sha256": "21239bbe518a08b031ed3b8c90ed1981d0b1c7d668edb5c0e91aca54e60d83bb"
+    }
+  ]
+}

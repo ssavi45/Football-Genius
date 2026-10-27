@@ -71,9 +71,17 @@ flutter:
     - assets/images/countries/
     - assets/images/tournaments/
     - assets/images/illustrations/
+    - assets/images/home/
+    - assets/images/game-modes/
+    - assets/fonts/
     - assets/icons/
     - assets/animations/
     - assets/data/
+
+  fonts:
+    - family: Outfit
+      fonts:
+        - asset: assets/fonts/Outfit.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

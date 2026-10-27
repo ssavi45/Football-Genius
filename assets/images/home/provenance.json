@@ -1,0 +1,84 @@
+{
+  "created": "2026-10-27",
+  "tool": "Built-in image_gen",
+  "policy": "Independently generated from written briefs. No screenshot was supplied, cropped, traced, extracted or reused. Native Flutter widgets render UI text, scores and crests.",
+  "assets": [
+    {
+      "name": "scoreline",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-ae783bc6-7712-4610-88c0-5f594478f7c2.png",
+      "output": "assets/images/home/scoreline.webp",
+      "prompt": "Original football sports advertising background plate, landscape 1.70:1, high-end photographic editorial collage. Cristiano Ronaldo in a pristine white football shirt, recognizable accurate face and athletic build, torso turned away and looking back over left shoulder, clenched fist near chest, cropped at waist, placed entirely in RIGHT 52% of frame, head near top-right. Beautiful dramatic navy stadium behind him, ivory paper and warm gold paint strokes diagonally around the right edge, painterly navy/gold textures, tactile photoreal white fabric. LEFT 48% and lower-left are deep midnight navy #021c29, quiet and clean to place Flutter logo, text, progress bar and button later; reserve lower-right for a separate native match strip. No UI, no buttons, no card borders, no logos, no club badges, no titles, no lettering, no numbers. Composition fills rectangle, no rounded corners. Independently create artwork from this written brief; no screenshot is an input. Premium, sharp photographic details, restrained gold accents.",
+      "width": 1200,
+      "height": 706,
+      "bytes": 188998,
+      "sourceSha256": "acb8eeb9270393a9771e4ca0092427b2698a4f76cdc5a06f2c0a19562b5d778a",
+      "sha256": "882153b7a7238ca715d12e835a9c3b170c523dd4f6fdb9d4513fac7996fb6e53"
+    },
+    {
+      "name": "portrait",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-c494b903-5a5d-4d65-bb79-15e6c14ab6bc.png",
+      "output": "assets/images/home/portrait.webp",
+      "prompt": "Original photographic circular-profile-ready portrait of Cristiano Ronaldo from upper chest up wearing a plain white football jersey. Face centered with serious calm expression, front three-quarter angle, clean close-cropped hair, sharp photoreal face, dark softly defocused stadium background. Square image with generous safe margins for circular clipping, accurate recognizable adult athlete likeness. No frames, no borders, no badges, no lettering, no watermark. High-end sports editorial photography.",
+      "width": 256,
+      "height": 256,
+      "bytes": 9970,
+      "sourceSha256": "dce8128d59e7abd13c178aab38a5311e818240d788acc02c7cb835d41db2c2a9",
+      "sha256": "f8af8b4ce6a610dbd8019af2af7a762d83d93a6c5f3022eccb153bbc38d7fdb2"
+    },
+    {
+      "name": "higher-lower",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-2bdfea5a-e4c4-4055-aa79-0af5b177f1b4.png",
+      "output": "assets/images/home/higher-lower.webp",
+      "prompt": "Original square sports game thumbnail, full bleed, photoreal detailed black and white football centered in lower-middle of a vibrant lush green football pitch, dramatic dark emerald background. Tall neon green upward arrow on left, red downward arrow on right, glowing outlined dimensional arrows with crisp edges and electric light trails, stadium atmosphere, bright football highlights, realistic hexagonal panels. Keep bottom 22 percent dark green-black for a native title later. No text, no letters, no labels, no numbers, no border, no rounded corners, no UI. Premium sports advertising illustration, independently generated.",
+      "width": 512,
+      "height": 512,
+      "bytes": 84652,
+      "sourceSha256": "0d3a4f7f09bfad4a96237854caab05ad11e75a519450a9b6d1f4d75d79abeab9",
+      "sha256": "2062c657d3a91caa71d193546984ed15e273749c408545d8fceb3b4c3fea6051"
+    },
+    {
+      "name": "pixel-pitch",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-c5826cb2-2bbd-421a-9aea-20bb50a0eadf.png",
+      "output": "assets/images/home/pixel-pitch.webp",
+      "prompt": "Original square football arcade thumbnail. Back view of a young dark-haired footballer, waist-up, wearing red and royal-blue vertically striped jersey with a large gold number 10, centered, athletic shoulders. Vibrant electric blue stadium background mixed with crisp cyan pixel mosaic fragments, digital block effects. Stylized premium video-game key art mixing detailed jersey/hair with pixel art details, saturated azure and indigo. Bottom 24 percent deep indigo gradient reserved for a native title. No words, no logos, no club crest, no border, no UI, no rounded corners. Independently created artwork.",
+      "width": 512,
+      "height": 512,
+      "bytes": 72402,
+      "sourceSha256": "cf63268b9a825e77c33de06eaf285277a1cbe0cd70e8821f7d467aabc98786c8",
+      "sha256": "b0b582a84585d2489a699d895e807025058eb644f974c472e9c716170849d9d3"
+    },
+    {
+      "name": "bootroom",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-4d5bf0f9-5564-4420-9647-68471185991e.png",
+      "output": "assets/images/home/bootroom.webp",
+      "prompt": "Original square trophy football game thumbnail. A large polished golden cup with two curled handles dominates center, low-angle view, dramatic radiant amber and warm orange stadium lights behind, celebratory fans as dark silhouettes in lower background raising arms, tasteful gold confetti and atmospheric rays. Luxurious photoreal sports key art, finely detailed reflective metal. Bottom 25 percent dark burnt orange for a native game title. No text, letters, logos, badges, border, UI, or rounded corners. Independently generated artwork.",
+      "width": 512,
+      "height": 512,
+      "bytes": 78418,
+      "sourceSha256": "fb32c0296699575e308901da6e918c806c674354e84f65774539ced897aca594",
+      "sha256": "ca5b53e4474200df7222bee5e90377bf6c3662fcd1d34426ba04076ae85fabfb"
+    },
+    {
+      "name": "scouts-duel",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-5e17845b-5da4-40be-a80b-a2c3c10a6b97.png",
+      "output": "assets/images/home/scouts-duel.webp",
+      "prompt": "Original ultra-wide 3.6:1 football tactics banner artwork. Back view of a smart dark-haired male football coach in a navy coat, upper body placed in far RIGHT third. A dark teal glass tactics board with thin hand-drawn white formation circles, arrows, passing routes to his left and behind him, distant sunlit stadium architecture visible on far right. Deep charcoal teal LEFT 55 percent left quiet for native Flutter title/subtitle/button later. Ivory torn-paper diagonal shapes and warm metallic-gold brush strokes at top-left and bottom-right edges, refined editorial football advertising collage. Photoreal coach and stadium, sophisticated texture. No titles, words, letters, badges, crests, buttons, UI, card frames or rounded corners. No image references; independently create from this composition brief.",
+      "width": 1200,
+      "height": 334,
+      "bytes": 67414,
+      "sourceSha256": "60348ca931971104a062ef4c37d41fdaf30611d781b9f04cc8b4325f344d7ced",
+      "sha256": "368ef554acbb994d35da7bf18a1314c006d15f68902f738964ffe9563399d85d"
+    },
+    {
+      "name": "scorecard-frame",
+      "source": "C:\\Users\\ssavi\\.codex\\generated_images\\01a1409f-c3f9-70f1-bf59-5ac8ddff3b9d\\exec-6b0bae90-a433-4382-9e0c-3316af947e9a.png",
+      "output": "assets/images/home/scorecard-frame.webp",
+      "prompt": "Create an ORIGINAL isolated premium football scorecard BACKGROUND FRAME, landscape 2.25:1 aspect ratio, genuinely transparent outside. It is a tactile editorial sports collage: a solid deep midnight navy #031c29 rectangular CENTRAL PANEL occupying middle 75% width and 52% height, left perfectly empty for native club crests and score later. Surround it with asymmetrical ivory torn-paper brush swashes, metallic warm gold dry-brush streaks, navy ink flecks, distressed cream paint, tiny torn slivers. Upper-right and lower-left corners have dramatic diagonal brush tails, rough hand-painted edges and sparse gold hatching. Resemble a luxurious navy, cream and gold football magazine cut-paper match banner, photoreal paper/paint textures, crisp. Entire composition approximately horizontal with a slight upward diagonal visual energy, no perspective distortion and no rotation of central panel. Keep central navy panel absolutely quiet, dark and opaque for legibility. Transparent outside the ragged brush strokes; no white rectangular backdrop. NO text, NO letters, NO numbers, NO scores, NO logos, NO emblems, NO clubs, NO badges, NO balls, NO rounded corners, NO UI buttons. This will be a small background graphic under native Flutter widgets, so use bold cream/gold swathes rather than delicate unreadable detail. Independently generated from this written composition brief, without extracting screenshot assets.",
+      "width": 720,
+      "height": 320,
+      "bytes": 88578,
+      "sourceSha256": "52afec154624a1951ce4ceb44582c321a77deb582cc1e5a4729357c16c376896",
+      "sha256": "0d13a5f240cb55100c3291e02986e27ca28cfe02c63678e59d307f023084d46a"
+    }
+  ]
+}
