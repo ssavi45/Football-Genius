@@ -40,6 +40,21 @@ test('generated portraits and title artwork retain aspect ratio and transparency
   }
 });
 
+test('navigation preserves approved artwork and compact FG pixels without small responsive variants',async()=>{
+  const branding=require('../../public/branding/logo-assets.json');
+  const crypto=require('node:crypto');
+  const master=fs.readFileSync(path.join(root,'public',branding.url));
+  assert.equal(crypto.createHash('sha256').update(master).digest('hex'),'9d9c1b71e495ef42f7b0f3619a6ed395f3709392669252e3b38e9b4244204d91','Approved master must not be traced or repainted.');
+  const original=await sharp(master).extract({left:0,top:0,width:210,height:174}).ensureAlpha().raw().toBuffer();
+  const compact=await sharp(path.join(root,'public',branding.mark.url)).extract({left:0,top:0,width:210,height:174}).ensureAlpha().raw().toBuffer();
+  for(let i=0;i<original.length;i+=4)if(Math.min(original[i],original[i+1],original[i+2])<230){
+    assert.equal(compact[i],original[i]);assert.equal(compact[i+1],original[i+1]);assert.equal(compact[i+2],original[i+2]);
+  }
+  assert.equal(compact[3],0,'Outside tile backing is transparent.');
+  const component=fs.readFileSync(path.join(root,'src/components/navigation/BrandLogo.tsx'),'utf8');
+  assert.equal((component.match(/unoptimized/g)||[]).length,2,'Both logos bypass small image variants.');
+});
+
 test('frequently displayed assets meet transfer budgets',()=>{
   const size=src=>fs.statSync(path.join(root,'public',src)).size;
   for(const[src,width,budget]of [['/img/higher-lower/players/pirlo.png',256,35000],['/img/hero/football_trio_hero.jpg',960,160000],['/img/matrix/football-matrix-logo.webp',640,60000],['/img/higher-lower/player-burst.png',1280,220000]]){

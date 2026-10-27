@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import logo from '../../../public/branding/logo-assets.json';
 import './app-download.css';
-import { ArrowUpRight, Check, Wifi, Zap } from 'lucide-react';
+import { ArrowUpRight, Check, Zap } from 'lucide-react';
 
 const APP_URL = 'https://footygen.online';
 
@@ -36,17 +35,8 @@ export default function AppDownloadSection() {
           <div className="app-phone">
             <span className="phone-side-button phone-side-button-left" /><span className="phone-side-button phone-side-button-right" />
             <div className="phone-screen">
-              <div className="phone-status-bar">
-                <span className="phone-status-time">9:41</span>
-                <div className="phone-status-indicators">
-                  <svg className="phone-status-signal" viewBox="0 0 16 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx=".7" /><rect x="4" y="5.5" width="3" height="6.5" rx=".7" /><rect x="8" y="3" width="3" height="9" rx=".7" /><rect x="12" width="3" height="12" rx=".7" /></svg>
-                  <Wifi className="phone-status-wifi" strokeWidth={2.5} />
-                  <svg className="phone-status-battery" viewBox="0 0 26 13" fill="currentColor"><rect x=".75" y=".75" width="21" height="11.5" rx="3" fill="none" stroke="currentColor" strokeWidth="1.5" opacity=".6" /><rect x="3" y="3" width="16.5" height="7" rx="1.3" /><path d="M23 4v5a2.5 2.5 0 0 0 0-5Z" opacity=".6" /></svg>
-                </div>
-              </div>
-              <div className="phone-camera" />
-              <div className="phone-screen-content"><div className="phone-screen-art"><Image src="/img/app-promo/neon-game-screen.webp" alt="" fill sizes="(max-width: 360px) 190px, (max-width: 480px) 235px, 270px" /><span className="phone-preview-logo"><Image src={logo.url} alt="" fill sizes="105px" /></span></div></div>
-              <div className="phone-home-bar" />
+              <Image src="/img/app-promo/footygen-home-screen.webp" alt="" width={941} height={1672} className="phone-app-screen" sizes="(max-width: 360px) 190px, (max-width: 480px) 235px, 270px" />
+              <span className="phone-front-camera" />
             </div>
           </div>
           <div className="app-floating-badge app-streak"><span><Check size={19} strokeWidth={3} /></span><div><small>ONE GAME. ENDLESS POSSIBILITIES.</small><strong>Made for football fans.</strong></div></div>

@@ -7,12 +7,12 @@
   "bytes": 16154,
   "sha256": "9d9c1b71e495ef42f7b0f3619a6ed395f3709392669252e3b38e9b4244204d91",
   "mark": {
-    "source": "User-supplied Glossy FG Soccer App Icon.png",
-    "sourceSha256": "25f3e00bf8334dd299cb52e04dd89978637d146821beeeac5ffcb5ea9487668a",
-    "url": "/branding/footygen-mark.webp",
-    "width": 256,
-    "height": 256,
-    "bytes": 16338,
-    "sha256": "6e45f3a57e79d084b5a5f5394e341016a63f3816cdc8daed04bae04dae89e9f2"
+    "source": "FG pixels extracted losslessly from the approved lockup; outside backing removed",
+    "sourceSha256": "9d9c1b71e495ef42f7b0f3619a6ed395f3709392669252e3b38e9b4244204d91",
+    "url": "/branding/footygen-fg.png",
+    "width": 226,
+    "height": 174,
+    "bytes": 45714,
+    "sha256": "18555765d11f8768bb2d240a6c5199354accf16186904b94307a9029035878f4"
   }
 }
