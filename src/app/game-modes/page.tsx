@@ -17,6 +17,7 @@ import {
   BarChart3,
   Quote,
   ArrowRight,
+  Footprints,
 } from 'lucide-react';
 import { sound } from '@/lib/utils/sound';
 import '../landing.css';
@@ -34,9 +35,17 @@ const FILTERS: FilterOption[] = [
   { name: 'Puzzle', icon: Puzzle },
   { name: 'Fast Play', icon: Zap },
   { name: 'Visual', icon: ImageIcon },
+  { name: 'Strategy', icon: Footprints },
 ];
 
 const GAME_MODES = [
+  {
+    id: 'the-decoy', title: 'The Decoy', subtitle: 'Win Without Touching the Ball',
+    description: 'Trick defenders, create space, and lead your team to victory using intelligent off-the-ball movement.',
+    xp: 'Play Now', tags: ['Solo', 'Strategy', 'Fast Play'], route: '/games/the-decoy',
+    art: '/img/game-modes/the-decoy.webp', icon: Footprints, color: '#008d83',
+    washGradient: 'from-[#EFFCF7] via-white to-white', borderColor: 'border-emerald-100', xpColor: 'text-[#008d83]', arrowColor: 'text-[#008d83]',
+  },
   {
     id: 'scoreline',
     title: 'Scoreline Hero',
@@ -175,7 +184,7 @@ export default function GameModesPage() {
       <svg className="modes-crown" viewBox="0 0 90 85" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 68 16 15 31 48 52 8 48 51 77 27 60 72 Q37 63 12 68"/><circle cx="16" cy="15" r="2"/><circle cx="52" cy="8" r="2"/><circle cx="77" cy="27" r="2"/></svg>
       <div className="modes-page-container">
         <section className="modes-intro" aria-labelledby="game-modes-title">
-          <span className="modes-kicker"><Gamepad2 size={19} />8 UNIQUE WAYS TO PLAY</span>
+          <span className="modes-kicker"><Gamepad2 size={19} />{GAME_MODES.length} UNIQUE WAYS TO PLAY</span>
           <h1 id="game-modes-title">Choose Your <span>Game Mode</span></h1>
           <p>Different challenges. Different skills. The same beautiful game.</p>
         </section>
@@ -192,7 +201,7 @@ export default function GameModesPage() {
             return <Link key={mode.id} href={mode.route} className={`game-mode-card mode-${mode.id}`} style={{ '--mode-color': mode.color } as React.CSSProperties} onMouseEnter={() => sound.playHover()} onClick={() => sound.playClick()}>
               <div className="game-mode-art"><Image src={mode.art} alt={`${mode.title} game illustration`} fill sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" /></div>
               <span className="game-mode-icon" aria-hidden="true">{Icon ? <Icon size={34} strokeWidth={2.8} /> : <span>A</span>}</span>
-              <div className="game-mode-copy"><h2>{mode.title}</h2><p>{mode.description}</p></div>
+              <div className="game-mode-copy"><h2>{mode.title}</h2>{mode.subtitle && <span className="decoy-card-subtitle">{mode.subtitle}</span>}<p>{mode.description}</p></div>
               <span className="game-mode-reward">{mode.xp}</span>
               <span className="game-mode-arrow" aria-hidden="true"><ArrowRight size={24} /></span>
             </Link>;

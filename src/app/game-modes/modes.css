@@ -34,6 +34,10 @@
 .mode-tunnel-talk { --mode-wash: #f0f5ff; }
 .mode-scramble { --mode-wash: #fff7ed; }
 .mode-pixel-pitch { --mode-wash: #effbff; }
+.mode-the-decoy { --mode-wash: #effcf7; }
+.mode-the-decoy .game-mode-copy { top: 108px; }
+.decoy-card-subtitle { display: block; font-size: 11px; font-weight: 650; color: #00836c; margin-bottom: 5px; }
+.mode-the-decoy .game-mode-copy p { font-size: 13px; }
 .game-mode-card:hover { transform: translateY(-4px); box-shadow: 0 14px 27px #3d68b41c; }
 .game-mode-art { position: absolute; z-index: -2; inset: 0 0 auto; height: 185px; }
 .game-mode-art img { object-fit: cover; object-position: center 36%; transition: transform .3s; }

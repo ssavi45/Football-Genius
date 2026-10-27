@@ -1,5 +1,6 @@
 // Game pages use the same header and highlight the shared Play Game entry.
 const SHARED_GAME_ROUTES = new Set([
+  '/games/the-decoy',
   '/games/scoreline',
   '/games/higher-lower',
   '/games/matrix',

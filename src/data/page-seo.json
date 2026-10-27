@@ -148,5 +148,15 @@
     "art": null,
     "accent": "#0865ff",
     "index": true
+  },
+  {
+    "path": "/games/the-decoy",
+    "title": "The Decoy — Off-the-Ball Football Game",
+    "description": "Play The Decoy on FootyGen. Control the off-the-ball attacker, deceive intelligent defenders and create goals across three tactical football challenges.",
+    "slug": "the-decoy",
+    "tagline": "Outsmart defenders. Create space.",
+    "art": "/img/game-modes/the-decoy.webp",
+    "accent": "#008d83",
+    "index": true
   }
 ]

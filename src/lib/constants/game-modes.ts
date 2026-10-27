@@ -123,6 +123,13 @@ export const GAME_MODES: GameModeInfo[] = [
   },
 ];
 
+GAME_MODES.push({
+  id: 'the-decoy', slug: 'the-decoy', title: 'The Decoy', subtitle: 'Win Without Touching the Ball',
+  description: 'Trick defenders, create space, and lead your team to victory using intelligent off-the-ball movement.',
+  badge: 'NEW', category: 'strategy', cardArt: '/img/game-modes/the-decoy.webp', accentColor: '#008d83',
+  iconName: 'Footprints', route: '/games/the-decoy', dailyReward: 'Local tactical scores',
+});
+
 export const QUICK_PLAY_MODES = [
   GAME_MODES[4], // Higher or Lower
   GAME_MODES[7], // Pixel Pitch

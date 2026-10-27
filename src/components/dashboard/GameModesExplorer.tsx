@@ -18,9 +18,11 @@ import {
   ArrowRight,
   Play,
   Flame,
+  Footprints,
 } from 'lucide-react';
 
 const ICON_MAP: Record<string, React.ElementType> = {
+  Footprints,
   Sparkles,
   Grid3X3,
   Swords,
@@ -54,7 +56,7 @@ export default function GameModesExplorer() {
 
         {/* Category Pills */}
         <div className="flex items-center bg-white p-1 rounded-2xl border border-blue-100 shadow-xs text-xs font-bold">
-          {(['all', 'daily', 'trivia', 'pvp'] as GameCategory[]).map(cat => (
+          {(['all', 'daily', 'trivia', 'pvp', 'strategy'] as GameCategory[]).map(cat => (
             <button
               key={cat}
               onClick={() => {
@@ -68,7 +70,7 @@ export default function GameModesExplorer() {
                   : 'text-slate-600 hover:text-blue-600'
               }`}
             >
-              {cat === 'all' ? 'All (8)' : cat}
+              {cat === 'all' ? `All (${GAME_MODES.length})` : cat}
             </button>
           ))}
         </div>

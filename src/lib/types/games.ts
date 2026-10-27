@@ -1,4 +1,5 @@
 export type GameModeId =
+  | 'the-decoy'
   | 'scoreline'
   | 'scouts-duel'
   | 'matrix'
@@ -8,7 +9,7 @@ export type GameModeId =
   | 'scramble'
   | 'pixel-pitch';
 
-export type GameCategory = 'all' | 'daily' | 'trivia' | 'pvp';
+export type GameCategory = 'all' | 'daily' | 'trivia' | 'pvp' | 'strategy';
 
 export interface GameModeInfo {
   id: GameModeId;
@@ -17,7 +18,7 @@ export interface GameModeInfo {
   subtitle: string;
   description: string;
   badge: 'DAILY' | 'HOT' | 'PVP' | 'CLASSIC' | 'NEW';
-  category: 'daily' | 'trivia' | 'pvp';
+  category: 'daily' | 'trivia' | 'pvp' | 'strategy';
   cardArt: string;
   accentColor: string;
   iconName: string;

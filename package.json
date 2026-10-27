@@ -26,7 +26,8 @@
     "build:journeyman": "node scripts/journeyman/import-dataset.cjs",
     "validate:journeyman": "node scripts/journeyman/import-dataset.cjs --check",
     "seo:assets": "node scripts/seo/build-assets.cjs",
-    "test:site": "node scripts/site/site.test.cjs"
+    "test:site": "node scripts/site/site.test.cjs",
+    "test:decoy": "node scripts/decoy/decoy.test.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

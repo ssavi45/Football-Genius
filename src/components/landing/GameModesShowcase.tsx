@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { Trophy, Grid2X2, Swords, Crown, ArrowRight, Globe2, UserRound, Goal } from 'lucide-react';
+import { Trophy, Grid2X2, Swords, Crown, ArrowRight, Globe2, UserRound, Goal, Footprints } from 'lucide-react';
 import { sound } from '@/lib/utils/sound';
 
 const modes = [
+  { id: 'the-decoy', title: 'The Decoy', description: 'Win without touching the ball. Draw defenders away and create the opening for your teammates.', xp: 'Play Now', icon: Footprints, art: Goal, color: 'green' },
   { id: 'scoreline', title: 'Scoreline Hero', description: 'Relive iconic matches and predict the full-time score using tactical clues and match stats.', xp: '+150 XP', icon: Trophy, art: Goal, color: 'blue' },
   { id: 'matrix', title: 'Football Matrix', description: 'Fill the 9-cell grid with players who meet both row and column criteria. Test your encyclopedic knowledge.', xp: '+100 XP', icon: Grid2X2, art: Grid2X2, color: 'gold' },
   { id: 'scouts-duel', title: "Scout’s Duel", description: 'Challenge a friend or the AI in a custom lobby. Guess the mystery player before your opponent.', xp: '+200 XP', icon: Swords, art: UserRound, color: 'rose' },
