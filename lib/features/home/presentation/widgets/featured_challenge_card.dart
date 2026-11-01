@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,7 +23,8 @@ class FeaturedChallengeCard extends ConsumerWidget {
     final large = HomeStyle.largeText(context);
     return LayoutBuilder(
       builder: (context, constraints) {
-        final width = constraints.maxWidth;
+        if (constraints.maxWidth <= 0) return const SizedBox.shrink();
+        final width = math.max(0.0, constraints.maxWidth);
         final topPadding = 28 * u + extraHeight * .2;
         final title = scoreline
             ? Image.asset(
@@ -140,7 +142,7 @@ class FeaturedChallengeCard extends ConsumerWidget {
                           label: 'CONTINUE',
                           onTap: onContinue,
                           icon: Icons.sports_soccer_outlined,
-                          width: width - 32 * u,
+                          width: math.max(0.0, width - 32 * u),
                           emphasized: true,
                         ),
                       ],
@@ -150,7 +152,7 @@ class FeaturedChallengeCard extends ConsumerWidget {
                   ConstrainedBox(
                     constraints: BoxConstraints(
                       minWidth: width,
-                      minHeight: width / 1.70 + extraHeight,
+                      minHeight: math.max(0.0, width / 1.70 + extraHeight),
                     ),
                     child: Stack(
                       children: [
@@ -164,23 +166,19 @@ class FeaturedChallengeCard extends ConsumerWidget {
                           child: ConstrainedBox(
                             constraints: BoxConstraints(
                               minHeight:
-                                  width / 1.70 +
-                                  extraHeight -
-                                  topPadding -
-                                  8 * u,
+                                  math.max(0.0, width / 1.70 + extraHeight - topPadding - 8 * u),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(width: width * .55, child: info),
+                                SizedBox(width: math.max(0.0, width * .55), child: info),
                                 SizedBox(height: 5 * u),
                                 HomeGoldButton(
                                   label: 'CONTINUE',
                                   onTap: onContinue,
                                   icon: Icons.sports_soccer_outlined,
-                                  width: width * .56,
                                   emphasized: true,
                                 ),
                               ],
@@ -190,9 +188,9 @@ class FeaturedChallengeCard extends ConsumerWidget {
                         if (scoreline)
                           Positioned(
                             right: 2 * u,
-                            bottom: 9 * u,
+                            bottom: 18 * u,
                             child: Transform.rotate(
-                              angle: -.14,
+                              angle: -.11,
                               child: const IgnorePointer(child: _MatchStrip()),
                             ),
                           ),
@@ -213,17 +211,19 @@ class _MatchStrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final u = HomeStyle.unit(context);
+    final width = 160.0 * u;
+    final height = width * 320.0 / 720.0;
     return Semantics(
       label: 'Real Madrid 2, Barcelona 1. Decorative match preview.',
       child: SizedBox(
-        width: 150 * u,
-        height: 150 * u * 320 / 720,
+        width: width,
+        height: height,
         child: Stack(
           fit: StackFit.expand,
           children: [
             const HomeArtwork(HomeArt.scorecard, fit: BoxFit.contain),
             Padding(
-              padding: EdgeInsets.fromLTRB(25 * u, 20 * u, 25 * u, 17 * u),
+              padding: EdgeInsets.fromLTRB(26 * u, 20 * u, 26 * u, 17 * u),
               child: Row(
                 children: [
                   _crest(AssetPaths.clubRealMadrid, u),
@@ -232,7 +232,7 @@ class _MatchStrip extends StatelessWidget {
                       '2 - 1',
                       textAlign: TextAlign.center,
                       style: HomeStyle.text(
-                        22 * u,
+                        23 * u,
                         color: Colors.white,
                         weight: FontWeight.w800,
                         spacing: .3,
@@ -251,14 +251,14 @@ class _MatchStrip extends StatelessWidget {
 
   Widget _crest(String path, double u) => Image.asset(
     path,
-    width: 24 * u,
-    height: 29 * u,
+    width: 25 * u,
+    height: 31 * u,
     fit: BoxFit.contain,
     excludeFromSemantics: true,
     errorBuilder: (_, _, _) => SizedBox(
-      width: 24 * u,
-      height: 29 * u,
-      child: Icon(Icons.shield_outlined, color: Colors.white70, size: 24 * u),
+      width: 25 * u,
+      height: 31 * u,
+      child: Icon(Icons.shield_outlined, color: Colors.white70, size: 25 * u),
     ),
   );
 }

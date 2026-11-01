@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Flutter: dependencies",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["pub", "get"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Flutter: analyze",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["analyze", "--no-pub"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Flutter: test",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["test", "--no-pub"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Flutter: verify",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Flutter: dependencies",
+        "Flutter: analyze",
+        "Flutter: test"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Flutter: build debug APK",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["build", "apk", "--debug"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Flutter: build web",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["build", "web"],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

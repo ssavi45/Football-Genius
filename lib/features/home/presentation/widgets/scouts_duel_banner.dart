@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../home_style.dart';
@@ -11,7 +12,10 @@ class ScoutsDuelBanner extends StatelessWidget {
     final u = HomeStyle.unit(context);
     final large = HomeStyle.largeText(context);
     return LayoutBuilder(
-      builder: (context, constraints) => Container(
+      builder: (context, constraints) {
+        if (constraints.maxWidth <= 0) return const SizedBox.shrink();
+        final bannerWidth = math.max(0.0, constraints.maxWidth);
+        return Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15 * u),
           boxShadow: HomeStyle.shadow,
@@ -28,7 +32,7 @@ class ScoutsDuelBanner extends StatelessWidget {
               ConstrainedBox(
                 constraints: BoxConstraints(
                   minHeight:
-                      (constraints.maxWidth / 3.6).clamp(
+                      (bannerWidth / 3.6).clamp(
                         112 * u,
                         double.infinity,
                       ) +
@@ -40,7 +44,7 @@ class ScoutsDuelBanner extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     heightFactor: 1,
                     child: SizedBox(
-                      width: constraints.maxWidth * (large ? .9 : .57),
+                      width: math.max(0.0, bannerWidth * (large ? .9 : .57)),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,7 +97,8 @@ class ScoutsDuelBanner extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
+      );
+    },
+  );
+}
 }

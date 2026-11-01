@@ -121,12 +121,12 @@ class HomeGoldButton extends StatelessWidget {
             onTap: onTap,
             borderRadius: BorderRadius.circular(30),
             child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 48),
+              constraints: const BoxConstraints(minHeight: 46),
               child: Center(
                 widthFactor: 1,
                 child: Ink(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 14 * u,
+                    horizontal: (emphasized ? 13 : 14) * u,
                     vertical: 7 * u,
                   ),
                   decoration: BoxDecoration(
@@ -140,22 +140,25 @@ class HomeGoldButton extends StatelessWidget {
                         : MainAxisSize.max,
                     children: [
                       if (icon != null) ...[
-                        Icon(icon, size: 21 * u, color: Colors.black),
-                        SizedBox(width: 10 * u),
+                        Icon(icon, size: (emphasized ? 19 : 21) * u, color: Colors.black),
+                        SizedBox(width: (emphasized ? 7 : 10) * u),
                       ],
                       Flexible(
                         fit: width == null ? FlexFit.loose : FlexFit.tight,
                         child: Text(
                           label,
+                          maxLines: 1,
+                          softWrap: false,
+                          overflow: TextOverflow.clip,
                           style: HomeStyle.text(
-                            (emphasized ? 15 : 13) * u,
+                            (emphasized ? 14 : 13) * u,
                             color: Colors.black,
                             weight: FontWeight.w800,
-                            spacing: emphasized ? .4 : -.1,
+                            spacing: emphasized ? .2 : -.1,
                           ),
                         ),
                       ),
-                      SizedBox(width: 10 * u),
+                      SizedBox(width: (emphasized ? 7 : 10) * u),
                       DecoratedBox(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -166,7 +169,7 @@ class HomeGoldButton extends StatelessWidget {
                           child: Icon(
                             Icons.chevron_right_rounded,
                             color: Colors.black,
-                            size: 22 * u,
+                            size: 21 * u,
                           ),
                         ),
                       ),

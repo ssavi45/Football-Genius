@@ -29,7 +29,7 @@ class _GamesScreenState extends ConsumerState<GamesScreen> {
 
   void _play(GameMetadata game) {
     ref.read(lastPlayedGameIdProvider.notifier).setLastPlayed(game.id);
-    if (game.routePath == AppRoutes.scoreline) {
+    if (game.routePath == AppRoutes.scoreline || game.routePath == AppRoutes.higherLower) {
       context.push(game.routePath);
     } else {
       _showSnack('Launching ${game.title}...');

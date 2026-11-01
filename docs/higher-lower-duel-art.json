@@ -1,0 +1,41 @@
+[
+  {
+    "asset": "assets/images/higher_lower/duel_stadium.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: original premium mobile football game header background, very wide landscape 2.5:1 aspect ratio, ideally 1920x768. A cinematic photorealistic night football stadium in deep near-black navy petrol teal, moody storm clouds with a little cyan illumination. Brilliant curved white floodlights at far left and far right, low stands. ONE pristine realistic black-and-white stitched leather football with slim champagne-gold seams sits centered horizontally on lush wet green grass in the lower middle. Delicate golden light trails sweep behind the ball along the pitch. Ball occupies roughly 23% image width, entirely inside the image, its top around 43% image height and its bottom near 94%. Leave the TOP 38% mostly dark atmospheric sky for a separate Flutter title/controls. Symmetrical low camera angle, luxury sports advertising quality, rich photographic detail. NO arrows, no letters, no words, no numbers, no icons, no shields, no logos, no crowns, no watermarks, no borders, no UI. Entirely new artwork, not a mockup or screenshot.",
+    "size": [
+      1536,
+      614
+    ],
+    "sourceSha256": "d31c2ebb52f6799d098cd26348896ccc80f56cc98a35e2878601f46371b9b05b",
+    "bytes": 199548,
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping."
+  },
+  {
+    "asset": "assets/images/higher_lower/duel_emerald.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: original premium football player-card background texture, landscape 2:1 aspect ratio, ideally 1536x768. Rich near-black emerald petrol green with energetic diagonal textured paint-brush slashes and layered translucent faceted satin/metal polygons. Luminous emerald brush marks sweeping upward from bottom left to upper right, mostly along far left and bottom right edges. Elegant gritty brushed-metal/grunge sports trading-card aesthetic, high-quality detailed material, restrained green particles, deep velvety shadows. Keep central and right-middle regions very dark and quiet for separately rendered player identity text and a real photo at left. NO football, no people, no faces, no portraits, no landmarks, no stadium, no logos, no text, no numbers, no symbols, no frame, no border, no UI. Background material only, no reference inputs.",
+    "size": [
+      1536,
+      768
+    ],
+    "sourceSha256": "70fc119f43ef992da4ec905544138ae0ccaac1f573be9da9250269e595091c59",
+    "bytes": 270920,
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping."
+  },
+  {
+    "asset": "assets/images/higher_lower/duel_purple.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: original premium football player-card background texture, landscape 2:1 aspect ratio, ideally 1536x768. Rich near-black royal purple and violet with energetic diagonal textured paint-brush slashes and layered translucent faceted satin/metal polygons. Luminous violet brush marks sweeping upward from bottom left to upper right, mostly along far left and bottom right edges. Elegant gritty brushed-metal/grunge sports trading-card aesthetic, high-quality detailed material, restrained violet particles, deep velvety shadows. Keep central and right-middle regions very dark and quiet for separately rendered player identity text and a real photo at left. NO football, no people, no faces, no portraits, no landmarks, no Eiffel Tower, no stadium, no logos, no text, no numbers, no symbols, no frame, no border, no UI. Background material only, no reference inputs.",
+    "size": [
+      1536,
+      768
+    ],
+    "sourceSha256": "a77bf35cb189d13bd57f7d7b6784b8a003b2e79fae4eac50cbf0e5b3b759a289",
+    "bytes": 327788,
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping."
+  }
+]

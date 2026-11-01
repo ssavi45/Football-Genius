@@ -1,5 +1,5 @@
 name: football_genius
-description: "A new Flutter project."
+description: "Football trivia and puzzle games built with Flutter."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -20,6 +20,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ^3.13.1
+  flutter: '>=3.47.1'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -39,6 +40,10 @@ dependencies:
   flutter_riverpod: ^3.4.3
   google_fonts: 8.2.1
   shared_preferences: ^2.5.5
+  http: ^1.6.0
+  uuid: ^4.6.0
+  path_provider: ^2.1.6
+  cached_network_image: ^4.0.6
 
 dev_dependencies:
   flutter_test:
@@ -73,12 +78,22 @@ flutter:
     - assets/images/illustrations/
     - assets/images/home/
     - assets/images/game-modes/
+    - assets/images/higher_lower/
     - assets/fonts/
     - assets/icons/
     - assets/animations/
     - assets/data/
 
   fonts:
+    - family: BarlowSemiCondensed
+      fonts:
+        - asset: assets/fonts/BarlowSemiCondensed-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/BarlowSemiCondensed-Regular.ttf
+        - asset: assets/fonts/BarlowSemiCondensed-MediumItalic.ttf
+          weight: 500
+          style: italic
     - family: Outfit
       fonts:
         - asset: assets/fonts/Outfit.ttf

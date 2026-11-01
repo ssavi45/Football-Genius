@@ -7,6 +7,8 @@ class HomeTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final u = HomeStyle.unit(context);
+    final logoWidth = 154.0 * u;
+    final logoHeight = 58.0 * u * (logoWidth / 220.0);
     return SizedBox(
       height: 64 * u,
       child: Padding(
@@ -22,8 +24,8 @@ class HomeTopBar extends StatelessWidget {
                     BlendMode.multiply,
                   ),
                   child: SizedBox(
-                    width: 202 * u,
-                    height: 58 * u * 202 / 220,
+                    width: logoWidth,
+                    height: logoHeight,
                     child: ClipPath(
                       clipper: _WordmarkClipper(),
                       child: OverflowBox(
@@ -32,14 +34,14 @@ class HomeTopBar extends StatelessWidget {
                         maxHeight: double.infinity,
                         child: Image.asset(
                           HomeArt.logo,
-                          width: 202 * u / .66,
+                          width: logoWidth / .66,
                           fit: BoxFit.contain,
                           filterQuality: FilterQuality.high,
                           semanticLabel: 'FootyGen',
                           errorBuilder: (_, _, _) => Text(
                             'FootyGen',
                             style: HomeStyle.text(
-                              27 * u,
+                              20 * u,
                               weight: FontWeight.w900,
                             ),
                           ),

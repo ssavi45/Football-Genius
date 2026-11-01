@@ -1,0 +1,80 @@
+[
+  {
+    "asset": "assets/images/higher_lower/lobby_hero.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: production Flutter mobile football-game hero BACKGROUND ONLY. Generate a brand new, independently composed high-end photorealistic 3D sports advertising illustration. LANDSCAPE 2:1 aspect ratio, ideally 1792x896. No reference image is being used. A dramatic night football stadium, dark teal storm clouds, distant curving crowded stands and brilliant white stadium floodlights at far left and far right. Wet realistic emerald grass along the bottom. A large luxurious black-and-white textured football with subtle gold seams occupies the bottom RIGHT quarter, partly on grass, complete and fully within frame. Behind the ball at right is a tall luminous faceted translucent EMERALD UPWARD arrow and in front/right of it a shorter metallic glowing GOLD DOWNWARD arrow. Dynamic flowing deep emerald satin ribbon curls along the far left edge and bottom edge. Color palette near-black petrol #001b1a, emerald #009d65, warm metallic champagne gold. Keep the LEFT 57 percent predominantly dark and quiet, with only atmospheric stadium/cloud background, to receive three large lines of separate Flutter text. Put all bright arrows and ball in the RIGHT 40 percent. Hero objects placed within the rightmost 15%-95% vertical extent so all remain visible. Cinematic photorealistic materials, rich contrast, mist, refined gold sparks, razor-sharp ball leather and grass, premium polished sports game illustration. NO text, NO letters, NO words, NO labels, NO UI, NO badges, NO logos, NO crowns, NO border, NO watermarks. This is an illustration asset, not a screenshot or full app mockup.",
+    "sourceSha256": "cb672f311127268bca1ae449a3477039e016079aa3c4ac00bb973437405c81fd",
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping or compositing.",
+    "size": [
+      1536,
+      768
+    ],
+    "bytes": 239724
+  },
+  {
+    "asset": "assets/images/higher_lower/lobby_market.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: original production background artwork for a premium mobile financial-statistics game card. Landscape 1.30:1 aspect ratio. Dark emerald green night stadium with subtle white floodlights at top center. The main illustration is ONLY a sophisticated luminous green upward-trending angular LINE CHART, transparent financial grid, and long flowing luxurious emerald silk ribbon curling along the lower right. The rising line and chart occupy the RIGHT two thirds, largest upward pointed segment at upper right. Almost black LEFT third for text overlay, dark BOTTOM quarter for a separate button. Cinematic crisp realistic 3D materials, textured teal atmosphere, subtle emerald sparkles, rich gradient lighting. STRICTLY NO FOOTBALLS, NO SOCCER BALLS, NO BALLS OR SPHERES OF ANY KIND, no sport equipment, no text, no currency symbols, no badges, no icons, no UI, no borders, no logos, no crowns, no words, no numbers, no letters, no watermarks. This must be a standalone image of an emerald graph and luxurious cloth, not a whole app mockup.",
+    "sourceSha256": "87b1a4bce242e539e034f2cbb3e2ec0effbaf09718fe4e06fac402d4293a9fbf",
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping or compositing.",
+    "size": [
+      1024,
+      788
+    ],
+    "bytes": 97232
+  },
+  {
+    "asset": "assets/images/higher_lower/lobby_goals.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: production background illustration for a small premium mobile football-game category card, landscape 1.30:1 aspect ratio, ideally 1280x984. Original independently composed photorealistic 3D sports-advertising artwork, high detail and polished cinematic lighting, dramatic deep near-black shadows, realistic materials, refined particles. The LEFT 48 percent and the BOTTOM 27 percent must stay dark and quiet for live Flutter text/buttons; concentrate the recognizable subject on the RIGHT HALF with full subject within frame. Stadium floodlights can appear along the top. NO text, letters, numbers, words, badges, shields, UI, borders, frames, logos or watermarks. This is artwork only, not an app screenshot. Theme: scoring a football goal. Deep navy and ELECTRIC BLUE night stadium. A close-up realistic black-and-white leather football with subtle metallic gold seams caught in a white football net on the RIGHT, net strings stretch toward top-right and bottom-right corners. The football is around 48 percent of image height and placed upper/right of center. Beautiful cold blue stadium lights and blue glints, near-black lower-left negative space, polished sports visual.",
+    "sourceSha256": "cbc5b5ae0a54ced76fff8818478adce54aa9861a70068e6d518fcb529824970a",
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping or compositing.",
+    "size": [
+      1024,
+      788
+    ],
+    "bytes": 132656
+  },
+  {
+    "asset": "assets/images/higher_lower/lobby_assists.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: production background illustration for a small premium mobile football-game category card, landscape 1.30:1 aspect ratio, ideally 1280x984. Original independently composed photorealistic 3D sports-advertising artwork, high detail and polished cinematic lighting, dramatic deep near-black shadows, realistic materials, refined particles. The LEFT 48 percent and the BOTTOM 27 percent must stay dark and quiet for live Flutter text/buttons; concentrate the recognizable subject on the RIGHT HALF with full subject within frame. Stadium floodlights can appear along the top. NO text, letters, numbers, words, badges, shields, UI, borders, frames, logos or watermarks. This is artwork only, not an app screenshot. Theme: a brilliant football assist. Saturated royal PURPLE and deep violet night stadium. A single luxurious black football boot with metallic champagne-gold trim and black laces floats diagonally toe pointing left at the RIGHT HALF, surrounded by a graceful amber/gold elliptical light trail beneath it and purple energy flecks. Realistic leather and reflective golden studs, bright violet stadium floodlights at top, dramatic blackened left side, premium sports advertising.",
+    "sourceSha256": "59d026562223a21a001369e8238f2cccd58f11693d9c648542437baefad83ca8",
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping or compositing.",
+    "size": [
+      1024,
+      788
+    ],
+    "bytes": 133990
+  },
+  {
+    "asset": "assets/images/higher_lower/lobby_transfer.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: production background illustration for a small premium mobile football-game category card, landscape 1.30:1 aspect ratio, ideally 1280x984. Original independently composed photorealistic 3D sports-advertising artwork, high detail and polished cinematic lighting, dramatic deep near-black shadows, realistic materials, refined particles. The LEFT 48 percent and the BOTTOM 27 percent must stay dark and quiet for live Flutter text/buttons; concentrate the recognizable subject on the RIGHT HALF with full subject within frame. Stadium floodlights can appear along the top. NO text, letters, numbers, words, badges, shields, UI, borders, frames, logos or watermarks. This is artwork only, not an app screenshot. Theme: a football transfer deal. Dark charcoal and AMBER GOLD stadium/desk atmosphere. On the RIGHT HALF, a cream paper contract angled diagonally clockwise on a luxurious dark surface, subtle unreadable hairline rules only, a tasteful black fountain pen with polished gold trim resting diagonally across its bottom-right. An abstract elegant non-letter signature squiggle permitted. Warm stadium lights at top right, drifting gold flecks, glints of gold along the pen. Paper must occupy only the RIGHT 48 percent so the left remains dark. No readable words anywhere.",
+    "sourceSha256": "2f2317e31422440e5404b70a98ec1c0866e066bdc69ff6f67918013a945838e0",
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping or compositing.",
+    "size": [
+      1024,
+      789
+    ],
+    "bytes": 80124
+  },
+  {
+    "asset": "assets/images/higher_lower/lobby_turf.webp",
+    "generator": "built-in image_gen",
+    "referenceImagesUsed": false,
+    "prompt": "Use case: stylized-concept. Asset type: original seamless-looking dark turf background texture for a premium football mobile menu. Portrait 2:3 aspect ratio, high-resolution. Close fine-grained realistic wet football-pitch grass, mostly almost-black deep petrol teal #001b17, subtle emerald light toward the center and bottom, faint warm golden glow at the bottom left/right edges, elegant dark vignette. Very subtle grain and atmospheric specks. Texture should be quiet so colorful foreground cards remain readable. NO football, no stadium, no arrows, no words, no letters, no logos, no UI, no icons, no borders. Entire image is a richly detailed low-contrast dark emerald turf/material texture.",
+    "sourceSha256": "5383b2ffda038601376a3a06a2e41242aa95ec405469049fd270e81e9ec8e472",
+    "packaging": "Aspect-preserving downscale and WebP encoding; no cropping or compositing.",
+    "size": [
+      768,
+      1152
+    ],
+    "bytes": 244174
+  }
+]

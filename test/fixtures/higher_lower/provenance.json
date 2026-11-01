@@ -1,0 +1,37 @@
+[
+  {
+    "source": "/img/higher-lower/players/dembele.png",
+    "fixture": "dembele_portrait.webp",
+    "url": "https://www.footygen.online/img/optimized/718647169abe44715d54-512.webp",
+    "sha256": "3b20afa951ed40ddb651d87a12b3f70858aca750d555080a9e560f207e0ee38b",
+    "bytes": 28288
+  },
+  {
+    "source": "/img/country/france.png",
+    "fixture": "dembele_flag.webp",
+    "url": "https://www.footygen.online/img/optimized/b7b6bf50ca33c0a0a157-128.webp",
+    "sha256": "a74d2d8fb668fc3bc2a5d274a142736428d9a8cda39674fc20e58596c2f14705",
+    "bytes": 196
+  },
+  {
+    "source": "/img/higher-lower/clubs/583.png",
+    "fixture": "dembele_club.webp",
+    "url": "https://www.footygen.online/img/optimized/bba26523407ccf8e392b-128.webp",
+    "sha256": "df6d2edcae9e5d291b7312aabf28d11bd1d409cf277ff20c07877bbc5c9c2ab4",
+    "bytes": 7808
+  },
+  {
+    "source": "/img/higher-lower/players/guerreiro.png",
+    "fixture": "guerreiro_portrait.webp",
+    "url": "https://www.footygen.online/img/optimized/b168874f367353ba6f89-512.webp",
+    "sha256": "02cd1540bb2dbd6deea31679feef41ad5aa8f00b7bc3c752af3f7a2e76756b2f",
+    "bytes": 32572
+  },
+  {
+    "source": "/img/country/portugal.png",
+    "fixture": "guerreiro_flag.webp",
+    "url": "https://www.footygen.online/img/optimized/5c6869c98234c5bef614-128.webp",
+    "sha256": "005b32cacdf2d6ef04821c940dbe392c053e6a468a03773738bf0220530af951",
+    "bytes": 1488
+  }
+]

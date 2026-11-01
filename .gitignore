@@ -18,10 +18,11 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-.vscode/
+# Share portable editor configuration; keep machine-specific settings local.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -32,6 +33,18 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+/test/failures/
+
+# Local development configuration and asset-preparation tooling
+.env
+.env.*
+!.env.example
+/config/*.json
+!/config/*.example.json
+/.venv/
+**/__pycache__/
+/.playwright-mcp/
+/.local/
 
 # Symbolication related
 app.*.symbols

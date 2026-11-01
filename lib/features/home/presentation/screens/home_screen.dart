@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -82,11 +83,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           Positioned.fill(
                             child: LayoutBuilder(
                               builder: (context, viewport) {
-                                final cardWidth = viewport.maxWidth - 30 * u;
-                                final tileWidth = (cardWidth - 16 * u) / 3;
+                                if (viewport.maxWidth <= 0 || viewport.maxHeight <= 0) {
+                                  return const SizedBox.shrink();
+                                }
+                                final cardWidth = math.max(0.0, viewport.maxWidth - 30 * u);
+                                final tileWidth = math.max(0.0, (cardWidth - 16 * u) / 3);
                                 final baseline =
                                     topInset +
-                                    (64 + 52 + 8 + 48 + 8 + 112 + 8) * u +
+                                    (74 + 52 + 8 + 48 + 8 + 112 + 8) * u +
                                     cardWidth / 1.7 +
                                     tileWidth;
                                 // Grow the artwork on tall phones; never shrink
@@ -109,7 +113,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        SizedBox(height: topInset + 64 * u),
+                                        SizedBox(height: topInset + 74 * u),
                                         const HomeStatsRibbon(),
                                         SizedBox(height: 8 * u),
                                         Padding(
@@ -119,10 +123,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                           child: FeaturedChallengeCard(
                                             extraHeight: extra * .5,
                                             onContinue: () {
-                                              if (lastPlayedGame.routePath ==
-                                                  AppRoutes.scoreline) {
+                                              if (lastPlayedGame.routePath == AppRoutes.scoreline ||
+                                                  lastPlayedGame.routePath == AppRoutes.higherLower) {
                                                 context.push(
-                                                  AppRoutes.scoreline,
+                                                  lastPlayedGame.routePath,
                                                 );
                                               } else {
                                                 _showSnack(
@@ -156,6 +160,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                                         .notifier,
                                                   )
                                                   .setLastPlayed(mode);
+                                              if (mode == 'higher_lower') {
+                                                context.push(AppRoutes.higherLower);
+                                                return;
+                                              }
                                               _showSnack(
                                                 'Selected mode: $mode',
                                               );
